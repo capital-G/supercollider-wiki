@@ -9,3 +9,4 @@ What are the current problems?
 - allocators may need to go into one class
 - platform dependent GUI instance variables need to be abstracted away (emacsbuf)
 - perhaps all state that is queried could go in a dictionary
+- server options should be cached at boot time in order to have some information about the currently running server.
