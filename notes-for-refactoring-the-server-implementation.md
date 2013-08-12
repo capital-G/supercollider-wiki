@@ -13,3 +13,4 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
 - aliveThread should be a general object for this purpose.
+- s.hasShmInterface shouldn't return false after computer was sleep (bug).
