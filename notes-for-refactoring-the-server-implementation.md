@@ -9,6 +9,7 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 - platform dependent GUI instance variables need to be abstracted away (emacsbuf)
 - perhaps all state that is queried could go in a dictionary
 - server options should be cached at boot time in order to have some information about the currently running server.
+- or: server options should be queriable via OSC from the server (s.query). 
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
 - aliveThread should be a general object for this purpose.
