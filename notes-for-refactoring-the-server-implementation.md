@@ -2,7 +2,7 @@ The Server implementation (Server.sc) has become bloated over time.
 What are the current problems?
 
 #### NetAddr and Server:
-- Iannis Zannos idea: It may be much more efficient to make server as subclass of NetAddr - in a sense it <i>is</i> just that. (But: then we cannot swap in a BundleNetAddr).
+- Iannis Zannos idea: It may be much more efficient to make server as subclass of NetAddr - in a sense it <i>is</i> just that. (But: then we cannot swap in a BundleNetAddr: s.bind / openBundle would have to be done differently).
 - Depending on protocol, behavior may be different. 
 Tim suggested: for TCP one should explicitly connect/disconnect. as it is based on connections, sending/receiving without a connection just doesn't make any sense.
 - This would be something to be done for NetAddr, too.
