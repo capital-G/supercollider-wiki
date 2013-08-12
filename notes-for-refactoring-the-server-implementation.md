@@ -11,3 +11,4 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 - server options should be cached at boot time in order to have some information about the currently running server.
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
+- aliveThread should be a general object for this purpose.
