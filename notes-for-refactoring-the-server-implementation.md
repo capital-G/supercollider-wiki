@@ -23,7 +23,7 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 - aliveThread should be a general object for this purpose.
 - s.hasShmInterface shouldn't return false after computer was sleep (bug).
 
-## Additional Functionality
+#### Additional Functionality
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
 
 
