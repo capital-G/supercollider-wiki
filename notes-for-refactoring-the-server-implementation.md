@@ -17,6 +17,7 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 - or: server options should be queriable via OSC from the server (s.query). 
 - queryAllNodes shouldn't just post the info, but make it available as a string / unify with plotNodeTree ?
 - the already refactored Volume is good, but quite complicated. If it is really that hard, it should be made a general technique not restricted to this class.
+- bug: server calls volume.free, but Volume doesn't implement free.
 
 #### State Update
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
