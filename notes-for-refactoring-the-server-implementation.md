@@ -16,7 +16,7 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 - server options should be cached at boot time in order to have some information about the currently running server.
 - or: server options should be queriable via OSC from the server (s.query). 
 - queryAllNodes shouldn't just post the info, but make it available as a string / unify with plotNodeTree ?
-
+- the already refactored Volume is good, but quite complicated. If it is really that hard, it should be made a general technique not restricted to this class.
 
 #### State Update
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
@@ -26,5 +26,10 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 #### Additional Functionality
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
 - make explicit where things like record and volume nodes should be placed, and check if they can also be kept running on cmd-period.
+
+#### What a new implementation should allow for
+- cleanly configure cmd-period behaviour, so that nodes may be kept alive (e.g. recording) while still being able to reset the node id allocator.
+- allocators should be able to manage node recovery
+
 
 
