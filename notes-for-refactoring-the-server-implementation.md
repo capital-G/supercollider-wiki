@@ -28,6 +28,7 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 #### Additional Functionality
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
 - make explicit where things like record and volume nodes should be placed, and check if they can also be kept running on cmd-period.
+- Possibly, it would make sense to introduce a second default group (e.g. "postprocessing group") that can contain everything that can be kept alive with no harm.
 
 #### What a new implementation should allow for
 - cleanly configure cmd-period behaviour, so that nodes may be kept alive (e.g. recording) while still being able to reset the node id allocator.
