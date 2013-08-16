@@ -2,7 +2,8 @@ The Server implementation (Server.sc) has become bloated over time.
 What are the current problems?
 
 #### NetAddr and Server:
-- Iannis Zannos idea: It may be much more efficient to make server as subclass of NetAddr - in a sense it <i>is</i> just that. (But: then we cannot swap in a BundleNetAddr: s.bind / openBundle would have to be done differently).
+- Iannis Zannos idea: It may be much more efficient to make server as subclass of NetAddr - in a sense it <i>is</i> just that. (But: then we cannot swap in a BundleNetAddr: s.bind / openBundle would have to be done differently). See [1].
+
 - Depending on protocol, behavior may be different. 
 Tim suggested: for TCP one should explicitly connect/disconnect. as it is based on connections, sending/receiving without a connection just doesn't make any sense.
 - This would be something to be done for NetAddr, too.
@@ -35,3 +36,50 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 #### General todo:
 - document "/clearSched"
 
+
+## Notes:
+[1] Comparing the efficiency between delegation and an if statement with a simple test, it turns out that the if statement is still 50% more efficient than a delegation to a second method (as it is now), and without he if statement it is only 55 % more efficient. (this is just a basic timing benchmark).
+
+
+Test {
+
+	*redirect3 { |x, y, z|
+		this.prRedirect3(x, y, z)
+	}
+
+	*prRedirect3 { |x, y, z|
+		^x + y + z
+	}
+
+	*condition3 { |x, y, z|
+		if(x.isNil) { ^x + y + z };
+		^x + y + z
+	}
+
+
+	*redirect1 { |x|
+		this.prRedirect1(x)
+	}
+
+	*prRedirect1 { |x|
+		^x + 1
+	}
+
+	*condition1 { |x|
+		if(x.isNil) { ^x + 1 };
+		^x + 1
+	}
+
+}
+
+/*
+
+bench { 100.do { Test.redirect3(1, 1, 1) } };
+bench { 100.do { Test.condition3(1, 1, 1) } }; // about 50 % more efficient.
+bench { 100.do { Test.prRedirect3(1, 1, 1) } };
+
+bench { 100.do { Test.redirect1(1) } };
+bench { 100.do { Test.condition1(1) } }; // about 50 % more efficient.
+bench { 100.do { Test.prRedirect1(1, 1, 1) } }; // about 50 % more efficient.
+
+*/
