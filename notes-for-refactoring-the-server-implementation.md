@@ -22,6 +22,7 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 
 #### State Update
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
+- (Q: couldn't this also help for remote servers? they would remain responsive even while a larger async task is going on).
 - this might solve: s.hasShmInterface shouldn't return false after computer was sleep (bug).
 - aliveThread should be a general object for this purpose, or better even for general purpose.
 
