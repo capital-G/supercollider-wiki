@@ -6,7 +6,7 @@ What are the current problems?
 
 - Depending on protocol, behavior may be different. 
 Tim suggested: for TCP one should explicitly connect/disconnect. as it is based on connections, sending/receiving without a connection just doesn't make any sense.
-- This would be something to be done for NetAddr, too.
+- This would be something to be done for NetAddr, too, probably best by passing the protocol type as a symbol.
 
 #### GUI
 - platform dependent GUI instance variables need to be abstracted away (emacsbuf)
