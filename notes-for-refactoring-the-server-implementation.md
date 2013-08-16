@@ -22,8 +22,9 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 
 #### State Update
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
+- this might solve: s.hasShmInterface shouldn't return false after computer was sleep (bug).
 - aliveThread should be a general object for this purpose, or better even for general purpose.
-- s.hasShmInterface shouldn't return false after computer was sleep (bug). This is connected with really knowing about the server state. The proper solution (I guess) would be to have an extra thread in the server that can be queried without getting blocked by async tasks?
+
 
 #### Additional Functionality
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
