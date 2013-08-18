@@ -1,6 +1,12 @@
 The Server implementation (Server.sc) has become bloated over time.
 What are the current problems?
 
+### General Remarks/Observations:
+- One of the main problems seems to be the handling of ids, in particular those which have some kind of special status (e.g. "persistant ones").
+- in terms of efficiency and design, we have a trade off between has-a and is-a
+
+### Ideas/Details:
+
 #### NetAddr and Server:
 - Iannis Zannos idea: It may be much more efficient to make server as subclass of NetAddr - in a sense it <i>is</i> just that. (But: then we cannot swap in a BundleNetAddr: s.bind / openBundle would have to be done with an if statement for every message send. This is still more efficient though. See [1]).
 
@@ -29,6 +35,7 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 
 #### Additional Functionality
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
+- recording currently simply uses one buffer outside the range (why does this work? probably some more buffers are allocated internally by the server application?). This looks like a hack.
 - make explicit where things like record and volume nodes should be placed, and check if they can also be kept running on cmd-period.
 - Possibly, it would make sense to introduce a second default group (e.g. "postprocessing group") that can contain everything that can be kept alive with no harm.
 
