@@ -49,6 +49,7 @@ And where does it belong?
 #### Additional Functionality
 - recording should be moved outside: allow several instances of recorders with specified paths and busses
 - recording currently simply uses one buffer outside the range (why does this work? probably some more buffers are allocated internally by the server application?). This looks like a hack.
+- scoping should not be in server, but in a dedicated class.
 - make explicit where things like record and volume nodes should be placed, and check if they can also be kept running on cmd-period.
 - Possibly, it would make sense to introduce a second default group (e.g. "postprocessing group") that can contain everything that can be kept alive with no harm.
 
