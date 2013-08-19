@@ -15,7 +15,8 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 - This would be something to be done for NetAddr, too, probably best by passing the protocol type as a symbol.
 
 _here is a general design decision:_ 
-Should the different behaviours be in one class or in several? We have: 
+Should the different behaviours be in one class or in several? We have:
+- local/internal/remote (any reason not to drop internal support?)
 - delayed(bundling)/instantaneous
 - connected/connectionless
 
