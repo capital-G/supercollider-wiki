@@ -63,7 +63,7 @@ has a:
 - NetConnection (or none)
 - bundle (or none)
 
-Server
+Server (is a NetAddr)
 has a:
 - ServerOptions (initial conditions)
 - ServerState (updating) different classes for: local and remote (and maybe internal)
