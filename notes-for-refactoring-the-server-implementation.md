@@ -106,3 +106,39 @@ bench { 100.do { Test.prRedirect1(1, 1, 1) } }; // about 50 % more efficient.
 
 */
 ````
+
+[2] Here is just the code that has the instance variables, to add comments about what may be handled where:
+````
+Server {
+	classvar <>local, <>internal, <default, <>named, <>set, <>program, <>sync_s = true;
+
+	var <name, <>addr, <clientID=0;
+	var <isLocal, <inProcess, <>sendQuit, <>remoteControlled;
+	var <serverRunning = false, <serverBooting = false, bootNotifyFirst = false;
+	var <>options, <>latency = 0.2, <dumpMode = 0, <notify = true, <notified=false;
+	var <nodeAllocator;
+	var <controlBusAllocator;
+	var <audioBusAllocator;
+	var <bufferAllocator;
+	var <scopeBufferAllocator;
+	var <syncThread, <syncTasks;
+
+	var <numUGens=0, <numSynths=0, <numGroups=0, <numSynthDefs=0;
+	var <avgCPU, <peakCPU;
+	var <sampleRate, <actualSampleRate;
+
+	var alive = false, booting = false, aliveThread, <>aliveThreadPeriod = 0.7, statusWatcher;
+	var <>tree;
+
+	var <window, <>scopeWindow;
+	var <emacsbuf;
+	var recordBuf, <recordNode, <>recHeaderFormat="aiff", <>recSampleFormat="float";
+	var <>recChannels=2;
+
+	var <volume;
+
+	var <pid;
+	var serverInterface;
+
+	var reallyDeadCount = 0;
+````
