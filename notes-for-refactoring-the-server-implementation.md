@@ -14,6 +14,18 @@ What are the current problems?
 Tim suggested: for TCP one should explicitly connect/disconnect. as it is based on connections, sending/receiving without a connection just doesn't make any sense.
 - This would be something to be done for NetAddr, too, probably best by passing the protocol type as a symbol.
 
+_here is a general design decision:_ 
+Should the different behaviours be in one class or in several? We have: 
+- delayed(bundling)/instantaneous
+- connected/connectionless
+
+And where does it belong?
+- If the server _is a_ NetAddr, which should it be?
+- Should a NetAddr know how to collect a bundle or is it the server's job? (I think the Addr should know it)
+
+***
+
+
 #### GUI
 - platform dependent GUI instance variables need to be abstracted away (emacsbuf)
 
