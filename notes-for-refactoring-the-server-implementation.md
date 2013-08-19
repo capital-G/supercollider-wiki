@@ -49,7 +49,7 @@ Tim suggested: for TCP one should explicitly connect/disconnect. as it is based 
 ## Notes:
 [1] Comparing the efficiency between delegation and an if statement with a simple test, it turns out that the if statement is still 50% more efficient than a delegation to a second method (as it is now), and without he if statement it is only 55 % more efficient. (this is just a basic timing benchmark).
 
-
+````
 Test {
 
 	*redirect3 { |x, y, z|
@@ -92,3 +92,4 @@ bench { 100.do { Test.condition1(1) } }; // about 50 % more efficient.
 bench { 100.do { Test.prRedirect1(1, 1, 1) } }; // about 50 % more efficient.
 
 */
+````
