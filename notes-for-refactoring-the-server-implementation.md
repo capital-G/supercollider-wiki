@@ -57,6 +57,19 @@ And where does it belong?
 - cleanly configure cmd-period behaviour, so that nodes may be kept alive (e.g. recording) while still being able to reset the node id allocator.
 - allocators should be able to manage node recovery
 
+## Structure:
+NetAddr
+has a: 
+- NetConnection (or none)
+- bundle (or none)
+
+Server
+has a:
+- ServerOptions (initial conditions)
+- ServerState (updating) different classes for: local and remote (and maybe internal)
+- Volume
+- Recorder
+
 
 
 
