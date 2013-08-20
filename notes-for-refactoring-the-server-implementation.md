@@ -168,7 +168,7 @@ sendMsg { arg ... args;
 		^this.primitiveFailed;
 	}
 ````
-So it has to be done here:
+So it has to be done in this method (not sure how is best):
 
 ````
 static int prNetAddr_SendMsg(VMGlobals *g, int numArgsPushed)
