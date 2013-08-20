@@ -1,6 +1,8 @@
 The Server implementation (Server.sc) has become bloated over time [2].
 What are the current problems?
 
+_(please feel free to edit!)_
+
 ### General Remarks/Observations:
 - One of the main problems seems to be the handling of ids, in particular those which have some kind of special status (e.g. "persistant ones").
 - in terms of efficiency and design, we have a trade off between has-a and is-a
