@@ -70,7 +70,7 @@ has a:
 - Volume
 - Recorder
 
-
+ServerState could be a subclass of a general observer class that collects the status of an object by active lookup (using SkipJack). It could hold a dictionary.
 
 
 ## Notes:
