@@ -23,6 +23,7 @@ Should the different behaviours be in one class or in several? We have:
 And where does it belong?
 - If the server _is a_ NetAddr, which should it be?
 - Should a NetAddr know how to collect a bundle or is it the server's job? (I think the Addr should know it, one could simply give it a bundle instvar and add to it if it isn't nil)
+- To really gain the efficiency, it would be necessary to modify the primitive ````prNetAddr_SendMsg```` (etc.) to add to the bundle if there is one.[3]
 
 ***
 
@@ -156,3 +157,32 @@ Server {
 
 	var reallyDeadCount = 0;
 ````
+
+[3] We can't make a branch in a call with a primitive:
+
+````
+// this won't compile
+sendMsg { arg ... args;
+		bundle !? { bundle = bundle.add(args) };
+		_NetAddr_SendMsg
+		^this.primitiveFailed;
+	}
+````
+So it has to be done here:
+
+````
+static int prNetAddr_SendMsg(VMGlobals *g, int numArgsPushed)
+{
+	PyrSlot* netAddrSlot = g->sp - numArgsPushed + 1;
+	PyrSlot* args = netAddrSlot + 1;
+	big_scpacket packet;
+
+	int numargs = numArgsPushed - 1;
+	int error = makeSynthMsgWithTags(&packet, args, numargs);
+	if (error != errNone)
+		return error;
+
+	return netAddrSend(slotRawObject(netAddrSlot), packet.size(), (char*)packet.buf);
+}
+
+`````
