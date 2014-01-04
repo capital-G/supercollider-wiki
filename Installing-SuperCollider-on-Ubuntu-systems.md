@@ -56,3 +56,7 @@ You will need to install quite a bit of software to get the plugins. Below is a 
 #### git
 
     sudo apt-get install git
+
+#### supercollider-dev
+
+    sudo apt-get install supercollider-dev
