@@ -30,5 +30,11 @@ If you don't hear the tone, remember to check your speakers, volume control etc!
 ## Installing the plugins
 The plugins are not required, but they're a whole bunch of free stuff, so why wouldn't you get them? Unfortunately they're not available as a package so you need to build and install them for yourself. I have attempted to provide instructions for this which assume as little knowledge of Linux and building C++ code as possible.
 ### Packages you need
-You will need to install quite a bit of software to get the plugins.
-#### cmake
+You will need to install quite a bit of software to get the plugins. Below is a list of this software, along with the terminal commands to get it.
+#### C++ compiler
+
+    sudo apt-get install build-essential
+
+#### FFTW
+
+    sudo apt-get install lib-fftw3-dev
