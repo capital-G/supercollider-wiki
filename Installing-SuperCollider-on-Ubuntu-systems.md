@@ -80,7 +80,7 @@ Although for installation purposes, it doesn't matter where in the file system y
 
     fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
 
-This will create a folder called **sc3-plugins**.
+Cloning the repository will create a folder called **sc3-plugins** containing the source code.
 ### Getting the submodules
 From within **sc3-plugins**, run the following:
 
