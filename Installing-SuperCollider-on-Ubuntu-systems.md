@@ -87,7 +87,7 @@ From within **sc3-plugins**, run the following:
     git submodule init && git submodule update
 
 ### Running cmake
-Create a directory inside **sc3-plugins** called **build** and move to it in the terminal. Run the following:
+Create a directory inside **sc3-plugins** called **build**. From within **sc3-plugins/build**, run the following:
 
     cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** ..
 
