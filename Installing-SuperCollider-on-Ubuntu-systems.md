@@ -72,9 +72,13 @@ To locate the directory containing the header include files, search your file sy
 
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
 ### Getting the source code for the plugins
-Simply clone the git repository. It doesn't matter where in the file system you do this (assuming of course you have write access there):
+Simply clone the git repository:
 
     git clone https://github.com/supercollider/sc3-plugins.git
+
+Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
+
+    fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
 
 This will create a folder called **sc3-plugins**.
 ### Getting the submodules
