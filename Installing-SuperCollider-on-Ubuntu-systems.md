@@ -36,6 +36,10 @@ You will need to install quite a bit of software to get the plugins. Below is a 
 
     sudo apt-get install build-essential
 
+#### cmake
+
+    sudo apt-get install cmake
+
 #### FFTW
 
     sudo apt-get install libfftw3-dev
