@@ -56,7 +56,7 @@ You will need to install quite a bit of software to get the plugins. Below is a 
 ### Information you need
 #### Where to install the plugins
 When SuperCollider starts up, it looks for the plugins in a particular location. You need to know this location in order to control where the plugins get installed.
-Start SuperCollider, and look at the post window. The following is part of the post window output on my machine: 
+Start the SuperCollider IDE, and look at the post window. The following is part of the post window output on my machine: 
 
     NumPrimitives = 679
     compiling dir: '/usr/share/SuperCollider/SCClassLibrary'
