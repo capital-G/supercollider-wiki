@@ -13,6 +13,8 @@ Enter these lines into a terminal:
     sudo apt-get update
     sudo apt-get install supercollider
 
+When you are presented with a screen asking you if you would like to enable realtime access priority, choose 'Yes'.
+
 ### Checking the installation worked
 First, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. The IDE should open and give you three main panes:
 * a large blank text window
