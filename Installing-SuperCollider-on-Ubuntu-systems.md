@@ -20,6 +20,7 @@ First, open the SuperCollider IDE by searching for and running 'SuperCollider ID
 * a post window containing text about how the startup process went.
 
 Secondly, boot the server using the command in the Language menu, or <kbd>Ctrl</kbd>+<kbd>B</kbd>.
+
 Thirdly, enter the following into the blank text window:
 
     {SinOsc.ar}.play
