@@ -4,5 +4,11 @@ The PPA contains a more up-to-date version of SuperCollider than the default pac
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FABAEF95
     sudo add-apt-repository ppa:supercollider/ppa
+
+Further information about the PPA can be found [here](https://launchpad.net/~supercollider/+archive/ppa).
+
+## Installing SuperCollider
+Open a terminal and enter these lines:
+
     sudo apt-get update
-    sudo apt-get install supercollider supercollider-gedit supercollider-plugins
+    sudo apt-get install supercollider
