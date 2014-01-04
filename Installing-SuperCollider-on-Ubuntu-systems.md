@@ -78,3 +78,13 @@ Simply clone the git repository. It doesn't matter in the file system you do thi
 
 This will create a folder called **sc3-plugins**.
 ### Getting the submodules
+### Running cmake
+From **sc3-plugins/build**, run the following:
+
+    cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** ..
+
+So in my case, I would run:
+
+    cmake -DSC_PATH=/usr/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr ..
+
+Don't miss out those two dots on the end!
