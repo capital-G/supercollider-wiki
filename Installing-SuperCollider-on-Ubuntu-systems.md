@@ -72,7 +72,7 @@ To locate the directory containing the header include files, search your file sy
 
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
 ### Getting the source code for the plugins
-Simply clone the git repository. It doesn't matter in the file system you do this:
+Simply clone the git repository. It doesn't matter where in the file system you do this (assuming of course you have write access there):
 
     git clone https://github.com/supercollider/sc3-plugins.git
 
