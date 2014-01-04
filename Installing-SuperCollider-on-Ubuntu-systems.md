@@ -21,3 +21,4 @@ Thirdly, enter the following into the blank text window:
     {SinOsc.ar}.play
 
 Ensure the cursor is on this line and hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. You should now hear a sine tone. Kill the sine tone by hitting <kbd>Ctrl</kbd>+<kbd>.</kbd>.
+If you don't hear the tone, remember to check your speakers, volume control etc!
