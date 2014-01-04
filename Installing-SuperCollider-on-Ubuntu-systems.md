@@ -29,6 +29,10 @@ If you don't hear the tone, remember to check your speakers, volume control etc!
 
 ## Installing the plugins
 The plugins are not required, but they're a whole bunch of free stuff, so why wouldn't you get them? Unfortunately they're not available as a package so you need to build and install them for yourself. I have attempted to provide instructions for this which assume as little knowledge of Linux and building C++ code as possible.
+### Information you need
+#### Where to install the plugins
+When SuperCollider starts up, it looks for the plugins in a particular location. You need to know this location in order to control where the plugins get installed.
+Start SuperCollider, and look at the post window. Look for the two lines starting 'compiling dir:'. The second quotes the location. Remove the trailing '\SuperCollider\Extensions' bit and make a note of it. This location will be referred to as **PluginLocation** for the remainder of this article.
 ### Packages you need
 You will need to install quite a bit of software to get the plugins. Below is a list of this software, along with the terminal commands to get it.
 #### C++ compiler
