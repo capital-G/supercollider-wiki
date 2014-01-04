@@ -93,7 +93,7 @@ So in my case, I would run:
 
 Don't miss out those two dots on the end!
 ### Finally, building the plugins
-From within **sc3-plugins**, run the following:
+From within **sc3-plugins/build**, run the following:
 
     make
     sudo make install
