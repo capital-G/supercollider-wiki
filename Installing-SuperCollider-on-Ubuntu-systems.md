@@ -68,7 +68,7 @@ Look for the two lines starting 'compiling dir:'. The second quotes the location
 This location will be referred to as **PluginLocation** for the remainder of this article.
 #### Where the header include files are
 The header include files are added when you install the supercollider-dev package. You need to know where these files are when you install the plugins.
-To locate the directory containing the header include files, search your file system for a file called 'SCVersion.txt'. The directory containing this file, usually '/usr/include/SuperCollider' is the one you want.
+To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SCVersion.txt'. The directory containing this file, usually '/usr/include/SuperCollider' is the one you want.
 
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
 ### Getting the source code for the plugins
