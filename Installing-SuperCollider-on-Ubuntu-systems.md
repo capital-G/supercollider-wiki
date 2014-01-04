@@ -101,7 +101,7 @@ From within **sc3-plugins/build**, run the following:
 ### Checking the installation worked
 If you have the IDE open, close it. Now open it again and boot the server.
 
-Enter the following into the blank text window:
+Enter the following into the blank text window and run it:
 
     {VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
 
