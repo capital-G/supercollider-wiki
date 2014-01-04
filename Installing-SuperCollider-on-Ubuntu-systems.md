@@ -78,8 +78,9 @@ Simply clone the git repository. It doesn't matter in the file system you do thi
 
 This will create a folder called **sc3-plugins**.
 ### Getting the submodules
+
 ### Running cmake
-From **sc3-plugins/build**, run the following:
+Create a directory inside **sc3-plugins** called 'build' and move to it in the terminal. Run the following:
 
     cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** ..
 
