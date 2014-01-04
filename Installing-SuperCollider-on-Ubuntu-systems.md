@@ -20,4 +20,4 @@ Thirdly, enter the following into the blank text window:
 
     {SinOsc.ar}.play
 
-Ensure the cursor is on this line and hit Ctrl+Enter. You should now hear a sine tone. Kill the sine tone by hitting Ctrl+dot. <kbd>Moooo</kbd>
+Ensure the cursor is on this line and hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. You should now hear a sine tone. Kill the sine tone by hitting <kbd>Ctrl</kbd>+<kbd>.</kbd>.
