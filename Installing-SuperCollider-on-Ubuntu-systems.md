@@ -37,7 +37,7 @@ You will need to install quite a bit of software to get the plugins. Below is a 
 
 #### FFTW
 
-    sudo apt-get install lib-fftw3-dev
+    sudo apt-get install libfftw3-dev
 
 #### git
 
