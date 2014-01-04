@@ -61,7 +61,7 @@ Start SuperCollider, and look at the post window. The following is part of the p
     compiling dir: '/usr/share/SuperCollider/Extensions'
     pass 1 done
 
-Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '/SuperCollider/Extensions' bit and make a note of it. So in my case, the location is '/usr/share'.
+Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '/share/SuperCollider/Extensions' bit and make a note of it. So in my case, the location is '/usr'.
 
 This location will be referred to as **PluginLocation** for the remainder of this article.
 #### Where the header include files are
@@ -69,3 +69,10 @@ The header include files are added when you install the supercollider-dev packag
 To locate the directory containing the header include files, search your file system for a file called 'SCVersion.txt'. The directory containing this file, usually '/usr/include/SuperCollider' is the one you want.
 
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
+### Getting the source code for the plugins
+Simply clone the git repository. It doesn't matter in the file system you do this:
+
+    git clone https://github.com/supercollider/sc3-plugins.git
+
+This will create a folder called **sc3-plugins**.
+### Getting the submodules
