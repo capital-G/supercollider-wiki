@@ -92,3 +92,22 @@ So in my case, I would run:
     cmake -DSC_PATH=/usr/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr ..
 
 Don't miss out those two dots on the end!
+### Finally, building the plugins
+From within **sc3-plugins**, run the following:
+
+    make
+    sudo make install
+
+### Checking the installation worked
+If you have the IDE open, close it. Now open it again and boot the server.
+
+Enter the following into the blank text window:
+
+    {VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
+
+You should hear a buzzing sound. If you don't, double check and attempt the instructions again. To undo the build you just did, from within **sc3-plugins**, run the following:
+
+    make uninstall (only if you did make install before)
+    rm -r *
+
+If you still don't have any luck, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
