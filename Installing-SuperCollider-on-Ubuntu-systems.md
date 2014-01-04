@@ -107,7 +107,7 @@ Enter the following into the blank text window:
 
 You should hear a buzzing sound. If you don't, double check and attempt the instructions again. To undo the build you just did, from within **sc3-plugins**, run the following:
 
-    make uninstall (only if you did make install before)
+    make uninstall
     rm -r *
 
 If you still don't have any luck, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
