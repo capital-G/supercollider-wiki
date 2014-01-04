@@ -14,8 +14,11 @@ Enter these lines into a terminal:
     sudo apt-get install supercollider
 
 ## Checking the installation worked
-First, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. The IDE should open and give you three main panes: a large blank text window, a help window and a post window containing text about how the startup process went.
-Secondly, boot the server using the command in the Language menu, or Ctrl+B.
+First, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. The IDE should open and give you three main panes:
+* a large blank text window
+* a help window
+* a post window containing text about how the startup process went.
+Secondly, boot the server using the command in the Language menu, or <kbd>Ctrl</kbd>+<kbd>B</kbd>.
 Thirdly, enter the following into the blank text window:
 
     {SinOsc.ar}.play
