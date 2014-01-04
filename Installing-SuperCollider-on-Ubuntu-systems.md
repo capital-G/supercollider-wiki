@@ -39,7 +39,8 @@ Start SuperCollider, and look at the post window. The following is part of the p
     compiling dir: '/usr/share/SuperCollider/Extensions'
     pass 1 done
 
-Look for the two lines starting 'compiling dir:'. The second quotes the location. Remove the trailing '\SuperCollider\Extensions' bit and make a note of it.
+Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '\SuperCollider\Extensions' bit and make a note of it. So in my case, the location is '/usr/share'.
+
 This location will be referred to as **PluginLocation** for the remainder of this article.
 ### Packages you need
 You will need to install quite a bit of software to get the plugins. Below is a list of this software, along with the terminal commands to get it.
