@@ -38,6 +38,8 @@ To send osc messages from the shell (terminal) see [sendOSC](http://archive.cnma
   - Scala provides type safety, and at the same time offers compactness that makes UGen graph creation look very close to their sclang equivalents. http://github.com/Sciss/ScalaCollider
 * Clojure
   - [Overtone](http://github.com/overtone/overtone) is a [Clojure](http://clojure.org/) based musical generation and manipulation system for live-coding and more.
+* JavaScript
+  - https://github.com/crucialfelix/supercolliderjs tools for working with scsynth and sclang. OSC messaging, process management, sclang interpreter.
 
 ## Editors
 * [scvim](http://www.x37v.info/scvim/) vim scripts for supercollider
