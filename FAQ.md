@@ -1,4 +1,3 @@
-
 ## Language (client) issues
 
 ####  Calling gui primitives from a SystemClock routine 
@@ -115,15 +114,15 @@ The reason comes from the process of building a SynthDef:
 
 To do steps #1 and #2, the SynthDef builder has to know the size of an array argument *before* running the function. That's possible only if it's a literal array: #[1, 2, 3, 4, 5]. Any other array notation creates the array *while running the function* (step #3). But then it's too late -- the SynthDef builder already created a non-array control channel for it!
 
- SynthDef(\notArray, { arg a = (1..5);
+   SynthDef(\notArray, { arg a = (1..5);
  	a.debug("a is");
- });
- --> a is: an OutputProxy
+   });
+   --> a is: an OutputProxy
 
- SynthDef(\array, { arg a = #[1, 2, 3, 4, 5];
+   SynthDef(\array, { arg a = #[1, 2, 3, 4, 5];
  	a.debug("a is");
- });
- a is: [ an OutputProxy, an OutputProxy, an OutputProxy, an OutputProxy, an OutputProxy ]
+   });
+   a is: [ an OutputProxy, an OutputProxy, an OutputProxy, an OutputProxy, an OutputProxy ]
 
 (Note, if 'a' printed as [ 1, 2, 3, 4, 5 ], then you wouldn't be able to change the values in a Synth using .set!)
 
