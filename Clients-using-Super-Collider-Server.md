@@ -39,7 +39,7 @@ To send osc messages from the shell (terminal) see [sendOSC](http://archive.cnma
 * Clojure
   - [Overtone](http://github.com/overtone/overtone) is a [Clojure](http://clojure.org/) based musical generation and manipulation system for live-coding and more.
 * JavaScript
-  - https://github.com/crucialfelix/supercolliderjs tools for working with scsynth and sclang. OSC messaging, process management, sclang interpreter.
+  - https://github.com/crucialfelix/supercolliderjs tools for working with scsynth and sclang. OSC messaging, process management, sclang interpreter. NodeJS and includes a websocket bridge for web browsers.
 
 ## Editors
 * [scvim](http://www.x37v.info/scvim/) vim scripts for supercollider
