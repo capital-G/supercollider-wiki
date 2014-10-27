@@ -41,6 +41,7 @@ To send osc messages from the shell (terminal) see [sendOSC](http://archive.cnma
 
 ## Editors
 * [scvim](http://www.x37v.info/scvim/) vim scripts for supercollider
+* [Supercollider Atom](https://atom.io/packages/supercollider) Atom IDE for Super Collider 
 * [sced](http://artfwo.googlepages.com/sced) a gedit plugin
 * [scate](http://github.com/jleben/Scate) a Kate plugin
 * [scfront](http://aug.ment.org/scfront) a Tcl/Tk frontend
