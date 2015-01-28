@@ -39,7 +39,7 @@ Cloning the repository will create a folder called supercollider containing the 
 
 ### Getting the submodules
 
-From within **sc3-plugins**, run the following:
+From within the supercollider directory, run the following:
 
     git submodule init && git submodule update
 
