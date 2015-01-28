@@ -37,6 +37,12 @@ Although for installation purposes, it doesn't matter where in the file system y
 
 Cloning the repository will create a folder called supercollider containing the source code.
 
+### Getting the submodules
+
+From within **sc3-plugins**, run the following:
+
+    git submodule init && git submodule update
+
 ## Running cmake
 
 Create a directory inside supercollider called build. From within supercollider/build, run the following:
