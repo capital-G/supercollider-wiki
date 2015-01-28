@@ -6,6 +6,8 @@ I'm following the instructions [here](https://github.com/supercollider/supercoll
 
 ## Obtaining dependencies
 
+I couldn't find out what 'libjack' is, so I'm assuming that it's obtained through the package `jack-audio-connection-kit`.
+
 The following packages are required and are available through yum.
 
 * gcc
