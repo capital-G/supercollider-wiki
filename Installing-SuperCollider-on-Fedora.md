@@ -46,23 +46,23 @@ Create a directory inside supercollider called build. From within supercollider/
 
 Resulting output:
 
--- The C compiler identification is GNU 4.9.2
--- The CXX compiler identification is unknown
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
-CMake Error at CMakeLists.txt:1 (project):
-  No CMAKE_CXX_COMPILER could be found.
-
-  Tell CMake where to find the compiler by setting either the environment
-  variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
-  to the compiler, or to the compiler name if it is in the PATH.
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/david/supercollider/build/CMakeFiles/CMakeOutput.log".
-See also "/home/david/supercollider/build/CMakeFiles/CMakeError.log".
+    -- The C compiler identification is GNU 4.9.2
+    -- The CXX compiler identification is unknown
+    -- Check for working C compiler: /usr/bin/cc
+    -- Check for working C compiler: /usr/bin/cc -- works
+    -- Detecting C compiler ABI info
+    -- Detecting C compiler ABI info - done
+    CMake Error at CMakeLists.txt:1 (project):
+      No CMAKE_CXX_COMPILER could be found.
+    
+      Tell CMake where to find the compiler by setting either the environment
+      variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+      to the compiler, or to the compiler name if it is in the PATH.
+    
+    
+    -- Configuring incomplete, errors occurred!
+    See also "/home/david/supercollider/build/CMakeFiles/CMakeOutput.log".
+    See also "/home/david/supercollider/build/CMakeFiles/CMakeError.log".
 
 
 
