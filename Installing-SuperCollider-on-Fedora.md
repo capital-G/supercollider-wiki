@@ -2,25 +2,17 @@
 
 There doesn't appear to be the equivalent of a PPA for Fedora. It seems installing from source is the way to go.
 
+I'm following the instructions [here](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md), but clarifying them for the benefit of noobs.
+
 ## Obtaining dependencies
 
-### Determine if gcc is installed
+The following packages are required and are available through yum.
 
-    gcc --version
+* gcc
+* jack-audio-connection-kit
+* libsndfile
+* cmake
 
-The command will not be recognised if gcc is not installed. If it's not:
+To install each package, just use (for example):
 
     sudo yum install gcc
-
-After installation, try:
-
-    gcc --version
-
-... to ensure that the version is equal or greater than 4.6.
-
-### Obtaining jack and libjack
-
-I couldn't find much information about what libjack is.
-
-    sudo yum install jack-audio-connection-kit
-
