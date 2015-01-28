@@ -53,24 +53,73 @@ Create a directory inside supercollider called build. From within supercollider/
 
 Resulting output:
 
-    -- The C compiler identification is GNU 4.9.2
-    -- The CXX compiler identification is unknown
-    -- Check for working C compiler: /usr/bin/cc
-    -- Check for working C compiler: /usr/bin/cc -- works
-    -- Detecting C compiler ABI info
-    -- Detecting C compiler ABI info - done
-    CMake Error at CMakeLists.txt:1 (project):
-      No CMAKE_CXX_COMPILER could be found.
+    -- SuperCollider Version: 3.7alpha0
+    -- Build type defaulting to "RelWithDebInfo"
+    -- Compiling with Qt GUI
+    -- building boost libraries manually
+    -- Could NOT find YAMLCPP (missing:  YAMLCPP_INCLUDE_DIR YAMLCPP_LIBRARY) 
+    -- using bundled libyaml-cpp
+    CMake Warning (dev) at external_libraries/hidapi/CMakeLists.txt:3 (project):
+      Policy CMP0048 is not set: project() command manages VERSION variables.
+      Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+      command to set the policy and suppress this warning.
     
-      Tell CMake where to find the compiler by setting either the environment
-      variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
-      to the compiler, or to the compiler name if it is in the PATH.
+      The following variable(s) would be set to empty:
     
+        PROJECT_VERSION
+        PROJECT_VERSION_MAJOR
+        PROJECT_VERSION_MINOR
+        PROJECT_VERSION_PATCH
+    This warning is for project developers.  Use -Wno-dev to suppress it.
+    
+    hidapi cmakelists
+    ===linux hidraw cmakelists===
+    -- UDev not found.
+    -- UDev: You can specify includes: -DUDEV_PATH_INCLUDES=/opt/udev/include
+    --       currently found includes: UDEV_INCLUDE_DIR-NOTFOUND
+    -- UDev: You can specify libs: -DUDEV_PATH_LIB=/opt/udev/lib
+    --       currently found libs: UDEV_LIBRARIES-NOTFOUND
+    CMake Warning (dev) at external_libraries/hidapi/CMakeLists.txt:58 (link_directories):
+      This command specifies the relative path
+    
+        UDEV_LIBRARIES-NOTFOUND
+    
+      as a link directory.
+    
+      Policy CMP0015 is not set: link_directories() treats paths relative to the
+      source dir.  Run "cmake --help-policy CMP0015" for policy details.  Use the
+      cmake_policy command to set the policy and suppress this warning.
+    This warning is for project developers.  Use -Wno-dev to suppress it.
+    
+    ===hidapi_parser cmakelists===
+    -- using green fft
+    -- Could NOT find Sndfile (missing:  SNDFILE_LIBRARY SNDFILE_INCLUDE_DIR) 
+    CMake Error at server/plugins/CMakeLists.txt:126 (message):
+      Cannot find libsndfile
+    
+    
+    CMake Error at server/plugins/CMakeLists.txt:191 (message):
+      Cannot find libsndfile
+    
+    
+    CMake Error at /usr/share/cmake/Modules/FindX11.cmake:440 (message):
+      Could not find X11
+    Call Stack (most recent call first):
+      server/plugins/CMakeLists.txt:231 (find_package)
+    
+    
+    CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+    Please set them or make sure they are set and tested correctly in the CMake files:
+    UDEV_INCLUDE_DIR
+       used as include directory in directory /home/david/supercollider/external_libraries/hidapi/linux
+    UDEV_LIBRARIES
+        linked by target "hidapi" in directory /home/david/supercollider/external_libraries/hidapi/linux
     
     -- Configuring incomplete, errors occurred!
     See also "/home/david/supercollider/build/CMakeFiles/CMakeOutput.log".
     See also "/home/david/supercollider/build/CMakeFiles/CMakeError.log".
-
-
-
-
+    [david@localhost build]$ sudo yum install libsndfile
+    [sudo] password for david: 
+    Loaded plugins: langpacks
+    Package libsndfile-1.0.25-14.fc21.x86_64 already installed and latest version
+    Nothing to do
