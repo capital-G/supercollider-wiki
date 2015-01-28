@@ -21,4 +21,14 @@ To install each package, just use (for example):
 
     sudo yum install gcc
 
-### Installing 
+## Obtaining the source code
+
+Simply clone the git repository:
+
+git clone https://github.com/supercollider/supercollider.git
+
+Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
+
+fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
+
+Cloning the repository will create a folder called supercollider containing the source code.
