@@ -17,6 +17,7 @@ The following packages are required and are available through yum.
 * fftw
 * libXt (note capital 'X')
 * git
+* gcc-c++
 
 To install each package, just use (for example):
 
