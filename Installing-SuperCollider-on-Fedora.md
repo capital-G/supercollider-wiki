@@ -2,7 +2,7 @@
 
 There doesn't appear to be the equivalent of a PPA for Fedora. It seems installing from source is the way to go.
 
-## Obtaining gcc
+## Obtaining dependencies
 
 ### Determine if gcc is installed
 
@@ -18,8 +18,7 @@ After installation, try:
 
 ... to ensure that the version is equal or greater than 4.6.
 
-
-## Obtaining jack and libjack
+### Obtaining jack and libjack
 
 I couldn't find much information about what libjack is.
 
