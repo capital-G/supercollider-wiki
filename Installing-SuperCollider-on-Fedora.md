@@ -22,6 +22,8 @@ To install each package, just use (for example):
 
     sudo yum install gcc
 
+You may already have one or more of these packages installed. Using `yum install` for a package you already have installed will do no harm.
+
 ## Obtaining the source code
 
 Simply clone the git repository:
