@@ -14,7 +14,11 @@ The following packages are required and are available through yum.
 * jack-audio-connection-kit
 * libsndfile
 * cmake
+* fftw
+* libXt (note capital 'X')
 
 To install each package, just use (for example):
 
     sudo yum install gcc
+
+### Installing 
