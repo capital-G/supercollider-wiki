@@ -28,10 +28,10 @@ You may already have one or more of these packages installed. Using `yum install
 
 Simply clone the git repository:
 
-git clone https://github.com/supercollider/supercollider.git
+    git clone https://github.com/supercollider/supercollider.git
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
 
-fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
+    fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
 
 Cloning the repository will create a folder called supercollider containing the source code.
