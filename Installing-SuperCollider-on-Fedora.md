@@ -14,7 +14,7 @@ The following packages are required and are available through yum.
 * jack-audio-connection-kit-devel
 * libsndfile-devel
 * cmake
-* fftw
+* fftw-devel
 * libXt-devel (note capital 'X')
 * git
 * gcc-c++
