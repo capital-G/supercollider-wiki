@@ -15,7 +15,7 @@ The following packages are required and are available through yum.
 * libsndfile-devel
 * cmake
 * fftw
-* libXt (note capital 'X')
+* libXt-devel (note capital 'X')
 * git
 * gcc-c++
 * libX11-devel (not actually sure devel is needed - check at some point)
