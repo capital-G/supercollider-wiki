@@ -19,6 +19,7 @@ The following packages are required and are available through yum.
 * git
 * gcc-c++
 * libX11-devel (not actually sure devel is needed - check at some point)
+* qtwebkit-devel
 
 To install each package, just use (for example):
 
