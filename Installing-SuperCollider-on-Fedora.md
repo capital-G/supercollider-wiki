@@ -12,7 +12,7 @@ The following packages are required and are available through yum.
 
 * gcc
 * jack-audio-connection-kit
-* libsndfile
+* libsndfile-devel
 * cmake
 * fftw
 * libXt (note capital 'X')
