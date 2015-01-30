@@ -11,7 +11,7 @@ I couldn't find out what 'libjack' is, so I'm assuming that it's obtained throug
 The following packages are required and are available through yum.
 
 * gcc
-* jack-audio-connection-kit
+* jack-audio-connection-kit-devel
 * libsndfile-devel
 * cmake
 * fftw
