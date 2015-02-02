@@ -4,6 +4,8 @@ There doesn't appear to be the equivalent of a PPA for Fedora. It seems installi
 
 I'm following the instructions [here](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md), but clarifying them for the benefit of noobs.
 
+Also, if you have difficulties, [this link](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/Installing-SuperCollider-on-Fedora-21-No-CMAKE-CXX-COMPILER-could-be-found-td7615864.html) might help.
+
 ## Obtaining dependencies
 
 I couldn't find out what 'libjack' is, so I'm assuming that it's obtained through the package `jack-audio-connection-kit`.
@@ -18,7 +20,7 @@ The following packages are required and are available through yum.
 * libXt-devel (note capital 'X')
 * git
 * gcc-c++
-* libX11-devel (not actually sure devel is needed - check at some point)
+* libX11-devel
 * qtwebkit-devel
 
 To install each package, just use (for example):
