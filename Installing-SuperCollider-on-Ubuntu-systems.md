@@ -101,6 +101,7 @@ From within **sc3-plugins/build**, run the following:
 
     make
     sudo make install
+    sudo ldconfig
 
 ### Checking the installation worked
 If you have the IDE open, close it. Now open it again and boot the server.
