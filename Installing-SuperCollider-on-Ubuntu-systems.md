@@ -71,6 +71,25 @@ The header include files are added when you install the supercollider-dev packag
 To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SCVersion.txt'. The directory containing this file, usually '/usr/include/SuperCollider', is the one you want.
 
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
+
+If you find that SCVersion.txt is not on your file system, you will need to create it. Create a file of that name in '/usr/include/SuperCollider'.
+
+Now fire up the IDE and read the introductory text that appears in the post window. You will see a line like this:
+
+    Welcome to SuperCollider 3.6.6. For help press Ctrl-D.
+
+Make a note of the three numbers in the SuperCollider version. Now give SCVersion.txt the following contents:
+
+    set(PROJECT_VERSION_MAJOR {major version})
+    set(PROJECT_VERSION_MINOR {minor version})
+    set(PROJECT_VERSION_PATCH {build number})
+
+So in my case, I would give SCVersion.txt the contents:
+
+    set(PROJECT_VERSION_MAJOR 3)
+    set(PROJECT_VERSION_MINOR 6)
+    set(PROJECT_VERSION_PATCH 6)
+
 ### Getting the source code for the plugins
 Simply clone the git repository:
 
