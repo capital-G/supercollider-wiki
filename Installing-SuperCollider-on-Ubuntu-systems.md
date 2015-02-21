@@ -11,7 +11,7 @@ Further information about the PPA can be found [here](https://launchpad.net/~sup
 Enter these lines into a terminal:
 
     sudo apt-get update
-    sudo apt-get install supercollider
+    sudo apt-get install supercollider-ide
 
 When you are presented with a screen asking you if you would like to enable realtime access priority, choose 'Yes'.
 
