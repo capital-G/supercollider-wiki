@@ -72,6 +72,7 @@ To locate the directory containing the header include files, search your file sy
 
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
 
+#### If SCVersion.txt is not present
 If you find that SCVersion.txt is not on your file system, you will need to create it. Create a file of that name in '/usr/include/SuperCollider'.
 
 Now fire up the IDE and read the introductory text that appears in the post window. You will see a line like this:
