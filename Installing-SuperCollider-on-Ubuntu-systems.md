@@ -89,11 +89,11 @@ From within **sc3-plugins**, run the following:
 ### Running cmake
 Create a directory inside **sc3-plugins** called **build**. From within **sc3-plugins/build**, run the following:
 
-    cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** ..
+    cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** -DCMAKE_BUILD_TYPE=Release ..
 
 So in my case, I would run:
 
-    cmake -DSC_PATH=/usr/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr ..
+    cmake -DSC_PATH=/usr/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release ..
 
 Don't miss out those two dots on the end!
 ### Finally, building the plugins
