@@ -38,6 +38,8 @@ You will need to install quite a bit of software to get the plugins. Below is a 
 
     sudo apt-get install build-essential
 
+*Note*: You need at least gcc version 4.7. The sc3-plugins code contains c++11 code that does not build with v4.6. Check with `gcc -v` if you run into c++11 related errors.
+
 #### cmake
 
     sudo apt-get install cmake
