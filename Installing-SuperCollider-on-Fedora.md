@@ -6,6 +6,8 @@ I'm following the instructions [here](https://github.com/supercollider/supercoll
 
 Also, if you have difficulties, [this link](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/Installing-SuperCollider-on-Fedora-21-No-CMAKE-CXX-COMPILER-could-be-found-td7615864.html) might help.
 
+The following [Sourceforge question](http://stackoverflow.com/questions/31381892/fedora-22-compile-atomic-is-lock-free) describes how to link to libatomic.
+
 ## Obtaining dependencies
 
 I couldn't find out what 'libjack' is, so I'm assuming that it's obtained through the package `jack-audio-connection-kit`.
@@ -21,8 +23,9 @@ The following packages are required and are available through yum.
 * git
 * gcc-c++
 * libX11-devel
-* qtwebkit-devel
+* qtwebkit-devel qt5-qtlocation-devel
 * systemd-devel (provides libudev.h)
+* libatomic
 
 To install each package, just use (for example):
 
@@ -47,6 +50,17 @@ Cloning the repository will create a folder called supercollider containing the 
 From within the supercollider directory, run the following:
 
     git submodule init && git submodule update
+
+## Linking to libatomic
+As indicated in [this Sourceforge question](http://stackoverflow.com/questions/31381892/fedora-22-compile-atomic-is-lock-free), CMakeLists.txt needs to be modified to include the directive "set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")".  This can be included at the top of the file as follows;
+
+    project (SuperCollider)
+    set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")
+    if (CMAKE_SYSTEM_NAME MATCHES "Linux")
+        set(LINUX 1)
+    endif()
+    ...
+    ...
 
 ## Running cmake
 
