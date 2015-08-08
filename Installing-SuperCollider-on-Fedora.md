@@ -22,6 +22,7 @@ The following packages are required and are available through yum.
 * gcc-c++
 * libX11-devel
 * qtwebkit-devel
+* systemd-devel (provides libudev.h)
 
 To install each package, just use (for example):
 
