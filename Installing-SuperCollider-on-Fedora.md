@@ -32,7 +32,7 @@ The following packages are required and are available through yum / dnf.
 * alsa-lib-devel 
 
 
-The required packages my be installed with the following command;
+The required packages may be installed with the following command;
 
     sudo dnf install gcc jack-audio-connection-kit-devel libsndfile-devel cmake \
     fftw-devel libXt-devel git gcc-c++ libX11-devel qt5-qtwebkit-devel \
