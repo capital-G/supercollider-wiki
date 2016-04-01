@@ -77,48 +77,6 @@ Create a directory inside supercollider called build. From within supercollider/
 
 (Notice the space between `cmake` and the dots.)
 
-Resulting output:
-
-```
--- SuperCollider Version: 3.7alpha1
--- Building from branch master, commit hash is 4b75ab6
--- Build type defaulting to "RelWithDebInfo"
--- Compiling with Qt GUI
--- building boost libraries manually
--- using bundled libyaml-cpp
-CMake Warning (dev) at external_libraries/hidapi/CMakeLists.txt:3 (project):
-  Policy CMP0048 is not set: project() command manages VERSION variables.
-  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
-  command to set the policy and suppress this warning.
-
-  The following variable(s) would be set to empty:
-
-    PROJECT_VERSION
-    PROJECT_VERSION_MAJOR
-    PROJECT_VERSION_MINOR
-    PROJECT_VERSION_PATCH
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-hidapi cmakelists
-===linux hidraw cmakelists===
--- libudev stable: 1
--- Found UDev: /usr/lib64/libudev.so
---    include: /usr/include
-===hidapi_parser cmakelists===
--- using fftw3f
--- Found jack: /usr/lib64/libjack.so
--- Audio API: jack
--- Found ALSA: /usr/lib64/libasound.so (found version "1.0.29") 
-libsclang qt libs:Qt5::CoreQt5::GuiQt5::WidgetsQt5::NetworkQt5::WebKitQt5::WebKitWidgetsQt5::PrintSupportQt5::OpenGLQt5::SensorsQt5::QuickQt5::QmlQt5::SqlQt5::Positioning/usr/lib64/libm.so/usr/lib64/libX11.so
-core: /usr/lib64/libQt5Core.so.5.4.2
--- Compiling with ALSA midi support
--- Building the Qt IDE
--- Building with Sced for gedit 3 (UNIX)
--- Configuring done
--- Generating done
--- Build files have been written to: /home/foo/bar/supercollider/build
-```
-
 ## Building and Installing
 
 Use the following commands to build and install Supercollider;
