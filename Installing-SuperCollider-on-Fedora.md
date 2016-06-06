@@ -1,6 +1,6 @@
 # Installing SuperCollider on Fedora
 
-There doesn't appear to be the equivalent of a PPA for Fedora. It seems installing from source is the way to go.
+SuperCollider is not available within the standard Fedora repos nor in a published Copr; it seems installing from source is the way to go.
 
 I'm following the instructions [here](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md), but clarifying them for the benefit of noobs.
 
@@ -47,7 +47,7 @@ Simply clone the git repository:
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
 
-    fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
+    fatal: could not create work tree dir 'supercollider'.: Permission denied
 
 Cloning the repository will create a folder called supercollider containing the source code.
 
@@ -125,9 +125,10 @@ Create a directory inside **sc3-plugins** called **build**. From within **sc3-pl
 
     cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** -DCMAKE_BUILD_TYPE=Release ..
 
-So in my case, I would run:
+If the previous instructions have been followed, the installation would be under '/usr/local'.  In this
+case the following command is used to build the plugins:
 
-    cmake -DSC_PATH=/home/badnumbers/supercollider -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
+    cmake -DSC_PATH=cmake -DSC_PATH=/usr/local/include/SuperCollider/ -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
 
 Don't miss out those two dots on the end!
 ### Finally, building the plugins
