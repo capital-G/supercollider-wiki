@@ -128,7 +128,7 @@ Create a directory inside **sc3-plugins** called **build**. From within **sc3-pl
 If the previous instructions have been followed, the installation would be under '/usr/local'.  In this
 case the following command is used to build the plugins:
 
-    cmake -DSC_PATH=cmake -DSC_PATH=/usr/local/include/SuperCollider/ -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
+    cmake -DSC_PATH=/usr/local/include/SuperCollider/ -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
 
 Don't miss out those two dots on the end!
 ### Finally, building the plugins
