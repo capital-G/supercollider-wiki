@@ -1,0 +1,1 @@
+This wiki is a scratch pad for development of SuperCollider. You are probably looking for [the main SuperCollider wiki](http://supercollider.github.io/pages.html) or [the SuperCollider documentation](http://doc.sccode.org/).

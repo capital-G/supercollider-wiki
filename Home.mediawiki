@@ -1,1 +1,0 @@
-Please edit https://github.com/supercollider/supercollider.github.io instead, to make it visible on the official SuperCollider homepage wiki
