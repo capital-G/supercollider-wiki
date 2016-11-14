@@ -8,7 +8,7 @@ Nothing here yet.
 
 ## UGens ##
 
-A number of UGens were discovered to have serious initialization bugs ([#2333](https://github.com/supercollider/supercollider/issues/2333)) where the UGen would output an initial sample of garbage memory. This can create audio explosions under certain conditions -- namely, the garbage memory evaluates to a large number (which is more likely to happen when the server is recording), and the buggy UGen's output is fed into certain filter UGens like LPF or Delay1. All such bugs have been fixed in the core library, affecting:
+A number of UGens were discovered to have serious initialization bugs ([#2333](https://github.com/supercollider/supercollider/issues/2333)) where the UGen would output an initial sample of garbage memory. This can create audio explosions under certain conditions -- namely, the garbage memory evaluates to a large number (which is more likely to happen when the server is recording), and the buggy UGen's output is fed into certain filter UGens like LPF or Delay1. These bugs have been fixed, affecting:
 
 - BeatTrack
 - BeatTrack2
