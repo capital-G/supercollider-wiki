@@ -30,4 +30,4 @@ Nothing here yet.
 
 The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](https://github.com/supercollider/supercollider/pull/2418)).
 
-Instances of Rest, as well as the Rest class itself, now respond correctly to `isRest` ([#2495](https://github.com/supercollider/supercollider/pull/2495)).
+`Rest().isRest` and `Rest.isRest` now return true. ([#2495](https://github.com/supercollider/supercollider/pull/2495)).
