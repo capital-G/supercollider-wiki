@@ -30,4 +30,10 @@ Nothing here yet.
 
 The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](https://github.com/supercollider/supercollider/pull/2418)).
 
-`Rest().isRest` and `Rest.isRest` now return true. ([#2495](https://github.com/supercollider/supercollider/pull/2495)).
+`Rest().isRest` and `Rest.isRest` now return true ([#2495](https://github.com/supercollider/supercollider/pull/2495)).
+
+`Collection:processRest` returns the processed collection rather than the original ([#2497](https://github.com/supercollider/supercollider/pull/2497)).
+
+## Help files ##
+
+Nothing here yet.
