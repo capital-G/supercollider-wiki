@@ -22,6 +22,8 @@ A number of UGens were discovered to have serious initialization bugs ([#2333](h
 - RunningSum
 - Unpack1FFT
 
+The `doneAction` argument to DetectSilence can now be modulated ([#2379](https://github.com/supercollider/supercollider/pull/2379)).
+
 ## sclang ##
 
 Nothing here yet.
