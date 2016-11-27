@@ -91,10 +91,10 @@ sudo make install
 When SuperCollider starts up, it looks for the plugins in a particular location. You need to know this location in order to control where the plugins get installed.
 Start the SuperCollider IDE, and look at the post window. The following is part of the post window output on my machine: 
 
-  NumPrimitives = 711
-  compiling dir: '/usr/local/share/SuperCollider/SCClassLibrary'
-  compiling dir: '/usr/local/share/SuperCollider/Extensions'
-  pass 1 done
+    NumPrimitives = 711
+    compiling dir: '/usr/local/share/SuperCollider/SCClassLibrary'
+    compiling dir: '/usr/local/share/SuperCollider/Extensions'
+    pass 1 done
 
 Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '/share/SuperCollider/Extensions' bit and make a note of it. So in my case, the location is '/usr/local'.
 
