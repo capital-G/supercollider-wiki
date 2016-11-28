@@ -36,6 +36,8 @@ The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](http
 
 `Collection:processRest` returns the processed collection rather than the original ([#2497](https://github.com/supercollider/supercollider/pull/2497)).
 
+`Pstep` accepts an array as a duration argument ([#2511](https://github.com/supercollider/supercollider/pull/2511).
+
 ## Help files ##
 
 Nothing here yet.
