@@ -21,7 +21,7 @@ Nothing here yet.
 
 ## scsynth and supernova ##
 
-Nothing here yet.
+The bitwise not operator `bitNot` is now supported in SynthDefs ([#2381](https://github.com/supercollider/supercollider/pull/2381)). It used to simply fail silently.
 
 ## UGens ##
 
