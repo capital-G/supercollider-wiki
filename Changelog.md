@@ -43,7 +43,7 @@ The `doneAction` argument to DetectSilence can now be modulated ([#2379](https:/
 
 ## sclang ##
 
-The maximum number of MIDI ports has been increased from 16 to 128 ([2494](https://github.com/supercollider/supercollider/pull/2494)).
+The maximum number of MIDI ports has been increased from 16 to 128 ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
 
 ## Class library ##
 
@@ -54,6 +54,8 @@ The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](http
 `Collection:processRest` returns the processed collection rather than the original ([#2497](https://github.com/supercollider/supercollider/pull/2497)).
 
 `Pstep` accepts an array as a duration argument ([#2511](https://github.com/supercollider/supercollider/pull/2511)).
+
+`Function:loadToFloatArray` is now accessible to an sclang build without Qt ([#2380](https://github.com/supercollider/supercollider/pull/2380)).
 
 ## Help files ##
 
