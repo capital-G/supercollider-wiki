@@ -21,7 +21,7 @@ Nothing here yet.
 
 ## scsynth and supernova ##
 
-The bitwise not operator `bitNot` is now supported in SynthDefs ([#2381](https://github.com/supercollider/supercollider/pull/2381)). It used to simply fail silently.
+Nothing here yet.
 
 ## UGens ##
 
@@ -40,6 +40,8 @@ A number of UGens were discovered to have serious initialization bugs ([#2333](h
 - Unpack1FFT
 
 The `doneAction` argument to DetectSilence can now be modulated ([#2379](https://github.com/supercollider/supercollider/pull/2379)).
+
+UnaryOpUGen now supports the bitwise not operator `bitNot` ([#2381](https://github.com/supercollider/supercollider/pull/2381)). It used to simply fail silently.
 
 ## sclang ##
 
