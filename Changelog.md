@@ -57,6 +57,8 @@ The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](http
 
 `Function:loadToFloatArray` is now accessible to an sclang build without Qt ([#2380](https://github.com/supercollider/supercollider/pull/2380)).
 
+`Server:makeGui` and `Server:makeWindow` are working again after blatantly breaking in 3.8 ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
+
 ## scide ##
 
 The "start recording" and "stop recording" menu items now cooperate with running `Server:record` and `Server:stopRecording` ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
