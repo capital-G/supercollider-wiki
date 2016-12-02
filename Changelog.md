@@ -57,7 +57,7 @@ The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](http
 
 `Function:loadToFloatArray` is now accessible to an sclang build without Qt ([#2380](https://github.com/supercollider/supercollider/pull/2380)).
 
-`Server:makeGui` and `Server:makeWindow` are working again after blatantly breaking in 3.8 ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
+`Server:makeGui` and `Server:makeWindow` blatantly broke in 3.8 and the fields in the windows were blank. They are working again ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 
 ## scide ##
 
