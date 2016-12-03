@@ -52,7 +52,7 @@ The maximum number of MIDI ports has been increased from 16 to 128 ([#2494](http
 The `Server` class underwent a refactor. Here are some of the resulting changes:
 
 - `Server:makeGui` and `Server:makeWindow` broke in 3.8 — the fields in the windows went blank. They are working again ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
-- The "start recording" and "stop recording" menu items now cooperate with running `Server:record` and `Server:stopRecording` ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
+- The "start recording" and "stop recording" menu items in the IDE now cooperate with running `Server:record` and `Server:stopRecording` ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 - If the server crashes, recovery is more graceful ([#2453](https://github.com/supercollider/supercollider/pull/2453)).
 
 The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](https://github.com/supercollider/supercollider/pull/2418)).
