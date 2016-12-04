@@ -31,6 +31,8 @@ A number of UGens were discovered to have serious initialization bugs ([#2333](h
 - BeatTrack2
 - CoinGate
 - DetectSilence
+- DiskIn
+- DiskOut
 - KeyTrack
 - LFGauss
 - PartConv
