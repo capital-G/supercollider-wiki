@@ -1,19 +1,25 @@
-This changelog documents the publicly visible changes since the most recent SuperCollider release. On release, this should be posted to the following announcement channels:
+## How to maintain this changelog ##
+
+This changelog documents the publicly visible changes since the most recent SuperCollider release. A change is worth putting here if it affects users, such as API changes (of course), new features, and bug fixes. Significant refactors should also be logged to identify areas that should be tested, and to help locate the culprit in case of breakage. Documentation edits generally shouldn't be on this list, but major overhauls and expansions may be appropriate.
+
+Please provide the link to the PR with every entry in the changelog for easy navigation.
+
+Try to exercise common sense in keeping this log readable and useful to users. Use complete sentences and, to a reasonable extent, err on the side of clarity. In case of doubt, prefer inclusion over exclusion.
+
+### Release to-do list ###
+
+Write a blurb to overview the release. Use this node.js package to generate a list of contributors, and add it to the end of the changelog: https://gist.github.com/crucialfelix/c37441a2381efbfe97fbcc8ca286f061
+
+Post the changelog to the following announcement channels:
 
 - README
 - GitHub release page
 - "News in 3.x" helpfile
 - GitHub website
-- mailing list
+- sc-users mailing list
 - Facebook group
 
-A change is worth putting here if it affects users, such as API changes (of course), new features, and bug fixes. Significant refactors should also be logged to identify areas that should be tested, and to help locate the culprit in case of breakage. Documentation edits generally shouldn't be on this list, but major overhauls and expansions may be appropriate.
-
-Please provide the link to the PR with every entry in the changelog for easy navigation. These links should be retained only for the README and the GitHub release page, since they generally add unnecessary clutter to the more "social" announcement outlets.
-
-Try to exercise common sense in keeping this log readable and useful to users. Use complete sentences and, to a reasonable extent, err on the side of clarity. It's important to demonstrate that SC is actively developed, so in case of doubt, prefer inclusion over exclusion.
-
-This all may seem nitpicky, but releases cause a lot of users to face tricky decisions like "do I upgrade SuperCollider or will it break all my compositions?" High quality changelogs not only allay FUD for users who intend to upgrade, but they also suggest high quality software and a development team that is mindful of its user base.
+For the helpfile, blog post, mailing list, and Facebook group, all the links to pull requests should be removed.
 
 ## General ##
 
