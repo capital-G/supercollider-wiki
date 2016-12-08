@@ -77,7 +77,7 @@ The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](http
 
 Help files originating from extensions now display a plaque for visibility ([#2449](https://github.com/supercollider/supercollider/pull/2449)).
 
-`SequenceableCollection` has three new instance methods: `flatten2` and `flatBelow` ([#2527](https://github.com/supercollider/supercollider/pull/2527)). Additionally, `flatten` is faster now.
+`SequenceableCollection` has two new instance methods: `flatten2` and `flatBelow` ([#2527](https://github.com/supercollider/supercollider/pull/2527)). Additionally, `flatten` is faster now.
 
 ## scide ##
 
