@@ -65,11 +65,11 @@ The `Server` class underwent a refactoring. Here are some of the resulting chang
 - There is a separate `Recorder` class that can be used independently of the server object (https://github.com/supercollider/supercollider/pull/2422).
 - The "start recording", "pause recording", and "stop recording" menu items, as well as the time display in the IDE now cooperate better with running `Server:record`, `Server.pauseRecording`, and `Server:stopRecording` ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 
-### Bugfixes:
 - `Server:makeGui` and `Server:makeWindow` broken in 3.8 — the fields in the windows went blank. They are working again ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 - If the server crashes, recovery is more graceful ([#2453](https://github.com/supercollider/supercollider/pull/2453)).
 
-The useRanger option in EnvirGui broke in 3.7. This has been fixed ([#2418](https://github.com/supercollider/supercollider/pull/2418)).
+
+The `useRanger` option in `EnvirGui` broke in 3.7. This has been fixed ([#2418](https://github.com/supercollider/supercollider/pull/2418)).
 
 `Rest().isRest` and `Rest.isRest` now return true ([#2495](https://github.com/supercollider/supercollider/pull/2495)).
 
