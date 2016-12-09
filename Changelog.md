@@ -83,6 +83,8 @@ Help files originating from extensions now display a plaque for visibility ([#24
 
 `SequenceableCollection` has two new instance methods: `flatten2` and `flatBelow` ([#2527](https://github.com/supercollider/supercollider/pull/2527)). Additionally, `flatten` is faster now.
 
+The maximum number of  MIDI ports has been increased ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
+
 ## scide ##
 
 Nothing here yet.
