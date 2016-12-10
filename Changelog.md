@@ -85,6 +85,8 @@ Help files originating from extensions now display a plaque for visibility ([#24
 
 The maximum number of  MIDI ports has been increased ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
 
+Event: The `~callback` function is now available for all event types ([#2376](https://github.com/supercollider/supercollider/pull/2376).
+
 ## scide ##
 
 Nothing here yet.
