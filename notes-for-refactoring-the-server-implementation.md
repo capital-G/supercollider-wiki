@@ -1,5 +1,4 @@
-The Server implementation (Server.sc) has become bloated over time [2].
-What are the current problems?
+The Server implementation (Server.sc) has become bloated over time [2], but has now been refactored. There are still some possible improvements, which we keep track of here.
 
 _(please feel free to edit!)_
 
@@ -40,18 +39,13 @@ And where does it belong?
 - or: server options should be queriable via OSC from the server (s.query). 
 - queryAllNodes shouldn't just post the info, but make it available as a string / unify with plotNodeTree ?
 - the already refactored Volume is good, but quite complicated. If it is really that hard, it should be made a general technique not restricted to this class.
-- bug: server calls volume.free, but Volume doesn't implement free.
+- bug: server calls volume.free, but Volume doesn't implement free (#https://github.com/supercollider/supercollider/issues/2551).
 
 #### State Update
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
-- (Q: couldn't this also help for remote servers? they would remain responsive even while a larger async task is going on).
-- this might solve: s.hasShmInterface shouldn't return false after computer was sleep (bug).
-- aliveThread should be a general object for this purpose, or better even for general purpose.
-
 
 #### Additional Functionality
-- recording should be moved outside: allow several instances of recorders with specified paths and busses
-- recording currently simply uses one buffer outside the range (why does this work? probably some more buffers are allocated internally by the server application?). This looks like a hack.
+
 - scoping should not be in server, but in a dedicated class.
 - make explicit where things like record and volume nodes should be placed, and check if they can also be kept running on cmd-period.
 - Possibly, it would make sense to introduce a second default group (e.g. "postprocessing group") that can contain everything that can be kept alive with no harm.
@@ -77,7 +71,7 @@ ServerState could be a subclass of a general observer class that collects the st
 
 
 ## Notes:
-[1] Comparing the efficiency between delegation and an if statement with a simple test, it turns out that the if statement is still 50% more efficient than a delegation to a second method (as it is now), and without he if statement it is only 55 % more efficient. (this is just a basic timing benchmark).
+[1] Comparing the efficiency between delegation and an if statement with a simple test, it turns out that the if statement is still 50% more efficient than a delegation to a second method (as it is now), and without he if statement it is only 55 % more efficient. (this is just a basic timing benchmark). The tests are about the same for instance methods instead of class methods.
 
 ````
 Test {
