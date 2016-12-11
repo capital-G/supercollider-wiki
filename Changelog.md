@@ -60,14 +60,12 @@ The maximum number of MIDI ports has been increased from 16 to 128 ([#2494](http
 
 ## Class library ##
 
-The `Server` class underwent a refactoring. Here are some of the resulting changes:
+The `Server` class underwent a refactoring ([#2422](https://github.com/supercollider/supercollider/pull/2422)), with the following effects:
 
-- There is a separate `Recorder` class that can be used independently of the server object (https://github.com/supercollider/supercollider/pull/2422).
-- The "start recording", "pause recording", and "stop recording" menu items, as well as the time display in the IDE now cooperate better with running `Server:record`, `Server.pauseRecording`, and `Server:stopRecording` ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
-
-- `Server:makeGui` and `Server:makeWindow` broken in 3.8 — the fields in the windows went blank. They are working again ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 - If the server crashes, recovery is more graceful ([#2453](https://github.com/supercollider/supercollider/pull/2453)).
-
+- A new class, `Recorder`, allows recording independently of the `Server` object.
+- The IDE's time display and the "start recording", "pause recording", and "stop recording" menu items now cooperate better with running `Server:record`, `Server:pauseRecording`, and `Server:stopRecording`.
+- `Server:makeGui` and `Server:makeWindow` broke in 3.8 — the fields in the windows went blank. They are working again.
 
 The `useRanger` option in `EnvirGui` broke in 3.7. This has been fixed ([#2418](https://github.com/supercollider/supercollider/pull/2418)).
 
@@ -83,9 +81,9 @@ Help files originating from extensions now display a plaque for visibility ([#24
 
 `SequenceableCollection` has two new instance methods: `flatten2` and `flatBelow` ([#2527](https://github.com/supercollider/supercollider/pull/2527)). Additionally, `flatten` is faster now.
 
-The maximum number of  MIDI ports has been increased ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
+The maximum number of MIDI ports has been increased ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
 
-Event: The `~callback` function is now available for all event types ([#2376](https://github.com/supercollider/supercollider/pull/2376)).
+The `~callback` function is now available for all `Event` types instead of just "on" events ([#2376](https://github.com/supercollider/supercollider/pull/2376)).
 
 ## scide ##
 
