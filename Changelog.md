@@ -95,6 +95,8 @@ The `~callback` function is now available for all `Event` types instead of just 
 
 `IdentityDictionary` methods `collect`, `select`, and `reject` retain references to the `parent` and `proto` objects ([#2507](https://github.com/supercollider/supercollider/pull/2507)).
 
+Attempting to use a control-rate signal as an input to `Hasher.ar` now results in an error ([#2589](https://github.com/supercollider/supercollider/pull/2589)).
+
 ## scide ##
 
 Nothing here yet.
