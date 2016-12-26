@@ -1,6 +1,6 @@
 # Installing SuperCollider on Fedora
 
-SuperCollider is not available within the standard Fedora repos nor in a published Copr. There are two standard ways to install it: either using the Stanford [Planet CCRMA repo](http://ccrma.stanford.edu/planetccrma/software/) or installing from source.
+SuperCollider is not available within the standard Fedora repos nor in a published Copr. There are two ways to install it: either using the Stanford [Planet CCRMA repo](http://ccrma.stanford.edu/planetccrma/software/) or installing from source.
 
 ## Planet CCRMA
 
