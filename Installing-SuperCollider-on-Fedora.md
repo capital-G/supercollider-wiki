@@ -8,7 +8,7 @@ Planet CCRMA documentation is not always up to date, here is an example installi
 
 Install the repository package:
 
-    # rpm -Uvh http://ccrma.stanford.edu/planetccrma/mirror/fedora/linux/planetccrma/24/i386/planetccrma-repo-1.1-3.fc24.ccrma.noarch.rpm
+    # rpm -Uvh http://ccrma.stanford.edu/planetccrma/mirror/fedora/linux/planetccrma/25/i386/planetccrma-repo-1.1-3.fc25.ccrma.noarch.rpm
 
 Install supercollider:
 
