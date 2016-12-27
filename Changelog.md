@@ -58,6 +58,8 @@ UnaryOpUGen now supports the bitwise not operator `bitNot` ([#2381](https://gith
 
 `Donce`, a demand-rate UGen with no identifiable purpose, is deprecated ([#2564](https://github.com/supercollider/supercollider/pull/2562)).
 
+A new UGen, `Sanitize`, replaces infinities, NaNs, and subnormals with another signal, zero by default ([#2561](https://github.com/supercollider/supercollider/pull/2561)).
+
 ## sclang ##
 
 The maximum number of MIDI ports has been increased from 16 to 128 ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
