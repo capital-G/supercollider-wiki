@@ -22,6 +22,6 @@ There is no `doneAction` argument. Use `Done`, `FreeSelfWhenDone`, or `PauseSelf
 
 ### Comments:
 
-when `endPos` is given at low precision, the loop duration loses precision as you increase `startLoop`. I'd suggest `loopLength` (in frames or seconds) instead. A precise duration seems more important than a precise end, because we crossfade anyway.
+when `endPos` is given at low precision, the loop duration loses precision as you increase `startLoop`. I'd suggest `loopLength` (in frames or seconds) instead. A precise duration seems more important than a precise end, because we crossfade anyway. [@telephon]
 
 
