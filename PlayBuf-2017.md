@@ -2,6 +2,8 @@ This page is a work in progress proposal for a new buffer player, tentatively ca
 
 ## Proposal ##
 
+The schedule is to release this UGen in sc3-plugins for 3.9 and later migrate it to core for 3.10. Given its complexity, the UGen should be thoroughly covered by unit tests and the code should be documented.
+
 The UGen's `ar` and `kr` methods shall have the following signature:
 
     numChannels, bufnum = 0, rate = 1, startPos = 0, startLoop = 0, endPos = -1, endLoop = -1, isLooping = 0, fadeTime = 1e-3, fadeCurve = \lin
