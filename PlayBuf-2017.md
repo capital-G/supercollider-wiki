@@ -1,5 +1,7 @@
 This page is a work in progress proposal for a new buffer player, tentatively called `XFadePlayBuf` or `PlayBufX` or `PlayBuf2`, that adds crossfading and more looping capabilities to PlayBuf. The discussion is at [#2600](https://github.com/supercollider/supercollider/issues/2600).
 
+## Proposal ##
+
 The UGen's `ar` and `kr` methods shall have the following signature:
 
     numChannels, bufnum = 0, rate = 1, startPos = 0, startLoop = 0, endPos = -1, endLoop = -1, isLooping = 0, fadeTime = 1e-3, fadeCurve = \lin
@@ -24,4 +26,10 @@ There is no `doneAction` argument. Use `Done`, `FreeSelfWhenDone`, or `PauseSelf
 
 when `endPos` is given at low precision, the loop duration loses precision as you increase `startLoop`. I'd suggest `loopLength` (in frames or seconds) instead. A precise duration seems more important than a precise end, because we crossfade anyway. [@telephon]
 
+## Why we can't use BufRd ##
 
+BufRd has insurmountable precision issues if the buffer is longer than 16,777,216 frames because the `phase` input to BufRd is a float. It is impossible with the architecture of scsynth to upgrade this to a double.
+
+## Why we can't add arguments to PlayBuf ##
+
+Adding arguments to UGens is a dangerous practice in the era of alternate clients. If the server believes PlayBuf has eight arguments while the client believes it has seven, the client compiles a SynthDef that causes the server to read the eighth argument from garbage memory. Even if the API change is widely broadcast, we would need to live in a perfect world where all client developers are keeping up to date with SC development. You could argue that an outdated client is the client developer's responsibility, but PlayBuf is one of the most popular UGens ever and we should be very conservative proposing changes to it.
