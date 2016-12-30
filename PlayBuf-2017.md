@@ -18,3 +18,10 @@ The UGen's `ar` and `kr` methods shall have the following signature:
 This UGen sets the 'done' flag iff `isLooping > 0` and the read pointer reaches `endPos`.
 
 There is no `doneAction` argument. Use `Done`, `FreeSelfWhenDone`, or `PauseSelfWhenDone`.
+
+
+### Comments:
+
+when `endPos` is given at low precision, the loop duration loses precision as you increase `startLoop`. I'd suggest `loopLength` (in frames or seconds) instead. A precise duration seems more important than a precise end, because we crossfade anyway.
+
+
