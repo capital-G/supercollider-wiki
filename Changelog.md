@@ -29,7 +29,7 @@ Nothing here yet.
 
 *This section affects alternate clients.*
 
-scsynth now supports a `/version` command, which responds with a message of the form `/version.reply program major minor patch branch commit` ([#2546](https://github.com/supercollider/supercollider/pull/2546)). See the Server Command Reference for full details.
+scsynth and supernova now support a `/version` command, which responds with a message of the form `/version.reply program major minor patch branch commit` ([#2546](https://github.com/supercollider/supercollider/pull/2546), [#2598](https://github.com/supercollider/supercollider/pull/2598)). See the Server Command Reference for full details.
 
 ## UGens ##
 
