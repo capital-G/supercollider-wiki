@@ -15,9 +15,6 @@ The UGen's `ar` and `kr` methods shall have the following signature:
 - `fadeTime`: a cross-fade duration in seconds. This is the actual duration of the cross-fade and independent of the playback rate. The cross-fade happens at the end of the loop span, i.e. `fadeTime` seconds before `endLoop` is reached, the previous playback begins to fade out, and a new playback starting at `startLoop` begins to fade in. When `endLoop` is reached, the previous playback has completely faded out, and the new playback has completely faded in. A value of zero indicates no cross-fade. This can be modulated. 
 - `fadeCurve`: the type of curvature used for the cross-fade. This is the same as the `curve` parameter used in an `Env`. The cross-fade can be visualized as `Env([[0, 1], [1, 0]], [fadeTime, fadeTime], fadeCurve).plot`, e.g. `Env([[0, 1], [1, 0]], [1, 1], \lin).plot` for a linear (equal energy) cross-fade or `Env([[0, 1], [1, 0]], [1, 1], \welch).plot` for a square-root (equal power) cross-fade. Note that for exponential fades, where `fadeCurve = \exp`, a floor value of -60.dbamp is used instead of zero. This can be modulated.
 
-This UGen sets the 'done' flag iff `isLooping > 0` and either of the following are true:
-
-- `rate > 0` and the read pointer has reached the end of the buffer
-- `rate < 0` and the read pointer has reached the beginning of the buffer
+This UGen sets the 'done' flag iff `isLooping > 0` and the read pointer reaches `endPos`.
 
 There is no `doneAction` argument. Use `Done`, `FreeSelfWhenDone`, or `PauseSelfWhenDone`.
