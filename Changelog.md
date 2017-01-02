@@ -40,6 +40,10 @@ A number of UGens were discovered to have serious initialization bugs ([#2333](h
 - BeatTrack
 - BeatTrack2
 - CoinGate
+- Convolution
+- Convolution2
+- Convolution2L
+- Convolution3
 - DetectSilence
 - DiskIn
 - DiskOut
@@ -50,6 +54,7 @@ A number of UGens were discovered to have serious initialization bugs ([#2333](h
 - PV_JensenAndersen
 - PV_HainsworthFoote
 - RunningSum
+- StereoConvolution2L
 - Unpack1FFT
 
 The `doneAction` argument to DetectSilence can now be modulated ([#2379](https://github.com/supercollider/supercollider/pull/2379)).
