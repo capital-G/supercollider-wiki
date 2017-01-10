@@ -69,6 +69,8 @@ A new UGen, `Sanitize`, replaces infinities, NaNs, and subnormals with another s
 
 ## sclang ##
 
+**API change:** sclang's nestable multiline comments had some mistakes. In particular, sometimes sclang's lexer would incorrectly process overlapping combinations of `/*` and `*/`, so e.g. `*/*/` would be interpreted like `*/ /* */`. This has been fixed ([#2625](https://github.com/supercollider/supercollider/pull/2625)).
+
 The maximum number of MIDI ports has been increased from 16 to 128 ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
 
 ## Class library ##
