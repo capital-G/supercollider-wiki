@@ -114,6 +114,8 @@ The `~callback` function is now available for all `Event` types instead of just 
 
 Attempting to use a control-rate signal as an input to `Hasher.ar` now results in an error ([#2589](https://github.com/supercollider/supercollider/pull/2589)).
 
+The "Cleaning up temp synthdefs..." post message is suppressed if there is nothing to clean up ([#2629](https://github.com/supercollider/supercollider/pull/2629)).
+
 ## scide ##
 
 Nothing here yet.
