@@ -120,7 +120,7 @@ The "Cleaning up temp synthdefs..." post message is suppressed if there is nothi
 
 ## scide ##
 
-Nothing here yet.
+Entries in the Documents docklet can be reordered, and document tabs will automatically reorder to reflect this. "Edit > Preferences > Editor > Display" has a new option that allows replacing the tabs with a dropdown ([#2555](https://github.com/supercollider/supercollider/pull/2555)).
 
 ## Help files ##
 
