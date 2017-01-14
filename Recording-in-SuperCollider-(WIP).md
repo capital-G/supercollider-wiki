@@ -67,7 +67,7 @@ Other users might have works that are relatively fixed-media (nondeterministic S
     )
 ```
 In the above example, we knew exactly the amount of time before it was safe to stop recording without cutting off the audio. But with effects like reverb and echo, it may not be easy to compute when the tails end. You can just take a guess and trim trailing silence when mastering, or you can do something fancier. This example ends recording the next time all inputs are silent:
-
+```supercollider
     (
     // This SynthDef has no output, only stereo input.
     // It frees itself the next time the input audio is silent.
@@ -90,7 +90,7 @@ In the above example, we knew exactly the amount of time before it was safe to s
         s.stopRecording;
     });
     )
-
+```
 You can get even fancier than this and add a fade out, but we'll leave that up to you.
 
 ### Exporting MP3 files ###
