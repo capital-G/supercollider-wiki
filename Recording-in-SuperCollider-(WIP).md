@@ -33,7 +33,7 @@ The timer for the "duration" argument waits for paused recordings. "duration" th
 If you're designing a real-time performance interface, it's straightforward: add buttons or MIDI/OSC responders that call `s.record` and `s.stopRecording`. For a nicer interface, you can figure out whether the server is currently recording by calling `s.isRecording` (returns a Boolean), and you can use `s.recorder.duration` to determine the number of seconds elapsed in the recording.
 
 Other users might have works that are relatively fixed-media (nondeterministic SynthDefs and generative sequencing notwithstanding). Recording your piece is simply a matter of calling `s.record` and `s.stopRecording` at the right times, which fits nicely into the common paradigm of using a `Routine` to sequence a composition. A nontrivial example is appropriate here, so here's short drone piece that plays a Synth for 10 seconds:
-
+```supercollider
     (
     Routine.run {
         var s, synth, release;
@@ -65,7 +65,7 @@ Other users might have works that are relatively fixed-media (nondeterministic S
         s.stopRecording;
     };
     )
-
+```
 In the above example, we knew exactly the amount of time before it was safe to stop recording without cutting off the audio. But with effects like reverb and echo, it may not be easy to compute when the tails end. You can just take a guess and trim trailing silence when mastering, or you can do something fancier. This example ends recording the next time all inputs are silent:
 
     (
