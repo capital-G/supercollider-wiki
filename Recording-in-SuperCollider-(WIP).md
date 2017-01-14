@@ -124,3 +124,5 @@ It's not only xruns that you need to worry about — sometimes sclang experience
 The solution to both of these problems is non-real time (NRT) mode. When scsynth/supernova runs in NRT mode, it no longer connects to audio drivers. Like an ordinary command-line program, it simply produces an output audio file. It renders audio as fast as possible, and it doesn't suffer from xruns.
 
 Unfortunately, using NRT mode is completely different from using RT mode. It requires you to assemble an OSC score file, which is a collection of OSC messages tagged with timestamps. (Quick review for beginners: sclang communicates to scsynth over OSC. The OSC score file is equivalent to a record of all OSC messages that are sent to scsynth.)
+
+[Go into Ctk, OSC recording]
