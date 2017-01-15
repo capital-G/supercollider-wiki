@@ -28,7 +28,7 @@ Thirdly, enter the following into the blank text window:
     {SinOsc.ar}.play
 
 Ensure the cursor is on this line and hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. You should now hear a sine tone. Kill the sine tone by hitting <kbd>Ctrl</kbd>+<kbd>.</kbd>.
-If you don't hear the tone, remember to check your speakers, volume control etc!
+If you don't hear the tone, remember to check your speakers, volume control – all the regular suspects!
 
 ## Installing the plugins
 The plugins are not required, but they're a whole bunch of free stuff, so why wouldn't you get them? Unfortunately they're not available as a package so you need to build and install them for yourself. I have attempted to provide instructions for this which assume as little knowledge of Linux and building C++ code as possible.
