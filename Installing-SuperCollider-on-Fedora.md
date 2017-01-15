@@ -29,13 +29,14 @@ The following [StackOverflow question](http://stackoverflow.com/questions/313818
 The following packages are required and are available through yum / dnf.
 
 * gcc
+* gcc-c++
+* cmake
+* git
+* alsa-lib-devel 
 * jack-audio-connection-kit-devel
 * libsndfile-devel
-* cmake
 * fftw-devel
 * libXt-devel (note capital 'X')
-* git
-* gcc-c++
 * libX11-devel
 * systemd-devel (provides libudev.h)
 * libatomic
@@ -46,15 +47,13 @@ The following packages are required and are available through yum / dnf.
 * qt5-qtwebengine-devel
 * qt5-qtwebkit-devel 
 * emacs 
-* alsa-lib-devel 
-
 
 The required packages may be installed with the following command;
 
-    sudo dnf install gcc jack-audio-connection-kit-devel libsndfile-devel cmake \
-    fftw-devel libXt-devel git gcc-c++ libX11-devel qt5-qtwebkit-devel \
-    qt5-qtlocation-devel qt5-qtsensors-devel systemd-devel libatomic avahi-devel \
-    qt5-qttools-devel emacs alsa-lib-devel 
+    sudo dnf install gcc gcc-c++ cmake git jack-audio-connection-kit-devel \
+    libsndfile-devel fftw-devel libXt-devel libX11-devel emacs alsa-lib-devel \
+    systemd-devel libatomic avahi-devel qt5-qtlocation-devel qt5-qtsensors-devel \
+    qt5-qtwebengine-devel qt5-qttools-devel qt5-qtwebkit-devel
 
 ## A note about JACK 
 
