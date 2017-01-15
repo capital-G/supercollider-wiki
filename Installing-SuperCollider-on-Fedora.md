@@ -20,10 +20,6 @@ Install supercollider:
 
 I'm following the instructions [here](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md), but clarifying them for the benefit of noobs.
 
-Also, if you have difficulties, [this link](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/Installing-SuperCollider-on-Fedora-21-No-CMAKE-CXX-COMPILER-could-be-found-td7615864.html) might help.
-
-The following [StackOverflow question](http://stackoverflow.com/questions/31381892/fedora-22-compile-atomic-is-lock-free) describes how to link to libatomic.
-
 ## Obtaining dependencies
 
 The following packages are required and are available through yum / dnf.
