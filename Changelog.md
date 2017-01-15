@@ -23,7 +23,9 @@ For the helpfile, blog post, mailing list, and Facebook group, all the links to 
 
 ## General ##
 
-Nothing here yet.
+*This section affects alternate clients.*
+
+A typo in the build system prevented the `-msse` compiler flag from being properly set ([#2623](https://github.com/supercollider/supercollider/pull/2623)). This *may* fix subnormal number issues that some users have been experiencing.
 
 ## scsynth and supernova ##
 
