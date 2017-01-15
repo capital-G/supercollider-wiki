@@ -37,13 +37,14 @@ The following packages are required and are available through yum / dnf.
 * git
 * gcc-c++
 * libX11-devel
-* qtwebkit-devel 
-* qt5-qtlocation-devel
-* qt5-qtsensors-devel
 * systemd-devel (provides libudev.h)
 * libatomic
 * avahi-devel 
+* qt5-qtlocation-devel
+* qt5-qtsensors-devel
 * qt5-qttools-devel 
+* qt5-qtwebengine-devel
+* qt5-qtwebkit-devel 
 * emacs 
 * alsa-lib-devel 
 
