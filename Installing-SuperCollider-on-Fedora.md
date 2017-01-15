@@ -22,7 +22,7 @@ I'm following the instructions [here](https://github.com/supercollider/supercoll
 
 Also, if you have difficulties, [this link](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/Installing-SuperCollider-on-Fedora-21-No-CMAKE-CXX-COMPILER-could-be-found-td7615864.html) might help.
 
-The following [Sourceforge question](http://stackoverflow.com/questions/31381892/fedora-22-compile-atomic-is-lock-free) describes how to link to libatomic.
+The following [StackOverflow question](http://stackoverflow.com/questions/31381892/fedora-22-compile-atomic-is-lock-free) describes how to link to libatomic.
 
 ## Obtaining dependencies
 
@@ -54,6 +54,10 @@ The required packages may be installed with the following command;
     fftw-devel libXt-devel git gcc-c++ libX11-devel qt5-qtwebkit-devel \
     qt5-qtlocation-devel qt5-qtsensors-devel systemd-devel libatomic avahi-devel \
     qt5-qttools-devel emacs alsa-lib-devel 
+
+## A note about JACK 
+
+You may have issues running JACK with real time scheduling privileges on Fedora. Be sure to add your user to the **jackuser** group, and try setting [SELinux to permissive mode](https://docs.fedoraproject.org/en-US/Fedora/25/html/SELinux_Users_and_Administrators_Guide/sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Permissive_Mode.html) and see if that helps.
 
 ## Obtaining the source code
 
