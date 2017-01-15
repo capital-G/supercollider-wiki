@@ -91,7 +91,11 @@ endif()
 ```
 ## Running cmake
 
-Create a directory inside supercollider called build. From within supercollider/build, run the following:
+Create a directory inside the supercollider folder called **build** and move to it:
+
+    mkdir build && cd build
+
+From within supercollider/build, run the following:
 
     cmake  ..
 
