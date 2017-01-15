@@ -91,8 +91,10 @@ Fixed a crash in `Object:perform` when the selector is an Array whose first elem
 
 The `Server` class underwent a refactoring ([#2422](https://github.com/supercollider/supercollider/pull/2422)), with the following effects:
 
-- If the server crashes, recovery is more graceful ([#2453](https://github.com/supercollider/supercollider/pull/2453)).
 - A new class, `Recorder`, allows recording independently of the `Server` object.
+- `Server:recordNode` is deprecated. Use `Recorder:recordNode` instead (e.g. `s.recorder.recordNode`).
+- The `Server.set` class variable is deprecated. Use `Server.all` instead.
+- If the server crashes, recovery is more graceful ([#2453](https://github.com/supercollider/supercollider/pull/2453)).
 - The IDE's time display and the "start recording", "pause recording", and "stop recording" menu items now cooperate better with running `Server:record`, `Server:pauseRecording`, and `Server:stopRecording`.
 - `Server:makeGui` and `Server:makeWindow` broke in 3.8 — the fields in the windows went blank. They are working again.
 
