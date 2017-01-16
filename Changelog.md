@@ -130,6 +130,14 @@ Entries in the Documents docklet can be reordered, and document tabs will automa
 
 "Edit > Preferences > Editor > Display" has a new option that allows replacing tabs with a dropdown whose items are alphabetically ordered ([#2555](https://github.com/supercollider/supercollider/pull/2555)). This makes navigation easier in some performance contexts.
 
-## Help files ##
+## Miscellanea ##
 
-Nothing here yet.
+TODO: add PRs
+
+Additional and/or improved documentation is available for the following:
+- Classes/Method
+- Classes/MostChange
+- Classes/LeastChange
+- Classes/DetectSilence
+
+An empty file, SCClassLibrary/Common/Core/Infinitum.sc, was removed from the repository.
