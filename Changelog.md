@@ -132,8 +132,6 @@ Entries in the Documents docklet can be reordered, and document tabs will automa
 
 ## Miscellanea ##
 
-TODO: add PRs
-
 Additional and/or improved documentation is available for the following:
 - Classes/Method
 - Classes/MostChange
