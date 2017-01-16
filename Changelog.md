@@ -79,6 +79,8 @@ Fixed a crash in `Object:perform` when the selector is an Array whose first elem
 
 `thisProcess.nowExecutingPath` is no longer corrupted by `Routine:stop` ([#2620](https://github.com/supercollider/supercollider/pull/2620)).
 
+TextView:selectedString_` now works if the selection size is zero ([#2648](https://github.com/supercollider/supercollider/pull/2648)).
+
 ## Class library ##
 
 **API change:** Fixed a mistake where `Pen.quadCurveTo` used the primitive for a cubic Bézier instead of quadratic ([#2553](https://github.com/supercollider/supercollider/pull/2553)). To restore the old behavior, change `Pen.quadCurveTo` to `Pen.curveTo`.
