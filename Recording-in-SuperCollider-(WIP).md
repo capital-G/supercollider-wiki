@@ -97,7 +97,7 @@ You can get even fancier than this and add a fade out, but we'll leave that up t
 
 SuperCollider cannot export MP3 files. MP3 is not legally compatible with SuperCollider's license.
 
-This is very easy to work around. Just export to WAV (say) and convert that WAV to MP3 using an external tool such as LAME. If that tool is accessible from the command line, you can use code::.unixCmd:: to perform conversion automatically after recording.
+This is very easy to work around. Just export to WAV (say) and convert that WAV to MP3 using an external tool such as LAME. If that tool is accessible from the command line, you can use ```.unixCmd``` to perform conversion automatically after recording.
 
 ### Exporting stems ###
 
