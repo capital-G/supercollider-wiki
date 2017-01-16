@@ -6,7 +6,7 @@ Assuming `s` is your server, this is how you record in SuperCollider:
 
     s.record;
 
-That's it. To stop recording, run `s.stopRecording`. Cmd+Period will also cause recording to stop. SuperCollider outputs the recording to an AIFF file whose path is printed in the post window.
+That's it. To stop recording, run `s.stopRecording` or hit Cmd+Period. SuperCollider outputs the recording to an AIFF file whose path is printed in the post window.
 
 If you're using SCIDE, it's even easier — if you open the "Language" menu on the toolbar or click on the server status bar, "Start recording" and "Stop recording" are available as menu items. The server status bar also has an "R" symbol that turns red if the server is recording.
 
@@ -25,6 +25,12 @@ Familiarize yourself with some of the arguments that `s.record` lets you specify
 `s.pauseRecording` will cause SC to stop writing to the file (resume by running `s.record` again). It will not write silence — it will just create skipped time in the output file. In SCIDE, this functionality is accessible on the same menu as "Start recording" and "Stop recording."
 
 The timer for the "duration" argument waits for paused recordings. "duration" the length of the output file, not the real time spent between the beginning and end of recording.
+
+### Exporting MP3 files ###
+
+SuperCollider cannot export MP3 files. The MP3 format is not legally compatible with SuperCollider's license.
+
+This is very easy to work around. Just export to WAV (say) and convert that WAV to MP3 using an external tool such as LAME. If that tool is accessible from the command line, you can use ```.unixCmd``` to perform conversion automatically after recording.
 
 ### `s.record` and compositions ###
 
@@ -93,12 +99,6 @@ In the above example, we knew exactly the amount of time before it was safe to s
 ```
 You can get even fancier than this and add a fade out, but we'll leave that up to you.
 
-### Exporting MP3 files ###
-
-SuperCollider cannot export MP3 files. MP3 is not legally compatible with SuperCollider's license.
-
-This is very easy to work around. Just export to WAV (say) and convert that WAV to MP3 using an external tool such as LAME. If that tool is accessible from the command line, you can use ```.unixCmd``` to perform conversion automatically after recording.
-
 ### Exporting stems ###
 
 Out of the box, SuperCollider lacks familiar interfaces for mixing and mastering. It is possible to mix and master in SuperCollider using tools written by third parties, but many prefer to use a DAW which has been built for this purpose.
@@ -113,11 +113,11 @@ Real-time recording with Recorder should be satisfactory for a lot of SuperColli
 
 The first problem is that you can't render and record audio faster than real time. What if we wanted to stretch our drone piece out for an hour? Then we'd have to wait an hour for it to render.
 
-The second problem is that you can't render and record audio slower than real time. If you overload the CPU so that the server can't keep producing audio in real time, you will get buffer overruns and underruns. These can cause severe timing jitter between the server and client, which is unacceptable in many musical contexts (and also causes audible glitches and dropouts, but these happen at a lower level than SC and won't show up in the recording).
+The second problem is that you can't render and record audio slower than real time. If you put too much strain on the CPU, you will get buffer overruns and underruns. These can cause severe timing jitter between the server and client, which is unacceptable in many musical contexts (and also causes audible glitches and dropouts, but these happen at a lower level than SC and won't show up in the recording).
 
 It's not only xruns that you need to worry about — sometimes sclang experiences hiccups too. These can be caused by exogenous factors, like other processes on the system hogging CPU cycles. [<= is this true?]
 
-"Don't write music that causes timing problems" is an ostensible workaround. But if you're not writing music intended to be performed in real time, then this becomes a stupid and arbitrary restriction.
+"Don't write music that experiences timing problems" is an ostensible workaround. But if you're not writing music intended to be performed in real time, then this becomes a stupid and arbitrary restriction.
 
 ## Non-real time recording ##
 
