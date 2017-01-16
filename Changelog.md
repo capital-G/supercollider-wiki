@@ -133,9 +133,18 @@ Entries in the Documents docklet can be reordered, and document tabs will automa
 ## Miscellanea ##
 
 Additional and/or improved documentation is available for the following:
-- Classes/Method
-- Classes/MostChange
-- Classes/LeastChange
-- Classes/DetectSilence
+- Classes
+  - Array
+  - DetectSilence
+  - Hasher
+  - HenonC
+  - LeastChange
+  - Method
+  - MostChange
+  - Object
+- Overviews
+  - Operators
+- Reference
+  - Server Command Reference
 
 An empty file, SCClassLibrary/Common/Core/Infinitum.sc, was removed from the repository.
