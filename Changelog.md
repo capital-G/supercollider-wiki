@@ -79,7 +79,7 @@ Fixed a crash in `Object:perform` when the selector is an Array whose first elem
 
 `thisProcess.nowExecutingPath` is no longer corrupted by `Routine:stop` ([#2620](https://github.com/supercollider/supercollider/pull/2620)).
 
-TextView:selectedString_` now works if the selection size is zero ([#2648](https://github.com/supercollider/supercollider/pull/2648)).
+`TextView:selectedString_` now works when the selection size is zero ([#2648](https://github.com/supercollider/supercollider/pull/2648)).
 
 ## Class library ##
 
