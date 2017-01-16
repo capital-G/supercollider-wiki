@@ -101,9 +101,9 @@ You can get even fancier than this and add a fade out, but we'll leave that up t
 
 ### Exporting stems ###
 
-Out of the box, SuperCollider lacks familiar interfaces for mixing and mastering. It is possible to mix and master in SuperCollider using tools written by third parties, but many prefer to use a DAW which has been built for this purpose.
+SuperCollider isn't specifically designed for mixing and mastering. There are mixing and mastering tools written by third parties, but many prefer to use familiar software like a traditional DAW. To accomplish this, you will want to record in multitrack.
 
-The first step to stem export is to set up your composition so that it actually has stems in the first place. Instead of routing all your Synths to a master output, organize things into Buses, and route Buses into each other and to output. The ddwMixerChannel quark is highly recommended for this purpose, since it provides an easy-to-use multitrack infrastructure with fading, panning, and effects groups.
+The first step to stem export is to set up your composition so that it actually has multiple tracks in the first place. Instead of routing all your Synths to a master output, organize things into Buses, and route Buses into each other and to output. The ddwMixerChannel quark is highly recommended for this purpose, since it takes care of a lot of abstraction, providing an easy-to-use multitrack infrastructure with fading, panning, and effects groups.
 
 [...]
 
