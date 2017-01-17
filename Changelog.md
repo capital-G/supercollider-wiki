@@ -138,12 +138,16 @@ Additional and/or improved documentation is available for the following:
 - Classes
   - Array
   - DetectSilence
+  - DynKlank
+  - Formlet
   - Hasher
   - HenonC
+  - Klank
   - LeastChange
   - Method
   - MostChange
   - Object
+  - Ringz
 - Overviews
   - JITLib
   - Operators
