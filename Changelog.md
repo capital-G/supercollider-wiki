@@ -145,6 +145,7 @@ Additional and/or improved documentation is available for the following:
   - MostChange
   - Object
 - Overviews
+  - JITLib
   - Operators
 - Reference
   - Server Command Reference
