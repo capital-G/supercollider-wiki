@@ -27,6 +27,8 @@ For the helpfile, blog post, mailing list, and Facebook group, all the links to 
 
 A typo in the build system prevented the `-msse` compiler flag from being properly set ([#2623](https://github.com/supercollider/supercollider/pull/2623)). This *may* fix subnormal number issues in scsynth that some users have been experiencing.
 
+scvim has seen numerous enhancements now that an actively maintained fork has been merged in ([scvim #11](https://github.com/supercollider/scvim/pull/11)).
+
 ## scsynth and supernova ##
 
 *This section affects alternate clients.*
