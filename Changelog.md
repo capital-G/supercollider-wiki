@@ -141,21 +141,34 @@ Entries in the Documents docklet can be reordered, and document tabs will automa
 Additional and/or improved documentation is available for the following:
 - Classes
   - Array
+  - Char
   - DetectSilence
+  - DoubleArray
   - DynKlank
+  - Float
+  - FloatArray
   - Formlet
   - Hasher
   - HenonC
   - Klank
+  - LanguageConfig
   - LeastChange
   - Method
+  - MIDIOut
   - MostChange
+  - NetAddr
   - Object
   - Ringz
+  - String
+  - Symbol
+- Guides
+  - OSC Communication
 - Overviews
   - JITLib
   - Operators
 - Reference
+  - Control Structures
+  - Literals
   - Server Command Reference
 
 An empty file, SCClassLibrary/Common/Core/Infinitum.sc, was removed from the repository.
