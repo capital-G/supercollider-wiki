@@ -159,6 +159,7 @@ Additional and/or improved documentation is available for the following:
   - Klank
   - LanguageConfig
   - LeastChange
+  - LeakDC
   - Method
   - MIDIOut
   - MostChange
