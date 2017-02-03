@@ -158,8 +158,8 @@ Additional and/or improved documentation is available for the following:
   - HenonC
   - Klank
   - LanguageConfig
-  - LeastChange
   - LeakDC
+  - LeastChange
   - Method
   - MIDIOut
   - MostChange
