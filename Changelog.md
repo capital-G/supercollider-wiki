@@ -132,6 +132,8 @@ Attempting to use a control-rate signal as an input to `Hasher.ar` now results i
 
 The "Cleaning up temp synthdefs..." post message is suppressed if there is nothing to clean up ([#2629](https://github.com/supercollider/supercollider/pull/2629)).
 
+New aliases for done actions, e.g. `Done.freeSelf`, are introduced for better readability ([#2616](https://github.com/supercollider/supercollider/pull/2616)).
+
 ## scide ##
 
 Entries in the Documents docklet can be reordered, and document tabs will automatically reorder to reflect this ([#2555](https://github.com/supercollider/supercollider/pull/2555)).
