@@ -87,6 +87,8 @@ Fixed a crash in `Object:perform` when the selector is an Array whose first elem
 
 `TextView:selectedString_` now works when the selection size is zero ([#2648](https://github.com/supercollider/supercollider/pull/2648)).
 
+Fixed a crash when a method or class/instance variable is named "none" ([#2638](https://github.com/supercollider/supercollider/pull/2638)).
+
 ## Class library ##
 
 **Breaking change:** Fixed a mistake where `Pen.quadCurveTo` used the primitive for a cubic Bézier instead of quadratic ([#2553](https://github.com/supercollider/supercollider/pull/2553)). To restore the old behavior, change `Pen.quadCurveTo` to `Pen.curveTo`.
