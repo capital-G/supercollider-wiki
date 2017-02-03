@@ -134,6 +134,8 @@ The "Cleaning up temp synthdefs..." post message is suppressed if there is nothi
 
 New aliases for done actions, e.g. `Done.freeSelf`, are introduced for better readability ([#2616](https://github.com/supercollider/supercollider/pull/2616)).
 
+To match `Out` and `ReplaceOut`, `LocalOut` and `XOut` now correctly validate their input, checking for a non-zero number of channels ([#2659](https://github.com/supercollider/supercollider/pull/2657), [#2659](https://github.com/supercollider/supercollider/pull/2659)).
+
 ## scide ##
 
 Entries in the Documents docklet can be reordered, and document tabs will automatically reorder to reflect this ([#2555](https://github.com/supercollider/supercollider/pull/2555)).
