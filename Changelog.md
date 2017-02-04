@@ -69,7 +69,7 @@ The `doneAction` argument to DetectSilence can now be modulated ([#2379](https:/
 
 UnaryOpUGen now supports the bitwise not operator `bitNot` ([#2381](https://github.com/supercollider/supercollider/pull/2381)). It used to simply fail silently.
 
-`Donce`, a demand-rate UGen with no identifiable purpose, is deprecated ([#2564](https://github.com/supercollider/supercollider/pull/2562)).
+`Donce`, a demand-rate UGen with no identifiable purpose, is deprecated ([#2564](https://github.com/supercollider/supercollider/pull/2562)). It was most likely used in the production of electronic donce music.
 
 A new UGen, `Sanitize`, replaces infinities, NaNs, and subnormals with another signal, zero by default ([#2561](https://github.com/supercollider/supercollider/pull/2561)).
 
@@ -87,7 +87,7 @@ Fixed a crash in `Object:perform` when the selector is an Array whose first elem
 
 `TextView:selectedString_` now works when the selection size is zero ([#2648](https://github.com/supercollider/supercollider/pull/2648)).
 
-Fixed a crash when a method or class/instance variable is named "none" ([#2638](https://github.com/supercollider/supercollider/pull/2638)).
+Fixed a crash when a method or class/instance variable is named "`none`" ([#2638](https://github.com/supercollider/supercollider/pull/2638)).
 
 ## Class library ##
 
@@ -136,7 +136,7 @@ Attempting to use a control-rate signal as an input to `Hasher.ar` now results i
 
 The "Cleaning up temp synthdefs..." post message is suppressed if there is nothing to clean up ([#2629](https://github.com/supercollider/supercollider/pull/2629)).
 
-New aliases for done actions, e.g. `Done.freeSelf`, are introduced for better readability ([#2616](https://github.com/supercollider/supercollider/pull/2616)).
+New aliases for done actions, e.g. `Done.freeSelf == 2`, are introduced for better readability ([#2616](https://github.com/supercollider/supercollider/pull/2616)). See the `Done` helpfile for details.
 
 To match `Out` and `ReplaceOut`, `LocalOut` and `XOut` now correctly validate their input, checking for a non-zero number of channels ([#2659](https://github.com/supercollider/supercollider/pull/2657), [#2659](https://github.com/supercollider/supercollider/pull/2659)).
 
