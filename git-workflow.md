@@ -6,7 +6,7 @@ SuperCollider uses an unstable master branch. Stable releases are marked using t
 
 A month or so before the beta release, the release manager creates a new branch named after the release (say 3.9). Uncontroversial bug fixes should be merged into the 3.9 branch, and everything else should go into the master branch. This causes the 3.9 and master branches to diverge, so the fixes in the 3.9 branch should periodically be merged into master to keep master up to date.
 
-The first thing to do in release mode is to remove the `SCClassLibrary/deprecated/3.8` directory and document these removals in the changelog.
+The first thing to do in release mode is to remove the `SCClassLibrary/deprecated/3.8` directory and document these removals in the changelog. Corresponding UGen and primitive code should also be removed. Be careful when deprecating UGens and be considerate of alternate clients!
 
 For each beta release:
 
