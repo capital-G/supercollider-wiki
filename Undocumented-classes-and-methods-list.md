@@ -37,7 +37,7 @@ Keep this list as updated as possible with info about when classes have been doc
 - [ ] Decorator
 - [ ] DeprecatedError
 - [ ] DoesNotUnderstandError
-- [x] Donce - deprecated (#2562)
+- [x] Donce - deprecated ([#2562](https://github.com/supercollider/supercollider/issues/2562))
 - [ ] DragView
 - [ ] DrawGridX
 - [ ] DrawGridY
