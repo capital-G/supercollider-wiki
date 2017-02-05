@@ -266,13 +266,13 @@ Keep this list as updated as possible with info about when classes have been doc
 - [ ] Unix
 - [ ] UnixPlatform
 - [ ] VolumeGui
-- [ ] Watcher
+- [x] Watcher - deprecated by [#2700](https://github.com/supercollider/supercollider/issues/2700)
 - [ ] WidthFirstUGen
-- [ ] WiiCalibrationInfo
-- [ ] WiiMoteGUI
-- [ ] WiiMoteIRObject
-- [ ] WiiNunchukGUI
-- [ ] WiiRemoteGUI
+- [x] WiiCalibrationInfo - deprecated by [#2698](https://github.com/supercollider/supercollider/issues/2698)
+- [x] WiiMoteGUI - deprecated by [#2697](https://github.com/supercollider/supercollider/issues/2697)
+- [x] WiiMoteIRObject - deprecated by [#2698](https://github.com/supercollider/supercollider/issues/2698)
+- [x] WiiNunchukGUI - deprecated by [#2697](https://github.com/supercollider/supercollider/issues/2697)
+- [x] WiiRemoteGUI - deprecated by [#2697](https://github.com/supercollider/supercollider/issues/2697)
 
 # Undocumented Methods
 
