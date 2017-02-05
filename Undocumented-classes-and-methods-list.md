@@ -1,5 +1,5 @@
-### **Open issue for undocumented classes: #2434.**
-### **Open issue for undocumented methods: #2692.**
+### **Open issue for undocumented classes: [#2434](https://github.com/supercollider/supercollider/issues/2434).**
+### **Open issue for undocumented methods: [#2692](https://github.com/supercollider/supercollider/issues/2692).**
 
 Keep this list as updated as possible with info about when classes have been documented, deprecated, or deleted. If you plan to work on something, it would also be nice to leave a "checkout" note.
 
