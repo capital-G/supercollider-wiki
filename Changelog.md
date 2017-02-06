@@ -107,6 +107,8 @@ The WiiMote classes (`WiiMote`, `WiiMoteIRObject`, `WiiCalibrationInfo`, `WiiMot
 
 `Watcher` is an old alias for `SkipJack` provided for backward compatibility. It is officially deprecated and will be removed in 3.10 ([#2700](https://github.com/supercollider/supercollider/pull/2700)).
 
+`Module`, an unmaintained and unused class for serialization of Synths, has been moved to a quark ([#2703](https://github.com/supercollider/supercollider/pull/2703)).
+
 The `Server` class underwent a refactoring ([#2422](https://github.com/supercollider/supercollider/pull/2422)), with the following effects:
 
 - A new class, `Recorder`, allows recording independently of the `Server` object.
