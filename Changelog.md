@@ -152,6 +152,8 @@ Entries in the Documents docklet can be reordered, and document tabs will automa
 
 "Edit > Preferences > Editor > Display" has a new option that allows replacing tabs with a dropdown whose items are alphabetically ordered ([#2555](https://github.com/supercollider/supercollider/pull/2555)). This makes navigation easier in some performance contexts.
 
+Changed "occurrences" to "matches" in the status bar in the Find and Replace features ([#2702](https://github.com/supercollider/supercollider/pull/2702)).
+
 ## Miscellanea ##
 
 Additional and/or improved documentation is available for the following:
