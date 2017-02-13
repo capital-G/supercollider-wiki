@@ -29,6 +29,8 @@ A typo in the build system prevented the `-msse` compiler flag from being proper
 
 scvim has seen numerous enhancements now that an actively maintained fork has been merged in ([scvim #11](https://github.com/supercollider/scvim/pull/11)).
 
+SuperCollider can now be build on Windows using the MSYS2 toolchain, thanks in particular to @awson and @bagong. ([PortAudio #1](https://github.com/supercollider/portaudio/pull/1), [HIDAPI #5](https://github.com/supercollider/hidapi/pull/5), [#2473](https://github.com/supercollider/supercollider/pull/2473), [#2704](https://github.com/supercollider/supercollider/pull/2704))
+
 ## scsynth and supernova ##
 
 *This section affects alternate clients.*
