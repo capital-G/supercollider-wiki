@@ -164,6 +164,8 @@ Additional and/or improved documentation is available for the following:
 - Classes
   - Array
   - Char
+  - CombN,L,C
+  - DelayN,L,C
   - DetectSilence
   - DoubleArray
   - DynKlank
