@@ -174,6 +174,7 @@ Additional and/or improved documentation is available for the following:
   - Formlet
   - Hasher
   - HenonC
+  - Image
   - Klank
   - LanguageConfig
   - LeakDC
