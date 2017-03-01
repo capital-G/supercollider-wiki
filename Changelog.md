@@ -175,6 +175,7 @@ Additional and/or improved documentation is available for the following:
   - Hasher
   - HenonC
   - Image
+  - Interpreter
   - Klank
   - LanguageConfig
   - LeakDC
