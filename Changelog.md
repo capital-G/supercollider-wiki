@@ -186,6 +186,7 @@ Additional and/or improved documentation is available for the following:
   - NetAddr
   - Object
   - Ringz
+  - Schmidt
   - String
   - Symbol
 - Guides
