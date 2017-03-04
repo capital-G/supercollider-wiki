@@ -10,7 +10,7 @@ The first thing to do in release mode is to remove the `SCClassLibrary/deprecate
 
 For each beta release:
 
-- In the 3.9 branch, bump up the version in `SCVersion.txt` from 3.9dev to 3.9.0-beta1 (or from 3.9.0-beta1 to 3.9.0-beta2, etc).
+- In the 3.9 branch, bump up the version in the top-level file `SCVersion.txt` from 3.9dev to 3.9.0-beta1 (or from 3.9.0-beta1 to 3.9.0-beta2, etc).
 - Copy the changelog to a new "News in 3.9" helpfile. This is best done as late as possible before the beta release to avoid having to update the changelog continuously.
 - Tag the beta release in git as (say) "Version-3.9.0-beta1." Release on GitHub.
 - Announce to mailing list, Facebook, etc.
