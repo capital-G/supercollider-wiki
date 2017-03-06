@@ -158,6 +158,8 @@ Entries in the Documents docklet can be reordered, and document tabs will automa
 
 Changed "occurrences" to "matches" in the status bar in the Find and Replace features ([#2702](https://github.com/supercollider/supercollider/pull/2702)).
 
+Some Linux systems had unreadable font colors in the autocomplete tooltips. This has been (finally) fixed ([#2672](https://github.com/supercollider/supercollider/pull/2762)).
+
 ## Miscellanea ##
 
 Additional and/or improved documentation is available for the following:
