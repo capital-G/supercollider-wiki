@@ -126,6 +126,8 @@ The `useRanger` option in `EnvirGui` broke in 3.7. This has been fixed ([#2418](
 
 `Collection:processRest` returns the processed collection rather than the original ([#2497](https://github.com/supercollider/supercollider/pull/2497)).
 
+`Event:processRest` returns the Event ([#2780](https://github.com/supercollider/supercollider/pull/2780)).
+
 `Pstep` accepts an array as a duration argument ([#2511](https://github.com/supercollider/supercollider/pull/2511)).
 
 `Function:loadToFloatArray` is now accessible to an sclang build without Qt ([#2380](https://github.com/supercollider/supercollider/pull/2380)).
