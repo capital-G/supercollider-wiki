@@ -205,4 +205,6 @@ Additional and/or improved documentation is available for the following:
   - Literals
   - Server Command Reference
 
-An empty file, SCClassLibrary/Common/Core/Infinitum.sc, was removed from the repository.
+Two old, non-functional files were removed from the repository:
+- SCClassLibrary/Common/Core/Infinitum.sc
+- SCClassLibrary/Common/Control/OSC.sc
