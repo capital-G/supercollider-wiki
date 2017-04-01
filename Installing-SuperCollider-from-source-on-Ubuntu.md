@@ -96,6 +96,12 @@ So in my case, I would give SCVersion.txt the contents:
     set(PROJECT_VERSION_MINOR 6)
     set(PROJECT_VERSION_PATCH 6)
 
+If the version you see in the welcome message is something like '3.6dev', then create a file like this:
+
+    set(PROJECT_VERSION_MAJOR 3)
+    set(PROJECT_VERSION_MINOR 6)
+    set(PROJECT_VERSION_PATCH dev)
+
 ### Getting the source code for the plugins
 Simply clone the git repository:
 
