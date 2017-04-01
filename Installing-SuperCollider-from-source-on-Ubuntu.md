@@ -28,7 +28,7 @@ Create a directory inside **supercollider** called **build**. From within **supe
 
     cmake -DSC_EL=no ..
 
-(Notice the space between `cmake` and the dots
+Notice the space before the two dots.
 
 The flag -DSC_EL=no means that we're not building any code to enable SuperCollider to work with Emacs, since SuperCollider has its own development environment.
 
