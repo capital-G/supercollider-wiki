@@ -23,6 +23,19 @@ From within **sc3-plugins**, run the following:
 
     git submodule init && git submodule update
 
+### Running cmake
+Create a directory inside **supercollider** called **build**. From within **supercollider/build**, run the following:
+
+    cmake ..
+
+(Notice the space between `cmake` and the dots.)
+
+## Building and installing
+Use the following commands to build and install Supercollider;
+
+    make
+    sudo make install
+
 ### Checking the installation worked
 First, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. The IDE should open and give you three main panes:
 * a large blank text window
