@@ -73,12 +73,12 @@ Look for the two lines starting 'compiling dir:'. The second quotes the location
 This location will be referred to as **PluginLocation** for the remainder of this article.
 #### Where the header include files are
 You need to know where header include files are when you install the plugins.
-To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SCVersion.txt'. The directory containing this file, usually '/usr/include/SuperCollider', is the one you want.
+To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SCVersion.txt'. The directory containing this file, usually '/usr/local/include/SuperCollider', is the one you want.
 
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
 
 #### If SCVersion.txt is not present
-If you find that SCVersion.txt is not on your file system, you will need to create it. Create a file of that name in '/usr/include/SuperCollider'.
+If you find that SCVersion.txt is not on your file system, you will need to create it. Create a file of that name in '/usr/local/include/SuperCollider'.
 
 Now fire up the IDE and read the introductory text that appears in the post window. You will see a line like this:
 
@@ -124,7 +124,7 @@ Create a directory inside **sc3-plugins** called **build**. From within **sc3-pl
 
 So in my case, I would run:
 
-    cmake -DSC_PATH=/usr/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
+    cmake -DSC_PATH=/usr/local/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
 
 Don't miss out those two dots on the end!
 ### Finally, building the plugins
