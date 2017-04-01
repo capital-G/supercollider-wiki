@@ -26,9 +26,11 @@ From within **supercollider**, run the following:
 ### Running cmake
 Create a directory inside **supercollider** called **build**. From within **supercollider/build**, run the following:
 
-    cmake ..
+    cmake -DSC_EL=no ..
 
-(Notice the space between `cmake` and the dots.)
+(Notice the space between `cmake` and the dots
+
+The flag -DSC_EL=no means that we're not building any code to enable SuperCollider to work with Emacs, since SuperCollider has its own development environment.
 
 ## Building and installing
 Use the following commands to build and install Supercollider;
