@@ -3,9 +3,25 @@ This page gives instructions for installing SuperCollider on Ubuntu and its deri
 ## Installing SuperCollider
 ### Packages you need
 You will need to install quite a bit of software to get the plugins. Below is a list of this software, along with the terminal commands to get it.
+
     sudo apt-get install build-essential libjack-dev or libjack-jackd2-dev libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev libudev-dev pkg-config git cmake qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev libqt5webkit5-dev qtpositioning5-dev libqt5sensors5-dev libqt5opengl5-dev
 
 *Note*: You need at least gcc version 4.7. The sc3-plugins contains c++11 code that does not build with v4.6. Check with `gcc -v` if you run into c++11 related errors.
+
+### Getting the source code for SuperCollider
+Simply clone the git repository:
+
+    git clone https://github.com/supercollider/supercollider.git
+
+Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
+
+    fatal: could not create work tree dir 'supercollider'.: Permission denied
+
+Cloning the repository will create a folder called **supercollider** containing the source code.
+### Getting the submodules
+From within **sc3-plugins**, run the following:
+
+    git submodule init && git submodule update
 
 ### Checking the installation worked
 First, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. The IDE should open and give you three main panes:
