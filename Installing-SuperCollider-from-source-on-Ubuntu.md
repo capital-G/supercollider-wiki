@@ -64,11 +64,11 @@ When SuperCollider starts up, it looks for the plugins in a particular location.
 Start the SuperCollider IDE, and look at the post window. The following is part of the post window output on my machine: 
 
     NumPrimitives = 679
-    compiling dir: '/usr/share/SuperCollider/SCClassLibrary'
-    compiling dir: '/usr/share/SuperCollider/Extensions'
+    compiling dir: '/usr/local/share/SuperCollider/SCClassLibrary'
+    compiling dir: '/usr/local/share/SuperCollider/Extensions'
     pass 1 done
 
-Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '/share/SuperCollider/Extensions' bit and make a note of it. So in my case, the location is '/usr'.
+Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '/share/SuperCollider/Extensions' bit and make a note of it. So in my case, the location is '/usr/local'.
 
 This location will be referred to as **PluginLocation** for the remainder of this article.
 #### Where the header include files are
@@ -118,7 +118,7 @@ Create a directory inside **sc3-plugins** called **build**. From within **sc3-pl
 
 So in my case, I would run:
 
-    cmake -DSC_PATH=/usr/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release ..
+    cmake -DSC_PATH=/usr/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
 
 Don't miss out those two dots on the end!
 ### Finally, building the plugins
