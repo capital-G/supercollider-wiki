@@ -1,6 +1,6 @@
 This page gives instructions for installing SuperCollider on Ubuntu and its derived OSes (e.g. Mint / Elementary OS). It covers installing SuperCollider and the plugins from source.
 
-## Installing 
+## Installing SuperCollider
 ### Packages you need
 You will need to install quite a bit of software to get the plugins. Below is a list of this software, along with the terminal commands to get it.
     sudo apt-get install build-essential libjack-dev or libjack-jackd2-dev libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev libudev-dev pkg-config git cmake qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev libqt5webkit5-dev qtpositioning5-dev libqt5sensors5-dev libqt5opengl5-dev
