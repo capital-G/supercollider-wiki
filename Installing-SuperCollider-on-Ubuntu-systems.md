@@ -1,4 +1,4 @@
-This page gives instructions for installing SuperCollider on Ubuntu and its derives OSes (e.g. Mint / Elementary OS). It covers installing SuperCollider from a package and installing the plugins from source. It does not cover installing SuperCollider from source.
+This page gives instructions for installing SuperCollider on Ubuntu and its derived OSes (e.g. Mint / Elementary OS). It covers installing SuperCollider from a package and installing the plugins from source. It does not cover installing SuperCollider from source.
 ### Adding the PPA
 The PPA contains a more up-to-date version of SuperCollider than the default package source. Add the PPA by entering these lines into a terminal:
 
