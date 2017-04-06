@@ -13,17 +13,13 @@ You will need to install quite a few packages to build the SuperCollider and its
 ### Getting the source code for SuperCollider
 Clone the git repository:
 
-    git clone https://github.com/supercollider/supercollider.git
+    git clone --recursive https://github.com/supercollider/supercollider.git
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
 
     fatal: could not create work tree dir 'supercollider'.: Permission denied
 
-Cloning the repository will create a folder called **supercollider** containing the source code.
-### Getting the submodules
-From within **supercollider**, run the following:
-
-    git submodule init && git submodule update
+Cloning the repository will create a folder called **supercollider** containing the source code. The `--recursive` flag is required because SuperCollider uses submodules.
 
 ### Running cmake
 Create a directory inside **supercollider** called **build**. From within **supercollider/build**, run the following:
@@ -105,17 +101,13 @@ If the version you see in the welcome message is something like '3.6dev', then c
 ### Getting the source code for the plugins
 Simply clone the git repository:
 
-    git clone https://github.com/supercollider/sc3-plugins.git
+    git clone --recursive https://github.com/supercollider/sc3-plugins.git
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
 
     fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
-### Getting the submodules
-From within **sc3-plugins**, run the following:
-
-    git submodule init && git submodule update
 
 ### Running cmake
 Create a directory inside **sc3-plugins** called **build**. From within **sc3-plugins/build**, run the following:
