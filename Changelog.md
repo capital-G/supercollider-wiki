@@ -97,6 +97,8 @@ Fixed a crash in `Object:perform` when the selector is an Array whose first elem
 
 Fixed a crash when a method or class/instance variable is named "`none`" ([#2638](https://github.com/supercollider/supercollider/pull/2638)).
 
+Regression tests for the sclang lexer, parser, and compiler have been added ([#2751](https://github.com/supercollider/supercollider/pull/2751); this will make it easier to make fixes to these components in the future.
+
 ## Class library ##
 
 **Breaking change:** Fixed a mistake where `Pen.quadCurveTo` used the primitive for a cubic Bézier instead of quadratic ([#2553](https://github.com/supercollider/supercollider/pull/2553)). To restore the old behavior, change `Pen.quadCurveTo` to `Pen.curveTo`.
@@ -201,6 +203,7 @@ Additional and/or improved documentation is available for the following:
   - MostChange
   - NetAddr
   - Object
+  - Pstutter
   - Ringz
   - Schmidt
   - String
