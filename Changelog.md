@@ -37,10 +37,22 @@ scvim has seen numerous enhancements now that an actively maintained fork has be
 
 SuperCollider can now be build on Windows using the MSYS2 toolchain, thanks in particular to @awson and @bagong. ([PortAudio #1](https://github.com/supercollider/portaudio/pull/1), [HIDAPI #5](https://github.com/supercollider/hidapi/pull/5), [#2473](https://github.com/supercollider/supercollider/pull/2473), [#2704](https://github.com/supercollider/supercollider/pull/2704))
 
+Changed
+-------
+
+Deprecated
+----------
+
+Removed
+------
+
 Fixed
 -----
 
 A typo in the build system prevented the `-msse` compiler flag from being properly set for gcc and clang ([#2623](https://github.com/supercollider/supercollider/pull/2623)). This *may* fix subnormal number issues in scsynth that some users have been experiencing.
+
+Security
+--------
 
 scsynth and supernova
 =====================
@@ -59,13 +71,22 @@ On macOS, if scsynth's input and output devices have mismatched sample rates, an
 
 Disabled Nagle's algorithm for TCP communication in scsynth ([#2613](https://github.com/supercollider/supercollider/pull/2613)). Nagle's algorithm increases bandwidth at the cost of delay, which is undesirable in the context of SuperCollider. Both supernova and sclang have it turned off.
 
+Deprecated
+----------
+
+Removed
+------
+
 Fixed
 -----
 
 The `/b_read` and `/b_readChannel` messages experienced intermittent failures to read sound files, most notably affecting `Buffer.cueSoundFile`. This has been fixed ([#2793](https://github.com/supercollider/supercollider/pull/2793)).
 
+Security
+--------
+
 UGens
------
+=====
 
 *This section affects alternate clients.*
 
@@ -82,6 +103,14 @@ Changed
 -------
 
 **Breaking change:** `FOS.ar` with control-rate coefficient inputs incorrectly initialized its coefficients at 0 and ramped to the correct values over the first control period. This has been fixed ([#2658](https://github.com/supercollider/supercollider/pull/2658)). To restore old behavior, multiply each coefficient by `Line.ar(0, 1, ControlDur.ir)`.
+
+Deprecated
+----------
+
+`Donce`, a demand-rate UGen with no identifiable purpose, is deprecated ([#2564](https://github.com/supercollider/supercollider/pull/2562)). It was most likely used in the production of electronic donce music.
+
+Removed
+-------
 
 Fixed
 -----
@@ -112,10 +141,8 @@ Fixed a bug with `TGrains` ignoring the `amp` parameter ([#2809](https://github.
 
 `Dibrown` no longer ignores the `length` argument ([#2654](https://github.com/supercollider/supercollider/pull/2654)).
 
-Deprecated
-----------
-
-`Donce`, a demand-rate UGen with no identifiable purpose, is deprecated ([#2564](https://github.com/supercollider/supercollider/pull/2562)). It was most likely used in the production of electronic donce music.
+Security
+--------
 
 sclang
 ======
@@ -132,6 +159,12 @@ Changed
 
 The maximum number of MIDI ports has been increased from 16 to 128 ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
 
+Deprecated
+----------
+
+Removed
+-------
+
 Fixed
 -----
 
@@ -142,6 +175,9 @@ Fixed a crash in `Object:perform` when the selector is an Array whose first elem
 `TextView:selectedString_` now works when the selection size is zero ([#2648](https://github.com/supercollider/supercollider/pull/2648)).
 
 Fixed a crash when a method or class/instance variable is named "`none`" ([#2638](https://github.com/supercollider/supercollider/pull/2638)).
+
+Security
+--------
 
 Class library
 =============
@@ -201,6 +237,9 @@ The WiiMote classes (`WiiMote`, `WiiMoteIRObject`, `WiiCalibrationInfo`, `WiiMot
 
 The `Server.set` class variable is deprecated. Use `Server.all` instead ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 
+Removed
+-------
+
 Fixed
 -----
 
@@ -222,6 +261,9 @@ The time display and the "start recording", "pause recording", and "stop recordi
 
 `Server:makeGui` and `Server:makeWindow` broke in 3.8 — the fields in the windows went blank. They are working again ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 
+Security
+--------
+
 scide
 =====
 
@@ -237,10 +279,21 @@ Changed
 
 Changed "occurrences" to "matches" in the status bar in the Find and Replace features ([#2702](https://github.com/supercollider/supercollider/pull/2702)).
 
+Deprecated
+----------
+
+Removed
+-------
+
 Fixed
 -----
 
 Some Linux systems had unreadable font colors in the autocomplete tooltips. This has been (finally) fixed ([#2672](https://github.com/supercollider/supercollider/pull/2762)).
+
+Fixed a bug where `Document:selectedString_` had no effect ([#2849](https://github.com/supercollider/supercollider/pull/2849)).
+
+Security
+--------
 
 Miscellanea
 ===========
