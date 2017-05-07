@@ -240,6 +240,8 @@ The `Server.set` class variable is deprecated. Use `Server.all` instead ([#2422]
 Removed
 -------
 
+Removed non-functional stub methods and classes related to Image: the classes ImageFilter and ImageKernel, and the Image instance methods lockFocus, unlockFocus, applyFilters, filters, filteredWith, addFilter, removeFilter, flatten, invert, crop, applyKernel ([#2867](https://github.com/supercollider/supercollider/pull/2867)).
+
 Fixed
 -----
 
