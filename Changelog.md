@@ -5,8 +5,6 @@ This changelog documents the publicly visible changes since the most recent Supe
 
 The website [Keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/) is a major inspiration for the organization of the changelog. Changes to each component of SuperCollider are subdivided into Added, Changed, Deprecated, Removed, Fixed, and Security, in that order.
 
-Nathan has a personal vendetta against bullet points in prose.
-
 Please provide the link to the PR with every entry in the changelog for easy navigation.
 
 Try to exercise common sense in keeping this log readable and useful to users. Use complete sentences and, to a reasonable extent, err on the side of clarity. In case of doubt, prefer inclusion over exclusion.
