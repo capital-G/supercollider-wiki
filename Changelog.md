@@ -197,6 +197,8 @@ New aliases for done actions, e.g. `Done.freeSelf == 2`, are introduced for bett
 
 A new class, `Recorder`, allows recording independently of the `Server` object ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 
+`SequenceableCollection:reduce` supports an adverb argument ([#2863](https://github.com/supercollider/supercollider/pull/2863)).
+
 Changed
 -------
 
