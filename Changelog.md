@@ -150,7 +150,7 @@ sclang
 Added
 -----
 
-Regression tests for the sclang lexer, parser, and compiler have been added ([#2751](https://github.com/supercollider/supercollider/pull/2751); this will make it easier to make fixes to these components in the future.
+Regression tests for the sclang lexer, parser, and compiler have been added ([#2751](https://github.com/supercollider/supercollider/pull/2751)). This will make it easier to make fixes to these components in the future.
 
 Changed
 -------
@@ -189,7 +189,7 @@ Added
 
 Help files originating from extensions now display a plaque for visibility ([#2449](https://github.com/supercollider/supercollider/pull/2449)).
 
-A new class method, `Platform.recordingsDir`, has been introduced ([#2877](https://github.com/supercollider/supercollider/pull/2877)).
+For consistency with other `Platform` class methods, `Platform.recordingsDir` may be used instead of `thisProcess.platform.recordingsDir` ([#2877](https://github.com/supercollider/supercollider/pull/2877)).
 
 `SequenceableCollection` has two new instance methods: `flatten2` and `flatBelow` ([#2527](https://github.com/supercollider/supercollider/pull/2527)). Additionally, `flatten` is faster now.
 
