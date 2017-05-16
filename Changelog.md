@@ -189,6 +189,8 @@ Added
 
 Help files originating from extensions now display a plaque for visibility ([#2449](https://github.com/supercollider/supercollider/pull/2449)).
 
+A new class method, `Platform.recordingsDir`, has been introduced ([#2877](https://github.com/supercollider/supercollider/pull/2877)).
+
 `SequenceableCollection` has two new instance methods: `flatten2` and `flatBelow` ([#2527](https://github.com/supercollider/supercollider/pull/2527)). Additionally, `flatten` is faster now.
 
 The `~callback` function is now available for all `Event` types instead of just "on" events ([#2376](https://github.com/supercollider/supercollider/pull/2376)).
