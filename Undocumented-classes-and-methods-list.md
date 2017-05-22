@@ -3,6 +3,18 @@
 
 Keep this list as updated as possible with info about when classes have been documented, deprecated, or deleted. If you plan to work on something, it would also be nice to leave a "checkout" note.
 
+# Important Undocumented Methods
+
+There are way too many undocumented methods, so this list is only for methods that really need it.
+
+Notation: `Class:-methodname` for instance methods; `Class:*methodname` for class methods.
+
+- [ ] Array:-pyramid
+- [ ] Array:-pyramidg (#2691)
+- [ ] NetAddr:*useDoubles
+- [ ] NetAddr:-sendRaw
+- [ ] Integer:-exit
+
 # Undocumented Classes
 
 - [ ] APF
@@ -273,14 +285,3 @@ Keep this list as updated as possible with info about when classes have been doc
 - [x] WiiMoteIRObject - deprecated by [#2698](https://github.com/supercollider/supercollider/issues/2698)
 - [x] WiiNunchukGUI - deprecated by [#2697](https://github.com/supercollider/supercollider/issues/2697)
 - [x] WiiRemoteGUI - deprecated by [#2697](https://github.com/supercollider/supercollider/issues/2697)
-
-# Undocumented Methods
-
-This list is _very_ incomplete. You can help by expanding it!
-
-Notation: `Class:-methodname` for instance methods; `Class:*methodname` for class methods.
-
-- [ ] Array:-pyramid
-- [ ] Array:-pyramidg (#2691)
-- [ ] NetAddr:*useDoubles
-- [ ] NetAddr:-sendRaw
