@@ -4,6 +4,18 @@ All contributions to the project should be done in topic branches in contributor
 
 When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file. We used to create topic branches in the main repository, but now that GitHub has added this feature, this is discouraged.
 
+## Guidelines for pull request authors ##
+
+*this section is kind of in a proposal state, so it's not necessarily enforced*
+
+**Documentation.** New features and behavior changes should be accompanied with documentation.
+
+**Unit tests.**
+
+**Clean commit history.**
+
+**A good title and description in GitHub.**
+
 ## Releasing ##
 
 A month or so before the beta release, the release manager creates a new branch named after the release (say 3.9). Uncontroversial bug fixes should be merged into the 3.9 branch, and everything else should go into the master branch. This causes the 3.9 and master branches to diverge, so the fixes in the 3.9 branch should periodically be merged into master to keep master up to date.
