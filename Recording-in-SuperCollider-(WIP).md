@@ -1,3 +1,5 @@
+*This is a draft of a new comprehensive guide to recording in SC. Unfortunately the most important part, non-real-time recording, is currently incomplete.*
+
 Recording in SuperCollider can be complex. blah blah blah finish this intro
 
 ## Recording with `s.record` ##
