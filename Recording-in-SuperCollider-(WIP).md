@@ -97,7 +97,7 @@ In the above example, we knew exactly the amount of time before it was safe to s
     });
     )
 ```
-You can get even fancier than this and add a fade out, but we'll leave that up to you.
+You can get even fancier than this and add a fade out, but we'll leave that up to you. The takeaway here is that since recording can be controlled programmatically, the possibilities are endless.
 
 ### Exporting stems ###
 
