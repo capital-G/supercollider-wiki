@@ -22,6 +22,7 @@ Post the changelog to the following announcement channels:
 - GitHub website
 - sc-users mailing list
 - Facebook group
+- Reddit (/r/supercollider)
 
 For the helpfile, blog post, mailing list, and Facebook group, all the links to pull requests should be removed.
 
