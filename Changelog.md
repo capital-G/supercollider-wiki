@@ -49,7 +49,7 @@ General: Fixed
 
 A typo in the build system prevented the `-msse` compiler flag from being properly set for gcc and clang ([#2623](https://github.com/supercollider/supercollider/pull/2623)). This *may* fix subnormal number issues in scsynth that some users have been experiencing.
 
-Security
+General: Security
 --------
 
 scsynth and supernova: Added
@@ -75,7 +75,7 @@ scsynth and supernova: Fixed
 
 The `/b_read` and `/b_readChannel` messages experienced intermittent failures to read sound files, most notably affecting `Buffer.cueSoundFile`. This has been fixed ([#2793](https://github.com/supercollider/supercollider/pull/2793)).
 
-Security
+scsynth and supernova: Security
 --------
 
 UGens: Added
@@ -162,6 +162,9 @@ Fixed a crash in `Object:perform` when the selector is an Array whose first elem
 Fixed a crash when a method or class/instance variable is named "`none`" ([#2638](https://github.com/supercollider/supercollider/pull/2638)).
 
 Exceptions occurring in primitives no longer print unavoidable error messages even when wrapped in try-catch ([#2876](https://github.com/supercollider/supercollider/pull/2876)).
+
+sclang: Security
+----------------
 
 Class library: Added
 -----
