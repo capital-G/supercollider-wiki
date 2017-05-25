@@ -24,7 +24,7 @@ Post the changelog to the following announcement channels:
 - Facebook group
 - Reddit (/r/supercollider)
 
-For the helpfile, blog post, mailing list, and Facebook group, all the links to pull requests should be removed.
+All links to pull requests should be removed except for the GitHub release page, README, and website.
 
 General
 =======
