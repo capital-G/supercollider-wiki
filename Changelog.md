@@ -163,6 +163,8 @@ Fixed a crash when a method or class/instance variable is named "`none`" ([#2638
 
 Exceptions occurring in primitives no longer print unavoidable error messages even when wrapped in try-catch ([#2876](https://github.com/supercollider/supercollider/pull/2876)).
 
+Fixed a crash when `Dictionary:keysValuesArrayDo` is called with `nil` as an argument ([#2799](https://github.com/supercollider/supercollider/pull/2799)).
+
 sclang: Security
 ----------------
 
