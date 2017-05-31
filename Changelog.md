@@ -289,6 +289,8 @@ Some Linux systems had unreadable font colors in the autocomplete tooltips. This
 
 Fixed a bug where `Document:selectedString_` had no effect ([#2849](https://github.com/supercollider/supercollider/pull/2849)).
 
+Fixed the "Find in page..." feature in the help viewer skipping every other occurrence ([#2903](https://github.com/supercollider/supercollider/pull/2903)).
+
 scide: Security
 --------
 
