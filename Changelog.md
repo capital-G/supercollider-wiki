@@ -38,6 +38,8 @@ SuperCollider can now be built on FreeBSD, thanks to @shamazmazum ([#2834](https
 General: Changed
 -------
 
+The macOS plist file now shows the full version number for both the Version String and Shortened Version String ([#2487](https://github.com/supercollider/supercollider/pull/2487)).
+
 General: Deprecated
 ----------
 
@@ -195,6 +197,8 @@ A `recordingsDir` method has been added directly to `Platform`, which transparen
 
 `Maybe` now supports collection methods `at`, `atAll`, `put`, `putAll`, `add`, `addAll` ([#2437](https://github.com/supercollider/supercollider/pull/2437)).
 
+`BusPlug:-play` can now accept a `Bus` object ([#2845](https://github.com/supercollider/supercollider/pull/2845)).
+
 Class library: Changed
 -------
 
@@ -260,6 +264,12 @@ Server crashes are better handled by the interpreter ([#2453](https://github.com
 The time display and the "start recording", "pause recording", and "stop recording" menu items now cooperate better with running `Server:record`, `Server:pauseRecording`, and `Server:stopRecording` ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 
 `Server:makeGui` and `Server:makeWindow` broke in 3.8 — the fields in the windows went blank. They are working again ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
+
+A timing error with `NodeProxy:-clear` was fixed ([#2845](https://github.com/supercollider/supercollider/pull/2845)).
+
+`SoundFileView` correctly displays its grid and does not draw the grid on top of the selection box ([#2872](https://github.com/supercollider/supercollider/pull/2872)).
+
+The macOS plist file now shows the full version number for both the Version String and Shortened Version String ([#2487](https://github.com/supercollider/supercollider/pull/2487)).
 
 Class library: Security
 --------
