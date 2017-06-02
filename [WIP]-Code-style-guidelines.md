@@ -29,7 +29,7 @@ a = [1, 2, 3].collect({ |x| x + (x * 3) });
 a = [ 1, 2, 3 ].collect( {|x| x + ( x * 3 )} );
 ```
 
-Multiline form for all three bracket types is uses the K&R style of indentation:
+Multiline form for all three bracket types uses the K&R style of indentation:
 
 ```supercollider
 x = {
@@ -59,9 +59,7 @@ value (foo, bar)
 Functions
 ---------
 
-Methods should always be multiline.
-
-Use `|pipes|`, not `arg`, with a comma between each argument and no spaces inside the pipes. In multiline form, put the argument list on the same line as the opening brace of the function or method.
+Use `|pipes|`, not `arg`, with a comma between each argument and *no spaces inside the pipes* [controversial]. In multiline form, put the argument list on the same line as the opening brace of the function or method.
 
 ```supercollider
 // good:
