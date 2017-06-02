@@ -271,6 +271,8 @@ A timing error with `NodeProxy:-clear` was fixed ([#2845](https://github.com/sup
 
 The macOS plist file now shows the full version number for both the Version String and Shortened Version String ([#2487](https://github.com/supercollider/supercollider/pull/2487)).
 
+Fixed instances of accidentally silencing error messages caused by neglecting to call `Object:primitiveFailed` ([#2908](https://github.com/supercollider/supercollider/pull/2908)).
+
 Class library: Security
 --------
 
