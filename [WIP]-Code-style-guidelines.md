@@ -11,15 +11,52 @@ The following guidelines apply to all SuperCollider code in the repository, incl
 Whitespace
 ----------
 
-Don't have additional whitespace at the beginning or end of a file. In class library files, there should be exactly one newline at the end in order to appease Git.
+### General guidelines
 
-Avoid trailing whitespace at the end of lines. It's a good idea to set your editor to automatically remove it.
+#### Avoid using additional whitespace at the beginning or end of a file.
+
+Use exactly one newline at the end of a file. Git considers a file without a terminating newline to be malformed, and will complain when you commit a change without one!
+
+#### Avoid trailing whitespace at the end of lines.
+
+This keeps diffs clean as it prevents accidental whitespace from being committed. Other users whose editors automatically strip trailing whitespace will be forced to either redo your mistake or commit unnecessary changes. If your editor supports automatically removing trailing whitespace, consider turning that behavior on.
+
+### Spaces in expressions
+
+#### *[needs discussion]* Binary operators
 
 Binary operators, including key binary operators, should have one space before and after.
 
-Commas should have one space after, but not before. No space should go before semicolons.
+#### *[needs discussion]* Commas
 
-The three kinds of brackets, `( ) [ ] { }`, may be used either inline or multiline. In inline form, there should be no spaces inside parentheses `( )` and square brackets `[ ]`. Curly braces `{ }` are "heavier" since they denote functions, so they should have exactly one space after the opening brace and one space before the closing brace.
+Commas should have one space after, but not before. 
+
+#### Semicolons
+
+No space should go before semicolons.
+
+```supercollider
+x = 3 + 5 ; // questionable
+x = 3 + 5;  // better
+```
+
+#### *[needs discussion]* Brackets and parentheses
+
+The three kinds of brackets, `( ) [ ] { }`, may be used either inline or multiline:
+
+```supercollider
+// inline:
+foo.do { |bar| bar.postln };
+
+// multiline:
+foo.do { |bar|
+    var baz = bar * 3;
+    baz = baz.mod(10);
+    postln(baz - 3);
+};
+```
+
+In inline form, there should be no spaces inside parentheses `( )` or square brackets `[ ]`. Curly braces `{ }` delimit functions, and should have exactly one space after the opening brace and one space before the closing brace.
 
 ```supercollider
 // good:
@@ -29,19 +66,34 @@ a = [1, 2, 3].collect({ |x| x + (x * 3) });
 a = [ 1, 2, 3 ].collect( {|x| x + ( x * 3 )} );
 ```
 
-Multiline form for all three bracket types uses the K&R style of indentation:
+### Indentation
+
+#### Spaces and tabs
+
+The SuperCollider class library uses tabs for indentation.
+
+#### *[needs discussion]* Multi-line blocks
+
+For all three bracket types, use the K&R style of indentation. The open brace comes at the end of the first line, rather than on a separate line.
 
 ```supercollider
 x = {
     y = y + 1;
-    3.rand;
+    3.rand
+};
+
+// rather than
+
+x = 
+{
+    y = y + 1;
+    3.rand
 };
 ```
 
-Specific details on `{ }` and `[ ]` whitespacing are discussed in later sections.
+### Method calls
 
-Method calls
-------------
+#### *[needs discussion]* Method calls
 
 In the most common method call syntaxes, don't put whitespace around the period, and don't put whitespace between the method name and the parentheses:
 
@@ -59,7 +111,9 @@ value (foo, bar)
 Functions
 ---------
 
-Use `|pipes|`, not `arg`, with a comma between each argument and *no spaces inside the pipes* [controversial]. In multiline form, put the argument list on the same line as the opening brace of the function or method.
+#### Argument lists
+
+Use `|pipes|`, not `arg`. Use a comma between each argument. In multiline form, put the argument list on the same line as the opening brace of the function or method.
 
 ```supercollider
 // good:
@@ -78,10 +132,12 @@ x = { |foo = 3 bar = 4|
 };
 ```
 
-Arrays
-------
+Arrays and Collections
+----------------------
 
-In multi-line form, each element should be on a separate line:
+#### *[needs discussion]* Multiline form
+
+Each element should be on a separate line:
 
 ```supercollider
 x = [
@@ -92,6 +148,8 @@ x = [
 ```
 
 The abbreviated symbol syntax `[foo: "bar"]` should only be used in contexts that accept alternating symbols and other values. It's a good idea to use it in, e.g., `Pbind` and `Pmono`.
+
+#### *[Needs discussion]* Abbreviated symbol syntax
 
 If an array uses the abbreviated symbol syntax, it should use only the abbreviated symbol syntax and not mix it with bare items:
 
