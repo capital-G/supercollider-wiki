@@ -199,6 +199,8 @@ A `recordingsDir` method has been added directly to `Platform`, which transparen
 
 `BusPlug:-play` can now accept a `Bus` object ([#2845](https://github.com/supercollider/supercollider/pull/2845)).
 
+Breadcrumb links in helpfiles now have separate links for each node in the hierarchy, and pages with multiple categories have separators between the categories ([#2916](https://github.com/supercollider/supercollider/pull/2916)).
+
 Class library: Changed
 -------
 
