@@ -43,7 +43,9 @@ Use the following commands to build and install Supercollider;
 ### Checking the installation worked
 First, fire up JACK, using qjackctl or your choice of tool.
 
-Secondly, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. The IDE should open and give you three main panes:
+Secondly, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. Occasionally I find that, immediately after installation, SuperCollider does not show up in the menu. This can be fixed by a restart. If you don't want to restart now, you can run SuperCollider by opening a terminal and entering 'scide'.
+
+When the IDE opens, it should give you three main panes:
 * a large blank text window
 * a help window
 * a post window containing text about how the startup process went.
