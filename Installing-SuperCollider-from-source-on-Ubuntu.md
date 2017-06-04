@@ -12,7 +12,11 @@ You will need to install quite a few packages to build the SuperCollider and its
 * libjack-dev
 * libjack-jackd2-dev
 
-SuperCollider requires Jack, and which of these packages you use depends on whether you are (or will be) using Jack 1 or Jack 2. If you use qjackctl as your Jack GUI, then you will be using Jack 2.
+SuperCollider requires Jack, and which of these packages you use depends on whether you are (or will be) using Jack 1 or Jack 2. If you use qjackctl as your Jack GUI, then you will be using Jac 2.
+
+You can run the following terminal command to find out which you have installed (if any). The command simulates an actual installation:
+
+    apt-get -s install jackd1 jackd2
 
 ### Getting the source code for SuperCollider
 Clone the git repository:
