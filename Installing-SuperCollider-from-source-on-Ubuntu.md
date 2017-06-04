@@ -4,11 +4,15 @@ This page gives instructions for installing SuperCollider on Ubuntu and its deri
 ### Packages you need
 You will need to install quite a few packages to build the SuperCollider and its plugins. Below is a list of this software, along with the terminal commands to get it.
 
-    sudo apt-get install build-essential libjack-dev libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev libudev-dev pkg-config git cmake qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev libqt5webkit5-dev qtpositioning5-dev libqt5sensors5-dev libqt5opengl5-dev qjackctl
+    sudo apt-get install build-essential libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev libudev-dev pkg-config git cmake qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev libqt5webkit5-dev qtpositioning5-dev libqt5sensors5-dev libqt5opengl5-dev
 
 *Note*: The recommended version of gcc is 4.8. You need at least 4.7. The sc3-plugins contains c++11 code that does not build with v4.6. Check with `gcc -v` if you run into c++11 related errors.
 
-*Another note*: The dependencies listed above include qjackctl. SuperCollider needs JACK to run, but you might choose another GUI tool for working with JACK, in which case modify the list of dependencies accordingly.
+*Another note*: You will *also* need one of these two packages:
+* libjack-dev
+* libjack-jackd2-dev
+
+SuperCollider requires Jack, and which of these packages you use depends on whether you are (or will be) using Jack 1 or Jack 2. If you use qjackctl as your Jack GUI, then you will be using Jack 2.
 
 ### Getting the source code for SuperCollider
 Clone the git repository:
@@ -69,12 +73,12 @@ Look for the two lines starting 'compiling dir:'. The second quotes the location
 This location will be referred to as **PluginLocation** for the remainder of this article.
 #### Where the header include files are
 You need to know where header include files are when you install the plugins.
-To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SCVersion.txt'. The directory containing this file, usually '/usr/local/include/SuperCollider', is the one you want.
+To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SC_BoundsMacros.h'. The directory containing this file, usually '/usr/local/include/SuperCollider/common', is a child of the headers directory. So if you find 'SC_BoundsMacros.h' in '/usr/local/include/SuperCollider/common', then the headers directory is '/usr/local/include/SuperCollider'.
 
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
 
 #### If SCVersion.txt is not present
-If you find that SCVersion.txt is not on your file system, you will need to create it. Create a file of that name in '/usr/local/include/SuperCollider'.
+You will also need a file called SCVersion.txt to be in the header directory. This is usually placed there during the installation of SuperCollider, but if you find it's not there, you will need to create it. Create a file of that name in **HeaderIncludeFileLocation**.
 
 Now fire up the IDE and read the introductory text that appears in the post window. You will see a line like this:
 
