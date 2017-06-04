@@ -8,10 +8,11 @@ You will need to install quite a few packages to build the SuperCollider and its
 
 *Note*: The recommended version of gcc is 4.8. You need at least 4.7. The sc3-plugins contains c++11 code that does not build with v4.6. Check with `gcc -v` if you run into c++11 related errors.
 
-*Another note*: You will *also* need one of these two packages:
+You will *also* need one of these two packages:
 * libjack-dev
 * libjack-jackd2-dev
 
+####Jack dependency
 SuperCollider requires Jack, and which of these packages you use depends on whether you are (or will be) using Jack 1 or Jack 2. If you use qjackctl as your Jack GUI, then you will be using Jac 2.
 
 You can run the following terminal command to find out which you have installed (if any). The command simulates an actual installation:
