@@ -12,7 +12,7 @@ You will *also* need one of these two packages:
 * libjack-dev
 * libjack-jackd2-dev
 
-####Jack dependency
+#### Jack dependency
 SuperCollider requires Jack, and which of these packages you use depends on whether you are (or will be) using Jack 1 or Jack 2. If you use qjackctl as your Jack GUI, then you will be using Jac 2.
 
 You can run the following terminal command to find out which you have installed (if any). The command simulates an actual installation:
