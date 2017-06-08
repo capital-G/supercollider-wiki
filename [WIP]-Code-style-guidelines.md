@@ -155,7 +155,7 @@ This rule was discussed [here](https://github.com/supercollider/supercollider/is
 
 Expressions that are followed by a semicolon suggest that another expression follows. A function return value isn't followed by any other statement. In this way, omitting the optional semicolon after the final statement of a method or function can serve to indicate an intentional return value.
 
-When code within a method or function changes frequently, missing semicolons may trip up a programmer as statements are reordered. A similar risk appears in methods where the last return statement is likely to be amended with further return cases. In those situations, it may make more sense to retain the final semicolon.
+When code within a method or function changes frequently, missing semicolons may trip up the programmer as statements are reordered. A similar risk appears in methods where the last return statement is likely to be amended with further return cases. In those situations, it may make more sense to retain the final semicolon.
 
 ```supercollider
 ExampleClass {
