@@ -22,7 +22,7 @@ Whitespace
 
 #### *Rule:* Use exactly one newline at the end of a file.
 
-Git considers a file without a terminating newline to be malformed, and will complain when you commit a change without one!
+Git considers a file without a terminating newline to be malformed, and will complain when you commit a change without one! You can set your editor to fix this behavior.
 
 ### Trailing whitespace
 
@@ -38,20 +38,20 @@ Binary operators, including key binary operators, should have one space before a
 
 #### [needs discussion] *Rule:* Add spaces after commas.
 
-Commas should have one space after, but not before. 
+Commas should have one space after, but not before.
 
-#### *Rule:* Use spaces before semicolons.
+#### *Rule:* Don't use spaces before semicolons.
 
 Semicolons should immediately follow the end of the statement, with no additional space.
 
 ```supercollider
-x = 3 + 5 ; // questionable
-x = 3 + 5;  // better
+x = 3 + 5 ; // incorrect
+x = 3 + 5;  // correct
 ```
 
 #### [needs discussion] *Rule:* Add spaces within curly brackets, but not parentheses or square brackets.
 
-In inline form, there should be no spaces inside parentheses `( )` or square brackets `[ ]`. Curly braces `{ }` delimit functions, and should have exactly one space after the opening brace and one space before the closing brace.
+When written on a single line, there should be no spaces inside parentheses `( )` or square brackets `[ ]`. Curly braces `{ }` delimit functions, and should have exactly one space after the opening brace and one space before the closing brace.
 
 ```supercollider
 // correct:
