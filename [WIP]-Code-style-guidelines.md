@@ -110,6 +110,8 @@ value (foo, bar)
 Functions
 ---------
 
+### Parameter lists
+
 #### *Rule:* Use pipes instead of the `arg` keyword to express parameter lists.
 
 Although the SuperCollider compiler will allow commas to be omitted in parameter lists, add them for clarity.
@@ -141,6 +143,8 @@ x = {
 Arrays and Collections
 ----------------------
 
+### Multi-line arrays
+
 #### [needs discussion] *Rule:* Place each element of a multi-line array on its own line.
 
 Each element should be on a separate line:
@@ -153,7 +157,9 @@ x = [
 ];
 ```
 
-#### [needs discussion] *Rule:* Only use abbreviate symbol syntax in appropriate contexts.
+### Abbreviated symbol syntax
+
+#### [needs discussion] *Rule:* Only use abbreviated symbol syntax in appropriate contexts.
 
 The abbreviated symbol syntax `[foo: "bar"]` should only be used in contexts that accept alternating symbols and other values. It's a good idea to use it in, e.g., `Pbind` and `Pmono`.
 
