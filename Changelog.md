@@ -203,6 +203,8 @@ A `recordingsDir` method has been added directly to `Platform`, which transparen
 
 Breadcrumb links in helpfiles now have separate links for each node in the hierarchy, and pages with multiple categories have separators between the categories ([#2916](https://github.com/supercollider/supercollider/pull/2916)).
 
+`SoundFile:*openWrite` now takes additional parameters ([#2926](https://github.com/supercollider/supercollider/pull/2926)).
+
 Class library: Changed
 -------
 
@@ -276,6 +278,8 @@ A timing error with `NodeProxy:-clear` was fixed ([#2845](https://github.com/sup
 The macOS plist file now shows the full version number for both the Version String and Shortened Version String ([#2487](https://github.com/supercollider/supercollider/pull/2487)).
 
 Fixed instances of accidentally silencing error messages caused by neglecting to call `Object:primitiveFailed` ([#2908](https://github.com/supercollider/supercollider/pull/2908)).
+
+Patched the possibility of inconsistent `TempoClock` state when the tempo is set via `setTempoAtSec` ([#2078](https://github.com/supercollider/supercollider/pull/2078)).
 
 Class library: Security
 --------
