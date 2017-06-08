@@ -6,7 +6,7 @@ This is a living document reflecting the conventional style used for SuperCollid
 How to read this document
 -------------------------
 
-There are two categories of guidelines: *Rules* should be followed strictly; *Recommendations* are looser preferences. Existing code should conform to all *Rules*, but only new code should follow *Recommendations*.
+There are two categories of guidelines: *Rules* should be followed strictly; *Recommendations* are looser preferences. Existing code should conform to all *Rules*, but *Recommendations* are suggestions for new and existing contributors who may be interested in the discussion surrounding the topic.
 
 Rules marked with "[needs discussion]" are potentially controversial and have not yet been agreed upon.
 
@@ -107,8 +107,8 @@ foo.value (bar)
 value (foo, bar)
 ```
 
-Functions
----------
+Methods and functions
+---------------------
 
 ### Parameter lists
 
@@ -148,6 +148,32 @@ x = {
 ```
 
 This rule was discussed [here](https://github.com/supercollider/supercollider/issues/2913).
+
+### Return statements
+
+#### *Recommendation:* don't place a semicolon after the final statement of a method or function.
+
+Expressions that are followed by a semicolon suggest that another expression follows. A function return value isn't followed by any other statement. In this way, omitting the optional semicolon after the final statement of a method or function can serve to indicate an intentional return value.
+
+When code within a method or function changes frequently, missing semicolons may trip up a programmer as statements are reordered. A similar risk appears in methods where the last return statement is likely to be amended with further return cases. In those situations, it may make more sense to retain the final semicolon.
+
+```supercollider
+ExampleClass {
+    exampleMethod { |a, b|
+        var c = a + b;
+        ^c.asString
+    }
+}
+```
+
+```supercollider
+f = { |a, b|
+    var c = a + b;
+    c.asString // semicolon omitted here marks this as the intended return value
+}
+```
+
+This rule was discussed [here](https://github.com/supercollider/supercollider/issues/2914).
 
 Arrays and Collections
 ----------------------
