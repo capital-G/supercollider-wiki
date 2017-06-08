@@ -114,18 +114,25 @@ Functions
 
 #### *Rule:* Use pipes instead of the `arg` keyword to express parameter lists.
 
-Although the SuperCollider compiler will allow commas to be omitted in parameter lists, add them for clarity.
+The pipe-enclosed parameter list is used in most modern code, and mimics parameter lists in Smalltalk. Programmers coming from languages other than Smalltalk may also find that it appears closer to C-family function signature notation.
+
+Although the SuperCollider compiler will allow commas to be omitted in parameter lists, adding them makes for clearer code, especially when default arguments are provided.
 
 ```supercollider
 // good:
 x = { |foo = 3, bar = 4| /* ... */ };
 
-// bad:
+// bad, unclear:
 x = { |foo = 3 bar = 4| /* ... */ };
+// bad, outdated notation:
 x = { arg foo = 3, bar = 4; /* ... */ };
 ```
 
+This rule was discussed [here](https://github.com/supercollider/supercollider/issues/2913).
+
 #### *Rule:* Place the parameter list on the same line as the opening curly bracket of a function or method.
+
+As explained in the previous rule, this is closer to conventional Smalltalk style and reads like a parameter list in C-family languages.
 
 ```supercollider
 // good:
@@ -139,6 +146,8 @@ x = {
     foo + bar;
 };
 ```
+
+This rule was discussed [here](https://github.com/supercollider/supercollider/issues/2913).
 
 Arrays and Collections
 ----------------------
