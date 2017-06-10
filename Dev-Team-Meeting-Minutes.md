@@ -1,3 +1,17 @@
+2017-06-10
+==========
+
+Three members were present: Brian (@brianlheim), Nathan (@snappizz), and Julian (@telephon).
+
+Topics of discussion were:
+
+- Till's recent email to the dev list, sc3-plugins and maintenance of SC's "satellite" projects
+- some close-to-being-merged PRs: we talked about what was needed to merge
+- method table: Brian agreed to test the performance of the language (both memory and speed) with a high number of methods defined, to either put to rest or confirm old rumors
+- PR backlog: Julian agreed to move a number of his inactive PRs to the PR backlog (https://github.com/supercollider/supercollider/projects/7).
+
+Thanks to all who attended! The next meeting will be at 16.00 UTC on 2017-06-17.
+
 2017-06-03
 ==========
 
