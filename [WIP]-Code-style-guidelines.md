@@ -71,7 +71,7 @@ c = b.collect({|x| x + 3});
 
 The SuperCollider class library uses tabs for indentation.
 
-#### [needs discussion] *Rule:* Use K&R style for multi-line blocks
+#### *Rule:* Use K&R style for multi-line blocks
 
 For all three bracket types, use [K&R indent style](https://en.wikipedia.org/wiki/Indent_style#K.26R). The open brace comes at the end of the first line, rather than on a separate line.
 
@@ -92,19 +92,26 @@ x =
 
 ### Method calls
 
-#### [needs discussion] *Rule:* keep method calls compact
+#### *Rule:* don't space around `.`
 
-In the most common method call syntaxes, don't put whitespace around the period, and don't put whitespace between the method name and the parentheses:
+`.` may be used either inline or multiline. Inline, don't put any space around it.
 
 ```supercollider
 // good:
 foo.value(bar)
-value(foo, bar)
 
 // bad:
 foo . value(bar)
-foo.value (bar)
-value (foo, bar)
+```
+
+In long chains of method calls on the same object, it may be beneficial to split the method call across two lines. The dot should be on the second line, not the first, and it should be indented one level. Don't put whitespace between the dot and the method name.
+
+```supercollider
+Button()
+    .states_([["blorp", nil, nil]])
+    .action_({
+        "hey hey hey".postln
+    });
 ```
 
 Methods and functions
