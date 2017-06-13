@@ -224,6 +224,8 @@ To match `Out` and `ReplaceOut`, `LocalOut` and `XOut` now correctly validate th
 
 The argument to `Pattern:fin` has a default of 1 for consistency with `Object:fin` ([#2480](https://github.com/supercollider/supercollider/pull/2840/files)).
 
+`Complex:reciprocal` is faster now ([#2890](https://github.com/supercollider/supercollider/pull/2890)).
+
 Class library: Deprecated
 ----------
 
