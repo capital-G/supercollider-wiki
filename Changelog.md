@@ -133,6 +133,8 @@ Fixed a bug with `TGrains` ignoring the `amp` parameter ([#2809](https://github.
 
 `Dibrown` no longer ignores the `length` argument ([#2654](https://github.com/supercollider/supercollider/pull/2654)).
 
+`Pitch` no longer ignores the `median` argument ([#2953](https://github.com/supercollider/supercollider/pull/2953)).
+
 UGens: Security
 --------
 
