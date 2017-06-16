@@ -205,6 +205,8 @@ Breadcrumb links in helpfiles now have separate links for each node in the hiera
 
 `SoundFile:*openWrite` now takes additional parameters ([#2926](https://github.com/supercollider/supercollider/pull/2926)).
 
+Two new instance methods were added to Symbol: `isBinaryOp` and `isIdentifier` ([#2955](https://github.com/supercollider/supercollider/pull/2955)).
+
 Class library: Changed
 -------
 
