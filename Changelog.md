@@ -154,6 +154,8 @@ sclang: Deprecated
 sclang: Removed
 -------
 
+Removed some unhelpful memory addresses from call stack output in error printing ([#2951](https://github.com/supercollider/supercollider/pull/2951)).
+
 sclang: Fixed
 -----
 
