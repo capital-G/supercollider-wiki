@@ -173,6 +173,8 @@ Exceptions occurring in primitives no longer print unavoidable error messages ev
 
 Fixed a crash when `Dictionary:keysValuesArrayDo` is called with `nil` as an argument ([#2799](https://github.com/supercollider/supercollider/pull/2799)).
 
+Fixed `WebView:onLinkActivated` handler failing to fire ([#3003](https://github.com/supercollider/supercollider/pull/3003)).
+
 sclang: Security
 ----------------
 
