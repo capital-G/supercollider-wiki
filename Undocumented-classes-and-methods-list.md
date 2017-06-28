@@ -14,6 +14,7 @@ Notation: `Class:-methodname` for instance methods; `Class:*methodname` for clas
 - [ ] NetAddr:*useDoubles
 - [ ] NetAddr:-sendRaw
 - [ ] Integer:-exit
+- [ ] SequenceableCollection:+++
 
 # Undocumented Classes
 
