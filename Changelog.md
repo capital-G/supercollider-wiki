@@ -293,6 +293,8 @@ Fixed instances of accidentally silencing error messages caused by neglecting to
 
 Patched the possibility of inconsistent `TempoClock` state when the tempo is set via `setTempoAtSec` ([#2078](https://github.com/supercollider/supercollider/pull/2078)).
 
+Fixed memory spikes when using `MIDIFunc.sysex` with a large `srcID` ([#3005](https://github.com/supercollider/supercollider/pull/3005)).
+
 Class library: Security
 --------
 
