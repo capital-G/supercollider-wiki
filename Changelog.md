@@ -38,6 +38,8 @@ SuperCollider can now be built on FreeBSD, thanks to @shamazmazum ([#2834](https
 General: Changed
 -------
 
+**Breaking change:** `sc_gcd` in the plugin interface now conforms to `gcd(n, 0) == n` instead of `gcd(n, 0) == abs(n)` ([#2980](https://github.com/supercollider/supercollider/pull/2980)). This also affects the method `SimpleNumber:gcd`.
+
 The macOS plist file now shows the full version number for both the Version String and Shortened Version String ([#2487](https://github.com/supercollider/supercollider/pull/2487)).
 
 General: Deprecated
