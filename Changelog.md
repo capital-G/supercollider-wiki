@@ -175,6 +175,8 @@ Fixed a crash when `Dictionary:keysValuesArrayDo` is called with `nil` as an arg
 
 Fixed `WebView:onLinkActivated` handler failing to fire ([#3003](https://github.com/supercollider/supercollider/pull/3003)).
 
+Fixed GUI objects failing to display when launched from the `action` of `unixCmd` ([#3009](https://github.com/supercollider/supercollider/pull/3009)). You will still need `{ }.defer`, however.
+
 sclang: Security
 ----------------
 
