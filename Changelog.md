@@ -137,6 +137,8 @@ Fixed a bug with `TGrains` ignoring the `amp` parameter ([#2809](https://github.
 
 `Pitch` no longer ignores the `median` argument ([#2953](https://github.com/supercollider/supercollider/pull/2953)).
 
+Fixed a build error in DiskIOUGens on Windows ([#3015](https://github.com/supercollider/supercollider/pull/3015)).
+
 UGens: Security
 --------
 
