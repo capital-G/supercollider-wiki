@@ -42,3 +42,14 @@ Only enabled on a debug build.
 ```sclang
 QtGUI.debugLevel_(0) // 0 = no output, 3 = verbose
 ```
+
+Test Suite
+----------
+
+### Purpose
+
+Unit testing suite for SuperCollider language core library
+
+### Usage
+
+Download UnitTesting quark separately. Add the test suite folder to your SuperCollider compile paths. Recompile. UnitTest.runAll (<- check that)
