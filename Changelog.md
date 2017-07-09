@@ -335,6 +335,8 @@ Fixed a bug where `Document:selectedString_` had no effect ([#2849](https://gith
 
 Fixed the "Find in page..." feature in the help viewer skipping every other occurrence ([#2903](https://github.com/supercollider/supercollider/pull/2903)).
 
+Fixed checkboxes appearing in the upper left of the help viewer ([#3028](https://github.com/supercollider/supercollider/pull/3028)).
+
 scide: Security
 --------
 
