@@ -9,13 +9,15 @@ Tools
 Boost Update Script
 -------------------
 
+Location: `external_libraries/extract_boost.sh`, `external_libraries/boost_sc_changes.patch`
+
 ### Purpose
 
-Update Boost libraries packaged with SuperCollider.
+Update Boost libraries packaged with SuperCollider, and apply the SuperCollider organization's patches for Boost.
 
 ### Usage
 
-TODO
+Should be run as soon as possible after a new release of Boost. See instructions in `external_libraries/README_BOOST.md` for more information.
 
 sclang Lexer, Parser, & Compiler Regression Test Suite
 ------------------------------------------------------
