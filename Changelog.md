@@ -55,6 +55,8 @@ A typo in the build system prevented the `-msse` compiler flag from being proper
 
 Fixed a fontification break in scel when too many classes are defined ([#2508](https://github.com/supercollider/supercollider/pull/2508)).
 
+Fixed the build system towards FreeBSD support ([#3126](https://github.com/supercollider/supercollider/pull/3126)).
+
 General: Security
 --------
 
