@@ -342,14 +342,14 @@ Fixed `Function:plot` showing an empty graph if the server wasn't booted when th
 Class library: Security
 --------
 
-scide: Added
+IDE & SCDoc: Added
 -----
 
 Entries in the Documents docklet can be reordered, and document tabs will automatically reorder to reflect this ([#2555](https://github.com/supercollider/supercollider/pull/2555)).
 
 "Edit > Preferences > Editor > Display" has a new option that allows replacing tabs with a dropdown whose items are alphabetically ordered ([#2555](https://github.com/supercollider/supercollider/pull/2555)). This makes navigation easier in some performance contexts.
 
-scide: Changed
+IDE & SCDoc: Changed
 -------
 
 Server actions, which were previously in the "Language" menu, have been moved out to their own "Server" menu ([#3049](https://github.com/supercollider/supercollider/pull/3049)).
@@ -358,14 +358,16 @@ Changed "occurrences" to "matches" in the status bar in the Find and Replace fea
 
 Many minor improvements were made to the look and feel of the documentation ([#2944](https://github.com/supercollider/supercollider/pull/2944), [#2945](https://github.com/supercollider/supercollider/pull/2945), [#2947](https://github.com/supercollider/supercollider/pull/2947), [#2948](https://github.com/supercollider/supercollider/pull/2948), [#2967](https://github.com/supercollider/supercollider/pull/2967), [#3006](https://github.com/supercollider/supercollider/pull/3006), [#3022](https://github.com/supercollider/supercollider/pull/3022), [#3025](https://github.com/supercollider/supercollider/pull/3025), [#3034](https://github.com/supercollider/supercollider/pull/3034)).
 
-scide: Deprecated
+IDE & SCDoc: Deprecated
 ----------
 
-scide: Removed
+IDE & SCDoc: Removed
 -------
 
-scide: Fixed
+IDE & SCDoc: Fixed
 -----
+
+Fixed SCDoc refusing to index any further documents if one document has a malformed `copymethod::` command ([#3050](https://github.com/supercollider/supercollider/pull/3050)).
 
 Some Linux systems had unreadable font colors in the autocomplete tooltips. This has been (finally) fixed ([#2672](https://github.com/supercollider/supercollider/pull/2762)).
 
