@@ -333,6 +333,8 @@ Patched the possibility of inconsistent `TempoClock` state when the tempo is set
 
 Fixed memory spikes when using `MIDIFunc.sysex` with a large `srcID` ([#3005](https://github.com/supercollider/supercollider/pull/3005)).
 
+Fixed spaces sometimes being rendered as `%20` in links in SCDoc ([#3033](https://github.com/supercollider/supercollider/pull/3033)).
+
 Class library: Security
 --------
 
