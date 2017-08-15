@@ -343,6 +343,8 @@ Fixed `Function:plot` showing an empty graph if the server wasn't booted when th
 
 Fixed blatant errors in `Collection:asAssociations` and `Collection:asPairs` where elements were dropped ([#3101](https://github.com/supercollider/supercollider/pull/3101)).
 
+Fixed bugs in `NodeProxy` when using external servers ([#3103](https://github.com/supercollider/supercollider/pull/3103)).
+
 Class library: Security
 --------
 
