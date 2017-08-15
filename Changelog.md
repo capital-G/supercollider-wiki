@@ -33,7 +33,9 @@ scvim has seen numerous enhancements now that an actively maintained fork has be
 
 SuperCollider can now be built on Windows using the MSYS2 toolchain, thanks in particular to @awson and @bagong. ([PortAudio #1](https://github.com/supercollider/portaudio/pull/1), [HIDAPI #5](https://github.com/supercollider/hidapi/pull/5), [#2473](https://github.com/supercollider/supercollider/pull/2473), [#2704](https://github.com/supercollider/supercollider/pull/2704))
 
-SuperCollider can now be built on FreeBSD, thanks to @shamazmazum ([#2834](https://github.com/supercollider/supercollider/pull/2834), [#2704](https://github.com/supercollider/supercollider/pull/2704), [HIDAPI #8](https://github.com/supercollider/hidapi/pull/8)).
+SuperCollider can now be built on FreeBSD, thanks to @shamazmazum and @yurivict ([#2834](https://github.com/supercollider/supercollider/pull/2834), [#2704](https://github.com/supercollider/supercollider/pull/2704), [HIDAPI #8](https://github.com/supercollider/hidapi/pull/8), [#3131](https://github.com/supercollider/supercollider/pull/3131)).
+
+Detailed documentation on creating macOS standalone applications with SuperCollider has been added, thanks to @adcxyz ([#2881](https://github.com/supercollider/supercollider/pull/2881)).
 
 General: Changed
 -------
@@ -195,6 +197,8 @@ sclang: Security
 Class library: Added
 -----
 
+Added a `rewind` method to `CollStream` ([#2400](https://github.com/supercollider/supercollider/pull/2400)).
+
 Added four new class methods to `File` for convenience: `readAllString`, `readAllSignal`, `readAllStringHTML`, `readAllStringRTF` ([#2410](https://github.com/supercollider/supercollider/pull/2410)).
 
 `Pstep` accepts an array as a duration argument ([#2511](https://github.com/supercollider/supercollider/pull/2511)).
@@ -227,6 +231,10 @@ Breadcrumb links in helpfiles now have separate links for each node in the hiera
 
 Two new instance methods were added to Symbol: `isBinaryOp` and `isIdentifier` ([#2955](https://github.com/supercollider/supercollider/pull/2955)).
 
+Added three convenience methods: `View:resizeToBounds`, `View:resizeToHint`, and `Window:resizeToHint` ([#2865](https://github.com/supercollider/supercollider/pull/2865)).
+
+Added `Collection:asEvent` for easy conversion to an `Event` ([#2871](https://github.com/supercollider/supercollider/pull/2871)).
+
 Class library: Changed
 -------
 
@@ -250,7 +258,9 @@ The argument to `Pattern:fin` has a default of 1 for consistency with `Object:fi
 
 `Complex:reciprocal` is faster now ([#2890](https://github.com/supercollider/supercollider/pull/2890)).
 
-Many minor improvements were made to the look and feel of the documentation ([#2944](https://github.com/supercollider/supercollider/pull/2944), [#2945](https://github.com/supercollider/supercollider/pull/2945), [#2947](https://github.com/supercollider/supercollider/pull/2947)).
+`Buffer:write` takes floating point arguments, truncating them to integers ([#2547](https://github.com/supercollider/supercollider/pull/2547)).
+
+Conversion methods among collection types has been improved and documented ([#2871](https://github.com/supercollider/supercollider/pull/2871)).
 
 Class library: Deprecated
 ----------
@@ -332,6 +342,8 @@ scide: Changed
 
 Changed "occurrences" to "matches" in the status bar in the Find and Replace features ([#2702](https://github.com/supercollider/supercollider/pull/2702)).
 
+Many minor improvements were made to the look and feel of the documentation ([#2944](https://github.com/supercollider/supercollider/pull/2944), [#2945](https://github.com/supercollider/supercollider/pull/2945), [#2947](https://github.com/supercollider/supercollider/pull/2947)).
+
 scide: Deprecated
 ----------
 
@@ -354,6 +366,8 @@ scide: Security
 
 Miscellanea
 -----------
+
+A packaging Python script is now compatible with both Python 2 & 3 ([#2896](https://github.com/supercollider/supercollider/pull/2896)).
 
 Additional and/or improved documentation is available for the following:
 - Classes
@@ -381,12 +395,14 @@ Additional and/or improved documentation is available for the following:
   - NetAddr
   - Object
   - Pstutter
+  - ReplaceOut
   - Ringz
   - Schmidt
   - String
   - Symbol
 - Guides
   - OSC Communication
+  - Internal Snooping
 - Overviews
   - JITLib
   - Operators
