@@ -239,6 +239,8 @@ Added three convenience methods: `View:resizeToBounds`, `View:resizeToHint`, and
 
 Added `Collection:asEvent` for easy conversion to an `Event` ([#2871](https://github.com/supercollider/supercollider/pull/2871)).
 
+`DeprecatedError` now shows you the file path of the deprecated method ([#3039](https://github.com/supercollider/supercollider/pull/3039)).
+
 Class library: Changed
 -------
 
@@ -334,6 +336,8 @@ Patched the possibility of inconsistent `TempoClock` state when the tempo is set
 Fixed memory spikes when using `MIDIFunc.sysex` with a large `srcID` ([#3005](https://github.com/supercollider/supercollider/pull/3005)).
 
 Fixed spaces sometimes being rendered as `%20` in links in SCDoc ([#3033](https://github.com/supercollider/supercollider/pull/3033)).
+
+Fixed `Function:plot` showing an empty graph if the server wasn't booted when the method was invoked ([#3047](https://github.com/supercollider/supercollider/pull/3047)).
 
 Class library: Security
 --------
