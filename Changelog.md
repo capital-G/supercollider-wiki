@@ -39,6 +39,8 @@ Detailed documentation on creating macOS standalone applications with SuperColli
 
 A CODE_OF_CONDUCT.md and CONTRIBUTING.md have been added to the repository ([#3001](https://github.com/supercollider/supercollider/pull/3001)).
 
+Higher-resolution raster versions of the SC cube logo have been added to the top-level `icons/` directory ([#3023](https://github.com/supercollider/supercollider/pull/3023)).
+
 General: Changed
 -------
 
