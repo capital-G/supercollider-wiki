@@ -347,6 +347,8 @@ Fixed blatant errors in `Collection:asAssociations` and `Collection:asPairs` whe
 
 Fixed bugs in `NodeProxy` when using external servers ([#3103](https://github.com/supercollider/supercollider/pull/3103)).
 
+`History` now outputs a correct timestamp on Windows ([#3045](https://github.com/supercollider/supercollider/pull/3045)).
+
 Class library: Security
 --------
 
