@@ -1,3 +1,39 @@
+2017-09-09
+==========
+
+Five members were present: Cian (@cianoc), Nathan (@snappizz), Brian (@brianlheim), Alberto (@adcxyz), and Jack (@jarmitage)
+
+Recent work:
+Brian: travisCI, unit testing, organizational documentation
+Nathan: Debian packaging
+James: interested in helping out (currently mainly a user)
+Alberto: multi-client ID PR
+Cian: fixing help files, potential Ableton Link support in 2-3 upcoming PRs
+
+Topics of discussion:
+multi-client ID PR:
+- Alberto has raised new issues on GitHub to target specific design problems that arose in the PR
+- He plans to rework #3106 (the current PR) into a few smaller PRs to avoid stagnation
+- We talked about whether to put it in 3.9 or 3.10, and agreed that some of it should definitely go in 3.9 (see discussion below)
+
+Suggestions from Cian:
+- improve documentation for new supercollider users (coming from i.e. Ableton)
+- add a UGen overview
+- add a Quark overview
+
+3.9 critical todos:
+- block allocators portion of multi-client ID fix
+- sendNotifyRequest extension of multi-client ID fix
+- after that, release! OK to push a beta without full Linux packaging
+- continue to work on Linux packaging, hoping to have a good release 
+
+Adding UnitTest and test suite in common:
+- Nathan pointed out there are issues with the UnitTest class that should be worked on
+- We discussed (and tentatively agreed on) putting the test suite in the main class library
+- This would be aided by adding a helpfile for unit tests documenting how to disable unit tests if desired
+
+Thanks to all who attended! The next meeting has been set for September 16, 2017, at 16:00 UTC (12p EST).
+
 2017-06-10
 ==========
 
@@ -10,7 +46,7 @@ Topics of discussion were:
 - method table: Brian agreed to test the performance of the language (both memory and speed) with a high number of methods defined, to either put to rest or confirm old rumors
 - PR backlog: Julian agreed to move a number of his inactive PRs to the PR backlog (https://github.com/supercollider/supercollider/projects/7).
 
-Thanks to all who attended! The next meeting will be at 16.00 UTC on 2017-06-17.
+Thanks to all who attended!
 
 2017-06-03
 ==========
