@@ -151,6 +151,8 @@ Fixed a build error in DiskIOUGens on Windows ([#3015](https://github.com/superc
 
 Fixed `AudioControl` outputting garbage data if a bus is mapped to it but nothing is playing to the bus ([#3063](https://github.com/supercollider/supercollider/pull/3063)).
 
+Fixed incorrect math in `PanAz.ar` with audio-rate input signal and position ([3139](https://github.com/supercollider/supercollider/pull/3139)).
+
 UGens: Security
 --------
 
@@ -352,6 +354,8 @@ Fixed blatant errors in `Collection:asAssociations` and `Collection:asPairs` whe
 Fixed bugs in `NodeProxy` when using external servers ([#3103](https://github.com/supercollider/supercollider/pull/3103)).
 
 `History` now outputs a correct timestamp on Windows ([#3045](https://github.com/supercollider/supercollider/pull/3045)).
+
+Fixed Volume control failing to be persistent when rebooting the server ([#3125](https://github.com/supercollider/supercollider/pull/3125)).
 
 Class library: Security
 --------
