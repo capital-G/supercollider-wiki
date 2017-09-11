@@ -357,6 +357,8 @@ Fixed bugs in `NodeProxy` when using external servers ([#3103](https://github.co
 
 Fixed Volume control failing to be persistent when rebooting the server ([#3125](https://github.com/supercollider/supercollider/pull/3125)).
 
+Fixed `SimpleNumber:asTimeString` producing nonsensical results with the "precision" argument ([#3166](https://github.com/supercollider/supercollider/pull/3166)).
+
 Class library: Security
 --------
 
