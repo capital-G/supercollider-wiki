@@ -166,6 +166,8 @@ sclang: Changed
 
 The maximum number of MIDI ports has been increased from 16 to 128 ([#2494](https://github.com/supercollider/supercollider/pull/2494)).
 
+The startup post "NumPrimitives = #" is reworded to "Found # primitives" ([#3139](https://github.com/supercollider/supercollider/pull/3139)).
+
 sclang: Deprecated
 ----------
 
@@ -173,6 +175,8 @@ sclang: Removed
 -------
 
 Removed some unhelpful memory addresses from call stack output in error printing ([#2951](https://github.com/supercollider/supercollider/pull/2951)).
+
+Removed some accidentally retained debug posts when the language starts up ([#3135](https://github.com/supercollider/supercollider/pull/3135)).
 
 sclang: Fixed
 -----
