@@ -45,6 +45,6 @@ For the release proper:
 - Announce to mailing list, Facebook, etc. Celebrate, bake a cake.
 - Merge `3.9` into `develop`.
 
-For patch releases, the process is the same.
+For patch releases, the process is the same. You can just keep around the `3.9` branch for all the `3.9.x` releases.
 
 When you're done with patch releases, bump up `SCVersion.txt` in `develop` to 3.10dev.
