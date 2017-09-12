@@ -1,6 +1,12 @@
-SuperCollider uses an unstable master branch. Stable releases are marked using tags, along with GitHub's "releases" page.
+SuperCollider's git workflow is nearly identical to [git-flow](http://nvie.com/posts/a-successful-git-branching-model/). There are three major branches:
 
-All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never, ever push directly to the master or release branches.** A topic branch name starts with `topic/` and then a very brief description of what the branch is doing, e.g. `topic/fix-sinosc-help`. We aren't strict about the naming conventions for topic branches — it's mostly for your own good.
+- `develop`, for bleeding-edge commits that will be incorporated into the next 3.x release
+- Release branches like `3.9`, to which only bug fixes can be merged
+- `master`, which is stable and only includes releases (note: at the time of this writing, master is not yet stable, but it will be when 3.9 is released)
+
+Stable releases are marked using tags, along with GitHub's "releases" page.
+
+All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never, ever push directly to `develop` or the release branches, and NEVER to master.** A topic branch name starts with `topic/` and then a very brief description of what the branch is doing, e.g. `topic/fix-sinosc-help`. We aren't strict about the naming conventions for topic branches — it's mostly for your own good.
 
 When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file. We used to create topic branches in the main repository, but now that GitHub has added this feature, this is discouraged.
 
@@ -18,7 +24,7 @@ When you file a pull request, GitHub gives you the option to allow contributors 
 
 ## Releasing ##
 
-A month or so before the beta release, the release manager creates a new branch named after the release -- say `3.9`. Uncontroversial bug fixes should be merged into the `release-3.9` branch, and everything else should go into the master branch. This causes the `3.9` and master branches to diverge, so the fixes in the `3.9` branch should periodically be merged into master to keep master up to date.
+A month or so before the beta release, the release manager branches off `develop` to create a new branch named after the release -- say `3.9`. Uncontroversial bug fixes should be merged into the `3.9` branch, and everything else should go into the master branch. This causes the `3.9` and `develop` branches to diverge, so the fixes in the `3.9` branch should periodically be merged into `develop` to keep `develop` up to date.
 
 The first thing to do in release mode is to remove the `SCClassLibrary/deprecated/3.8` directory and document these removals in the changelog. Corresponding UGen and primitive code should also be removed. Be careful when deprecating UGens and be considerate of alternate clients!
 
@@ -28,16 +34,17 @@ For each beta release:
 - Copy the changelog to a new "News in 3.9" helpfile. This is best done as late as possible before the beta release to avoid having to update the changelog continuously.
 - Tag the beta release in git as (say) "Version-3.9.0-beta1." Release on GitHub.
 - Announce to mailing list, Facebook, etc.
-- Merge `3.9` into master. This will temporarily mess up `SCVersion.txt` in master, but who cares, it's master.
+- Merge `3.9` into `develop`. This will temporarily mess up `SCVersion.txt` in `develop`, but who cares, it's `develop`.
 
 For the release proper:
 
 - In the `3.9` branch, bump up the version in `SCVersion.txt` to 3.9.0.
 - Copy the changelog again if there were any new changes.
-- Tag the beta release in git as "Version-3.9.0." Release on GitHub.
-- Announce to mailing list, Facebook, etc. Celebrate, bake a cake, etc.
-- Merge `3.9` into master.
+- Merge `3.9` into `master`, preferably with `git merge --no-ff`.
+- Tag the release in git as "Version-3.9.0." Release on GitHub.
+- Announce to mailing list, Facebook, etc. Celebrate, bake a cake.
+- Merge `3.9` into `develop`.
 
 For patch releases, the process is the same.
 
-When you're done with patch releases, bump up `SCVersion.txt` in master to 3.10dev.
+When you're done with patch releases, bump up `SCVersion.txt` in `develop` to 3.10dev.
