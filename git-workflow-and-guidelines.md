@@ -6,7 +6,7 @@ SuperCollider's git workflow is nearly identical to [git-flow](http://nvie.com/p
 
 Stable releases are marked using tags, along with GitHub's "releases" page.
 
-All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never, ever push directly to `develop` or the release branches, and NEVER to master.** A topic branch name starts with `topic/` and then a very brief description of what the branch is doing, e.g. `topic/fix-sinosc-help`. We aren't strict about the naming conventions for topic branches — it's mostly for your own good.
+All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never, ever push directly to `develop`, `master`, or the release branches.** A topic branch name starts with `topic/` and then a very brief description of what the branch is doing, e.g. `topic/fix-sinosc-help`. We aren't strict about the naming conventions for topic branches — it's mostly for your own good.
 
 When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file. We used to create topic branches in the main repository, but now that GitHub has added this feature, this is discouraged.
 
