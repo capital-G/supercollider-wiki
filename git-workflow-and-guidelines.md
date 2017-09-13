@@ -1,12 +1,14 @@
-SuperCollider's git workflow is nearly identical to [git-flow](http://nvie.com/posts/a-successful-git-branching-model/). There are three major branches:
+SuperCollider's uses git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). We use three major branches:
 
 - `develop`, for bleeding-edge commits that will be incorporated into the next 3.x release
 - Release branches like `3.9`, to which only bug fixes can be merged
-- `master`, which is stable and only includes releases (note: at the time of this writing, master is not yet stable, but it will be when 3.9 is released)
+- `master`, which is stable and only includes releases (note: at the time of this writing [2017-09-12], master is not yet stable, but it will be when 3.9 is released)
 
-Stable releases are marked using tags, along with GitHub's "releases" page.
+There is a set of [command-line extensions](https://github.com/nvie/gitflow) for git-flow; you may want to consider installing them if you contribute frequently. There is also a [cheat-sheet](https://danielkummer.github.io/git-flow-cheatsheet/) by Daniel Kummer.
 
-All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never, ever push directly to `develop`, `master`, or the release branches.** A topic branch name starts with `topic/` and then a very brief description of what the branch is doing, e.g. `topic/fix-sinosc-help`. We aren't strict about the naming conventions for topic branches — it's mostly for your own good.
+Stable releases are marked using annotated tags on GitHub's "releases" page.
+
+All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never, ever push directly to `develop`, `master`, or the release branches.** A topic branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but it's always nice to have consistency.
 
 When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file. We used to create topic branches in the main repository, but now that GitHub has added this feature, this is discouraged.
 
