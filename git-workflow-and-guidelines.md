@@ -8,7 +8,7 @@ There is a set of [command-line extensions](https://github.com/nvie/gitflow) for
 
 Stable releases are marked using annotated tags on GitHub's "releases" page.
 
-All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never, ever push directly to `develop`, `master`, or the release branches.** A topic branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but it's always nice to have consistency.
+All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never push directly to `develop`, `master`, or the release branches.** A topic branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but it's always nice to have consistency.
 
 When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file. We used to create topic branches in the main repository, but now that GitHub has added this feature, this is discouraged.
 
