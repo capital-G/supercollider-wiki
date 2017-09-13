@@ -1,7 +1,15 @@
 Purpose
 =======
 
-Record location & usage of various tools for developers and maintainers.
+Document tools and practices for developers and maintainers of SuperCollider.
+
+Practices
+=========
+
+Git Workflow
+------------
+
+GitFlow (TODO: incorporate, or link, to other document about this topic)
 
 Tools
 =====
