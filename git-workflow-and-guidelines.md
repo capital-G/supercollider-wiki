@@ -1,16 +1,21 @@
-SuperCollider's uses git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). We use three major branches:
+SuperCollider's takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). We use three major branches:
 
 - `develop`, for bleeding-edge commits that will be incorporated into the next 3.x release
 - Release branches like `3.9`, to which only bug fixes can be merged
 - `master`, which is stable and only includes releases (note: at the time of this writing [2017-09-12], master is not yet stable, but it will be when 3.9 is released)
 
-There is a set of [command-line extensions](https://github.com/nvie/gitflow) for git-flow; you may want to consider installing them if you contribute frequently. There is also a [cheat-sheet](https://danielkummer.github.io/git-flow-cheatsheet/) by Daniel Kummer.
+There is a set of [command-line extensions](https://github.com/nvie/gitflow) for git-flow; you may want to consider installing them if you contribute frequently. There is also a helpful [cheat-sheet](https://danielkummer.github.io/git-flow-cheatsheet/) by Daniel Kummer.
 
 Stable releases are marked using annotated tags on GitHub's "releases" page.
 
-All contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never push directly to `develop`, `master`, or the release branches.** A topic branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but it's always nice to have consistency.
+Most contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never push directly to `develop`, `master`, or the release branches.** A feature branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but consistency is appreciated.
 
-When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file. We used to create topic branches in the main repository, but now that GitHub has added this feature, this is discouraged.
+When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file provided you are comfortable with other maintainers pushing to your branch.
+
+If desired, a feature branch can be made on the main organization repository instead of your personal fork. Typically, this is done when the branch contains a significant change of organizational interest, such as a fix for a major bug, an upgrade of a bundled library, a change to the CI or packaging system, a feature that solves a longstanding problem, and so on. Creating the branch here has a few benefits:
+- the branch is easy to find and build
+- SuperCollider's CI integrations apply to pushes to the branch
+- the branch is protected from potentially being lost if a contributor deletes their fork
 
 ## Guidelines for pull request authors ##
 
