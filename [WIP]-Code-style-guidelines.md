@@ -10,6 +10,14 @@ There are two categories of guidelines: *Rules* should be followed strictly; *Re
 
 Rules marked with "[needs discussion]" are potentially controversial and have not yet been agreed upon.
 
+General
+=======
+
+TODOs
+-----
+
+When a bug or feature is critical or hard to solve, it's OK to sometimes fix the problem in a way that's less than ideal. If you do, make sure to include a note about why the fix exists, along with the text `TODO` and/or `FIXME` so that it can be easily found by developers later. You never know who might come along and have the proper knowledge to solve the problem correctly!
+
 SuperCollider
 =============
 
