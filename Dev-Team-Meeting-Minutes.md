@@ -20,7 +20,7 @@ Discussion topics:
 + removed email notifications from GitHub to sc-dev
 + getting the help browser to open a GitHub edit link in default OS browser
 
-Thanks to all who attended! The next meeting has been set for September 23, 2017, at 16:00 UTC (12p EST).
+Thanks to all who attended! The next meeting has been set for September 23, 2017, at 16:00 UTC (12p EST) at https://appear.in/sc-dev-meeting .
 
 2017-09-09
 ==========
