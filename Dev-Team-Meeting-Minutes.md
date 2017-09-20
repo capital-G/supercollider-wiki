@@ -5,20 +5,20 @@
 
 Recent work:
 
-Brian: documentation, especially unit testing documentation
-Alberto: multi-client ID PRs
-Cian: Ableton Link work, forBy interpreter bug
-Nathan: pitch shift window size PR
++ Brian: documentation, especially unit testing documentation
++ Alberto: multi-client ID PRs
++ Cian: Ableton Link work, forBy interpreter bug
++ Nathan: pitch shift window size PR
 
 Discussion topics:
 
-issues with ReadableNodeIDAlloc PR
-unit testing documentation
-creating a template/generator for unit test code
-documenting C++ source code
-adding a link to help files to go to editing the help file on GitHub
-removed email notifications from GitHub to sc-dev
-getting the help browser to open a GitHub edit link in default OS browser
++ issues with ReadableNodeIDAlloc PR
++ unit testing documentation
++ creating a template/generator for unit test code
++ documenting C++ source code
++ adding a link to help files to go to editing the help file on GitHub
++ removed email notifications from GitHub to sc-dev
++ getting the help browser to open a GitHub edit link in default OS browser
 
 Thanks to all who attended! The next meeting has been set for September 23, 2017, at 16:00 UTC (12p EST).
 
@@ -28,30 +28,35 @@ Thanks to all who attended! The next meeting has been set for September 23, 2017
 Five members were present: Cian (@cianoc), Nathan (@snappizz), Brian (@brianlheim), Alberto (@adcxyz), and Jack (@jarmitage)
 
 Recent work:
-Brian: travisCI, unit testing, organizational documentation
-Nathan: Debian packaging
-James: interested in helping out (currently mainly a user)
-Alberto: multi-client ID PR
-Cian: fixing help files, potential Ableton Link support in 2-3 upcoming PRs
+
++ Brian: travisCI, unit testing, organizational documentation
++ Nathan: Debian packaging
++ James: interested in helping out (currently mainly a user)
++ Alberto: multi-client ID PR
++ Cian: fixing help files, potential Ableton Link support in 2-3 upcoming PRs
 
 Topics of discussion:
 multi-client ID PR:
+
 - Alberto has raised new issues on GitHub to target specific design problems that arose in the PR
 - He plans to rework #3106 (the current PR) into a few smaller PRs to avoid stagnation
 - We talked about whether to put it in 3.9 or 3.10, and agreed that some of it should definitely go in 3.9 (see discussion below)
 
 Suggestions from Cian:
+
 - improve documentation for new supercollider users (coming from i.e. Ableton)
 - add a UGen overview
 - add a Quark overview
 
 3.9 critical todos:
+
 - block allocators portion of multi-client ID fix
 - sendNotifyRequest extension of multi-client ID fix
 - after that, release! OK to push a beta without full Linux packaging
 - continue to work on Linux packaging, hoping to have a good release 
 
 Adding UnitTest and test suite in common:
+
 - Nathan pointed out there are issues with the UnitTest class that should be worked on
 - We discussed (and tentatively agreed on) putting the test suite in the main class library
 - This would be aided by adding a helpfile for unit tests documenting how to disable unit tests if desired
