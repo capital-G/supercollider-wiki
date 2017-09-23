@@ -1,3 +1,42 @@
+2017-09-23
+==========
+
+Present: Brian, Nathan, Lucas, Edmond, Patrick
+
+- Brian: GitHub edit link with Cian, distance-based amplitude panning (DBAP) UGen
+- Nathan: Linux packaging, Debian packaging
+- Patrick: working on help system soon
+- Lucas: introduced himself, interested in contributing when possible
+- Edmond: introduced himself, interested in contributing C++
+
+### Discussion Topics
+
+Multi-client ID PR:
+
+- still failing on Travis because of test integration issues
+- either fix test integration or disable tests temporarily
+
+New UGens:
+
+- Nathan wants to work on more UGens after 3.9 release
+
+Cleanup:
+
+- Brian wants to work on documentation for new contributors and cleanup/organizational work for the codebase
+
+main SC site:
+
+- Needs love
+- Feature more projects
+- Update text
+
+Moving out Emacs submodule:
+
+- Open issue (https://github.com/supercollider/supercollider/issues/3066)
+- Will wait until post-3.9 and ask on dev list
+
+Thanks to all who attended! The next meeting has been set for September 23, 2017, at 16:00 UTC (12p EST) at https://appear.in/sc-dev-meeting .
+
 2017-09-16
 ==========
 
