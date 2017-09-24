@@ -1,7 +1,7 @@
-SuperCollider's takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). We use three major branches:
+SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). We use three major branches:
 
 - `develop`, for bleeding-edge commits that will be incorporated into the next 3.x release
-- Release branches like `3.9`, to which only bug fixes can be merged
+- Release branches like `3.9`, to which only bug fixes can be merged. (Features will occasionally be merged into release branches if they are considered critical for that release.)
 - `master`, which is stable and only includes releases (note: at the time of this writing [2017-09-12], master is not yet stable, but it will be when 3.9 is released)
 
 There is a set of [command-line extensions](https://github.com/nvie/gitflow) for git-flow; you may want to consider installing them if you contribute frequently. There is also a helpful [cheat-sheet](https://danielkummer.github.io/git-flow-cheatsheet/) by Daniel Kummer.
@@ -19,15 +19,19 @@ If desired, a feature branch can be made on the main organization repository ins
 
 ## Guidelines for pull request authors ##
 
-*this section is kind of in a proposal state, so it's not necessarily enforced*
-
-**Documentation.** New features and behavior changes should be accompanied with documentation.
-
-**Unit tests.**
+**A good title and description in GitHub.** Code review is a drag. If you want your work reviewed and discussed in a timely manner, it's really important that you make things as painless and clear as possible for anyone who reviews your work. Even if your PR builds on prior discussions, you should recap for people who haven't been following along.
 
 **Clean commit history.**
 
-**A good title and description in GitHub.**
+**Documentation (as necessary).** New features and behavior changes should be accompanied with documentation.
+
+**Unit tests (as necessary).**
+
+### Other tips ###
+
+**Open PRs when they are truly ready for review.** The list of open PRs is intended to be the SC "workspace," the list of patches that are currently being worked on and discussed. Cluttering it with incomplete work makes the pull requests page overwhelming to look at.
+
+**Break a large project into bite-sized chunks.** Several small PRs will get merged much faster than one big one.
 
 ## Releasing ##
 
