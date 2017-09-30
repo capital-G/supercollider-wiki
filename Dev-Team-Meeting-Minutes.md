@@ -1,3 +1,21 @@
+2017-09-30
+=========
+
+Members Present:
+
+- Brian:
+- Nathan
+- Patrick
+
+Discussion Topics:
+
+- Patrick’s PRs to the supercollider.github.io site and his plans for future work on the site
+- The last few things that are ready to be done before 3.9 release (getting very close)
+- Issue https://github.com/supercollider/supercollider/issues/3211
+- git flow maintenance of the release and develop branches
+
+Thanks to all who attended! The next meeting has been set for October 7, 2017, at 16:00 UTC (12p EST) at https://appear.in/sc-dev-meeting .
+
 2017-09-23
 ==========
 
@@ -35,7 +53,7 @@ Moving out Emacs submodule:
 - Open issue (https://github.com/supercollider/supercollider/issues/3066)
 - Will wait until post-3.9 and ask on dev list
 
-Thanks to all who attended! The next meeting has been set for September 23, 2017, at 16:00 UTC (12p EST) at https://appear.in/sc-dev-meeting .
+Thanks to all who attended! The next meeting has been set for September 30, 2017, at 16:00 UTC (12p EST) at https://appear.in/sc-dev-meeting .
 
 2017-09-16
 ==========
