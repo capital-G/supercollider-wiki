@@ -1,3 +1,4 @@
+
 How to maintain this changelog
 ==============================
 
@@ -65,8 +66,6 @@ Fixed a fontification break in scel when too many classes are defined ([#2508](h
 
 Fixed build failures on FreeBSD ([#3126](https://github.com/supercollider/supercollider/pull/3126)), GCC 7 ([#3226](https://github.com/supercollider/supercollider/pull/3226)), and newer versions of Boost ([#3227](https://github.com/supercollider/supercollider/pull/3227)).
 
-General: Security
---------
 
 scsynth and supernova: Added
 -----
@@ -91,8 +90,6 @@ scsynth and supernova: Fixed
 
 The `/b_read` and `/b_readChannel` messages experienced intermittent failures to read sound files, most notably affecting `Buffer.cueSoundFile`. This has been fixed ([#2793](https://github.com/supercollider/supercollider/pull/2793)).
 
-scsynth and supernova: Security
---------
 
 UGens: Added
 -----
@@ -155,8 +152,6 @@ Fixed `AudioControl` outputting garbage data if a bus is mapped to it but nothin
 
 Fixed incorrect math in `PanAz.ar` with audio-rate input signal and position ([3139](https://github.com/supercollider/supercollider/pull/3139)).
 
-UGens: Security
---------
 
 sclang: Added
 -----
@@ -207,8 +202,6 @@ Fixed GUI objects failing to display when launched from the `action` of `unixCmd
 
 Fixed `QImage:getColor` always returning zero for the green channel ([#3190](https://github.com/supercollider/supercollider/pull/3190)).
 
-sclang: Security
-----------------
 
 Class library: Added
 -----
@@ -373,8 +366,6 @@ Fixed `SimpleNumber:asTimeString` producing nonsensical results with the "precis
 
 `Server:clientID` can now be changed, allowing multiple clients connect to the same server ([#3178](https://github.com/supercollider/supercollider/pull/3178)).
 
-Class library: Security
---------
 
 IDE & SCDoc: Added
 -----
@@ -417,8 +408,6 @@ Fixed HTML checkboxes appearing in the upper left of the help viewer ([#3028](ht
 
 Fixed the right-click menu for the tabs appearing in the wrong place in macOS ([#3042](https://github.com/supercollider/supercollider/issues/3042)).
 
-IDE & SCDoc: Security
---------
 
 Miscellanea
 -----------
