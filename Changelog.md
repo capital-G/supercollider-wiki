@@ -253,6 +253,8 @@ Added `Collection:asEvent` for easy conversion to an `Event` ([#2871](https://gi
 
 Added two new methods to `SimpleNumber`: `snap` and `softRound` ([#3160](https://github.com/supercollider/supercollider/pull/3160)).
 
+`ReadableNodeIDAllocator` offers a new optional replacement for `PowerOfTwoAllocator` that assigns node IDs in a way more readable to humans when working with multiclient setups ([#3179](https://github.com/supercollider/supercollider/pull/3179)).
+
 Class library: Changed
 -------
 
