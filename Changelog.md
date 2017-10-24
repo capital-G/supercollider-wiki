@@ -37,6 +37,8 @@ SuperCollider can now be built on FreeBSD, thanks to @shamazmazum and @yurivict 
 
 Detailed documentation on creating macOS standalone applications with SuperCollider has been added, thanks to @adcxyz ([#2881](https://github.com/supercollider/supercollider/pull/2881)).
 
+Support for multiple sclang clients connecting to the same server is greatly improved, thanks to @adcxyz.
+
 A CODE_OF_CONDUCT.md and CONTRIBUTING.md have been added to the repository ([#3001](https://github.com/supercollider/supercollider/pull/3001)).
 
 Higher-resolution raster versions of the SC cube logo have been added to the top-level `icons/` directory ([#3023](https://github.com/supercollider/supercollider/pull/3023)), and a retina-friendly `.icns` file ([#3060](https://github.com/supercollider/supercollider/pull/3060)).
@@ -202,6 +204,8 @@ Fixed a crash when `Dictionary:keysValuesArrayDo` is called with `nil` as an arg
 Fixed `WebView:onLinkActivated` handler failing to fire ([#3003](https://github.com/supercollider/supercollider/pull/3003)).
 
 Fixed GUI objects failing to display when launched from the `action` of `unixCmd` ([#3009](https://github.com/supercollider/supercollider/pull/3009)). You will still need `{ }.defer`, however.
+
+Fixed `QImage:getColor` always returning zero for the green channel ([#3190](https://github.com/supercollider/supercollider/pull/3190)).
 
 sclang: Security
 ----------------
