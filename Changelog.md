@@ -17,15 +17,13 @@ Write a blurb to overview the release. Use this node.js package to generate a li
 
 Post the changelog to the following announcement channels:
 
-- README
-- GitHub release page
-- "News in 3.x" helpfile
-- GitHub website
-- sc-users mailing list
-- Facebook group
-- Reddit (/r/supercollider)
-
-All links to pull requests should be removed except for the GitHub release page, README, and website.
+- CHANGELOG.md: post full version with all pull request links
+- GitHub release page: post an abbreviated version
+- "News in 3.x" helpfile: post full version without pull request links
+- GitHub website: post an abbreviated version
+- sc-users mailing list: post an abbreviated version
+- Facebook group: post an abbreviated version
+- Reddit (/r/supercollider): post an abbreviated version
 
 General: Added
 -----
