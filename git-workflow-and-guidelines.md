@@ -45,6 +45,7 @@ For each beta release:
 - Copy the changelog to a new "News in 3.9" helpfile. This is best done as late as possible before the beta release to avoid having to update the changelog continuously.
 - Tag the beta release in git as (say) "Version-3.9.0-beta1."
 - Create a release on the GitHub release page. Upload builds for macOS, Linux, and Windows.
+- Do the same for sc3-plugins!
 - Announce to mailing list, Facebook, etc.
 - Merge `3.9` into `develop`. This will temporarily mess up `SCVersion.txt` in `develop`, but who cares, it's `develop`.
 
