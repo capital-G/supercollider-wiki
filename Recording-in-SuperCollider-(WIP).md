@@ -30,7 +30,7 @@ The timer for the "duration" argument waits for paused recordings. "duration" th
 
 ### Exporting MP3 files ###
 
-SuperCollider cannot export MP3 files. The MP3 format is not legally compatible with SuperCollider's license.
+SuperCollider doesn't export MP3 files.
 
 This is very easy to work around. Just export to WAV (say) and convert that WAV to MP3 using an external tool such as LAME. If that tool is accessible from the command line, you can use ```.unixCmd``` to perform conversion automatically after recording.
 
