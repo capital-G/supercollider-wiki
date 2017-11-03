@@ -13,7 +13,7 @@ Try to exercise common sense in keeping this log readable and useful to users. U
 Release to-do list
 ------------------
 
-Write a blurb to overview the release. Use this node.js package to generate a list of contributors, and add it to the end of the changelog: https://gist.github.com/crucialfelix/c37441a2381efbfe97fbcc8ca286f061
+Write a blurb to overview the release. Use the `package/contributor-list-generator` node.js script to generate a list of contributors, and add it to the changelog.
 
 Post the changelog to the following announcement channels:
 
