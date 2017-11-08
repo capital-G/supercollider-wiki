@@ -1,3 +1,31 @@
+2017-11-04
+=========
+
+Members Present:
+
+Brian, Nathan, Josh, Patrick
+
+Discussion Topics:
+
+Issues arising from AudioControl changes (#3266, #3196)
+History cleanup PR – can be merged once done (#3267)
+SCDoc UI - Nathan wants to make TOC popout only to smooth over bad behavior of dropdown TOC
+Lock client ID while Running PR (#3275)
+
+Priority: fix audio control issues for 3.9.0, possibly releasing a second beta
+
+Dan Stowell’s blog post about Linux packaging
+Should remove outdated PPA mention from website
+Use Docker for testing
+Pulseaudio/Jack woes
+Would like to add documentation on buffer allocators
+
+3.9.1:
+Will be mainly our testing ground for shorter release cycle.
+Nathan wants to fix two issues (auto-indent in IDE, default font on macOS)
+
+Thanks to all who attended! The next meeting has been set for November 11, 2017, time TBD.
+
 2017-10-28
 ==========
 
@@ -32,8 +60,6 @@ Discussion Topics:
 - The last few things that are ready to be done before 3.9 release (getting very close)
 - Issue https://github.com/supercollider/supercollider/issues/3211
 - git flow maintenance of the release and develop branches
-
-Thanks to all who attended! The next meeting has been set for October 7, 2017, at 16:00 UTC (12p EST) at https://appear.in/sc-dev-meeting .
 
 2017-09-23
 ==========
