@@ -1,3 +1,31 @@
+2017-11-18
+=========
+
+Members Present:
+
+Brian, Patrick, Ben, James (McCartney)
+
+Discussion Topics:
+
+Brian: 
+- planning to debug beta-related issues (#3196)
+
+Patrick:
+- wants to test Alberto’s PRs (#3275, #3286)
+
+Ben:
+- has been working on building SC on Windows to get familiar with the build process
+- will start working on Supernova n_order issue (#3100)
+
+James:
+- just came to lurk
+
+Issues before next beta release: with everyone's planned combined efforts, it sounds like we should be able to address most of the relevant issues in the next few weeks!
+
+Symposium 2019 discussion on mailing list: yay
+
+Thanks to all who attended! The next meeting has been set for November 25, 2017 at https://appear.in/sc-dev-meeting. We will try to keep the same time: 4 PM EST.
+
 2017-11-04
 =========
 
