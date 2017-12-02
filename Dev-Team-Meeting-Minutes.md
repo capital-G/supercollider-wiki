@@ -1,3 +1,37 @@
+2017-12-02
+=========
+
+Members Present:
+
+Brian, Patrick, Nathan, Josh P., Julian
+
+Discussion Topics:
+
+PRs for 3.9:
+- 3317: merged, closing 3196
+- 3318: maybe a bit of testing before merge
+- 3275: still needs some work
+- 3267: merged
+
+Issues remaining for 3.9:
+- 3266: still an open question
+- 3176: Nathan can fix but is busy, might not go into second beta
+
+3.9.1 issues and PRs:
+- 3 good-to-go PRs already queued up
+- 1390: "Error: ScIDE not connected": possibly not able to tackle in 3.9.1
+- 3310: milestoned as 3.10
+
+Nathan wants to work on new UGens for 3.10 
+
+Josh: plan out things to unit test in 3.9.1, .2, .x based on issues we're running into now – e.g.: server booting process; synthdef loading
+
+Future of Supernova and Scsynth – could one be merged into the other?
+
+Library maintenance for 3.10: boost upgrade, Qt upgrade
+
+Thanks to all who attended! The next meeting has been set for December 9, 2017, 21:00 UTC, at https://appear.in/sc-dev-meeting.
+
 2017-11-18
 =========
 
