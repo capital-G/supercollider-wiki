@@ -1,43 +1,58 @@
-This page gives instructions for installing SuperCollider on Ubuntu and its derived OSes (e.g. Mint / Elementary OS). It covers installing SuperCollider and the plugins from source.
+This page gives instructions for installing SuperCollider on Ubuntu and its derived OSes (e.g. Mint / Elementary OS). It covers building and installing SuperCollider and the sc3-plugins from the source code.
 
-## Installing SuperCollider
+## Building SuperCollider
 ### Packages you need
-You will need to install quite a few packages to build the SuperCollider and its plugins. Below is a list of this software, along with the terminal commands to get it.
+You will need to install quite a few packages to build SuperCollider and the sc3-plugins. Below is a list of this software, along with the terminal commands to get it.
 
     sudo apt-get install build-essential libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev libudev-dev pkg-config git cmake qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev libqt5webkit5-dev qtpositioning5-dev libqt5sensors5-dev libqt5opengl5-dev
 
-*Note*: The recommended version of gcc is 4.8. You need at least 4.7. The sc3-plugins contains c++11 code that does not build with v4.6. Check with `gcc -v` if you run into c++11 related errors.
+*Note*: The recommended version of gcc is 4.8. Most Linux systems meet this requirement. You can check your gcc version in a terminal with the command `gcc --version`.
 
-#### Jack dependency
-You will *also* need one of these two packages:
-* libjack-dev
-* libjack-jackd2-dev
+#### JACK dependency
+You will also need JACK installed on your system. There are two version of JACK available: JACK1 and JACK2. If you are unsure of which version of JACK to install, we recommend choosing JACK2. It can be installed using the following command: 
 
-SuperCollider requires Jack, and which of these packages you use depends on whether you are (or will be) using Jack 1 or Jack 2. If you use qjackctl as your Jack GUI, then you will be using Jac 2.
+```
+sudo apt-get install libjack-jackd2-dev
+```
 
-You can run the following terminal command to find out which you have installed (if any). The command simulates an actual installation:
+SuperCollider requires JACK for sound on Linux. The package `qjackctl` provides a convenient graphical user interface for JACK, which facilitates JACK configuration, as well as making inter-application audio and MIDI connections.
+
+You can run the following terminal command to find out which JACK version you have installed (if any). The command simulates an actual installation:
 
     apt-get -s install jackd1 jackd2
 
-### Getting the source code for SuperCollider
+### Getting the SuperCollider source code
 Clone the git repository:
+```
+git clone --recursive https://github.com/supercollider/supercollider.git
+```
 
-    git clone --recursive https://github.com/supercollider/supercollider.git
+The `--recursive` flag is required because SuperCollider uses submodules. 
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
+```
+fatal: could not create work tree dir 'supercollider'.: Permission denied
+```
 
-    fatal: could not create work tree dir 'supercollider'.: Permission denied
+Cloning the repository will create a folder called **supercollider** containing the source code. 
 
-Cloning the repository will create a folder called **supercollider** containing the source code. The `--recursive` flag is required because SuperCollider uses submodules.
+### Getting the submodules
+If you cloned the SuperCollider repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within the **supercollider** directory, run the following:
+```
+git submodule init && git submodule update
+```
 
 ### Running cmake
-Create a directory inside **supercollider** called **build**. From within **supercollider/build**, run the following:
+Create a directory inside **supercollider** called **build**. 
+```
+mkdir build && cd build
+```
 
-    cmake -DSC_EL=no ..
+From within **supercollider/build**, run the following:
 
-Notice the space before the two dots.
+    cmake ..
 
-The flag -DSC_EL=no means that we're not building any code to enable SuperCollider to work with Emacs, since SuperCollider has its own development environment.
+(Notice the space before the two dots)
 
 ## Building and installing
 Use the following commands to build and install Supercollider;
