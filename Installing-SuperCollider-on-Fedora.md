@@ -83,7 +83,7 @@ git submodule init && git submodule update
 
 ## Running cmake
 
-Create a directory inside the supercollider folder called **build** and move to it:
+Create a directory inside the **supercollider** folder called **build** and move to it:
 ```
 mkdir build && cd build
 ```
@@ -181,7 +181,12 @@ From within **sc3-plugins**, run the following:
     git submodule init && git submodule update
 
 ### Running cmake
-Create a directory inside **sc3-plugins** called **build**. From within **sc3-plugins/build**, run the following:
+Create a directory inside the **sc3-plugins** folder called **build** and move to it:
+```
+mkdir build && cd build
+```
+
+From within **sc3-plugins/build**, run the following:
 
     cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** -DCMAKE_BUILD_TYPE=Release ..
 
