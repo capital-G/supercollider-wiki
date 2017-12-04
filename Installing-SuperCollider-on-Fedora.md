@@ -1,6 +1,6 @@
 # Installing SuperCollider on Fedora
 
-SuperCollider is not available within the standard Fedora repos nor in a published Copr. There are two ways to install it: either using the Stanford [Planet CCRMA repo](http://ccrma.stanford.edu/planetccrma/software/) or installing from source.
+SuperCollider is not available within the official Fedora repositories. There are two ways to install SuperCollider: using the Stanford [Planet CCRMA repo](http://ccrma.stanford.edu/planetccrma/software/) or building it from source.
 
 ## Planet CCRMA
 
@@ -18,11 +18,11 @@ Install supercollider:
 
 ## Install from source
 
-I'm following the instructions [here](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md), but clarifying them for the benefit of noobs.
+SuperCollider's [Linux Readme](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md) has all the information you need to build SuperCollider from source. The following should help you install the required dependencies and build SuperCollider on a recent Fedora system.
 
-## Obtaining dependencies
+## Installing dependencies
 
-The following packages are required and are available through yum / dnf.
+The following packages are required and are available through `dnf` (or `yum`).
 
 * gcc
 * gcc-c++
@@ -42,36 +42,42 @@ The following packages are required and are available through yum / dnf.
 * qt5-qttools-devel 
 * qt5-qtwebengine-devel
 * qt5-qtwebkit-devel 
-* emacs 
+* emacs  (optional)
 
 The required packages may be installed with the following command;
-
+```
     sudo dnf install gcc gcc-c++ cmake git jack-audio-connection-kit-devel \
-    libsndfile-devel fftw-devel libXt-devel libX11-devel emacs alsa-lib-devel \
+    libsndfile-devel fftw-devel libXt-devel libX11-devel alsa-lib-devel \
     systemd-devel libatomic avahi-devel qt5-qtlocation-devel qt5-qtsensors-devel \
     qt5-qtwebengine-devel qt5-qttools-devel qt5-qtwebkit-devel
+```
 
 ## A note about JACK 
 
-You may have issues running JACK with real time scheduling privileges on Fedora. Be sure to add your user to the **jackuser** group, and try setting [SELinux to permissive mode](https://docs.fedoraproject.org/en-US/Fedora/25/html/SELinux_Users_and_Administrators_Guide/sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Permissive_Mode.html) and see if that helps.
+You may have issues running JACK with real time scheduling privileges on Fedora. Be sure to add your user to the **jackuser** and **pulse-rt** groups. Be sure to reboot your computer after adding you user to these groups.
+
+```sudo usermod -a -G jackuser,pulse-rt YOUR_USERNAME```
 
 ## Obtaining the source code
 
 Simply clone the git repository:
-
-    git clone https://github.com/supercollider/supercollider.git
+```
+git clone https://github.com/supercollider/supercollider.git
+```
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
-
-    fatal: could not create work tree dir 'supercollider'.: Permission denied
+```
+fatal: could not create work tree dir 'supercollider'.: Permission denied
+```
 
 Cloning the repository will create a folder called supercollider containing the source code.
 
 ### Getting the submodules
 
 From within the supercollider directory, run the following:
-
-    git submodule init && git submodule update
+```
+git submodule init && git submodule update
+```
 
 ### Linking to libatomic (for Fedora versions prior to 23)
 As indicated in [this StackOverflow question](http://stackoverflow.com/questions/31381892/fedora-22-compile-atomic-is-lock-free), CMakeLists.txt needs to be modified to include the directive `set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")`.  This can be inserted near the top of the file, modifying the original to read as follows;
@@ -88,14 +94,40 @@ endif()
 ## Running cmake
 
 Create a directory inside the supercollider folder called **build** and move to it:
-
-    mkdir build && cd build
+```
+mkdir build && cd build
+```
 
 From within supercollider/build, run the following:
-
-    cmake  ..
-
+```
+cmake  ..
+```
 (Notice the space between `cmake` and the dots.)
+
+Running the following will post a list of all available flags that can be set in order to configure your build.
+```
+cmake -L ..
+```
+
+For example, if you wish to build SuperCollider without emacs support, run:
+```
+cmake -DSC_EL=OFF ..
+```
+
+For a `Release` type build, run:
+```
+cmake -DCMAKE_BUILD_TYPE=Release ..
+```
+
+For a Native build, run:
+```
+cmake -DNATIVE=ON ..
+```
+
+It's possible to set multiple flags at once like so:
+```
+cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
+```
 
 ## Building and Installing
 
@@ -105,6 +137,12 @@ Use the following commands to build and install Supercollider;
 make
 sudo make install
 ```
+If you system contains multiple cores, you can take advantage of make's `-j` option. A system with 4 cores can run:
+```
+make -j4
+sudo make install
+```
+
 ## Installing the plugins
 ### Information you need
 #### Where to install the plugins
