@@ -81,19 +81,6 @@ From within the supercollider directory, run the following:
 git submodule init && git submodule update
 ```
 
-### Linking to libatomic (for Fedora versions prior to 23)
-As indicated in [this StackOverflow question](http://stackoverflow.com/questions/31381892/fedora-22-compile-atomic-is-lock-free), CMakeLists.txt needs to be modified to include the directive `set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")`.  This can be inserted near the top of the file, modifying the original to read as follows;
-
-```
-project (SuperCollider)
-set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")
-if (CMAKE_SYSTEM_NAME MATCHES "Linux")
-    set(LINUX 1)
-endif()
-...
-...
-```
-
 ## Running cmake
 
 Create a directory inside the supercollider folder called **build** and move to it:
