@@ -54,7 +54,7 @@ The required packages may be installed with the following command;
 
 ## A note about JACK 
 
-You may have issues running JACK with real time scheduling privileges on Fedora. Be sure to add your user to the **jackuser** and **pulse-rt** groups. Be sure to reboot your computer after adding you user to these groups.
+You may have issues running JACK with real time scheduling privileges on Fedora. Be sure to add your user to the **jackuser** and **pulse-rt** groups. You will need to reboot your system after running the following command:
 
 ```sudo usermod -a -G jackuser,pulse-rt YOUR_USERNAME```
 
@@ -91,6 +91,7 @@ endif()
 ...
 ...
 ```
+
 ## Running cmake
 
 Create a directory inside the supercollider folder called **build** and move to it:
@@ -131,17 +132,28 @@ cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
 
 ## Building and Installing
 
-Use the following commands to build and install Supercollider;
+Use the following commands to build and install SuperCollider;
 
 ```
 make
 sudo make install
 ```
-If you system contains multiple cores, you can take advantage of make's `-j` option. A system with 4 cores can run:
+If your system has multiple cores, you can take advantage of make's `-j` option. For example, a system containing 4 cores can run:
 ```
 make -j4
 sudo make install
 ```
+If building SuperCollider for the first time, run:
+```
+sudo ldconfig
+```
+
+## Uninstalling SuperCollider
+From within you **supercollider/build** folder, run the following:
+```
+sudo make uninstall
+```
+
 
 ## Installing the plugins
 ### Information you need
@@ -173,6 +185,7 @@ Although for installation purposes, it doesn't matter where in the file system y
     fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
+
 ### Getting the submodules
 From within **sc3-plugins**, run the following:
 
@@ -183,18 +196,23 @@ Create a directory inside **sc3-plugins** called **build**. From within **sc3-pl
 
     cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** -DCMAKE_BUILD_TYPE=Release ..
 
-If the previous instructions have been followed, the installation would be under '/usr/local'.  In this
+If the previous instructions have been followed, the installation would be under '/usr/local'. In this
 case the following command is used to build the plugins:
 
     cmake -DSC_PATH=/usr/local/include/SuperCollider/ -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
 
 Don't miss out those two dots on the end!
+
 ### Finally, building the plugins
 From within **sc3-plugins/build**, run the following:
 
     make
     sudo make install
-    sudo ldconfig
+    
+If building for the first time, run:
+```
+sudo ldconfig
+```
 
 ### Checking the installation worked
 If you have the IDE open, close it. Now open it again and boot the server.
@@ -203,9 +221,12 @@ Enter the following into the blank text window and run it:
 
     {VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
 
-You should hear a buzzing sound. If you don't, double check and attempt the instructions again. To undo the build you just did, from within **sc3-plugins**, run the following:
+You should hear a buzzing sound. If you don't, double check and attempt the instructions again. 
 
-    make uninstall
-    rm -r *
+## Uninstalling the sc3-plugins
+To uninstall the sc3-plugins, from the **sc3-plugins/build** directory, run the following:
 
-If you still don't have any luck, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
+    sudo make uninstall
+
+# Getting help
+If you still don't have any luck with the above, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
