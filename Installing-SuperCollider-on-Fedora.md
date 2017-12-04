@@ -56,7 +56,9 @@ The required packages may be installed with the following command;
 
 You may have issues running JACK with real time scheduling privileges on Fedora. Be sure to add your user to the **jackuser** and **pulse-rt** groups. You will need to reboot your system after running the following command:
 
-```sudo usermod -a -G jackuser,pulse-rt YOUR_USERNAME```
+```
+sudo usermod -a -G jackuser,pulse-rt YOUR_USERNAME
+```
 
 ## Obtaining the source code
 
