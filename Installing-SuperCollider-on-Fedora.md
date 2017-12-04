@@ -49,7 +49,7 @@ The required packages may be installed with the following command;
     sudo dnf install gcc gcc-c++ cmake git jack-audio-connection-kit-devel \
     libsndfile-devel fftw-devel libXt-devel libX11-devel alsa-lib-devel \
     systemd-devel libatomic avahi-devel qt5-qtlocation-devel qt5-qtsensors-devel \
-    qt5-qtwebengine-devel qt5-qttools-devel qt5-qtwebkit-devel
+    qt5-qtwebengine-devel qt5-qttools-devel qt5-qtwebkit-devel emacs
 ```
 
 ## A note about JACK 
