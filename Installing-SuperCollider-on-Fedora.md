@@ -104,12 +104,12 @@ For example, if you wish to build SuperCollider without emacs support, run:
 cmake -DSC_EL=OFF ..
 ```
 
-For a `Release` type build, run:
+For a _Release_ type build, run:
 ```
 cmake -DCMAKE_BUILD_TYPE=Release ..
 ```
 
-For a Native build, run:
+For a _Native_ build, run:
 ```
 cmake -DNATIVE=ON ..
 ```
