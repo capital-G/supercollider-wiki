@@ -144,7 +144,9 @@ sudo make uninstall
 ```
 
 
-## Installing the plugins
+## Installing the sc3-plugins
+The sc3-plugins are an optional set of extension plugins for the SuperCollider3 audio synthesis server. These third-party plugins provide additional synthesis, analysis, and other capabilities for the sound server. 
+ 
 ### Information you need
 #### Where to install the plugins
 When SuperCollider starts up, it looks for the plugins in a particular location. You need to know this location in order to control where the plugins get installed.
