@@ -28,7 +28,7 @@ Clone the git repository:
 git clone --recursive https://github.com/supercollider/supercollider.git
 ```
 
-The `--recursive` flag is required because SuperCollider uses submodules. 
+The `--recursive` flag is required because the SuperCollider repository contains submodules. 
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
 ```
