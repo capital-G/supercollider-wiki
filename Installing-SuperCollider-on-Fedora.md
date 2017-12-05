@@ -69,11 +69,6 @@ git clone --recursive https://github.com/supercollider/supercollider.git
 
 With the `--recursive` flag, the repository's submodules are also cloned.
 
-Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
-```
-fatal: could not create work tree dir 'supercollider'.: Permission denied
-```
-
 Cloning the repository will create a folder called **supercollider** containing the source code.
 
 ### Getting the submodules
@@ -124,16 +119,17 @@ cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
 ## Building and Installing
 
 Use the following commands to build and install SuperCollider;
-
 ```
 make
 sudo make install
 ```
-If your system has multiple cores, you can take advantage of make's `-j` option. For example, a system containing 4 cores can run:
+
+If your CPU has multiple cores, you can take advantage of make's `-j` option. For example, a CPU containing 4 cores can run:
 ```
 make -j4
 sudo make install
 ```
+
 If building SuperCollider for the first time, run:
 ```
 sudo ldconfig
@@ -161,11 +157,6 @@ git clone --recursive https://github.com/supercollider/sc3-plugins.git
 ```
 
 With the `--recursive` flag, the repository's submodules are also cloned.
-
-Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
-```
-fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
-```
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
 
@@ -209,7 +200,7 @@ make -j4
 sudo make install
 ```
 
-If building for the first time, run:
+If building the sc3-plugins for the first time, run:
 ```
 sudo ldconfig
 ```
