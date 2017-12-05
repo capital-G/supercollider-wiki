@@ -3,23 +3,24 @@ This page gives instructions for installing SuperCollider on Ubuntu and its deri
 ## Building SuperCollider
 ### Packages you need
 You will need to install quite a few packages to build SuperCollider and the sc3-plugins. Below is a list of this software, along with the terminal commands to get it.
-
-    sudo apt-get install build-essential libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev libudev-dev pkg-config git cmake qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev libqt5webkit5-dev qtpositioning5-dev libqt5sensors5-dev libqt5opengl5-dev
+```
+sudo apt-get install build-essential libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev libudev-dev pkg-config git cmake qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev libqt5webkit5-dev qtpositioning5-dev libqt5sensors5-dev libqt5opengl5-dev
+```
 
 **Note**: The recommended version of gcc is `4.8`. Most Linux systems meet this requirement. You can check your gcc version in a terminal with the command `gcc --version`.
 
 #### JACK dependency
 You will also need JACK installed on your system. There are two version of JACK available: JACK1 and JACK2. If you are unsure of which version of JACK to install, we recommend choosing JACK2. It can be installed using the following command: 
-
 ```
 sudo apt-get install libjack-jackd2-dev
 ```
 
 SuperCollider requires JACK for sound on Linux. The package `qjackctl` provides a convenient graphical user interface for JACK, which facilitates JACK configuration, as well as making inter-application audio and MIDI connections.
 
-You can run the following terminal command to find out which JACK version you have installed (if any). The command simulates an actual installation:
-
-    apt-get -s install jackd1 jackd2
+You can run the following terminal command to find out which JACK version you have installed. The command simulates an actual installation:
+```
+apt-get -s install jackd1 jackd2
+```
 
 ### Getting the SuperCollider source code
 Clone the git repository:
