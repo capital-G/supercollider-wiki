@@ -114,19 +114,27 @@ Ensure the cursor is on this line and hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. You 
 If you don't hear the tone, remember to check your speakers, volume control – all the regular suspects!
 
 ## Installing the plugins
+The sc3-plugins are an optional set of extension plugins for the SuperCollider3 audio synthesis server. These third-party plugins provide additional synthesis, analysis, and other capabilities for the sound server.
+
+Please note that these UGens are, on average, less stable and well-maintained than the core collection included with SuperCollider. Use at your own risk!
+
+Note: Extensions for the SuperCollider programming language are different. They are collected within the Quarks packaging system.
+
 ### Information you need
 #### Where to install the plugins
 When SuperCollider starts up, it looks for the plugins in a particular location. You need to know this location in order to control where the plugins get installed.
 Start the SuperCollider IDE, and look at the post window. The following is part of the post window output on my machine: 
-
-    NumPrimitives = 679
-    compiling dir: '/usr/local/share/SuperCollider/SCClassLibrary'
-    compiling dir: '/usr/local/share/SuperCollider/Extensions'
-    pass 1 done
+```
+NumPrimitives = 679
+compiling dir: '/usr/local/share/SuperCollider/SCClassLibrary'
+compiling dir: '/usr/local/share/SuperCollider/Extensions'
+pass 1 done
+```
 
 Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '/share/SuperCollider/Extensions' bit and make a note of it. So in my case, the location is '/usr/local'.
 
 This location will be referred to as **PluginLocation** for the remainder of this article.
+
 #### Where the header include files are
 You need to know where header include files are when you install the plugins.
 To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SC_BoundsMacros.h'. The directory containing this file, usually '/usr/local/include/SuperCollider/common', is a child of the headers directory. So if you find 'SC_BoundsMacros.h' in '/usr/local/include/SuperCollider/common', then the headers directory is '/usr/local/include/SuperCollider'.
@@ -134,69 +142,82 @@ To locate the directory containing the header include files, search your file sy
 This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
 
 #### If SCVersion.txt is not present
-You will also need a file called SCVersion.txt to be in the header directory. This is usually placed there during the installation of SuperCollider, but if you find it's not there, you will need to create it. Create a file of that name in **HeaderIncludeFileLocation**.
+You will also need a file called `SCVersion.txt` to be in the header directory. This is usually placed there during the installation of SuperCollider, but if you find it's not there, you will need to create it. Create a file of that name in **HeaderIncludeFileLocation**.
 
 Now fire up the IDE and read the introductory text that appears in the post window. You will see a line like this:
-
-    Welcome to SuperCollider 3.6.6. For help press Ctrl-D.
+```
+Welcome to SuperCollider 3.6.6. For help press Ctrl-D.
+```
 
 Make a note of the three numbers in the SuperCollider version. Now give SCVersion.txt the following contents:
-
-    set(PROJECT_VERSION_MAJOR {major version})
-    set(PROJECT_VERSION_MINOR {minor version})
-    set(PROJECT_VERSION_PATCH {build number})
+```
+set(PROJECT_VERSION_MAJOR {major version})
+set(PROJECT_VERSION_MINOR {minor version})
+set(PROJECT_VERSION_PATCH {build number})
+```
 
 So in my case, I would give SCVersion.txt the contents:
-
-    set(PROJECT_VERSION_MAJOR 3)
-    set(PROJECT_VERSION_MINOR 6)
-    set(PROJECT_VERSION_PATCH 6)
+```
+set(PROJECT_VERSION_MAJOR 3)
+set(PROJECT_VERSION_MINOR 6)
+set(PROJECT_VERSION_PATCH 6)
+```
 
 If the version you see in the welcome message is something like '3.6dev', then create a file like this:
-
-    set(PROJECT_VERSION_MAJOR 3)
-    set(PROJECT_VERSION_MINOR 6)
-    set(PROJECT_VERSION_PATCH dev)
+```
+set(PROJECT_VERSION_MAJOR 3)
+set(PROJECT_VERSION_MINOR 6)
+set(PROJECT_VERSION_PATCH dev)
+```
 
 ### Getting the source code for the plugins
 Simply clone the git repository:
-
-    git clone --recursive https://github.com/supercollider/sc3-plugins.git
+```
+git clone --recursive https://github.com/supercollider/sc3-plugins.git
+```
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
-
-    fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
+```
+fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
+```
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
 
 ### Running cmake
 Create a directory inside **sc3-plugins** called **build**. From within **sc3-plugins/build**, run the following:
-
-    cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** -DCMAKE_BUILD_TYPE=Release ..
+```
+cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** -DCMAKE_BUILD_TYPE=Release ..
+```
 
 So in my case, I would run:
+```
+cmake -DSC_PATH=/usr/local/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
+```
+(Don't miss out those two dots on the end!)
 
-    cmake -DSC_PATH=/usr/local/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
-
-Don't miss out those two dots on the end!
 ### Finally, building the plugins
 From within **sc3-plugins/build**, run the following:
+```
+make
+sudo make install
+```
 
-    make
-    sudo make install
-    sudo ldconfig
-
+If building for the first time, run:
+```
+sudo ldconfig
+```
 ### Checking the installation worked
 If you have the IDE open, close it. Now open it again and boot the server.
 
 Enter the following into the blank text window and run it:
-
-    {VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
+```
+{VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
+```
 
 You should hear a buzzing sound. If you don't, double check and attempt the instructions again. To undo the build you just did, from within **sc3-plugins**, run the following:
-
-    make uninstall
-    rm -r *
+```
+make uninstall
+```
 
 # Getting Help
 If you still don't have any luck, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
