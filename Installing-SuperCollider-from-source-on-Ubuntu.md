@@ -55,6 +55,31 @@ From within **supercollider/build**, run the following:
 
 (Notice the space before the two dots)
 
+Running the following will post a list of all available flags that can be set in order to configure your build.
+```
+cmake -L ..
+```
+
+For example, if you wish to build SuperCollider without emacs support, run:
+```
+cmake -DSC_EL=OFF ..
+```
+
+For a release type build, run:
+```
+cmake -DCMAKE_BUILD_TYPE=Release ..
+```
+
+For a native build, run:
+```
+cmake -DNATIVE=ON ..
+```
+
+It's possible to set multiple flags at once like so:
+```
+cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
+```
+
 ## Building and installing
 Use the following commands to build and install Supercollider;
 
