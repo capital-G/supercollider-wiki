@@ -86,6 +86,12 @@ Use the following commands to build and install Supercollider;
     make
     sudo make install
 
+If your system has multiple cores, you can take advantage of make's `-j` option. For example, a system containing 4 cores can run:
+```
+make -j4
+sudo make install
+```
+
 ### Checking the installation worked
 First, fire up JACK, using qjackctl or your choice of tool.
 
