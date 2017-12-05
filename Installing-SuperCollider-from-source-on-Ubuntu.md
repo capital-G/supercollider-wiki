@@ -113,7 +113,7 @@ And finally, enter the following into the blank text window:
 Ensure the cursor is on this line and hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. You should now hear a sine tone. Kill the sine tone by hitting <kbd>Ctrl</kbd>+<kbd>.</kbd>.
 If you don't hear the tone, remember to check your speakers, volume control – all the regular suspects!
 
-## Installing the plugins
+## Installing the sc3-plugins
 The sc3-plugins are an optional set of extension plugins for the SuperCollider3 audio synthesis server. These third-party plugins provide additional synthesis, analysis, and other capabilities for the sound server.
 
 Please note that these UGens are, on average, less stable and well-maintained than the core collection included with SuperCollider. Use at your own risk!
