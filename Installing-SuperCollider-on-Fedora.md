@@ -118,7 +118,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
 
 ## Building and Installing
 
-Use the following commands to build and install SuperCollider;
+Use the following commands to build and install SuperCollider:
 ```
 make
 sudo make install
