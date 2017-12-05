@@ -1,4 +1,4 @@
-This page gives instructions for installing SuperCollider on Ubuntu and its derived OSes (e.g. Mint / Elementary OS). It covers building and installing SuperCollider and the sc3-plugins from the source code.
+This page gives instructions for installing SuperCollider on Ubuntu and its derived distributions (e.g. Linux Mint, Elementary OS). It covers building and installing SuperCollider and the sc3-plugins from the source code.
 
 ## Building SuperCollider
 ### Packages you need
