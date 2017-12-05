@@ -78,7 +78,7 @@ Cloning the repository will create a folder called supercollider containing the 
 
 From within the supercollider directory, run the following:
 ```
-git submodule init && git submodule update
+git submodule update --init
 ```
 
 ## Running cmake
