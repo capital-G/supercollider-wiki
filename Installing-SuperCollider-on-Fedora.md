@@ -60,7 +60,7 @@ You may have issues running JACK with real time scheduling privileges on Fedora.
 sudo usermod -a -G jackuser,pulse-rt YOUR_USERNAME
 ```
 
-## Obtaining the source code
+## Getting the SuperCollider source code
 
 Simply clone the SuperCollider git repository to a sensible location on your system:
 ```
