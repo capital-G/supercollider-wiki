@@ -90,7 +90,7 @@ Create a directory inside the **supercollider** folder called **build** and move
 mkdir build && cd build
 ```
 
-From within supercollider/build, run the following:
+From within **supercollider/build**, run the following:
 ```
 cmake  ..
 ```
@@ -184,6 +184,11 @@ mkdir build && cd build
 From within **sc3-plugins/build**, run the following command, replacing `/path/to/your/supercollider/source` with the path to the SuperCollider source code on your system:
 ```
 cmake -DSC_PATH=/path/to/your/supercollider/source ..
+```
+
+Running the following will post a list of all available flags that can be set in order to configure your build.
+```
+cmake -L ..
 ```
 
 It's a good idea to set the cmake flags `CMAKE_BUILD_TYPE` and `NATIVE` to the same values that where used when building SuperCollider. In the end, your cmake configuration command might look something like this:
