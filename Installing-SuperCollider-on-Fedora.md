@@ -183,8 +183,9 @@ Cloning the repository will create a folder called **sc3-plugins** containing th
 
 ### Getting the submodules
 From within **sc3-plugins**, run the following:
-
-    git submodule init && git submodule update
+```
+git submodule update --init
+```
 
 ### Running cmake
 Create a directory inside the **sc3-plugins** folder called **build** and move to it:
