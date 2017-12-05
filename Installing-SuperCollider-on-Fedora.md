@@ -186,21 +186,17 @@ From within **sc3-plugins/build**, run the following command, replacing `/path/t
 cmake -DSC_PATH=/path/to/your/supercollider/source ..
 ```
 
-By default, SuperCollider is installed in `/usr/local/share/SuperCollider`. This is also the default install location of the sc3-plugins. If your SuperCollider installation is located somewhere else, you will need to set the `CMAKE_INSTALL_PREFIX` flag. This flag is set with the following command:
-```
-cmake -DCMAKE_INSTALL_PREFIX=/your/install/prefix ..
-```
-
-It is a good idea to set the cmake flags `CMAKE_BUILD_TYPE` and `NATIVE` to the same values that where used when building SuperCollider. Your complete sc3-plugins cmake configuration command might look something like this:
+It's a good idea to set the cmake flags `CMAKE_BUILD_TYPE` and `NATIVE` to the same values that where used when building SuperCollider. In the end, your cmake configuration command might look something like this:
 ```
 cmake -DSC_PATH=/path/to/your/supercollider/source -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON ..
 ```
 
 ### Finally, building the plugins
 From within **sc3-plugins/build**, run the following:
-
-    make
-    sudo make install
+```
+make
+sudo make install
+```
 
 If your CPU has multiple cores, you can take advantage of make's `-j` option. For example, a CPU containing 4 cores can run:
 ```
