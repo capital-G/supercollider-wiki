@@ -1,4 +1,4 @@
-This page gives instructions for installing SuperCollider on Ubuntu and its derived distributions (e.g. Linux Mint, Elementary OS). It covers building and installing SuperCollider and the sc3-plugins from the source code.
+This page gives instructions for installing SuperCollider on Ubuntu and its derived distributions (e.g. Linux Mint, Elementary OS). It covers building and installing SuperCollider and the sc3-plugins from source.
 
 ## Building SuperCollider
 ### Packages you need
@@ -53,7 +53,6 @@ From within **supercollider/build**, run the following:
 ```
 cmake ..
 ```
-
 (Notice the space before the two dots)
 
 Running the following will post a list of all available flags that can be set in order to configure your build.
@@ -107,10 +106,12 @@ When the IDE opens, it should give you three main panes:
 Thirdly, boot the server using the command `s.boot`, or <kbd>Ctrl</kbd>+<kbd>B</kbd>.
 
 And finally, enter the following into the blank text window:
-
-    {SinOsc.ar}.play
+```
+{SinOsc.ar}.play
+```
 
 Ensure the cursor is on this line and hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. You should now hear a sine tone. Kill the sine tone by hitting <kbd>Ctrl</kbd>+<kbd>.</kbd>.
+
 If you don't hear the tone, remember to check your speakers, volume control – all the regular suspects!
 
 ## Installing the sc3-plugins
