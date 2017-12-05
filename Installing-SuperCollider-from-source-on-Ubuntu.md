@@ -23,37 +23,35 @@ apt-get -s install jackd1 jackd2
 ```
 
 ### Getting the SuperCollider source code
-Clone the git repository:
+
+Simply clone the SuperCollider git repository to a sensible location on your system:
 ```
 git clone --recursive https://github.com/supercollider/supercollider.git
 ```
 
-With the `--recursive` flag, the repository's submodules are also cloned. 
+With the `--recursive` flag, the repository's submodules are also cloned.
 
-Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
-```
-fatal: could not create work tree dir 'supercollider'.: Permission denied
-```
-
-Cloning the repository will create a folder called **supercollider** containing the source code. 
+Cloning the repository will create a folder called **supercollider** containing the source code.
 
 ### Getting the submodules
+
 If you cloned the SuperCollider repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within the **supercollider** directory, run the following:
 ```
 git submodule update --init
 ```
 
-### Running cmake
-Create a directory inside **supercollider** called **build**. 
+## Running cmake
+
+Create a directory inside the **supercollider** folder called **build** and move to it:
 ```
 mkdir build && cd build
 ```
 
 From within **supercollider/build**, run the following:
 ```
-cmake ..
+cmake  ..
 ```
-(Notice the space before the two dots)
+(Notice the space between `cmake` and the dots.)
 
 Running the following will post a list of all available flags that can be set in order to configure your build.
 ```
@@ -80,121 +78,76 @@ It's possible to set multiple flags at once like so:
 cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
 ```
 
-## Building and installing
-Use the following commands to build and install Supercollider;
+## Building and Installing
+
+Use the following commands to build and install SuperCollider:
 ```
 make
 sudo make install
 ```
 
-If your system has multiple cores, you can take advantage of make's `-j` option. For example, a system containing 4 cores can run:
+If your CPU has multiple cores, you can take advantage of make's `-j` option. For example, a CPU containing 4 cores can run:
 ```
 make -j4
 sudo make install
 ```
 
-### Checking the installation worked
-First, fire up JACK using qjackctl or some other tool of your choice.
-
-Secondly, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. Occasionally, immediately after installation, SuperCollider does not show up in the applications menu. This can be fixed by a restart. If you don't want to restart now, you can run SuperCollider by opening a terminal and entering 'scide'.
-
-When the IDE opens, it should give you three main panes:
-* a large blank text window
-* a help window
-* a post window containing text about how the startup process went.
-
-Thirdly, boot the server using the command `s.boot`, or <kbd>Ctrl</kbd>+<kbd>B</kbd>.
-
-And finally, enter the following into the blank text window:
+If building SuperCollider for the first time, run:
 ```
-{SinOsc.ar}.play
+sudo ldconfig
 ```
 
-Ensure the cursor is on this line and hit <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. You should now hear a sine tone. Kill the sine tone by hitting <kbd>Ctrl</kbd>+<kbd>.</kbd>.
+## Uninstalling SuperCollider
+From within you **supercollider/build** folder, run the following:
+```
+sudo make uninstall
+```
 
-If you don't hear the tone, remember to check your speakers, volume control – all the regular suspects!
 
 ## Installing the sc3-plugins
-The sc3-plugins are an optional set of extension plugins for the SuperCollider3 audio synthesis server. These third-party plugins provide additional synthesis, analysis, and other capabilities for the sound server.
+The sc3-plugins are an optional set of extension plugins for the SuperCollider3 audio synthesis server. These third-party plugins provide additional synthesis, analysis, and other capabilities for the sound server. 
 
 Please note that these UGens are, on average, less stable and well-maintained than the core collection included with SuperCollider. Use at your own risk!
 
 **Note:** Extensions for the SuperCollider programming language are different. They are collected within the **Quarks** packaging system included in SuperCollider.
+ 
 
-### Information you need
-#### Where to install the plugins
-When SuperCollider starts up, it looks for the plugins in a particular location. You need to know this location in order to control where the plugins get installed.
-Start the SuperCollider IDE, and look at the post window. The following is part of the post window output on my machine: 
-```
-NumPrimitives = 679
-compiling dir: '/usr/local/share/SuperCollider/SCClassLibrary'
-compiling dir: '/usr/local/share/SuperCollider/Extensions'
-pass 1 done
-```
-
-Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '/share/SuperCollider/Extensions' bit and make a note of it. So in my case, the location is '/usr/local'.
-
-This location will be referred to as **PluginLocation** for the remainder of this article.
-
-#### Where the header include files are
-You need to know where header include files are when you install the plugins.
-To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SC_BoundsMacros.h'. The directory containing this file, usually '/usr/local/include/SuperCollider/common', is a child of the headers directory. So if you find 'SC_BoundsMacros.h' in '/usr/local/include/SuperCollider/common', then the headers directory is '/usr/local/include/SuperCollider'.
-
-This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
-
-#### If SCVersion.txt is not present
-You will also need a file called `SCVersion.txt` to be in the header directory. This is usually placed there during the installation of SuperCollider, but if you find it's not there, you will need to create it. Create a file of that name in **HeaderIncludeFileLocation**.
-
-Now fire up the IDE and read the introductory text that appears in the post window. You will see a line like this:
-```
-Welcome to SuperCollider 3.6.6. For help press Ctrl-D.
-```
-
-Make a note of the three numbers in the SuperCollider version. Now give SCVersion.txt the following contents:
-```
-set(PROJECT_VERSION_MAJOR {major version})
-set(PROJECT_VERSION_MINOR {minor version})
-set(PROJECT_VERSION_PATCH {build number})
-```
-
-So in my case, I would give SCVersion.txt the contents:
-```
-set(PROJECT_VERSION_MAJOR 3)
-set(PROJECT_VERSION_MINOR 6)
-set(PROJECT_VERSION_PATCH 6)
-```
-
-If the version you see in the welcome message is something like '3.6dev', then create a file like this:
-```
-set(PROJECT_VERSION_MAJOR 3)
-set(PROJECT_VERSION_MINOR 6)
-set(PROJECT_VERSION_PATCH dev)
-```
-
-### Getting the source code for the plugins
-Simply clone the git repository:
+### Getting the source code for the sc3-plugins
+Simply clone the sc3-plugins git repository to a sensible location on your system:
 ```
 git clone --recursive https://github.com/supercollider/sc3-plugins.git
 ```
 
-Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
-```
-fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
-```
+With the `--recursive` flag, the repository's submodules are also cloned.
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
 
-### Running cmake
-Create a directory inside **sc3-plugins** called **build**. From within **sc3-plugins/build**, run the following:
+### Getting the submodules
+If you cloned the sc3-plugins repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within **sc3-plugins**, run the following:
 ```
-cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** -DCMAKE_BUILD_TYPE=Release ..
+git submodule update --init
 ```
 
-So in my case, I would run:
+### Running cmake
+Create a directory inside the **sc3-plugins** folder called **build** and move to it:
 ```
-cmake -DSC_PATH=/usr/local/include/SuperCollider -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
+mkdir build && cd build
 ```
-(Don't miss out those two dots on the end!)
+
+From within **sc3-plugins/build**, run the following command, replacing `/path/to/your/supercollider/source` with the path to the SuperCollider source code on your system:
+```
+cmake -DSC_PATH=/path/to/your/supercollider/source ..
+```
+
+Running the following will post a list of all available flags that can be set in order to configure your build.
+```
+cmake -L ..
+```
+
+It's a good idea to set the cmake flags `CMAKE_BUILD_TYPE` and `NATIVE` to the same values that where used when building SuperCollider. In the end, your cmake configuration command might look something like this:
+```
+cmake -DSC_PATH=/path/to/your/supercollider/source -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON ..
+```
 
 ### Finally, building the plugins
 From within **sc3-plugins/build**, run the following:
@@ -203,10 +156,17 @@ make
 sudo make install
 ```
 
-If building for the first time, run:
+If your CPU has multiple cores, you can take advantage of make's `-j` option. For example, a CPU containing 4 cores can run:
+```
+make -j4
+sudo make install
+```
+
+If building the sc3-plugins for the first time, run:
 ```
 sudo ldconfig
 ```
+
 ### Checking the installation worked
 If you have the IDE open, close it. Now open it again and boot the server.
 
@@ -215,10 +175,13 @@ Enter the following into the blank text window and run it:
 {VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
 ```
 
-You should hear a buzzing sound. If you don't, double check and attempt the instructions again. To undo the build you just did, from within **sc3-plugins**, run the following:
+You should hear a buzzing sound. If you don't, double check and attempt the instructions again. 
+
+## Uninstalling the sc3-plugins
+To uninstall the sc3-plugins, from the **sc3-plugins/build** directory, run the following:
 ```
-make uninstall
+sudo make uninstall
 ```
 
-# Getting Help
-If you still don't have any luck, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
+# Getting help
+If you still don't have any luck with the above, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
