@@ -62,21 +62,23 @@ sudo usermod -a -G jackuser,pulse-rt YOUR_USERNAME
 
 ## Obtaining the source code
 
-Simply clone the git repository:
+Simply clone the SuperCollider git repository to a sensible location on your system:
 ```
-git clone https://github.com/supercollider/supercollider.git
+git clone --recursive https://github.com/supercollider/supercollider.git
 ```
+
+With the `--recursive` flag, the repository's submodules are also cloned.
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
 ```
 fatal: could not create work tree dir 'supercollider'.: Permission denied
 ```
 
-Cloning the repository will create a folder called supercollider containing the source code.
+Cloning the repository will create a folder called **supercollider** containing the source code.
 
 ### Getting the submodules
 
-From within the supercollider directory, run the following:
+If you cloned the SuperCollider repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within the **supercollider** directory, run the following:
 ```
 git submodule update --init
 ```
@@ -151,38 +153,24 @@ Please note that these UGens are, on average, less stable and well-maintained th
 
 **Note:** Extensions for the SuperCollider programming language are different. They are collected within the **Quarks** packaging system included in SuperCollider.
  
-### Information you need
-#### Where to install the plugins
-When SuperCollider starts up, it looks for the plugins in a particular location. You need to know this location in order to control where the plugins get installed.
-Start the SuperCollider IDE, and look at the post window. The following is part of the post window output on my machine: 
 
-    NumPrimitives = 711
-    compiling dir: '/usr/local/share/SuperCollider/SCClassLibrary'
-    compiling dir: '/usr/local/share/SuperCollider/Extensions'
-    pass 1 done
+### Getting the source code for the sc3-plugins
+Simply clone the sc3-plugins git repository to a sensible location on your system:
+```
+git clone --recursive https://github.com/supercollider/sc3-plugins.git
+```
 
-Look for the two lines starting 'compiling dir:'. The second quotes the location we want. Remove the trailing '/share/SuperCollider/Extensions' bit and make a note of it. So in my case, the location is '/usr/local'.
-
-This location will be referred to as **PluginLocation** for the remainder of this article.
-#### Where the header include files are
-You need to know where these files are when you install the plugins.
-To locate the directory containing the header include files, search your file system (not just your home folder) for a file called 'SCVersion.txt'. The directory containing this file, in my case '/home/badnumbers/supercollider', is the one you want.
-
-This location will be referred to as **HeaderIncludeFileLocation** for the remainder of this article.
-
-### Getting the source code for the plugins
-Simply clone the git repository:
-
-    git clone https://github.com/supercollider/sc3-plugins.git
+With the `--recursive` flag, the repository's submodules are also cloned.
 
 Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
-
-    fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
+```
+fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
+```
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
 
 ### Getting the submodules
-From within **sc3-plugins**, run the following:
+If you cloned the sc3-plugins repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within **sc3-plugins**, run the following:
 ```
 git submodule update --init
 ```
@@ -193,23 +181,33 @@ Create a directory inside the **sc3-plugins** folder called **build** and move t
 mkdir build && cd build
 ```
 
-From within **sc3-plugins/build**, run the following:
+From within **sc3-plugins/build**, run the following command, replacing `/path/to/your/supercollider/source` with the path to the SuperCollider source code on your system:
+```
+cmake -DSC_PATH=/path/to/your/supercollider/source ..
+```
 
-    cmake -DSC_PATH=**HeaderIncludeFileLocation** -DCMAKE_INSTALL_PREFIX=**PluginLocation** -DCMAKE_BUILD_TYPE=Release ..
+By default, SuperCollider is installed in `/usr/local/share/SuperCollider`. This is also the default install location of the sc3-plugins. If your SuperCollider installation is located somewhere else, you will need to set the `CMAKE_INSTALL_PREFIX` flag in order to build the sc3-plugins. This flag is set with the command:
+```
+cmake -DCMAKE_INSTALL_PREFIX=/your/install/prefix/path ..
+```
 
-If the previous instructions have been followed, the installation would be under '/usr/local'. In this
-case the following command is used to build the plugins:
-
-    cmake -DSC_PATH=/usr/local/include/SuperCollider/ -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release ..
-
-Don't miss out those two dots on the end!
+It is a good idea to set the cmake flags `CMAKE_BUILD_TYPE` and `NATIVE` to the same values that where used when building SuperCollider. Your complete sc3-plugins cmake configuration command might look something like this:
+```
+cmake -DSC_PATH=/path/to/your/supercollider/source -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON ..
+```
 
 ### Finally, building the plugins
 From within **sc3-plugins/build**, run the following:
 
     make
     sudo make install
-    
+
+If your CPU has multiple cores, you can take advantage of make's `-j` option. For example, a CPU containing 4 cores can run:
+```
+make -j4
+sudo make install
+```
+
 If building for the first time, run:
 ```
 sudo ldconfig
