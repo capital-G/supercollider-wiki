@@ -40,7 +40,7 @@ Cloning the repository will create a folder called **supercollider** containing 
 ### Getting the submodules
 If you cloned the SuperCollider repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within the **supercollider** directory, run the following:
 ```
-git submodule init && git submodule update
+git submodule update --init
 ```
 
 ### Running cmake
