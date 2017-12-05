@@ -50,8 +50,9 @@ mkdir build && cd build
 ```
 
 From within **supercollider/build**, run the following:
-
-    cmake ..
+```
+cmake ..
+```
 
 (Notice the space before the two dots)
 
@@ -82,9 +83,10 @@ cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
 
 ## Building and installing
 Use the following commands to build and install Supercollider;
-
-    make
-    sudo make install
+```
+make
+sudo make install
+```
 
 If your system has multiple cores, you can take advantage of make's `-j` option. For example, a system containing 4 cores can run:
 ```
@@ -93,16 +95,16 @@ sudo make install
 ```
 
 ### Checking the installation worked
-First, fire up JACK, using qjackctl or your choice of tool.
+First, fire up JACK using qjackctl or some other tool of your choice.
 
-Secondly, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. Occasionally I find that, immediately after installation, SuperCollider does not show up in the menu. This can be fixed by a restart. If you don't want to restart now, you can run SuperCollider by opening a terminal and entering 'scide'.
+Secondly, open the SuperCollider IDE by searching for and running 'SuperCollider IDE'. Occasionally, immediately after installation, SuperCollider does not show up in the applications menu. This can be fixed by a restart. If you don't want to restart now, you can run SuperCollider by opening a terminal and entering 'scide'.
 
 When the IDE opens, it should give you three main panes:
 * a large blank text window
 * a help window
 * a post window containing text about how the startup process went.
 
-Thirdly, boot the server using the command in the Language menu, or <kbd>Ctrl</kbd>+<kbd>B</kbd>.
+Thirdly, boot the server using the command `s.boot`, or <kbd>Ctrl</kbd>+<kbd>B</kbd>.
 
 And finally, enter the following into the blank text window:
 
