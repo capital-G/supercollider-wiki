@@ -219,15 +219,17 @@ sudo ldconfig
 If you have the IDE open, close it. Now open it again and boot the server.
 
 Enter the following into the blank text window and run it:
-
-    {VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
+```
+{VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
+```
 
 You should hear a buzzing sound. If you don't, double check and attempt the instructions again. 
 
 ## Uninstalling the sc3-plugins
 To uninstall the sc3-plugins, from the **sc3-plugins/build** directory, run the following:
-
-    sudo make uninstall
+```
+sudo make uninstall
+```
 
 # Getting help
 If you still don't have any luck with the above, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
