@@ -198,4 +198,5 @@ You should hear a buzzing sound. If you don't, double check and attempt the inst
     make uninstall
     rm -r *
 
+# Getting Help
 If you still don't have any luck, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
