@@ -1,3 +1,32 @@
+2017-12-09
+=========
+
+Members Present:
+
+Brian, Patrick, Nathan, David (Runge)
+
+Discussion Topics:
+
+3.8.0:
+• possibly releasing 3.8.1 with a header include fix so that it builds with latest gcc toolchain
+• see discussion in #3015/3029, would help with Arch Linux
+
+Debian packaging: ongoing woes. Might contact umlaeute (Debian packager for pd)
+
+PRs for 3.9:
+• 3275 (lockClientIDWhileRunning):
+	◦ Patrick has no issues with branch, has been using for awhile
+	◦ Brian is ready to review
+	◦ Julian should also review
+• 3332:
+	◦ Fixes an issue with the default server Volume synth
+
+3.10:
+• Brian wondered about starting to update libraries (like Boost) on develop branch in advance of 3.10
+	◦ is OK, but should still focus efforts on 3.9.0/3.9.x
+
+Thanks to all who attended! The next meeting has been set for December 16, 2017 at https://appear.in/sc-dev-meeting.
+
 2017-12-02
 =========
 
