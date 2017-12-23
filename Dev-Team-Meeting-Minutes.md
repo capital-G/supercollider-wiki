@@ -1,3 +1,47 @@
+2017-12-23
+=========
+
+Members Present:
+
+Brian, Nathan, Patrick
+
+Discussion Topics:
+
+3.8.1:
+- Merged #3348, will update changelog and release 3.8.1 soon.
+- Because of #3348, will also have to add binaries to release.
+- Nathan has created a draft release.
+- Will have to be tagged on 3.8 branch since master already has 3.9 stuff in it.
+
+3.9.0:
+- Nathan will review and merge 3275
+- And after that, release next instance because it closes all open 3.9 milestones
+- #3266 - no longer milestoned as 3.9. Marked as "waiting for information" since cause is unclear
+- Decided to call it a "release candidate" since all bugs from 3.9.0 beta are eliminated and signals that we are very close to release
+- 3.9.0 release set for 1/1 unless major issues arise
+
+3.9.1:
+- Nathan wants to release 3.9.1 a month after 3.9.0. Ambitious but we are setting the bar low for the number of changes going in.
+
+Wanted for 3.10:
+- Nathan: new UGens (will work on as an independent project for school)
+- Ableton Link synch (#3351)
+- Brian: Update Boost, update Qt version
+- Brian: Fix SerialPort on Windows
+
+SuperColliderAU PR (#3350)
+- SuperColliderAU reboot that runs from current develop.
+- Agreed it would be better to move some of the project to a submodule
+
+scsynth allocator PR (#3318)
+- milestoned 3.10 at Brian's request
+
+Patrick: safeguard for syntax errors in startup files.
+- Right now it causes a mysterious error with no indication that it came from the startup file.
+- Could easily be fixed for quality of life improvement
+
+Thanks to all who attended! The next meeting has been set for December 30, 2017 at https://appear.in/sc-dev-meeting.
+
 2017-12-16
 =========
 
