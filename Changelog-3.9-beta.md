@@ -6,3 +6,4 @@ Fixed supernova crashing when too many controls are used ([#3196](https://github
 
 `Volume` now respects lag time when it is instantiated or destroyed ([#3332](https://github.com/supercollider/supercollider/pull/3332)).
 
+The TOC in SCDoc has been redesigned so that it always pops out to the left ([#3346](https://github.com/supercollider/supercollider/pull/3346)).
