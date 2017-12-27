@@ -47,7 +47,7 @@ For each beta release:
 - Create a release on the GitHub release page. Upload builds for macOS, Linux, and Windows.
 - Do the same for sc3-plugins!
 - Announce to mailing list, Facebook, etc.
-- Merge `3.9` into `develop`. This will temporarily mess up `SCVersion.txt` in `develop`, but who cares, it's `develop`.
+- Merge `3.9` into `develop`. This will temporarily mess up `SCVersion.txt` in `develop`, but who cares, it's `develop`. **Do not merge prereleases into `master`! `master` is stable!**
 
 For the release proper:
 
