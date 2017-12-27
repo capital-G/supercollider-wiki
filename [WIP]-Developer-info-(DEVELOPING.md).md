@@ -81,3 +81,13 @@ Unit testing suite for SuperCollider language core library
 ### Usage
 
 Download UnitTesting quark separately. Add the test suite folder to your SuperCollider compile paths. Recompile. UnitTest.runAll (<- check that)
+
+Changelog-to-schelp script
+--------------------------
+
+Location: https://gist.github.com/brianlheim/443ae188dee8f7a85e7f34c04cc66d2b
+
+### Purpose
+
+Converts a changelog in markdown format into schelp format. A little extra work required but saves a lot of tedium. See script for usage.
+
