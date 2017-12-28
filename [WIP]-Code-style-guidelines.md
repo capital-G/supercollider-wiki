@@ -234,3 +234,21 @@ C++
 ===
 
 The following guidelines apply to C++ code for all four major components in the repository (sclang, scsynth, supernova, and scide).
+
+### Indentation
+
+#### Componentes which use tabs for indentation.
+
+* sclang
+* scsynth
+* plugins
+* common code (common directory)
+
+#### Componentes which use spaces for indentation.
+
+These components use four spaces per indentation level.
+
+* supernova
+* IDE
+* QtCollider
+* ScDoc (some files are currently mixed spaces/tabs).
