@@ -250,6 +250,8 @@ Added two new methods to `SimpleNumber`: `snap` and `softRound` ([#3160](https:/
 
 `ReadableNodeIDAllocator` offers a new optional replacement for `PowerOfTwoAllocator` that assigns node IDs in a way more readable to humans when working with multiclient setups ([#3179](https://github.com/supercollider/supercollider/pull/3179)).
 
+A new "booted" stage has been added to Server objects that have been booted but may not be running yet, accessible via `Server:hasBooted` and `Server:allBootedServers` ([#3275](https://github.com/supercollider/supercollider/pull/3275)).
+
 Class library: Changed
 -------
 
@@ -301,6 +303,8 @@ The WiiMote classes (`WiiMote`, `WiiMoteIRObject`, `WiiCalibrationInfo`, `WiiMot
 The `Server.set` class variable is deprecated. Use `Server.all` instead ([#2422](https://github.com/supercollider/supercollider/pull/2422)).
 
 `SimpleNumber:quantize` is deprecated. Use `SimpleNumber:snap` instead ([#3160](https://github.com/supercollider/supercollider/pull/3160)).
+
+`Server:userSpecifiedClientID` is deprecated. Use `Server:clientID` instead ([#3275](https://github.com/supercollider/supercollider/pull/3275)).
 
 Class library: Removed
 -------
@@ -362,8 +366,11 @@ Fixed Volume control failing to be persistent when rebooting the server ([#3125]
 
 Fixed `SimpleNumber:asTimeString` producing nonsensical results with the "precision" argument ([#3166](https://github.com/supercollider/supercollider/pull/3166)).
 
-`Server:clientID` can now be changed, allowing multiple clients connect to the same server ([#3178](https://github.com/supercollider/supercollider/pull/3178)).
+`Server:clientID` can now be changed, allowing multiple clients connect to the same server ([#3178](https://github.com/supercollider/supercollider/pull/3178), [#3275](https://github.com/supercollider/supercollider/pull/3275)).
 
+History and HistoryGui have been cleaned up ([#3267](https://github.com/supercollider/supercollider/pull/3267)).
+
+`Volume` now respects lag time when it is instantiated or destroyed ([#3332](https://github.com/supercollider/supercollider/pull/3332)).
 
 IDE & SCDoc: Added
 -----
