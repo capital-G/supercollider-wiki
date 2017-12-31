@@ -1,3 +1,25 @@
+2017-12-30
+==========
+
+Members Present:
+
+Nathan, Patrick
+
+Discussion Topics:
+
+- 3.9.0-rc1 needs to be announced to Facebook...
+- Currently waiting for users to test 3.9.0-rc1. If all goes well, we will make a decision on January 6th 
+- Merged last remaining PR for 3.8.1.
+- Fragmentation of SC community across different platforms.
+- Would be a good idea to revive sc-dev and have more in-depth discussions on the list instead of on GitHub.
+- We should announce major PRs to the list and regular updates about what we're working on.
+- Decided against creating a 3.9.1 branch for simplicity. 3.9.1 patches can wait until the 3.9.0 release.
+- Speed of release schedule can be improved by being less choosy about what needs to go into each release. If something holds back the release instead of pushing it forward, it needs to be delayed.
+- Patrick redesigned the download page for the website to be up to date for Linux users.
+- Nathan has been working on Debian packaging but has mostly been hitting dead ends.
+- Bela port of SuperCollider has diverged considerably from core, we need to consider what to merge in.
+- Future website redesign could probably be done as a quick weekend project.
+
 2017-12-23
 =========
 
