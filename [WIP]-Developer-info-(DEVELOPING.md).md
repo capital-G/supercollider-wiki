@@ -29,6 +29,25 @@ either the most painful bugs or most requested features.
 When, in the example milestones above, 3.10 is released, we would move all 3.9.x-milestoned issues to 3.10.x,
 and then collectively decide which issues ought to move from 3.x to 3.11 and from 3.10.x to 3.10.1.
 
+Standards
+=========
+
+New UGens
+---------
+
+New UGens should meet the following standards:
+
+- The UGen should be deemed useful enough to the general SC user base.
+- The Ctor sample should be initialized. If this is not done, very nasty bugs can occur.
+- Any calls to `RTAlloc` should be protected from `RTAlloc` returning a null pointer. This usually happens when there isn't enough real-time memory left, and results in a server crash if unprotected.
+- Zap dangerous values (subnormals, infinities, nans) to 0. SC provides a `zapgremlins` function that does this for you.
+- Don't leave any unnecessary print statements lying around.
+- Sample rate and block size independence should be maintained if applicable. For example, audio UGens shouldn't sound radically different if the sample rate is increased.
+- For audio UGens, control-rate inputs should be interpolated if applicable.
+- UGens should have both `.ar` and `.kr` methods if applicable.
+- Don't use a `doneAction` argument. Set the done flag instead.
+- UGens should be efficient. SuperCollider takes pride in being easy on the CPU, and UGens should help support that reputation.
+
 Tools
 =====
 
