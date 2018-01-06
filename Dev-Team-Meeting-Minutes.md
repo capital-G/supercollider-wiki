@@ -1,3 +1,12 @@
+2018-01-06
+==========
+
+Members Present:
+
+Brian, Patrick, Gerard (g-roma)
+
+We just discussed the SuperColliderAU PR/project and where it belongs in the SC org repository constellation.
+
 2017-12-30
 ==========
 
