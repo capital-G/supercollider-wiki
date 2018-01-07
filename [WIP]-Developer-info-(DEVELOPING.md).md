@@ -37,6 +37,7 @@ New UGens
 
 New UGens should meet the following standards:
 
+- UGens in core should never break backward compatibility.
 - The UGen should be deemed useful enough to the general SC user base.
 - The Ctor sample should be initialized. If this is not done, very nasty bugs can occur.
 - Any calls to `RTAlloc` should be protected from `RTAlloc` returning a null pointer. This usually happens when there isn't enough real-time memory left, and results in a server crash if unprotected.
