@@ -45,6 +45,7 @@ New UGens should meet the following standards:
 - Don't leave any unnecessary print statements lying around.
 - Sample rate and block size independence should be maintained if applicable. For example, audio UGens shouldn't sound radically different if the sample rate is increased.
 - For audio UGens, control-rate inputs should be interpolated if applicable.
+- Don't use `mul` and `add` arguments. These were originally introduced for efficiency, but now `Foo.ar * 2 + 1` gets optimized into a `MulAdd`.
 - UGens should have both `.ar` and `.kr` methods if applicable.
 - Don't use a `doneAction` argument. Set the done flag instead.
 - UGens should be efficient. SuperCollider takes pride in being easy on the CPU, and UGens should help support that reputation.
