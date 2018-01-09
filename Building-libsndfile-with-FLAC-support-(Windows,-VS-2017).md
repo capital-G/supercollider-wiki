@@ -34,8 +34,6 @@ git clone --depth=1 https://github.com/xiph/vorbis
 :: build ogg static libs
 cd ogg\win32\VS2015
 %DEVENV_EXE% libogg_static.sln /upgrade
-:: At this point the IDE might open and the command may hang at the end. Just close it
-:: (click Ignore) and press any key to continue.
 %MSBUILD_EXE% libogg_static.sln %MSBUILD_CONFIG%
 cd ..\..\..
 
