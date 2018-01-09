@@ -2,6 +2,8 @@ Original author: Brian Heim (brianlheim@gmail.com)
 
 This batch script will build both dynamic and static versions of `libsndfile`. It compiles `libFLAC`, `libogg`, and `libvorbis` from source, and links them statically into `libsndfile`. Note that for `libFLAC`, you need NASM (the [Netwide Assembler](http://www.nasm.us/)) installed to compile. This script adds it to your `PATH` if it isn't there already.
 
+Double-check the `SDK_VERSION` and tool paths before beginning.
+
 Required software: VS 2017, NASM, git, cmake.
 
 ```batch
