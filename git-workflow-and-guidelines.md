@@ -42,7 +42,8 @@ The first thing to do in release mode is to remove the `SCClassLibrary/deprecate
 For each beta release:
 
 - In the `3.9` branch, bump up the version in the top-level file `SCVersion.txt` from 3.9dev to 3.9.0-beta1 (or from 3.9.0-beta1 to 3.9.0-beta2, etc).
-- Copy the changelog to a new "News in 3.9" helpfile. This is best done as late as possible before the beta release to avoid having to update the changelog continuously.
+- Make sure the changelog is up to date.
+- Run the [changelog to schelp converter script](https://github.com/supercollider/supercollider/blob/develop/package/changelog_to_schelp.sh) to get the "News in 3.9" help file up to date.
 - Tag the beta release in git as (say) "Version-3.9.0-beta1."
 - Create a release on the GitHub release page. Upload builds for macOS, Linux, and Windows.
 - Do the same for sc3-plugins!
@@ -52,7 +53,7 @@ For each beta release:
 For the release proper:
 
 - In the `3.9` branch, bump up the version in `SCVersion.txt` to 3.9.0.
-- Copy the changelog again if there were any new changes.
+- Copy the changelog again and convert it to schelp if there were any new changes.
 - Merge `3.9` into `master`, preferably with `git merge --no-ff`.
 - Tag the release in git as "Version-3.9.0." Release on GitHub.
 - Announce to mailing list, Facebook, etc. Celebrate, bake a cake.
