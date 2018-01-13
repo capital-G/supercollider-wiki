@@ -1,3 +1,14 @@
+2018-01-13
+==========
+
+Members Present:
+
+Brian, Julian, Patrick, Nathan
+
+- Work remaining for the 3.9 release (laments about Travis issues)
+- Licensing concerns for new editor themes
+- "Known issues" section in changelog
+
 2018-01-06
 ==========
 
