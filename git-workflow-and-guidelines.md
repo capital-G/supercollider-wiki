@@ -54,10 +54,12 @@ For the release proper:
 
 - In the `3.9` branch, bump up the version in `SCVersion.txt` to 3.9.0.
 - Copy the changelog again and convert it to schelp if there were any new changes.
+- Update the release history in `README.md`.
 - Merge `3.9` into `master`, preferably with `git merge --no-ff`.
 - Tag the release in git as "Version-3.9.0." Release on GitHub.
+- Update the website download page.
 - Announce to mailing list, Facebook, etc. Celebrate, bake a cake.
-- Merge `3.9` into `develop`.
+- Merge `master` into `develop`.
 
 For patch releases, the process is the same. You can just keep around the `3.9` branch for all the `3.9.x` releases.
 
