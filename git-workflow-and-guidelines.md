@@ -2,7 +2,7 @@ SuperCollider takes inspiration from git-flow for its branching mode. You can re
 
 - `develop`, for bleeding-edge commits that will be incorporated into the next 3.x release
 - The current release branch (like `3.9`), to which only bug fixes can be merged. (Features will occasionally be merged into release branches if they are considered critical for that release.)
-- `master`, which is stable and only includes releases. Pre-releases such as alphas and betas are not included. (note: at the time of this writing [2017-09-12], master is not yet stable, but it will be when 3.9 is released)
+- `master`, which is stable and only includes releases. Pre-releases such as alphas and betas are not included.
 
 There is a set of [command-line extensions](https://github.com/nvie/gitflow) for git-flow; you may want to consider installing them if you contribute frequently. There is also a helpful [cheat-sheet](https://danielkummer.github.io/git-flow-cheatsheet/) by Daniel Kummer.
 
