@@ -101,7 +101,7 @@ Unit testing suite for SuperCollider language core library
 
 ### Usage
 
-If developing on a version older than 3.9.0, download `UnitTesting` quark separately. Add the test suite folder to your SuperCollider compile paths. Recompile. UnitTest.runAll (<- check that)
+If developing on a version older than 3.9.0, download `UnitTesting` quark separately. Add the test suite folder to your SuperCollider compile paths. Recompile. Run `UnitTest.runAll`, or run tests from the GUI via `UnitTest.gui`.
 
 Changelog-to-schelp script
 --------------------------
