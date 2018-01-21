@@ -59,6 +59,8 @@ scsynth and supernova: Removed
 scsynth and supernova: Fixed
 -----
 
+supernova only looked for plugins in a `plugins/` subfolder of the provided extensions directory. This has been fixed to be consistent with scsynth. ([#3433](https://github.com/supercollider/supercollider/pull/3433)).
+
 UGens: Added
 -----
 
