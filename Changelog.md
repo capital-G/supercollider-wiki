@@ -30,6 +30,8 @@ Post the changelog to the following announcement channels:
 General: Added
 -----
 
+Introduced Guard integration that allows sclang UnitTests to be automatically rerun whenever a file changes ([#3369](https://github.com/supercollider/supercollider/pull/3369)).
+
 General: Changed
 -------
 
@@ -102,6 +104,8 @@ Class library: Removed
 Class library: Fixed
 -----
 
+Fixed `LevelIndicator:style_` doing nothing and printing the warning `Qt: WARNING: Do not know how to use an instance of class 'Meta_QLevelIndicatorStyle'` ([#3398](https://github.com/supercollider/supercollider/pull/3398)).
+
 IDE & SCDoc: Added
 -----
 
@@ -116,3 +120,7 @@ IDE & SCDoc: Removed
 
 IDE & SCDoc: Fixed
 -----
+
+Fixed duplicate SCIDE icons in GNOME, and fixed the SCIDE icon looking wrong ([#3380](https://github.com/supercollider/supercollider/pull/3380)).
+
+Fixed SCDoc breaking with page titles containing a single quote character ([#3301](https://github.com/supercollider/supercollider/pull/3301)).
