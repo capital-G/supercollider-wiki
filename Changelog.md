@@ -110,6 +110,8 @@ Fixed a Routine not being properly terminated when running `CmdPeriod.run` (or h
 
 Fixed `LevelIndicator:style_` doing nothing and printing the warning `Qt: WARNING: Do not know how to use an instance of class 'Meta_QLevelIndicatorStyle'` ([#3398](https://github.com/supercollider/supercollider/pull/3398)).
 
+Fixed `Git.checkForGit` returning `nil` ([#3445](https://github.com/supercollider/supercollider/issues/3445)).
+
 IDE & SCDoc: Added
 -----
 
