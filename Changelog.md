@@ -104,6 +104,8 @@ Class library: Removed
 Class library: Fixed
 -----
 
+Fixed a Routine not being properly terminated when running `CmdPeriod.run` (or hitting an equivalent shortcut) when a `Server:plotTree` window is open ([#3423](https://github.com/supercollider/supercollider/pull/3423)).
+
 Fixed `LevelIndicator:style_` doing nothing and printing the warning `Qt: WARNING: Do not know how to use an instance of class 'Meta_QLevelIndicatorStyle'` ([#3398](https://github.com/supercollider/supercollider/pull/3398)).
 
 IDE & SCDoc: Added
@@ -111,6 +113,8 @@ IDE & SCDoc: Added
 
 IDE & SCDoc: Changed
 -------
+
+Set the default font in the IDE for macOS to Monaco, instead of the rather silly non-monospace font that has been the SC default for over a decade ([#3404](https://github.com/supercollider/supercollider/pull/3404)).
 
 IDE & SCDoc: Deprecated
 ----------
