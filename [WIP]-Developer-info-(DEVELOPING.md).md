@@ -118,7 +118,6 @@ Rather than manually running appropriate tests after editing a library class or 
 - Make sure you have Ruby installed.
 - Make sure you have [Bundler](http://bundler.io/) installed (usually this is as simple as running `gem install bundler`).
 - Make sure `sclang` is somewhere on your `$PATH`.
-- Until [pull request #3369](https://github.com/supercollider/supercollider/pull/3369) is merged, you will need to apply it to your SuperCollider source tree.
 - `cd $supercollider_source/tools/guard`
 - `bundle install` 
 
