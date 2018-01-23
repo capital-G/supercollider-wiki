@@ -53,7 +53,8 @@ The required packages may be installed with the following command;
     readline-devel qt5-qtwebengine-devel qt5-qttools-devel qt5-qtwebkit-devel emacs
 ```
 
-## A note about JACK 
+A note about JACK 
+------
 
 You may have issues running JACK with real time scheduling privileges on Fedora. Be sure to add your user to the **jackuser** and **pulse-rt** groups. You will need to reboot your system after running the following command:
 
