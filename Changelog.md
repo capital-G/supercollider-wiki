@@ -93,6 +93,8 @@ sclang: Removed
 sclang: Fixed
 -----
 
+The GUI class library folders were installed even when building sclang without Qt, resulting in unbound primitives. This has been fixed ([#3456](https://github.com/supercollider/supercollider/pull/3456)).
+
 Class library: Added
 -----
 
