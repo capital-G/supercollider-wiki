@@ -1,3 +1,57 @@
+2018-01-27
+==========
+
+Members Present:
+
+Brian, Patrick, Nathan
+
+Discussion Topics:
+
+Recent work:
+* Patrick: lots of small website fixes, sc3-plugins PRs
+* Nathan: custodial stuff, UGen testing, planning to work on UGens for school project
+* Brian: couple of minor fixes, Boost update PR, custodial stuff, looked at Qt update PR
+
+sc3-plugins
+* PR #146 has some issues
+* It's still an open question of how to best add Faust-to-SC plugins to sc3-plugins
+* Would be nice to have a minimal checklist for things that go in
+
+3.9.1:
+* Ready to start the release process
+* Merge #3469 as last item for 3.9.1 (?)
+* Nathan has created a 3.9.2 milestone
+
+Unit-testing:
+* Guidelines are badly needed
+* A future goal is to move most (if not all) of UGen testing code to C++ for speed and dependability
+
+2018-01-20
+==========
+
+Members present: Nathan, Brian, and Patrick
+
+- 3.9 release went well -- downloaded over 1000 times.
+- 3.9.1 has 14 closed pull requests, which is plenty enough for a patch release. Although we are not in any rush, we could easily release well ahead of the scheduled date of January 31st.
+- Brian has been working on AppVeyor integration, monitoring LiveCode Slack for new issues.
+- Unit tests are not written consistently due to lack of documentation.
+- Unit & integration tests for UGens can be written in C++ using Boost.
+- Various ways the appearance and usability of the IDE could be improved:
+  - For 3.9.1, let's just make auto-indent optional instead of fixing it entirely. Unfortunately, there is no reliable way to test changes to auto-indent.
+  - Embedding volume meter and other basic controls.
+  - Difficulties making SCIDE look attractive on arbitrary native themes, and the possibility of
+  - Replacing the default light theme entirely.
+  - Making the Documents docklet match the theme for visual consistency.
+  - Making the Documents docklet match the theme for visual consistency (much more difficult!).
+  - Licensing of themes.
+- SCDoc regressions
+- FreqScope improvements -- afterimage, antialiasing
+- SuperCollider installation on Raspberry Pi is absurd, involving manually moving files
+- Debian packaging has mostly hit a wall :(
+- Adam's Guard configuration PR can go into 3.9
+- Release signing
+- Travis is back in order
+
 2018-01-13
 ==========
 
