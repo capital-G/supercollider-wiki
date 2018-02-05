@@ -1,6 +1,3 @@
-
-
-
 How to maintain this changelog
 ==============================
 
@@ -46,6 +43,8 @@ General: Removed
 General: Fixed
 -----
 
+Debugging information is improved when building a Windows installer package ([#3464](https://github.com/supercollider/supercollider/pull/3464)).
+
 scsynth and supernova: Added
 -----
 
@@ -78,6 +77,8 @@ UGens: Removed
 UGens: Fixed
 -----
 
+Fixed `Index`, `IndexL`, `FoldIndex`, `WrapIndex`, `IndexInBetween`, and `DetectIndex` incorrectly handling audio-rate index arguments ([#3436](https://github.com/supercollider/supercollider/pull/3436)).
+
 sclang: Added
 -----
 
@@ -94,6 +95,8 @@ sclang: Fixed
 -----
 
 The GUI class library folders were installed even when building sclang without Qt, resulting in unbound primitives. This has been fixed ([#3456](https://github.com/supercollider/supercollider/pull/3456)).
+
+Some default class library directories had to be manually created. sclang will now create them for you if they don't exist ([#3469](https://github.com/supercollider/supercollider/pull/3469)).
 
 Class library: Added
 -----
@@ -116,8 +119,14 @@ Fixed `LevelIndicator:style_` doing nothing and printing the warning `Qt: WARNIN
 
 Fixed `Git.checkForGit` returning `nil` ([#3445](https://github.com/supercollider/supercollider/issues/3445)).
 
+The SynthDef compiler optimizes `a + b.neg` to `a - b`, but other UGens that depend on `b.neg` would also be incorrectly removed in some cases. This has been fixed ([#3437](https://github.com/supercollider/supercollider/pull/3437)).
+
+In 3.9.0, the `group` key broke in the "grain" event type. This has been fixed ([#3483](https://github.com/supercollider/supercollider/pull/3483)).
+
 IDE & SCDoc: Added
 -----
+
+New IDE themes have been introduced for the editor and post window: Solarized, Solarized Dark, and Dracula ([#3412](https://github.com/supercollider/supercollider/pull/3412), [#3410](https://github.com/supercollider/supercollider/pull/3410)).
 
 IDE & SCDoc: Changed
 -------
