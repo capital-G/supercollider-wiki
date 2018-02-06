@@ -101,6 +101,8 @@ Class library: Removed
 Class library: Fixed
 -----
 
+Fixed an off-by-one error in a warning message for `Server:clientID_` ([#3487](https://github.com/supercollider/supercollider/pull/3487)).
+
 IDE & SCDoc: Added
 -----
 
