@@ -73,6 +73,8 @@ UGens: Removed
 UGens: Fixed
 -----
 
+Fixed PSinGrain growing in amplitude after it was supposed to finish ([#3494](https://github.com/supercollider/supercollider/pull/3494)).
+
 sclang: Added
 -----
 
