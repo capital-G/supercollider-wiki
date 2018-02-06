@@ -27,10 +27,6 @@ Post the changelog to the following announcement channels:
 General: Added
 -----
 
-Introduced Guard integration that allows sclang UnitTests to be automatically rerun whenever a file changes ([#3369](https://github.com/supercollider/supercollider/pull/3369)).
-
-Bleeding-edge builds are now uploaded for Windows. See the Windows README for details ([#3441](https://github.com/supercollider/supercollider/pull/3441)).
-
 General: Changed
 -------
 
