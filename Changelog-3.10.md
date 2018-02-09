@@ -72,6 +72,8 @@ UGens: Fixed
 sclang: Added
 -----
 
+`FileDialog` and `Dialog` now support a "path" argument that specifies a default directory when the dialog appears ([#3508](https://github.com/supercollider/supercollider/pull/3508)).
+
 sclang: Changed
 -------
 
