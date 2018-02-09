@@ -86,6 +86,8 @@ sclang: Removed
 sclang: Fixed
 -----
 
+`SequenceableCollection:unixCmd` now allows respects `PATH` instead of strictly requiring the executable path ([#3501](https://github.com/supercollider/supercollider/pull/3501)).
+
 Class library: Added
 -----
 
