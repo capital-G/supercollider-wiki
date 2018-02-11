@@ -1,14 +1,14 @@
 *This is a draft of a new comprehensive guide to recording in SC. Unfortunately the most important part, non-real-time recording, is currently incomplete.*
 
-Recording in SuperCollider can be complex. blah blah blah finish this intro
+## Recording with `Server:record` ##
 
-## Recording with `s.record` ##
+After making sure the server is booted, this is how you record in SuperCollider:
 
-Assuming `s` is your server, this is how you record in SuperCollider:
+    Server.default.record;
 
-    s.record;
+That's it. To stop recording, run `Server.default.stopRecording` or hit Cmd+Period. SuperCollider outputs the recording to an AIFF file whose path is printed in the post window.
 
-That's it. To stop recording, run `s.stopRecording` or hit Cmd+Period. SuperCollider outputs the recording to an AIFF file whose path is printed in the post window.
+(By default, the global variable `s` refers to `Server.default`, so in all code samples in this document, you may replace `Server.default` with `s` if you're lazy. It's shorter, but also less robust, since the variable `s` can be reassigned.)
 
 If you're using SCIDE, it's even easier — if you open the "Language" menu on the toolbar or click on the server status bar, "Start recording" and "Stop recording" are available as menu items. The server status bar also has an "R" symbol that turns red if the server is recording.
 
@@ -16,7 +16,7 @@ If you're using SCIDE, it's even easier — if you open the "Language" menu on t
 
 ### More options ###
 
-Familiarize yourself with some of the arguments that `s.record` lets you specify:
+Familiarize yourself with some of the arguments that `Server.default.record` lets you specify:
 
 - **path** - Manually specify the output path. SuperCollider will figure out what format to write based on the extension. (As we'll cover in a later section, don't try an .mp3 path here. It won't work.)
 - **bus** - Record from a specific Bus object or bus number. Defaults to 0.
@@ -24,7 +24,7 @@ Familiarize yourself with some of the arguments that `s.record` lets you specify
 - **node** - The Node to record after. If you're a beginner, don't worry about this.
 - **duration** - If specified, the recording will be automatically stopped after this number of seconds of recording.
 
-`s.pauseRecording` will cause SC to stop writing to the file (resume by running `s.record` again). It will not write silence — it will just create skipped time in the output file. In SCIDE, this functionality is accessible on the same menu as "Start recording" and "Stop recording."
+`s.pauseRecording` will cause SC to stop writing to the file (resume by running `Server.default.record` again). It will not write silence — it will just create skipped time in the output file. In SCIDE, this functionality is accessible on the same menu as "Start recording" and "Stop recording."
 
 The timer for the "duration" argument waits for paused recordings. "duration" the length of the output file, not the real time spent between the beginning and end of recording.
 
@@ -34,13 +34,13 @@ SuperCollider doesn't export MP3 files.
 
 This is very easy to work around. Just export to WAV (say) and convert that WAV to MP3 using an external tool such as LAME. If that tool is accessible from the command line, you can use ```.unixCmd``` to perform conversion automatically after recording.
 
-### `s.record` and compositions ###
+### `Server:record` and compositions ###
 
-`s.record` is very basic. It takes the real-time output of SuperCollider (or a specific Bus) and writes it to disk. It doesn't make any assumptions or interactions with your composition, other than that it produces audio output. The exact way to incorporate recording functionality into your work is up to you.
+`Server:record` is very basic. It takes the real-time output of SuperCollider (or a specific Bus) and writes it to disk. It doesn't make any assumptions or interactions with your composition, other than that it produces audio output. The exact way to incorporate recording functionality into your work is up to you.
 
-If you're designing a real-time performance interface, it's straightforward: add buttons or MIDI/OSC responders that call `s.record` and `s.stopRecording`. For a nicer interface, you can figure out whether the server is currently recording by calling `s.isRecording` (returns a Boolean), and you can use `s.recorder.duration` to determine the number of seconds elapsed in the recording.
+If you're designing a real-time performance interface, it's straightforward: add buttons or MIDI/OSC responders that call `Server.default.record` and `Server.default.stopRecording`. For a nicer interface, you can figure out whether the server is currently recording by calling `Server.default.isRecording` (returns a Boolean), and you can use `Server.default.recorder.duration` to determine the number of seconds elapsed in the recording.
 
-Other users might have works that are relatively fixed-media (nondeterministic SynthDefs and generative sequencing notwithstanding). Recording your piece is simply a matter of calling `s.record` and `s.stopRecording` at the right times, which fits nicely into the common paradigm of using a `Routine` to sequence a composition. A nontrivial example is appropriate here, so here's short drone piece that plays a Synth for 10 seconds:
+Other users might have works that are relatively fixed-media (nondeterministic SynthDefs and generative sequencing notwithstanding). Recording your piece is simply a matter of calling `Server.default.record` and `Server.default.stopRecording` at the right times, which fits nicely into the common paradigm of using a `Routine` to sequence a composition. A nontrivial example is appropriate here, so here's short drone piece that plays a Synth for 10 seconds:
 ```supercollider
     (
     Routine.run {
@@ -95,7 +95,7 @@ In the above example, we knew exactly the amount of time before it was safe to s
     // Watch the node, and stop recording when it frees itself.
     NodeWatcher.register(detector);
     detector.onFree({
-        s.stopRecording;
+        Server.default.stopRecording;
     });
     )
 ```
