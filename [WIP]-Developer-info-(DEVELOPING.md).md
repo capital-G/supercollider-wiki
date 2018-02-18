@@ -54,8 +54,8 @@ New UGens should meet the following standards:
   - Sample rate and block size independence should be maintained if applicable. For example, audio UGens shouldn't sound radically different if the sample rate is increased.
   - For audio UGens, control-rate inputs should be interpolated if applicable.
   - Don't arbitrarily make certain inputs nonmodulatable just for programming convenience -- carefully anticipate what's worth modulating. Either way, don't forget to document it.
-- **Deprecated features:**
-  - When writing a new UGen from scratch, use the more modern style seen in `SC_PlugIn.hpp`.
+- **Modernization and deprecated features:**
+  - When writing a new UGen from scratch, it is recommended to use the modern C++ style seen in `SC_PlugIn.hpp`.
   - Don't use `mul` and `add` arguments. These were originally introduced for efficiency, but now `Foo.ar * 2 + 1` gets optimized into a `MulAdd`.
   - Don't use a `doneAction` argument. Set the done flag instead.
 
