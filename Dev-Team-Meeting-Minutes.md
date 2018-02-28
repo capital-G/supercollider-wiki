@@ -3,7 +3,7 @@
 
 Members Present:
 
-Brian, Julian, Patrick
+Brian, Julian, Patrick, Scott C.
 
 Recent work:
 - Brian: primitive-defining macro for cleaning up sclang
