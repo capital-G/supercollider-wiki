@@ -1,3 +1,50 @@
+2018-02-24
+==========
+
+Members Present:
+
+Brian, Julian, Patrick
+
+Recent work:
+- Brian: primitive-defining macro for cleaning up sclang
+- Julian: neurological SC, project with Dutch CS/math prof; ideas about having extra sclang processes in background; small PRs
+- Patrick: testing HOAUGens PR, Issue 3396 (Help browser navigation)
+- Scott: cleanup on Qt WebEngine PR, Atk-related HOA, generic primitive wrapper (to bind to Boost.Math headers), calling native C functions from sclang using dyncall (proof-of-concept)
+
+Discussion Topics:
+
+- Issue 3396
+    - Scott thinks this is a Qt problem and may not be under our control
+
+- Julian: could we unify the code editor and help browser?
+    - Scott: would take a lot of rebuilding; possible as a big project; could make a rich-text webview using existing open-source editors
+
+- Scott C's PR to update the help browser to QtWebEngine
+    - Allows us to move to newer versions of Qt
+    - Also fixes HiDPI-related issues
+    - Qt Menu addition would ideally be merged not long after
+
+- Qt Menu idea - could make it easier to add system menu items for the IDE from sclang
+
+- Julian: would like to add more examples to Help system
+    - Scott: been doing overview-type work, have examples for WebView
+
+- Making it easier to submit bugs/changes from the Help Browser
+
+- CMake: update to 3.x because of Ableton Link PR
+    - Scott: use CMake 3.9.4 (what we have on Travis)
+    - Make sure smiarx gets credit
+    - Patrick: maybe 3.5 (Ubuntu) or 3.7 (Debian)
+    - Scott: be transparent about what we use on Travis
+
+- Scott: create a "template" for repos to easily make your own repo w/ auto-released binaries
+    - Make easy alternatives if we're going to say no
+
+- Do a better job of announcing/promoting 3.10 and its improvements
+    - Get links to Eli Fieldsteel's tutorials
+    - Get links to the DX7 project
+    - Show how to link to other DAWs
+
 2018-02-17
 ==========
 
@@ -20,6 +67,23 @@ Topics:
 - Some issues tagged as 3.9.2 have been moved back to 3.9.x since nobody is actively working on them
 - Refactoring scsynth to improve the API, advantages and disadvantages of moving to modern C++ practices
 - Timing of the creation of 3.10 branch (in my opinion, creation of the 3.10 branch indicates that it is closed for new features)
+
+2018-02-03
+==========
+
+Members Present:
+
+Nathan, Brian, Patrick
+
+Discussion Topics:
+
+- 3.9.1 is ready to release
+- VBAP panning bug in sc3-plugins was fixed by Nathan
+- Brian is working on a unit testing guide
+- Nathan is working on unit tests for scsynth and for unit generators
+- HOAUgens are nearly ready to be merged to sc3-plugins
+- people have learned a bit more about CMake recently
+- considering moving to CMake 3(.1?) - seems well-supported at this point
 
 2018-01-27
 ==========
