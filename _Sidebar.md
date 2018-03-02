@@ -1,4 +1,4 @@
-<h2 style="color:beige;font-size:5em">Main pages</h2>
+## Main pages
 
 * [Home](https://github.com/supercollider/supercollider/wiki)
 * [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
