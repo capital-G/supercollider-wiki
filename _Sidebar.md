@@ -1,7 +1,7 @@
 **Main pages**
 
-[Home](https://github.com/supercollider/supercollider/wiki)
-[Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
+* [Home](https://github.com/supercollider/supercollider/wiki)
+* [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
 
 **Guides**
 
