@@ -1,9 +1,12 @@
 **Main pages**
+
 [Home](https://github.com/supercollider/supercollider/wiki)
 [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
 
 **Guides**
+
 Installation
+
 * [Fedora](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Fedora)
 * [Ubuntu, from source](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-from-source-on-Ubuntu)
 * [Ubuntu, configuration](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Ubuntu-systems)
