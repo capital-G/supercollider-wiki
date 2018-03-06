@@ -162,7 +162,8 @@ If you can't find the language you want to add translations for, first make sure
 4. Build the `update_ide_translations` CMake target to generate a `.ts` file
 5. Add translations using Qt Linguist.
 
-### Adding to QtCollider widgets
+Adding to QtCollider widgets
+----------------------------
 
 These instructions detail how to add functionality to existing QtCollider widgets (such as TreeView and Knob). Each widget typically corresponds to a single Qt class, and the simplest way to add functionality is by providing access to an existing C++ function of the Qt widget.
 
