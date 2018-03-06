@@ -14,13 +14,13 @@ There is a set of [command-line extensions](https://github.com/nvie/gitflow) for
 
 Stable releases are marked using annotated tags on GitHub's "releases" page.
 
-Most contributions to the project should be done in topic branches in contributor forks of the repository. **Contributors with push access should never push directly to `develop`, `master`, or the release branches -- especially not `master`, which is the stable branch!** We have put protections in place so that this is impossible to do accidentally. A feature branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but consistency is appreciated.
+Contributions to the project may be done in topic branches either on the main repository or a contributor fork. Contributors with push access should never push directly to `develop`, `master`, or the release branches -- especially not `master`, which is the stable branch! We have put protections in place so that this is impossible to do accidentally. A feature branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but consistency is appreciated.
 
 When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file provided you are comfortable with other maintainers pushing to your branch.
 
-If desired, a feature branch can be made on the main organization repository instead of your personal fork. Typically, this is done when the branch contains a significant change of organizational interest, such as a fix for a major bug, an upgrade of a bundled library, a change to the CI or packaging system, a feature that solves a longstanding problem, and so on. Creating the branch here has a few benefits:
-- the branch is easy to find and build
+If you have push access, creating the branch on the main SuperCollider repository has a few benefits:
 - SuperCollider's CI integrations apply to pushes to the branch
+- binaries of the branch for Windows and macOS will be available via our S3 hosting
 - the branch is protected from potentially being lost if a contributor deletes their fork
 
 ## Guidelines for pull request authors ##
