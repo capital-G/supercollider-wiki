@@ -21,7 +21,7 @@ Other
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Changelog info & guide](https://github.com/supercollider/supercollider/wiki/Changelog)
 * [WIP Code style guidelines](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Code-style-guidelines)
-* [WIP Developer info / DEVELOPING.md](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Developer-info-%40DEVELOPING.md%41)
+* [WIP Developer info / DEVELOPING.md](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Developer-info-%28DEVELOPING.md%29)
 
 **Developer working documents**
 
@@ -29,4 +29,4 @@ Other
 * [Notes for refactoring the server implementation](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-notes-for-refactoring-the-server-implementation)
 * [PlayBuf 2017](https://github.com/supercollider/supercollider/wiki/PlayBuf-2017)
 * [Undocumented classes and methods list](https://github.com/supercollider/supercollider/wiki/Undocumented-classes-and-methods-list)
-* [Building libsndfile with FLAC support (Windows, VS 2017)](https://github.com/supercollider/supercollider/wiki/Building-libsndfile-with-FLAC-support-%40Windows,-VS-2017%41)
+* [Building libsndfile with FLAC support (Windows, VS 2017)](https://github.com/supercollider/supercollider/wiki/Building-libsndfile-with-FLAC-support-%28Windows,-VS-2017%29)
