@@ -237,18 +237,4 @@ The following guidelines apply to C++ code for all four major components in the 
 
 ### Indentation
 
-#### Componentes which use tabs for indentation.
-
-* sclang
-* scsynth
-* plugins
-* common code (common directory)
-
-#### Componentes which use spaces for indentation.
-
-These components use four spaces per indentation level.
-
-* supernova
-* IDE
-* QtCollider
-* ScDoc (some files are currently mixed spaces/tabs).
+A mix of indentation styles is used in the C++ source code. In the near future, [all C++ code will be converted to use 4-space indentation](https://github.com/supercollider/supercollider/issues/2819). New files and new large sections within existing files should conform to 4-space indentation. In all other cases, please follow the pre-existing convention in the surrounding code.
