@@ -174,6 +174,10 @@ These instructions detail how to add functionality to existing QtCollider widget
 5. Add a suitably named new method in the class file that calls down to the QtCollider widget using `invokeMethod`.
 6. Document the method in the corresponding schelp file in `/HelpSource/Classes/`.
 
+Technical note: not all types can be transcoded between SuperCollider and QtCollider widgets. However, all primitive types, some collection types, and a few class types are supported. The code which controls this can be found in `QtCollider::MetaType::find( PyrSlot * )`.
+
+### Example
+
 [PR #3560](https://github.com/supercollider/supercollider/pull/3560) demonstrates how to do this by adding `setColumnWidth` to `TreeView`:
 
 1. The C++ files are `/QtCollider/widgets/QcTreeWidget.{cpp,h}`
@@ -211,5 +215,3 @@ ARGUMENT:: column
 ARGUMENT:: width
 	Integer width in pixels
 ```
-
-Technical note: not all types can be transcoded between SuperCollider and QtCollider widgets. However, all primitive types, some collection types, and a few class types are supported. The code which controls this can be found in `QtCollider::MetaType::find( PyrSlot * )`.
