@@ -263,3 +263,12 @@ The following guidelines apply to C++ code throughout the project.
 ### Indentation
 
 A mix of indentation styles is used in the C++ source code. In the near future, [all C++ code will be converted to use 4-space indentation](https://github.com/supercollider/supercollider/issues/2819). New files and new large sections within existing files should conform to 4-space indentation. In all other cases, please follow the pre-existing convention in the surrounding code.
+
+Other files
+===========
+
+These rules apply to source files in all other formats (CMake, Python, Bash, Batch, etc.), unless otherwise specified.
+
+### Indentation
+
+Prefer 4-space indentation for new code.
