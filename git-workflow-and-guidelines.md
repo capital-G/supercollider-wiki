@@ -39,11 +39,23 @@ If you have push access, creating the branch on the main SuperCollider repositor
 
 **Break a large project into bite-sized chunks.** Several small PRs will get merged much faster than one big one.
 
+## Writing changelogs ##
+
+The [changelog](https://github.com/supercollider/supercollider/wiki/Changelog) documents the publicly visible changes since the most recent SuperCollider release. A change is worth putting in the log if it affects users, such as breaking changes (of course), new features, and bug fixes. Significant refactors should also be logged to identify areas that should be tested, and to help locate the culprit in case of breakage. Documentation edits generally shouldn't be on this list, but major overhauls and expansions may be appropriate.
+
+The website [Keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/) is a major inspiration for the organization of the changelog. Changes to each component of SuperCollider are subdivided into Added, Changed, Deprecated, Removed, Fixed, and Security, in that order.
+
+Please provide the link to the PR with every entry in the changelog for easy navigation.
+
+Try to exercise common sense in keeping the log readable and useful to users. Use complete sentences and, to a reasonable extent, err on the side of clarity. In case of doubt, prefer inclusion over exclusion.
+
 ## Releasing ##
 
 A month or so before the beta release, the release manager branches off `develop` to create a new branch named after the release -- say `3.9`. Uncontroversial bug fixes should be merged into the `3.9` branch, and everything else should go into the `develop` branch. This causes the `3.9` and `develop` branches to diverge, so the fixes in the `3.9` branch should periodically be merged into `develop` to keep `develop` up to date.
 
 The first thing to do in release mode is to remove the `SCClassLibrary/deprecated/3.8` directory and document these removals in the changelog. Corresponding UGen and primitive code should also be removed. Be careful when deprecating UGens and be considerate of alternate clients!
+
+Use the `package/contributor-list-generator` node.js script to generate a list of contributors, and add it to the changelog.
 
 For each beta release:
 
@@ -70,3 +82,13 @@ For the release proper:
 For patch releases, the process is the same. You can just keep around the `3.9` branch for all the `3.9.x` releases.
 
 When you're done with patch releases, bump up `SCVersion.txt` in `develop` to 3.10dev.
+
+On release, post the changelog to the following announcement channels:
+
+- CHANGELOG.md: post full version with all pull request links
+- GitHub release page: post an abbreviated version
+- "News in 3.x" helpfile: post full version without pull request links
+- GitHub website: post an abbreviated version
+- sc-users mailing list: post an abbreviated version
+- Facebook group: post an abbreviated version
+- Reddit (/r/supercollider): post an abbreviated version
