@@ -19,12 +19,12 @@ Other
 
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
-* [Changelog info & guide](https://github.com/supercollider/supercollider/wiki/Changelog)
 * [WIP Code style guidelines](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Code-style-guidelines)
 * [WIP Developer info / DEVELOPING.md](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Developer-info-%28DEVELOPING.md%29)
 
 **Developer working documents**
 
+* [3.9.x Changelog](https://github.com/supercollider/supercollider/wiki/Changelog)
 * [3.10 Changelog](https://github.com/supercollider/supercollider/wiki/Changelog-3.10)
 * [Notes for refactoring the server implementation](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-notes-for-refactoring-the-server-implementation)
 * [PlayBuf 2017](https://github.com/supercollider/supercollider/wiki/PlayBuf-2017)
