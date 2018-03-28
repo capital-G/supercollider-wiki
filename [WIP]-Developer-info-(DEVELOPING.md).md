@@ -46,7 +46,7 @@ New UGens should meet the following standards:
   - Don't leave any unnecessary print statements lying around.
 - **Safety:**
   - Check input rates in the sclang class.
-  - Any calls to `RTAlloc` should be protected from `RTAlloc` returning a null pointer. This usually happens when there isn't enough real-time memory left, and results in a **server crash** if unprotected.
+  - Any calls to `RTAlloc` should be protected from `RTAlloc` returning a null pointer. This usually happens when there isn't enough real-time memory left, and results in a **server crash** if the code is not protected from attempts to read from an unallocated buffer.
   - The Ctor sample should be initialized. If this is not done, very nasty bugs can occur.
   - Zap dangerous values (subnormals, infinities, nans) in feedback loops to 0. SC provides a `zapgremlins` function that does this for you.
 - **Utility:**
