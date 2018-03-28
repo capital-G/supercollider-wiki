@@ -46,6 +46,11 @@ New UGens should meet the following standards:
   - Don't leave any unnecessary print statements lying around.
 - **Safety:**
   - Check input rates in the sclang class.
+  - UGens should be real-time safe. Ross Bencina's ["Real-time audio programming 101"](http://www.rossbencina.com/code/real-time-audio-programming-101-time-waits-for-nothing) is required reading. Here is a quick and incomplete blacklist of dangerous features:
+    - `malloc`/`free`/`new`: use `RTAlloc` instead.
+    - `throw`/`catch`: use return codes instead.
+    - `dynamic_cast`
+    - System calls. These are complicated to handle and require use of an NRT thread.
   - Any calls to `RTAlloc` should be protected from `RTAlloc` returning a null pointer. This usually happens when there isn't enough real-time memory left, and results in a **server crash** if the code is not protected from attempts to read from an unallocated buffer.
   - The Ctor sample should be initialized. If this is not done, very nasty bugs can occur.
   - Zap dangerous values (subnormals, infinities, nans) in feedback loops to 0. SC provides a `zapgremlins` function that does this for you.
