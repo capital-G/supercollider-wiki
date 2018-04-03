@@ -131,6 +131,25 @@ New UGens should meet the following standards:
 Tools
 =====
 
+S3 Build Hosting
+----------------
+
+Builds of all commits to branches on the main project repository are uploaded to Amazon's S3 hosting service. These builds are available for macOS, Windows x86, and Windows x86-64. To download the latest build of a branch named `topic/foo`, the URLs are of the form:
+
+* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/osx/topic/foo-latest.html
+* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/win32/topicfoo-latest.html
+* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/win64/topicfoo-latest.html
+
+Note that for the Windows builds only, the branch name is stripped of forward slashes.
+
+To find a build for a specific commit (assuming it exists), use the full SHA hash of the commit. For example, the binaries for commit [8c3563a8065cb623087f267dfe50e228224a4572](https://github.com/supercollider/supercollider/commit/8c3563a8065cb623087f267dfe50e228224a4572) are at:
+
+* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/osx/SC-8c3563a8065cb623087f267dfe50e228224a4572.zip
+* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/win32/SC-8c3563a8065cb623087f267dfe50e228224a4572.zip
+* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/win64/SC-8c3563a8065cb623087f267dfe50e228224a4572.zip
+
+A build for a specific commit may not always be available: for instance, if the build was cancelled early or failed to complete.
+
 Boost Update Script
 -------------------
 
