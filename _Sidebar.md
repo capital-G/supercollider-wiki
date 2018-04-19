@@ -13,7 +13,7 @@ Installation
 
 Other
 
-* [Recording in SC](https://github.com/supercollider/supercollider/wiki/Recording-in-SuperCollider-%40WIP%41)
+* [Recording in SC](https://github.com/supercollider/supercollider/wiki/Recording-in-SuperCollider-(WIP))
 
 **Developer info**
 
