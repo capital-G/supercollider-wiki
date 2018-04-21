@@ -264,6 +264,55 @@ The following guidelines apply to C++ code throughout the project.
 
 A mix of indentation styles is used in the C++ source code. In the near future, [all C++ code will be converted to use 4-space indentation](https://github.com/supercollider/supercollider/issues/2819). New files and new large sections within existing files should conform to 4-space indentation. In all other cases, please follow the pre-existing convention in the surrounding code.
 
+### Whitespace
+
+#### `if`, `for`, `while`, `switch`
+
+Use one space after `if`, `for`, `while`, and `switch`, before the open paren. If the statement includes an open bracket, and the code is in K&R brace style (the open bracket is on the same line), use one space between the close paren and open bracket.
+
+```cpp
+// correct
+if (condition)
+
+// incorrect
+if(condition)
+
+// correct
+while (condition) {
+    /* ... */
+}
+
+// incorrect
+while (condition){
+    /* ... */
+}
+```
+
+### Statements
+
+#### One statement per line
+
+Have at most one statement per line. This makes it easier to set breakpoints while debugging, and is generally clearer.
+
+```cpp
+// correct
+if (condition)
+    return 3;
+
+// incorrect
+if (condition) return 3;
+
+// correct
+a++;
+b++;
+
+// acceptable
+a++, b++;
+
+// incorrect
+a++; b++;
+```
+
 Other files
 ===========
 
