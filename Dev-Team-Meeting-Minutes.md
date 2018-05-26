@@ -1,3 +1,44 @@
+2018-05-25
+==========
+
+Members present: Brian, Nathan, Patrick, Scott Carver
+
+Recent work:
+- Nathan wrote NHHall UGen -> sc3-plugins, wrote a spec for antialiasing UGens
+- Scott has been working with pattern library and thinking about improving consistency w/ multichannel expansion
+- Patrick has submitted some small and helpful PRs
+- Brian has reviewed some PRs and has ported SerialPort to Windows
+
+Topics:
+- Denormals - we want them to be always flushed, but it sounds like on ARM (and sometimes on x86) they aren't (reported by Nathan)
+- HOAUGens - Patrick will help move this PR through
+    - need to remove the units that don't build on other platforms
+- Scott has been working with ATK members on their HOA generators - may be a better HOA implementation for SC project
+
+3.10:
+- Target goals: Qt update, Qt Menu support, SerialPort port, UnitTest/Quarks issue, LinkClock
+- Release mode when?: will revisit soon
+
+3.9.4:
+- discussed possibility. Nathan is unconvinced of the need for this, will possibly revisit.
+
+Norns/Embedded:
+- recent popularity bump. Should work on improving tutorials
+- interest in SC on embedded devices may be ramping up
+- consider focusing on improving RPi-SC experience for 3.11 (in the same way 3.9/3.10 were about improving Windows experience)
+
+Documentation:
+- Brian has an "edit this doc on GitHub" button
+
+Bela:
+Bela has a remedy (not a complete fix) for this nasty issue when building without Qt: https://github.com/supercollider/supercollider/issues/2144.  This is a pretty bad issue especially as SC finds use in embedded systems like the Norns. Maybe the Bela team's patch should be merged in?
+
+Another important performance issue for embedded SC: https://github.com/supercollider/supercollider/issues/3524
+
+Scott offered to reach out to the Monome, TidalCycles, and Sonic Pi teams via email and improve communication with big commercial and open-source projects.
+
+Pushed 3.10 milestone due date to June 30th
+
 2018-03-31
 ==========
 
