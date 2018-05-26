@@ -76,6 +76,8 @@ sclang: Added
 
 `FileDialog` and `Dialog` now support a "path" argument that specifies a default directory when the dialog appears ([#3508](https://github.com/supercollider/supercollider/pull/3508)).
 
+`QTreeView` has a new method: `setColumnWidth` ([#3560](https://github.com/supercollider/supercollider/pull/3560)).
+
 sclang: Changed
 -------
 
@@ -84,6 +86,8 @@ sclang: Deprecated
 
 sclang: Removed
 -------
+
+Removed some unused Qt dependencies from the build system ([#3472](https://github.com/supercollider/supercollider/pull/3472)).
 
 sclang: Fixed
 -----
