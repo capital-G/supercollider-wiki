@@ -98,8 +98,14 @@ Removed some unused Qt dependencies from the build system ([#3472](https://githu
 sclang: Fixed
 -----
 
+Fixed a crash when calling `File.copy` when the destination exists ([#3633](https://github.com/supercollider/supercollider/pull/3633)).
+
+Fixed a regression with failure to expand `~` in paths in sclang configuration files ([#3548](https://github.com/supercollider/supercollider/pull/3548)).
+
 Class library: Added
 -----
+
+`UnitTest.passVerbosity` allows changing the verbosity of test failure reports. See the `UnitTest` help file for more information ([#3615](https://github.com/supercollider/supercollider/pull/3615)).
 
 Class library: Changed
 -------
@@ -129,3 +135,5 @@ IDE & SCDoc: Removed
 
 IDE & SCDoc: Fixed
 -----
+
+When starting the IDE, detached docklet sometimes spawn as unresponsive. This has been fixed ([#3660](https://github.com/supercollider/supercollider/pull/3660)).
