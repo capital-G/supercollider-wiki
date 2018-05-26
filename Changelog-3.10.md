@@ -30,6 +30,8 @@ General: Added
 General: Changed
 -------
 
+scel (the emacs package) is now a submodule ([#3519](https://github.com/supercollider/supercollider/pull/3519)).
+
 General: Deprecated
 ----------
 
@@ -91,6 +93,8 @@ Class library: Added
 
 Class library: Changed
 -------
+
+Internal calls to `.interpret` have been removed from `Color.fromHexString` and `History.unformatTime`, improving both performance and security ([#3527](https://github.com/supercollider/supercollider/pull/3527)).
 
 Class library: Deprecated
 ----------
