@@ -14,7 +14,7 @@ jamshark70:
 >
 > But, when the EnvGen starts, it has no current level at first. So the Env provides one extra level, at the beginning. levels[0] initializes the EnvGen, and then this level is never touched again. So, levels[0] doesn't correspond to any envelope node. It's only a start value. The first envelope segment goes to levels[1].
 
-## Can we change parameter names of methods? The current naming confuses me
+## Can we change parameter names of methods? The current naming confuses me/I don't like it
 
 Source: https://github.com/supercollider/supercollider/issues/3629#issue-311070157
 
