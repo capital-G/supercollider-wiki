@@ -81,6 +81,8 @@ sclang: Added
 sclang: Changed
 -------
 
+Printing a float that is equal to an integer will always produce a decimal point -- for example, a floating point value of 3 is printed as 3.0 ([#3585](https://github.com/supercollider/supercollider/pull/3585)).
+
 sclang: Deprecated
 ----------
 
