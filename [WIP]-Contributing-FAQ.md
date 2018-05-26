@@ -38,3 +38,9 @@ Please think _very hard_ about this before submitting a ticket. Conversations ab
 - with discussion of tradeoffs
 
 Also, remember to look and see if this idea has already been discussed.
+
+## Is `?` or `??` faster?
+
+James: https://www.listarc.bham.ac.uk/lists/sc-dev/msg58256.html
+
+`??` is faster.
