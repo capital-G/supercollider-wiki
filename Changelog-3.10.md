@@ -41,6 +41,10 @@ General: Removed
 General: Fixed
 -----
 
+Fixed a build failure with the CMake option `SYSTEM_YAMLCPP=on` ([#3558](https://github.com/supercollider/supercollider/pull/3558)).
+
+Fixed a misleading deprecation warning when `CMAKE_INSTALL_PREFIX` is set to the home directory in Linux ([#3613](https://github.com/supercollider/supercollider/pull/3613)).
+
 scsynth and supernova: Added
 -----
 
