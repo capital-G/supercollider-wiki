@@ -135,6 +135,8 @@ Fixed bugs when certain pattern classes are passed in 0 as the number of repeats
 
 Fixed `Event.addEventType` ignoring the `parentEvent` argument ([#3736](https://github.com/supercollider/supercollider/pull/3736)).
 
+Fixed `Pkey` being skipped because the default number of repeats is `nil` instead of `inf` ([#3724](https://github.com/supercollider/supercollider/pull/3724)).
+
 IDE & SCDoc: Added
 -----
 
