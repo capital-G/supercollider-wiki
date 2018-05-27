@@ -78,12 +78,16 @@ UGens: Fixed
 sclang: Added
 -----
 
+Added wrappers for over 100 special mathematical functions (gamma function, Bessel functions, elliptic integrals, etc.) from the Boost library ([#3672](https://github.com/supercollider/supercollider/pull/3672)).
+
 `FileDialog` and `Dialog` now support a "path" argument that specifies a default directory when the dialog appears ([#3508](https://github.com/supercollider/supercollider/pull/3508)).
 
 `QTreeView` has a new method: `setColumnWidth` ([#3560](https://github.com/supercollider/supercollider/pull/3560)).
 
 sclang: Changed
 -------
+
+**Breaking change:** The `server` argument has changed to `target` in `Function:asBuffer`, `Function:loadToFloatArray`, and `Function:plot`, and now allows spawning the plotting synth relative to a group or node rather than just a server ([#3088](https://github.com/supercollider/supercollider/pull/3088)).
 
 Printing a float that is equal to an integer will always produce a decimal point -- for example, a floating point value of 3 is printed as 3.0 ([#3585](https://github.com/supercollider/supercollider/pull/3585)).
 
