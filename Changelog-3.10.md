@@ -100,8 +100,6 @@ sclang: Fixed
 
 Fixed a crash when calling `File.copy` when the destination exists ([#3633](https://github.com/supercollider/supercollider/pull/3633)).
 
-Fixed a regression with failure to expand `~` in paths in sclang configuration files ([#3548](https://github.com/supercollider/supercollider/pull/3548)).
-
 Class library: Added
 -----
 
@@ -122,6 +120,10 @@ Class library: Removed
 
 Class library: Fixed
 -----
+
+`Buffer:query` returned incorrect results if multiple query messages are sent at once. This has been fixed ([#3645](https://github.com/supercollider/supercollider/pull/3645)).
+
+Fixed fragilities in path joining methods such as `+/+`, `withTrailingSlash`, and `withoutTrailingSlash` ([#3634](https://github.com/supercollider/supercollider/pull/3634)).
 
 IDE & SCDoc: Added
 -----
