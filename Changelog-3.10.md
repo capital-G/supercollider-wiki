@@ -111,6 +111,8 @@ Class library: Added
 
 Added new UGen methods `.snap` and `.softRound` ([#3429](https://github.com/supercollider/supercollider/pull/3429/files)).
 
+`Node:query` has a new `action` argument, allowing specification of a callback function ([#3701](https://github.com/supercollider/supercollider/pull/3701)).
+
 Class library: Changed
 -------
 
@@ -128,6 +130,8 @@ Class library: Fixed
 `Buffer:query` returned incorrect results if multiple query messages are sent at once. This has been fixed ([#3645](https://github.com/supercollider/supercollider/pull/3645)).
 
 Fixed fragilities in path joining methods such as `+/+`, `withTrailingSlash`, and `withoutTrailingSlash` ([#3634](https://github.com/supercollider/supercollider/pull/3634)).
+
+Fixed bugs when certain pattern classes are passed in 0 as the number of repeats ([#3603](https://github.com/supercollider/supercollider/pull/3603)).
 
 IDE & SCDoc: Added
 -----
