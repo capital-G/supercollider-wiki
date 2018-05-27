@@ -133,6 +133,8 @@ Fixed fragilities in path joining methods such as `+/+`, `withTrailingSlash`, an
 
 Fixed bugs when certain pattern classes are passed in 0 as the number of repeats ([#3603](https://github.com/supercollider/supercollider/pull/3603)).
 
+Fixed `Event.addEventType` ignoring the `parentEvent` argument ([#3736](https://github.com/supercollider/supercollider/pull/3736)).
+
 IDE & SCDoc: Added
 -----
 
