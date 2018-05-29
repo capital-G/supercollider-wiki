@@ -30,6 +30,8 @@ General: Added
 General: Changed
 -------
 
+The minimum required version is now CMake 3.5 instead of CMake 2.8 ([#3656](https://github.com/supercollider/supercollider/pull/3656)).
+
 scel (the emacs package) is now a submodule ([#3519](https://github.com/supercollider/supercollider/pull/3519)).
 
 General: Deprecated
