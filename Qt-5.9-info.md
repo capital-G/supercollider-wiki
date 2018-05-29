@@ -5,9 +5,9 @@ The Qt 5.9 PR is known to be compatible with Qt 5.7. The current Ubuntu reposito
     sudo apt install qt57base qt57location qt57declarative qt57tools qt57webengine qt57webchannel qt57xmlpatterns qt57svg
     cmake -DCMAKE_PREFIX_PATH=/opt/qt57 ..
 
-Check the CMakeCache.txt file in the build directory and look for lines like the below. If any of the paths start with `/usr/lib/x86_64-linux-gnu`, change them to `/opt/qt57/lib`.
+Check the CMakeCache.txt file in the build directory and look for lines like the below. If any of the paths start with `/usr/lib/x86_64-linux-gnu`, change them to `/opt/qt57/lib`. I think this may be a bug in our CMake system.
 
-    /No help, variable specified on the command line.
+    //No help, variable specified on the command line.
     QT_BIN_PATH:UNINITIALIZED=/opt/qt57
 
     //The directory containing a CMake configuration file for Qt5Concurrent.
