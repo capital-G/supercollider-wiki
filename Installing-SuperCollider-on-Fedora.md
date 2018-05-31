@@ -44,6 +44,8 @@ The following packages are required and are available through `dnf` (or `yum`).
 * qt5-qtwebengine-devel
 * qt5-qtwebkit-devel 
 * emacs  (optional)
+* qjackctl (optional)
+* ccache (optional)
 
 The required packages may be installed with the following command;
 ```
