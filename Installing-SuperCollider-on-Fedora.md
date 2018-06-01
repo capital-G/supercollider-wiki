@@ -34,6 +34,7 @@ The following packages are required and are available through `dnf` (or `yum`).
 * fftw-devel
 * libXt-devel (note capital 'X')
 * libX11-devel
+* boost-devel
 * systemd-devel (provides libudev.h)
 * libatomic
 * avahi-devel 
@@ -50,7 +51,7 @@ The following packages are required and are available through `dnf` (or `yum`).
 The required packages may be installed with the following command;
 ```
     sudo dnf install gcc gcc-c++ cmake git jack-audio-connection-kit-devel \
-    libsndfile-devel fftw-devel libXt-devel libX11-devel alsa-lib-devel \
+    libsndfile-devel fftw-devel libXt-devel libX11-devel boost-devel alsa-lib-devel \
     systemd-devel libatomic avahi-devel qt5-qtlocation-devel qt5-qtsensors-devel \
     readline-devel qt5-qtwebengine-devel qt5-qttools-devel qt5-qtwebkit-devel \
     emacs qjackctl ccache
