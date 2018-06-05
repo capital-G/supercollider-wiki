@@ -89,9 +89,9 @@ Added wrappers for over 100 special mathematical functions (gamma function, Bess
 sclang: Changed
 -------
 
-**Breaking change:** The `server` argument has changed to `target` in `Function:asBuffer`, `Function:loadToFloatArray`, and `Function:plot`, and now allows spawning the plotting synth relative to a group or node rather than just a server ([#3088](https://github.com/supercollider/supercollider/pull/3088)).
+**Breaking change:** `Float:asString` now always produces a decimal point, so `3.0.asString` is now `"3.0"` instead of `"3"` ([#3585](https://github.com/supercollider/supercollider/pull/3585)).
 
-Printing a float that is equal to an integer will always produce a decimal point -- for example, a floating point value of 3 is printed as 3.0 ([#3585](https://github.com/supercollider/supercollider/pull/3585)).
+**Breaking change:** The `server` argument has changed to `target` in `Function:asBuffer`, `Function:loadToFloatArray`, and `Function:plot`, and now allows spawning the plotting synth relative to a group or node rather than just a server ([#3088](https://github.com/supercollider/supercollider/pull/3088)).
 
 sclang: Deprecated
 ----------
