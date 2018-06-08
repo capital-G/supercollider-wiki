@@ -30,6 +30,12 @@ General: Added
 General: Changed
 -------
 
+sclang and scide have long been stuck with Qt 5.5 due to Qt dropping QtWebKit for QtWebEngine. They have been upgraded for compatibility with Qt 5.7+. We recommend using the most recent version of Qt. The impacts of this change include:
+
+- sclang and scide now build on Visual Studio 2015 and later. (Previously, Windows users had to obtain the now-ancient Visual Studio 2013.)
+- UserView now supports Retina/HiDPI display.
+- A somewhat different build process on Linux. See the README.
+
 The minimum required version is now CMake 3.5 instead of CMake 2.8 ([#3656](https://github.com/supercollider/supercollider/pull/3656)).
 
 scel (the emacs package) is now a submodule ([#3519](https://github.com/supercollider/supercollider/pull/3519)).
