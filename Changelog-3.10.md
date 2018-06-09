@@ -110,6 +110,8 @@ Removed some unused Qt dependencies from the build system ([#3472](https://githu
 sclang: Fixed
 -----
 
+On Windows, the directory where extensions were installed was accidentally changed in 3.9. It has been reverted ([#3751](https://github.com/supercollider/supercollider/pull/3751)).
+
 Fixed a crash when calling `File.copy` when the destination exists ([#3633](https://github.com/supercollider/supercollider/pull/3633)).
 
 Class library: Added
