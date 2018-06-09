@@ -135,6 +135,8 @@ Class library: Removed
 Class library: Fixed
 -----
 
+`BufWr.ar` no longer allows its input signals to be control rate, causing the server to read from garbage memory ([#3749](https://github.com/supercollider/supercollider/pull/3749)).
+
 `Buffer:query` returned incorrect results if multiple query messages are sent at once. This has been fixed ([#3645](https://github.com/supercollider/supercollider/pull/3645)).
 
 Fixed fragilities in path joining methods such as `+/+`, `withTrailingSlash`, and `withoutTrailingSlash` ([#3634](https://github.com/supercollider/supercollider/pull/3634)).
@@ -144,6 +146,8 @@ Fixed bugs when certain pattern classes are passed in 0 as the number of repeats
 Fixed `Event.addEventType` ignoring the `parentEvent` argument ([#3736](https://github.com/supercollider/supercollider/pull/3736)).
 
 Fixed `Pkey` being skipped because the default number of repeats is `nil` instead of `inf` ([#3724](https://github.com/supercollider/supercollider/pull/3724)).
+
+Fixed some harmless but annoying errors about extensions of nonexistent classes when sclang is built without Qt ([#3770](https://github.com/supercollider/supercollider/pull/3770)).
 
 IDE & SCDoc: Added
 -----
