@@ -151,6 +151,8 @@ Fixed `Pkey` being skipped because the default number of repeats is `nil` instea
 
 Fixed some harmless but annoying errors about extensions of nonexistent classes when sclang is built without Qt ([#3770](https://github.com/supercollider/supercollider/pull/3770)).
 
+`ProxySpace:linkDoc` was broken — switching documents did not actually change ProxySpaces. This is fixed now ([#3764](https://github.com/supercollider/supercollider/pull/3764)).
+
 IDE & SCDoc: Added
 -----
 
