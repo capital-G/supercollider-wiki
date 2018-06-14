@@ -18,7 +18,7 @@ The `--recursive` flag is required to also download all the *submodules* used by
 Considering that you have not been changing your local repository by yourself, you can update it with:
 
     git pull
-    git submodule update
+    git submodule update --init --recursive 
 
 Many reported build problems are due to out-of-date submodules, so make sure to not skip the last step.
 
@@ -42,7 +42,7 @@ This will make `git up` equivalent to `git pull --rebase`.
 
 Submodules are git repositories within other git repositories; the main SuperCollider repository uses several submodules. Submodules are not automatically updated within your local copy when you `git pull`, so now and then you need to update them manually using:
 
-    git submodule update
+    git submodule update --init --recursive
 
 How to know precisely when submodules need to be updated? Your local copy of submodules is out of sync when:
 * the `git status` command shows directories that correspond to submodules as modified
@@ -53,12 +53,12 @@ When you see any of these signs, it's time to update submodules. This may happen
 
 Submodules are referenced in their hosting module by their URL. At some point the URL itself may be changed, and you will have to update it with:
 
-    git submodule sync
+    git submodule sync --recursive
 
 In case you get a submodule stuck in a state you don't understand, it's handy to know that you can always delete the submodules and re-fetch them, for example:
 
     rm -rf external_libraries/nova-tt
-    git submodule update
+    git submodule update --init --recursive
 
 ### Pulling from different sources
 
@@ -157,7 +157,7 @@ Repeat the above procedure for as many separate commits as you want.
 Update your local repository with latest commits in the public repository:
 
     git pull --rebase
-    git submodule update
+    git submodule update --init --recursive
 
 Check what you will be pushing:
 
@@ -284,8 +284,7 @@ It will post something like:
 This can be remedied by deleting the file and updatind the submodules again (given you haven't consciously made any changes, of course, which you'd lose!):
     
     rm -r external_libraries/nova-tt
-    git submodule init
-    git submodule update
+    git submodule update --init --recursive
     
 
 ## Testing mailing list patches ##
@@ -317,4 +316,4 @@ Note: this workflow is useful just to try a patch and discard changes for other 
 - [My Git Workflow](http://osteele.com/archives/2008/05/my-git-workflow)
 
 
-contributed by:  Miguel Negrão, Jakob Leben, Jonatan Liljedahl, James Harkins
+contributed by:  Miguel Negrão, Jakob Leben, Jonatan Liljedahl, James Harkins, Till Bovermann
