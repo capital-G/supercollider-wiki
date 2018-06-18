@@ -116,6 +116,8 @@ On Windows, the directory where extensions were installed was accidentally chang
 
 Fixed a crash when calling `File.copy` when the destination exists ([#3633](https://github.com/supercollider/supercollider/pull/3633)).
 
+Fixed two `Array:lace` issues: a crash when any element is an empty array, and an error when no length argument is provided and any element is not an array ([#3716](https://github.com/supercollider/supercollider/issues/3716)).
+
 Class library: Added
 -----
 
