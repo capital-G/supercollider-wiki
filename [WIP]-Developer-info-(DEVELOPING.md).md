@@ -145,8 +145,8 @@ Note that for the Windows builds only, the branch name is stripped of forward sl
 To find a build for a specific commit (assuming it exists), use the full SHA hash of the commit. For example, the binaries for commit [8c3563a8065cb623087f267dfe50e228224a4572](https://github.com/supercollider/supercollider/commit/8c3563a8065cb623087f267dfe50e228224a4572) are at:
 
 * http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/osx/SC-8c3563a8065cb623087f267dfe50e228224a4572.zip
-* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/win32/SC-8c3563a8065cb623087f267dfe50e228224a4572.zip
-* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/win64/SC-8c3563a8065cb623087f267dfe50e228224a4572.zip
+* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/win32/SC-Windows-x86-8c3563a8065cb623087f267dfe50e228224a4572.zip
+* http://supercollider.s3.amazonaws.com/builds/supercollider/supercollider/win64/SC-Windows-x64-8c3563a8065cb623087f267dfe50e228224a4572.zip
 
 A build for a specific commit may not always be available: for instance, if the build was cancelled early or failed to complete.
 
