@@ -51,6 +51,13 @@ General: Removed
 General: Fixed
 -----
 
+Many issues with Unicode paths on Windows were fixed in 3.9. A few remaining cases involving sound files remained, and are now fixed ([#3720](https://github.com/supercollider/supercollider/pull/3720)):
+
+- supernova's sound file backend, buffer manager, and plugin loading
+- NRT mode in scsynth
+- `/b_read` family of commands in scsynth
+- `SoundFileView` in the sclang GUI
+
 Fixed a build failure with the CMake option `SYSTEM_YAMLCPP=on` ([#3558](https://github.com/supercollider/supercollider/pull/3558)).
 
 Fixed a misleading deprecation warning when `CMAKE_INSTALL_PREFIX` is set to the home directory in Linux ([#3613](https://github.com/supercollider/supercollider/pull/3613)).
