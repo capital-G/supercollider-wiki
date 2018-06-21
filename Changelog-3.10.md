@@ -27,6 +27,8 @@ Post the changelog to the following announcement channels:
 General: Added
 -----
 
+A `NO_X11` option has been added to the build system so that server plugins requiring an X server such as MouseX can be omitted ([#3738](https://github.com/supercollider/supercollider/pull/3738)).
+
 General: Changed
 -------
 
