@@ -168,6 +168,8 @@ Fixed some harmless but annoying errors about extensions of nonexistent classes 
 
 `ProxySpace:linkDoc` was broken — switching documents did not actually change ProxySpaces. This is fixed now ([#3764](https://github.com/supercollider/supercollider/pull/3764)).
 
+`Recorder:prepareForRecord` produced an error if the recordings path does not exist. It now makes the directory if it doesn't exist ([#3788](https://github.com/supercollider/supercollider/pull/3788)).
+
 IDE & SCDoc: Added
 -----
 
