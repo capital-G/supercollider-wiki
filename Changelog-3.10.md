@@ -131,6 +131,8 @@ Fixed a crash when calling `File.copy` when the destination exists ([#3633](http
 
 Fixed two `Array:lace` issues: a crash when any element is an empty array, and an error when no length argument is provided and any element is not an array ([#3716](https://github.com/supercollider/supercollider/issues/3716)).
 
+Fixed conditions where `Integer:forBy` can cause sclang to freeze when the step size is 0 or a floating point value with an absolute value less than 1 ([#3804](https://github.com/supercollider/supercollider/pull/3804)).
+
 Class library: Added
 -----
 
