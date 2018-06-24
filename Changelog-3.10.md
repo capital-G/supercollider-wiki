@@ -123,6 +123,8 @@ sclang: Fixed
 
 **Breaking change:** Fixed a long-standing math error in `SimpleNumber:expexp` ([#3786](https://github.com/supercollider/supercollider/pull/3786)).
 
+Fixed extreme CPU usage of sclang when built without Qt ([#3772](https://github.com/supercollider/supercollider/pull/3772)).
+
 On Windows, the directory where extensions were installed was accidentally changed in 3.9. It has been reverted ([#3751](https://github.com/supercollider/supercollider/pull/3751)).
 
 Fixed a crash when calling `File.copy` when the destination exists ([#3633](https://github.com/supercollider/supercollider/pull/3633)).
