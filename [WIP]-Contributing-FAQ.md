@@ -44,3 +44,13 @@ Also, remember to look and see if this idea has already been discussed.
 James: https://www.listarc.bham.ac.uk/lists/sc-dev/msg58256.html
 
 `??` is faster.
+
+## Can we get code folding in the IDE?
+
+Source: https://github.com/supercollider/supercollider/issues/2264
+
+Answer: https://github.com/supercollider/supercollider/issues/2264#issuecomment-238515818
+
+crucialfelix:
+
+> The IDE isn't intended to become a full professional level code editor. That would suck up precious developer time that needs to be spent on the core feature (music). It's pretty complicated to do code folding correctly.
