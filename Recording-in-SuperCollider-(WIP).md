@@ -10,7 +10,7 @@ That's it. To stop recording, run `Server.default.stopRecording` or hit Cmd+Peri
 
 (By default, the global variable `s` refers to `Server.default`, so in all code samples in this document, you may replace `Server.default` with `s` if you're lazy: `s.record`. It's shorter, but also less robust, since the variable `s` can be reassigned. Feel free to use it when trying things out interactively, but it's not recommended in production code of any kind.)
 
-If you're using SCIDE, it's even easier — if you open the "Language" menu on the toolbar or click on the server status bar, "Start recording" and "Stop recording" are available as menu items. The server status bar also has an "R" symbol that turns red if the server is recording.
+If you're using SCIDE, it's even easier — if you open the "Server" menu on the toolbar ("Language" in SC < 3.9) or click on the server status bar, "Start recording" and "Stop recording" are available as menu items. The server status bar also has an "R" symbol that turns red if the server is recording.
 
 **Warning:** The output file will be corrupted if the server quits or crashes before you call stopRecording!
 
