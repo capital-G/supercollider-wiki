@@ -133,6 +133,8 @@ Fixed two `Array:lace` issues: a crash when any element is an empty array, and a
 
 Fixed conditions where `Integer:forBy` can cause sclang to freeze when the step size is 0 or a floating point value with an absolute value less than 1 ([#3804](https://github.com/supercollider/supercollider/pull/3804)).
 
+Fixed some incorrect output in `FunctionDef:dumpByteCodes` ([#3803](https://github.com/supercollider/supercollider/pull/3803)).
+
 Class library: Added
 -----
 
