@@ -180,6 +180,8 @@ Fixed some harmless but annoying errors about extensions of nonexistent classes 
 
 `Recorder:prepareForRecord` produced an error if the recordings path does not exist. It now makes the directory if it doesn't exist ([#3788](https://github.com/supercollider/supercollider/pull/3788)).
 
+Fixed bugs when providing multiple paths in `ServerOptions:ugensPluginPath` ([#3754](https://github.com/supercollider/supercollider/pull/3754)).
+
 IDE & SCDoc: Added
 -----
 
