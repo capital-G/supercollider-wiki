@@ -65,6 +65,8 @@ Fixed a misleading deprecation warning when `CMAKE_INSTALL_PREFIX` is set to the
 scsynth and supernova: Added
 -----
 
+supernova now has latency compensation ([#3790](https://github.com/supercollider/supercollider/pull/3790)).
+
 scsynth and supernova: Changed
 -------
 
@@ -76,6 +78,8 @@ scsynth and supernova: Removed
 
 scsynth and supernova: Fixed
 -----
+
+scsynth's latency compensation had a math error that ended up doubling the latency. It is fixed now ([#3790](https://github.com/supercollider/supercollider/pull/3790)).
 
 UGens: Added
 -----
