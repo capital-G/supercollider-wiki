@@ -139,6 +139,8 @@ Fixed conditions where `Integer:forBy` can cause sclang to freeze when the step 
 
 Fixed some incorrect output in `FunctionDef:dumpByteCodes` ([#3803](https://github.com/supercollider/supercollider/pull/3803)).
 
+Fixed `Node:release` getting stuck on negative release times, which are now equivalent to 0 ([#3741](https://github.com/supercollider/supercollider/pull/3741)).
+
 Class library: Added
 -----
 
