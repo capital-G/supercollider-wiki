@@ -99,6 +99,8 @@ UGens: Fixed
 sclang: Added
 -----
 
+Menus are now supported in the Qt GUI. See help files for `Menu`, `MenuAction`, `ToolBar`, and `MainMenu` ([#2504](https://github.com/supercollider/supercollider/pull/2504)).
+
 Added wrappers for over 100 special mathematical functions (gamma function, Bessel functions, elliptic integrals, etc.) from the Boost library ([#3672](https://github.com/supercollider/supercollider/pull/3672)).
 
 `FileDialog` and `Dialog` now support a "path" argument that specifies a default directory when the dialog appears ([#3508](https://github.com/supercollider/supercollider/pull/3508)).
