@@ -188,6 +188,8 @@ Fixed some harmless but annoying errors about extensions of nonexistent classes 
 
 Fixed bugs when providing multiple paths in `ServerOptions:ugensPluginPath` ([#3754](https://github.com/supercollider/supercollider/pull/3754)).
 
+Fixed `HelpBrowser` (the class, not the IDE help browser) being unusable since it didn't trigger rendering of help files when links are clicked ([#3832](https://github.com/supercollider/supercollider/pull/3832)).
+
 IDE & SCDoc: Added
 -----
 
