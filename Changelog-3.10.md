@@ -154,6 +154,8 @@ Added new UGen methods `.snap` and `.softRound` ([#3429](https://github.com/supe
 
 `Node:query` has a new `action` argument, allowing specification of a callback function ([#3701](https://github.com/supercollider/supercollider/pull/3701)).
 
+`.degrad` and `.raddeg` are now implemented for UGens ([#3821](https://github.com/supercollider/supercollider/pull/3821)).
+
 Class library: Changed
 -------
 
