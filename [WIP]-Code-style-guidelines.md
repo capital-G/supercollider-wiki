@@ -57,9 +57,9 @@ x = 3 + 5 ; // incorrect
 x = 3 + 5;  // correct
 ```
 
-#### [needs discussion] *Rule:* Add spaces within curly brackets, but not parentheses or square brackets.
+#### *Rule:* Add spaces within curly brackets `{}`, but not parentheses `()` or square brackets `[]`.
 
-When written on a single line, there should be no spaces inside parentheses `( )` or square brackets `[ ]`. Curly braces `{ }` delimit functions, and should have exactly one space after the opening brace and one space before the closing brace.
+When written on a single line, there should be no spaces inside parentheses `()` or square brackets `[]`. Curly braces `{}` delimit functions, and should have exactly one space after the opening brace and one space before the closing brace. This includes having a space between `{` and the `|` that begins an argument list.
 
 ```supercollider
 // correct:
@@ -72,6 +72,8 @@ a = f.value( 10 );
 b = [ 1, 2, 3 ];
 c = b.collect({|x| x + 3});
 ```
+
+This was discussed in [#2931](https://github.com/supercollider/supercollider/issues/2931).
 
 ### Indentation
 
