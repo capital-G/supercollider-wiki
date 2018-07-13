@@ -1,3 +1,40 @@
+2018-07-12
+==========
+
+Members Present: Brian, Luke, Nathan, Patrick, Scott C
+
+We reviewed the remaining to-do tasks for 3.10:
+
+- Linux SCIDE theme -- Luke has decided to look into it
+- KDE FileDialog issue:
+- Scrollbar issue delisted for 3.10
+- SerialPort is 99% ready, but RPi and Windows tests are a good idea.
+- Help browser code evaluation bugs (#3777, #3829)
+- Scrolling userview with non-integer device pixel ratios
+- Ableton Link PR has stalled despite attempts in the past month to revive it. There are current disagreements about latency issues.
+    - Arguments for inclusion in 3.10: we promised it, and it's okay to merge an imperfect feature and fix it later
+    - Arguments for exclusion in 3.10: we've already done a lot for 3.10 and it's not a mortal sin to wait another release
+
+Overall, we've been doing well! We hit 2000 stars on github and we're closing a dozen pull requests each week. We could be improving ways to help new contributors find the best way to have a good impact on the project. The "good first issue" label helps. We could also be making good use of the Projects feature to map out the next 2 or 3 releases and give a good idea of what to work on.
+
+ How do we chip away at 600 open issues (only 200 of which are tagged as bugs)?
+
+- An extreme solution would be "bug bankruptcy:" closing ALL bugs except things currently being worked on. If a bug really is important, users will ask the issue to be reopened. Too radical right here and right now.
+- Establish limits on the number of open issues?
+- Making better use of the projects feature to organize everything: bin of potential bugs for next few releases
+
+Experienced developers working on and discussing small issues isn't necessarily optimal. If someone files an issue, someone more experienced can point them to a fix.
+
+We haven't really worked out a process for giving push access to new contributors.
+
+We've reached a point where we have some PRs we don't want in 3.10, so it's time to make a 3.10 branch.
+
+Scott got some emails back from 3rd-party devs of SC-adjacent software, and for a dev meeting in the near future, we will be inviting some of them.
+
+In addition, we should also get talking with the user base a bit more about the long-term direction of the project, perhaps with a new survey, to help close the gap between what many users want and what developers are working on.
+
+We discussed some fantastical ideas about GPU SuperCollider and VST integration.
+
 2018-06-10
 ==========
 
