@@ -81,6 +81,8 @@ scsynth and supernova: Fixed
 
 scsynth's latency compensation had a math error that ended up doubling the latency. It is fixed now ([#3790](https://github.com/supercollider/supercollider/pull/3790)).
 
+For consistency with scsynth, supernova no longer requires the final argument to `/b_allocReadChannel` ([#3826](https://github.com/supercollider/supercollider/pull/3826)).
+
 UGens: Added
 -----
 
@@ -197,6 +199,8 @@ IDE & SCDoc: Added
 
 IDE & SCDoc: Changed
 -------
+
+The SCDoc TOC and menubar have been redesigned again ([#3831](https://github.com/supercollider/supercollider/pull/3831)).
 
 IDE & SCDoc: Deprecated
 ----------
