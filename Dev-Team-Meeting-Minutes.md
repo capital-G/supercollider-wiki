@@ -21,7 +21,6 @@ Overall, we've been doing well! We hit 2000 stars on github and we're closing a 
 
 - An extreme solution would be "bug bankruptcy:" closing ALL bugs except things currently being worked on. If a bug really is important, users will ask the issue to be reopened. Too radical right here and right now.
 - Establish limits on the number of open issues?
-- Making better use of the projects feature to organize everything: bin of potential bugs for next few releases
 
 Experienced developers working on and discussing small issues isn't necessarily optimal. If someone files an issue, someone more experienced can point them to a fix.
 
