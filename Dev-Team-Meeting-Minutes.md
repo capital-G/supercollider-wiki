@@ -6,7 +6,7 @@ Members Present: Brian, Luke, Nathan, Patrick, Scott C
 We reviewed the remaining to-do tasks for 3.10:
 
 - Linux SCIDE theme -- Luke has decided to look into it
-- KDE FileDialog issue:
+- KDE FileDialog issue
 - Scrollbar issue delisted for 3.10
 - SerialPort is 99% ready, but RPi and Windows tests are a good idea.
 - Help browser code evaluation bugs (#3777, #3829)
