@@ -83,6 +83,8 @@ scsynth's latency compensation had a math error that ended up doubling the laten
 
 For consistency with scsynth, supernova no longer requires the final argument to `/b_allocReadChannel` ([#3826](https://github.com/supercollider/supercollider/pull/3826)).
 
+Fixed a missing newline in some of supernova's error messages ([#3897](https://github.com/supercollider/supercollider/pull/3897)).
+
 UGens: Added
 -----
 
@@ -194,6 +196,8 @@ Fixed bugs when providing multiple paths in `ServerOptions:ugensPluginPath` ([#3
 
 Fixed `HelpBrowser` (the class, not the IDE help browser) being unusable since it didn't trigger rendering of help files when links are clicked ([#3832](https://github.com/supercollider/supercollider/pull/3832)).
 
+Fixed some bugs in `EnvGate`: throwing an error when `fadeTime` is a constant rather than a UGen input, and `i_level` not behaving as documented ([#3797](https://github.com/supercollider/supercollider/pull/3797)).
+
 IDE & SCDoc: Added
 -----
 
@@ -212,3 +216,5 @@ IDE & SCDoc: Fixed
 -----
 
 When starting the IDE, detached docklet sometimes spawn as unresponsive. This has been fixed ([#3660](https://github.com/supercollider/supercollider/pull/3660)).
+
+Syntax colors in the help browser now match the IDE ([#3883](https://github.com/supercollider/supercollider/pull/3883)).
