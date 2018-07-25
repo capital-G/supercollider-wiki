@@ -18,7 +18,7 @@ Purpose
 This guide is meant for SuperCollider users as well as developers working on the SuperCollider
 project.
 
-The first three sections -- "What is testing?" and "Testing terminology" -- are meant for those new
+The first two sections -- "What is testing?" and "Testing terminology" -- are meant for those new
 to testing. "The UnitTest class" is an introduction to the core unit testing framework in
 SuperCollider. "Unit testing guidelines" contains a list of general good-practice guidelines for
 writing and maintaining unit tests; "SCClassLibrary testing standards" apply specifically to
