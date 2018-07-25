@@ -75,6 +75,15 @@ Git Workflow
 
 GitFlow (TODO: incorporate, or link, to other document about this topic)
 
+Debugging the Help Browser
+--
+
+To debug the help browser in Chrome DevTools, start SC with the flag `--remote-debugging-port=<port>` where `<port>` is a port you want use. For example on macOS:
+
+    ./build/Install/SuperCollider/SuperCollider.app/Contents/MacOS/SuperCollider --remote-debugging-port=4444
+
+Then open http://localhost:4444 in Chrome and inspect the page you want.
+
 Milestones
 ----------
 
