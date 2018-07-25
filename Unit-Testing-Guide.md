@@ -1,4 +1,4 @@
-This document is a work in progress! Feel free to question it and suggest improvements. The document's main author is Brian Heim (@brianlheim).
+_This document is a work in progress!_ Feel free to question it and suggest improvements. The document's main author is Brian Heim (@brianlheim).
 
 Guide to SuperCollider Unit Testing
 ===================================
