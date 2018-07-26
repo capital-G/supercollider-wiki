@@ -85,6 +85,8 @@ For consistency with scsynth, supernova no longer requires the final argument to
 
 Fixed a missing newline in some of supernova's error messages ([#3897](https://github.com/supercollider/supercollider/pull/3897)).
 
+Fixed errors in supernova's `/s_getn` ([#3893](https://github.com/supercollider/supercollider/pull/3893)).
+
 UGens: Added
 -----
 
