@@ -200,6 +200,8 @@ Fixed `HelpBrowser` (the class, not the IDE help browser) being unusable since i
 
 Fixed some bugs in `EnvGate`: throwing an error when `fadeTime` is a constant rather than a UGen input, and `i_level` not behaving as documented ([#3797](https://github.com/supercollider/supercollider/pull/3797)).
 
+Fixed occasional hangs when rebooting supernova ([#3848](https://github.com/supercollider/supercollider/pull/3848)).
+
 IDE & SCDoc: Added
 -----
 
