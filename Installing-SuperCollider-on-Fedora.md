@@ -43,7 +43,8 @@ The following packages are required and are available through `dnf` (or `yum`).
 * qt5-qtsensors-devel
 * qt5-qttools-devel 
 * qt5-qtwebengine-devel
-* qt5-qtwebkit-devel 
+* qt5-qtwebkit-devel
+* qt5-qtsvg-devel 
 * emacs  (optional)
 * qjackctl (optional)
 * ccache (optional)
@@ -54,7 +55,7 @@ The required packages may be installed with the following command;
     libsndfile-devel fftw-devel libXt-devel libX11-devel boost-devel alsa-lib-devel \
     systemd-devel libatomic avahi-devel qt5-qtlocation-devel qt5-qtsensors-devel \
     readline-devel qt5-qtwebengine-devel qt5-qttools-devel qt5-qtwebkit-devel \
-    emacs qjackctl ccache
+    qt5-qtsvg-devel emacs qjackctl ccache
 ```
 
 ## A note about JACK 
