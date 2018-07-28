@@ -29,4 +29,3 @@ Other
 * [Notes for refactoring the server implementation](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-notes-for-refactoring-the-server-implementation)
 * [PlayBuf 2017](https://github.com/supercollider/supercollider/wiki/PlayBuf-2017)
 * [Undocumented classes and methods list](https://github.com/supercollider/supercollider/wiki/Undocumented-classes-and-methods-list)
-* [Building libsndfile with FLAC support (Windows, VS 2017)](https://github.com/supercollider/supercollider/wiki/Building-libsndfile-with-FLAC-support-%28Windows,-VS-2017%29)
