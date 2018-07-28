@@ -19,7 +19,7 @@ Other
 
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
-* [WIP Code style guidelines](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Code-style-guidelines)
+* [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
 * [WIP Developer info / DEVELOPING.md](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Developer-info-%28DEVELOPING.md%29)
 
 **Developer working documents**
