@@ -1,7 +1,7 @@
 Style Guidelines
 ================
 
-This is a living document reflecting the conventional style used for SuperCollider and C++ source code in this project. Each guideline here is presented with a brief discussion including examples, rationale, and importance.
+This is a living (WIP) document reflecting the conventional style used for SuperCollider and C++ source code in this project. Each guideline here is presented with a brief discussion including examples, rationale, and importance.
 
 How to read this document
 -------------------------
