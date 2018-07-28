@@ -262,6 +262,28 @@ C++
 
 The following guidelines apply to C++ code throughout the project.
 
+### Naming
+
+We use the prefixes `k`, `g`, and `m` to identify constants, global variables, and members respectively. There is currently no consistent naming style used throughout the codebase; in general, it's best to follow the existing convention in the code you are editing.
+
+You may see some code that uses the prefix `Pyr`; this refers to the origin of SuperCollider as a Max/MSP object called "Pyrite".
+
+### Notes for UGen writers
+
+The naming for UGens has fairly strict conventions, because SC's macros connect the function/struct names with the names used by a user. A UGen usually has a struct associated with it, which should take the same name as the corresponding sclang class (which implies it begins with a capital letter).
+
+    struct SinOsc : Unit { ... };
+
+In general the associated methods' names should begin with that name too: the constructor must take that name followed by _Ctor and the destructor (if used) must take that name followed by _Dtor.
+
+    void SinOsc_Ctor(SinOsc *unit);
+
+The DSP functions should take that name followed by `_next`, plus more text to distinguish the different DSP functions from each other as needed; e.g. audio-rate is postfixed by `_a` and control-rate is postfixed by `_k`. These postfixes might stack up for several parameter/rate combinations:
+
+    void SinOsc_next_iak(SinOsc *unit, int inNumSamples);
+
+Private methods within the plugin files don't have to follow strict naming but it is recommended to prefix them in a similar fashion, to identify the UGen(s) with which they belong.
+
 ### Indentation
 
 A mix of indentation styles is used in the C++ source code. In the near future, [all C++ code will be converted to use 4-space indentation](https://github.com/supercollider/supercollider/issues/2819). New files and new large sections within existing files should conform to 4-space indentation. In all other cases, please follow the pre-existing convention in the surrounding code.
