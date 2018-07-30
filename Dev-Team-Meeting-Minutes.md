@@ -1,3 +1,15 @@
+2018-07-28
+==========
+
+Members present: Josh, Julian, Nathan, Patrick
+
+- State of 3.10 and "project docs task force"
+- getToFloatArray PR
+- HOAUGens sc3-plugins PR
+- Divide between new forum and lists
+- Examples were historically a huge part of SC
+- Ideas for improving official tutorials, e.g. a "choose your own adventure" format allowing choices between JITlib, architectural info, and tours of UGens
+
 2018-07-20
 ==========
 
