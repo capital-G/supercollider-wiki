@@ -1,3 +1,32 @@
+2018-08-05
+==========
+
+Members present: Brian, James Harkins, Josh, Nathan, Patrick, Scott Carver
+
+- Status of the 3.10 release:
+  - Linux help browser shortcuts fixed
+  - Help browser shortcut almost fixed
+  - SerialPort almost done
+  - FileDialog hangup and SCIDE look and feel still not started
+- Josh have been working on package manager for plugins
+- James is working on Score/NRT helpfile improvements
+- Brian suggested that we release beta this week, documenting the 2 remaining issues
+- Issue + PR templates: good idea, a bit too long right now
+- File object, File APIs
+- Time for a new logo?
+- Resurrecting the UI refresh branch
+- Design documents as a method for preventing pull requests that attract huge amounts of nitpicky comments
+- Nathan brought up a safe output clipping proposal
+- Patrick is having a bizarre issue with the help browser
+
+This week:
+- Merge SerialPort and the Cmd+Enter help browser
+- Release beta with "known issues list"
+- Josh will take initiative on logo redesign
+- Nathan will work on SCIDE
+- Scott will work on FileDialog
+- Put out a user survey
+
 2018-07-28
 ==========
 
