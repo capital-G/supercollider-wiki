@@ -109,6 +109,8 @@ Menus are now supported in the Qt GUI. See help files for `Menu`, `MenuAction`, 
 
 Added wrappers for over 100 special mathematical functions (gamma function, Bessel functions, elliptic integrals, etc.) from the Boost library ([#3672](https://github.com/supercollider/supercollider/pull/3672)).
 
+SerialPort now works on Windows ([#3809](https://github.com/supercollider/supercollider/pull/3809)).
+
 `FileDialog` and `Dialog` now support a "path" argument that specifies a default directory when the dialog appears ([#3508](https://github.com/supercollider/supercollider/pull/3508)).
 
 `QTreeView` has a new method: `setColumnWidth` ([#3560](https://github.com/supercollider/supercollider/pull/3560)).
@@ -165,10 +167,16 @@ Added new UGen methods `.snap` and `.softRound` ([#3429](https://github.com/supe
 Class library: Changed
 -------
 
+The default behavior of `SerialPort.devices` pattern matching has been improved to match a wider variety of devices on macOS and Linux ([#3809](https://github.com/supercollider/supercollider/pull/3809)).
+
 Internal calls to `.interpret` have been removed from `Color.fromHexString` and `History.unformatTime`, improving both performance and security ([#3527](https://github.com/supercollider/supercollider/pull/3527)).
 
 Class library: Deprecated
 ----------
+
+`SerialPort.cleanupAll` is deprecated ([#3809](https://github.com/supercollider/supercollider/pull/3809)).
+
+Providing an integer index for `SerialPort.new` is deprecated ([#3809](https://github.com/supercollider/supercollider/pull/3809)).
 
 Class library: Removed
 -------
