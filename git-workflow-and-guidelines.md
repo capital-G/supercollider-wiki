@@ -62,7 +62,7 @@ For each beta release:
 - In the `3.9` branch, bump up the version in the top-level file `SCVersion.txt` from 3.9dev to 3.9.0-beta1 (or from 3.9.0-beta1 to 3.9.0-beta2, etc).
 - Make sure the changelog is up to date.
 - Run the [changelog to schelp converter script](https://github.com/supercollider/supercollider/blob/develop/package/changelog_to_schelp.sh) to get the "News in 3.9" help file up to date.
-- Tag the beta release in git as (say) "Version-3.9.0-beta1."
+- Tag the beta release in git as (say) "Version-3.9.0-beta1." Double check the branch -- you should be tagging the commit on the 3.9 branch.
 - Create a release on the GitHub release page. Upload builds for macOS, Linux, and Windows.
 - Do the same for sc3-plugins!
 - Announce to mailing list, Facebook, etc.
@@ -74,7 +74,7 @@ For the release proper:
 - Copy the changelog again and convert it to schelp if there were any new changes.
 - Update the release history in `README.md`.
 - Merge `3.9` into `master`, preferably with `git merge --no-ff`.
-- Tag the release in git as "Version-3.9.0." Release on GitHub.
+- Tag the release in git as "Version-3.9.0." (Unlike the pre-releases, the branch should be `master`.) Release on GitHub.
 - Update the website download page.
 - Announce to mailing list, Facebook, etc. Celebrate, bake a cake.
 - Merge `master` into `develop`.
