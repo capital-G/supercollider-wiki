@@ -153,6 +153,8 @@ Fixed some incorrect output in `FunctionDef:dumpByteCodes` ([#3803](https://gith
 
 Fixed `Node:release` getting stuck on negative release times, which are now equivalent to 0 ([#3741](https://github.com/supercollider/supercollider/pull/3741)).
 
+Fixed `==` on `Signal` objects randomly returning the wrong result ([#3970](https://github.com/supercollider/supercollider/pull/3970)).
+
 Class library: Added
 -----
 
