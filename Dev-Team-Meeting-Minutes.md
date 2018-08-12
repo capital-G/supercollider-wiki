@@ -1,3 +1,13 @@
+2018-08-12
+==========
+
+Members present: Brian, Nathan, Patrick, Thomas Capogreco
+
+- `Signal:==` random true/false PR
+- Patrick is still having help browser issues and will file a ticket
+- Luke's UI colors PR
+- Thomas's work involves connecting SC to modular synths, which requires clock synchronization
+
 2018-08-05
 ==========
 
