@@ -218,6 +218,8 @@ IDE & SCDoc: Added
 IDE & SCDoc: Changed
 -------
 
+The IDE now has a unified look across all platforms, and its color scheme adapts to match the editor theme ([#3950](https://github.com/supercollider/supercollider/pull/3950)).
+
 The SCDoc TOC and menubar have been redesigned again ([#3831](https://github.com/supercollider/supercollider/pull/3831)).
 
 IDE & SCDoc: Deprecated
