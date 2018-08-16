@@ -234,3 +234,5 @@ IDE & SCDoc: Fixed
 When starting the IDE, detached docklet sometimes spawn as unresponsive. This has been fixed ([#3660](https://github.com/supercollider/supercollider/pull/3660)).
 
 Syntax colors in the help browser now match the IDE ([#3883](https://github.com/supercollider/supercollider/pull/3883)).
+
+Only one preference window can be open at a time now ([#3988](https://github.com/supercollider/supercollider/pull/3988)).
