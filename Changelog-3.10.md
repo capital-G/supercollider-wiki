@@ -236,3 +236,5 @@ When starting the IDE, detached docklet sometimes spawn as unresponsive. This ha
 Syntax colors in the help browser now match the IDE ([#3883](https://github.com/supercollider/supercollider/pull/3883)).
 
 Only one preference window can be open at a time now ([#3988](https://github.com/supercollider/supercollider/pull/3988)).
+
+Fixed tabs reversing in order when restoring a session ([#3942](https://github.com/supercollider/supercollider/pull/3942)).
