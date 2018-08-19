@@ -186,7 +186,7 @@ Class library: Removed
 Class library: Fixed
 -----
 
-`BufWr.ar` no longer allows its input signals to be control rate, causing the server to read from garbage memory ([#3749](https://github.com/supercollider/supercollider/pull/3749)).
+`BufWr.ar` no longer allows its input signals to be control rate, which caused the server to read from garbage memory ([#3749](https://github.com/supercollider/supercollider/pull/3749)).
 
 `Buffer:query` returned incorrect results if multiple query messages are sent at once. This has been fixed ([#3645](https://github.com/supercollider/supercollider/pull/3645)).
 
