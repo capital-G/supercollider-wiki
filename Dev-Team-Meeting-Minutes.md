@@ -26,7 +26,7 @@ Topics:
 - Brian suggested that Alex work on compiler warnings
 - Possible new official tutorial development with e.g. gitbook, outside SC help system
 - "Clear post window" menu item
-- Aaaaaaaaableton Liiiiiiiiiink
+- Aaaaaaaaableton Liiiiiiiiiink: going slow, going steady
 
 2018-08-12
 ==========
