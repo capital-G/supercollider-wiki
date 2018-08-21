@@ -212,6 +212,8 @@ Fixed some bugs in `EnvGate`: throwing an error when `fadeTime` is a constant ra
 
 Fixed occasional hangs when rebooting supernova ([#3848](https://github.com/supercollider/supercollider/pull/3848)).
 
+Fixed confusing user feedback with the "Check for updates" button in the quarks GUI ([#3986](https://github.com/supercollider/supercollider/pull/3986)).
+
 IDE & SCDoc: Added
 -----
 
