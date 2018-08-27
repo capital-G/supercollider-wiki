@@ -587,18 +587,18 @@ demonstrates several important points about server-related tests:
 - avoid using the default server
 - give the server object a somewhat unique name (in this case, the name of the class serves as
 	reasonably unique)
-- use `UnitTest:-bootServer`
+- use `Server:-bootSync`
 - `quit` and `remove` the server after use
 
 ```
 test_setWithConstructor {
 	var options = ServerOptions.new.maxLogins_(4);
-	var s = Server(this.class.name, nil, options, 3);
+	var server = Server(this.class.name, nil, options, 3);
 
-	this.bootServer(s);
-	this.assertEquals(s.clientID, 3, "clientID should be settable by Server constructor.");
-	s.quit;
-	s.remove;
+	server.bootSync;
+	this.assertEquals(server.clientID, 3, "clientID should be settable by Server constructor.");
+	server.quit;
+	server.remove;
 }
 ```
 
