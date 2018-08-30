@@ -102,6 +102,8 @@ UGens: Removed
 UGens: Fixed
 -----
 
+Fixed clicks in Convolution2L ([#3687](https://github.com/supercollider/supercollider/pull/3687)).
+
 sclang: Added
 -----
 
@@ -214,8 +216,12 @@ Fixed occasional hangs when rebooting supernova ([#3848](https://github.com/supe
 
 Fixed confusing user feedback with the "Check for updates" button in the quarks GUI ([#3986](https://github.com/supercollider/supercollider/pull/3986)).
 
+`Buffer` methods ensure that the buffer number in outbound OSC messages is an integer ([#3907](https://github.com/supercollider/supercollider/pull/3907)). This fixes errors in supernova, which is stricter than scsynth about the buffer number type.
+
 IDE & SCDoc: Added
 -----
+
+The IDE has a prettier default theme ([#4025](https://github.com/supercollider/supercollider/pull/4025)). The old theme still exists as "classic."
 
 IDE & SCDoc: Changed
 -------
@@ -223,6 +229,8 @@ IDE & SCDoc: Changed
 The IDE now has a unified look across all platforms, and its color scheme adapts to match the editor theme ([#3950](https://github.com/supercollider/supercollider/pull/3950)).
 
 The SCDoc TOC and menubar have been redesigned again ([#3831](https://github.com/supercollider/supercollider/pull/3831)).
+
+Various tweaks to the appearance of the IDE: nicer tabs ([#3992](https://github.com/supercollider/supercollider/pull/3992)), better border colors ([#4022](https://github.com/supercollider/supercollider/pull/4022)).
 
 IDE & SCDoc: Deprecated
 ----------
