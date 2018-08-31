@@ -223,6 +223,8 @@ IDE & SCDoc: Added
 
 The IDE has a prettier default theme ([#4025](https://github.com/supercollider/supercollider/pull/4025)). The old theme still exists as "classic."
 
+The IDE now properly highlights scale degree literals like `4s` ([#4032](https://github.com/supercollider/supercollider/pull/4032)).
+
 IDE & SCDoc: Changed
 -------
 
@@ -248,5 +250,3 @@ Syntax colors in the help browser now match the IDE ([#3883](https://github.com/
 Only one preference window can be open at a time now ([#3988](https://github.com/supercollider/supercollider/pull/3988)).
 
 Fixed tabs reversing in order when restoring a session ([#3942](https://github.com/supercollider/supercollider/pull/3942)).
-
-Scale degree literals (e.g. `4s`) were a feature so obscure that not even the official IDE syntax highlighter supported them. This has been fixed ([#4032](https://github.com/supercollider/supercollider/pull/4032)).
