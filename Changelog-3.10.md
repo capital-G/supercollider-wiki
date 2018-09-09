@@ -234,8 +234,6 @@ The IDE now properly highlights scale degree literals like `4s` ([#4032](https:/
 IDE & SCDoc: Changed
 -------
 
-The IDE has a prettier default theme ([#4025](https://github.com/supercollider/supercollider/pull/4025)). The old theme still exists as "classic."
-
 The IDE now has a unified look across all platforms, and its color scheme adapts to match the editor theme ([#3950](https://github.com/supercollider/supercollider/pull/3950)).
 
 The SCDoc TOC and menubar have been redesigned again ([#3831](https://github.com/supercollider/supercollider/pull/3831)).
