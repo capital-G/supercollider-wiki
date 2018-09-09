@@ -62,6 +62,8 @@ Fixed a build failure with the CMake option `SYSTEM_YAMLCPP=on` ([#3558](https:/
 
 Fixed a misleading deprecation warning when `CMAKE_INSTALL_PREFIX` is set to the home directory in Linux ([#3613](https://github.com/supercollider/supercollider/pull/3613)).
 
+Fixed `CMAKE_PREFIX_PATH` incorrectly defaulting to `/usr/local/` on macOS under some conditions ([#4043](https://github.com/supercollider/supercollider/pull/4043)).
+
 scsynth and supernova: Added
 -----
 
@@ -218,6 +220,10 @@ Fixed confusing user feedback with the "Check for updates" button in the quarks 
 
 `Buffer` methods ensure that the buffer number in outbound OSC messages is an integer ([#3907](https://github.com/supercollider/supercollider/pull/3907)). This fixes errors in supernova, which is stricter than scsynth about the buffer number type.
 
+Fixed confusing user feedback with the "Check for updates" button in the quarks GUI ([#3986](https://github.com/supercollider/supercollider/pull/3986)).
+
+Fixed missing default arguments in `fold2`, `wrap2`, and `excess` methods of `Collection` for consistency with `SimpleNumber` ([#4037](https://github.com/supercollider/supercollider/pull/4037)).
+
 IDE & SCDoc: Added
 -----
 
@@ -227,6 +233,8 @@ The IDE now properly highlights scale degree literals like `4s` ([#4032](https:/
 
 IDE & SCDoc: Changed
 -------
+
+The IDE has a prettier default theme ([#4025](https://github.com/supercollider/supercollider/pull/4025)). The old theme still exists as "classic."
 
 The IDE now has a unified look across all platforms, and its color scheme adapts to match the editor theme ([#3950](https://github.com/supercollider/supercollider/pull/3950)).
 
