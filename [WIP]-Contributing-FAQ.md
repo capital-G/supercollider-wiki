@@ -50,8 +50,6 @@ These quirks and limitations of sclang are well known:
 
 The sclang lexer/parser/compiler is one of the few parts of the platform that is still relatively intact from SuperCollider 1. The sclang code is huge, undocumented, poorly organized, and minimally tested, and even minor syntax changes are a massive undertaking and should be accompanied by a equally massive cleanup effort. There just aren't developer resources to address these right now. If you would like to help, please do.
 
-Same as above —  
-
 ## Is `?` or `??` faster?
 
 James: https://www.listarc.bham.ac.uk/lists/sc-dev/msg58256.html
