@@ -28,7 +28,7 @@ foo.bar(param1: 7);
 
 So, any change to a public-facing parameter name is a potential breaking change. We might be able to do this in a minor version release, but only if the parameter is rarely used or unlikely to be used with a keyword argument.
 
-## Can I make X change to the language syntax?
+## Can I make X addition to the language syntax?
 
 Please think _very hard_ about this before submitting a ticket. Conversations about this tend to fall apart very quickly unless the change is presented:
 
@@ -38,6 +38,19 @@ Please think _very hard_ about this before submitting a ticket. Conversations ab
 - with discussion of tradeoffs
 
 Also, remember to look and see if this idea has already been discussed.
+
+## Why does sclang make me put `var` statements at the top of functions? Why can't I define classes at runtime?
+
+These quirks and limitations of sclang are well known:
+
+- all `var` statements have to go at the top of a function
+- all class extensions have to come after classes in a class file
+- classes can't be imported dynamically
+- there is no namespacing
+
+The sclang lexer/parser/compiler is one of the few parts of the platform that is still relatively intact from SuperCollider 1. The sclang code is huge, undocumented, poorly organized, and minimally tested, and even minor syntax changes are a massive undertaking and should be accompanied by a equally massive cleanup effort. There just aren't developer resources to address these right now. If you would like to help, please do.
+
+Same as above —  
 
 ## Is `?` or `??` faster?
 
