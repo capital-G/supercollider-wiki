@@ -1,3 +1,20 @@
+2018-09-13
+==========
+
+Members present: Brian, Nathan
+
+- Brian has been working on a template for generating UGen projects
+- Nathan has been working on tutorials
+
+Topics discussed:
+
+- Ways we could simplify and improve sclang path searching
+- macOS bundling problem is fixed!
+- Ways we can improve our CMake code
+- Debian packaging
+- Brian has been working on automatically reformatting whitespace. After 3.10 release is the perfect time to do that.
+- Release 3.10-beta2 as soon as mac thing is fixed
+
 2018-08-19
 ==========
 
