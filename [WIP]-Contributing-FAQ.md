@@ -65,3 +65,7 @@ Answer: https://github.com/supercollider/supercollider/issues/2264#issuecomment-
 crucialfelix:
 
 > The IDE isn't intended to become a full professional level code editor. That would suck up precious developer time that needs to be spent on the core feature (music). It's pretty complicated to do code folding correctly.
+
+## Can I use SC in a game audio engine?
+
+SuperCollider is licensed under the GNU GPL, a fairly restrictive open source license. This runs against the interests of most commercial game developers. 
