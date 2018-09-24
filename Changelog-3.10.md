@@ -89,6 +89,8 @@ Fixed a missing newline in some of supernova's error messages ([#3897](https://g
 
 Fixed errors in supernova's `/s_getn` ([#3893](https://github.com/supercollider/supercollider/pull/3893)).
 
+Fix supernova's response to `/g_queryTree` so it matches scsynth ([#3221](https://github.com/supercollider/supercollider/pull/3221)).
+
 UGens: Added
 -----
 
@@ -223,6 +225,8 @@ Fixed confusing user feedback with the "Check for updates" button in the quarks 
 Fixed confusing user feedback with the "Check for updates" button in the quarks GUI ([#3986](https://github.com/supercollider/supercollider/pull/3986)).
 
 Fixed missing default arguments in `fold2`, `wrap2`, and `excess` methods of `Collection` for consistency with `SimpleNumber` ([#4037](https://github.com/supercollider/supercollider/pull/4037)).
+
+Fix incorrect template matching behavior in `OSCFunc` and related functionality ([#4027](https://github.com/supercollider/supercollider/pull/4027)).
 
 IDE & SCDoc: Added
 -----
