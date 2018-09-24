@@ -1,3 +1,17 @@
+2018-09-24
+==========
+
+Members present: Nathan, Patrick
+
+- Nathan hasn't done much
+- Patrick looked for a solution for the UnitTesting conflict bug and found that quarks has a "compatibility" feature which we could use
+- We discussed a new issue with [scel](https://github.com/supercollider/supercollider/issues/4074) helpbrowser loading failure
+- We delisted [#3869](https://github.com/supercollider/supercollider/pull/3869) from 3.10 since its urgency is not clear
+- Three issues remain before 3.10.0-rc1 is to be released:
+  - Ndef fadein
+  - Syntax colors affect IDE colors
+  - keyDownAction message
+
 2018-09-15
 ==========
 
