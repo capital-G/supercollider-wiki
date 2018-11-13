@@ -1,3 +1,22 @@
+2018-11-13
+==========
+
+Members present: Brian, Nathan, Patrick
+
+We're back !!!!!!!!
+
+Merged #4105, an important issue for 3.10.
+
+3.10.0-rc1 is ready. Between 3.10-rc1 and 3.10, only help fixes should be done.
+
+We should take a look at #4137 soon.
+
+Thanks to Scott C, UnitTesting class library issue is mostly resolved.
+
+Nathan wrote a new compressor UGen that is almost ready for 3.10.1.
+
+This weekend we'll comb over the 40 open pull requests and look at reviving GitHub project boards.
+
 2018-09-24
 ==========
 
