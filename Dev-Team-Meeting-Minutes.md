@@ -1,3 +1,30 @@
+2018-11-18
+==========
+
+Members present: Brian, Bruno, Geoffroy, Nathan, Patrick
+
+Geoffroy and Bruno introduced themselves.
+
+3.10 is all set for release on Saturday (Nov 24). 3.10.1 should be released 1-2 weeks after. #4010 (QtWebEngine) is the priority but not blocking. Nathan has offered to work on it.
+
+#4139 (floating point compile string) can be fixed this week.
+
+#4132 (starting sclang as a systemd service) is more of an issue with systemd.
+
+Confirmed legitimacy of #4133 (split window can crash IDE).
+
+Geoffroy offered to work on redesigning the website. We agreed that it's much easier to just start from scratch.
+
+Bruno is interested in doing GSoC work for SuperCollider. We will wait for the survey to make a decision on how he can best help the project.
+
+New tutorials are chugging along, slowly...
+
+Patrick brought up ways we could improve performance for embedded Linux -- particularly denormal issues on ARM processors.
+
+Nathan discussed how the BEQSuite could be replaced with a faster and more numerically stable set of EQ ugens using state variable filters.
+
+We discussed the future of sc3-plugins. Should we get rid of the trash and slim it down to an "incubator" for core ugens? Should we introduce the incubator as a new repository? Or should we let things be?
+
 2018-11-13
 ==========
 
