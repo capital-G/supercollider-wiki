@@ -24,8 +24,8 @@ Other
 
 **Developer working documents**
 
-* [3.10.x Changelog](https://github.com/supercollider/supercollider/wiki/Changelog)
-* [3.11 Changelog](https://github.com/supercollider/supercollider/wiki/Changelog-3.10)
+* [3.10.x Changelog](https://github.com/supercollider/supercollider/wiki/Changelog-3.10.x)
+* [3.11 Changelog](https://github.com/supercollider/supercollider/wiki/Changelog-3.11)
 * [Notes for refactoring the server implementation](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-notes-for-refactoring-the-server-implementation)
 * [PlayBuf 2017](https://github.com/supercollider/supercollider/wiki/PlayBuf-2017)
 * [Undocumented classes and methods list](https://github.com/supercollider/supercollider/wiki/Undocumented-classes-and-methods-list)
