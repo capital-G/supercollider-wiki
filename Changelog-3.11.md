@@ -1,4 +1,3 @@
-**Important:** Be sure to read the [guidelines for writing changelogs](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines#writing-changelogs). Only changes that affect users go here!
 How to maintain this changelog
 ==============================
 
