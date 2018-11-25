@@ -99,6 +99,8 @@ Class library: Removed
 Class library: Fixed
 -----
 
+Fixed incorrect behavior of `String:asSecs` ([#3819](https://github.com/supercollider/supercollider/pull/3819)).
+
 IDE & SCDoc: Added
 -----
 
