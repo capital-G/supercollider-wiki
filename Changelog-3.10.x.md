@@ -113,3 +113,5 @@ IDE & SCDoc: Removed
 
 IDE & SCDoc: Fixed
 -----
+
+`0X0` is an illegal hexadecimal literal in sclang, but SCIDE and SCDoc highlighted such strings as if they were correct. They have been updated ([#4170](https://github.com/supercollider/supercollider/pull/4170)).
