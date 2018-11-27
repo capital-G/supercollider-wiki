@@ -78,7 +78,9 @@ For the release proper:
 - Tag the release in git as "Version-3.9.0." **Unlike the pre-releases, the branch should be `master`.** Release on GitHub.
 - No really man, double check that branch.
 - Update the website download page.
-- Announce to mailing list, Facebook, etc. Celebrate, bake a cake.
+- Do the same for sc3-plugins!
+- Update [the Wikipedia page](https://en.wikipedia.org/wiki/SuperCollider)
+- Announce everywhere - sc-users, sc-dev, Slack, Discourse, Facebook. (Reddit?) Celebrate, bake a cake.
 - Merge `master` into `develop`.
 
 For patch releases, the process is the same. You can just keep around the `3.9` branch for all the `3.9.x` releases.
