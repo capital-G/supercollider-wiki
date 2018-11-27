@@ -10,7 +10,7 @@ A "bug fix" or "patch" is anything that improves an existing feature without add
 
 PRs to the release branch may contain a new feature if the feature is minor, and if implementing the patch without this feature would be inconvenient or impossible.
 
-There is a set of [command-line extensions](https://github.com/nvie/gitflow) for git-flow; you may want to consider installing them if you contribute frequently. There is also a helpful [cheat-sheet](https://danielkummer.github.io/git-flow-cheatsheet/) by Daniel Kummer.
+There is a set of [command-line extensions](https://github.com/nvie/gitflow) for git-flow; you may want to consider installing them if you contribute frequently. There is also a helpful [cheat-sheet](https://danielkummer.github.io/git-flow-cheatsheet/) by Daniel Kummer. Also consider installing GitHub's extensions for git, [hub](https://hub.github.com/).
 
 Stable releases are marked using annotated tags on GitHub's "releases" page.
 
