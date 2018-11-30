@@ -43,7 +43,6 @@ The following packages are required and are available through `dnf` (or `yum`).
 * qt5-qtsensors-devel
 * qt5-qttools-devel 
 * qt5-qtwebengine-devel
-* qt5-qtwebkit-devel
 * qt5-qtwebsockets-devel
 * qt5-qtsvg-devel 
 * emacs  (optional)
