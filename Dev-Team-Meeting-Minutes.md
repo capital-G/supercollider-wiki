@@ -1,3 +1,16 @@
+2018-12-01
+==========
+
+Members present: Brian, Edmond, Josh, Nathan, Patrick
+
+At the current rate of development, 3.10.1 should be ready to go in a week or to.
+
+Issues in SerialPort.devices and SerialPort.open, and QtWebEngine
+
+nan printing issues: https://github.com/supercollider/supercollider/issues/4139. Possible solution is to introduce `Float.nan` or `Float.quietNan`.
+
+Edmond has been maintaining the SuperCollider PlanetCCRMA release.
+
 2018-11-18
 ==========
 
