@@ -21,6 +21,7 @@ Other
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
 * [Unit Testing Guide](https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide)
+* [sc-dev Meeting Procedure & Templates](https://github.com/supercollider/supercollider/wiki/sc-dev-Meeting-Procedure-&-Templates)
 
 **Developer working documents**
 
