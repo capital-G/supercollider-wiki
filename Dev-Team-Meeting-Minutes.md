@@ -1,9 +1,34 @@
+2019-01-06
+==========
+
+Members Present:
+
+Nathan, Brian, Patrick, Josh
+
+Discussion Topics:
+
+- 3.10.1:
+    - decided to release after 4110, 4180, 4198, 4222, 4230
+    - will do a release candidate so changes in 4180, 4191 (serial port related) can be tested on Linux & MacOS
+    - will do a 3.10.1 release of sc3-plugins
+    - planned release: Jan 13 (possibly earlier)
+- recent PRs:
+    - sc3plugins: new plugin PR (BFold)
+- 3.10.2:
+    - planned release: a month from 3.10.1 release
+- 3.11:
+    - no strong ideas yet, will talk after survey results come in
+- user survey:
+    - run it by the dev list for comments, then post it shortly afterward
+- formatting:
+    - Brian has been working on a formatting/linting branch, planning to run by the dev list for discussion
+
 2018-12-01
 ==========
 
 Members present: Brian, Edmond, Josh, Nathan, Patrick
 
-At the current rate of development, 3.10.1 should be ready to go in a week or to.
+At the current rate of development, 3.10.1 should be ready to go in a week or two.
 
 Issues in SerialPort.devices and SerialPort.open, and QtWebEngine
 
