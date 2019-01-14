@@ -54,6 +54,8 @@ scsynth and supernova: Removed
 scsynth and supernova: Fixed
 -----
 
+Fixed `/b_fill`, which was broken in supernova ([#4188](https://github.com/supercollider/supercollider/pull/4188)).
+
 UGens: Added
 -----
 
@@ -83,6 +85,8 @@ sclang: Removed
 
 sclang: Fixed
 -----
+
+Fixed `crtscts` flag in `SerialPort.new`, which broke in 3.10 ([#4191](https://github.com/supercollider/supercollider/issues/4191)).
 
 Class library: Added
 -----
