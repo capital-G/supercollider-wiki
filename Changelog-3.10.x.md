@@ -94,6 +94,8 @@ sclang: Fixed
 
 Fixed `crtscts` flag in `SerialPort.new`, which broke in 3.10 ([#4191](https://github.com/supercollider/supercollider/issues/4191)).
 
+Fixed lack of `backgroundImage` support for `Slider2D` ([#3952](https://github.com/supercollider/supercollider/pull/3952)).
+
 Class library: Added
 -----
 
