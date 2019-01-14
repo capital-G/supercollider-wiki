@@ -39,6 +39,8 @@ General: Removed
 General: Fixed
 -----
 
+Fixed a build issue on OpenBSD ([#4203](https://github.com/supercollider/supercollider/pull/4203)).
+
 scsynth and supernova: Added
 -----
 
@@ -56,6 +58,8 @@ scsynth and supernova: Fixed
 
 Fixed `/b_fill`, which was broken in supernova ([#4188](https://github.com/supercollider/supercollider/pull/4188)).
 
+Fixed incorrect latency compensation in PortAudio driver ([#4210](https://github.com/supercollider/supercollider/pull/4210)).
+
 UGens: Added
 -----
 
@@ -70,6 +74,8 @@ UGens: Removed
 
 UGens: Fixed
 -----
+
+`CheckBadValues` incorrectly recognized zero as a bad value on Windows. This has been fixed ([#4240](https://github.com/supercollider/supercollider/pull/4240)).
 
 sclang: Added
 -----
