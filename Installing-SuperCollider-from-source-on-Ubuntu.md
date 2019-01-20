@@ -72,6 +72,7 @@ For a native build, run:
 ```
 cmake -DNATIVE=ON ..
 ```
+You should choose this option unless you are compiling the code to run on a different machine.
 
 It's possible to set multiple flags at once like so:
 ```
