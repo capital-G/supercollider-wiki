@@ -99,7 +99,7 @@ sudo ldconfig
 ```
 
 ## Uninstalling SuperCollider
-From within you **supercollider/build** folder, run the following:
+From within your **supercollider/build** folder, run the following:
 ```
 sudo make uninstall
 ```
