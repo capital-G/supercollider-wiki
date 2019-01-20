@@ -184,4 +184,4 @@ sudo make uninstall
 ```
 
 # Getting help
-If you still don't have any luck with the above, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
+If you still don't have any luck with the above, ask a question at the SuperCollider Discourse site [here](https://scsynth.org/), providing as much information as you can.
