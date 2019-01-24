@@ -1,3 +1,18 @@
+2019-01-20
+==========
+
+Members present: Brian, Patrick, Nathan
+
+- Nathan fixed the old editor themes issue
+- Nathan has been tackling the WebSocket problems in SCIDE
+- Brian has been working on whitespace formatting
+- Brian documented how to use `git rebase` in CONTRIBUTING.md to help contributors' difficulties with it
+- Brian fixed string/symbol lexing errors
+- Nathan has been working on automated tarball uploads, optimized a new WIP compressor
+- Patrick investigated Platform:helpDir
+- Patrick fixed a bug in ServerOptions
+- We released the user survey and spent like an hour watching the first 20 results roll in like we're watching ESPN
+
 2019-01-13
 ==========
 
