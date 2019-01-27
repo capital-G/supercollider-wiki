@@ -1,3 +1,17 @@
+2019-01-27
+==========
+
+Members present: Brian, Geoffroy, Patrick, Nathan
+
+- Send out reminder for survey in one week, close in two weeks. Sent out a reminder email only to sc-dev, inviting SC educators to pass it on to students.
+- Possible doc-a-thon for fleshing out Learn SC
+- With the Menu memory leak in sclang, 3.10.2 needs to get out ASAP. Once MainMenu is fixed, release 3.10.2-rc1 TODAY, and 3.10.2 in a few days.
+- Also sc3-plugins 3.10.1...
+- Nathan has been working on automated tarball uploads
+- Patrick brought up really bad CPU usage of PartConv even on moderate audio files (5 seconds), + poorly written API and missed opportunity for zero-latency partitioned convolution
+- No current plans to merge VST plugin support into core -- current state as a 3rd party plugin seems pretty OK
+- Ableton Link support is stalled and deprioritized for 3.11
+
 2019-01-20
 ==========
 
