@@ -39,8 +39,6 @@ General: Removed
 General: Fixed
 -----
 
-Fixed a build issue on OpenBSD ([#4203](https://github.com/supercollider/supercollider/pull/4203)).
-
 scsynth and supernova: Added
 -----
 
@@ -55,10 +53,6 @@ scsynth and supernova: Removed
 
 scsynth and supernova: Fixed
 -----
-
-Fixed `/b_fill`, which was broken in supernova ([#4188](https://github.com/supercollider/supercollider/pull/4188)).
-
-Fixed incorrect latency compensation in PortAudio driver ([#4210](https://github.com/supercollider/supercollider/pull/4210)).
 
 UGens: Added
 -----
@@ -75,8 +69,6 @@ UGens: Removed
 UGens: Fixed
 -----
 
-`CheckBadValues` incorrectly recognized zero as a bad value on Windows. This has been fixed ([#4240](https://github.com/supercollider/supercollider/pull/4240)).
-
 sclang: Added
 -----
 
@@ -91,10 +83,6 @@ sclang: Removed
 
 sclang: Fixed
 -----
-
-Fixed `crtscts` flag in `SerialPort.new`, which broke in 3.10 ([#4191](https://github.com/supercollider/supercollider/issues/4191)).
-
-Fixed lack of `backgroundImage` support for `Slider2D` ([#3952](https://github.com/supercollider/supercollider/pull/3952)).
 
 Class library: Added
 -----
@@ -111,8 +99,6 @@ Class library: Removed
 Class library: Fixed
 -----
 
-Fixed incorrect behavior of `String:asSecs` ([#3819](https://github.com/supercollider/supercollider/pull/3819)).
-
 IDE & SCDoc: Added
 -----
 
@@ -127,7 +113,3 @@ IDE & SCDoc: Removed
 
 IDE & SCDoc: Fixed
 -----
-
-`0X0` is an illegal hexadecimal literal in sclang, but SCIDE and SCDoc highlighted such strings as if they were correct. They have been updated ([#4170](https://github.com/supercollider/supercollider/pull/4170)).
-
-Fixed weird colors when changing from other themes to the "classic" theme ([#4161](https://github.com/supercollider/supercollider/pull/4161)).
