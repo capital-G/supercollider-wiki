@@ -60,12 +60,28 @@ The required packages may be installed with the following command;
 
 ## A note about JACK 
 
+You may have issues running JACK with real time scheduling privileges on Fedora. The following should allow you to run JACK in Realtime mode.
 
-You may have issues running JACK with real time scheduling privileges on Fedora. Be sure to add your user to the **jackuser** and **pulse-rt** groups. You will need to reboot your system after running the following command:
+First, be sure to add your user to the **jackuser** group:
 
 ```
-sudo usermod -a -G jackuser,pulse-rt YOUR_USERNAME
+$ sudo usermod -a -G jackuser YOUR_USERNAME
 ```
+
+Second, comment out the section that relates to the `pulse-rt` group in `/etc/security/limits.d/95-jack.conf`. The config file should like something like this:
+
+```
+$ cat /etc/security/limits.d/95-jack.conf
+# Default limits for users of jack-audio-connection-kit
+
+@jackuser - rtprio 80
+@jackuser - memlock unlimited 
+
+# @pulse-rt - rtprio 20
+# @pulse-rt - nice -20
+```
+
+Restart your computer after completing the above.
 
 ## Getting the SuperCollider source code
 
