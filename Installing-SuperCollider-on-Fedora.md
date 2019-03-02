@@ -68,7 +68,7 @@ First, be sure to add your user to the **jackuser** group:
 $ sudo usermod -a -G jackuser YOUR_USERNAME
 ```
 
-Second, comment out the section that relates to the `pulse-rt` group in `/etc/security/limits.d/95-jack.conf`. The config file should like something like this:
+Second, comment out the section that relates to the **pulse-rt** group in `/etc/security/limits.d/95-jack.conf`. The config file should like something like this:
 
 ```
 $ cat /etc/security/limits.d/95-jack.conf
