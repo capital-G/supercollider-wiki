@@ -1,3 +1,39 @@
+Table of Contents
+=================
+
+* [Style Guidelines](#style-guidelines)
+  * [How to read this document](#how-to-read-this-document)
+* [General](#general)
+  * [TODOs](#todos)
+* [SuperCollider](#supercollider)
+  * [Whitespace](#whitespace)
+    * [End\-of\-file newline](#end-of-file-newline)
+    * [Trailing whitespace](#trailing-whitespace)
+    * [Spaces in expressions and statements](#spaces-in-expressions-and-statements)
+    * [Indentation](#indentation)
+    * [Method calls](#method-calls)
+  * [Methods and functions](#methods-and-functions)
+    * [Parameter lists](#parameter-lists)
+    * [Return statements](#return-statements)
+  * [Arrays and Collections](#arrays-and-collections)
+    * [Multi\-line arrays](#multi-line-arrays)
+    * [Abbreviated symbol syntax](#abbreviated-symbol-syntax)
+* [SCDoc (\.schelp)](#scdoc-schelp)
+    * [Tag capitalization](#tag-capitalization)
+    * [Indentation](#indentation-1)
+    * [Private methods](#private-methods)
+    * [Method documentation](#method-documentation)
+* [C\+\+](#c)
+    * [Naming](#naming)
+    * [Notes for UGen writers](#notes-for-ugen-writers)
+    * [Indentation](#indentation-2)
+    * [Whitespace](#whitespace-1)
+    * [Statements](#statements)
+* [Other files](#other-files)
+    * [Indentation](#indentation-3)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
+
 Style Guidelines
 ================
 
