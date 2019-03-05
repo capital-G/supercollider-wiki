@@ -245,29 +245,6 @@ x = [
 ];
 ```
 
-### Abbreviated symbol syntax
-
-#### [needs discussion] *Rule:* Only use abbreviated symbol syntax in appropriate contexts.
-
-The abbreviated symbol syntax `[foo: "bar"]` should only be used in contexts that accept alternating symbols and other values. It's a good idea to use it in, e.g., `Pbind` and `Pmono`.
-
-#### [needs discussion] *Rule:* Don't mix abbreviated symbol and basic array syntaxes.
-
-If an array uses the abbreviated symbol syntax, it should use only the abbreviated symbol syntax and not mix it with bare items:
-
-```supercollider
-// good:
-Pmono(\lead, *[
-    degree: Pseq([0, 1, 2, 3])
-]);
-
-// bad:
-Pmono(*[
-    \lead,
-    degree: Pseq([0, 1, 2, 3])
-]);
-```
-
 SCDoc (.schelp)
 ===============
 
