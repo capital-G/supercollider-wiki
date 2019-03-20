@@ -98,11 +98,13 @@ Simply clone the git repository:
 
     git clone https://github.com/supercollider/sc3-plugins.git
 
-Although for installation purposes, it doesn't matter where in the file system you clone the repository, you will obviously need write access there. If you don't, when you attempt to clone you will see the error:
+Cloning the repository will create a folder called **sc3-plugins** containing the source code.
+For installation purposes, it doesn't matter where in the file system you clone the repository. However, do not clone it into the **PluginLocation**, that will lead to the IDE beeing confused about where to look for the plugins (because after installation you would have both the cloned **sc3-plugins** folder and the built plugins in the **PluginLocation**). You can clone it for example in /home/user/programs, or any other location in the file system. It is essential though, that you have write access there. If you don't, when you attempt to clone you will see the error:
 
     fatal: could not create work tree dir 'sc3-plugins'.: Permission denied
 
-Cloning the repository will create a folder called **sc3-plugins** containing the source code.
+
+
 ### Getting the submodules
 From within **sc3-plugins**, run the following:
 
