@@ -1,3 +1,75 @@
+2019-03-03
+==========
+
+Members present: Patrick, Brian, Nathan, Geoffrey M
+
+Codebase reformatting:
+- Brian wants to do this tonight/tomorrow
+- Plan: merge Ableton Link PR before doing this (needs quick re-test of Brian's branch)
+
+Date improvements PR (3259):
+- discussed potential impact of changes
+- decided to discuss on dev list
+
+Patrick opened several PRs to improve sclang unit tests (4342-4346)
+
+Float->String behavior:
+- NaN gets printed as "nan" or "-nan" right now, this makes it hard to get a compile-string from it.
+- discussed a few ways of fixing this ("Float.nan", "(0/0)")
+
+Discussed post-survey thoughts and thoughts for next survey
+
+Discussed Nathan's proposal about sc3-plugins
+
+Nathan plans to contribute more effort to project tutorials/documentation
+
+Patrick plans to contribute small bug fixes and updates to unit tests
+
+2019-02-23
+==========
+
+Members present: Patrick, Brian, James H, Mark L, Nathan Ho
+
+Ableton Link:
+- James will make a PR (squashed) against develop of his new branch
+- Additional testing? -> No, too much work
+- Latency issues have been addressed
+- Brian will try to review & merge before next weekend
+
+Mark L:
+- Looking into timing in ALSA MIDI implementation -- may be submitting fix sometime (next couple weeks)
+
+PRs:
+- 4324: let's document this way of keeping old things around
+
+MIDI 2.0 & MPE:
+- Could SC project ask for a copy of the spec?
+- MPE might take some time to implement, no obvious way to do it
+
+Survey:
+- where to post results?
+    - website
+    - possibly a series of longer 'thoughts' post afterward
+
+JITLib tests:
+- Patrick is working on some basic tests for NodeProxy to add robustness in future changes
+
+Testing:
+- writing tests that wait is difficult
+- Mark: think hard about how to make easy-to-use patterns in test framework
+- marking requirements on tests
+
+3.10.3:
+- Nathan wants 2 PRs in before:
+    - QtWebEngine PR
+    - QtWebSocket
+
+3.11:
+- Could release as soon as Ableton Link PR merged
+
+Documentation:
+- Brainstormed ideas for how to tackle documentation/tutorials
+
 2019-02-03
 ==========
 
