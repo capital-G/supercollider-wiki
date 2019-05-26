@@ -1,3 +1,23 @@
+2019-05-26
+==========
+
+Members present: Christof Ressi, Josh, James Surgenor, Luke, Nathan, Patrick
+
+James Surgenor has a PR that fixes highlighted code execution in SCDoc #4390, later a Windows issue with the recordings directory #4420, and is struggling with a mysterious SCIDE issue #4413.
+
+Christof Ressi has a pull request for the supernova architecture (#4379), we discussed some uncertainties with the future of supernova/scsynth. A good first step that would help that decision is implementing ParGroup support for scsynth.
+
+The code reformatting is very close to done -- most of the remaining work is on tooling and documentation. Realistically it can be completed this week. We discussed the possibility of unfreezing the repository but the work on reformatting is so close to done that we agreed this is unnecessary.
+
+Two related but separate issues should be discussed in the wake of what transpired in March: 1. the lack of a governance and leadership model in SC development, and 2. problems of tone/atmosphere in the SC community.
+
+On the topic of governance, how do we establish important decisions that affect long-term health of the project? One approach that was discussed is a semi-formal RfC system. Nathan is interested in reviving his backburnered proposal to clip the audio output on macOS, using it as a guinea pig for a new RfC protocol.
+
+Luke suggested using Code of Conduct enforcement as a way of dealing with tone in both the user and dev communities. SC's community is better than most other open source projects in this regard, but unfortunately the reality is that the user and dev lists still actively scare some people off. James noted the Csound community's approach to this -- a monthly "Administrivia" reminder sent by the list administrator.
+
+Neither Luke or James had heard of the scsynth.org forums, so Nathan sent out a reminder of their existence. The forums and the Slack are linked in the SC README, but the website is still a mess and could do a better job of alerting the community to them.
+
+
 2019-03-03
 ==========
 
