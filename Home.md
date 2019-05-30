@@ -1,1 +1,3 @@
-This wiki is a scratch pad for development of SuperCollider. You are probably looking for [the main SuperCollider wiki](http://supercollider.github.io/pages.html) or [the SuperCollider documentation](http://doc.sccode.org/).
+This wiki has information for developers and users of SuperCollider. Check the sidebar for specific articles.
+
+You may also be looking for [the SuperCollider site wiki](http://supercollider.github.io/pages.html) or [the SuperCollider documentation](http://doc.sccode.org/).
