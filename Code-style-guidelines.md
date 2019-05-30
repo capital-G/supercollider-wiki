@@ -24,11 +24,6 @@ Table of Contents
     * [Private methods](#private-methods)
     * [Method documentation](#method-documentation)
 * [C\+\+](#c)
-    * [Naming](#naming)
-    * [Notes for UGen writers](#notes-for-ugen-writers)
-    * [Indentation](#indentation-2)
-    * [Whitespace](#whitespace-1)
-    * [Statements](#statements)
 * [Other files](#other-files)
     * [Indentation](#indentation-3)
 
@@ -273,82 +268,7 @@ When documenting a parameter or return value, make sure to include the expected 
 C++
 ===
 
-The following guidelines apply to C++ code throughout the project.
-
-### Naming
-
-We use the prefixes `k`, `g`, and `m` to identify constants, global variables, and members respectively. There is currently no consistent naming style used throughout the codebase; in general, it's best to follow the existing convention in the code you are editing.
-
-You may see some code that uses the prefix `Pyr`; this refers to the origin of SuperCollider as a Max/MSP object called "Pyrite".
-
-### Notes for UGen writers
-
-The naming for UGens has fairly strict conventions, because SC's macros connect the function/struct names with the names used by a user. A UGen usually has a struct associated with it, which should take the same name as the corresponding sclang class (which implies it begins with a capital letter).
-
-    struct SinOsc : Unit { ... };
-
-In general the associated methods' names should begin with that name too: the constructor must take that name followed by _Ctor and the destructor (if used) must take that name followed by _Dtor.
-
-    void SinOsc_Ctor(SinOsc *unit);
-
-The DSP functions should take that name followed by `_next`, plus more text to distinguish the different DSP functions from each other as needed; e.g. audio-rate is postfixed by `_a` and control-rate is postfixed by `_k`. These postfixes might stack up for several parameter/rate combinations:
-
-    void SinOsc_next_iak(SinOsc *unit, int inNumSamples);
-
-Private methods within the plugin files don't have to follow strict naming but it is recommended to prefix them in a similar fashion, to identify the UGen(s) with which they belong.
-
-### Indentation
-
-A mix of indentation styles is used in the C++ source code. In the near future, [all C++ code will be converted to use 4-space indentation](https://github.com/supercollider/supercollider/issues/2819). New files and new large sections within existing files should conform to 4-space indentation. In all other cases, please follow the pre-existing convention in the surrounding code.
-
-### Whitespace
-
-#### `if`, `for`, `while`, `switch`
-
-Use one space after `if`, `for`, `while`, and `switch`, before the open paren. If the statement includes an open bracket, and the code is in K&R brace style (the open bracket is on the same line), use one space between the close paren and open bracket.
-
-```cpp
-// correct
-if (condition)
-
-// incorrect
-if(condition)
-
-// correct
-while (condition) {
-    /* ... */
-}
-
-// incorrect
-while (condition){
-    /* ... */
-}
-```
-
-### Statements
-
-#### One statement per line
-
-Have at most one statement per line. This makes it easier to set breakpoints while debugging, and is generally clearer.
-
-```cpp
-// correct
-if (condition)
-    return 3;
-
-// incorrect
-if (condition) return 3;
-
-// correct
-a++;
-b++;
-
-// acceptable
-a++, b++;
-
-// incorrect
-a++; b++;
-```
+See [C++ Code Style Guidelines](https://github.com/supercollider/supercollider/wiki/Cpp-Code-Style-Guidelines).
 
 Other files
 ===========
