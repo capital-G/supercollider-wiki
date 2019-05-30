@@ -3,9 +3,9 @@ C++ Code Style Guidelines
 
 The following guidelines apply to C++ code throughout the SuperCollider project.
 
-SuperCollider uses [clang-format](https://clang.llvm.org/docs/ClangFormat.html), an open source C and C++ source code formatting tool, to ensure consistent code style across our code base. So while the following discussion describes the style used in the code, along with some things that can't be easily automated such as variable naming, for issues of code formatting the output of the clang-format tool should be considered canonical style. For more information about using clang-format on SuperCollider C++ code see [here](TBD).
+SuperCollider uses [clang-format](https://clang.llvm.org/docs/ClangFormat.html), an open source C and C++ source code formatting tool, to ensure consistent code style across our code base. So while the following discussion describes the style used in the code, along with some things that can't be easily automated such as variable naming, for issues of code formatting the output of the clang-format tool should be considered canonical style. For more information about using clang-format on SuperCollider C++ code see [here](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions).
 
-In general SuperCollider follows the [WebKit Code Style Guidelines](https://webkit.org/code-style-guidelines/), with a few notable exceptions and addenda, detailed here.
+In general SuperCollider follows the [WebKit Code Style Guidelines](https://webkit.org/code-style-guidelines/), with a few notable exceptions and additions.
 
 ### Naming
 
