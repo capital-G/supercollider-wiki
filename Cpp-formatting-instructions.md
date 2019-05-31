@@ -92,7 +92,9 @@ happy to help you!
 **Python**: if you want to use the `tools/clang-format.py` script, you will need Python. The script
 has been tested and confirmed to work with versions 2.7.15 and 3.6.5. Newer versions will probably
 also work; use older versions at your own peril. If you don't have Python installed on your system,
-you can download it [here](https://www.python.org/downloads/).
+you can download it [here](https://www.python.org/downloads/). Note that an issue in Python 2 prevents
+this script from working properly on Windows if the full path to your repository includes a non-ASCII
+character. Use Python 3 instead.
 
 **clang-format-diff.py**: if you want to use the `lint` or `format` CMake target, or `lint.py` or
 `format.py` script, you will need `clang-format-diff.py`, a Python script provided by LLVM that
