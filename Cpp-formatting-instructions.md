@@ -48,6 +48,8 @@ git rebase tag-clang-format-3.10^  # DON'T FORGET THE ^ !!!!
 
 The ^, which you absolutely must not forget, indicates that you're rebasing onto the commit immediately before the relevant reformat commit. This gives you access to the `tools/clang-format.py` script.
 
+Under normal conditions, this rebase won't create any conflicts. If there are conflicts, then first make sure that you've correctly chosen between develop and 3.10. If that was correct, it means a conflict started happening sometime between when you created the branch and the reformat, so this issue is unrelated to the reformat and should be addressed first.
+
 ### Reformat it!
 
 
