@@ -1,3 +1,18 @@
+I made a PR before the reformat and it has merge conflicts now! How do I fix it?
+--------------------------------------------------------------------------------
+
+First off, don't do anything brash. **You don't need to close your PR.** This following process will update a PR that you've already filed.
+
+If you have a branch that contains work prior to the major C++ reformatting commit:
+
+1. First, run `git pull upstream --tags` (where `upstream` here denotes the core SC repository, change if your remotes are configured otherwise).
+2. If your branch was based on `develop`, run `git rebase tag-clang-format-develop^`. If your branch was based on `3.10`, run `git rebase tag-clang-reformat-3.10^`. Don't forget the `^` -- the aim here is to rebase onto the commit immediately before the reformat, which gives you the `tools/clang-format.py` script.
+3. Run `tools/clang-format.py rebase -b 3.10`. This will switch you over to a new branch called `<branch-name>-reformatted`.
+4. Inspect the changes -- do they all look good? If so, run `git branch -f <branch-name>` to rewrite the original branch to match the reformatted one, then run `git push -f origin <branch-name>` to force push your changes to the branch.
+5. The PR will automatically update. **There is no need to close and re-open your PR.**
+
+If you need help, feel free to contact sc-dev or the Slack. Again: **if something gets screwed up, don't panic** and **don't do reckless things like like deleting your entire repository.** It will probably not fix your issue.
+
 Linting and formatting
 ======================
 
@@ -68,13 +83,6 @@ If you are developing a C++ feature or bug fix, a typical workflow might look li
 1. Write some code, build, test
 2. Use your editor's integration or run `build/format.py` to format your code.
 3. Commit your changes with Git
-
-Rebasing a pre-reformat branch
-------------------------------
-
-If you have a branch that contains work prior to the major C++ reformatting commit, you can rebase
-it easily with the `tools/clang-format.py` script in this repository. Run `tools/clang-format.py -h`
-for more information.
 
 Requirements
 ------------
