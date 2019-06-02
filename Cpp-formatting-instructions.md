@@ -3,15 +3,89 @@ I made a PR before the reformat and it has merge conflicts now! How do I fix it?
 
 First off, don't do anything brash. **You don't need to close your PR.** This following process will update a PR that you've already filed.
 
-If you have a branch that contains work prior to the major C++ reformatting commit:
+If you have a branch that contains work prior to the major C++ reformatting commit, just follow these steps.
 
-1. First, run `git pull upstream --tags` (where `upstream` here denotes the core SC repository, change if your remotes are configured otherwise).
-2. If your branch was based on `develop`, run `git rebase tag-clang-format-develop^`. If your branch was based on `3.10`, run `git rebase tag-clang-reformat-3.10^`. Don't forget the `^` -- the aim here is to rebase onto the commit immediately before the reformat, which gives you the `tools/clang-format.py` script.
-3. Run `tools/clang-format.py rebase -b 3.10`. This will switch you over to a new branch called `<branch-name>-reformatted`.
-4. Inspect the changes -- do they all look good? If so, run `git branch -f <branch-name>` to rewrite the original branch to match the reformatted one, then run `git push -f origin <branch-name>` to force push your changes to the branch.
-5. The PR will automatically update. **There is no need to close and re-open your PR.**
+### Install requirements
 
-If you need help, feel free to contact sc-dev or the Slack. Again: **if something gets screwed up, don't panic** and **don't do reckless things like deleting your entire repository.** It will probably not fix your issue.
+You will need clang v8.0.0 (exactly) and Python 2.7+ or 3.6+. Instructions on grabbing the dependencies are here: https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions#requirements
+
+### Update your repo
+
+First, update the `3.10` and `develop` branches.
+
+```
+git checkout 3.10
+git pull upstream 3.10
+git checkout develop
+git pull upstream develop
+```
+
+The next steps also rely on the existence of the tags `tag-clang-format-develop` and `tag-clang-format-3.10`. To grab these, run
+
+```
+git pull upstream --tags
+```
+
+### 3.10 or develop?
+
+Figure out whether your PR was originally made from 3.10 or develop. If you forgot, look up the PR on GitHub and see what it was filed against. In this case, it's 3.10:
+
+![Untitled](https://user-images.githubusercontent.com/1211064/58756835-d2f8a100-84b4-11e9-8979-e1812a91abb6.png)
+
+### Rebase onto the commit before the reformat
+
+If your branch was based on `develop`, run:
+
+```
+git rebase tag-clang-format-develop^  # DON'T FORGET THE ^ !!!!
+```
+
+For 3.10:
+
+```
+git rebase tag-clang-format-3.10^  # DON'T FORGET THE ^ !!!!
+```
+
+The ^, which you absolutely must not forget, indicates that you're rebasing onto the commit immediately before the relevant reformat commit. This gives you access to the `tools/clang-format.py` script.
+
+### Reformat it!
+
+
+If your branch was based on `develop`, run:
+
+```
+tools/clang-format.py rebase -b develop
+```
+
+For 3.10:
+
+```
+tools/clang-format.py rebase -b 3.10
+```
+
+This will switch you over to a new branch called `<branch-name>-reformatted`.
+
+### Confirm
+
+Inspect the changes -- do they all look good?
+
+If so:
+
+```
+# rewrite the original branch to match the reformatted one
+git branch -f <branch-name>
+
+# Force push your changes to the branch in your fork of SC
+git push -f origin <branch-name>
+```
+
+The PR will automatically update. **There is no need to close and re-open your PR.**
+
+### Troubleshooting
+
+We are using fairly tricky git features here, and I'm aware a lot of people are relatively new to git. **If something gets screwed up, don't panic** and **don't do reckless things like deleting your entire repository.** It will probably not fix your issue.
+
+Instead, just ask for help! The fastest way to get help is [Slack](https://join.slack.com/t/scsynth/shared_invite/enQtMzk3OTY3MzE0MTAyLWY1ZGE1MTJjYmI5NTRkZjFmNjZmNmYxOWI0NDZkNjdkMzdkNjgxNTJhZGVlOTEwYjdjMDY5OWM0ZTA4NWFiOGY) (since Brian and I are on there), but not everyone is on that, so you can also leave a comment on the [official support thread](https://github.com/supercollider/supercollider/issues/4428) on GitHub. If you're having a problem, just leave a comment and someone more experienced with the process can help you out.
 
 Linting and formatting
 ======================
