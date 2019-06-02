@@ -79,8 +79,8 @@ UR_NAME
 
 sc-dev Meeting DATE Minutes:
 
-[[[ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ]]]
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
 
 POST_MINUTES_HERE
 
-[[[ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ]]]
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
