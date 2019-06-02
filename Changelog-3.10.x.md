@@ -105,6 +105,8 @@ Lots of small issues in `Plotter` were fixed, especially related to the `domain`
 
 When changing the source of an input to a `NodeProxy`, discontinuities can happen even when smooth crossfading is requested. This has been fixed ([#4296](https://github.com/supercollider/supercollider/pull/4296)).
 
+`ProxyMixer` no longer assumes the `ProxySpace` it is using to be the current environment ([#4339](https://github.com/supercollider/supercollider/pull/4339)).
+
 IDE & SCDoc: Added
 -----
 
