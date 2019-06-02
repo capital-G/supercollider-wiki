@@ -69,6 +69,8 @@ UGens: Removed
 UGens: Fixed
 -----
 
+Fixed an initialization issue for the `trig` input to `Convolution2` ([#4341](https://github.com/supercollider/supercollider/pull/4341)).
+
 sclang: Added
 -----
 
@@ -98,6 +100,10 @@ Class library: Removed
 
 Class library: Fixed
 -----
+
+Lots of small issues in `Plotter` were fixed, especially related to the `domain` and `domainSpec` arguments ([4082](https://github.com/supercollider/supercollider/pull/4082)).
+
+When changing the source of an input to a `NodeProxy`, discontinuities can happen even when smooth crossfading is requested. This has been fixed ([#4296](https://github.com/supercollider/supercollider/pull/4296)).
 
 IDE & SCDoc: Added
 -----
