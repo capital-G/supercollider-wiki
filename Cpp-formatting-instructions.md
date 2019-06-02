@@ -11,7 +11,7 @@ If you have a branch that contains work prior to the major C++ reformatting comm
 4. Inspect the changes -- do they all look good? If so, run `git branch -f <branch-name>` to rewrite the original branch to match the reformatted one, then run `git push -f origin <branch-name>` to force push your changes to the branch.
 5. The PR will automatically update. **There is no need to close and re-open your PR.**
 
-If you need help, feel free to contact sc-dev or the Slack. Again: **if something gets screwed up, don't panic** and **don't do reckless things like like deleting your entire repository.** It will probably not fix your issue.
+If you need help, feel free to contact sc-dev or the Slack. Again: **if something gets screwed up, don't panic** and **don't do reckless things like deleting your entire repository.** It will probably not fix your issue.
 
 Linting and formatting
 ======================
