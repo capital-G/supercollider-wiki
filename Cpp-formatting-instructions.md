@@ -87,7 +87,7 @@ The PR will automatically update. **There is no need to close and re-open your P
 
 We are using fairly tricky git features here, and I'm aware a lot of people are relatively new to git. **If something gets screwed up, don't panic** and **don't do reckless things like deleting your entire repository.** It will probably not fix your issue.
 
-Instead, just ask for help! The fastest way to get help is [Slack](https://join.slack.com/t/scsynth/shared_invite/enQtMzk3OTY3MzE0MTAyLWY1ZGE1MTJjYmI5NTRkZjFmNjZmNmYxOWI0NDZkNjdkMzdkNjgxNTJhZGVlOTEwYjdjMDY5OWM0ZTA4NWFiOGY) (since Brian and I are on there), but not everyone is on that, so you can also leave a comment on the [official support thread](https://github.com/supercollider/supercollider/issues/4428) on GitHub. If you're having a problem, just leave a comment and someone more experienced with the process can help you out.
+Instead, just ask for help! The fastest way to get help is [Slack](https://join.slack.com/t/scsynth/shared_invite/enQtMzk3OTY3MzE0MTAyLWY1ZGE1MTJjYmI5NTRkZjFmNjZmNmYxOWI0NDZkNjdkMzdkNjgxNTJhZGVlOTEwYjdjMDY5OWM0ZTA4NWFiOGY) since Brian (@brianlheim) and Nathan (@snappizz) are on there, but not everyone is on that, so you can also leave a comment on the [official support thread](https://github.com/supercollider/supercollider/issues/4428) on GitHub. If you're having a problem, just leave a comment and someone more experienced with the process can help you out.
 
 Linting and formatting
 ======================
