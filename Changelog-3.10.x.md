@@ -107,6 +107,8 @@ When changing the source of an input to a `NodeProxy`, discontinuities can happe
 
 `ProxyMixer` no longer assumes the `ProxySpace` it is using to be the current environment ([#4339](https://github.com/supercollider/supercollider/pull/4339)).
 
+The default recordings directory on Windows was the somewhat redundant `My Documents\SuperCollider\SuperCollider\Recordings`. The additional `SuperCollider` subdirectory has been removed ([#4420](https://github.com/supercollider/supercollider/pull/4420)).
+
 IDE & SCDoc: Added
 -----
 
