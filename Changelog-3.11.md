@@ -93,6 +93,8 @@ Class library: Changed
 Class library: Deprecated
 ----------
 
+`String.scDir` is deprecated ([#4374](https://github.com/supercollider/supercollider/pull/4374)). Please use `Platform.resourceDir` instead. 
+
 Class library: Removed
 -------
 
