@@ -86,6 +86,8 @@ sclang: Removed
 sclang: Fixed
 -----
 
+The `mouseWheelAction` of `View` erroneously reported `xDelta` and `yDelta` to be 0 in some cases. This is fixed ([#4423](https://github.com/supercollider/supercollider/pull/4423)). 
+
 Class library: Added
 -----
 
@@ -109,6 +111,8 @@ When changing the source of an input to a `NodeProxy`, discontinuities can happe
 
 The default recordings directory on Windows was the somewhat redundant `My Documents\SuperCollider\SuperCollider\Recordings`. The additional `SuperCollider` subdirectory has been removed ([#4420](https://github.com/supercollider/supercollider/pull/4420)).
 
+In Events where `strum` is set, the releases of notes was erroneously done in reverse order. This is fixed ([#4406](https://github.com/supercollider/supercollider/pull/4406)).
+
 IDE & SCDoc: Added
 -----
 
@@ -123,3 +127,5 @@ IDE & SCDoc: Removed
 
 IDE & SCDoc: Fixed
 -----
+
+Since 3.10, the help browser would execute code twice when selected. This has been fixed ([#4390](https://github.com/supercollider/supercollider/pull/4390)).
