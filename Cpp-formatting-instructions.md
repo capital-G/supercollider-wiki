@@ -109,7 +109,7 @@ style of the codebase is largely consistent across time and among differing auth
 review and contributing smoother for new and experienced contributors.
 
 Formatting is checked for every commit and PR by our CI (continuous integration) tools. This makes
-it impossible to merge any change which violates our formatting standards.
+it impossible to merge any change which violates our formatting standards. Only one CI job on Travis checks the linting target; if your commit fails to build due to linting, you can check the build log to see why.
 
 If you are contributing to SuperCollider and plan on working on C++ code, it is strongly recommended
 that you integrate ClangFormat into your development workflow.
