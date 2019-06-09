@@ -89,6 +89,19 @@ We are using fairly tricky git features here, and I'm aware a lot of people are 
 
 Instead, just ask for help! The fastest way to get help is [Slack](https://join.slack.com/t/scsynth/shared_invite/enQtMzk3OTY3MzE0MTAyLWY1ZGE1MTJjYmI5NTRkZjFmNjZmNmYxOWI0NDZkNjdkMzdkNjgxNTJhZGVlOTEwYjdjMDY5OWM0ZTA4NWFiOGY) since Brian (@brianlheim) and Nathan (@snappizz) are on there, but not everyone is on that, so you can also leave a comment on the [official support thread](https://github.com/supercollider/supercollider/issues/4428) on GitHub. If you're having a problem, just leave a comment and someone more experienced with the process can help you out.
 
+### Specific issues
+
+If the script fails with this error message:
+
+`*** ERROR: 'ascii' codec can't encode character u'\u2026' in position 629: ordinal not in range(128)`
+
+You will need to use Python 3 to run the script (see below in Requirements). First, reset your repository state, then try rerunning the script with Python 3:
+
+```
+git reset --hard <branch-to-rebase>
+python3 tools/clang-format.py rebase -b develop # or 3.10
+```
+
 Linting and formatting
 ======================
 
