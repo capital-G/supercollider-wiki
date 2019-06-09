@@ -91,6 +91,8 @@ Instead, just ask for help! The fastest way to get help is [Slack](https://join.
 
 ### Specific issues
 
+#### "'ascii' codec can't encode character"
+
 If the script fails with this error message:
 
 `*** ERROR: 'ascii' codec can't encode character u'\u2026' in position 629: ordinal not in range(128)`
@@ -100,6 +102,20 @@ You will need to use Python 3 to run the script (see below in Requirements). Fir
 ```
 git reset --hard <branch-to-rebase>
 python3 tools/clang-format.py rebase -b develop # or 3.10
+```
+
+#### "Your working tree has pending changes."
+
+If the script fails with this error message:
+
+`*** ERROR: Your working tree has pending changes. You must have a clean working tree before proceeding.`
+
+You need to make sure that any changed files shown by `git status` are reset back to their clean state. You can do that with the following commands. **Be certain you are not losing any unsaved work before you start running these!**
+
+```
+git reset --hard # resets all files in your working tree 
+git submodule git submodule foreach --recursive git reset --hard # resets all files in the working trees of your submodules
+git submodule update --recursive --force # resets all submodules according to the currently checked out commit
 ```
 
 Linting and formatting
