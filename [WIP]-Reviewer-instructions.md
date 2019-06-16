@@ -53,7 +53,7 @@ If you don't know how to review a PR, or have a question about reviewing, ask a 
 
 ### Guideline: It's OK to make mistakes
 
-Pressing the "Merge" button can be pretty stressful the first few times you do it, but don't worry about making mistakes. The main branches of the SuperCollider project are heavily protected against truly disastrous errors, and everything else is easily reversible.
+Pressing the "Merge" button can be pretty stressful the first times you go it. Fear not. Mistakes can happen. The main branches of the SuperCollider project are heavily protected against truly disastrous errors, and everything else is easily reversible.
 
 ### Guideline: Assume good faith 
 
