@@ -3,7 +3,7 @@
 - Be familiar with CONTRIBUTING.md, DEVELOPING.md, git workflow, code of conduct, and this document
 - Be familiar with or willing to learn about the part of the project related to the PR you're reviewing
 - Have previously participated in PR review discussions, and/or have previous PR review experience
-- Good communication skills and lots of patience :)
+- Lots of patience and a willingness to take the time to communicating clearly with others
 
 ## Overview
 
