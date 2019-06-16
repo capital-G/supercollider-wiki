@@ -57,7 +57,7 @@ Pressing the "Merge" button can be pretty stressful the first few times you do i
 
 ### Guideline: Assume good faith 
 
-Given no evidence to the contrary, assume that a PR author is acting out of a genuine interest to improve this project. English may not be their first language, and so they may have difficulty understanding technical language or providing all the information we normally like to see in a PR. Be patient and communicate transparently with PR authors; even if it's obvious from the start that the PR will not be merged.
+Assume that a PR author is acting out of a genuine interest to improve this project. English may not be their first language, and so they may have difficulty understanding technical language or providing all the information we normally like to see in a PR. Be patient and communicate transparently with PR authors; even if it's obvious from the start that the PR will not be merged.
 
 ### Guideline: Stay on topic
 
