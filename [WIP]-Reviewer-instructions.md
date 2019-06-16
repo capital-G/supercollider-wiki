@@ -61,4 +61,4 @@ Given no evidence to the contrary, assume that a PR author is acting out of a ge
 
 ### Guideline: Stay on topic
 
-In the course of a PR, auxiliary discussions may arise about newly discovered issues, desired features, or even procedural (meta-review) topics. It is crucial that such discussions don't get in the way of reviewing the PR at hand. Any discussion not related to the PR should be respectfully but rapidly relocated to a more appropriate venue; this may be a new PR, an issue ticket, or a discussion thread on some other forum.
+In the course of a PR, auxiliary discussions may arise about newly discovered issues, desired features, or even procedural (meta-review) topics. It is crucial that such discussions don't get in the way of reviewing the PR at hand. Any discussion not related to the PR should be respectfully relocated to a more appropriate venue; this may be a new PR, an issue ticket, or a discussion thread on some other forum.
