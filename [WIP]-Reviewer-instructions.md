@@ -3,7 +3,7 @@
 - Be familiar with CONTRIBUTING.md, DEVELOPING.md, git workflow, code of conduct, and this document
 - Be familiar with or willing to learn about the part of the project related to the PR you're reviewing
 - Have previously participated in PR review discussions, and/or have previous PR review experience
-- Lots of patience and a willingness to take the time to communicate clearly with others
+- Have lots of patience and good communication skills
 
 ## Overview
 
@@ -45,7 +45,40 @@ This is meant as a reference checklist of the bare minimum of things to check be
 
 ### Using labels, milestones and projects
 
-(Is this already documented somewhere/do we have any real procedures for this?)
+#### Labels
+
+We use an extensive system of labels to categorize issues and pull requests. We consistently use the following labels:
+
+- `comp: x` to indicate the affected *comp*onent of SuperCollider
+- `os: y` if the issue or PR affects one operating system in particular
+- `env: z` if the issue or PR affects one *env*ironment (SCIDE, Emacs, etc.) in particular
+
+For issues, we use `bug` or `enhancement` to indicate whether the issue is reporting a bug or requesting a feature respectively. We also use `good first issue` to indicate issues that are clear in scope and would be a good place for an interested contributor to start.
+
+Each PR should have at least one `comp:` or `env:` label; and each issue ticket should have at least one `comp:` or `env:` label and one `bug` or `enhancement` label. If you see an unlabeled issue or PR, please take the time to add a label! 
+
+We do not yet have specific rules or practices around other labels; feel free to offer suggestions on how we can use existing or new labels more effectively.
+
+#### Milestones
+
+We use four tags to keep track of issues:
+
+- Next patch (example: "3.9.1")
+- Some patch (example: "3.9.x")
+- Next minor (example: "3.10")
+- Some minor (example: "3.x")
+
+Patch-milestoned issues are those that will require bug fixes, while minor-milestoned issues are things like new
+features and major changes that are better left for a minor release. The "Next patch"/"Next minor" milestones mark those issues that we've decided _must_ be addressed before the next respective release. They're either the most painful bugs or most requested features.
+
+When, in the example milestones above, 3.10 is released, we would move all 3.9.x-milestoned issues to 3.10.x,
+and then collectively decide which issues ought to move from 3.x to 3.11 and from 3.10.x to 3.10.1.
+
+#### Projects
+
+We use the [cherry-pick](https://github.com/supercollider/supercollider/projects/13) project board to indicate PRs from inexperienced contributors that ought to be cherry-picked from develop to 3.10 after they are merged.
+
+We use the [PR backlog](https://github.com/supercollider/supercollider/projects/7) project board to indicate PRs that have been closed due to inactivity, but would be worthwhile to re-open if there were interest.
 
 ### Guideline: Ask questions
 
