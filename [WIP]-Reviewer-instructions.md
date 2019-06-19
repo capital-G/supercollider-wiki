@@ -1,6 +1,12 @@
-## Prerequisites
+# Reviewer instructions
 
-- Be familiar with CONTRIBUTING.md, DEVELOPING.md, git workflow, code of conduct, and this document
+This document is intended primarily for new reviewers on the SuperCollider project. Probably, you
+are reading this because you are interested in reviewing PRs and want more information on how to do
+that. Welcome!
+
+## Prerequisites for reviewers
+
+- Be familiar with [CONTRIBUTING.md](https://github.com/supercollider/supercollider/blob/develop/CONTRIBUTING.md), [DEVELOPING.md](https://github.com/supercollider/supercollider/blob/develop/DEVELOPING.md), [git workflow](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines), [Code of Conduct](https://github.com/supercollider/supercollider/blob/develop/CODE_OF_CONDUCT.md), and this document
 - Be familiar with or willing to learn about the part of the project related to the PR you're reviewing
 - Have previously participated in PR review discussions, and/or have previous PR review experience
 - Have lots of patience and good communication skills
@@ -37,11 +43,38 @@ This is meant as a reference checklist of the bare minimum of things to check be
 
 2. Reach out to an active project maintainer. Brian H (@brianlheim) and Nathan H (@snappizz) are two such people who are usually reachable via email or Slack. You can also reach out to the general developer community on a more public forum, such as the sc-dev mailing list.
 
-3. We'll give you permissions so that you can review and merge PRs.
+3. We'll add you to the Reviewers organization team.
 
-4. Find a PR that interests you and start reviewing!
+4. Find a PR that interests you and start reviewing! You can also request to be assigned to specific PRs.
 
-## Various instructions/guidelines
+For your first few reviews, a more experienced reviewer will look over your review, leave any
+necessary feedback, and perform the final merge.
+
+## Various instructions and guidelines
+
+Before beginning to review PRs, make sure you've reviewed the project documentation linked in
+"Prerequisites". Feel free to ask questions if anything seems unclear or incorrect.
+
+### Using reviews
+
+When you leave a review, you have three options: "Comment", "Approve", "Request changes". If you
+have any request at all, including a request to rebase, a request for more information, or a request
+for code changes, **leave a "Request changes" review**. This makes it clear to other reviewers from
+the PR list page that the PR has already been addressed by a reviewer.
+
+Give an "Approve" review only when you believe the PR is ready for merging.
+
+Do not use the "Comment" review option as a reviewer.
+
+### Using assignments
+
+When you are ready to review a PR, **assign yourself as a reviewer**. In the interest of moving PRs
+along, stay mindful of the PRs you're assigned to; you should start reviewing a PR within one week
+of assigning yourself. If you don't think you will have time to do so, unassign yourself. After one
+week of inactivity, another reviewer may unassign you and assign themselves if they are ready to
+start reviewing.
+
+If another maintainer has assigned themselves to a PR, feel free to leave a review or comments; however, if the assigned reviewer is a new reviewer (i.e., part of the [Reviewers team](https://github.com/orgs/supercollider/teams/reviewers), and not @snappizz or @brianlheim), let them review the PR themselves so they can gain experience.
 
 ### Using labels, milestones and projects
 
