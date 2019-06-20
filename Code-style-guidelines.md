@@ -39,8 +39,6 @@ How to read this document
 
 There are two categories of guidelines: *Rules* should be followed strictly; *Recommendations* are looser preferences. Existing code should conform to all *Rules*, but *Recommendations* are suggestions for new and existing contributors who may be interested in the discussion surrounding the topic.
 
-Rules marked with "[needs discussion]" are potentially controversial and have not yet been agreed upon.
-
 General
 =======
 
@@ -71,11 +69,11 @@ This keeps diffs clean as it prevents accidental whitespace from being committed
 
 ### Spaces in expressions and statements
 
-#### [needs discussion] *Rule:* Use spaces around binary operators
+#### *Rule:* Use spaces around binary operators
 
 Binary operators, including key binary operators, should have one space before and after.
 
-#### [needs discussion] *Rule:* Add spaces after commas.
+#### *Rule:* Add spaces after commas.
 
 Commas should have one space after, but not before.
 
@@ -228,7 +226,7 @@ Arrays and Collections
 
 ### Multi-line arrays
 
-#### [needs discussion] *Rule:* Place each element of a multi-line array on its own line.
+#### *Rule:* Place each element of a multi-line array on its own line.
 
 Each element should be on a separate line:
 
