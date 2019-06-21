@@ -166,12 +166,12 @@ Although the SuperCollider compiler will allow commas to be omitted in parameter
 
 ```supercollider
 // good:
-x = { |foo = 3, bar = 4| /* ... */ };
+x = { |foo = 3, bar = (4.dbamp)| /* ... */ };
 
 // bad, unclear:
-x = { |foo = 3 bar = 4| /* ... */ };
+x = { |foo = 3 bar = (4.dbamp)| /* ... */ };
 // bad, outdated notation:
-x = { arg foo = 3, bar = 4; /* ... */ };
+x = { arg foo = 3, bar = 4.dbamp; /* ... */ };
 ```
 
 This rule was discussed [here](https://github.com/supercollider/supercollider/issues/2913).
