@@ -9,7 +9,7 @@ that. Welcome!
 - Be familiar with [CONTRIBUTING.md](https://github.com/supercollider/supercollider/blob/develop/CONTRIBUTING.md), [DEVELOPING.md](https://github.com/supercollider/supercollider/blob/develop/DEVELOPING.md), [git workflow](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines), [Code of Conduct](https://github.com/supercollider/supercollider/blob/develop/CODE_OF_CONDUCT.md), and this document
 - Be familiar with or willing to learn about the part of the project related to the PR you're reviewing
 - Have previously participated in PR review discussions, and/or have previous PR review experience
-- Have lots of patience and good communication skills
+- Bring lots of patience 
 
 ## Overview
 
