@@ -174,6 +174,8 @@ x = { |foo = 3 bar = (4.dbamp)| /* ... */ };
 x = { arg foo = 3, bar = 4.dbamp; /* ... */ };
 ```
 
+Note that with pipe notation, an initializer expression that is not a single literal must be enclosed in parentheses.
+
 This rule was discussed [here](https://github.com/supercollider/supercollider/issues/2913).
 
 #### *Rule:* Place the parameter list on the same line as the opening curly bracket of a function or method.
