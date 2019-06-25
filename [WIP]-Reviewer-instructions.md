@@ -1,23 +1,25 @@
 # Reviewer instructions
 
-This document is intended primarily for new reviewers on the SuperCollider project. Probably, you
-are reading this because you are interested in reviewing PRs and want more information on how to do
-that. Welcome!
+Here, you'll find information on how to review pull requests (PRs) for the SuperCollider project. Welcome!
+
+## Getting into reviewing easily
+
+Some parts of SuperCollider are easier to review than others. If you're looking for an easy way to get involved as a reviewer, focus on PRs labeled `comp: help` and `comp: examples`. Most of these can be reviewed just by reading them. Following and participating in review discussions can also help you get quickly acquainted with the review process.
 
 ## Prerequisites for reviewers
 
 - Be familiar with [CONTRIBUTING.md](https://github.com/supercollider/supercollider/blob/develop/CONTRIBUTING.md), [DEVELOPING.md](https://github.com/supercollider/supercollider/blob/develop/DEVELOPING.md), [git workflow](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines), [Code of Conduct](https://github.com/supercollider/supercollider/blob/develop/CODE_OF_CONDUCT.md), and this document
 - Be familiar with or willing to learn about the part of the project related to the PR you're reviewing
 - Have previously participated in PR review discussions, and/or have previous PR review experience
-- Bring lots of patience 
+- Bring lots of patience. Reviewing is a very communicative process!
 
 ## Overview
 
-The major tasks for a reviewer are:
+The major tasks for reviewers are:
 
 1. Determine whether a PR has merit, and if so, determine what steps are needed to merge it. This may require reading code, running tests, and requesting information or action from the PR author.
 
-2. Communicate clearly about task (1) with PR authors and other collaborators. This includes effectively using labels, milestones, and projects, triaging spin-off discussions that may result from a PR review, and giving PR authors accurate and direct instructions when needed.
+2. Communicate clearly about task (1) with PR authors and other collaborators. You should effectively use labels, milestones, and projects; redirect any spin-off discussions that may arise; and give PR authors accurate and direct instructions when needed.
 
 3. Make SuperCollider an enjoyable project to contribute to. This includes being friendly and respectful toward PR authors and other collaborators, being transparent about project rules and procedures, and making sure PRs you review are merged or closed in a timely manner.
 
@@ -39,7 +41,7 @@ This is meant as a reference checklist of the bare minimum of things to check be
 
 ## How to get started as a reviewer
 
-1. Make sure you meet all the prerequisites listed above. We won't quiz you, but it's important that we're all on the same page to avoid unnecessary misunderstandings or disagreements during reviews.
+1. It is important that we share basic assumptions to avoid unnecessary misunderstandings or disagreements during reviews, so please take some time to get yourself acquainted with the procedure.
 
 2. Reach out to an active project maintainer. Brian H (@brianlheim) and Nathan H (@snappizz) are two such people who are usually reachable via email or Slack. You can also reach out to the general developer community on a more public forum, such as the sc-dev mailing list.
 
@@ -51,9 +53,6 @@ For your first few reviews, a more experienced reviewer will look over your revi
 necessary feedback, and perform the final merge.
 
 ## Various instructions and guidelines
-
-Before beginning to review PRs, make sure you've reviewed the project documentation linked in
-"Prerequisites". Feel free to ask questions if anything seems unclear or incorrect.
 
 ### Using reviews
 
@@ -115,15 +114,15 @@ We use the [PR backlog](https://github.com/supercollider/supercollider/projects/
 
 ### Guideline: Ask questions
 
-If you don't know how to review a PR, or have a question about reviewing, ask a more experienced contributor! These are opportunities to improve our process and identity additional project issues or feature ideas.
+If you don't know how to review a PR, or have a question about reviewing, ask a more experienced contributor! These are opportunities to improve our process and identify additional project issues or feature ideas.
 
 ### Guideline: It's OK to make mistakes
 
-Pressing the "Merge" button can be pretty stressful the first times you go it. Fear not. Mistakes can happen. The main branches of the SuperCollider project are heavily protected against truly disastrous errors, and everything else is easily reversible.
+Pressing the dangerously green "Merge" button can be pretty stressful the first times you go it. Fear not. Mistakes can happen. The main branches of the SuperCollider project are heavily protected against truly disastrous errors, and everything else is easily reversible.
 
 ### Guideline: Assume good faith 
 
-Assume that a PR author is acting out of a genuine interest to improve this project. English may not be their first language, and so they may have difficulty understanding technical language or providing all the information we normally like to see in a PR. Always be patient and communicate transparently with PR authors. This applies even in cases where it is unlikely the PR will get merged.
+Assume that a PR author is acting out of a genuine interest to improve this project. They may not understand technical language or immediately know to provide all the information we normally like to see in a PR. In addition, English may not be their first language. Always be patient and communicate transparently with PR authors. This applies particularly in cases where it is unlikely the PR will get merged.
 
 ### Guideline: Stay on topic
 
