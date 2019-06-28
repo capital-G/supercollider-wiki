@@ -1,8 +1,7 @@
 Some message templates and reminders for how we do dev meetings. Edit at will.
 
-- if we don't have a regular time, send out a poll early in the week (Tuesday or early Wednesday)
+- send out a poll early in the week (Tuesday or early Wednesday)
 - announce the time on Thursday (or early Friday)
-- maybe do a reminder the day of or day before if you want
 - post minutes on GitHub and then to the list right after the meeting. (If the meeting was uneventful then it's okay to skip the list post, but do archive them on GitHub.)
 
 The announcements should be posted on sc-dev, Slack, and scsynth.org. Maybe Facebook and/or sc-users if we want more people to attend (i.e. we don't have anything important to talk about).
@@ -14,6 +13,8 @@ Make sure someone takes minutes! (Also mute your mic when typing so it doesn't d
 If there are any people new to the dev meetings, give them a warm welcome and have them introduce themselves, ask what they do with SC, etc.
 
 Usually there will be something to discuss. If not, go around and get a review of what everyone did in the past week of development, and see if that sparks any discussions.
+
+Meetings are **90 minutes long**. Be respectful of people's time and try not to go over that!
 
 # Templates
 
