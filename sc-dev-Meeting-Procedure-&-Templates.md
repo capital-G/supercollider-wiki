@@ -4,7 +4,9 @@ Some message templates and reminders for how we do dev meetings. Edit at will.
 - announce the time on Thursday (or early Friday)
 - post minutes on GitHub and then to the list right after the meeting. (If the meeting was uneventful then it's okay to skip the list post, but do archive them on GitHub.)
 
-The announcements should be posted on sc-dev, Slack, and scsynth.org. Maybe Facebook and/or sc-users if we want more people to attend (i.e. we don't have anything important to talk about).
+The announcements should be posted on sc-dev, Slack, and scsynth.org. Facebook and sc-users if we want more people to attend (i.e. we don't have anything super important to talk about).
+
+scsynth [time poll thread](https://scsynth.org/t/developer-meeting-polls/234/26) and [time announce thread](https://scsynth.org/t/dev-meetings-schedule/250/20).
 
 # Conducting meetings
 
