@@ -43,7 +43,7 @@ This is meant as a reference checklist of the bare minimum of things to check be
 
 1. It is important that we share basic assumptions to avoid unnecessary misunderstandings or disagreements during reviews, so please take some time to get yourself acquainted with the procedure.
 
-2. Reach out to an active project maintainer. Brian H (@brianlheim) and Nathan H (@snappizz) are two such people who are usually reachable via email or Slack. You can also reach out to the general developer community on a more public forum, such as the sc-dev mailing list.
+2. Reach out to an active project maintainer. Brian H (@brianlheim) and Nathan H (@snappizz) are two such people who are usually reachable via email or Slack. You can also reach out to the general developer community on the sc-dev mailing list.
 
 3. We'll add you to the Reviewers organization team.
 
@@ -57,13 +57,16 @@ necessary feedback, and perform the final merge.
 ### Using reviews
 
 When you leave a review, you have three options: "Comment", "Approve", "Request changes". If you
-have any request at all, including a request to rebase, a request for more information, or a request
-for code changes, **leave a "Request changes" review**. This makes it clear to other reviewers from
-the PR list page that the PR has already been addressed by a reviewer.
+have any request at all, including a request to rebase, a request for more documentation, or a request
+for code changes, **leave a "Request changes" review**.
 
 Give an "Approve" review only when you believe the PR is ready for merging.
 
-Do not use the "Comment" review option as a reviewer.
+Use the "Comment" review option for questions, concerns, and general commentary.
+
+### Merging
+
+New reviewers should not merge PRs. In general, each PR should be reviewed by at least one person and merged by a different person. If the PR is very trivial, one person can both review and merge. Examples of trivial PRs are typo fixes, formatting fixes, inter-branch merges (for example, 3.10 into develop) and cherry-pick branches ("cherry-pick #xyz onto 3.10"), code changes of a few lines that do not change functionality, and documentation improvements of a few lines.
 
 ### Using assignments
 
