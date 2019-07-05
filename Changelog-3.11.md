@@ -72,6 +72,8 @@ UGens: Fixed
 sclang: Added
 -----
 
+Ableton Link support is here! Check the LinkClock class for more information ([#4331](https://github.com/supercollider/supercollider/pull/4331), [#4340](https://github.com/supercollider/supercollider/pull/4340)).
+
 sclang: Changed
 -------
 
