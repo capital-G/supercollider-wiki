@@ -101,6 +101,8 @@ Class library: Removed
 Class library: Fixed
 -----
 
+**Breaking change:** `Color:asHSV` could sometimes return NaNs -- grayscale colors returned NaN hue, and black returned NaN hue and saturation. Zero values are now returned in these cases, as is the standard ([#4369](https://github.com/supercollider/supercollider/pull/4369)).
+
 IDE & SCDoc: Added
 -----
 
