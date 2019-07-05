@@ -54,6 +54,10 @@ scsynth and supernova: Removed
 scsynth and supernova: Fixed
 -----
 
+Fixed a supernova compilation issue on Boost 1.67 ([#4447](https://github.com/supercollider/supercollider/pull/4447)).
+
+Fixed server hangs happening in plugins employing SequencedCmd ([#4456](https://github.com/supercollider/supercollider/pull/4456)).
+
 UGens: Added
 -----
 
@@ -86,7 +90,9 @@ sclang: Removed
 sclang: Fixed
 -----
 
-The `mouseWheelAction` of `View` erroneously reported `xDelta` and `yDelta` to be 0 in some cases. This is fixed ([#4423](https://github.com/supercollider/supercollider/pull/4423)). 
+The `mouseWheelAction` of `View` erroneously reported `xDelta` and `yDelta` to be 0 in some cases. This is fixed ([#4423](https://github.com/supercollider/supercollider/pull/4423)).
+
+Fixed incorrect mathematics in `SimpleNumber:series` ([#4454](https://github.com/supercollider/supercollider/pull/4454)).
 
 Class library: Added
 -----
@@ -114,6 +120,12 @@ When changing the source of an input to a `NodeProxy`, discontinuities can happe
 The default recordings directory on Windows was the somewhat redundant `My Documents\SuperCollider\SuperCollider\Recordings`. The additional `SuperCollider` subdirectory has been removed ([#4420](https://github.com/supercollider/supercollider/pull/4420)).
 
 In Events where `strum` is set, the releases of notes was erroneously done in reverse order. This is fixed ([#4406](https://github.com/supercollider/supercollider/pull/4406)).
+
+Fix `EnvirGui` always creating a `SkipJack` due to incorrect logic concerning the `makeSkip` flag ([#4376](https://github.com/supercollider/supercollider/pull/4376)).
+
+`SkipJack` would not remove itself properly when stopped by its stopTest. This is fixed ([#4376](https://github.com/supercollider/supercollider/pull/4376)).
+
+Fixed class library compilation issues on Qt-less sclang installations ([#4219](https://github.com/supercollider/supercollider/pull/4219)).
 
 IDE & SCDoc: Added
 -----
