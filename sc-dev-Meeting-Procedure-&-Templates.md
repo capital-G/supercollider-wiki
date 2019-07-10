@@ -2,7 +2,7 @@ Some message templates and reminders for how we do dev meetings. Edit at will.
 
 - send out a poll early in the week (Tuesday or early Wednesday)
 - announce the time on Thursday (or early Friday)
-- post minutes on GitHub and then to the list right after the meeting. (If the meeting was uneventful then it's okay to skip the list post, but do archive them on GitHub.)
+- post minutes on GitHub and then to the list right after the meeting. Always post minutes, even if uneventful.
 
 The announcements should be posted on sc-dev, Slack, and scsynth.org. Facebook and sc-users if we want more people to attend (i.e. we don't have anything super important to talk about).
 
