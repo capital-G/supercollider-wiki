@@ -148,7 +148,7 @@ If building SuperCollider for the first time, run:
   $ sudo ldconfig
 ```
 
-## Uninstalling SuperCollider
+### Uninstalling SuperCollider
 
 From within you **supercollider/build** folder, run the following:
 ```
@@ -156,7 +156,8 @@ From within you **supercollider/build** folder, run the following:
 ```
 
 
-#### Installing the sc3-plugins
+### Installing the sc3-plugins
+
 The sc3-plugins are an optional set of extension plugins for the SuperCollider3 audio synthesis server. These third-party plugins provide additional synthesis, analysis, and other capabilities for the sound server. 
 
 Please note that these UGens are, on average, less stable and well-maintained than the core collection included with SuperCollider. Use at your own risk!
