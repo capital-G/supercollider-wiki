@@ -249,4 +249,4 @@ To uninstall the sc3-plugins, from the **sc3-plugins/build** directory, run the 
 
 ## Getting help
 
-If you don't have any luck with the above instructions, feel free to ask for help on the [SuperCollider Mailing List](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), the [SuperCollider Slack](https://scsynth.slack.com), or the [SuperCollider Forum](https://scsynth.org).
+If you don't have any luck with the above instructions, feel free to ask for help on the [SuperCollider Mailing List](https://www.birmingham.ac.uk/facilities/ea-studios/research/supercollider/mailinglist.aspx), the [SuperCollider Slack](https://scsynth.slack.com), or the [SuperCollider Forum](https://scsynth.org).
