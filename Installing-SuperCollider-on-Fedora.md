@@ -83,18 +83,18 @@ Simply clone the SuperCollider git repository to a sensible location on your sys
 
 With the `--recurse-submodules` flag, the repository's submodules will also be cloned.
 
-Cloning the repository will create a folder called **supercollider** containing the source code.
+Once the cloning is finished, there should be a new folder called **supercollider** containing the source code. Navigate into this folder to proceed with the build.
 
-#### Getting the submodules
+##### A Note on the Submodules
 
-If you cloned the SuperCollider repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within the **supercollider** directory, run the following:
+If you cloned the SuperCollider repository without the `--recurse-submodules` flag, you will need to manually initialise and update the submodules. From within the **supercollider** source directory, run the following:
 ```
   $ git submodule update --init
 ```
 
 #### Running cmake
 
-Create a directory inside the **supercollider** folder called **build** and move to it:
+Create a directory inside the **supercollider** folder called **build** and move into it:
 ```
   $ mkdir build && cd build
 ```
