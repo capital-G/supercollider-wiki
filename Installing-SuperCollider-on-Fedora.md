@@ -2,7 +2,7 @@ SuperCollider is not available within the official Fedora repositories. There ar
 
 ### Install via Planet CCRMA
 
-Please see the [Planet CCRMA website](http://ccrma.stanford.edu/planetccrma/software/planetccrma.html) for instructions on how to add this repository to your system. The SuperCollider packages available in this repository can be installed using `dnf install`.
+Please see the [Planet CCRMA](http://ccrma.stanford.edu/planetccrma/software/planetccrma.html) website for instructions on how to add this repository to your system. The SuperCollider packages available in this repository can be installed using `dnf install`.
 
 ### Building from source
 
