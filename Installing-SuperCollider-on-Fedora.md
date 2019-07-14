@@ -237,7 +237,7 @@ Enter the following into the blank text window and run it:
 
 You should hear a buzzing sound. If you don't, double check and attempt the instructions again. 
 
-## Uninstalling the sc3-plugins
+### Uninstalling the sc3-plugins
 
 To uninstall the sc3-plugins, from the **sc3-plugins/build** directory, run the following:
 
