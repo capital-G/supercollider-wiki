@@ -73,7 +73,7 @@ $ cat /etc/security/limits.d/95-jack.conf
 
 Restart your computer after completing the above.
 
-## Getting the SuperCollider source code
+#### Getting the SuperCollider source code
 
 Simply clone the SuperCollider git repository to a sensible location on your system:
 ```
