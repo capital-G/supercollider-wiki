@@ -1,3 +1,20 @@
+2019-07-14
+==========
+
+Members Present: Patrick Dupuis, Nathan Ho, Geoffroy Montel, Marcin Pączkowski, James Surgenor
+
+Geoffroy worked on fixing the Cmd+Q problem on macOS but has not yet been successful in debugging it (#4300).
+
+Following last week's discussion, Marcin split his huge PR into a bunch of smaller PRs and will be responding to the code review Brian gave in #4475.
+
+Patrick tested #4267 (SCIDE crash when opening up a second simultaneous instance, JavaScript errors when running HelpBrowser outside the IDE). He's been investigating HelpBrowser in command line sclang, but #4267 doesn't fix it. He also went through the guide on the wiki for building SC on Fedora and updated it.
+
+James has been working on fuzzy array comparisons pull request.
+
+3.10.3 drags on. The set of changes in the changelog is not particularly substantial, but code signing issues on macOS *are* potentially urgent enough for 3.10.3. We also discussed similar permissions-related issues on Windows, which Geoffroy has been looking into (https://github.com/supercollider/supercollider/issues/4368).
+
+Nathan is halting the RFC proposal until 3.10.3 is out.
+
 2019-07-07
 ==========
 
