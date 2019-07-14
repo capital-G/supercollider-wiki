@@ -33,11 +33,13 @@ The following packages are required and are available in the Fedora repositories
 * qt5-qtwebengine-devel
 * qt5-qtwebsockets-devel
 * qt5-qtsvg-devel 
-* emacs  (optional)
-* qjackctl (optional)
-* ccache (optional)
 
-The required packages may be installed with the following command;
+The following packages are optional:
+* emacs
+* qjackctl
+* ccache
+
+The required and optional packages listed above may be installed with the following command;
 ```
     sudo dnf install gcc gcc-c++ cmake git jack-audio-connection-kit-devel \
     libsndfile-devel fftw-devel libXt-devel libX11-devel boost-devel alsa-lib-devel \
