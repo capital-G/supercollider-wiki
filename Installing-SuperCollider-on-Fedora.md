@@ -10,7 +10,7 @@ SuperCollider's [Linux Readme](https://github.com/supercollider/supercollider/bl
 
 #### Installing dependencies
 
-The following packages are required and are available through `dnf` (or `yum`).
+The following packages are required and are available in the Fedora repositories.
 
 * gcc
 * gcc-c++
