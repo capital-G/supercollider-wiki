@@ -85,8 +85,6 @@ With the `--recurse-submodules` flag, the repository's submodules will also be c
 
 Once the cloning is finished, there should be a new folder called **supercollider** containing the source code. Navigate into this folder to proceed with the build.
 
-##### A Note on the Submodules
-
 If you cloned the SuperCollider repository without the `--recurse-submodules` flag, you will need to manually initialise and update the submodules. From within the **supercollider** source directory, run the following:
 ```
   $ git submodule update --init
@@ -175,9 +173,7 @@ With the `--recurse-submodules` flag, the repository's submodules will also be c
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
 
-#### Getting the submodules
-
-If you cloned the sc3-plugins repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within **sc3-plugins**, run the following:
+If you cloned the sc3-plugins repository without the `--recurse-submodules` flag, you will need to manually initialise and update the submodules. From within **sc3-plugins**, run the following:
 
 ```
   $ git submodule update --init
