@@ -55,20 +55,21 @@ You may have issues running JACK with real time scheduling privileges on Fedora.
 First, be sure to add your user to the **jackuser** group:
 
 ```
-$ sudo usermod -a -G jackuser YOUR_USERNAME
+  $ sudo usermod -a -G jackuser YOUR_USERNAME
 ```
 
 Second, comment out the section that relates to the **pulse-rt** group in `/etc/security/limits.d/95-jack.conf`. The config file should like something like this:
 
 ```
-$ cat /etc/security/limits.d/95-jack.conf
-# Default limits for users of jack-audio-connection-kit
+  $ cat /etc/security/limits.d/95-jack.conf
 
-@jackuser - rtprio 80
-@jackuser - memlock unlimited 
+  # Default limits for users of jack-audio-connection-kit
 
-# @pulse-rt - rtprio 20
-# @pulse-rt - nice -20
+  @jackuser - rtprio 80
+  @jackuser - memlock unlimited 
+
+  # @pulse-rt - rtprio 20
+  # @pulse-rt - nice -20
 ```
 
 Restart your computer after completing the above.
@@ -77,10 +78,10 @@ Restart your computer after completing the above.
 
 Simply clone the SuperCollider git repository to a sensible location on your system:
 ```
-git clone --recursive https://github.com/supercollider/supercollider.git
+  $ git clone --recurse-submodules https://github.com/supercollider/supercollider.git
 ```
 
-With the `--recursive` flag, the repository's submodules are also cloned.
+With the `--recurse-submodules` flag, the repository's submodules will also be cloned.
 
 Cloning the repository will create a folder called **supercollider** containing the source code.
 
@@ -88,70 +89,71 @@ Cloning the repository will create a folder called **supercollider** containing 
 
 If you cloned the SuperCollider repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within the **supercollider** directory, run the following:
 ```
-git submodule update --init
+  $ git submodule update --init
 ```
 
 #### Running cmake
 
 Create a directory inside the **supercollider** folder called **build** and move to it:
 ```
-mkdir build && cd build
+  $ mkdir build && cd build
 ```
 
 From within **supercollider/build**, run the following:
 ```
-cmake  ..
+  $ cmake  ..
 ```
 (Notice the space between `cmake` and the dots.)
 
 Running the following will post a list of all available flags that can be set in order to configure your build.
 ```
-cmake -L ..
+  $ cmake -L ..
 ```
 
 For example, if you wish to build SuperCollider without emacs support, run:
 ```
-cmake -DSC_EL=OFF ..
+  $ cmake -DSC_EL=OFF ..
 ```
 
 For a release type build, run:
 ```
-cmake -DCMAKE_BUILD_TYPE=Release ..
+  $ cmake -DCMAKE_BUILD_TYPE=Release ..
 ```
 
 For a native build, run:
 ```
-cmake -DNATIVE=ON ..
+  $ cmake -DNATIVE=ON ..
 ```
 
 It's possible to set multiple flags at once like so:
 ```
-cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
+  $ cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
 ```
 
 #### Building and Installing
 
 Use the following commands to build and install SuperCollider:
 ```
-make
-sudo make install
+  $ make
+  $ sudo make install
 ```
 
 If your CPU has multiple cores, you can take advantage of make's `-j` option. For example, a CPU containing 4 cores can run:
 ```
-make -j4
-sudo make install
+  $ make -j4
+  $ sudo make install
 ```
 
 If building SuperCollider for the first time, run:
 ```
-sudo ldconfig
+  $ sudo ldconfig
 ```
 
 ## Uninstalling SuperCollider
+
 From within you **supercollider/build** folder, run the following:
 ```
-sudo make uninstall
+  $ sudo make uninstall
 ```
 
 
@@ -166,73 +168,85 @@ Please note that these UGens are, on average, less stable and well-maintained th
 #### Getting the source code for the sc3-plugins
 Simply clone the sc3-plugins git repository to a sensible location on your system:
 ```
-git clone --recursive https://github.com/supercollider/sc3-plugins.git
+  $ git clone --recurse-submodules https://github.com/supercollider/sc3-plugins.git
 ```
 
-With the `--recursive` flag, the repository's submodules are also cloned.
+With the `--recurse-submodules` flag, the repository's submodules will also be cloned.
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
 
 #### Getting the submodules
+
 If you cloned the sc3-plugins repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within **sc3-plugins**, run the following:
+
 ```
-git submodule update --init
+  $ git submodule update --init
 ```
 
 #### Running cmake
+
 Create a directory inside the **sc3-plugins** folder called **build** and move to it:
 ```
-mkdir build && cd build
+  $ mkdir build && cd build
 ```
-
 From within **sc3-plugins/build**, run the following command, replacing `/path/to/your/supercollider/source` with the path to the SuperCollider source code on your system:
-```
-cmake -DSC_PATH=/path/to/your/supercollider/source ..
-```
 
-Running the following will post a list of all available flags that can be set in order to configure your build.
 ```
-cmake -L ..
+  $ cmake -DSC_PATH=/path/to/your/supercollider/source ..
+```
+Running the following will post a list of all available flags that can be set in order to configure your build.
+
+```
+  $ cmake -L ..
 ```
 
 It's a good idea to set the cmake flags `CMAKE_BUILD_TYPE` and `NATIVE` to the same values that where used when building SuperCollider. In the end, your cmake configuration command might look something like this:
+
 ```
-cmake -DSC_PATH=/path/to/your/supercollider/source -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON ..
+  $ cmake -DSC_PATH=/path/to/your/supercollider/source -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON ..
 ```
 
 #### Finally, building the plugins
+
 From within **sc3-plugins/build**, run the following:
+
 ```
-make
-sudo make install
+  $ make
+  $ sudo make install
 ```
 
 If your CPU has multiple cores, you can take advantage of make's `-j` option. For example, a CPU containing 4 cores can run:
+
 ```
-make -j4
-sudo make install
+  $ make -j4
+  $ sudo make install
 ```
 
 If building the sc3-plugins for the first time, run:
+
 ```
-sudo ldconfig
+  $ sudo ldconfig
 ```
 
 #### Checking the installation worked
 If you have the IDE open, close it. Now open it again and boot the server.
 
 Enter the following into the blank text window and run it:
+
 ```
-{VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
+  {VOSIM.ar(Impulse.ar(100), 500, 3, 0.99)}.play
 ```
 
 You should hear a buzzing sound. If you don't, double check and attempt the instructions again. 
 
 ## Uninstalling the sc3-plugins
+
 To uninstall the sc3-plugins, from the **sc3-plugins/build** directory, run the following:
+
 ```
-sudo make uninstall
+  $ sudo make uninstall
 ```
 
 ## Getting help
-If you still don't have any luck with the above, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
+
+If you don't have any luck with the above instructions, feel free to ask for help on the [SuperCollider Mailing List](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), the [SuperCollider Slack](https://scsynth.slack.com), or the [SuperCollider Forum](https://scsynth.org).
