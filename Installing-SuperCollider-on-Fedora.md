@@ -4,7 +4,7 @@ SuperCollider is not available within the official Fedora repositories. There ar
 
 ## Planet CCRMA
 
-Planet CCRMA documentation is not always up to date, here is an example installing SuperCollider on Fedora 25.
+Here's an example installing SuperCollider on Fedora 25 using the Planet CCRMA repositories.
 
 Install the repository package:
 
