@@ -1,8 +1,8 @@
-# Installing SuperCollider on Fedora
+## Installing SuperCollider on Fedora
 
 SuperCollider is not available within the official Fedora repositories. There are two ways to install SuperCollider: using the Stanford [Planet CCRMA repo](http://ccrma.stanford.edu/planetccrma/software/) or building it from source.
 
-## Planet CCRMA
+### Planet CCRMA
 
 Here's an example installing SuperCollider on Fedora 25 using the Planet CCRMA repositories.
 
@@ -16,11 +16,11 @@ Install supercollider:
 
     # dnf install -y supercollider supercollider-emacs supercollider-vim supercollider-sc3-plugins
 
-## Install from source
+### Install from source
 
 SuperCollider's [Linux Readme](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md) has all the information you need to build SuperCollider from source. The following should help you install the required dependencies and build SuperCollider on a recent Fedora system.
 
-## Installing dependencies
+#### Installing dependencies
 
 The following packages are required and are available through `dnf` (or `yum`).
 
@@ -58,7 +58,7 @@ The required packages may be installed with the following command;
     qt5-qtwebsockets-devel qt5-qtsvg-devel emacs qjackctl ccache
 ```
 
-## A note about JACK 
+#### A note about JACK 
 
 You may have issues running JACK with real time scheduling privileges on Fedora. The following should allow you to run JACK in Realtime mode.
 
@@ -94,14 +94,14 @@ With the `--recursive` flag, the repository's submodules are also cloned.
 
 Cloning the repository will create a folder called **supercollider** containing the source code.
 
-### Getting the submodules
+#### Getting the submodules
 
 If you cloned the SuperCollider repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within the **supercollider** directory, run the following:
 ```
 git submodule update --init
 ```
 
-## Running cmake
+#### Running cmake
 
 Create a directory inside the **supercollider** folder called **build** and move to it:
 ```
@@ -139,7 +139,7 @@ It's possible to set multiple flags at once like so:
 cmake -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON -DSC_EL=OFF ..
 ```
 
-## Building and Installing
+#### Building and Installing
 
 Use the following commands to build and install SuperCollider:
 ```
@@ -165,7 +165,7 @@ sudo make uninstall
 ```
 
 
-## Installing the sc3-plugins
+#### Installing the sc3-plugins
 The sc3-plugins are an optional set of extension plugins for the SuperCollider3 audio synthesis server. These third-party plugins provide additional synthesis, analysis, and other capabilities for the sound server. 
 
 Please note that these UGens are, on average, less stable and well-maintained than the core collection included with SuperCollider. Use at your own risk!
@@ -173,7 +173,7 @@ Please note that these UGens are, on average, less stable and well-maintained th
 **Note:** Extensions for the SuperCollider programming language are different. They are collected within the **Quarks** packaging system included in SuperCollider.
  
 
-### Getting the source code for the sc3-plugins
+#### Getting the source code for the sc3-plugins
 Simply clone the sc3-plugins git repository to a sensible location on your system:
 ```
 git clone --recursive https://github.com/supercollider/sc3-plugins.git
@@ -183,13 +183,13 @@ With the `--recursive` flag, the repository's submodules are also cloned.
 
 Cloning the repository will create a folder called **sc3-plugins** containing the source code.
 
-### Getting the submodules
+#### Getting the submodules
 If you cloned the sc3-plugins repository without the `--recursive` flag, you will need to manually initialise and update the submodules. From within **sc3-plugins**, run the following:
 ```
 git submodule update --init
 ```
 
-### Running cmake
+#### Running cmake
 Create a directory inside the **sc3-plugins** folder called **build** and move to it:
 ```
 mkdir build && cd build
@@ -210,7 +210,7 @@ It's a good idea to set the cmake flags `CMAKE_BUILD_TYPE` and `NATIVE` to the s
 cmake -DSC_PATH=/path/to/your/supercollider/source -DCMAKE_BUILD_TYPE=Release -DNATIVE=ON ..
 ```
 
-### Finally, building the plugins
+#### Finally, building the plugins
 From within **sc3-plugins/build**, run the following:
 ```
 make
@@ -228,7 +228,7 @@ If building the sc3-plugins for the first time, run:
 sudo ldconfig
 ```
 
-### Checking the installation worked
+#### Checking the installation worked
 If you have the IDE open, close it. Now open it again and boot the server.
 
 Enter the following into the blank text window and run it:
@@ -244,5 +244,5 @@ To uninstall the sc3-plugins, from the **sc3-plugins/build** directory, run the 
 sudo make uninstall
 ```
 
-# Getting help
+## Getting help
 If you still don't have any luck with the above, ask a question [here](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/SuperCollider-Users-New-Use-this-f2676391.html), providing as much information as you can.
