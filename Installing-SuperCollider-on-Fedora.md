@@ -1,22 +1,10 @@
-## Installing SuperCollider on Fedora
+SuperCollider is not available within the official Fedora repositories. There are two ways to install SuperCollider: using the Stanford [Planet CCRMA repo](http://ccrma.stanford.edu/planetccrma/software/planetccrma.html) or building it from source.
 
-SuperCollider is not available within the official Fedora repositories. There are two ways to install SuperCollider: using the Stanford [Planet CCRMA repo](http://ccrma.stanford.edu/planetccrma/software/) or building it from source.
+### Install via Planet CCRMA
 
-### Planet CCRMA
+Please see the [Planet CCRMA website](http://ccrma.stanford.edu/planetccrma/software/planetccrma.html) for instructions on how to add this repository to your system. The SuperCollider packages available in this repository can be installed using `dnf install`.
 
-Here's an example installing SuperCollider on Fedora 25 using the Planet CCRMA repositories.
-
-Install the repository package:
-
-    # rpm -Uvh http://ccrma.stanford.edu/planetccrma/mirror/fedora/linux/planetccrma/25/i386/planetccrma-repo-1.1-3.fc25.ccrma.noarch.rpm
-
-Install supercollider:
-
-    # dnf search supercollider
-
-    # dnf install -y supercollider supercollider-emacs supercollider-vim supercollider-sc3-plugins
-
-### Install from source
+### Building from source
 
 SuperCollider's [Linux Readme](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md) has all the information you need to build SuperCollider from source. The following should help you install the required dependencies and build SuperCollider on a recent Fedora system.
 
