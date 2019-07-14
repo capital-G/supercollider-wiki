@@ -15,6 +15,7 @@ The following packages are required and are available in the Fedora repositories
 * gcc
 * gcc-c++
 * cmake
+* make
 * git
 * alsa-lib-devel 
 * jack-audio-connection-kit-devel
@@ -41,7 +42,7 @@ The following packages are optional:
 
 The required and optional packages listed above may be installed with the following command;
 ```
-  $ sudo dnf install gcc gcc-c++ cmake git jack-audio-connection-kit-devel          \
+  $ sudo dnf install gcc gcc-c++ cmake make git jack-audio-connection-kit-devel     \
     libsndfile-devel fftw-devel libXt-devel libX11-devel boost-devel alsa-lib-devel \
     systemd-devel libatomic avahi-devel qt5-qtlocation-devel qt5-qtsensors-devel    \
     readline-devel qt5-qtwebengine-devel qt5-qttools-devel                          \
