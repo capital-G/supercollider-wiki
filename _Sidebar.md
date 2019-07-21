@@ -3,13 +3,15 @@
 * [Home](https://github.com/supercollider/supercollider/wiki)
 * [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
 
-**Developer Portal**
+**Developer Guides**
 
 * [Guide for New Contributors](https://github.com/supercollider/supercollider/wiki/Guide-for-New-Contributors)
-* [Developer reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)
 * [Generating crash reports](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports)
 * [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
+
+**[Developer Reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)**
+
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
 * [C++ code style guidelines](https://github.com/supercollider/supercollider/wiki/Cpp-code-style-guidelines)
