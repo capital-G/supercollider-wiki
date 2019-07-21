@@ -3,7 +3,7 @@
 * [Home](https://github.com/supercollider/supercollider/wiki)
 * [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
 
-**Contributor Portal**
+**Developer Portal**
 
 * [Guide for New Contributors](https://github.com/supercollider/supercollider/wiki/Guide-for-New-Contributors)
 * [Developer reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)
