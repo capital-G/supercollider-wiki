@@ -104,4 +104,4 @@ More information can be found on the [git workflow wiki page](https://github.com
 
 You can also refer to Github's guide to [forking a repository](https://help.github.com/articles/fork-a-repo/) and to [syncing a fork](https://help.github.com/articles/syncing-a-fork/).
 
-Instructions on adding translation files for the IDE can be found in [DEVELOPING.md](./DEVELOPING.md).
+Instructions on adding translation files for the IDE can be found in the [Developer Reference](https://github.com/supercollider/supercollider/wiki/Developer-reference) (soon to be moved, please update that link when it does move...).
