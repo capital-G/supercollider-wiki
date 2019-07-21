@@ -24,18 +24,6 @@ If you're new to this project, check out the issues tagged ["good first issue"](
 
 If you'd like to learn more about contributing to open source projects in general, the [Guide to Idiomatic Contributing](https://github.com/jonschlinkert/idiomatic-contributing) has a lot of useful information.
 
-### Showing support for SuperCollider
-
-Please keep in mind that open source software is built by people like you, who spend their free time creating things the rest the community can use.
-
-Don't have time to contribute? No worries, here are some other ways to show your support for SuperCollider:
-
-- [Star the project](https://github.com/supercollider/supercollider) on Github
-- Send a message on the [sc-dev](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/mailing_list/MailingListOptions.jtp?forum=2681767) mailing list
-- Join us on [Slack](https://slackin-apxbmqnfui.now.sh/)
-- Join the [Facebook group](https://www.facebook.com/groups/supercollider/)
-- Tweet your support for SuperCollider
-
 ## Issues
 
 ### Before creating an issue
