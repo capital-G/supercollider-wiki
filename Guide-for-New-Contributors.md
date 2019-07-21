@@ -28,22 +28,23 @@ If you'd like to learn more about contributing to open source projects in genera
 
 ### Before creating an issue
 
-Try to follow these guidelines:
+The purpose of the issue tracker is not just to report that there's a problem with SuperCollider, but to effectively communicate what the problem is so that others can easily help reach a resolution.
 
-- **Investigate the issue**: What is the minimum effort or code required to produce the issue? Does it happen every time? Can you get it to happen on someone else's computer? Someone else's operating system?
-- **See if a ticket already exists**: Search SuperCollider's [open issues](https://github.com/supercollider/supercollider/issues). If an issue for your problem already exists, leave your comments in the issue's thread. Make sure you give your version and system info plus any information that you don't see already noted in the ticket.
-- **Ask the community**: If you're unsure about how to investigate or recreate an issue, it may help to ask the [sc-dev](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/mailing_list/MailingListOptions.jtp?forum=2681767) or [sc-users](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/mailing_list/MailingListOptions.jtp?forum=2676391) mailing lists. You can also try asking on [Slack](https://scsynth.slack.com) or on the [Facebook group](https://www.facebook.com/groups/supercollider/).
-- **Proceed in creating your issue**: Be sure to create your issue in the appropriate repository. Note that [sc3-plugins](https://github.com/supercollider/sc3-plugins) are maintained in their own repository separate from SuperCollider.
-- **One ticket at a time**: If you have multiple issues to report, please open separate tickets for each one.
+**Investigate the issue**: What is the minimum effort or code required to produce the issue? Does it happen every time? Can you get it to happen on someone else's computer? Someone else's operating system?
+
+**See if a ticket already exists**: Search SuperCollider's [open issues](https://github.com/supercollider/supercollider/issues). If an issue for your problem already exists, it may be appropriate to leave a polite comment stating that you can reproduce it on your system, plus any additional info that isn't already known in the issue thread.
+
+**Ask the community**: If you feel that you need some help investigating the issue, it may help to ask sc-dev, sc-users, or Slack.
+
+**Fill out the issue template**: Once you feel that you have information for an effective issue, file an issue on the GitHub issue tracker and fill out the template. Please don't erase the template — it's there to help structure your report effectively.
+
+Be sure to create your issue in the appropriate repository. Note that [sc3-plugins](https://github.com/supercollider/sc3-plugins) are maintained in their own repository separate from SuperCollider.
+
+**One ticket at a time**: If you have multiple issues to report, please open separate tickets for each one.
 
 ### Creating an issue
 
-Please be as descriptive as possible when creating an issue. In order for us to better answer your questions and effectively address your issue, please provide the following information:
-
-- **version**: Note the version of SuperCollider are you using
-- **system**: Note your operating system and version
-- **extensions, plugins, helpers, etc.** (if applicable): List any extensions or modifications you are using
-- **error messages**: Paste all error messages *in their entirety* into the issue, or use a [gist](https://gist.github.com/) if the messages are very long.
+We have provided an issue template for you to fill out so that the basic gist of the issue is easily determined at a glance. Please don't erase the template. It's there for a reason.
 
 When an issue involves a crashing or unresponsive executable and you don't know why, providing a crash report can give developers a very helpful first step toward resolving the problem. See "Generating a crash report" below for instructions for your platform.
 
