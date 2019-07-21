@@ -3,20 +3,10 @@
 * [Home](https://github.com/supercollider/supercollider/wiki)
 * [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
 
-**Guides**
+**Contributor Portal**
 
-Installation
-
-* [Fedora](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Fedora)
-* [Ubuntu, from source](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-from-source-on-Ubuntu)
-* [Ubuntu, configuration](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Ubuntu-systems)
-
-Other
-
-* [Recording in SC](https://github.com/supercollider/supercollider/wiki/Recording-in-SuperCollider-(WIP))
-
-**Developer info**
-
+- [Guide for New Contributors](https://github.com/supercollider/supercollider/wiki/Guide-for-New-Contributors)
+- [Developer reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
@@ -33,3 +23,10 @@ Other
 * [Notes for refactoring the server implementation](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-notes-for-refactoring-the-server-implementation)
 * [PlayBuf 2017](https://github.com/supercollider/supercollider/wiki/PlayBuf-2017)
 * [Undocumented classes and methods list](https://github.com/supercollider/supercollider/wiki/Undocumented-classes-and-methods-list)
+
+**User Guides**
+
+* [Fedora](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Fedora)
+* [Ubuntu, from source](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-from-source-on-Ubuntu)
+* [Ubuntu, configuration](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Ubuntu-systems)
+* [Recording in SC](https://github.com/supercollider/supercollider/wiki/Recording-in-SuperCollider-(WIP))
