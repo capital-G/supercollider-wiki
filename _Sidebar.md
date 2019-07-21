@@ -1,11 +1,7 @@
-**Main pages**
-
-* [Home](https://github.com/supercollider/supercollider/wiki)
-* [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
+**[Main Page](https://github.com/supercollider/supercollider/wiki)**
 
 **Developer Guides**
 
-* [Guide for New Contributors](https://github.com/supercollider/supercollider/wiki/Guide-for-New-Contributors)
 * [Generating crash reports](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports)
 * [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
@@ -27,6 +23,7 @@
 * [Notes for refactoring the server implementation](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-notes-for-refactoring-the-server-implementation)
 * [PlayBuf 2017](https://github.com/supercollider/supercollider/wiki/PlayBuf-2017)
 * [Undocumented classes and methods list](https://github.com/supercollider/supercollider/wiki/Undocumented-classes-and-methods-list)
+* [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
 
 **User Guides**
 
