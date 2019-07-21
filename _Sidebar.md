@@ -8,6 +8,7 @@
 * [Guide for New Contributors](https://github.com/supercollider/supercollider/wiki/Guide-for-New-Contributors)
 * [Developer reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)
 * [Generating crash reports](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports)
+* [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
