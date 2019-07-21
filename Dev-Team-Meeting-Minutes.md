@@ -1,3 +1,20 @@
+2019-07-21
+==========
+
+Members Present: Geoffroy Montel, James Surgenor, Marcin Paczkowski, Nathan Ho, Patrick Dupuis, Tejaswi Prakash
+
+Updates:
+
+- Geoffroy is still working on the Cmd+Q bug on macOS.
+- Patrick tested out the WebEngine PR on both his laptop and RPi, made a pull request #4488 (fixing an error in HelpBrowser.instance in sclang), and updated #4473 (Linux README).
+- Marcin is working on the feedback that Brian gave him on the PortAudio device selection PR.
+- James hasn't done anything but hopes to help with Marcin's work this week.
+- Nathan worked on moving the project docs to the wiki.
+
+We discussed the maintenance status of sc3-plugins.
+
+Nathan suggested the idea of a "backlog board" containing a list of issues of interest, ordered by priority, which is regularly cleaned up.
+
 2019-07-14
 ==========
 
