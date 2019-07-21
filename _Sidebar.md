@@ -5,8 +5,8 @@
 
 **Contributor Portal**
 
-- [Guide for New Contributors](https://github.com/supercollider/supercollider/wiki/Guide-for-New-Contributors)
-- [Developer reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)
+* [Guide for New Contributors](https://github.com/supercollider/supercollider/wiki/Guide-for-New-Contributors)
+* [Developer reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
