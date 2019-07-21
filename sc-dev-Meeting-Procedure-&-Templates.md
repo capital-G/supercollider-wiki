@@ -14,7 +14,7 @@ Make sure someone takes minutes! (Also mute your mic when typing so it doesn't d
 
 If there are any people new to the dev meetings, give them a warm welcome and have them introduce themselves, ask what they do with SC, etc.
 
-Usually there will be something to discuss. If not, go around and get a review of what everyone did in the past week of development, and see if that sparks any discussions.
+Typically (unless there is something more pressing) we kick off by having everyone summarize what they did in the past week of development, and see if that sparks any discussions.
 
 Meetings are **90 minutes long**. Be respectful of people's time and try not to go over that!
 
@@ -22,6 +22,7 @@ Meetings are **90 minutes long**. Be respectful of people's time and try not to 
 
 ## Poll
 
+```
 SUBJECT: sc-dev Meeting Time Poll
 
 Hey all,
@@ -34,14 +35,16 @@ DOODLE_LINK
 
 Regards,
 UR_NAME
+```
 
 ## Announce
 
+```
 SUBJECT: sc-dev Meeting WHEN_IS_IT
 
 Hey all,
 
-The next developer meeting will be on DAY_O_WEEK, MONTH DAY, at UTC_TIME UTC = EST_TIME Eastern = PST_TIME Pacific.
+The next developer meeting will be on DAY_O_WEEK, MONTH DAY, at UTC_TIME UTC = EST_TIME Eastern = PST_TIME Pacific. The meeting will be 90 minutes long.
 
 Topics to discuss include TOPICS, and recent issues and pull requests. Everyone with an interest in improving SuperCollider is welcome to attend!
 
@@ -50,9 +53,11 @@ Dev meetings are held on Skype. If you aren't already in the group, please send 
 Regards,
 
 UR_NAME
+```
 
 ## Remind
 
+```
 SUBJECT: sc-dev Meeting WHEN_IS_IT - Reminder
 
 Hey all,
@@ -66,9 +71,11 @@ Dev meetings are held on Skype. If you aren't already in the group, please send 
 Regards,
 
 UR_NAME
+```
 
 ## Minutes
 
+```
 SUBJECT: sc-dev Meeting Minutes
 Hey all,
 
@@ -87,3 +94,4 @@ sc-dev Meeting DATE Minutes:
 POST_MINUTES_HERE
 
 ⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+```
