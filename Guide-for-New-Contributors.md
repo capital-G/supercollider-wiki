@@ -59,4 +59,8 @@ Here are some tips for creating idiomatic issues. Taking just a little bit extra
 
 ## Pull Requests
 
-Graciously accepted. Please see our guide: [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests).
+Graciously accepted.
+
+SuperCollider uses the [git-flow](https://nvie.com/posts/a-successful-git-branching-model/) branching model. We use the `develop` branch for new features, deprecations, and breaking changes, and we use the `3.10` branch for bug fixes for the next 3.10.x patch release that have no chance of breaking anything.
+
+If you aren't too familiar with git, please see our guide: [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests).
