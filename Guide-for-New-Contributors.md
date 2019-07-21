@@ -1,5 +1,7 @@
 First and foremost, thank you! We appreciate that you want to contribute to SuperCollider. Your time is valuable, and your contributions mean a lot to us.
 
+This page is the new home for the document formerly known as `CONTRIBUTING.md`.
+
 ## Joining the Community
 
 SuperCollider users and developers communicate on a number of different channels. Here's how to access them:
