@@ -1,6 +1,16 @@
 First and foremost, thank you! We appreciate that you want to contribute to SuperCollider. Your time is valuable, and your contributions mean a lot to us.
 
-#### What does "contributing" mean?
+## Joining the Community
+
+SuperCollider users and developers communicate on a number of different channels. Here's how to access them:
+
+- [Sign up for a GitHub account](https://github.com/signup/free) and give us a star.
+- [Join the sc-users and sc-dev mailing lists](https://www.birmingham.ac.uk/facilities/ea-studios/research/supercollider/mailinglist.aspx).
+- [Join the forums](https://scsynth.org/) for a more modern alternative to the listservs.
+- [Join our Slack channel](https://join.slack.com/t/scsynth/shared_invite/enQtMzk3OTY3MzE0MTAyLWY1ZGE1MTJjYmI5NTRkZjFmNjZmNmYxOWI0NDZkNjdkMzdkNjgxNTJhZGVlOTEwYjdjMDY5OWM0ZTA4NWFiOGY). It's not mandatory, but it's very convenient for talking to other devs!
+- Watch the above channels for announcements of our weekly-ish developer calls on Skype. Everyone is welcome to join them!
+
+## What does "contributing" mean?
 
 Creating an issue is the simplest form of contributing to a project. But there are many ways to contribute, including the following:
 
@@ -12,24 +22,19 @@ Creating an issue is the simplest form of contributing to a project. But there a
 
 If you're new to this project, check out the issues tagged ["good first issue"](https://github.com/supercollider/supercollider/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) – fixing one of these is a great way to get started as a contributor!
 
-If you'd like to learn more about contributing in general, the [Guide to Idiomatic Contributing](https://github.com/jonschlinkert/idiomatic-contributing) has a lot of useful information.
+If you'd like to learn more about contributing to open source projects in general, the [Guide to Idiomatic Contributing](https://github.com/jonschlinkert/idiomatic-contributing) has a lot of useful information.
 
-#### Showing support for SuperCollider
+### Showing support for SuperCollider
 
 Please keep in mind that open source software is built by people like you, who spend their free time creating things the rest the community can use.
 
 Don't have time to contribute? No worries, here are some other ways to show your support for SuperCollider:
 
-- Star the [project](https://github.com/supercollider/supercollider) on Github
+- [Star the project](https://github.com/supercollider/supercollider) on Github
 - Send a message on the [sc-dev](http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/mailing_list/MailingListOptions.jtp?forum=2681767) mailing list
 - Join us on [Slack](https://slackin-apxbmqnfui.now.sh/)
 - Join the [Facebook group](https://www.facebook.com/groups/supercollider/)
 - Tweet your support for SuperCollider
-
-## Getting Started
-
-- Make sure you have a [GitHub account](https://github.com/signup/free)
-- Fork the repository on GitHub
 
 ## Issues
 
