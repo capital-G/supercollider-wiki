@@ -71,6 +71,8 @@ If you aren't too familiar with git, please see our guide: [Creating pull reques
 
 ## Developer Reference
 
+*Please don't change the title of this section — it is the new location of `DEVELOPING.md`, which links here.*
+
 Check the sidebar for a full list of reference documents for SuperCollider development. Here are a few that are particularly good for new contributors:
 
 * [Project Structure](https://github.com/supercollider/supercollider/wiki/Project-Structure)
