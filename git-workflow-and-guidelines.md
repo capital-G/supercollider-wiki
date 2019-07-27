@@ -1,3 +1,5 @@
+*Sorry about the disorderliness of this article. Project docs are undergoing some major restructuring right now. -NH 2019-07-26*
+
 ## git-flow
 
 SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). We use three major branches:
@@ -24,6 +26,23 @@ If you have push access, creating the branch on the main SuperCollider repositor
 - SuperCollider's CI integrations apply to pushes to the branch
 - binaries of the branch for Windows and macOS will be available via our S3 hosting
 - the branch is protected from potentially being lost if a contributor deletes their fork
+
+## Milestones
+
+We use four tags to keep track of issues:
+
+- Next patch (example: "3.9.1")
+- Some patch (example: "3.9.x")
+- Next minor (example: "3.10")
+- Some minor (example: "3.x")
+
+Patch-milestoned issues are those that will require bug fixes, while minor-milestoned issues are things like new
+features and major changes that are better left for a minor release. The "Next patch"/"Next minor" milestones mark those
+issues that we've decided _must_ be addressed before the next respective release. They're either the most painful bugs
+or most requested features.
+
+When, in the example milestones above, 3.10 is released, we would move all 3.9.x-milestoned issues to 3.10.x,
+and then collectively decide which issues ought to move from 3.x to 3.11 and from 3.10.x to 3.10.1.
 
 ## Guidelines for pull request authors ##
 
