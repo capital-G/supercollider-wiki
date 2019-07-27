@@ -1,3 +1,5 @@
+## git-flow
+
 SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). We use three major branches:
 
 - `master`, which is stable and only includes releases. Pre-releases such as alphas and betas are not included.
