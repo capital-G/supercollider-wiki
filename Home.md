@@ -69,7 +69,7 @@ SuperCollider uses the [git-flow](https://nvie.com/posts/a-successful-git-branch
 
 If you aren't too familiar with git, please see our guide: [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests).
 
-## Developer reference
+## Developer Reference
 
 Check the sidebar for a full list of reference documents for SuperCollider development. Here are a few that are particularly good for new contributors:
 
