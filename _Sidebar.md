@@ -17,6 +17,7 @@
 * [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
 * [UGen Quality Standards](https://github.com/supercollider/supercollider/wiki/UGen-Quality-Standards)
 * [Continuous Integration and Builds](https://github.com/supercollider/supercollider/wiki/Continuous-Integration-and-Builds)
+* [Debugging Tips](https://github.com/supercollider/supercollider/wiki/Debugging-Tips)
 
 **Developer working documents**
 
