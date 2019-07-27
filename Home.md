@@ -68,3 +68,18 @@ Graciously accepted.
 SuperCollider uses the [git-flow](https://nvie.com/posts/a-successful-git-branching-model/) branching model. We use the `develop` branch for new features, deprecations, and breaking changes, and we use the `3.10` branch for bug fixes for the next 3.10.x patch release that have no chance of breaking anything.
 
 If you aren't too familiar with git, please see our guide: [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests).
+
+## Developer reference
+
+Check the sidebar for a full list of reference documents for SuperCollider development. Here are a few that are particularly good for new contributors:
+
+* [Project Structure](https://github.com/supercollider/supercollider/wiki/Project-Structure)
+* [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
+* [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
+* [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
+* [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
+* [C++ code style guidelines](https://github.com/supercollider/supercollider/wiki/Cpp-code-style-guidelines)
+* [C++ formatting instructions](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions)
+* [Unit Testing Guide](https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide)
+
+Sorry if the project documentation is a little bit disorderly — it's always a work in progress. If you ever run into confusion or need help, you are always free to ask.
