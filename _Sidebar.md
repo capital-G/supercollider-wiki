@@ -6,7 +6,7 @@
 * [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 
-**[Developer Reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)**
+**Developer Reference**
 
 * [Project Structure](https://github.com/supercollider/supercollider/wiki/Project-Structure)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
