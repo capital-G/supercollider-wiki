@@ -4,6 +4,7 @@ Guide to SuperCollider Unit Testing
 ===================================
 
 Content overview:
+- Running the Test Suite
 - Purpose
 - What is testing?
 - Testing terminology
@@ -13,6 +14,13 @@ Content overview:
 - Adding tests to the SCClassLibrary test suite
 - Examples
 - Resources
+
+Running the Test Suite
+----------------------
+
+If developing on a version older than 3.9.0, download `UnitTesting` quark separately. Since 3.9, UnitTesting is bundled with SC.
+
+Add the `testsuite` folder to your SuperCollider compile paths. Recompile. Run `UnitTest.runAll`, or run tests from the GUI via `UnitTest.gui`.
 
 Purpose
 -------
@@ -694,6 +702,28 @@ TestDiscotheque {
 
 }
 ```
+
+## Continuous automatic red/green testing via guard-sclang
+
+Rather than manually running appropriate tests after editing a library class or a `UnitTest` class, you can use
+[aspiers/guard-sclang](https://github.com/aspiers/guard-sclang) which will watch for file changes and automatically run
+tests in reaction to them.  The steps to set this up are as follows:
+
+- Make sure you have Ruby installed.
+- Make sure you have [Bundler](http://bundler.io/) installed (usually this is as simple as running `gem install bundler`).
+- Make sure `sclang` is somewhere on your `$PATH`.
+- `cd $supercollider_source/tools/guard`
+- `bundle install`
+
+Now you should be ready to launch Guard via:
+
+    bundle exec guard
+
+Then start hacking on SuperCollider classes, and enjoy the immediate feedback!
+
+The mapping between implementation classes and test classes is defined in `tools/guard/Guardfile`.  This is currently by
+far from perfect, because it naively assumes a 1:1 mapping between class `Foo` and test class `TestFoo`.  However it
+should be easy to make it more intelligent, even if you don't know Ruby; please feel free to contribute improvements!
 
 Resources
 ---------
