@@ -27,6 +27,11 @@ If you have push access, creating the branch on the main SuperCollider repositor
 - binaries of the branch for Windows and macOS will be available via our S3 hosting
 - the branch is protected from potentially being lost if a contributor deletes their fork
 
+## Deprecation
+
+SuperCollider class library deprecations are currently made on a case-by-case basis using the `Object:-deprecated`
+method. When a method or class is deprecated, it is moved to `SCClassLibrary/deprecated`. Deprecations are removed on a case-by-case basis with each minor (3.x) release.
+
 ## Milestones
 
 We use four tags to keep track of issues:
