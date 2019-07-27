@@ -20,6 +20,7 @@
 * [Continuous Integration and Builds](https://github.com/supercollider/supercollider/wiki/Continuous-Integration-and-Builds)
 * [Debugging Tips](https://github.com/supercollider/supercollider/wiki/Debugging-Tips)
 * [Translating the IDE](https://github.com/supercollider/supercollider/wiki/Translating-the-IDE)
+* [Adding to QtCollider widgets](https://github.com/supercollider/supercollider/wiki/Adding-to-QtCollider-widgets)
 
 **Developer working documents**
 
