@@ -725,6 +725,12 @@ The mapping between implementation classes and test classes is defined in `tools
 far from perfect, because it naively assumes a 1:1 mapping between class `Foo` and test class `TestFoo`.  However it
 should be easy to make it more intelligent, even if you don't know Ruby; please feel free to contribute improvements!
 
+qpm Test Runner
+---------------
+
+qpm is a Python-based Quarks package manager and test runner for SuperCollider. It is used by our CI services to run the
+SuperCollider-based test suite. See https://github.com/scztt/qpm/tree/qpm-unit for more information.
+
 Resources
 ---------
 
