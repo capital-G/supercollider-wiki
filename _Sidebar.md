@@ -1,14 +1,11 @@
 **[Main Page](https://github.com/supercollider/supercollider/wiki)**
 
-**Developer Guides**
-
-* [Generating crash reports](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports)
-* [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
-* [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
-
 **Developer Reference**
 
 * [Project Structure](https://github.com/supercollider/supercollider/wiki/Project-Structure)
+* [Generating crash reports](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports)
+* [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
+* [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
 * [C++ code style guidelines](https://github.com/supercollider/supercollider/wiki/Cpp-code-style-guidelines)
