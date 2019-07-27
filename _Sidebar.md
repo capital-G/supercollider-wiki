@@ -19,6 +19,7 @@
 * [UGen Quality Standards](https://github.com/supercollider/supercollider/wiki/UGen-Quality-Standards)
 * [Continuous Integration and Builds](https://github.com/supercollider/supercollider/wiki/Continuous-Integration-and-Builds)
 * [Debugging Tips](https://github.com/supercollider/supercollider/wiki/Debugging-Tips)
+* [Translating the IDE](https://github.com/supercollider/supercollider/wiki/Translating-the-IDE)
 
 **Developer working documents**
 
