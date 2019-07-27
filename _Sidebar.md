@@ -8,6 +8,7 @@
 
 **[Developer Reference](https://github.com/supercollider/supercollider/wiki/Developer-reference)**
 
+* [Project Structure](https://github.com/supercollider/supercollider/wiki/Project-Structure)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
 * [C++ code style guidelines](https://github.com/supercollider/supercollider/wiki/Cpp-code-style-guidelines)
