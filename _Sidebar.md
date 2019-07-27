@@ -15,6 +15,7 @@
 * [Unit Testing Guide](https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide)
 * [sc-dev Meeting Procedure & Templates](https://github.com/supercollider/supercollider/wiki/sc-dev-Meeting-Procedure-&-Templates)
 * [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
+* [UGen Quality Standards](https://github.com/supercollider/supercollider/wiki/UGen-Quality-Standards)
 
 **Developer working documents**
 
