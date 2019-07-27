@@ -51,3 +51,33 @@ Update Boost libraries packaged with SuperCollider, and apply the SuperCollider 
 
 Should be run as soon as possible after a new release of Boost. See instructions in `external_libraries/README_BOOST.md`
 for more information.
+
+`SC_DOC_RENDER` Target
+----------------------
+
+### Purpose
+
+Render all schelp documents to HTML to check for warnings and errors.
+
+### Usage
+
+During configuration, pass `-DSC_DOC_RENDER=ON` to CMake. This provides a target called `doc` which can be built to
+render all schelp documents:
+
+    cmake .. -DSC_DOC_RENDER=ON # <other options>
+    cmake --build . --target doc
+
+Changelog-to-schelp script
+--------------------------
+
+Location: https://gist.github.com/brianlheim/443ae188dee8f7a85e7f34c04cc66d2b
+
+### Purpose
+
+Converts a changelog in markdown format into schelp format. A little extra work required but saves a lot of tedium. See
+script for usage.
+
+sclang Lexer, Parser, & Compiler Regression Test Suite
+------------------------------------------------------
+
+TODO
