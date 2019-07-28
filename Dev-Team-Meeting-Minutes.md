@@ -8,7 +8,7 @@ Updates:
 - Patrick responded to James' code review on HelpBrowser.instance.
 - James did some code review work and started looking at Marcin's Windows I/O device pull requests and added a denormal. He noticed a bunch of deprecation warnings with new Qt.
 - Marcin responded to Brian's feedback for Windows I/O devices, dependency/dependancy documentation question.
-- Patrick fixed cmd+Q issue on macOS.
+- Geoffroy fixed cmd+Q issue on macOS.
 - Josh dug into the macOS signing issue and has been sketching out ideas for multicore scsynth.
 - Nathan reorganized the project docs and investigated a dangerous security configuration in scsynth.
 
