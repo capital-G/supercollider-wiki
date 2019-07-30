@@ -87,6 +87,10 @@ Regards,
 
 UR_NAME
 
+3.10.3 release board: https://github.com/supercollider/supercollider/projects/14
+
+Backlog: https://github.com/supercollider/supercollider/projects/15
+
 sc-dev Meeting DATE Minutes:
 
 ⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
