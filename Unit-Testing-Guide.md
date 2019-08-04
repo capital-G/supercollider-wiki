@@ -20,7 +20,14 @@ Running the Test Suite
 
 If developing on a version older than 3.9.0, download `UnitTesting` quark separately. Since 3.9, UnitTesting is bundled with SC.
 
-Add the `testsuite` folder to your SuperCollider compile paths. Recompile. Run `UnitTest.runAll`, or run tests from the GUI via `UnitTest.gui`.
+The bundled test suite is not added to your SuperCollider compile path by default.
+
+To run the tests you must first add the `testsuite` folder, from the main SuperCollider source tree, to your SuperCollider compile paths. Recompile. Run `UnitTest.runAll`, or run specific tests from the GUI via `UnitTest.gui`.
+
+There are several ways to add to the compile path.
+For example:
+- You could add it with the IDE from (Edit) Preferences > Intepreter > Include (+).
+- Or edit your active configuration file (by default: `sclang_conf.yaml` found in the User Support Directory)
 
 Purpose
 -------
