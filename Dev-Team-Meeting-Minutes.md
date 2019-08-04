@@ -1,15 +1,15 @@
-2019-08-02
+2019-08-04
 ==========
 
 Members Present: Brian Heim, Geoffroy Montel, Iannis Zannos, James Surgenor, Luke Nihlen, Marcin Pączkowski, Nathan Ho, Patrick Dupuis, Tejaswi Prakash
 
 The Backlog Board is hereby renamed to the Future Release Board (but still usually referred to as the backlog).
 
-Some discussions on the structure and process of the Future Release Board:
+Some discussions on the structure and process:
 
 - We discussed including the backlog *in* the Release Board, but decided against since the purpose is to create focus and avoid distraction. 
 - The decision process for adding, removing, and prioritizing items (especially across different communication channels) is not very clear due to the SC community's lack of a clearly defined leadership model.
-- By a quick straw poll, we decided that it's easier if the board has issues in "To Do" but are replaced with PRs as soon as a PR exists.
+- By a quick straw poll, we decided that it's easier if the Release Board has issues in "To Do" but are replaced with PRs as soon as a PR exists.
 - The release manager has to leave the process open and democratic but is responsible for watching the process and making the tougher decisions that nobody else wants to make.
 
 3.10.3 Release Board updates:
