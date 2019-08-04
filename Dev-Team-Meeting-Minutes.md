@@ -1,3 +1,39 @@
+2019-08-02
+==========
+
+Members Present: Brian Heim, Geoffroy Montel, Iannis Zannos, James Surgenor, Luke Nihlen, Marcin Pączkowski, Nathan Ho, Patrick Dupuis, Tejaswi Prakash
+
+The Backlog Board is hereby renamed to the Future Release Board (but still usually referred to as the backlog).
+
+Some discussions on the structure and process of the Future Release Board:
+
+- We discussed including the backlog *in* the Release Board, but decided against since the purpose is to create focus and avoid distraction. 
+- The decision process for adding, removing, and prioritizing items (especially across different communication channels) is not very clear due to the SC community's lack of a clearly defined leadership model.
+- By a quick straw poll, we decided that it's easier if the board has issues in "To Do" but are replaced with PRs as soon as a PR exists.
+- The release manager has to leave the process open and democratic but is responsible for watching the process and making the tougher decisions that nobody else wants to make.
+
+3.10.3 Release Board updates:
+
+- macOS code signing: Josh (not present) made good progress in the past few days, not far off.
+- WebSocket port selection: Nathan handed it off to Brian yesterday. Essentially done, just needs a final review and merge.
+- windows audio devices: Very close, some testing from Windows users is wanted.
+- network sockets: Luke gave some feedback, awaiting Nathan.
+- Cmd+Q: Luke reviewed. Tested on macOS and Windows, but not Linux.
+- Optional QtWebEngine: DONE!
+
+Out-of-board updates:
+
+- Iannis received reviews on NotificationCenter help file updates and will be responding to them.
+- James looked into finding the best way to properly detect and set the SSE instruction set in compiling.
+- Marcin brought up matching partial device names in Windows.
+
+New items added to backlog:
+
+- LinkClock quantum handling and sync https://github.com/supercollider/supercollider/pull/4484
+- supernova lockup on dsp helper thread https://github.com/supercollider/supercollider/issues/3461
+- supernova sound input failure https://github.com/supercollider/supercollider/issues/4029
+- UnitTests do not run on CI https://github.com/supercollider/supercollider/issues/3132
+
 2019-07-28
 ==========
 
