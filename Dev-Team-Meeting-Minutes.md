@@ -1,7 +1,7 @@
 2019-08-10
 ==========
 
-Members present: Brian Heim, Iannis Zannos, James Surgenor, Marcin Pazckowski, Nathan Ho, Tejaswi Prakash
+Members present: Brian Heim, Iannis Zannos, James Surgenor, Marcin Pączkowski, Nathan Ho, Tejaswi Prakash
 
 Release updates:
 
