@@ -1,3 +1,35 @@
+2019-08-10
+==========
+
+Members present: Brian Heim, Iannis Zannos, James Surgenor, Marcin Pazckowski, Nathan Ho, Tejaswi Prakash
+
+Release updates:
+
+- Josh's macOS codesigning efforts are not required for 3.10.3 and are therefore deferred due to the use of manual release
+- Marcin's pull request is basically done! Awaiting James Harkins' OK on some minor changes
+
+New item added to future release:
+
+- macOS interpreter crash on cmd+q https://github.com/supercollider/supercollider/issues/3824
+
+Although there are some high-priority tasks remaining, we decided against adding ANY new things to 3.10.3 largely for psychological reasons -- this release has been seriously delayed and it is unnecessarily stressful to drag it out further.
+
+Nathan organized the slew of issues in the past few years concerning the help browser and organized them into a board. He closed all issues related to the Linux JavaScript error because, to our knowledge, this is a downstream issue with the Ubuntu packaging.
+
+There were some recent merges which violated the process that Brian had laid out for reviewing. (This was Nathan's doing and he really needs to read the damn reviewer guide haha)
+
+For some reason all reviewers also have write access to the SuperCollider repository, which seems wrong...
+
+Brian believes that in a 3.10.x release, there was a change in CI that downgraded Qt 5.11 to Qt 5.9 and the consequences of it were not properly thought through.
+
+Iannis discussed some of the design issues with NotificationCenter and has a new class, Notification, that he'd like to introduce to the core class library. He will send an email to sc-dev to propose this new change.
+
+Nathan brought up the recent resurfacing of pre-sample initialization and sample-accuracy in SC's core UGens. Unfortunately this is a really, really difficult problem for several reasons: it will take considerable effort and will likely break backward compatibility -- in minor ways for users that don't care about it, and in potentially major ways for users who have used workarounds in their SynthDefs.
+
+Soon, we should discuss a Request for Comment process and a reshuffling of permissions issues in the SC organization.
+
+The roadmap for 3.11 and 3.10.4 will be discussed in a future meeting.
+
 2019-08-04
 ==========
 
