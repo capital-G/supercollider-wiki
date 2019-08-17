@@ -39,11 +39,15 @@ General: Removed
 General: Fixed
 -----
 
+For people compiling with musl libc, some build errors have been fix ([#4535](https://github.com/supercollider/supercollider/pull/4535)).
+
 scsynth and supernova: Added
 -----
 
 scsynth and supernova: Changed
 -------
+
+**Breaking change:** scsynth had a security issue where it listens to 0.0.0.0 by default. For most users, this is undesirable behavior since it allows anyone on your local network to send messages to scsynth! This default has been changed to 127.0.0.1 ([#4516](https://github.com/supercollider/supercollider/pull/4516)). To change it back (e.g. for networked server/client setups), use `-B 0.0.0.0` at the command line or `server.options.bindAddress = "0.0.0.0"`.
 
 scsynth and supernova: Deprecated
 ----------
@@ -53,6 +57,10 @@ scsynth and supernova: Removed
 
 scsynth and supernova: Fixed
 -----
+
+On Windows, scsynth was not able to select separate input and output devices. Since many audio drivers present inputs and outputs as separate devices, this caused major blocking issues for anyone using Windows with an external sound card. This has been fixed ([#4475](https://github.com/supercollider/supercollider/pull/4475)).
+
+Fixed cases involving `ASyncPlugInCmd` where memory can be freed twice, causing scsynth to freeze ([#4456](https://github.com/supercollider/supercollider/pull/4456)).
 
 Fixed a supernova compilation issue on Boost 1.67 ([#4447](https://github.com/supercollider/supercollider/pull/4447)).
 
@@ -94,8 +102,14 @@ The `mouseWheelAction` of `View` erroneously reported `xDelta` and `yDelta` to b
 
 Fixed incorrect mathematics in `SimpleNumber:series` ([#4454](https://github.com/supercollider/supercollider/pull/4454)).
 
+Fixed a harmless but annoying warning in when running `HelpBrowser.instance` in sclang without the IDE ([#4488](https://github.com/supercollider/supercollider/pull/4488)).
+
 Class library: Added
 -----
+
+The `-B` command-line flag to scsynth was missing a frontend in `ServerOptions`. This has been fixed by introducing `ServerOptions:bindAddress` ([#4516](https://github.com/supercollider/supercollider/pull/4516)).
+
+Add `Platform.hasQtWebEngine` to query whether sclang was compiled with QtWebEngine support ([#4523](https://github.com/supercollider/supercollider/pull/4523)).
 
 Class library: Changed
 -------
@@ -141,6 +155,8 @@ IDE & SCDoc: Removed
 
 IDE & SCDoc: Fixed
 -----
+
+On macOS, Cmd+Q in the IDE would quit the interpeter but not the IDE. This is a regression from old behavior where the IDE was quit entirely. This has been fixed ([#4300](https://github.com/supercollider/supercollider/issues/4300)).
 
 Since 3.10, the help browser would execute code twice when selected. This has been fixed ([#4390](https://github.com/supercollider/supercollider/pull/4390)).
 
