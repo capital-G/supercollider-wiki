@@ -1,3 +1,14 @@
+2019-08-25
+=========
+
+Members Present: Iannis Zannos, James Surgenor, Nathan Ho, Tejaswi Prakash
+
+Slow week, no real updates on the release.
+
+3.10.3 release board update: Nathan put the wrong pull request on the board: meant to put https://github.com/supercollider/supercollider/pull/4510 (Plotter horizontal resize bug) rather than https://github.com/supercollider/supercollider/pull/4511 (Plotter default colors). He has rectified this error.
+
+Iannis is interested in reworking the server boot logic (https://github.com/supercollider/supercollider/issues/3286) and clarifying some of the finer points of the server initialization process (e.g. creation of default group, loading synthdefs, etc).
+
 2019-08-18
 ==========
 
