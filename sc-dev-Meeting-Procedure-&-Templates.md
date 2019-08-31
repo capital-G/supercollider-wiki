@@ -87,7 +87,7 @@ Regards,
 
 UR_NAME
 
-3.10.3 Release board: https://github.com/supercollider/supercollider/projects/14
+3.10.3 Release board: https://github.com/supercollider/supercollider/projects/17
 
 Future Release Board: https://github.com/supercollider/supercollider/projects/15
 
