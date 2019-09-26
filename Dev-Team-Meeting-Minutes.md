@@ -1,6 +1,6 @@
 2019-09-22
 
-Members Present: James Surgenor, Nathan Ho, Brian H, Patrick D, Josh P, Tejaswi Prakash
+Members Present: James Surgenor, Nathan Ho, Brian H, Patrick D, Josh P, Marcin P, Tejaswi Prakash
 
 These notes were not taken at the meeting - apologies - but I believe this is a good summary (Josh P)
 
