@@ -1,3 +1,17 @@
+2019-09-22
+
+Members Present: James Surgenor, Nathan Ho, Brian H, Patrick D, Josh P, Tejaswi Prakash
+
+These notes were not taken at the meeting - apologies - but I believe this is a good summary (Josh P)
+
+- RFC proposal will be finalized for next week's meeting (as a goal)
+- Reviewed 3.10.4 release board
+- Discussed possible release dates. We want to hear back from a couple people assigned to tasks at the next dev meeting then decide. But we're targeting 10-15 for a beta.
+- Items on board are the ones we want to attempt to get in (we see this as our goal for a release). Other PRs / issues can be included as we see fit.
+- Discussion about possibly pulling plugins out of sc3-plugins for self-hosted solutions. Brian will do some cleanup on cookie-cutter, and a couple people will look into pulling their plugins out to encourage others to do so (Josh and ???)
+
+*** NOTES were written very much after the fact … others mostly agreed with this summary. If anyone else was on the call and has additions or suggestions, please let us know ***
+
 2019-08-25
 =========
 
