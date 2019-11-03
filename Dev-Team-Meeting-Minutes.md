@@ -1,3 +1,95 @@
+2019-11-03
+==========
+Nov 3rd 2019
+
+
+
+
+SUBJECT: sc-dev Meeting Minutes
+Hey all,
+
+Thanks to everyone who attended the sc-dev meeting! Minutes of the meeting are below. You can find archived minutes from all our meetings on our GitHub wiki page: https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes
+
+The next meeting is planned for the weekend of Nov. 9th, 2019. A meeting time poll will be sent out early in the week. If you'd like to attend but our usual meeting times aren't good for you, respond to this thread or email me privately and we'll try to work something out! We are always interested in getting new people involved in the development community.
+
+Regards,
+
+Josh
+
+3.10.4 Release board: https://github.com/supercollider/supercollider/projects/17
+
+sc-dev Meeting DATE Minutes:
+
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+
+Present: Patrick, Brian, Clare, James S, Nathan Ho, Marcin, Iannis
+
+Intros - welcome Clare!
+
+Check out includecpp.org
+
+3.10.4 board
+3132:
+Patrick will be pushing a branch for 3132. Can server tests run on Travis? It may work on Linux.
+- may have a linux way to test
+- maybe OS X?
+- Is there a ‘user’ logged in with the images on Travis?
+
+Brian will bring QPM into the org
+
+4214:
+James - ‘This is a bit of a monster’. Has had some time to look into it.
+Nathan has insight into IPC between lang and sc-ide
+Not a good idea to subclass QProcess … which we’ve done. It owns a NULL pointer to the IPC client in sclang. When sclang boots it fires a connect cmd. Then the IPC gets initialized and the client connects to the server on the QProcess. Signal and slot set up that registers and sets up the two way communication. When the variable gets set that triggers the issue, there is no IPC client attached. It doesn’t see that sclang has tried to connect to it.
+Find a way to start VS when lang starts? Really hard to debug. Attach to process by name in VS?
+Keep in the 3.10.4 board.
+
+4368:
+Maybe language related? Or - can we discount it for now?
+
+4533:
+Add to Brian’s to-do
+
+4363:
+Number 1 on Brian’s to-do. Hopefully next week.
+
+
+Brian update: Preparing for and taking a vacation. Now he’s back. Maintainer tasks, mostly.
+
+4631 - approved, Brian will merge / push
+
+RFC 1 - support for OS’s / systems and setting up CI to show support it.
+
+Qt tends to be a limiting factor. Other / home-brew limitations may be an issue.
+
+Josh to comment about past support. Nathan as well will soon
+
+RFCs to review
+https://github.com/supercollider/rfcs/pull/1
+https://github.com/supercollider/rfcs/pull/4
+
+Anyone not in the meeting who can review, please do!
+
+
+Qt - ask on hash include discord about Qt mic input
+
+Clare - initial testing progress:
+
+PR in progress that needs some rebasing. 
+- builds sc-ide as a static lib
+	- this lets us set up a minimal test framework so anyone who wants to add tests can do so.
+- branch sc-ide-test-experiments in test suite/editors/sc-ide … (will be pushed later)
+- Showed her initial setups.
+- Brian thinks these can be ported into a different test framework. Perhaps commit 'catch.h' into the external part of the repo. James has used it in his personal projects, and says it is amazing.
+- some licenses questions?
+
+
+Josh to post notes about Mac OS notarization.
+
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+
+
+
 2019-10-27
 ==========
 
