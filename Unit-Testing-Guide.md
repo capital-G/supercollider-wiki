@@ -736,7 +736,7 @@ qpm Test Runner
 ---------------
 
 qpm is a Python-based Quarks package manager and test runner for SuperCollider. It is used by our CI services to run the
-SuperCollider-based test suite. See https://github.com/scztt/qpm/tree/qpm-unit for more information.
+SuperCollider-based test suite. See https://github.com/supercollider/qpm for more information.
 
 Resources
 ---------
