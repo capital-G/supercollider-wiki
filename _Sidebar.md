@@ -14,7 +14,7 @@
 * [sc-dev Meeting Procedure & Templates](https://github.com/supercollider/supercollider/wiki/sc-dev-Meeting-Procedure-&-Templates)
 * [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
 * [UGen Quality Standards](https://github.com/supercollider/supercollider/wiki/UGen-Quality-Standards)
-* [Continuous Integration and Builds](https://github.com/supercollider/supercollider/wiki/Continuous-Integration-and-Builds)
+* [Miscellaneous project information](https://github.com/supercollider/supercollider/wiki/Miscellaneous-project-information-(CI,-maintenance-scripts,-etc.))
 * [Debugging Tips](https://github.com/supercollider/supercollider/wiki/Debugging-Tips)
 * [Translating the IDE](https://github.com/supercollider/supercollider/wiki/Translating-the-IDE)
 * [Adding to QtCollider widgets](https://github.com/supercollider/supercollider/wiki/Adding-to-QtCollider-widgets)
