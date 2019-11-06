@@ -23,6 +23,7 @@ Creating an issue is the simplest form of contributing to a project. But there a
 - Requesting a feature
 - Reporting a bug
 - Translating the IDE into a language you know (see [Additional resources](#Additional-resources) below)
+- Creating a [request for comments (RFC)](https://github.com/supercollider/rfcs) to propose 'something big'
 
 If you're new to this project, check out the issues tagged ["good first issue"](https://github.com/supercollider/supercollider/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) – fixing one of these is a great way to get started as a contributor!
 
@@ -61,9 +62,11 @@ Here are some tips for creating idiomatic issues. Taking just a little bit extra
 - Use backticks to wrap code. This ensures that code will retain its format, making it much more readable to others
 - Use syntax highlighting by adding "supercollider" or the appropriate language name after the first "code fence" ("\`\`\`supercollider")
 
-## Pull Requests
+## Pull Requests (PRs)
 
 Graciously accepted.
+
+Before working on a pull request, consider whether it might be better to go through the [request for comments (RFC)](https://github.com/supercollider/rfcs) process first!
 
 SuperCollider uses the [git-flow](https://nvie.com/posts/a-successful-git-branching-model/) branching model. We use the `develop` branch for new features, deprecations, and breaking changes, and we use the `3.10` branch for bug fixes for the next 3.10.x patch release that have no chance of breaking anything.
 
