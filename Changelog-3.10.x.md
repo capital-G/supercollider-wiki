@@ -90,6 +90,8 @@ sclang: Removed
 sclang: Fixed
 -----
 
+On macOS, Cmd+Q crashed the interpreter while in focus. This has been fixed ([#4533](https://github.com/supercollider/supercollider/pull/4533)).
+
 Class library: Added
 -----
 
