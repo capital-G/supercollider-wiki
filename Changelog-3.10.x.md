@@ -123,3 +123,5 @@ IDE & SCDoc: Removed
 
 IDE & SCDoc: Fixed
 -----
+
+On macOS, Cmd+Q used to quit both the IDE and interpreter, but it regressed and only the interpreter would quit. This has been fixed ([#4300](https://github.com/supercollider/supercollider/issues/4300)).
