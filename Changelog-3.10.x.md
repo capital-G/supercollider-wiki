@@ -30,6 +30,10 @@ General: Added
 General: Changed
 -------
 
+Xcode 11 is now supported ([#4611](https://github.com/supercollider/supercollider/pull/4611)).
+
+Minimum supported Boost version is now 1.66.0 ([#4611](https://github.com/supercollider/supercollider/pull/4611)).
+
 General: Deprecated
 ----------
 
@@ -53,6 +57,8 @@ scsynth and supernova: Removed
 
 scsynth and supernova: Fixed
 -----
+
+supernova would sometimes return malformed `/done` OSC messages over TCP due to a concurrency issue. This has been fixed ([#4435](https://github.com/supercollider/supercollider/pull/4435)).
 
 UGens: Added
 -----
@@ -98,6 +104,10 @@ Class library: Removed
 
 Class library: Fixed
 -----
+
+Fixed a mistake where `Recorder` would get its default file extension from `server.recHeaderFormat` rather than its own `recHeaderFormat` ([#4550](https://github.com/supercollider/supercollider/pull/4550)).
+
+The `NodeProxy` `filter` role now respects `fadeTime` ([#4278](https://github.com/supercollider/supercollider/pull/4278)).
 
 IDE & SCDoc: Added
 -----
