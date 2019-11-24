@@ -1,3 +1,142 @@
+2019-11-24
+==========
+
+Thanks to everyone who attended the sc-dev meeting! Minutes of the meeting are below. You can find archived minutes from all our meetings on our GitHub wiki page: https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes
+
+The next meeting is planned for the weekend of Nov 30 / Dec 1. A meeting time poll will be sent out early in the week. If you'd like to attend but our usual meeting times aren't good for you, respond to this thread or email me privately and we'll try to work something out! We are always interested in getting new people involved in the development community.
+
+Regards,
+
+UR_NAME
+
+3.10.3 Release board: https://github.com/supercollider/supercollider/projects/17
+
+Future Release Board: https://github.com/supercollider/supercollider/projects/15
+
+sc-dev Meeting DATE Minutes:
+
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+
+sc-dev meeting 11-24
+
+James S, Josh, Nathan, Patrick, Brian, Marcin, Tejaswi
+
+Brian built an IKEA shelf
+
+4214 - James S - after a lot of digging it looks like something with Boost ASIO dropping requests. IPC wasn’t getting established. PR 4646 - a modification made for a synchronous read step happen for setting the group policy for auditing removable devices it fixed the issue every time. BUT - if it is something else ??? - lots of concern about why the initial reads are lost - but, maybe it doesn’t matter. 
+
+Document it?
+
+4368 - James has some new info. Sound card / Port Audio?
+
+3.10.4 diversion - out before end of year / holidays
+
+3132 -  CI says latest PR passes, but Patrick says it does NOT. 
+Top level YAML file is ok - but we need to send an error back to the calling script.
+Probably an issue in qpm
+On linux - server boots and runs the tests. But some tests don’t get run - hangs on TestNoOps. And ditches the rest. Test on local machine first to see if it works, then see if it can be fixed on Travis.
+Maybe only run server tests on linux?
+Shouldn’t hold up release.
+
+
+4645 - ready to go, but solves the most serious issue. Josh and Brian will look tonight.
+
+3.11 - Link is the big feature.
+Nathan would like some manual QA
+Look at API design
+
+3.11 alpha at the same time as 3.10.4 and ask people to start testing it more?
+Linux jack timing
+
+https://github.com/supercollider/supercollider/pull/4599 for 3.10.4? Voted down - on to 3.11!
+
+
+Manage 3.11 board for 4484 and Link
+
+James S - Soundfile view issue - possible threading issue. The way it talks back to the Qt widget seems to lock the whole GUI.
+As loading the sound file, something can hang the GUI thread. Will try to create reproducer.
+
+Brian - all - try to tackle some SC only PRs if we have the time!
+
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+
+
+2019-11-17
+==========
+Thanks to everyone who attended the sc-dev meeting! Minutes of the meeting are below. You can find archived minutes from all our meetings on our GitHub wiki page: https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes
+
+The next meeting is planned for the weekend of Nov 23-24. A meeting time poll will be sent out early in the week. If you'd like to attend but our usual meeting times aren't good for you, respond to this thread or email me privately and we'll try to work something out! We are always interested in getting new people involved in the development community.
+
+Regards,
+
+Josh
+
+3.10.3 Release board: https://github.com/supercollider/supercollider/projects/17
+
+Future Release Board: https://github.com/supercollider/supercollider/projects/15
+
+sc-dev Meeting DATE Minutes:
+
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+
+SC-Dev meeting 11-17
+
+Nathan, Iannis, James S, Tejsaw, Brian, Patrick, Josh
+
+
+4368 - decide next week if it stays in 3.10.4
+
+Consider what for 3.10.4, think for 3.11 while considering 3.10.5
+
+Nathan - update change log today
+
+4124 - James S - maybe not an IPC issue? From the IDEs point of view it is writing to standard input - no errors reported. But the language process is NOT seeing anything on STDIN. So, the IPC never gets kicked off. Really hard to follow up - Nathan has shown that his python script probably shows it is IDE related (since sclang talks listens from python ok).
+
+Probably something wrong with QProcess
+
+Maybe don't subclass QProcess?
+
+Another possible move to 3.10.5
+
+3132 - Patrick
+
+Some good progress, but feeling like he isn't moving forward. Server tests on Travis still don't work. Might leave server tests for another day. 
+
+Removed common tests. Have included the test suite in the repo. QPM now runs the tests in the repo. 
+
+Might do server tests (at least on one platform) for next release.
+
+4363 - consensus on how to fix the crash - Nathan will do a pull request.
+
+Josh - lots of code-signing progress, still trying to get to unsigned binary plugins.
+
+3.11 - Abelton Link should be main new item.
+
+
+Brian - talked with Andrew Beltz - works for VCV Rack (creator?). Prototyping thing that lets people write code with various scripting languages. Looking for someone to help with sc backend for prototype repo. Any interest?
+
+Also - Brian wants his PRs merged. 4585 is merged, 4612 will be rebased to 3.10
+
+
+Patrick would like someone to review:
+PR 4643 Server related fixes for some UnitTests
+PR 7 in supercollider-quarks repo
+PR 4598 Classlib: Buffer:write should use Buffer:writeMsg
+
+Discussed possible future improvements to UnitTest: fixtures, mocks, etc.
+
+Talked about GitHub Actions:
+- general feeling - no compelling reason to use it now, but could research it more
+
+For next meeting:
+- plan to put together a list of issues and PRs for 3.11
+
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+
+
+
+
+
 2019-11-03
 ==========
 Nov 3rd 2019
