@@ -126,4 +126,6 @@ IDE & SCDoc: Removed
 IDE & SCDoc: Fixed
 -----
 
+Some sequences of IDE actions involving editor splits (such as removing a split and then recompiling the class library) can lead to an eventual IDE crash. These have been fixed ([#4645](https://github.com/supercollider/supercollider/pull/4645)).
+
 On macOS, Cmd+Q used to quit both the IDE and interpreter, but it regressed and only the interpreter would quit. This has been fixed ([#4300](https://github.com/supercollider/supercollider/issues/4300)).
