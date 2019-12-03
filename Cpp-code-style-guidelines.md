@@ -29,6 +29,10 @@ The DSP functions should take that name followed by `_next`, plus more text to d
 
 Private methods within the plugin files don't have to follow strict naming but it is recommended to prefix them in a similar fashion, to identify the UGen(s) with which they belong.
 
+### Lambdas
+
+When writing lambdas, use explicit captures as much as possible. Avoid using `[=]` or `[?]` for the capture list.
+
 ### Indentation
 
 We use 4-space indentation, same as [WebKit](https://webkit.org/code-style-guidelines/#indentation-no-tabs). 
