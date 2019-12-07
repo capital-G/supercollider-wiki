@@ -9,7 +9,7 @@ In general SuperCollider follows the [WebKit Code Style Guidelines](https://webk
 
 ### Naming
 
-New code, either in new files or substantial additions to existing files, should follow [WebKit](https://webkit.org/code-style-guidelines/#names) guidelines around naming, which has some similarity to SuperCollider language style guidelines. Generally, name things using full words and CamelCase, classes have capitalized first letters, variables and functions do not. Prefix member variables with "m_" and static data members with "s_".
+New code, either in new files or substantial additions to existing files, should follow [WebKit](https://webkit.org/code-style-guidelines/#names) guidelines around naming, which has some similarity to SuperCollider language style guidelines. Generally, name things using full words and CamelCase, classes have capitalized first letters, variables and functions do not. Prefix member variables with `m_`, static data members with `s_`, and global variables with `g_`.
 
 Older code used the prefixes `k`, `g`, and `m` to identify constants, global variables, and members respectively. You may see some code that uses the prefix `Pyr`; this refers to the origin of SuperCollider as a Max/MSP object called "Pyrite".
 
