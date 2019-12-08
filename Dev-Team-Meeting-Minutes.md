@@ -1,3 +1,43 @@
+2019-12-08
+==========
+
+Members Present: Brian Heim, Carlo Capocasa, Chad Cassady, James Surgenor, Josh Parmenter, Josiah Oberholtzer, Marcin Paczkowski, Nathan Ho, Patrick Dupuis, Tejaswi Prakash
+
+Release status:
+- 3.10.4: Beta release immediately.
+- 3.10.5: Address three issues below.
+- 3.11.0:
+  - Nathan is open to resuming release manager.
+  - Quality assurance for LinkClock.
+  - Scott Carver's SynthDef spec PR #3814.
+
+Release board issues (now postponed to 3.10.5):
+- Issue #4214 (IDE stuck at "Sending Request"): James believes this is resolved, but needs more testing.
+  - Nathan will test and look at it
+  - James will write up an explanation of why this is happening and why this fixes it
+- Issue #4368 (Windows Defender delays scsynth boot): not much new information
+- Issue #3132 (CommonTests quark -> local UnitTests): considered ongoing, not important for 3.10.4
+
+Other topics:
+- Suggestion for high priority after the 3.10.4 release: getting the number of open PRs to 10 or fewer
+  - The number of open PRs has been overwhelming since the code reformat
+  - Brian's advice for reviewers: ask for information immediately whenever it is needed
+  - Nathan suggested setting aside a weekend "review-a-thon" for tackling pull requests
+- The Release Board has been really helpful in prioritizing the set of issues
+- RFC #1 (platform support guarantees): waiting on Brian
+- RFC #4 (Rest): ping James H & Julian on status of discussion
+- RFC #7 (binaries in Quarks): some discussion summarized in the actual RFC thread
+- RFC #5 (/s_query): awaiting another round of feedback
+  - Opens up some wider discussions about how /g_queryTree is broken/weirdly designed
+- Comment on the general RFC process: it's a bit difficult to see current status of RFC
+- A new page for "Pre-RFCs"
+  - Cannibalize the old "Long-term, large-scape projects" board into a wiki page
+
+Action items:
+- Fix a 3.10/develop merge conflict in TestUnitTest.sc.
+- Create a "Pre-RFC" page.
+- Release 3.10.4 beta immediately.
+
 2019-11-24
 ==========
 
