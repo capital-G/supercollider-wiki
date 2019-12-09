@@ -2,6 +2,13 @@
 
 Here, you'll find information on how to review pull requests (PRs) for the SuperCollider project. Welcome!
 
+## The big picture
+
+Code reviews are essential to the development of quality software, but they can also be frustrating and time-consuming. There are a lot of great resources online on the philosophy, techniques, and best practices for code reviews. To get you started, here are some links worth checking out:
+
+- https://blog.codereview.chat/2019/07/15/the-code-review-bottleneck.html
+- https://github.com/joho/awesome-code-review
+
 ## Getting into reviewing easily
 
 Some parts of SuperCollider are easier to review than others. If you're looking for an easy way to get involved as a reviewer, focus on PRs labeled `comp: help` and `comp: examples`. Most of these can be reviewed just by reading them. Following and participating in review discussions can also help you get quickly acquainted with the review process.
