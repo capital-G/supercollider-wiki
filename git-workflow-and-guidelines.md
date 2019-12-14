@@ -122,3 +122,13 @@ On release, post the changelog to the following announcement channels:
 - sc-users mailing list: post an abbreviated version
 - Facebook group: post an abbreviated version
 - Reddit (/r/supercollider): post an abbreviated version
+
+## Conflicts between release branches and develop ##
+
+Occasionally it may happen that a release branch cannot be cleanly merged into `develop`. In that case, the correct procedure is:
+
+1. Create a new branch off `develop` with a name like `topic/merge-forward-3.x`
+2. Merge the release branch into this new branch, resolving merge conflicts and creating a merge commit.
+3. Create a pull request from the new branch against `develop`.
+
+This allows the merge conflict resolution to be reviewed and treated like any other pull request.
