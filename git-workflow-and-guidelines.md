@@ -2,11 +2,12 @@
 
 ## git-flow
 
-SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). We use three major branches:
+SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). The most important thing to know:
 
+- Bug fixes and minor changes are merged into the current release branch (like `3.9`), and are incorporated into the next patch (3.x.y) release.
+- New features and breaking changes are merged into the `develop` branch and incorporated into the next minor (3.x) release.
+- Periodically (roughly every week), the release branch is merged into `develop` so that `develop` always has both the latest bug fixes and features.
 - `master`, which is stable and only includes releases. Pre-releases such as alphas and betas are not included.
-- `develop`, for new features that will be incorporated into the next minor (3.x) release.
-- The current release branch (like `3.9`), into which bug fixes are merged for the next patch (3.x.y) release.
 
 A "feature" is, generally speaking, anything that adds new functionality. Examples include a new class, a new public method, and a new parameter on a public method. Private methods (those beginning with `pr`) are not features.
 
