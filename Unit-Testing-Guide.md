@@ -492,13 +492,6 @@ behavior if the sleeping thread wakes up early. If you write `1.wait` in a test,
 need to do so. If there is no way to wait on a true condition, either add code to the system being
 tested such that it is possible, or leave an explanatory comment.
 
-### Using `guard-sclang`
-
-[`guard-sclang`](https://github.com/aspiers/guard-sclang) is a tool written by Adam Spiers that
-provides a continuous and automatic red/green testing. Developers are encouraged to use this tool.
-For more information on setup and usage, see
-[these instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Developer-info-%40DEVELOPING.md%41#continuous-automatic-redgreen-testing-via-guard-sclang).
-
 ### Avoid using class variables
 
 Use of class variables increases the likelihood of tests becoming unintentionally interdependent.
@@ -714,7 +707,7 @@ TestDiscotheque {
 
 Rather than manually running appropriate tests after editing a library class or a `UnitTest` class, you can use
 [aspiers/guard-sclang](https://github.com/aspiers/guard-sclang) which will watch for file changes and automatically run
-tests in reaction to them.  The steps to set this up are as follows:
+tests in reaction to them. Developers are encouraged to use this tool. The steps to set this up are as follows:
 
 - Make sure you have Ruby installed.
 - Make sure you have [Bundler](http://bundler.io/) installed (usually this is as simple as running `gem install bundler`).
