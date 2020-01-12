@@ -5,8 +5,8 @@ Guide to SuperCollider Unit Testing
 
 Content overview:
 - Running the Test Suite
-  - sclang tests
-  - C++ tests
+  - Class Library Tests
+  - Other Tests
 - Purpose
 - What is testing?
 - Testing terminology
@@ -33,7 +33,7 @@ For example:
 - You could add it with the IDE from (Edit) Preferences > Intepreter > Include (+).
 - Or edit your active configuration file (by default: `sclang_conf.yaml` found in the User Support Directory)
 
-### Other tests 
+### Other Tests 
 
 This project also has small test suites for scsynth and supernova written in C++ using Boost.Test, and a few older tests for sclang written in sclang. To run them, build the project and then run `ctest` in the build directory. If you are using a multi-configuration generator with CMake such as Xcode or Visual Studio, you should also pass the configuration with `-C`, i.e. `ctest -C Debug`.
 
