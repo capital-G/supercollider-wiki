@@ -100,7 +100,7 @@ that entirely lacks tests."
 
 **Monkey testing** is a technique that uses randomized input (often in large quantities) to try to
 "throw a wrench" in the system. It is important to make sure that if a failure happens, it can be
-recorded an repeated (in other words, you should be able to find the wrench after you've thrown
+recorded and repeated (in other words, you should be able to find the wrench after you've thrown
 it!). This kind of test is also called a **smoke test**.
 
 As you can probably tell, these terms are not strictly defined and usually reflect intent more than
