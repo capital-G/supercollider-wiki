@@ -105,6 +105,12 @@ Class library: Fixed
 
 **Breaking change:** `Color:asHSV` could sometimes return NaNs -- grayscale colors returned NaN hue, and black returned NaN hue and saturation. Zero values are now returned in these cases, as is the standard ([#4369](https://github.com/supercollider/supercollider/pull/4369)).
 
+Fix a bug in `Ndef:asCode` to correctly handle the default `fadeTime` ([#4721](https://github.com/supercollider/supercollider/pull/4721)).
+
+Fix a bug involving `fadeTime` and `Ndef:copy` ([#4701](https://github.com/supercollider/supercollider/pull/4701)).
+
+Fixed `LanguageConfig` sometimes storing in the wrong location ([#4595](https://github.com/supercollider/supercollider/issues/4595)).
+
 IDE & SCDoc: Added
 -----
 
