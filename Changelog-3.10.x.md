@@ -34,6 +34,8 @@ Xcode 11 is now supported ([#4611](https://github.com/supercollider/supercollide
 
 Minimum supported Boost version is now 1.66.0 ([#4611](https://github.com/supercollider/supercollider/pull/4611)).
 
+Boost 1.71.0 is now supported ([#4612](https://github.com/supercollider/supercollider/pull/4612)).
+
 General: Deprecated
 ----------
 
