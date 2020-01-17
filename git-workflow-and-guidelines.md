@@ -82,8 +82,6 @@ A month or so before the beta release, the release manager branches off `develop
 
 The first thing to do in release mode is to remove the `SCClassLibrary/deprecated/3.8` directory and document these removals in the changelog. Corresponding UGen and primitive code should also be removed. Be careful when deprecating UGens and be considerate of alternate clients!
 
-Use the `package/contributor-list-generator` node.js script to generate a list of contributors, and add it to the changelog.
-
 For each beta release:
 
 - In the `3.9` branch, bump up the version in the top-level file `SCVersion.txt` from 3.9dev to 3.9.0-beta1 (or from 3.9.0-beta1 to 3.9.0-beta2, etc).
