@@ -1,6 +1,6 @@
 First, you’ll need a signing cert. With Apple binaries, this means using a Developer account to create a Developer ID, and creating a signing cert with Keychain.
 
-*** SIGNING AND NOTARIZING SINGLE PLUGIN FILE ***
+*** SIGNING AND NOTARIZING A SINGLE PLUGIN FILE ***
 
 To sign a single binary for a Plugin.scx file, you just need to sign the scx file itself, using the entitlements that come in the SuperCollider.app bundle. From Terminal, move into the SuperCollider directory (that contains SuperCollider.app), and use the command line below against your .scx binary. The last argument in the command is the path to your .scx file, and you’ll need to replace the signing identity with what you have stored in your keychain:
 
