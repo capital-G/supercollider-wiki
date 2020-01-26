@@ -62,7 +62,8 @@ I’ll use my signing identity as the example below, but when I get to the notar
 
 `xcrun stapler staple SuperCollider.app`
 
-`# remove the zip you created, and move one level up in `
+`# remove the zip you created, and move one level up`
+
 `rm SuperCollider.app.zip`
 `cd ..`
 
