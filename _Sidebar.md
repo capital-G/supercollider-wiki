@@ -19,6 +19,7 @@
 * [Translating the IDE](https://github.com/supercollider/supercollider/wiki/Translating-the-IDE)
 * [Adding to QtCollider widgets](https://github.com/supercollider/supercollider/wiki/Adding-to-QtCollider-widgets)
 * [Signing and Notarizing for OS X](https://github.com/supercollider/supercollider/wiki/OS-X-Signing-and-Notarization)
+
 **Developer working documents**
 
 * [3.10.x Changelog](https://github.com/supercollider/supercollider/wiki/Changelog-3.10.x)
