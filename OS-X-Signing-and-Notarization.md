@@ -27,6 +27,7 @@ I’ll use my signing identity as the example below, but when I get to the notar
 `# files are attached on this post, and show them as living on my Desktop`
 
 `cp ~/Desktop/QtWebEngineProcess.entitlements SuperCollider.app/Contents/`
+
 `cp ~/Desktop/entitlements.plist SuperCollider.app/Contents/`
 
 `codesign --deep --force --verify --verbose --timestamp --entitlements SuperCollider.app/Contents/entitlements.plist  --sign "Developer ID Application: Joshua Parmenter" --options runtime SuperCollider.app`
@@ -71,4 +72,6 @@ I’ll use my signing identity as the example below, but when I get to the notar
 `codesign --deep --force --verify --verbose --timestamp --sign "Developer ID Application: Joshua Parmenter" SuperCollider.zip`
 
 
+
+The Entitlement files are saved below as attachments. 
 
