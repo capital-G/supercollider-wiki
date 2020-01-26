@@ -67,9 +67,8 @@ I’ll use my signing identity as the example below, but when I get to the notar
 `rm SuperCollider.app.zip`
 `cd ..`
 
-`# Now, in Finder, compress the SuperCollider folder to`
-
-`# SuperCollider.zip (or whatever you want to name it, then code sign the zip`
+`# Now, in Finder, compress the SuperCollider folder to` 
+`# SuperCollider.zip (or whatever you want to name it) then code sign the zip`
 
 `codesign --deep --force --verify --verbose --timestamp --sign "Developer ID Application: Joshua Parmenter" SuperCollider.zip`
 
