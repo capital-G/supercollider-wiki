@@ -78,49 +78,49 @@ The Entitlement files contain the code below.
 Save this as QtWebEngineProcess.entitlements
 
 `<?xml version="1.0" encoding="UTF-8"?>`
-
+``
 `<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">`
-
+``
 `<plist version="1.0">`
-
+``
 `<dict>`
-
+``
     `<key>com.apple.security.cs.disable-executable-page-protection</key>`
-
+``
     `<true/>`
-
+``
 `</dict>`
-
+``
 `</plist>`
 
 Save this as entitlements.plist
 
 `<?xml version="1.0" encoding="UTF-8"?>`
-
+``
 `<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">`
-
+``
 `<plist version="1.0">`
-
+``
 `<dict>`
-
+``
 	`<key>com.apple.security.cs.allow-unsigned-executable-memory</key>`
-
+``
 	`<true/>`
-
+``
 	`<key>com.apple.security.device.audio-input</key>`
-
+``
 	`<true/>`
-
+``
 	`<key>com.apple.security.cs.disable-library-validation</key>`
-
+``
 	`<true/>`
-
+``
 	`<key>com.apple.security.device.microphone</key>`
-
+``
 	`<true/>`
-
+``
 `</dict>`
-
+``
 `</plist>`
 
 
