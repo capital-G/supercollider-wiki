@@ -52,9 +52,9 @@ I’ll use my signing identity as the example below, but when I get to the notar
 
 `xcrun altool --notarize-app -t osx -f SuperCollider.app.zip --primary-bundle-id net.sourceforge.supercollider -u YourAppleDevID -p YouAppleAppSpecificPassword`
 
-`# Notarization-info comes from the above… it is a UUID passed back after the app is`
-`# uploaded Apple will email you when notarization is completed - OR - take the UUID`
-`# that comes back and check the status`
+`# Notarization-info comes from the above… it is a UUID passed back after the app`
+`# is uploaded Apple will email you when notarization is completed - OR - take`
+`# the UUID that comes back and check the status`
 
 `xcrun altool --notarization-info TheUUID -u YourAppleDevID -p YouAppleAppSpecificPassword`
 
@@ -68,6 +68,7 @@ I’ll use my signing identity as the example below, but when I get to the notar
 `cd ..`
 
 `# Now, in Finder, compress the SuperCollider folder to`
+
 `# SuperCollider.zip (or whatever you want to name it, then code sign the zip`
 
 `codesign --deep --force --verify --verbose --timestamp --sign "Developer ID Application: Joshua Parmenter" SuperCollider.zip`
