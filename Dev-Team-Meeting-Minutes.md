@@ -1,4 +1,26 @@
+2020-01-26
+==========
+
+Unfortunately no minutes are available for this meeting
+
+2020-01-19
+==========
+
+Members Present: Brian H, James P, Marcin, Tejaswi, Patrick D, Nathan H
+
+Discussed procedure around releases and timeline for 3.11 release.
+No decisions made as Nathan wasn't present yet.
+
+Discussed some open PRs (#4599, #4704) and review process
+
+Patrick brough up QPM PR #10 for attention
+
+Patrick reported that he's making progress running tests in CI, ready to make a PR that runs tests in CI on Linux
+
+Marcin asked for help with PR #4583, Brian said he would assist
+
 2020-01-12
+==========
 
 Members Present: Josh Parmenter, Brian Heim, Nathan Ho, Patrick Dupuis
 
