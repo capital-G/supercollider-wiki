@@ -17,8 +17,8 @@ General progress update
 3.11 beta release - planned for Feb 16 - Josh will handle
 
 Brian suggested doing calls every other weekend
-Josh, Patrick agreed that would be good
-James and Josh suggested doing regular check-ins instead of the meetings when we don't have them
+- Josh, Patrick agreed that would be good
+- James and Josh suggested doing check-ins via another medium instead of the meetings when we don't have them
 
 Discussed moderation of the scsynth.org forum - James S said he would be interested in helping moderate
 
