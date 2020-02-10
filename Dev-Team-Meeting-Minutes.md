@@ -4,13 +4,15 @@
 Members present: Brian H, Josh P, James S, Tejaswi P, Patrick D
 
 SC symposium - discussed who is going and informal travel plans
+
 GSOC - weren't able to find a second mentor, won't be doing it this year
+
 General progress update
-Brian - busy in other projects lately
-Josh - busy in other projects lately, suggested releasing 3.11 beta soon
-Patrick - worked on updating pull requests -- wants to merge #3814, #4761
-James - busy with other projects lately, planning to review some PRs
-Tejaswi - just changed build environments, interested in reviewing PRs, added to Reviewers GitHub team
+- Brian - busy in other projects lately, planning to get back to reviews this week
+- Josh - busy in other projects lately, suggested releasing 3.11 beta soon
+- Patrick - worked on updating pull requests -- wants to merge #3814, #4761
+- James - busy with other projects lately, planning to review some PRs
+- Tejaswi - just changed build environments, interested in reviewing PRs, added to Reviewers GitHub team
 
 3.11 beta release - planned for Feb 16 - Josh will handle
 
