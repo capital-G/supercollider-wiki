@@ -1,3 +1,38 @@
+2020-03-01
+
+Members present: Brian H, Josh P, James S, Tejaswi P, Patrick D, Marcin P, Geoffrey M
+
+3.11 beta out - what issues before release candidate?
+
+https://github.com/supercollider/supercollider/pull/4784
+https://github.com/supercollider/supercollider/pull/4783
+
+Downloads - 25 Mac OS , 20 times for Windows
+
+Tag needs prefix of ‘Version-3.11.0-beta1’
+
+RC in a week - 
+
+Merge 3.11 to develop soon
+
+Verify Supernova on Mac is included.
+
+3.12 ? - review RFCs - final comment period after Josh checks with authors
+
+Debugger for 3.12
+
+Created a 3.11.1 board
+	- check the issues that were added
+
+Open Topics:
+
+Patrick: https://github.com/supercollider/supercollider/pull/4786
+
+Brian: For releases, we should create an issue for discussing the release. 
+3.11.1 created
+
+3-14 for next meeting
+
 2020-02-09
 ==========
 
