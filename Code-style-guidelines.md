@@ -247,7 +247,9 @@ Miscellaneous
 
 ### Trailing closure syntax
 
-#### *Recommendation*: Use trailing closure syntax whenever possible, especially in control-flow methods like `do`, `if`, `for`, `case`, `switch`, and `while`:
+#### *Recommendation:* Use trailing closure syntax whenever possible.
+
+Especially in control-flow methods like `do`, `if`, `for`, `case`, `switch`, and `while`:
 
 ```supercollider
 // wrong
