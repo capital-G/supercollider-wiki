@@ -18,6 +18,8 @@ Table of Contents
   * [Arrays and Collections](#arrays-and-collections)
     * [Multi\-line arrays](#multi-line-arrays)
     * [Abbreviated symbol syntax](#abbreviated-symbol-syntax)
+  * [Miscellaneous](#miscellaneous)
+    * [Trailing closure syntax](#trailing-closure-syntax)
 * [SCDoc (\.schelp)](#scdoc-schelp)
     * [Tag capitalization](#tag-capitalization)
     * [Indentation](#indentation-1)
@@ -238,6 +240,21 @@ x = [
     "bar",
     "baz"
 ];
+```
+
+Miscellaneous
+-------------
+
+### Trailing closure syntax
+
+#### *Recommendation*: Use trailing closure syntax whenever possible, especially in control-flow methods like `do`, `if`, `for`, `case`, `switch`, and `while`:
+
+```supercollider
+// wrong
+if(c, { "true".postln }, { "false".postln });
+
+// right
+if(c) { "true".postln } { "false".postln };
 ```
 
 SCDoc (.schelp)
