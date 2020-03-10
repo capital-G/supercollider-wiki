@@ -193,9 +193,9 @@ When you are ready to push the work on the feature to the public repository, fir
 
 This will merge the additional commits of your feature branch into the master and push them public. For additional details about rebase, see (4).
 
-##Common git commands##
+## Common git commands ##
 
-upstream - the github repository.
+upstream - the GitHub repository.
 
 fetch and merge changes from upstream:
 
