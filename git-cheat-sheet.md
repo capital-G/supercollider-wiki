@@ -1,7 +1,6 @@
-
 ## Get the latest sources ##
 
-First you need to create your own local clone of the online *repository*. There are two options:
+To work with SuperCollider's source code, you first need to create your own local clone of the online *repository*. There are two options:
 
 * If you are going to push changes back to the GitHub repository do:
 
@@ -11,11 +10,43 @@ First you need to create your own local clone of the online *repository*. There 
 
     ``git clone --recursive git://github.com/supercollider/supercollider.git``
 
-The `--recursive` flag is required to also download all the *submodules* used by the repositoryd
+The `--recursive` flag is required to also download all the *submodules* used by the repository.
+
+## Working with submodules ##
+
+This project uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to manage third-party dependencies (Ableton Link, yaml-cpp, etc.) and subprojects. By default, when you switch branches or commits, git does not update the state of submodules, which may cause build failures and nuisances such as directories containing submodules showing up as untracked or modified in `git status`. You can resolve this by running `git submodule update --init --recursive`. However, there are ways of making things simpler.
+
+### Auto-update of submodules using git config
+
+The following command will turn on automatically updating submodules when performing `checkout`, `fetch` and `pull`:
+
+```
+git config --local submodule.recurse true
+```
+
+You can use `--global` instead of `--local` to make this the default behavior across all git repositories on your computer.
+
+You can also turn automatic submodule updates on or off for `fetch` by setting:
+
+```
+git config --local fetch.recurseSubmodules true # or false
+```
+
+Note that this can make these commands take much longer to complete.
+
+### Auto-update of submodules using command line flags
+
+You can use the `--recurse-submodules` option with `fetch`, `pull`, and `checkout` to update submodules: `git checkout --recurse-submodules develop`. If you find yourself using this flag (or any command) regularly, you can alias it using a [git alias](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases). An example would be:
+
+```
+git config --global alias.chrs 'checkout --recurse-submodules' # chrs = 'checkout, recursing submodules'
+# now you can use it like:
+git chrs develop
+```
 
 ## Update local repository ##
 
-Considering that you have not been changing your local repository by yourself, you can update it with:
+You can update the branches on your local repository to those of a remote repository with:
 
     git pull
     git submodule update --init --recursive 
