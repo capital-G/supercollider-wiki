@@ -1,3 +1,27 @@
+2020-03-15
+==========
+
+Members present: Brian H, Josh P, James S, Tejaswi P, Nathan H, Marcin P, Julian R
+
+3.11.1: discussed PRs and release date
+- Make an RC by April 15, release by April 30
+- #4544 is priority for 3.11.1 or 3.11.2
+- #4826 also recommended
+- Marcin recommended #4599, we agreed it should be included
+- Julian recommended #4779, we agreed it should be included
+- Brian recommended all "Cherry-pick to 3.11" PRs
+
+3.12.0: discussed release date
+- Josh suggested 6 months from 3.11.0 release. Discussed impact of COVID-19 outbreak and associated instability on development
+- Nathan recommended focusing on a single project for next release
+
+Julian brought up his concept for an "AbstractObject"/"Neutral" RFC
+- discussed design and possible implementation
+
+Discussed open and future RFCs
+
+Discussed deprecation policy
+
 2020-03-01
 ==========
 
