@@ -1,3 +1,38 @@
+2020-03-29
+==========
+
+Members present: Brian H, James S, Nathan H, Marcin P, Patrick D, Clare M, Tejaswi P
+
+3.11.0 release:
+- Josh P will make new sc3-plugins release and source tarball for sc 3.11.0 as soon as possible
+
+3.11.1 release:
+- #4703 close to merge
+- #4583 waiting on Brian's review
+- discussed Wayland issue
+- discussed cherry-picking
+    - Nathan suggested documenting git process w/branches in readme
+- #4826 - no progress yet, will revisit
+
+Patrick brought up #4136 GPU issue on macOS
+
+3.12.0:
+- Nathan suggested we should make sure we decide on / have at least one new big feature before making a minor release
+- RFC process needs a bit of a kick-start
+- Patrick wanted to have a release in <1 year
+- Clare talked about her experience with release schedules
+    - what worked: commit to a regular release schedule (quarterly at her work)
+    - just release whatever is available (could be patch or minor)
+- discussion about release schedules & universities
+    - more frequent releases => departments install more recent versions
+
+other:
+- Nathan would like to release some new (personal) UGens soon
+- Clare would like to start contributing again in the next few months
+- Patrick wants to help with the sc3-plugins release
+- discussed anxiousness about reviewing
+- discussed review behaviors and commit messages
+
 2020-03-15
 ==========
 
