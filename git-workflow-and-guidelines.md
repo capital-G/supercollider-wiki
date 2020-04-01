@@ -89,7 +89,7 @@ For each beta release:
 - Run the [changelog to schelp converter script](https://github.com/supercollider/supercollider/blob/develop/package/changelog_to_schelp.sh) to get the "News in 3.9" help file up to date.
 - Tag the beta release in git as (say) "Version-3.9.0-beta1." **Double check the branch -- you should be tagging the commit on the 3.9 branch.**
 - Seriously Nathan, you gotta check that branch. Don't goof it up!
-- Run `./package/create_source_tarball.sh -v <version>` (where `version` is the version tag) to create a source tarball (including submodules). Optionally run the script with `-s <email-or-keyid>` (where `email-or-keyid` is a valid PGP key id of the release manager) to also create a detached PGP signature for the source tarball.
+- Run `./package/create_source_tarball.sh -v <version>` (where `version` is the version tag, e.g. `Version-3.11.0`) to create a source tarball (including submodules). Optionally run the script with `-s <email-or-keyid>` (where `email-or-keyid` is a valid PGP key id of the release manager) to also create a detached PGP signature for the source tarball.
 - Create a release on the GitHub release page. Upload source tarball (and optionally detached PGP signature) and builds for macOS, Linux, and Windows.
 - Do the same for sc3-plugins!
 - Announce to mailing list, Facebook, etc.
@@ -103,7 +103,7 @@ For the release proper:
 - Merge `3.9` into `master`, preferably with `git merge --no-ff`.
 - Tag the release in git as "Version-3.9.0." **Unlike the pre-releases, the branch should be `master`.** Release on GitHub.
 - No really man, double check that branch.
-- Run `./package/create_source_tarball.sh -v <version>` (where `version` is the version tag) to create a source tarball (including submodules). Optionally run the script with `-s <email-or-keyid>` (where `email-or-keyid` is a valid PGP key id of the release manager) to also create a detached PGP signature for the source tarball.
+- Run `./package/create_source_tarball.sh -v <version>` (where `version` is the version tag, e.g. `Version-3.11.0`) to create a source tarball (including submodules). Optionally run the script with `-s <email-or-keyid>` (where `email-or-keyid` is a valid PGP key id of the release manager) to also create a detached PGP signature for the source tarball.
 - Create a release on the GitHub release page. Upload source tarball (and optionally detached PGP signature) and builds for macOS, Linux, and Windows.
 - Update the website download page.
 - Do the same for sc3-plugins!
