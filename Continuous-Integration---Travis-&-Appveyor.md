@@ -22,6 +22,20 @@ Important: "PR" builds don't have access to encrypted environment variables whic
 
 People need to have membership within the SuperCollider organization to do actions within Travis and AppVeyor. Anyone with Reviewer, Trusted reviewer, or Core Team status can restart builds and modify some settings in AppVeyor. Admin privileges belong to Brian Heim. For Travis CI, Core Team membership gives you access over most settings.
 
+## Access to S3
+
+Our S3 storage is owned by Scott Carver. Brian Heim also has limited access.
+
+## Encrypted information
+
+Both Appveyor and Travis allow sensitive information to be securely encrypted and used within builds. The values are only usable within "branch" builds. We use this encryption for S3 access and GitHub auth keys.
+
+To encrypt a value in Appveyor, go [here](https://ci.appveyor.com/tools/encrypt) and then stick it in `.appveyor.yml`, ideally by assigning it to an environment variable.
+
+To encrypt a value in Travis, go to the settings for the project (for example, [here](https://travis-ci.org/github/supercollider/supercollider/settings) for supercollider) and enter it under "Environment variables". Make sure "Display value in build log" is turned off! Afterward you can use it directly in the script as an environment variable.
+
+Make sure that whatever changes you make to configuration will still work if an encrypted value isn't present!
+
 ## Storage and deployment of build artifacts
 
 Builds produce "artifacts", in our case zip files and Windows installers. These are stored in 3 places:
