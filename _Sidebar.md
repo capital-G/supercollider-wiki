@@ -15,6 +15,7 @@
 * [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
 * [UGen Quality Standards](https://github.com/supercollider/supercollider/wiki/UGen-Quality-Standards)
 * [Miscellaneous project information](https://github.com/supercollider/supercollider/wiki/Miscellaneous-project-information-(CI,-maintenance-scripts,-etc.))
+* [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
 * [Debugging Tips](https://github.com/supercollider/supercollider/wiki/Debugging-Tips)
 * [Translating the IDE](https://github.com/supercollider/supercollider/wiki/Translating-the-IDE)
 * [Adding to QtCollider widgets](https://github.com/supercollider/supercollider/wiki/Adding-to-QtCollider-widgets)
