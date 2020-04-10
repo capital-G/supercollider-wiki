@@ -22,9 +22,18 @@ Important: "PR" builds don't have access to encrypted environment variables whic
 
 People need to have membership within the SuperCollider organization to do actions within Travis and AppVeyor. Anyone with Reviewer, Trusted reviewer, or Core Team status can restart builds and modify some settings in AppVeyor. Admin privileges belong to Brian Heim. For Travis CI, Core Team membership gives you access over most settings.
 
-## S3 builds
+## Storage and deployment of build artifacts
+
+Builds produce "artifacts", in our case zip files and Windows installers. These are stored in 3 places:
+- Appveyor's own public storage (see Appveyor section below for details)
+- An AWS S3 instance
+- GitHub releases pages
 
 Brian Heim and Scott Carver have access to the S3 instance we use for storage. For info on where the S3 builds live, see [here](https://github.com/supercollider/supercollider/wiki/Miscellaneous-project-information-(CI,-maintenance-scripts,-etc.)#s3-build-hosting).
+
+For SC and sc3-plugins:
+- on every build of an internal branch, a ZIP macOS archive and ZIP Windows archives are deployed to S3, and (normally) the Windows archives are stored on AppVeyor too
+- on every build of a tag, a ZIP macOS archive and Windows installers (SC) or ZIP Windows archives (sc3-plugins) are deployed to the GitHub release
 
 ## [skip ci]
 
