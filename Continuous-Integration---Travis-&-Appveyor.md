@@ -86,6 +86,8 @@ These ones build slower than Travis because we only have 1 parallel build with A
 
 The 32-bit build for SC uses an old version of Qt (5.9) because that's the last version for which 32-bit WebEngine components were released.
 
+A bunch of software comes preinstalled on Appveyor images. You can see the whole list [here](https://www.appveyor.com/docs/windows-images-software/). Be careful to check whether it's on the image you want to use!
+
 Appveyor has a very strange policy where artefacts are always uploaded to their cloud and retained for 6 months, no exceptions or configurability. So sometimes we hit an arbitrary storage limit imposed by them.
 
 **NOTE**: Unfortunately right now (as of April 10, 2020) we are waiting for this limit to be raised, so **temporarily we are not creating "artifacts", just pushing to S3 manually the same artifact we would normally deploy via configuration**. This is also important because **no artifact will be deployed to github currently**. That needs to be reversed before SC is released because for Windows SC builds we need to deploy an installer and not the ZIP that is pushed to S3.
