@@ -38,7 +38,7 @@ This is meant as a reference checklist of the bare minimum of things to check be
 
 - Review the changes. Do they reflect the stated intent of the PR? Review the quality of the code including comments, style, naming, correctness, and general code cleanliness. If needed, build the branch yourself and thoroughly test it. For a complicated or subtle change, don't hesitate to ask the PR author to explain how they tested their branch (and be skeptical if they haven't).
 
-- Check the commits. It's not uncommon for a simple change to end up being split across several commits due to the review process. Request that the PR author squash their commits, or use the "Squash merge" option instead of "Create merge commit" option when merging the PR.
+- Check the commits. It's not uncommon for a simple change to end up being split across several commits due to the review process. Request that the PR author squash their commits if possible.
 
 - Check the branches. Is the PR being made to the right branch? Let the PR author know they shouldn't be submitting PRs from their fork's release or develop branches. Request a rebase or add the PR to the "PRs to Cherry-Pick" project if necessary.
 
