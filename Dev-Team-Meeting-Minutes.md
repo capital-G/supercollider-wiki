@@ -1,3 +1,31 @@
+2020-04-12
+==========
+
+People present: Nathan H, Brian H, Patrick D, Geoffrey M, James S, Gianluca E, Josh P
+
+Welcoming Gianluca!
+
+What people are up to
+- Geoffrey: looking at autoindent in IDE, waiting for review on #4797
+- James: reviews, working on implementing spelling correction suggestions in sclang parser
+- Nathan: working on other projects
+- Patrick: refactoring TestBuffer to break out server-requiring tests
+- Josh: managing releases
+- Brian: reviewing, beginning to implement RFC #1
+
+3.11.1
+- discussed Brian's cherry-pick PR
+- need to merge in scel update for support on ubuntu
+- decided to postpone outstanding issues (#4544, #4826)
+- decided to release ASAP
+
+sc3-plugins
+- discussed merging Scott C's PR and doing a release
+- Josh P said he thinks we should merge it and include in 3.11, general agreement
+
+Other PRs and issues
+- Patrick asked about best practice quitting servers in unit testing
+
 2020-03-29
 ==========
 
