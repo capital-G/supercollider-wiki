@@ -87,15 +87,11 @@ Regards,
 
 UR_NAME
 
-3.10.3 Release board: https://github.com/supercollider/supercollider/projects/17
+3.11.1 Release board: https://github.com/supercollider/supercollider/projects/20
 
 Future Release Board: https://github.com/supercollider/supercollider/projects/15
 
 sc-dev Meeting DATE Minutes:
 
-⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
-
 POST_MINUTES_HERE
-
-⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
 ```
