@@ -2,11 +2,11 @@ Some message templates and reminders for how we do dev meetings. Edit at will.
 
 - send out a poll early in the week (Tuesday or early Wednesday)
 - announce the time on Thursday (or early Friday)
-- post minutes on GitHub and then to the list right after the meeting. Always post minutes, even if uneventful.
+- post minutes on GitHub and then to the list and scsynth.org right after the meeting. Always post minutes, even if uneventful.
 
 The announcements should be posted on sc-dev, Slack, and scsynth.org. Facebook and sc-users if we want more people to attend (i.e. we don't have anything super important to talk about).
 
-scsynth [time poll thread](https://scsynth.org/t/developer-meeting-polls/234/26) and [time announce thread](https://scsynth.org/t/dev-meetings-schedule/250/20).
+scsynth [time poll thread](https://scsynth.org/t/developer-meeting-polls/234), [time announce thread](https://scsynth.org/t/dev-meetings-schedule/250), [minutes announce thread](https://scsynth.org/t/dev-meeting-minutes/2033).
 
 # Conducting meetings
 
@@ -90,8 +90,6 @@ UR_NAME
 3.11.1 Release board: https://github.com/supercollider/supercollider/projects/20
 
 Future Release Board: https://github.com/supercollider/supercollider/projects/15
-
-sc-dev Meeting DATE Minutes:
 
 POST_MINUTES_HERE
 ```
