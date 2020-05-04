@@ -104,12 +104,14 @@ For the release proper:
 
 - In the `3.9` branch, bump up the version in `SCVersion.txt` to 3.9.0.
 - Copy the changelog again and convert it to schelp if there were any new changes.
+- Make sure platform support information in the changelog and schelp is up-to-date.
 - Update the release history in `README.md`.
 - Merge `3.9` into `master`, preferably with `git merge --no-ff`.
 - Tag the release in git as "Version-3.9.0." **Unlike the pre-releases, the branch should be `master`.** Release on GitHub.
 - No really man, double check that branch.
 - Run `./package/create_source_tarball.sh -v <version>` (where `version` is the version tag, e.g. `Version-3.11.0`) to create a source tarball (including submodules). Optionally run the script with `-s <email-or-keyid>` (where `email-or-keyid` is a valid PGP key id of the release manager) to also create a detached PGP signature for the source tarball.
 - Create a release on the GitHub release page. Upload source tarball (and optionally detached PGP signature) and builds for macOS, Linux, and Windows.
+- Make sure to note known-to-work platform versions and any changes in platform support on the Github release page.
 - Update the website download page.
 - Do the same for sc3-plugins!
 - Update [the Wikipedia page](https://en.wikipedia.org/wiki/SuperCollider)
