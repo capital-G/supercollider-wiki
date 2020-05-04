@@ -1,5 +1,7 @@
 This document describes how SuperCollider decides which platforms to support. For information on which versions of SuperCollider support which platforms, see the README.md or the website download page.
 
+This policy was implemented as a result of https://github.com/supercollider/rfcs/pull/1.
+
 ## Support guarantees
 
 The development community for SuperCollider has agreed on some guarantees about support for various platforms and
