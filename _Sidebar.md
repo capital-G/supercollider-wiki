@@ -7,6 +7,7 @@
 * [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
+* [Platform Support](https://github.com/supercollider/supercollider/wiki/Platform-Support)
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
 * [C++ code style guidelines](https://github.com/supercollider/supercollider/wiki/Cpp-code-style-guidelines)
 * [C++ formatting instructions](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions)
