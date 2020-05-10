@@ -1,4 +1,4 @@
-Work in progress document.
+Work in progress document. Please add or correct info as you see fit.
 
 The following are parts of SuperCollider where path configuration coems into play:
 
