@@ -1,3 +1,28 @@
+2020-05-10
+==========
+
+People present: Brian H, Marcin P, Luke N, James S, Nathan H, Patrick D, Gianluca E, Tejaswi P
+
+Luke N talked a bit about Scintillator (https://github.com/ScintillatorSynth/Scintillator)
+
+Brian gave a short overview of what things have been merged in recently
+
+Gianluca discussed his help browser PR (#4883) and associated RFC (#9)
+
+Discussed issues around SuperCollider versioning and standalones
+
+Some points of discussion:
+- ease of learning - interactive learning environment
+- interoperability with other technologies (web, etc, LSP?)
+- standalones - for performers
+- multiple versions of supercollider
+    - dev work
+    - possible, but very difficult currently
+    - backward compatibility
+    - run 'from a USB stick'
+- app bundle design
+- server/IDE/language search paths
+
 2020-04-12
 ==========
 
