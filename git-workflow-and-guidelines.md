@@ -115,6 +115,7 @@ For the release proper:
 - Update the website download page.
 - Do the same for sc3-plugins!
 - Update [the Wikipedia page](https://en.wikipedia.org/wiki/SuperCollider)
+- Update the sc3-plugins page (the one at https://github.com/supercollider/sc3-plugins/tree/master/website!)
 - Announce everywhere - sc-users, sc-dev, Slack, Discourse, Facebook. (Reddit?) Celebrate, bake a cake.
 - Merge `master` into `develop`.
 
