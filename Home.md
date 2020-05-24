@@ -88,4 +88,4 @@ Check the sidebar for a full list of reference documents for SuperCollider devel
 * [C++ formatting instructions](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions)
 * [Unit Testing Guide](https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide)
 
-Sorry if the project documentation is a little bit disorderly — it's always a work in progress. Don't feel like you need to understand all of this before contributing! We are happy to help guide you through your first contributions. If you run into confusion or need help, you are always welcome to ask.
+You don't need to read and understand all of this before contributing! We are happy to help guide you through your first contributions. If you run into confusion or need help, you are always welcome to ask.
