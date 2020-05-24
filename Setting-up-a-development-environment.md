@@ -16,7 +16,7 @@ We would like to have a better workflow for this, but for now, here is a simple 
 
 ```supercollider
 // edit this to the appropriate path!
-~scGitPath = "/path/to/your/supercollider";
+~scGitPath = // "/path/to/your/supercollider";
 
 // add paths from your clone
 LanguageConfig.addIncludePath(~scGitPath +/+ "SCClassLibrary");
