@@ -38,4 +38,15 @@ LanguageConfig.store(~scConfPath);
 postln("Language config stored to" + ~scConfPath);
 ```
 
-2. In your IDE preferences, set this to be the sclang config file, and reboot sclang. In SCIDE, you can do this in the Preferences dialog. If you are using sclang by itself on the command line, run it with `-l path/to/sclang_dev_config.yml`.
+2. In your IDE preferences, set this to be the sclang config file, and reboot sclang. In SCIDE, you can do this in the Preferences dialog. If you are using sclang by itself on the command line, run it with `-l path/to/sclang_conf_development.yml`.
+
+3. When you want to switch back to using sclang for your own enjoyment, simply swap the config file to what it was previously.
+
+### C++ changes, sclang, and SCIDE
+
+The IDE runs sclang using PATH on Windows and Linux, and assumes an App Bundle directory structure on macOS. This presents a difficulty if you want to use SCIDE to test C++ changes to sclang, because it may accidentally use your system installation of sclang.
+
+The way to manage this is different on each platform:
+- MacOS: always use the app bundle from the `install` or `SuperCollider` targets to run the IDE.
+- Linux: run the IDE with `PATH="/directory/with/sclang:$PATH" /path/to/scide` (don't include `sclang` in the path, just its containing directory).
+- Windows: since sclang is not usually in PATH by default, and "." is, always run the IDE from the `install` target.
