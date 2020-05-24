@@ -1,4 +1,4 @@
-If you'd like to start contributing to SC, there are a few things you will need to do to prepare your environment.
+If you'd like to start contributing to SuperCollider, there are a few things you will need to do to prepare your environment.
 
 First, you will need everything you normally need to build SuperCollider on your system. Check the platform-specific README for instructions. Try to build SuperCollider at least once first before modifying any code, so you know this part of your environment is set up correctly, and the issues are due to anything you touched.
 
