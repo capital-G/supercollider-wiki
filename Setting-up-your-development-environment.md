@@ -23,7 +23,7 @@ LanguageConfig.addIncludePath(~scGitPath +/+ "SCClassLibrary");
 LanguageConfig.addIncludePath(~scGitPath +/+ "testsuite");
 
 // disable startup files
-LanguageConfig.addIncludePath(~scGitPath +/+ "plaform/disable_startup_files");
+LanguageConfig.addIncludePath(~scGitPath +/+ "platform/disable_startup_files");
 
 // disable default search paths
 LanguageConfig.addExcludePath(Platform.systemExtensionDir);
@@ -33,7 +33,7 @@ LanguageConfig.addExcludePath(Platform.resourceDir +/+ "SCClassLibrary");
 // enable developer-oriented warning
 LanguageConfig.postInlineWarnings = true;
 
-~scConfPath = Platform.userConfigDir +/+ "sclang_dev_config.yml";
+~scConfPath = Platform.userConfigDir +/+ "sclang_conf_development.yaml";
 LanguageConfig.store(~scConfPath);
 postln("Language config stored to" + ~scConfPath);
 ```
