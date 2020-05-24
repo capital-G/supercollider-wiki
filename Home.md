@@ -76,7 +76,7 @@ If you aren't too familiar with git, please see our guide: [Creating pull reques
 
 *Please don't change the title of this section — it is the new location of `DEVELOPING.md`, which links here.*
 
-Check the sidebar for a full list of reference documents for SuperCollider development. Here are a few that are particularly good for new contributors:
+Check the sidebar for a full list of reference documents for SuperCollider development. Here are a few that are particularly good for new contributors. You don't need to read and understand all of this before contributing! We are happy to help guide you through your first contributions. If you run into confusion or need help, you are always welcome to ask.
 
 * [Project Structure](https://github.com/supercollider/supercollider/wiki/Project-Structure)
 * [Setting up your development environment](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment)
@@ -87,5 +87,3 @@ Check the sidebar for a full list of reference documents for SuperCollider devel
 * [C++ code style guidelines](https://github.com/supercollider/supercollider/wiki/Cpp-code-style-guidelines)
 * [C++ formatting instructions](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions)
 * [Unit Testing Guide](https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide)
-
-You don't need to read and understand all of this before contributing! We are happy to help guide you through your first contributions. If you run into confusion or need help, you are always welcome to ask.
