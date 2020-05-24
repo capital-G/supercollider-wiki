@@ -5,6 +5,7 @@
 * [Project Structure](https://github.com/supercollider/supercollider/wiki/Project-Structure)
 * [Generating crash reports](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports)
 * [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
+* [Setting up your development environment](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Platform Support](https://github.com/supercollider/supercollider/wiki/Platform-Support)
