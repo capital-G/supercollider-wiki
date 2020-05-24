@@ -79,6 +79,7 @@ If you aren't too familiar with git, please see our guide: [Creating pull reques
 Check the sidebar for a full list of reference documents for SuperCollider development. Here are a few that are particularly good for new contributors:
 
 * [Project Structure](https://github.com/supercollider/supercollider/wiki/Project-Structure)
+* [Setting up your development environment](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment)
 * [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
 * [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
