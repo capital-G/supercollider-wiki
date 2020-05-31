@@ -78,6 +78,8 @@ Try to exercise common sense in keeping the log readable and useful to users. Us
 
 ## Releasing ##
 
+**DO NOT EDIT THIS SECTION -- IT IS BEING REPLACED BY SCRIPTING. SEE PR #4987**
+
 A month or so before the beta release, the release manager branches off `develop` to create a new branch named after the release -- say `3.9`. Uncontroversial bug fixes should be merged into the `3.9` branch, and everything else should go into the `develop` branch. This causes the `3.9` and `develop` branches to diverge, so the fixes in the `3.9` branch should periodically be merged into `develop` to keep `develop` up to date.
 
 When beginning release mode:
