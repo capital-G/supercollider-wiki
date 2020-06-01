@@ -78,62 +78,7 @@ Try to exercise common sense in keeping the log readable and useful to users. Us
 
 ## Releasing ##
 
-**DO NOT EDIT THIS SECTION -- IT IS BEING REPLACED BY SCRIPTING. SEE PR #4987**
-
-A month or so before the beta release, the release manager branches off `develop` to create a new branch named after the release -- say `3.9`. Uncontroversial bug fixes should be merged into the `3.9` branch, and everything else should go into the `develop` branch. This causes the `3.9` and `develop` branches to diverge, so the fixes in the `3.9` branch should periodically be merged into `develop` to keep `develop` up to date.
-
-When beginning release mode:
-- remove the `SCClassLibrary/deprecated/3.8` directory and document these removals in the changelog. Corresponding UGen and primitive code should also be removed. Be careful when deprecating UGens and be considerate of alternate clients!
-- review platform support information in the main README.md for accuracy
-
-For each beta release:
-
-- In the `3.9` branch, bump up the version in the top-level file `SCVersion.txt` from 3.9dev to 3.9.0-beta1 (or from 3.9.0-beta1 to 3.9.0-beta2, etc).
-- Make sure the changelog is up to date.
-- Add platform support notes to the changelog, similar to what is in the main README.
-- Run the [changelog to schelp converter script](https://github.com/supercollider/supercollider/blob/develop/package/changelog_to_schelp.sh) to get the "News in 3.9" help file up to date.
-- Make sure the schelp document has platform support notes.
-- Tag the beta release in git as (say) "Version-3.9.0-beta1." **Double check the branch -- you should be tagging the commit on the 3.9 branch.**
-- Seriously Nathan, you gotta check that branch. Don't goof it up!
-- Run `./package/create_source_tarball.sh -v <version>` (where `version` is the version tag, e.g. `Version-3.11.0`) to create a source tarball (including submodules). Optionally run the script with `-s <email-or-keyid>` (where `email-or-keyid` is a valid PGP key id of the release manager) to also create a detached PGP signature for the source tarball.
-- Create a release on the GitHub release page. Upload source tarball (and optionally detached PGP signature). Builds for macOS, Linux, and Windows are automatically uploaded from CI once the tag is created.
-- Make sure to note known-to-work platform versions and any changes in platform support on the Github release page.
-- Do the same for sc3-plugins!
-- Announce to mailing list, Facebook, etc.
-- Merge `3.9` into `develop`. This will temporarily mess up `SCVersion.txt` in `develop`, but who cares, it's `develop`. **Do not merge prereleases into `master`! `master` is stable!**
-
-For the release proper:
-
-- In the `3.9` branch, bump up the version in `SCVersion.txt` to 3.9.0.
-- Copy the changelog again and convert it to schelp if there were any new changes.
-- Make sure platform support information in the changelog and schelp is up-to-date.
-- Update the release history in `README.md`.
-- Merge `3.9` into `master`, preferably with `git merge --no-ff`.
-- Tag the release in git as "Version-3.9.0." **Unlike the pre-releases, the branch should be `master`.** Release on GitHub.
-- No really man, double check that branch.
-- Run `./package/create_source_tarball.sh -v <version>` (where `version` is the version tag, e.g. `Version-3.11.0`) to create a source tarball (including submodules). Optionally run the script with `-s <email-or-keyid>` (where `email-or-keyid` is a valid PGP key id of the release manager) to also create a detached PGP signature for the source tarball.
-- Create a release on the GitHub release page. Upload source tarball (and optionally detached PGP signature). Builds for macOS, Linux, and Windows are automatically uploaded from CI once the tag is created.
-- Make sure to note known-to-work platform versions and any changes in platform support on the Github release page.
-- Update the website download page.
-- Do the same for sc3-plugins!
-- Update [the Wikipedia page](https://en.wikipedia.org/wiki/SuperCollider)
-- Update the sc3-plugins page (the one at https://github.com/supercollider/sc3-plugins/tree/master/website!)
-- Announce everywhere - sc-users, sc-dev, Slack, Discourse, Facebook. (Reddit?) Celebrate, bake a cake.
-- Merge `master` into `develop`.
-
-For patch releases, the process is the same. You can just keep around the `3.9` branch for all the `3.9.x` releases.
-
-When you're done with patch releases, bump up `SCVersion.txt` in `develop` to 3.10dev.
-
-On release, post the changelog to the following announcement channels:
-
-- CHANGELOG.md: post full version with all pull request links
-- GitHub release page: post an abbreviated version
-- "News in 3.x" helpfile: post full version without pull request links
-- GitHub website: post an abbreviated version
-- sc-users mailing list: post an abbreviated version
-- Facebook group: post an abbreviated version
-- Reddit (/r/supercollider): post an abbreviated version
+When it is time to prepare a release, run the script in `tools/release/make_release.py`.
 
 ## Conflicts between release branches and develop ##
 
