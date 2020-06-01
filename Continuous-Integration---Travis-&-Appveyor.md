@@ -51,7 +51,7 @@ For SC and sc3-plugins:
 
 ## [skip ci]
 
-If you have `[skip ci]` in your commit message then neither Appveyor nor Travis will build it. You can also use `[skip appveyor]`. `[skip travis]` doesn't work but we should make it possible.
+If you have `[skip ci]` in the first line of your commit message then neither Appveyor nor Travis will build it. You can also use `[skip appveyor]`. `[skip travis]` doesn't work but if you put `[skip ci]` in the commit message body, and not in the first line, it will be skipped in Travis but not Appveyor.
 
 ## Restarting builds
 
