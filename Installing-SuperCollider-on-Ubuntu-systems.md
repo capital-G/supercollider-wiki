@@ -1,6 +1,10 @@
 This page gives instructions for installing SuperCollider on Ubuntu and its derived OSes (e.g. Mint / Elementary OS). It covers installing SuperCollider from a package and installing the plugins from source. It does not cover installing SuperCollider from source.
+
+**Note: the most recent PPA release is version 3.9.0, which is old. The default repo contains a SuperCollider package with version 3.10.0, but it is [broken](https://github.com/supercollider/supercollider/issues/5022). For now, [installing from source](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-from-source-on-Ubuntu) is the easiest way to get a recent and well-supported version of SuperCollider.**
+
 ### Adding the PPA
-The PPA contains a more up-to-date version of SuperCollider than the default package source. Add the PPA by entering these lines into a terminal:
+
+The PPA contains a working version of SuperCollider, unlike the default package source. Add the PPA by entering these lines into a terminal:
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FABAEF95
     sudo add-apt-repository ppa:supercollider/ppa
