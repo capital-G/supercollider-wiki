@@ -20,6 +20,7 @@ The following packages are required and are available in the Fedora repositories
 * alsa-lib-devel 
 * jack-audio-connection-kit-devel
 * libsndfile-devel
+* libncurses-devel
 * fftw-devel
 * libXt-devel (note capital 'X')
 * libX11-devel
