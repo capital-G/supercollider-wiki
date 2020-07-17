@@ -1,17 +1,14 @@
 ### Before making changes
+See [Setting Up Your Development Environment](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment), to make sure you have a working and updated fork of SuperCollider's source code.
+Then you can create a fresh new branch for your contribution:
 
-- Create a fork of the SuperCollider repository.
-- Clone the repo and its submodules locally:
-
-			git clone --recursive https://github.com/your-name/supercollider.git
-
-	- If you have created the fork before, bring it up-to-date with the SuperCollider repository. See [Updating your fork](#Updating-your-fork) below for details.
+### Create a topic branch
 - Create a topic branch from where you want to base your work.
 	- Your topic branch should be based on `develop`, unless it is a trivial bug fix or documentation change, in which case it should be based on the latest release (`3.x`) branch.
 	- Our branch naming convention is `topic/branch-description`: for example, `topic/fix-sinosc` or `topic/document-object`.
 	- To quickly create a topic branch based on develop: `git checkout -b topic/my-fix develop`.
 	- Please do not work off of the `master` branch, which is stable and only includes releases.
-- As time passes, make sure to keep your fork updated - see [Updating your fork](#Updating-your-fork) below.
+- As time passes, make sure to keep your fork updated - see [Updating your fork](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment#2-Keep-your-fork-updated).
 
 ### Making changes
 
@@ -42,35 +39,6 @@
 - Submit a pull request to the SuperCollider repository.
 - The core team looks at pull requests on a regular basis in a public meeting that is held on a weekly basis. The meeting times are announced on the sc-dev mailing list.
 - You may receive feedback and requests for changes. We expect changes to be made in a timely manner. We may close pull requests if they aren't showing any activity.
-
-### Updating your fork
-
-In order to keep your fork up-to-date, you need to point it to the main SuperCollider repository. This is done by adding the main repository as a remote, usually called `upstream`. **Please note:** naming the main repository `upstream` is just a convention, not a requirement. If you already have a differently named remote pointing to the main SuperCollider repository, you can use that name instead.
-- If you haven't yet added the `upstream` remote, you can add it by doing the following:
-	- Check the list of remotes: `git remote -v`. The output should look like this:
-
-			origin	https://github.com/your-name/supercollider.git (fetch)
-			origin	https://github.com/your-name/supercollider.git (push)
-
-	- Add a new remote called `upstream`, pointing to the SuperCollider repository:
-
-			git remote add upstream https://github.com/supercollider/supercollider.git
-
-	- Check the list of remotes again: `git remote -v`. Now the output should look like this:
-
-			origin	https://github.com/your-name/supercollider.git (fetch)
-			origin	https://github.com/your-name/supercollider.git (push)
-			upstream	https://github.com/supercollider/supercollider.git (fetch)
-			upstream	https://github.com/supercollider/supercollider.git (push)
-
-	- You can now proceed to update your fork.
-- If you've already added the `upstream` remote, you can update your fork by doing the following:
-	- Be sure to have all local changes committed before proceeding with the update
-	- Fetch changes made to the `upstream` repository: `git fetch upstream`
-	- Checkout the `develop` branch: `git checkout develop`
-	- Pull changes into the `develop` branch: `git pull upstream develop`. Your `develop` branch is now up-to-date.
-	- If you've already created your topic branch, you can update it with the changes in `develop` by either rebasing or pulling - see [Notes on rebasing and merge conflicts](#Notes-on-rebasing-and-merge-conflicts).
-	- If you haven't yet created your topic branch, proceed to creating it as described in the [Pull Requests](#Pull-Requests) section.
 
 ### Notes on rebasing and merge conflicts
 
