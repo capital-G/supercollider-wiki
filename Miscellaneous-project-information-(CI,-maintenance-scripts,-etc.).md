@@ -1,10 +1,3 @@
-Continuous Integration and Skipping Commits
--------------------------------------------
-
-We have CI provided by AppVeyor (Windows) and Travis (Linux, macOS). If a commit changes _only_
-non-schelp documentation, _without_ renaming, adding, or removing files, you may want to consider
-adding `[skip ci]` to the commit message so it does not waste CI resources. See https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor#skip-ci.
-
 S3 Build Hosting
 ----------------
 

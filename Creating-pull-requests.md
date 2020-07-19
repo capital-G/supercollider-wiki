@@ -40,6 +40,11 @@ Then you can create a fresh new branch for your contribution:
 - The core team looks at pull requests on a regular basis in a public meeting that is held on a weekly basis. The meeting times are announced on the sc-dev mailing list.
 - You may receive feedback and requests for changes. We expect changes to be made in a timely manner. We may close pull requests if they aren't showing any activity.
 
+### Skipping CI
+We have CI provided by AppVeyor (Windows) and Travis (Linux, macOS). If a commit changes _only_
+non-schelp documentation, _without_ renaming, adding, or removing files, you may want to consider
+adding `[skip ci]` to the commit message so it does not waste CI resources. See https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor#skip-ci.
+
 ### Notes on rebasing and merge conflicts
 
 It is almost never a good idea to resolve merge conflicts via the GitHub interface or by merging the main branch in locally. This creates noise in commit history and makes it more difficult to perform other operations on branches later. In the SuperCollider project, the preferred way to resolve merge conflicts in a pull request is by rebasing.
