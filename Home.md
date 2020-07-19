@@ -18,11 +18,11 @@ SuperCollider users and developers communicate on a number of different channels
 
 Creating an issue is the simplest form of contributing to a project. But there are many ways to contribute, including the following:
 
-- Updating or correcting documentation
+- [Updating or correcting documentation](https://github.com/supercollider/supercollider/wiki/[WIP]-contributing-helpfiles)
 - Fixing an open issue
 - Requesting a feature
-- Reporting a bug
-- Translating the IDE into a language you know (see [Additional resources](#Additional-resources) below)
+- Reporting a bug (see [Issues](#Issues) below)
+- [Translating the IDE](https://github.com/supercollider/supercollider/wiki/Translating-the-IDE) into a language you know
 - Creating a [Request for Comments (RFC)](https://github.com/supercollider/rfcs) to propose 'something big'
 
 If you're new to this project, check out the issues tagged ["good first issue"](https://github.com/supercollider/supercollider/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) – fixing one of these is a great way to get started as a contributor!

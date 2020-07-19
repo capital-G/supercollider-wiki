@@ -9,6 +9,7 @@
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
 * [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
 * [Generating crash reports](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports)
+* [Contributing documentation changes](https://github.com/supercollider/supercollider/wiki/[WIP]-contributing-helpfiles)
 
 **Guidelines**
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
