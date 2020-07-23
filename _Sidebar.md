@@ -15,6 +15,7 @@
 * [Code style guidelines](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines)
 * [C++ code style guidelines](https://github.com/supercollider/supercollider/wiki/Cpp-code-style-guidelines)
 * [C++ formatting instructions](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions)
+* [Commit message format](https://github.com/supercollider/supercollider/wiki/Commit-message-format)
 * [UGen Quality Standards](https://github.com/supercollider/supercollider/wiki/UGen-Quality-Standards)
 
 **Additional Resources**

@@ -14,21 +14,7 @@ Then you can create a fresh new branch for your contribution:
 
 - Make commits of logical units.
 - Please refer to [Code Style Guide](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines). Note that code style, such as whitespace conventions, depend on the language (`C++` vs `SuperCollider` vs `SCDoc Markup`)
-- Make sure your commit messages are descriptive and in the proper format.
-	- Commit messages follow the schema "category: content", e.g. `docs: Make the example in CONTRIBUTING imperative and concrete`, or `help: Update RunningSum2 help file`, or `class library: do this and that`, or `plugins: add missing function definition`.
-	- A more complete example:
-
-	        docs: Make the example in CONTRIBUTING imperative and concrete
-
-	        Without this patch applied the example commit message in the CONTRIBUTING
-	        document is not a concrete example. This is a problem because the
-	        contributor is left to imagine what the commit message should look like
-	        based on a description rather than an example. This patch fixes the
-	        problem by making the example concrete and imperative.
-
-	        The first line is a real life imperative statement which optionally identifies
-	        the component being changed. The body describes the behavior without the patch,
-	        why this is a problem, and how the patch fixes the problem when applied.
+- [Commit message format](https://github.com/supercollider/supercollider/wiki/Commit-message-format): make sure your commit messages are descriptive and in the proper format, following the schema "category: content", e.g. `docs: Make the example in CONTRIBUTING imperative and concrete`, or `help: Update RunningSum2 help file`, or `class library: do this and that`, or `plugins: add missing function definition`.
 
 - Make sure you have added the necessary tests for your changes. All changes to code should include a test which checks for correct functionality, including regression tests for bug fixes. Info on best practice for Unit tests is available at https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide
 - Make sure you have documented your changes, if necessary.
