@@ -1,7 +1,9 @@
 _Note: This document is still a draft_
 ## Contributing documentation changes
-This document is aimed at helping new contributors, whose first contribution is perhaps a small change in SuperCollider's Help files.
-For a more involved workflow, aimed at more experienced contributors, see [below](#Previewing-your-changes).
+This document is aimed at helping new contributors, whose first contribution is perhaps a small change in SuperCollider's Help files. For a more involved workflow, aimed at more experienced contributors, see [below](#Previewing-your-changes).
+
+Eli Fieldsteel made an excellent [video tutorial](https://www.youtube.com/watch?v=CbIwWsGl-zc), especially directed to beginners, that walks through the whole process of fixing a typo in a Help file, from installing git to submitting the changes.
+
 
 Contributing documentation needs the same setup as any other change to the source code. However, for small documentation changes, i.e. everything that doesn't require you to see a preview (e.g. typos, punctuation, extra repetitions), building SuperCollider is not needed, and you don't need any extra developer tool apart from a text editor and git.
 
