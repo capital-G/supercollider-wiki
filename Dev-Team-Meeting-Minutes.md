@@ -1,3 +1,46 @@
+2020-08-02
+==========
+
+Members present:
+Brian H, Cliff D, Patrick D, James S, Josh P, Clare M, Marcin P, Luke N
+
+Discussed 3.11.1 release
+- Discussed PR #5113, agreed that we can move forward with release now
+- Brian said they would move forward with the release process after the meeting
+- Luke wrote a script to notarize and codesign macOS binary on Travis
+- Discussed design of script and how we could adapt it (especially regard build time limit on Travis)
+- Discussed whether SuperCollider as an org could purchase an org certificate from Apple, probably has legal issues
+
+Discussed issue of many GitHub accounts having admin access to the organization (some without 2FA)
+
+Discussed whether to change master->main before or after the release
+- Agreed to do it after release since release is high priority and we don't want any issues potentially arising from changing default branches during the release process
+- Discussed GitHub and git changing their behavior around this as well
+
+sc3-plugins and codesigning:
+- Josh said we weren't able to get a release out for 3.11 because of sign/unsigned binaries
+- Possibility of creating a single binary plugin that someone could use to load all of the plugins once
+- Josh hasn't had a successful way to download & load plugins in the signed binary
+- Brian and Josh said they would work together to try to debug this this week
+
+Clare and Brian discussed release automation & pair programming within the next few weeks
+
+Patrick brought up a Ctk quark pull request
+
+Discussed Quarks best practices and creating a "best practices" document, and/or an example repo
+
+Discussed GUI/headless builds and conditional compilation
+
+Discussed JetBrains product licenses expiring
+
+Discussed macOS 11 (Big Sur) and SC compatibility
+
+Discussed post-release ideas:
+- Making shared project priorities more visible for new & current contributors
+- Patrick wants to discuss after the 3.11.1 release when/how we should do the next release
+- When to do 3.12? - supernova on Windows is probably 'the big feature'
+- Doing more regular/cadenced releases?
+
 2020-07-12
 ==========
 
