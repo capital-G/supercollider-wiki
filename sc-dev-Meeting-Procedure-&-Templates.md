@@ -1,10 +1,10 @@
 Some message templates and reminders for how we do dev meetings. Edit at will.
 
-- send out a poll early in the week (Tuesday or early Wednesday)
-- announce the time on Thursday (or early Friday)
-- post minutes on GitHub and then to the list and scsynth.org right after the meeting. Always post minutes, even if uneventful.
+- send out a poll early in the week (Tuesday or Wednesday): sc-dev, Slack, scsynth.org.
+- announce the time (Thursday or Friday): sc-dev, Slack, scsynth.org.
+- post minutes ASAP after the meeting: GitHub, sc-dev, scsynth.org. **Always post minutes, even if uneventful.**
 
-The announcements should be posted on sc-dev, Slack, and scsynth.org. Facebook and sc-users if we want more people to attend (i.e. we don't have anything super important to talk about).
+The announcements should be posted on sc-dev, Slack, and scsynth.org.
 
 scsynth [time poll thread](https://scsynth.org/t/developer-meeting-polls/234), [time announce thread](https://scsynth.org/t/dev-meetings-schedule/250), [minutes announce thread](https://scsynth.org/t/dev-meeting-minutes/2033).
 
@@ -29,7 +29,7 @@ Hey all,
 
 Here's a meeting time poll for the next developer meeting. Everyone with an interest in improving SuperCollider is welcome to attend!
 
-Dev meetings are held on Skype. If you aren't already in the group, please send me your Skype ID privately and I'll add you.
+Dev meetings are held at https://meet.jit.si/SuperColliderDevMeeting. No registration is required to join.
 
 DOODLE_LINK
 
@@ -44,29 +44,11 @@ SUBJECT: sc-dev Meeting WHEN_IS_IT
 
 Hey all,
 
-The next developer meeting will be on DAY_O_WEEK, MONTH DAY, at UTC_TIME UTC = EST_TIME Eastern = PST_TIME Pacific. The meeting will be 90 minutes long.
+The next developer meeting will be on DAY_O_WEEK, MONTH DAY, at UTC_TIME UTC (= EST_TIME US Eastern = PST_TIME US Pacific). The meeting will be 90 minutes long.
 
 Topics to discuss include TOPICS, and recent issues and pull requests. Everyone with an interest in improving SuperCollider is welcome to attend!
 
-Dev meetings are held on Skype. If you aren't already in the group, please send me your Skype ID privately and I'll add you.
-
-Regards,
-
-UR_NAME
-```
-
-## Remind
-
-```
-SUBJECT: sc-dev Meeting WHEN_IS_IT - Reminder
-
-Hey all,
-
-This is a reminder that the next developer meeting will be on DAY_O_WEEK, MONTH DAY, at UTC_TIME UTC = EST_TIME Eastern = PST_TIME Pacific.
-
-Topics to discuss include TOPICS, and recent issues and pull requests. Everyone with an interest in improving SuperCollider is welcome to attend!
-
-Dev meetings are held on Skype. If you aren't already in the group, please send me your Skype ID privately and I'll add you.
+Dev meetings are held at https://meet.jit.si/SuperColliderDevMeeting. No registration is required to join.
 
 Regards,
 
