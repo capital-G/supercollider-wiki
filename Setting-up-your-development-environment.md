@@ -69,17 +69,14 @@ We would like to have a better workflow for this, but for now, here is a simple 
 // edit this to the appropriate path!
 ~scGitPath = // "/path/to/your/supercollider";
 
-// add paths from your clone
-LanguageConfig.addIncludePath(~scGitPath +/+ "SCClassLibrary");
-LanguageConfig.addIncludePath(~scGitPath +/+ "testsuite");
-
+// disable every currently included search path (defaults, extensions, manually-added ...)
+LanguageConfig.includePaths.do(LanguageConfig.removeIncludePath(_));
 // disable startup files
 LanguageConfig.addIncludePath(~scGitPath +/+ "platform/disable_startup_files");
 
-// disable default search paths
-LanguageConfig.addExcludePath(Platform.systemExtensionDir);
-LanguageConfig.addExcludePath(Platform.userExtensionDir);
-LanguageConfig.addExcludePath(Platform.resourceDir +/+ "SCClassLibrary");
+// add paths from your clone
+LanguageConfig.addIncludePath(~scGitPath +/+ "SCClassLibrary");
+LanguageConfig.addIncludePath(~scGitPath +/+ "testsuite");
 
 // enable developer-oriented warning
 LanguageConfig.postInlineWarnings = true;
