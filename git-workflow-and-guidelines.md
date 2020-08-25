@@ -80,6 +80,11 @@ The current release manager is Brian Heim (@brianlheim).
 
 When it is time to prepare a release, run the script in `tools/release/make_release.py`.
 
+We generally follow this sequence of pre-releases prior to the official release. `N` is a sequentially increasing natural number (1, 2, 3...) which starts over at 1 for each step:
+- `X.Y.Z-alphaN`, for minor releases, only if a lot has changed quickly and we know there are likely bugs we aren't aware of
+- `X.Y.Z-betaN`, for minor releases, to find any new bugs we missed and catch any regressions
+- `X.Y.Z-rcN` (release candidate), for minor and patch releases, to catch any regressions and ensure that the official release itself will go smoothly
+
 ## Conflicts between release branches and develop ##
 
 Occasionally it may happen that a release branch cannot be cleanly merged into `develop`. In that case, the correct procedure is:
