@@ -27,7 +27,7 @@
 * [Debugging Tips](https://github.com/supercollider/supercollider/wiki/Debugging-Tips)
 * [Translating the IDE](https://github.com/supercollider/supercollider/wiki/Translating-the-IDE)
 * [Adding to QtCollider widgets](https://github.com/supercollider/supercollider/wiki/Adding-to-QtCollider-widgets)
-* [Signing and Notarizing for OS X](https://github.com/supercollider/supercollider/wiki/OS-X-Signing-and-Notarization)
+* [Signing and Notarizing for macOS](https://github.com/supercollider/supercollider/wiki/macOS-Signing-and-Notarization)
 
 **Developer working documents**
 * [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
