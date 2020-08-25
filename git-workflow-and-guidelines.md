@@ -1,5 +1,3 @@
-*Sorry about the disorderliness of this article. Project docs are undergoing some major restructuring right now. -NH 2019-07-26*
-
 ## git-flow
 
 SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). The most important thing to know:
@@ -77,6 +75,8 @@ Please provide the link to the PR with every entry in the changelog for easy nav
 Try to exercise common sense in keeping the log readable and useful to users. Use complete sentences and, to a reasonable extent, err on the side of clarity. In case of doubt, prefer inclusion over exclusion.
 
 ## Releasing ##
+
+The current release manager is Brian Heim (@brianlheim).
 
 When it is time to prepare a release, run the script in `tools/release/make_release.py`.
 
