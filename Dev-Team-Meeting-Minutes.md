@@ -1,3 +1,10 @@
+2020-08-23
+==========
+
+Not much business was discussed, as only Brian H and Gianluca E were present.
+
+We discussed the 3.11.1 and 3.11.2 releases and brainstormed ideas for future work.
+
 2020-08-02
 ==========
 
