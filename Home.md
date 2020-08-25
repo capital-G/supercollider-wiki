@@ -13,7 +13,7 @@ If you are new to SuperCollider and want to contribute to the project, then firs
 
 Depending on your skills, interests, and experience with other projects, you may want to review the following
 documentation:
-- if you are totally new to this project, or to contributing, read ["What does contributing mean?"](https://github.com/supercollider/supercollider/wiki#what-does-contributing mean) first.
+- if you are totally new to this project, or to contributing, read ["What does contributing mean?"](https://github.com/supercollider/supercollider/wiki#what-does-contributing-mean) first.
 - our [Developer Reference](https://github.com/supercollider/supercollider/wiki#developer-reference) section has more
   reference documents on our project design, workflows, and practices.
 
