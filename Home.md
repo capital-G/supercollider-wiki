@@ -1,8 +1,21 @@
-First and foremost, thank you! We appreciate that you want to contribute to SuperCollider. Your time is valuable, and your contributions mean a lot to us.
+Welcome to the Wiki for the SuperCollider project!
 
-This page is the new home for the document formerly known as `CONTRIBUTING.md`. It serves as a quick onboarding guide for SuperCollider developers.
+If you are looking for information on using SuperCollider, including documentation, you may want the following
+resources:
+- the [project README](https://github.com/supercollider/supercollider/blob/develop/README.md) has general information
+  on the project including a description, a list of supported platforms, instructions for building and installing, and
+  a list of good first resources.
+- https://doc.sccode.org has project documentation viewable online.
 
-You may also be looking for [the SuperCollider documentation](http://doc.sccode.org/).
+If you are looking to meet and talk with other people using SuperCollider, check out [Joining the community](https://github.com/supercollider/supercollider/wiki#joining-the-community) below.
+
+If you are new to SuperCollider and want to contribute to the project, then first and foremost thank you for your interest! We appreciate that you want to contribute to SuperCollider. Your time is valuable, and your contributions mean a lot to us.
+
+Depending on your skills, interests, and experience with other projects, you may want to review the following
+documentation:
+- if you are totally new to this project, or to contributing, read ["What does contributing mean?"](https://github.com/supercollider/supercollider/wiki#what-does-contributing mean) first.
+- our [Developer Reference](https://github.com/supercollider/supercollider/wiki#developer-reference) section has more
+  reference documents on our project design, workflows, and practices.
 
 ## Joining the Community
 
@@ -72,9 +85,8 @@ SuperCollider uses the [git-flow](https://nvie.com/posts/a-successful-git-branch
 
 If you aren't too familiar with git, please see our guide: [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests).
 
+<!-- HEY! Please don't change the title of this section — it is the new location of `DEVELOPING.md`, which links here.* -->
 ## Developer Reference
-
-*Please don't change the title of this section — it is the new location of `DEVELOPING.md`, which links here.*
 
 Check the sidebar for a full list of reference documents for SuperCollider development. Here are a few that are particularly good for new contributors. You don't need to read and understand all of this before contributing! We are happy to help guide you through your first contributions. If you run into confusion or need help, you are always welcome to ask.
 
