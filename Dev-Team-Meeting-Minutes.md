@@ -1,3 +1,82 @@
+2020-09-20
+==========
+Members present: James S, Joshua Parmenter, patrick, brian, Marcin, elgiano
+
+macOS11 problems (Joshua Parmenter):
+
+1.
+example:
+SynthDef(\test, { Out.ar(0, SinOsc.ar(440, 0, 0.2)); }).add // works 
+s.sendBundle(nil, [\s_new, \test, 1000, 0, 1] ) // doesn't ever schedule 
+s.sendBundle(0, [\s_new, \test, 1001, 0, 1] )
+
+most probably a problem with endiannes with ntohl.
+JP is working on it
+
+2.
+Qt problems. Waiting for next Qt release for macOS (Qt currently needs to be built from source to target macOS 11).
+
+3.
+Binary download don’t work on macOS 11. Compiling from source works.
+Need to announce this. JP is announcing on sc-users.
+
+4.
+We need both x86 + arm releases (two separate builds) when we start to support macOS 11.
+
+macOS CI error (Marcin) 
+errors during testing. Seems related to no graphics env available → web engine failing.
+CI is blocked for macOS until this is fixed. Marcin is on it.
+Possible temporary workaround: disable tests.
+
+
+3.11.2 / 3.12.0
+discussed in Issue #5146: https://github.com/supercollider/supercollider/issues/5146
+
+Planning 3.11.2 for October.
+3.12 right after:
+- macOS 11 support if possible by then, but not if it would delay the release.
+- macOS server-side volume clipping ?
+
+Would there be a possibility than upgrading Qt could drop an older system we currently support?
+> If it happens we could include a pre-processor switch in a patch release. (add a new build job to do that)
+
+Talking and reading about the future of Qt.
+James S
+Qt 6 is not advertising breaking changes, but won’t work without C++17.
+
+> Setup a Qt 6 working group, or issue, to keep track of it.
+> Require C++17 (open ticket for C++17 in sc as well)
+> Setup a C++17 working group, or issue.
+
+Does C++17 allow new features for sclang? 
+> Not out of the box
+> drop a lot of boost support?
+> lock/mutexes in supernova
+
+Maybe a C++17 ticket on github is enough? Let’s start with that.
+
+Websockets (patrick)
+(see https://github.com/supercollider/rfcs/pull/9 for previous discussion points)
+
+with or without Qt?
+> without Qt would be better for headless builds
+> better to avoid another dependency
+
+Qt’s websockets are split from webengine and GUIs. So Qt could be viable for headless.
+
+Commit notation (James S)
+Conventional commits: standardized way of writing commit messages
+- machine and human readable
+- based on semantic versioning
+- tooling to automatic generate a changelog
+https://www.conventionalcommits.org/en/v1.0.0/
+
+> might be asking too much to a community project
+> but it could be done by maintainers when PRs are merged
+> even if not 100% strict, would alleviate changelog-writing pain
+
+
+***IT IS PATRICK’S BIRTHDAY TODAY***
 2020-08-23
 ==========
 
