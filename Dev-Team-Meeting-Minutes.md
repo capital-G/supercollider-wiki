@@ -19,13 +19,15 @@ most probably a problem with endiannes with ntohl.JP is working on it
 4. We need both x86 + arm releases (two separate builds) when we start to support macOS 11.
 
 **macOS CI error (Marcin)**
+
 - errors during testing. Seems related to no graphics env available → web engine failing.
 - CI is blocked for macOS until this is fixed. Marcin is on it.
 - Possible temporary workaround: disable tests.
 
 
 **3.11.2 / 3.12.0**
-- discussed in Issue #5146: https://github.com/supercollider/supercollider/issues/5146
+
+- discussed in Issue [#5146](https://github.com/supercollider/supercollider/issues/5146):
 - Planning 3.11.2 for October.
 3.12 right after:
 - macOS 11 support if possible by then, but not if it would delay the release.
@@ -35,6 +37,7 @@ Would there be a possibility than upgrading Qt could drop an older system we cur
 - If it happens we could include a pre-processor switch in a patch release. (add a new build job to do that)
 
 **Talking and reading about the future of Qt.**
+
 James S: Qt 6 is not advertising breaking changes, but won’t work without C++17.
 - Setup a Qt 6 working group, or issue, to keep track of it.
 - Require C++17 (open ticket for C++17 in sc as well)
@@ -49,7 +52,7 @@ Maybe a C++17 ticket on github is enough? Let’s start with that.
 
 **Websockets (patrick)**
 
-(see [https://github.com/supercollider/rfcs/pull/9](RFC #9) for previous discussion points)
+(see [RFC #9](https://github.com/supercollider/rfcs/pull/9) for previous discussion points)
 
 with or without Qt?
 - without Qt would be better for headless builds
@@ -59,7 +62,7 @@ Qt’s websockets are split from webengine and GUIs. So Qt could be viable for h
 
 **Commit notation (James S)**
 
-[https://www.conventionalcommits.org/en/v1.0.0/](Conventional commits): standardized way of writing commit messages
+[Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/): standardized way of writing commit messages
 - machine and human readable
 - based on semantic versioning
 - tooling to automatic generate a changelog
