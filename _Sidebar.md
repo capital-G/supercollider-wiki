@@ -35,6 +35,7 @@
 * [PlayBuf 2017](https://github.com/supercollider/supercollider/wiki/PlayBuf-2017)
 * [Undocumented classes and methods list](https://github.com/supercollider/supercollider/wiki/Undocumented-classes-and-methods-list)
 * [sc-dev Meeting Procedure & Templates](https://github.com/supercollider/supercollider/wiki/sc-dev-Meeting-Procedure-&-Templates)
+* [Project tasks organization](https://github.com/supercollider/supercollider/wiki/Project-tasks-organization)
 
 **User Guides**
 
