@@ -1,3 +1,84 @@
+2020-10-18
+==========
+
+Present: Patrick D, Brian H, Marcin P, Gianluca E
+
+- What are people up to lately?
+    - Brian: helping Marcin with jack2/jackOSX
+    - Gianluca: Bela bug fix
+    - Marcin: investigating Jack backend on macOS
+    - Patrick: not much SC work lately
+- Discussed new jack2 release for macOS (replacing JackOSX)
+- 3.11.2 release
+    - overall on track
+    - need to fix portaudio/cmake issue (#5176)
+    - need to make cherry pick PRs
+    - discussed #5188 - does not need to be fixed for 3.11.2
+    - discussed #4883 - Brian will review soon
+    - still planning for release date in October or November
+    - discussed #5110 - agreed better for 3.12
+- 3.12.0 release
+    - planning to release before the end of the year
+    - already have enough to do a release
+    - #5081 is a nice-to-have
+    - maybe Bela support if it starts moving forward soon
+- pair/group code review sessions
+    - informal group call to review PRs together
+    - did first one last week with Brian, Gianluca, James S
+    - should have someone else besides Brian "driving" next time (next weekend probably)
+    - send out an announce/invite to more channels if the next one goes well
+- big list/board/prioritization
+    - want to have some way to organize top-level issues/projects/concerns
+    - where to put it?
+        - Discourse vs Github projects vs Github wikis vs other places?
+    - milestones? make it easier to see what goes into what release
+    - hard to use tools GitHub gives us to manage project easily
+    - look into bots for automation? / external integration
+    - maybe even a new GitHub repo for "meta-issues" / organization?
+    - agreed to dump into a wiki page for now and see how that works out
+- Bela
+    - discussed merge of Bela into SC and the difficulties involved -- everyone wants it, just takes some time
+    - Gianluca and Patrick offered to help with the merge & testing
+    - CI job is probably possible since it can be cross-compiled
+- help browser
+    - Marcin suggested it might be possible to avoid using QtWebEngine for the help browser by using a text view instead
+    - discussed some possible implementation issues
+
+2020-10-04
+==========
+
+Present: Marcin, Brian, James S, Gianluca
+​
+* General greenfield question: what might a version 4 look like?
+    * We release breaking changes every minor release - it doesn't follow semantic verisoning, should we already be on version 4 etc.?
+    * When we're next able to discuss big things, this would be on the list.
+​
+* Backwards compat and deprecations
+    * A very positive feature
+    * However, potentially leads to stagnation and unclear/confusing features
+    * Concerns about removing deprecations: in particular `asInt`.
+​
+* Xcode 11 build issues
+    * Marcin + Brian tried to diagnose a segfault with a non-legacy xcode11 build, still investigating
+​
+* 3.11.2
+    * Lots of CI work to figure out first, including the Xcode 11 things
+​
+* Discussion on reviewing existing PRs
+​
+However people are able to contribute to the project, in whatever capacity they are able to, is massively appreciated. 
+We're all very grateful for any work people are doing towards the project, particularly during these times.
+​
+* Can we do pair-programming and/or group programming sessions? Paired reviews? With the goal of tackling larger/more complex things and sharing workload as well as knowledge and experiences about various sections/aspects of the project.
+​
+* Discussion around signing and notarisation
+    * Questions about how CMake handles signing
+​
+​
+### Actions
+* Marcin and Brian will continue to work together on the Xcode 11 issues
+* Try to plan paired/group reviews for next week
+
 2020-09-20
 ==========
 Members present: James S, Joshua Parmenter, patrick, brian, Marcin, elgiano
