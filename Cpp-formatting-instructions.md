@@ -50,6 +50,18 @@ The ^, which you absolutely must not forget, indicates that you're rebasing onto
 
 Under normal conditions, this rebase won't create any conflicts. If there are conflicts, then first make sure that you've correctly chosen between develop and 3.10. If that was correct, it means a conflict started happening sometime between when you created the branch and the reformat, so this issue is unrelated to the reformat and should be addressed first.
 
+### Checkout and commit the latest version of the clang-format.py script
+
+Since it was written, there have been a few bugs in the clang-format.py script. In order to pick them up for your rebase, you should check it out from the develop branch and commit that separately **on the branch you want to rebase**.
+
+```
+git checkout develop -- tools/clang-format.py # only modifies the one file
+git add tools/clang-format.py
+git commit -m "Update clang-format.py to latest develop prior to rebase"
+```
+
+The script may later complain about an empty commit due to this, but don't worry.
+
 ### Reformat it!
 
 
