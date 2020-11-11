@@ -20,7 +20,7 @@ The following packages are required and are available in the Fedora repositories
 * alsa-lib-devel 
 * jack-audio-connection-kit-devel
 * libsndfile-devel
-* libncurses-devel
+* ncurses-devel
 * fftw-devel
 * libXt-devel (note capital 'X')
 * libX11-devel
@@ -46,7 +46,7 @@ The required and optional packages listed above may be installed with the follow
   $ sudo dnf install gcc gcc-c++ cmake make git jack-audio-connection-kit-devel     \
     libsndfile-devel fftw-devel libXt-devel libX11-devel boost-devel alsa-lib-devel \
     systemd-devel libatomic avahi-devel qt5-qtlocation-devel qt5-qtsensors-devel    \
-    readline-devel qt5-qtwebengine-devel qt5-qttools-devel libncurses-devel         \
+    readline-devel qt5-qtwebengine-devel qt5-qttools-devel ncurses-devel            \
     qt5-qtwebsockets-devel qt5-qtsvg-devel emacs qjackctl ccache
 ```
 
