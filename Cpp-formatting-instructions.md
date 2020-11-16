@@ -7,11 +7,11 @@ If you have a branch that contains work prior to the major C++ reformatting comm
 
 ### Install requirements
 
-You will need clang v8.0.0 (exactly) and Python 2.7+ or 3.6+. Instructions on grabbing the dependencies are here: https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions#requirements
+You will need clang v8.x.y and Python 2.7+ or 3.6+. Instructions on grabbing the dependencies are here: https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions#requirements
 
 ### Update your repo
 
-First, update the `3.10` and `develop` branches.
+First, update the current release (i.e. `3.10` in the examples below) and `develop` branches.
 
 ```
 git checkout 3.10
@@ -26,9 +26,9 @@ The next steps also rely on the existence of the tags `tag-clang-format-develop`
 git pull upstream --tags
 ```
 
-### 3.10 or develop?
+### Current release branch or develop?
 
-Figure out whether your PR was originally made from 3.10 or develop. If you forgot, look up the PR on GitHub and see what it was filed against. In this case, it's 3.10:
+Figure out whether your PR was originally made from the current release branch or develop. If you forgot, look up the PR on GitHub and see what it was filed against. In this case, it's 3.10:
 
 ![Untitled](https://user-images.githubusercontent.com/1211064/58756835-d2f8a100-84b4-11e9-8979-e1812a91abb6.png)
 
@@ -40,7 +40,7 @@ If your branch was based on `develop`, run:
 git rebase tag-clang-format-develop^  # DON'T FORGET THE ^ !!!!
 ```
 
-For 3.10:
+For 3.10 (adjust for later versions):
 
 ```
 git rebase tag-clang-format-3.10^  # DON'T FORGET THE ^ !!!!
@@ -71,7 +71,7 @@ If your branch was based on `develop`, run:
 tools/clang-format.py rebase -b develop
 ```
 
-For 3.10:
+For 3.10 (adjust for later versions):
 
 ```
 tools/clang-format.py rebase -b 3.10
@@ -113,7 +113,7 @@ You will need to use Python 3 to run the script (see below in Requirements). Fir
 
 ```
 git reset --hard <branch-to-rebase>
-python3 tools/clang-format.py rebase -b develop # or 3.10
+python3 tools/clang-format.py rebase -b develop # or current release version
 ```
 
 #### "Your working tree has pending changes."
@@ -204,7 +204,7 @@ If you are developing a C++ feature or bug fix, a typical workflow might look li
 Requirements
 ------------
 
-**ClangFormat v8.0.0**: it is *extremely* important that all contributors use the same version of
+**ClangFormat v8.x.y**: it is *extremely* important that all contributors use the same version of
 ClangFormat. Style options are added and modified between releases, so even if an older or newer
 version accepts our style file, its behavior may differ from our accepted version's.
 
