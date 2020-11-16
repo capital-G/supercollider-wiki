@@ -1,3 +1,19 @@
+2020-11-15
+==========
+
+Present: Gianluca E, Marcin P, Brian H
+
+3.11.2 release
+- in progress, will finish up today or tomorrow
+- need to finish making sc3-plugins release too
+
+Gianluca reported that the Bela fork maintainers are getting close to making a PR to SC. Discussed how to handle new flags in scsynth.
+
+3.12 release
+- discussed #5110 macOS clipping feature; possible API/ABI change; desired for 3.12
+- after 3.11.2, Brian wants to do more to improve the release process
+- discussed ideas for prioritizing issues and PRs that don't have an associated issue
+
 2020-11-01
 ==========
 
