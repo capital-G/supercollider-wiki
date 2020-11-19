@@ -1,170 +1,117 @@
-I made a PR before the reformat and it has merge conflicts now! How do I fix it?
---------------------------------------------------------------------------------
-
-First off, don't do anything brash. **You don't need to close your PR.** This following process will update a PR that you've already filed.
-
-If you have a branch that contains work prior to the major C++ reformatting commit, just follow these steps.
-
-### Install requirements
-
-You will need clang v8.x.y and Python 2.7+ or 3.6+. Instructions on grabbing the dependencies are here: https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions#requirements
-
-### Update your repo
-
-First, update the current release (i.e. `3.10` in the examples below) and `develop` branches.
-
-```
-git checkout 3.10
-git pull upstream 3.10
-git checkout develop
-git pull upstream develop
-```
-
-The next steps also rely on the existence of the tags `tag-clang-format-develop` and `tag-clang-format-3.10`. To grab these, run
-
-```
-git pull upstream --tags
-```
-
-### Current release branch or develop?
-
-Figure out whether your PR was originally made from the current release branch or develop. If you forgot, look up the PR on GitHub and see what it was filed against. In this case, it's 3.10:
-
-![Untitled](https://user-images.githubusercontent.com/1211064/58756835-d2f8a100-84b4-11e9-8979-e1812a91abb6.png)
-
-### Rebase onto the commit before the reformat
-
-If your branch was based on `develop`, run:
-
-```
-git rebase tag-clang-format-develop^  # DON'T FORGET THE ^ !!!!
-```
-
-For 3.10 (adjust for later versions):
-
-```
-git rebase tag-clang-format-3.10^  # DON'T FORGET THE ^ !!!!
-```
-
-The ^, which you absolutely must not forget, indicates that you're rebasing onto the commit immediately before the relevant reformat commit. This gives you access to the `tools/clang-format.py` script.
-
-Under normal conditions, this rebase won't create any conflicts. If there are conflicts, then first make sure that you've correctly chosen between develop and 3.10. If that was correct, it means a conflict started happening sometime between when you created the branch and the reformat, so this issue is unrelated to the reformat and should be addressed first.
-
-### Checkout and commit the latest version of the clang-format.py script
-
-Since it was written, there have been a few bugs in the clang-format.py script. In order to pick them up for your rebase, you should check it out from the develop branch and commit that separately **on the branch you want to rebase**.
-
-```
-git checkout develop -- tools/clang-format.py # only modifies the one file
-git add tools/clang-format.py
-git commit -m "Update clang-format.py to latest develop prior to rebase"
-```
-
-The script may later complain about an empty commit due to this, but don't worry.
-
-### Reformat it!
-
-
-If your branch was based on `develop`, run:
-
-```
-tools/clang-format.py rebase -b develop
-```
-
-For 3.10 (adjust for later versions):
-
-```
-tools/clang-format.py rebase -b 3.10
-```
-
-This will switch you over to a new branch called `<branch-name>-reformatted`.
-
-### Confirm
-
-Inspect the changes -- do they all look good?
-
-If so:
-
-```
-# rewrite the original branch to match the reformatted one
-git branch -f <branch-name>
-
-# Force push your changes to the branch in your fork of SC
-git push -f origin <branch-name>
-```
-
-The PR will automatically update. **There is no need to close and re-open your PR.**
-
-### Troubleshooting
-
-We are using fairly tricky git features here, and I'm aware a lot of people are relatively new to git. **If something gets screwed up, don't panic** and **don't do reckless things like deleting your entire repository.** It will probably not fix your issue.
-
-Instead, just ask for help! The fastest way to get help is [Slack](https://join.slack.com/t/scsynth/shared_invite/enQtMzk3OTY3MzE0MTAyLWY1ZGE1MTJjYmI5NTRkZjFmNjZmNmYxOWI0NDZkNjdkMzdkNjgxNTJhZGVlOTEwYjdjMDY5OWM0ZTA4NWFiOGY) since Brian (@brianlheim) and Nathan (@snappizz) are on there, but not everyone is on that, so you can also leave a comment on the [official support thread](https://github.com/supercollider/supercollider/issues/4428) on GitHub. If you're having a problem, just leave a comment and someone more experienced with the process can help you out.
-
-### Specific issues
-
-#### "'ascii' codec can't encode character"
-
-If the script fails with this error message:
-
-`*** ERROR: 'ascii' codec can't encode character u'\u2026' in position 629: ordinal not in range(128)`
-
-You will need to use Python 3 to run the script (see below in Requirements). First, reset your repository state, then try rerunning the script with Python 3:
-
-```
-git reset --hard <branch-to-rebase>
-python3 tools/clang-format.py rebase -b develop # or current release version
-```
-
-#### "Your working tree has pending changes."
-
-If the script fails with this error message:
-
-`*** ERROR: Your working tree has pending changes. You must have a clean working tree before proceeding.`
-
-You need to make sure that any changed files shown by `git status` are reset back to their clean state. You can do that with the following commands. **Be certain you are not losing any unsaved work before you start running these!**
-
-```
-git reset --hard # resets all files in your working tree 
-git submodule git submodule foreach --recursive git reset --hard # resets all files in the working trees of your submodules
-git submodule update --recursive --force # resets all submodules according to the currently checked out commit
-```
-
 Linting and formatting
 ======================
 
-This document has information about linting and formatting C++ code in the SuperCollider project.
+Here, "linting" specifically means checking that code is formatted correctly, without modifying code; "formatting" means
+actually changing the code.
 
-To [**lint**](https://en.wikipedia.org/wiki/Lint_%28software%29) means to analyze code for problems.
-Here, it specifically means to check code for stylistic errors and inform the user of any such
-violations.
-
-To **format** here means to modify code in-place so that it conforms to style rules.
-
-For information about our code style guidelines, see [this
+For information about our code style guidelines, which includes things like naming conventions, see [this
 document](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-C---Code-Style-Guidelines).
 
 SuperCollider uses [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html) - part of the
-[LLVM](http://llvm.org/) project - to format C++ and Objective-C/C++ code. This ensures that the
-style of the codebase is largely consistent across time and among differing authors, and makes code
-review and contributing smoother for new and experienced contributors.
+[LLVM](http://llvm.org/) project - to format C++ and Objective-C/C++ code. This helps to make sure that the
+style of the codebase is consistent across time and authors, and makes contributing and code
+review smoother.
 
-Formatting is checked for every commit and PR by our CI (continuous integration) tools. This makes
-it impossible to merge any change which violates our formatting standards. Only one CI job on Travis checks the linting target; if your commit fails to build due to linting, you can check the build log to see why.
+Formatting is checked for every commit and PR (pull request) by our CI (continuous integration) tools. This makes it
+impossible to merge any change which violates our formatting standards. Only one CI job on Travis checks the linting
+target; if your commit fails to build due to linting, you can check the build log to see why.
 
 If you are contributing to SuperCollider and plan on working on C++ code, it is strongly recommended
 that you integrate ClangFormat into your development workflow.
 
-Possible workflows and scripts
-------------------------------
+Getting started
+---------------
 
-Integrating ClangFormat with your editor is relatively straightforward for many commonly used
-C++ editors. Instructions can be found [here](https://clang.llvm.org/docs/ClangFormat.html).
+You will need clang v8.x.y and Python 2.7+ or 3.6+. Instructions on grabbing the dependencies are here: 
+1. Download and install Python and LLVM 8; either [8.0.1](https://releases.llvm.org/download.html#8.0.1) or
+[8.0.0](https://releases.llvm.org/download.html#8.0.0) will work. See
+[requirements](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions#requirements) below for
+more info.
+2. Open a terminal and execute `clang-format --version` and `clang-format-diff.py -h`. You should see something like
+   this:
 
-As an alternative, or if your editor does not support integration, we also provide a Python script
-(in `tools/clang-format.py`) for linting and formatting your code. Shortcuts for running this script
-are available as CMake targets and as Python scripts in your build directory. Run
-`tools/clang-format.py -h` for full information.
+```
+clang-format version 8.0.0 (tags/RELEASE_800/final)
+
+usage: clang-format-diff.py [-h] [-i] [-p NUM] [-regex PATTERN]
+                            [-iregex PATTERN] [-sort-includes] [-v]
+                            [-style STYLE] [-binary BINARY]
+
+Reformat changed lines in diff. Without -i option just output the diff that
+would be introduced.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  -i               apply edits to files instead of displaying a diff
+  -p NUM           strip the smallest prefix containing P slashes
+  -regex PATTERN   custom pattern selecting file paths to reformat (case
+                   sensitive, overrides -iregex)
+  -iregex PATTERN  custom pattern selecting file paths to reformat (case
+                   insensitive, overridden by -regex)
+  -sort-includes   let clang-format sort include blocks
+  -v, --verbose    be more verbose, ineffective without -i
+  -style STYLE     formatting style to apply (LLVM, Google, Chromium, Mozilla,
+                   WebKit)
+  -binary BINARY   location of binary to use for clang-format
+```
+
+If you see this, and the clang-format verison matches the version you installed, and *you can skip the remaining steps.*
+
+3. Otherwise, find where you installed LLVM, and within that directory you should see `your-llvm-root/bin/clang-format` and `your-llvm-root/share/clang/clang-format-diff.py`.
+Find their full paths, and then add the following variables to your environment:
+
+```
+SC_CLANG_FORMAT=/full/path/to/clang-format
+SC_CLANG_FORMAT_DIFF=/full/path/to/clang-format-diff.py
+```
+
+On macOS and Linux, you can add the following lines to `~/.bash_profile` (or the profile script for whatever shell you
+prefer):
+
+```
+export SC_CLANG_FORMAT=/full/path/to/clang-format
+export SC_CLANG_FORMAT_DIFF=/full/path/to/clang-format-diff.py
+```
+
+On Windows, this is done through user settings; there are many articles online that explain how.
+
+4. Alternatively, you can add both the directories containing clang-format and clang-format-diff.py to your `PATH`.
+   Instructions to do this can be found online. This may lead to issues if you have another version of LLVM or
+   clang installed on your system. You can open a new terminal window and run `clang-format --version` and
+   `clang-format-diff.py -h` like before to confirmed that you did it correctly.
+
+Working with clang-format
+-------------------------
+
+There are four basic commands that we use for formatting: `lint`, `format`, `lintall`, `formatall`. The first two **only
+apply to the code that changed between commits**, while the last two will run on the entire codebase.
+
+It's very important to remember that by default, linting and formatting only apply to changes that
+haven't been committed. **The intended way of using this tool is to format code before it's committed**. If you want to
+lint or format code you've already committed, you need to also specify what you want to use as a "reference point". This
+is the commit hash, branch name, or other commit specification (like `HEAD^`) you will give to the formatting script.
+For example, if you realize you forgot to format code you just committed, you would only want to pass `HEAD^` (in git
+this means the commit directly before your current one); if you want to lint or format an entire feature branch based
+off `develop`, you would pass `develop`.
+
+There are a couple ways you can use clang-format in SuperCollider:
+
+1. Many IDEs and editors integrate directly with clang-format (more information
+   [here](https://clang.llvm.org/docs/ClangFormat.html)). This is a great workflow as all your code will be formatted
+   correctly by your editor without you having to think about it. You may need to tell your editor to use the version of
+   clang-format that you installed.
+2. You can run the `tools/clang-format.py` script directly; run `tools/clang-format.py -h` for more information.
+3. You can run the `build/lint.py` and `build/format.py` scripts that are generated in your build folder. Both scripts
+   accept a commit "reference point" as an optional first argument.
+4. You can "build" some commands as build targets, see below.
+
+### Example workflow
+
+If you are developing a C++ feature or bug fix, a typical workflow might look like this:
+
+1. Write some code, build, test
+2. Use your editor's integration or run `./format.py` in your build directory to format your code
+3. Commit your changes with git
 
 ### CMake targets
 
@@ -177,8 +124,11 @@ The following targets are provided in the build system:
 - `lintall`: lints *all* files in the repository. This takes a long time.
 - `formatall`: formats *all* files in the repository. This also takes a long time.
 
-How you run them depends on your CMake generator of choice. For example, if you choose the Makefiles
-generator, you would run `make lint`.
+To make use of them, either build the target in your IDE, or run them on the command line in your build directory like
+this: `cmake --build . --target lint`.
+
+This method should not be your main method of formatting, because there's no way to specify a reference commit to format
+against.
 
 ### Build directory scripts
 
@@ -189,24 +139,14 @@ instance, if you have a branch `feature` which is 3 commits ahead of `develop`, 
 `./lint.py develop` to lint the C++ changes introduced on your feature branch (and nothing else).
 
 This is useful for quickly reformatting an entire branch of changes if you've neglected to format
-each commit, and don't want to go back and redo each commit separately -- although, we'd prefer if
-you never have to do this at all! Whatever your method, you should get in the habit of formatting
-your code *before* each commit.
-
-### Example workflow
-
-If you are developing a C++ feature or bug fix, a typical workflow might look like this:
-
-1. Write some code, build, test
-2. Use your editor's integration or run `build/format.py` to format your code.
-3. Commit your changes with Git
+each commit, and don't want to go back and redo each commit separately.
 
 Requirements
 ------------
 
-**ClangFormat v8.x.y**: it is *extremely* important that all contributors use the same version of
-ClangFormat. Style options are added and modified between releases, so even if an older or newer
-version accepts our style file, its behavior may differ from our accepted version's.
+**ClangFormat v8.x.y**: it is *extremely* important that all contributors use the same major version of
+ClangFormat. Style options are added and modified between releases, and other small things may change between versions.
+Any version that starts with 8 is acceptable.
 
 You can probably download a package including ClangFormat from the [LLVM releases
 page](https://releases.llvm.org/download.html); alternatively, check your package manager of choice.
@@ -242,3 +182,99 @@ generation tools. These auto-generated files are:
 - `SCDoc/lex.scdoc.cpp`
 - `lang/LangSource/Bison/lang11d_tab.cpp`
 - `lang/LangSource/Bison/lang11d_tab.h`
+
+I made a PR before the reformat and it has merge conflicts now! How do I fix it?
+--------------------------------------------------------------------------------
+
+If you have a branch that contains work prior to the major C++ reformatting commit, just follow these steps.
+
+1. Follow the "Getting Started" steps above if you haven't already.
+2. Run the following commands to update your local repo. This assumes that `upstream` points to the main SuperCollider
+   repository; you can use `git remote -v` to check.
+
+```
+git checkout develop
+git pull upstream develop
+git pull upstream --tags
+```
+
+3. Rebase your branch to the commit before the reformat:
+
+```
+git checkout my-branch
+git rebase tag-clang-format-develop^  # DON'T FORGET THE ^ !!!!
+```
+
+The ^, which you absolutely must not forget, indicates that you're rebasing onto the commit immediately before the relevant reformat commit. This gives you access to the `tools/clang-format.py` script.
+
+Under normal conditions, this rebase won't create any conflicts. If there are conflicts, you can try to resolve them
+yourself, or ask for help.
+
+4. Checkout and commit the latest version of the clang-format.py script. Since it was written, there have been a few
+   bugs fixed in the clang-format.py script. In order to get the best rebase experience, you should check the latest
+   version out from the develop branch and commit that separately **on the branch you want to rebase**.
+
+```
+git checkout my-branch
+git checkout develop -- tools/clang-format.py # only modifies the one file
+git add tools/clang-format.py
+git commit -m "Update clang-format.py to latest develop prior to rebase"
+```
+
+The script may later complain about an empty commit due to this, but don't worry.
+
+5. Rebase it!
+
+```
+tools/clang-format.py rebase -b develop
+```
+
+This will switch you over to a new branch called `<branch-name>-reformatted`, and explain how to undo what you just did
+if you think you made a mistake.
+
+6. Update your remote branch. Inspect the changes -- do they all look good? If so:
+
+```
+# rewrite the original branch to match the reformatted one
+git branch -f <branch-name>
+
+# Force push your changes to the branch in your fork of SC
+git push -f origin <branch-name>
+```
+
+Any PR you have open will automatically update. **There is no need to close and re-open your PR.**
+
+### Troubleshooting
+
+We are using fairly tricky git features here. **If something gets screwed up, don't panic** and **don't do reckless things like deleting your entire repository**. It will probably not fix your issue.
+
+Instead, just ask for help in [one of our communities](https://github.com/supercollider/supercollider/wiki#joining-the-community).
+
+### Specific issues
+
+#### "'ascii' codec can't encode character"
+
+If the script fails with something like this error message:
+
+`*** ERROR: 'ascii' codec can't encode character u'\u2026' in position 629: ordinal not in range(128)`
+
+You may need to use Python 3 to run the script (see below in Requirements). First, reset your repository state, then try rerunning the script with Python 3:
+
+```
+git reset --hard <branch-to-rebase>
+python3 tools/clang-format.py rebase -b develop # or current release version
+```
+
+#### "Your working tree has pending changes."
+
+If the script fails with this error message:
+
+`*** ERROR: Your working tree has pending changes. You must have a clean working tree before proceeding.`
+
+You need to make sure that any changed files shown by `git status` are reset back to their clean state. You can do that with the following commands. **Be certain you are not losing any unsaved work before you start running these!**
+
+```
+git reset --hard # resets all files in your working tree
+git submodule git submodule foreach --recursive git reset --hard # resets all files in the working trees of your submodules
+git submodule update --recursive --force # resets all submodules according to the currently checked out commit
+```
