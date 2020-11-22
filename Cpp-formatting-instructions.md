@@ -1,27 +1,22 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 ### Table of Contents
 
 - [Linting and formatting](#linting-and-formatting)
-  - [Getting started](#getting-started)
-  - [Working with clang-format](#working-with-clang-format)
-    - [Reformatting as you work (normal usage)](#reformatting-as-you-work-normal-usage)
-    - [Reformatting your last commit](#reformatting-your-last-commit)
-    - [Reformatting an entire PR](#reformatting-an-entire-pr)
-    - [CMake targets](#cmake-targets)
-    - [Build directory scripts](#build-directory-scripts)
-  - [Requirements](#requirements)
-  - [What files are actually linted/formatted?](#what-files-are-actually-lintedformatted)
-  - [I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?](#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it)
-    - [Troubleshooting](#troubleshooting)
-    - [Specific issues](#specific-issues)
-      - ["'ascii' codec can't encode character"](#ascii-codec-cant-encode-character)
-      - ["Your working tree has pending changes."](#your-working-tree-has-pending-changes)
+- [Requirements](#requirements)
+- [Getting started](#getting-started)
+- [Working with clang-format](#working-with-clang-format)
+  - [Reformatting as you work (normal usage)](#reformatting-as-you-work-normal-usage)
+  - [Reformatting your last commit](#reformatting-your-last-commit)
+  - [Reformatting an entire PR](#reformatting-an-entire-pr)
+  - [CMake targets](#cmake-targets)
+  - [Build directory scripts](#build-directory-scripts)
+- [What files are actually linted/formatted?](#what-files-are-actually-lintedformatted)
+- [I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?](#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it)
+  - [Troubleshooting](#troubleshooting)
+  - [Specific issues](#specific-issues)
+    - ["'ascii' codec can't encode character"](#ascii-codec-cant-encode-character)
+    - ["Your working tree has pending changes."](#your-working-tree-has-pending-changes)
 
 ###### *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 Linting and formatting
 ----------------------
