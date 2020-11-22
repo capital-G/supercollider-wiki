@@ -9,6 +9,7 @@
   - [Reformatting an entire PR](#reformatting-an-entire-pr)
   - [CMake targets](#cmake-targets)
   - [Build directory scripts](#build-directory-scripts)
+- [Working without clang-format](#working-without-clang-format)
 - [What files are actually linted/formatted?](#what-files-are-actually-lintedformatted)
 - [I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?](#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it)
   - [Troubleshooting](#troubleshooting)
@@ -201,8 +202,8 @@ instance, if you have a branch `feature` which is 3 commits ahead of `develop`, 
 This is useful for quickly reformatting an entire branch of changes if you've neglected to format
 each commit, and don't want to go back and redo each commit separately.
 
-Working without clang-format (the Hard Way)
--------------------------------------------
+Working without clang-format
+----------------------------
 
 Sometimes you just want to update your PR (pull request) so it passes linting, without installing clang-format. It
 will be painful but you can follow these steps as a last resort:
