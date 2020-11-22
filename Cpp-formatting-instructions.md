@@ -99,19 +99,41 @@ There are a couple ways you can use clang-format in SuperCollider:
 1. Many IDEs and editors integrate directly with clang-format (more information
    [here](https://clang.llvm.org/docs/ClangFormat.html)). This is a great workflow as all your code will be formatted
    correctly by your editor without you having to think about it. You may need to tell your editor to use the version of
-   clang-format that you installed.
+   clang-format that you installed rather than the one it came with.
 2. You can run the `tools/clang-format.py` script directly; run `tools/clang-format.py -h` for more information.
 3. You can run the `build/lint.py` and `build/format.py` scripts that are generated in your build folder. Both scripts
    accept a commit "reference point" as an optional first argument.
 4. You can "build" some commands as build targets, see below.
 
-### Example workflow
+### Reformatting as you work (normal usage)
 
 If you are developing a C++ feature or bug fix, a typical workflow might look like this:
 
 1. Write some code, build, test
 2. Use your editor's integration or run `./format.py` in your build directory to format your code
 3. Commit your changes with git
+
+### Reformatting your last commit
+
+If you just made a commit without formatting and want to reformat it:
+
+1. Make sure your working directory is completely clean. The output of `git status` shouldn't show any files waiting
+   to be committed, or any submodule changes. `git submodule update --recursive` will set your submodules to the
+   correct commits.
+1. Run `./format.py HEAD^` in your build directory or `tools/clang-format.py HEAD^` from anywhere. **Remember to
+   include the `^`!**
+2. If you haven't pushed your work yet, run `git commit -a --amend --no-edit` to update your last commit.
+3. If you have already pushed your work, run `git commit -am "Format with clang-format"` to make a new commit.
+
+### Reformatting an entire PR
+
+If you've made a PR and now need to reformat the whole thing:
+
+1. Make sure your working directory is completely clean. The output of `git status` shouldn't show any files waiting
+   to be committed, or any submodule changes. `git submodule update --recursive` will set your submodules to the
+   correct commits.
+1. Run `./format.py develop` in your build directory or `tools/clang-format.py develop` from anywhere.
+3. Run `git commit -am "Format with clang-format"` to make a new commit.
 
 ### CMake targets
 
@@ -187,8 +209,8 @@ generation tools. These auto-generated files are:
 - `lang/LangSource/Bison/lang11d_tab.cpp`
 - `lang/LangSource/Bison/lang11d_tab.h`
 
-I made a PR before the reformat and it has merge conflicts now! How do I fix it?
---------------------------------------------------------------------------------
+I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?
+--------------------------------------------------------------------------------------------
 
 If you have a branch that contains work prior to the major C++ reformatting commit (tag `tag-clang-format-develop`, which happened around June 2019), just follow these steps.
 
