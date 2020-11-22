@@ -1,6 +1,6 @@
 ### Table of Contents
 
-- [Linting and formatting](#linting-and-formatting)
+- [Overview](#overview)
 - [Requirements](#requirements)
 - [Getting started](#getting-started)
 - [Working with clang-format](#working-with-clang-format)
@@ -18,26 +18,23 @@
 
 ###### *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-Linting and formatting
-----------------------
+Overview
+--------
 
-Here, "linting" specifically means checking that code is formatted correctly, without modifying code; "formatting" means
-actually changing the code.
+In this context of this document, "linting" means checking that code is formatted correctly, without modifying code;
+"formatting" means actually changing the code.
 
 For information about our code style guidelines, which includes things like naming conventions, see [this
 document](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-C---Code-Style-Guidelines).
 
-SuperCollider uses [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html) - part of the
-[LLVM](http://llvm.org/) project - to format C++ and Objective-C/C++ code. This helps to make sure that the
-style of the codebase is consistent across time and authors, and makes contributing and code
-review smoother.
+SuperCollider uses [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html). This helps to make sure that the style
+of the codebase is consistent across time and authors, and makes contributing and code review smoother.
 
-Formatting is checked for every commit and PR (pull request) by our CI (continuous integration) tools. This makes it
-impossible to merge any change which violates our formatting standards. Only one CI job on Travis checks the linting
-target; if your commit fails to build due to linting, you can check the build log to see why.
+Formatting is checked on each PR (pull request) by our CI (continuous integration) tools. This makes it impossible to
+merge any change which violates our formatting standards.
 
-If you are contributing to SuperCollider and plan on working on C++ code, it is strongly recommended
-that you integrate ClangFormat into your development workflow.
+If you are contributing to SuperCollider and plan on working on C++ code, it is strongly recommended that you
+integrate ClangFormat into your development workflow.
 
 Requirements
 ------------
