@@ -24,7 +24,7 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 Linting and formatting
-======================
+----------------------
 
 Here, "linting" specifically means checking that code is formatted correctly, without modifying code; "formatting" means
 actually changing the code.
@@ -44,13 +44,33 @@ target; if your commit fails to build due to linting, you can check the build lo
 If you are contributing to SuperCollider and plan on working on C++ code, it is strongly recommended
 that you integrate ClangFormat into your development workflow.
 
+Requirements
+------------
+
+**Python >= 3.6**: any version past 3.6 should work. To find out what version you have run `python --version`.
+
+**ClangFormat v8.x.y**: either [8.0.1](https://releases.llvm.org/download.html#8.0.1) or
+[8.0.0](https://releases.llvm.org/download.html#8.0.0) will work. In the long term, we would like to not require an
+out-of-date version of clang-format. To find out if it's already installed, run `clang-format --version`.  Even if it
+is installed, you may still need to do some setup (see below).
+
+The LLVM official releases support at least: FreeBSD, Windows, Ubuntu, RHEL/Fedora, and macOS (8.0.0 only). Other
+platforms might also be supported; it's unclear to the person writing this.
+
+On **Arch Linux**, there is no good package for clang8; https://aur.archlinux.org/packages/clang8 conflicts with
+clang, and the clang-8 source code release does not compile with the latest clang or gcc version. This script will
+install it for you in a way that it peacefully coexists with other installations of clang:
+https://gist.github.com/brianlheim/2f80768eb2429b285902f8898182ae2d.
+
+If you can't find a suitable release artifact for your system on LLVM's website, check your package manager of choice.
+If that doesn't work either, [let us
+know](https://github.com/supercollider/supercollider/blob/develop/README.md#discuss) and we'll be happy to help you!
+
 Getting started
 ---------------
 
-You will need clang v8.x.y and Python 2.7+ or 3.6+. Instructions on grabbing the dependencies are here: 
-1. Download and install Python and LLVM 8; either [8.0.1](https://releases.llvm.org/download.html#8.0.1) or
-[8.0.0](https://releases.llvm.org/download.html#8.0.0) will work. See
-[requirements](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions#requirements) below for
+1. Download and install Python and LLVM 8;  See
+[requirements](https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions#requirements) above for
 more info.
 2. Open a terminal and execute `clang-format --version` and `clang-format-diff.py -h`. You should see something like
    this:
@@ -98,7 +118,8 @@ export SC_CLANG_FORMAT=/full/path/to/clang-format
 export SC_CLANG_FORMAT_DIFF=/full/path/to/clang-format-diff.py
 ```
 
-On Windows, this is done through user settings; there are many articles online that explain how.
+On Windows, this is done by setting environment variables through user settings; there are many articles online that
+explain how.
 
 4. Alternatively, you can add both the directories containing clang-format and clang-format-diff.py to your `PATH`.
    Instructions to do this can be found online. This may lead to issues if you have another version of LLVM or
@@ -187,38 +208,6 @@ instance, if you have a branch `feature` which is 3 commits ahead of `develop`, 
 
 This is useful for quickly reformatting an entire branch of changes if you've neglected to format
 each commit, and don't want to go back and redo each commit separately.
-
-Requirements
-------------
-
-**ClangFormat v8.x.y**: it is very important that all contributors use the same major version of
-ClangFormat. Style options are added and modified between releases, and other small things may change between versions.
-Any version that starts with 8 is acceptable.
-
-On Arch Linux, there is no good package for clang8 (https://aur.archlinux.org/packages/clang8 conflicts with clang), and the clang-8 source code release does not compile with the latest clang or gcc version. This script will install it for you in a way that it peacefully coexists with other installations of clang: https://gist.github.com/brianlheim/2f80768eb2429b285902f8898182ae2d
-
-You can probably download a package including ClangFormat from the [LLVM releases
-page](https://releases.llvm.org/download.html); alternatively, check your package manager of choice.
-If you can't find a suitable version for your operating system, [let us
-know](https://github.com/supercollider/supercollider/blob/develop/README.md#discuss) and we'll be
-happy to help you!
-
-In the long term, we would like to not require a single and out-of-date version of clang-format.
-
-**Python**: if you want to use the `tools/clang-format.py` script, you will need Python. The script
-has been tested and confirmed to work with versions 2.7.15 and 3.6.5. Newer versions will probably
-also work; use older versions at your own peril. If you don't have Python installed on your system,
-you can download it [here](https://www.python.org/downloads/). Prefer to use Python 3. Issues in the
-way Python 2 handles non-ASCII characters mean that you may encounter unsolvable errors if:
-- the full path to your repository includes a non-ASCII character
-- one of the files you are linting contains a non-ASCII character
-
-**clang-format-diff.py**: if you want to use the `lint` or `format` CMake target, or `lint.py` or
-`format.py` script, you will need `clang-format-diff.py`, a Python script provided by LLVM that
-reads in a Git diff and either lints or formats your code to agree with our style. This script is
-generally provided in LLVM releases. You may need to manually add it to your PATH, though. For
-instance, if you use the LLVM-provided installer for Windows, this script is in
-`<install-path>/share/clang`, but the installer only adds `<install-path>/bin` to your PATH.
 
 What files are actually linted/formatted?
 -----------------------------------------
