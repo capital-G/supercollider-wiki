@@ -190,7 +190,7 @@ generation tools. These auto-generated files are:
 I made a PR before the reformat and it has merge conflicts now! How do I fix it?
 --------------------------------------------------------------------------------
 
-If you have a branch that contains work prior to the major C++ reformatting commit, just follow these steps.
+If you have a branch that contains work prior to the major C++ reformatting commit (tag `tag-clang-format-develop`, which happened around June 2019), just follow these steps.
 
 1. Follow the "Getting Started" steps above if you haven't already.
 2. Run the following commands to update your local repo. This assumes that `upstream` points to the main SuperCollider
