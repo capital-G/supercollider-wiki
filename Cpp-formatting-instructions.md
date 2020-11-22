@@ -144,15 +144,19 @@ each commit, and don't want to go back and redo each commit separately.
 Requirements
 ------------
 
-**ClangFormat v8.x.y**: it is *extremely* important that all contributors use the same major version of
+**ClangFormat v8.x.y**: it is very important that all contributors use the same major version of
 ClangFormat. Style options are added and modified between releases, and other small things may change between versions.
 Any version that starts with 8 is acceptable.
+
+On Arch Linux, there is no good package for clang8 (https://aur.archlinux.org/packages/clang8 conflicts with clang), and the clang-8 source code release does not compile with the latest clang or gcc version. This script will install it for you in a way that it peacefully coexists with other installations of clang: https://gist.github.com/brianlheim/2f80768eb2429b285902f8898182ae2d
 
 You can probably download a package including ClangFormat from the [LLVM releases
 page](https://releases.llvm.org/download.html); alternatively, check your package manager of choice.
 If you can't find a suitable version for your operating system, [let us
 know](https://github.com/supercollider/supercollider/blob/develop/README.md#discuss) and we'll be
 happy to help you!
+
+In the long term, we would like to not require a single and out-of-date version of clang-format.
 
 **Python**: if you want to use the `tools/clang-format.py` script, you will need Python. The script
 has been tested and confirmed to work with versions 2.7.15 and 3.6.5. Newer versions will probably
