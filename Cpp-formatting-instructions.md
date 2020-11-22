@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+### Table of Contents
 
 - [Linting and formatting](#linting-and-formatting)
   - [Getting started](#getting-started)
@@ -17,6 +18,8 @@
     - [Specific issues](#specific-issues)
       - ["'ascii' codec can't encode character"](#ascii-codec-cant-encode-character)
       - ["Your working tree has pending changes."](#your-working-tree-has-pending-changes)
+
+###### *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
