@@ -211,14 +211,14 @@ will be painful but you can follow these steps as a last resort:
 1. Look toward the bottom of the PR for the section that has "Some checks were not successful", then next to the
    check called "continuous-integration/travis-ci/pr" click "Details".
 
-<img width="600" alt="Screen Shot 2020-11-22 at 11 18 34 AM" src="https://user-images.githubusercontent.com/15369640/99910685-fcaf1480-2cb4-11eb-8c4d-0723f89fd306.png">
+<img width="800" alt="Screen Shot 2020-11-22 at 11 18 34 AM" src="https://user-images.githubusercontent.com/15369640/99910685-fcaf1480-2cb4-11eb-8c4d-0723f89fd306.png">
 
 2. This will take you to Travis's build job view. You will see a listing of build jobs each labeled N.1, N.2, N.3,
    where N is some number. Select build job 11, which also has "with linting" in its JOB_NAME. It should be the one
    with a red exclamation point next to the name instead of a green check mark. (Depending on the PR there may be other
    jobs with red marks)
 
-<img width="600" alt="Screen Shot 2020-11-22 at 11 19 00 AM" src="https://user-images.githubusercontent.com/15369640/99910684-fc167e00-2cb4-11eb-8fa7-e457bbb85fa8.png">
+<img width="800" alt="Screen Shot 2020-11-22 at 11 19 00 AM" src="https://user-images.githubusercontent.com/15369640/99910684-fc167e00-2cb4-11eb-8fa7-e457bbb85fa8.png">
 
 3. Scroll down through the log, or open the raw log, until you get to "Running tools/clang-format.py lintall".
    Everything from here until "The command $TRAVIS_BUILD_DIR/.travis/before-install-$TRAVIS ..." is what clang-format
@@ -226,7 +226,7 @@ will be painful but you can follow these steps as a last resort:
    repo. For some diffs, it may look like nothing has changed; make sure you check locally for things like trailing
    whitespace, mixed spaces and tabs, and tabs instead of spaces.
 
-<img width="600" alt="Screen Shot 2020-11-22 at 11 19 47 AM" src="https://user-images.githubusercontent.com/15369640/99910682-fb7de780-2cb4-11eb-90b8-e6ef1aff4462.png">
+<img width="800" alt="Screen Shot 2020-11-22 at 11 19 47 AM" src="https://user-images.githubusercontent.com/15369640/99910682-fb7de780-2cb4-11eb-90b8-e6ef1aff4462.png">
 
 What files are actually linted/formatted?
 -----------------------------------------
