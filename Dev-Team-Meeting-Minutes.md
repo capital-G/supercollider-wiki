@@ -1,3 +1,29 @@
+2020-12-12
+==========
+
+Members present: Brian, Marcin, Gianluca, Tejaswi
+
+3.12
+- making good progress toward release
+- Brian planning to work on moving C++11 to 17
+- Gianluca planning to work on Bela support
+- Marcin moved us to GitHub Actions
+- Gianluca working on macOS clipping in supernova - Brian will create ticket
+
+Marcin gave a status update on GHA (GitHub Actions)
+- building works
+- not yet running test suite
+- not yet pushing to S3
+
+discussed dropping boost sync
+- Brian thinks this might be better long term since sync seems to be causing trouble during the last few releases
+- decided to open ticket to discuss further
+
+discussed https://github.com/supercollider/supercollider/issues/5282
+- discussed compatibility and quarks
+
+decided to postpone 3.12 release indefinitely since Josh and Brian don't have much time for SC in the next while
+
 2020-11-15
 ==========
 
