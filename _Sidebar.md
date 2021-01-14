@@ -36,6 +36,7 @@
 * [Undocumented classes and methods list](https://github.com/supercollider/supercollider/wiki/Undocumented-classes-and-methods-list)
 * [sc-dev Meeting Procedure & Templates](https://github.com/supercollider/supercollider/wiki/sc-dev-Meeting-Procedure-&-Templates)
 * [Project tasks organization](https://github.com/supercollider/supercollider/wiki/Project-tasks-organization)
+* [GitHub Actions migration notes](https://github.com/supercollider/supercollider/wiki/GitHub-Actions-migration-notes)
 
 **User Guides**
 
