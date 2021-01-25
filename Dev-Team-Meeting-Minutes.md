@@ -1,3 +1,30 @@
+2021-01-24
+==========
+Members present: James S, Marcin
+
+Free-form discussion. Topics:
+
+- Update on running tests on GH Actions 
+  - Marcin made some [progress](https://github.com/dyfer/supercollider/tree/61b90b232a754aeec2f2b0a475fea529f2fac53c), but it still doesn't work
+- Marcin built SC natively on an M1 MBP
+  - homebrew provides Qt 5.15.2, but without qtwebengine
+  - there were issues with (self)-signing - the build did not start, everyneed needed to be re-signed
+  - performance seems quite good (non-scientifically measured)
+  - James and Marcin wondered whether we use all ARM optimizaions; nova-simd library seems to include NEON instructions
+- discussion on QtWebEngine
+  - still not available in Qt6
+  - ideas for having help system without web engine, e.g. by using rich text in Qt text view
+- ideas about version numbers for non-tagged builds
+  - proposition: name current pre-release `3.12.0-pre` (or similar)
+  - proposition: name future pre-release `3.13.0-pre` (from develop branch, with the caveat that 3.13 release might not include all changes)
+  - discussion on version numbers vs short sha (e.g. `3.12.0-pre-1454` vs `3.12.0-pro-1c002dd`)
+- James proposes using Unity Builds to speed up build process
+
+
+2021-01-10
+==========
+(not sure if we took notes)
+
 2020-12-12
 ==========
 
