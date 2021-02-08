@@ -47,9 +47,8 @@ Requirements
 out-of-date version of clang-format. To find out if it's already installed, run `clang-format --version`.  Even if it
 is installed, you may still need to do some setup (see below). 
 
-The LLVM official releases support at least: FreeBSD, Windows, Ubuntu, RHEL/Fedora, and macOS (8.0.0 only). On macOS
-you can install it with homebrew with `brew install llvm@8`. Other platforms might also be supported; it's unclear
-to the person writing this.
+[The LLVM official releases support at least: FreeBSD, Windows, Ubuntu, RHEL/Fedora, and macOS (8.0.0 only).](https://releases.llvm.org/download.html#8.0.0) On macOS
+you can also install it with homebrew with `brew install llvm@8`. Other platforms may also be supported.
 
 On **Arch Linux**, there is no good package for clang8; https://aur.archlinux.org/packages/clang8 conflicts with
 clang, and the clang-8 source code release does not compile with the latest clang or gcc version. This script will
