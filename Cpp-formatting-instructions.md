@@ -42,12 +42,12 @@ Requirements
 
 **Python >= 3.6**: any version past 3.6 should work. To find out what version you have run `python --version`.
 
-**ClangFormat v8.x.y**: either [8.0.1](https://releases.llvm.org/download.html#8.0.1) or
-[8.0.0](https://releases.llvm.org/download.html#8.0.0) will work. In the long term, we would like to not require an
+**ClangFormat v8.x.y**: from the LLVM website you can download either version [8.0.1](https://releases.llvm.org/download.html#8.0.1) or
+[8.0.0](https://releases.llvm.org/download.html#8.0.0). In the long term, we would like to not require an
 out-of-date version of clang-format. To find out if it's already installed, run `clang-format --version`.  Even if it
 is installed, you may still need to do some setup (see below). 
 
-[The LLVM official releases support at least: FreeBSD, Windows, Ubuntu, RHEL/Fedora, and macOS (8.0.0 only).](https://releases.llvm.org/download.html#8.0.0) On macOS
+The LLVM official releases support at least: FreeBSD, Windows, Ubuntu, RHEL/Fedora, and macOS (8.0.0 only). On macOS
 you can also install it with homebrew with `brew install llvm@8`. Other platforms may also be supported.
 
 On **Arch Linux**, there is no good package for clang8; https://aur.archlinux.org/packages/clang8 conflicts with
