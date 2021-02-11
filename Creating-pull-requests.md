@@ -53,7 +53,7 @@ is the branch you want to rebase, and `develop` is the branch you want to rebase
     # rebase interactively (-i). this will also leave `topic/foo` checked out when done
     git rebase -i develop topic/foo
 
-See "Completing a rebase" below.
+Now see [Completing a rebase](#completing-a-rebase) below.
 
 ### Rebasing to change the base branch of a PR branch
 
@@ -67,7 +67,7 @@ branch. This scenario can arise when you want to change a PR so that it targets 
     # rebase interactively (-i). this will also leave `topic/foo` checked out when done
     git rebase -i --onto 3.12 develop topic/foo
 
-See "Completing a rebase" below.
+Now see [Completing a rebase](#completing-a-rebase) below.
 
 ### Completing a rebase
 
