@@ -49,7 +49,7 @@ is the branch you want to rebase, and `develop` is the branch you want to rebase
 
     # first pull any new changes from develop on the upstream project
     git checkout develop
-    git pull
+    git pull upstream develop
     # rebase interactively (-i). this will also leave `topic/foo` checked out when done
     git rebase -i develop topic/foo
 
@@ -63,7 +63,7 @@ branch. This scenario can arise when you want to change a PR so that it targets 
 
     # first pull any new changes from the release branch
     git checkout 3.12
-    git pull
+    git pull upstream 3.12
     # rebase interactively (-i). this will also leave `topic/foo` checked out when done
     git rebase -i --onto 3.12 develop topic/foo
 
