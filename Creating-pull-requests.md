@@ -1,8 +1,8 @@
-### Before making changes
+## Before making changes
 See [Setting Up Your Development Environment](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment), to make sure you have a working and updated fork of SuperCollider's source code.
 Then you can create a fresh new branch for your contribution:
 
-### Create a topic branch
+## Create a topic branch
 - Create a topic branch from where you want to base your work.
 	- Your topic branch should be based on `develop`, unless it is a trivial bug fix or documentation change, in which case it should be based on the latest release (`3.x`) branch.
 	- Our branch naming convention is `topic/branch-description`: for example, `topic/fix-sinosc` or `topic/document-object`.
@@ -10,7 +10,7 @@ Then you can create a fresh new branch for your contribution:
 	- Please do not work off of the `master` branch, which is stable and only includes releases.
 - As time passes, make sure to keep your fork updated - see [Updating your fork](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment#2-Keep-your-fork-updated).
 
-### Making changes
+## Making changes
 
 - Make commits of logical units.
 - Please refer to [Code Style Guide](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines). Note that code style, such as whitespace conventions, depend on the language (`C++` vs `SuperCollider` vs `SCDoc Markup`)
@@ -19,43 +19,69 @@ Then you can create a fresh new branch for your contribution:
 - Make sure you have added the necessary tests for your changes. All changes to code should include a test which checks for correct functionality, including regression tests for bug fixes. Info on best practice for Unit tests is available at https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide
 - Make sure you have documented your changes, if necessary.
 
-### Submitting changes as Pull Requests
+## Submitting changes as Pull Requests
 
 - Push your changes to a topic branch in your fork of the SuperCollider repository. If you are working locally, do this with `git push -u origin topic/branch-description`. `origin` should be the remote of your fork; check with `git remote -v`.
 - Submit a pull request to the SuperCollider repository.
 - The core team looks at pull requests on a regular basis in a public meeting that is held on a weekly basis. The meeting times are announced on the sc-dev mailing list.
 - You may receive feedback and requests for changes. We expect changes to be made in a timely manner. We may close pull requests if they aren't showing any activity.
 
-### Skipping CI
+## Skipping CI
+
 We have CI provided by AppVeyor (Windows) and Travis (Linux, macOS). If a commit changes _only_
 non-schelp documentation, _without_ renaming, adding, or removing files, you may want to consider
 adding `[skip ci]` to the commit message so it does not waste CI resources. See https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor#skip-ci.
 
-### Notes on rebasing and merge conflicts
+## Rebasing and merge conflicts
 
-It is almost never a good idea to resolve merge conflicts via the GitHub interface or by merging the main branch in locally. This creates noise in commit history and makes it more difficult to perform other operations on branches later. In the SuperCollider project, the preferred way to resolve merge conflicts in a pull request is by rebasing.
+### Introduction
 
-See `git help rebase` for `rebase` usage examples that include graphical representations.
+Do not resolve merge conflicts via the GitHub interface or by merging the main branch in locally. This creates noise in commit history and makes it more difficult to perform other operations on branches later. In the SuperCollider project, the accepted way to resolve merge conflicts in a pull request is by rebasing.
 
-Rebasing (`git help rebase`) is a very useful command for four scenarios in particular:
-
-1. If you'd like to incorporate new commits on the base branch that contain relevant fixes or
-   features into your topic branch.
-2. If you'd like to resolve merge conflicts.
-3. If you'd like to change the branch your topic branch is based on. This may happen if, for instance, a maintainer requests that you make your bug fix merge request against a release branch (e.g. 3.9, 3.10) instead of develop. You will then need to rebase your topic branch onto the appropriate release branch.
-4. If you'd like to rewrite your commit history by combining or reordering some commits (not recommended for those newer to git).
+See `git help rebase` for `rebase` usage examples that include helpful graphical representations.
 
 Rebase has an interactive mode (`git rebase -i`) which will show exactly which commits will be applied to the new base, and the order in which they will be applied. This can be very helpful when you're not completely sure what the result of a rebase will be.
 
-For scenarios (1) and (2), suppose that the current branch is `topic/foo`, which is based on an old commit from the `develop` branch. To rebase, you can execute `git rebase -i develop`. You can examine the change list to make sure it's correct before continuing. Git will stop if it encounters a merge conflict, and give instructions on how to resolve it and continue the rebase.
+### Rebasing to resolve merge conflicts in a PR
 
-For scenario (3), suppose that there are three branches: `develop`, the release branch `3.10`, and the topic branch `topic/foo` which is based on `develop`. Suppose that `topic/foo` is currently checked out.  You would like it to be based on `3.10` instead of `develop`. An easy way to do this is with `git rebase -i --onto 3.10 develop topic/foo`. Beware that you may need to resolve merge conflicts during this rebase.
+Suppose your current PR branch is `topic/foo`, which is based on an old commit from the `develop` branch. `topic/foo`
+is the branch you want to rebase, and `develop` is the branch you want to rebase onto.
+
+    # first pull any new changes from develop on the upstream project
+    git checkout develop
+    git pull
+    # rebase interactively (-i). this will also leave `topic/foo` checked out when done
+    git rebase -i develop topic/foo
+
+See "Completing a rebase" below.
+
+### Rebasing to change the base branch of a PR branch
+
+Suppose your current PR branch is `topic/foo`, which is based on `develop`, but you would like to rebase it on `3.12`
+instead. In other words, you want to take the commits unique to your feature branch and replay them on the `3.12`
+branch. This scenario can arise when you want to change a PR so that it targets a release branch instead of `develop`.
+
+    # first pull any new changes from the release branch
+    git checkout 3.12
+    git pull
+    # rebase interactively (-i). this will also leave `topic/foo` checked out when done
+    git rebase -i --onto 3.12 develop topic/foo
+
+See "Completing a rebase" below.
+
+### Completing a rebase
+
+Before beginning to rebase, git will show you a change list which you can examine to make sure it's correct before
+continuing. Git will stop if it encounters a merge conflict, and give instructions on how to resolve it and continue
+the rebase.
 
 After rebasing, you may find it helpful to display the pretty-printed commit log with `git log --oneline --graph --decorate` to make sure all is well.
 
-In any case, after rebasing your local branch will now be out of sync with your remote branch. You will have to resolve this by force pushing: `git push --force origin topic/foo`. If you realize later that you made a mistake with your rebase, it's always possible to go back to your previous local state using `git reflog`.
+When done, your local branch will be out of sync with your remote branch. You will have to resolve this by force pushing: `git push --force origin topic/foo`. You can add the `-n/--dry-run` switch to see what this command will do without actually making any changes. If you realize later that you made a mistake with your rebase, it's always possible to go back to your previous local state using `git reflog`.
 
-For scenario (4), `git help rebase`'s section "Interactive mode" has extensive documentation on how to reorder and recombine commits. Also refer to the section on `--autosquash` for ideas on how to combine these features into a streamlined rebase-oriented workflow.
+### Rebasing to rearrange and edit commits
+
+This is not recommended for those newer to git. `git help rebase`'s section "Interactive mode" has extensive documentation on how to reorder and recombine commits. Also refer to the section on `--autosquash` for ideas on how to combine these features into a streamlined rebase-oriented workflow.
 
 ## Additional resources
 
