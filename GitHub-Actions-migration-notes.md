@@ -5,7 +5,9 @@ GitHub Actions is configured using a `yaml` file located in `.github/workflows/<
 
 ### GHA structure
 Workflows >> Jobs >> Steps, which use Actions
+
 Events: what triggers a Workflow (e.g. push, a PR, possibly the REST API/manual trigger)
+
 Runners: virtual machines with preconfigured OS images that run Jobs
 
 ### Implementation notes
