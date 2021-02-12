@@ -3,8 +3,28 @@ This is a work-in-progress document started by Marcin with some notes about impl
 ## General Information
 GitHub Actions is configured using a `yaml` file located in `.github/workflows/<name>.yml`
 
-## Workflows, Jobs, Steps, Actions
-...also Events and Runners
+### GHA structure
+Workflows >> Jobs >> Steps, which use Actions
+Events: what triggers a Workflow (e.g. push, a PR, possibly the REST API/manual trigger)
+Runners: virtual machines with preconfigured OS images that run Jobs
+
+### Implementation notes
+- All actions for the CI are specified directly in a .yaml file; no separate scripts are used, which was the case with our Travis implementation
+- Currently we have a single .yaml file with linting, building, testing, and deployment
+- There are very minimal "dependencies" between Jobs/Steps
+  - We create a "version string" in the linting step
+    - all subsequent Jobs depend on the linting Job
+    - the version string is either: 
+      - git tag, without the `Version-` prefix, or
+      - commit SHA
+    - that string is used in other Jobs/Steps, referred to as `needs.lint.outputs.sc-version`, where `lint` is the set name of the linting job, and `sc-version` is the `id` of the step that creates the string
+- Test suite jobs run separately from build jobs
+  - they download artifacts uploaded to GHA by the building step
+  - for this reason, artifact name format needs to be kept consistent for all Jobs
+    - if it is changed in the future, all Jobs need to be adjusted to use it (particularly testing jobs need to be updated to match the building jobs)
+    - at the time of writing, the artifact name is `SuperCollider-<sc-version>-<artifact-suffix>.zip`, where `sc-version` is either tag or commit SHA, and artifact suffix is manually specified for each Job, e.g. `macOS` or `linux-bionic-gcc10`
+  - at the time of writing this, it is not possible to use matrix entries in the `depends on` field for Jobs, thus all tests wait for both Linux and macOS builds to finish; if possible in the future, it would be better for Linux tests to wait only on Linux builds, and macOS tests wait only on macOS builds
+
 
 ## Qt
 
