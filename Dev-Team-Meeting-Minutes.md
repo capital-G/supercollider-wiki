@@ -5,7 +5,7 @@ Members present: Brian, James S, Marcin
 Update from James: 
 - looked into Unity builds to decrease build times; we might be already doing it partially; CMake needs work
   - Brian: if we are doing unity builds, we are doing that for yaml.cpp only (?)
-  - supposedly it used to worked, but it stopped and was disabled
+  - supposedly it used to work, but it stopped and was disabled
 
 Moved to discussion on the need to fix/largely rewrite CMake
 
