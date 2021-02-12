@@ -25,6 +25,7 @@ Runners: virtual machines with preconfigured OS images that run Jobs
   - for this reason, artifact name format needs to be kept consistent for all Jobs
     - if it is changed in the future, all Jobs need to be adjusted to use it (particularly testing jobs need to be updated to match the building jobs)
     - at the time of writing, the artifact name is `SuperCollider-<sc-version>-<artifact-suffix>.zip`, where `sc-version` is either tag or commit SHA, and artifact suffix is manually specified for each Job, e.g. `macOS` or `linux-bionic-gcc10`
+    - **testing and deployment actions need to match the artifact name from the building step**
   - at the time of writing this, it is not possible to use matrix entries in the `depends on` field for Jobs, thus all tests wait for both Linux and macOS builds to finish; if possible in the future, it would be better for Linux tests to wait only on Linux builds, and macOS tests wait only on macOS builds
 
 
