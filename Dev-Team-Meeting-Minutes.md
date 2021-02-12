@@ -21,7 +21,8 @@ Marcin suggests to create a wiki page documenting current CMake architecture
 Problems:
 - "dependency inversion"
 - Install stuff
-Brian suggest order:
+
+Brian suggest the following order of fixing things:
 - solve Mac installation - "dependency inversion"
 - minor cleanup to make sure we don’t find libraries multiple times
 - redoing installation code
