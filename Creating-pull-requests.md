@@ -73,7 +73,7 @@ Now see [Completing a rebase](#completing-a-rebase) below.
 
 Before beginning to rebase, git will show you a change list which you can examine to make sure it's correct before
 continuing. Git will stop if it encounters a merge conflict, and give instructions on how to resolve it and continue
-the rebase.
+the rebase. You can read more about how to handle this situation [here](https://docs.github.com/en/github/using-git/resolving-merge-conflicts-after-a-git-rebase).
 
 After rebasing, you may find it helpful to display the pretty-printed commit log with `git log --oneline --graph --decorate` to make sure all is well.
 
