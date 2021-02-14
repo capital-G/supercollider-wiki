@@ -1,3 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Before making changes](#before-making-changes)
+- [Create a topic branch](#create-a-topic-branch)
+- [Making changes](#making-changes)
+- [Submitting changes as Pull Requests](#submitting-changes-as-pull-requests)
+- [Skipping CI](#skipping-ci)
+- [Rebasing and merge conflicts](#rebasing-and-merge-conflicts)
+  - [Introduction](#introduction)
+  - [Rebasing to resolve merge conflicts in a PR](#rebasing-to-resolve-merge-conflicts-in-a-pr)
+  - [Rebasing to change the base branch of a PR branch](#rebasing-to-change-the-base-branch-of-a-pr-branch)
+  - [Completing a rebase](#completing-a-rebase)
+  - [Rebasing to rearrange and edit commits](#rebasing-to-rearrange-and-edit-commits)
+- [Additional resources](#additional-resources)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Before making changes
 See [Setting Up Your Development Environment](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment), to make sure you have a working and updated fork of SuperCollider's source code.
 Then you can create a fresh new branch for your contribution:
