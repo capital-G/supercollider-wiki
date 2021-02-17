@@ -85,6 +85,17 @@ We generally follow this sequence of pre-releases prior to the official release.
 - `X.Y.Z-betaN`, for minor releases, to find any new bugs we missed and catch any regressions
 - `X.Y.Z-rcN` (release candidate), for minor and patch releases, to catch any regressions and ensure that the official release itself will go smoothly
 
+### Emergency support releases
+
+Rarely, we may need to do an "emergency release" for extra support. As of February 2021, this has only happened once since the project moved to its current git-flow branching model. The reason for doing so was to support macOS 11 Big Sur between the release of 3.11.2 -- which did not support Big Sur at all yet -- and 3.12.0. In a conversation [here](https://github.com/supercollider/supercollider/issues/5168#issuecomment-778898320), this was the particular process arrived at:
+
+1. Assume the release to be patched is `x.y.z`, which, according to our branching model, has been developed on the release branch called `x.y`. Also assume that `x.y` has been merged into `master` at commit `A`, tagged `Version-x.y.z`, and that the parent commit of `A` on the `x.y` branch is `B`. In other words, `B` is the last commit on the `x.y` branch before merging into `master`.
+2. From `B`, create a new branch called `x.y.z-Comment`, where `Comment` is a brief camel-case descriptor for the motivation for the emergency support release. In the case of the `3.11.2` emergency release for Big Sur, this branch was called `3.11.2-BigSur`. Push the new branch to the repository, still pointing to commit `B`.
+3. Merge any necessary patches into `x.y.z-Comment` using the typical GitHub PR merge process. Let's refer to the merge commit created from this merge as commit `C`.
+4. Create any necessary release artifacts from commit `C`. *Do not* make a permanent tag for this release, as such a tag could interfere with downstream packaging processes.
+5. Name the artifact with this scheme: `x.y.z+Comment.SHA` (note the `+`!). `SHA` should be the first 7 digits of the hex SHA for commit `C`. We use a `+` here instead of `-` to conform to [SemVer's](https://semver.org/) requirements for labelling releases with build metadata. A secondary goal of adding these extra labels is to transparently show that the release artifact corresponds to a commit different than commit `A`, which was given the actual release tag.
+5. Publish these artifacts on GitHub releases and the website download page, and announce the newly available artifact across all venues where the original release announcement was made. All announcements should clearly state that the artifact is a modified version of the official release patched for additional support, and should also transparently indicate the testing done prior to release.
+
 ## Conflicts between release branches and develop ##
 
 Occasionally it may happen that a release branch cannot be cleanly merged into `develop`. In that case, the correct procedure is:
