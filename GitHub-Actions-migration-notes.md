@@ -54,4 +54,4 @@ To continue with following steps, create an empty file with the name `continue` 
 ## Test suite
 
 Our test suite is run using qpm, see [#5332](https://github.com/supercollider/supercollider/pull/5332) for more details. Some notes:
-- Running servers in GH runners is possible. On Linux one can use jack1 with dummy driver; on macOS, while audio hardware is not present, the runners have SoundFlower installed and SC server boots fine using it.
+- Running scsynth in GH runners is possible. On Linux one can use jack1 with dummy driver; on macOS, while audio hardware is not present, the runners have SoundFlower installed and SC server boots fine using it.
