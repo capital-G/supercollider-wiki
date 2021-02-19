@@ -85,6 +85,10 @@ We generally follow this sequence of pre-releases prior to the official release.
 - `X.Y.Z-betaN`, for minor releases, to find any new bugs we missed and catch any regressions
 - `X.Y.Z-rcN` (release candidate), for minor and patch releases, to catch any regressions and ensure that the official release itself will go smoothly
 
+### Tagging
+
+Creating a release involves adding a tag on the tip of the main branch. We follow the convention of using `Version-` prefix for the tags intended for official releases, e.g. `Version-3.11.0`. Our CI uses the tag in the filenames of the release artifacts, but removes the `Version-` prefix. Please note that creating a tag without the prefix will also trigger deployment of release artifacts, which is useful for testing. In the regular workflow, tags are used almost solely for creating releases. One notable exception from this was adding tags before reformatting the codebase with `clang-format`.
+
 ### Emergency support releases
 
 Rarely, we may need to do an "emergency release" for extra support. As of February 2021, this has only happened once since the project moved to its current git-flow branching model. The reason for doing so was to support macOS 11 Big Sur between the release of 3.11.2 -- which did not support Big Sur at all yet -- and 3.12.0. In a conversation [here](https://github.com/supercollider/supercollider/issues/5168#issuecomment-778898320), this was the particular process arrived at:
