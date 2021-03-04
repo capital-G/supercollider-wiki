@@ -1,5 +1,7 @@
 As of March 2021, [we have fully moved](https://github.com/supercollider/supercollider/wiki/GitHub-Actions-migration-notes) our CI from Travis and AppVeyor to GitHub Actions for the main SuperCollider repository.
 
+As of March 2021, sc3-plugins CI has not been moved to GitHub Actions.
+
 "Continuous integration" (CI) is a practice where an application is continuously tested in a reproducible, fixed environment, and is useful to quickly detect bugs and regressions and the changes that introduce them. We have CI services for SuperCollider and sc3-plugins provided by GitHub Actions (GHA). This document is intended to provide information about this system and how we use them for people maintaining our CI integrations or interested in maintaining them.
 
 Several things are checked in our CI builds:
