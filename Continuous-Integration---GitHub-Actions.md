@@ -61,17 +61,25 @@ If a build fails for a spurious reason and you think it will work on the next ru
 
 In first job that's run in GHA the whole project is linted. All other builds depend on that one, so if linting fails, no actual compilation occurs. The log will print out the linting diff, which you can share with a PR author.
 
-
-
-
-For sc3-plugins, we just have Ubuntu and macOS builds.
-
-
 ## Build steps
 
 (to be added)
 
 qpm is our python test runner (github.com/supercollider/qpm), see the repo for more info.
+
+## Test suite
+
+Our test suite is run using qpm, see [#5332](https://github.com/supercollider/supercollider/pull/5332) for more details.
+### Which tests are being run
+We use the test suite from https://github.com/supercollider/supercollider/tree/develop/testsuite/classlibrary. We run _all the tests_, _except_ the ones excluded in https://github.com/supercollider/supercollider/blob/develop/testsuite/scripts/gha_test_run_proto.json.
+### Adding new tests to the test suite
+In order to add tests to the test suite, just add them to https://github.com/supercollider/supercollider/tree/develop/testsuite/classlibrary. Once the changes are pushed to the repository, they will be run in GHA.
+### Removing tests from the test suite
+- If the test has issues and needs to be disabled temporarily, please add an [entry](https://github.com/supercollider/supercollider/blob/develop/testsuite/scripts/gha_test_run_proto.json#L7) with `"skip":true` parameter to https://github.com/supercollider/supercollider/blob/develop/testsuite/scripts/gha_test_run_proto.json
+- If the test is invalid for whatever reason, it should probably be removed from https://github.com/supercollider/supercollider/tree/develop/testsuite/classlibrary
+
+### Additional notes
+- Running scsynth in GH runners is possible. On Linux one can use jack1 with dummy driver; on macOS, while audio hardware is not present, the runners have SoundFlower installed and SC server boots fine using it.
 
 ## Troubleshooting, tips and tricks
 
