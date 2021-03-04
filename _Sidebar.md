@@ -7,6 +7,7 @@
 * [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
 * [Unit Testing Guide](https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide)
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
+* [Continuous Integration - GitHub Actions](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---GitHub-Actions)
 * [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
 * [Generating crash reports](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports)
 * [Contributing documentation changes](https://github.com/supercollider/supercollider/wiki/[WIP]-contributing-helpfiles)
