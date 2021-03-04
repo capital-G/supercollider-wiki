@@ -83,6 +83,10 @@ In order to add tests to the test suite, just add them to https://github.com/sup
 ### Additional notes
 - Running scsynth in GH runners is possible. On Linux one can use jack1 with dummy driver; on macOS, while audio hardware is not present, the runners have SoundFlower installed and SC server boots fine using it.
 
+## Notes on migrating from Travis/AppVeyor to GitHub Actions
+
+See [GitHub Actions migration notes](GitHub-Actions-migration-notes).
+
 ## Troubleshooting, tips and tricks
 
 The most important thing when troubleshooting a CI issue is to check the log carefully. Sometimes, errors early on don't manifest until much later in the build.
