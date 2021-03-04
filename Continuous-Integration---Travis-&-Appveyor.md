@@ -1,3 +1,5 @@
+**As of March 2021, we have fully moved our CI from Travis and AppVeyor to GitHub Actions for the main SuperCollider repository, see [Continuous Integration - GitHub Actions](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---GitHub-Actions)**
+
 "Continuous integration" (CI) is a practice where an application is continuously tested in a reproducible, fixed environment, and is useful to quickly detect bugs and regressions and the changes that introduce them. We have CI services for SuperCollider and sc3-plugins provided by AppVeyor (Windows) and Travis (Linux, macOS). This document is intended to provide information about those systems and how we use them for people maintaining our CI integrations or interested in maintaining them.
 
 Several things are checked in our CI builds:
