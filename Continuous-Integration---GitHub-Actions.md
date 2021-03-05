@@ -49,7 +49,7 @@ For SC and sc3-plugins:
 
 ## [skip ci]
 
-If you have `[skip ci]` in the first line of your commit message then GHA won't build it.
+If you have `[skip ci]` in the first line of your commit message then GHA won't build it. Please **only** use this functionality when a commit only changes comments, documentation files, or other text files. Do not use it when adding, deleting, or renaming files.
 
 ## Restarting builds
 
