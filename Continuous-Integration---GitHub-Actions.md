@@ -97,10 +97,6 @@ If you see a failing build and can interpret the reason for the failure, do so, 
 
 ---
 
-Try to encourage people to use [skip ci] as much as possible in their commit messages.
-
----
-
 Sometimes the CI might be temporarily unavailable and not build a commit. Usually manually restarting the workflow should fix this. If not, a last resort is to push the same set of commits under a different branch name, and then make a new PR for that. For example if your branch `topic/example` is the problem:
 
 ```
