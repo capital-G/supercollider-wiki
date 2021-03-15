@@ -1,3 +1,30 @@
+2021-03-14
+Notes from yesterday’s meeting:
+Members present - Marcin, Iannis, Patrick, Josh
+Marcin recent work:
+- cmake and verifyApp
+- verify app turned of for Qt 5.9 for legacy build
+3.12:
+- ImageLoader::link in server start failure - what is this doing??? - Josh and Brian to check on this for the scsynth failure to start on older MacOS
+Josh to look at MIDI PR - https://github.com/supercollider/supercollider/pull/4725
+Iannis - looked at sclang - simpler Condition - 
+	what methods are essential and what do they do?
+	Brian? Can there be a time to sync with Iannis?
+Something similar to DispatchGroup in Swift for Condition?
+Patrick - 
+	Rust: Sorcerer crate
+	Deferred on scsynth may be good for Condition refactoring
+	Does it pertain to: https://github.com/supercollider/supercollider/pull/5363 ?
+Discussion of how UnitTest::wait should work, and reverting / avoiding changes for Condition / UnitTest, etc., after 3.12
+Patrick and Marcin discuss reopening https://github.com/supercollider/supercollider/pull/5363
+Patrick explains the change introduced in https://github.com/supercollider/supercollider/commit/2aa3374e1e52b7db3f7708498810dc6032a1d082 that broke tests; Patrick’s PR reverts this back to using a function as the “condition” argument for UnitTest -wait
+There’s an ongoing work on making UnitTest use a Condition instead, but this will likely result in larger rewrite: https://github.com/supercollider/supercollider/pull/5368
+Marcin supports reopening 5363 to get the current functionality back (and tests passing) in the interim
+Current plan: discuss this further at the next meeting, particularly getting input from Brian
+Marcin talks about proposed SC_VERSION improvements. Will create an RFC.
+Ianni asks about an issue with Quarks installation and permission issues writing to the yaml file (Arch Linux) - will post question to the forum.
+
+
 2021-02-07
 ==========
 Members present: Brian, James S, Marcin
