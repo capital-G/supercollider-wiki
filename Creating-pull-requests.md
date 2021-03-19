@@ -23,12 +23,20 @@ See [Setting Up Your Development Environment](https://github.com/supercollider/s
 Then you can create a fresh new branch for your contribution:
 
 ## Create a topic branch
-- Create a topic branch from where you want to base your work.
-	- Your topic branch should be based on `develop`, unless it is a trivial bug fix or documentation change, in which case it should be based on the latest release (`3.x`) branch.
-	- Our branch naming convention is `topic/branch-description`: for example, `topic/fix-sinosc` or `topic/document-object`.
-	- To quickly create a topic branch based on develop: `git checkout -b topic/my-fix develop`.
-	- Please do not work off of the `master` branch, which is stable and only includes releases.
-- As time passes, make sure to keep your fork updated - see [Updating your fork](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment#2-Keep-your-fork-updated).
+
+1. Choose what branch you will use as the starting point for your changes. The simple answer is to **use `develop`**.
+
+<details>
+<summary>For a more complex answer, click here</summary>
+
+Sometimes you can make your branch directly against the latest release branch (`3.9`, `3.10`, etc.). We prefer this when possible. First, check if the latest release branch is active. "Active" means that the next [milestone](https://github.com/supercollider/supercollider/milestones) is a patch version for that release. For example, if the next milestone is 3.15.0 but the latest release branch is `3.14`, use `develop`. If the next milestone is 3.15.2 and the latest release branch is `3.15`, use `3.15`. *If in doubt, just base your branch on `develop`. This is always a safe thing to do.*
+</details>
+
+2. Choose your new branch name. Our naming convention is `topic/` followed by a **brief** description of what your branch is about. For example, `topic/fix-sinosc` or `topic/document-object`.
+
+3. Create your branch. To quickly create and move to a topic branch based on `develop`: `git checkout -b topic/my-branch develop`.
+
+As time passes, make sure to keep your fork updated - see [Updating your fork](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment#2-Keep-your-fork-updated).
 
 ## Making changes
 
