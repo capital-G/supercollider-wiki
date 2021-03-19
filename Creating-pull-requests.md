@@ -24,7 +24,7 @@ Then you can create a fresh new branch for your contribution:
 
 ## Create a topic branch
 - Create a topic branch from where you want to base your work.
-	- Your topic branch should be based on `develop`.
+	- Your topic branch should be based on `develop`, unless it is a trivial bug fix or documentation change, in which case it should be based on the latest release (`3.x`) branch.
 	- Our branch naming convention is `topic/branch-description`: for example, `topic/fix-sinosc` or `topic/document-object`.
 	- To quickly create a topic branch based on develop: `git checkout -b topic/my-fix develop`.
 	- Please do not work off of the `master` branch, which is stable and only includes releases.
