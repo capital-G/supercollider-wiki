@@ -15,14 +15,14 @@ Marcin recent work:
 Josh to look at MIDI PR - https://github.com/supercollider/supercollider/pull/4725
 
 Iannis - looked at sclang - simpler Condition - 
-	what methods are essential and what do they do?
-	Brian? Can there be a time to sync with Iannis?
-Something similar to DispatchGroup in Swift for Condition?
+	- what methods are essential and what do they do?
+	- Brian? Can there be a time to sync with Iannis?
+- Something similar to DispatchGroup in Swift for Condition?
 
 Patrick - 
-	Rust: Sorcerer crate
-	Deferred on scsynth may be good for Condition refactoring
-	Does it pertain to: https://github.com/supercollider/supercollider/pull/5363 ?
+	- Rust: Sorcerer crate
+	- Deferred on scsynth may be good for Condition refactoring
+	- Does it pertain to: https://github.com/supercollider/supercollider/pull/5363 ?
 
 Discussion of how UnitTest::wait should work, and reverting / avoiding changes for Condition / UnitTest, etc., after 3.12
 
