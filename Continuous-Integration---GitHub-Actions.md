@@ -36,7 +36,7 @@ Sensitive information is stored in SuperCollider's "Repository secrets". We use 
 
 ## Storage and deployment of build artifacts
 
-Builds produce "artifacts", in our case zip files and Windows installers. These are stored in 3 places:
+Builds produce "artifacts", in our case dmg files, zip files and Windows installers. These are stored in 3 places:
 - GitHub Action's own storage (available for a limited time and only for authenticated GitHub users)
 - An AWS S3 instance
 - GitHub releases pages
@@ -44,8 +44,8 @@ Builds produce "artifacts", in our case zip files and Windows installers. These 
 Brian Heim and Scott Carver have access to the S3 instance we use for storage. For info on where the S3 builds live, see [here](https://github.com/supercollider/supercollider/wiki/Miscellaneous-project-information-(CI,-maintenance-scripts,-etc.)#s3-build-hosting).
 
 For SC and sc3-plugins:
-- on every build of an internal branch, a ZIP macOS archive and ZIP Windows archives are deployed to S3
-- on every build of a tag, a ZIP macOS archive, Windows installers (SC) and ZIP Windows archives are deployed to the GitHub release
+- on every build of an internal branch, a DMG/ZIP macOS archive and ZIP Windows archives are deployed to S3
+- on every build of a tag, a DMG/ZIP macOS archive, Windows installers (SC) and ZIP Windows archives are deployed to the GitHub release
 
 ## [skip ci]
 
