@@ -97,7 +97,7 @@ With git, it's also possible to pull changes from different clones of the same r
 
 The easy way:
 
-    git pull https://johnny.com/repo.git johnnys-branchname # get his changes
+    git pull https://example.com/repo.git their-branchname # get their changes
 
 check that everything is okay
 
@@ -106,16 +106,16 @@ check that everything is okay
 
 The hard way:
 
-    git checkout -b merge-johnnys-changes
-    git pull https://johnny.com/repo.git johnnys-branchname # get his changes
+    git checkout -b merge-their-changes
+    git pull https://example.com/repo.git their-branchname # get their changes
 
 check that everything is okay, then push changes back to github.
 
     git checkout main
     git pull --rebase # update main from github
-    git rebase main merge-moss-changes # put moss’s changes on top of latest changes from github
+    git rebase main merge-their-changes # put their’s changes on top of latest changes from github
     git checkout main
-    git merge merge-moss-changes
+    git merge merge-their-changes
     git push
 
 taken from [here](http://people.gnome.org/~federico/misc/git-cheat-sheet.txt)
