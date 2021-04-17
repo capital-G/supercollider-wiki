@@ -72,7 +72,7 @@ Other users might have works that are relatively fixed-media (nondeterministic S
     };
     )
 ```
-In the above example, we knew exactly the amount of time before it was safe to stop recording without cutting off the audio. But with effects like reverb and echo, it may not be easy to compute when the tails end. You can just take a guess and trim trailing silence when mastering, or you can do something fancier. This example ends recording the next time all inputs are silent:
+In the above example, we knew exactly the amount of time before it was safe to stop recording without cutting off the audio. But with effects like reverb and echo, it may not be easy to compute when the tails end. You can just take a guess and trim trailing silence later, or you can do something fancier. This example ends recording the next time all inputs are silent:
 ```supercollider
     (
     // This SynthDef has no output, only stereo input.
@@ -101,9 +101,9 @@ You can get even fancier than this and add a fade out, but we'll leave that up t
 
 ### Exporting stems ###
 
-SuperCollider isn't specifically designed for mixing and mastering. There are mixing and mastering tools written by third parties, but many prefer to use familiar software like a traditional DAW. To accomplish this, you will want to record in multitrack.
+SuperCollider isn't specifically designed for audio post-production. There are tools for this written by third parties, but many prefer to use familiar software like a traditional DAW. To accomplish this, you will want to record in multitrack.
 
-The first step to stem export is to set up your composition so that it actually has multiple tracks in the first place. Instead of routing all your Synths to a master output, organize things into Buses, and route Buses into each other and to output. The ddwMixerChannel quark is highly recommended for this purpose, since it takes care of a lot of abstraction, providing an easy-to-use multitrack infrastructure with fading, panning, and effects groups.
+The first step to stem export is to set up your composition so that it actually has multiple tracks in the first place. Instead of routing all your Synths to a main output, organize things into Buses, and route Buses into each other and to output. The ddwMixerChannel quark is highly recommended for this purpose, since it takes care of a lot of abstraction, providing an easy-to-use multitrack infrastructure with fading, panning, and effects groups.
 
 [...]
 

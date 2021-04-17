@@ -58,5 +58,5 @@ Important files in the root directory are:
 - **`build_sclang_cfg.in`**: config file used for the special `SC_DOC_RENDER` build target
 - **`CMakeLists.txt`**: main CMake file
 - **`README_*`**: readmes for various platforms
-- **`SCVersion.txt`**: the master versioning document. The version number is stored here and nowhere else.
+- **`SCVersion.txt`**: the primary versioning document. The version number is stored here and nowhere else.
 - **`travis_test_run_proto.json`**: config file used by qpm to run tests in CI

@@ -101,7 +101,7 @@ The easy way:
 
 check that everything is okay
 
-    git pull --rebase # update master from github
+    git pull --rebase # update main from github
     git push
 
 The hard way:
@@ -111,11 +111,11 @@ The hard way:
 
 check that everything is okay, then push changes back to github.
 
-    git checkout master
-    git pull --rebase # update master from github
-    git rebase master  merge-johnnys-changes # put johny’s changes on top of latest changes from github
-    git checkout master
-    git merge merge-johnnys-changes
+    git checkout main
+    git pull --rebase # update main from github
+    git rebase main merge-moss-changes # put moss’s changes on top of latest changes from github
+    git checkout main
+    git merge merge-moss-changes
     git push
 
 taken from [here](http://people.gnome.org/~federico/misc/git-cheat-sheet.txt)
@@ -138,24 +138,24 @@ If you're using an older version of git, substitute "tracking" for "upstream."
     git config --global push.default tracking
 
 ## Branches ##
-Another really helpful way to save you from yourself is to work in a local branch that doesn't exist in the public repository. If you are new to git, you `will` make mistakes. If you make mistakes in a published branch, such as "master," and you accidentally push those mistakes, it may take some effort to clean up. But if you work in a branch that exists only on your local machine, you can do anything you want with it, and then selectively move specific commits into a public branch.
+Another really helpful way to save you from yourself is to work in a local branch that doesn't exist in the public repository. If you are new to git, you `will` make mistakes. If you make mistakes in a published branch, such as "main," and you accidentally push those mistakes, it may take some effort to clean up. But if you work in a branch that exists only on your local machine, you can do anything you want with it, and then selectively move specific commits into a public branch.
 
 With a local-only branch, the worst case (completely messing up the branch) is that you delete the local branch and re-create it, with no impact on the origin.
 
 The "-b" option to `git checkout` creates a new branch from an existing one.
 
-    git checkout master -b my_master # now you have your own disconnected branch of master
+    git checkout main -b my_main # now you have your own disconnected branch of main
 
 ... work work work, commit stuff, blah blah...
 
     git log # take note of the commit IDs, which are 32 digit hexadecimal strings
 
-    git checkout master # switch back to the real master branch
+    git checkout main # switch back to the real main branch
     git cherry-pick [ID] # repeat for each ID
     git cherry -v # doublecheck what will actually be pushed
-    git push origin master
+    git push origin main
 
-    git checkout my_master # safe again
+    git checkout my_main # safe again
 
 `git cherry-pick` is a bit inconvenient for large numbers of commits. In that case, it would be better to use a "topic branch." See below, "Using a separate branch for work on a feature."
 
@@ -163,13 +163,13 @@ The "-b" option to `git checkout` creates a new branch from an existing one.
 
 Make sure you've done the "git clone" stuff above, then...
 
-### Simple work on your main (master) branch ###
+### Simple work on your main branch ###
 
 Hack on existing files, create new files...
 
 Display and check uncommitted changes:
 
-    git diff master
+    git diff main
 
 Stage changed and new files (mark them for inclusion in the next commit):
 
@@ -192,7 +192,7 @@ Update your local repository with latest commits in the public repository:
 
 Check what you will be pushing:
 
-    git log origin/master..
+    git log origin/main..
 
 Push it:
 
@@ -200,7 +200,7 @@ Push it:
 
 ### Using a separate branch for work on a feature ###
 
-Sometimes you want to work on several unrelated features during the same period of time and you want to be able to switch between your work on one or another. You can do this by using several branches within your local repository. Each branch allows you to store your work on a feature in form of commits on top of the commit history at the time the branch was created. By default, each repository contains one branch named master, but you can create new ones (and even rename any of them later, including master).
+Sometimes you want to work on several unrelated features during the same period of time and you want to be able to switch between your work on one or another. You can do this by using several branches within your local repository. Each branch allows you to store your work on a feature in form of commits on top of the commit history at the time the branch was created. By default, each repository contains one branch named main, but you can create new ones (and even rename any of them later, including main).
 
 Create a new branch named "my_new_feature" containing all the commits in the current branch:
 
@@ -210,19 +210,19 @@ By the way `git checkout branch_name` switches between branches. 'git status' wi
 
 Now start coding your changes, and commit them into your feature branch with 'git add' and 'git commit' as explained in the previous section.
 
-While you are coding your new feature you might need to update the branch with latest changes from the remote (public) repository, to keep up with other developments. The safest way to do this is to update your master branch and then rebase commits introduced by your feature branch on top of the master. Be sure to have all local changes committed before doing this:
+While you are coding your new feature you might need to update the branch with latest changes from the remote (public) repository, to keep up with other developments. The safest way to do this is to update your main branch and then rebase commits introduced by your feature branch on top of the main. Be sure to have all local changes committed before doing this:
 
-	git checkout master
+	git checkout main
 	git pull --rebase
-	git rebase master my_new_feature
+	git rebase main my_new_feature
 
-When you are ready to push the work on the feature to the public repository, first do the above three steps to synchronize your local repository with the public one, then check what you are going to push with 'git log origin/master..' and do the following:
+When you are ready to push the work on the feature to the public repository, first do the above three steps to synchronize your local repository with the public one, then check what you are going to push with 'git log origin/main..' and do the following:
 
-    git checkout master
+    git checkout main
     git merge my_new_feature
     git push
 
-This will merge the additional commits of your feature branch into the master and push them public. For additional details about rebase, see (4).
+This will merge the additional commits of your feature branch into the main and push them public. For additional details about rebase, see (4).
 
 ## Common git commands ##
 
@@ -248,7 +248,7 @@ get patch files for last N commits
 
 get patch files for all commits that are in your current branch but not in upstream:
 
-    git format-patch origin/master
+    git format-patch origin/main
 
 undo (delete) all current non-commited changes (Watch out !):
 
@@ -258,13 +258,13 @@ undo last commit, but leave the changes in the working tree
 
     git reset --soft HEAD^1
 
-undo (delete) all commits since last time one was pulled from upstream (Watch out !). This should be done while in the master branch:
+undo (delete) all commits since last time one was pulled from upstream (Watch out !). This should be done while in the main branch:
 
-    git reset --hard origin/master
+    git reset --hard origin/main
 
-undo all commits since the last time one was pulled from upstream but leave the changes in the working tree. This should be done while in the master branch:
+undo all commits since the last time one was pulled from upstream but leave the changes in the working tree. This should be done while in the main branch:
 
-    git reset --soft origin/master
+    git reset --soft origin/main
 
 show uncommited local changes:
 
@@ -284,15 +284,15 @@ To revert local commits, revert will create another commit that undoes the commi
 
 show changes compared to upstream:
 
-    git diff origin/master    # only diff
+    git diff origin/main    # only diff
 
-    git show origin/master..  # log and diff
+    git show origin/main..  # log and diff
 
-    git log origin/master..   # only log
+    git log origin/main..   # only log
 
 show latest log in upstream:
 
-    git log origin/master
+    git log origin/main
 
 see status of changes:
 
@@ -304,7 +304,7 @@ When switching branches and doing a submodule update (in SC: nova-simd and nova-
 
 It will post something like:
 
-    On branch master
+    On branch main
     Changes not staged for commit:
       (use "git add <file>..." to update what will be committed)
       (use "git checkout -- <file>..." to discard changes in working directory)

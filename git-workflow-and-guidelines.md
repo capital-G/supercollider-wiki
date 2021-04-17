@@ -5,7 +5,7 @@ SuperCollider takes inspiration from git-flow for its branching mode. You can re
 - Bug fixes and minor changes are merged into the current release branch (like `3.9`), and are incorporated into the next patch (3.x.y) release.
 - New features and breaking changes are merged into the `develop` branch and incorporated into the next minor (3.x) release.
 - Periodically (roughly every week), the release branch is merged into `develop` so that `develop` always has both the latest bug fixes and features.
-- `master`, which is stable and only includes releases. Pre-releases such as alphas and betas are not included.
+- `main`, which is stable and only includes releases. Pre-releases such as alphas and betas are not included.
 
 A "feature" is, generally speaking, anything that adds new functionality. Examples include a new class, a new public method, and a new parameter on a public method. Private methods (those beginning with `pr`) are not features.
 
@@ -17,7 +17,7 @@ There is a set of [command-line extensions](https://github.com/nvie/gitflow) for
 
 Stable releases are marked using annotated tags on GitHub's "releases" page.
 
-Contributions to the project may be done in topic branches either on the main repository or a contributor fork. Contributors with push access should never push directly to `develop`, `master`, or the release branches -- especially not `master`, which is the stable branch! We have put protections in place so that this is impossible to do accidentally. A feature branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but consistency is appreciated.
+Contributions to the project may be done in topic branches either on the main repository or a contributor fork. Contributors with push access should never push directly to `develop`, `main`, or the release branches -- especially not `main`, which is the stable branch! We have put protections in place so that this is impossible to do accidentally. A feature branch name starts with `topic/` and then a very brief description of the branch's topic, e.g. `topic/sinosc-help`. We aren't strict about the naming conventions for topic branches, but consistency is appreciated.
 
 When you file a pull request, GitHub gives you the option to allow contributors with write access to the main repository to push to the branch on your fork. This is a very good idea, and you should enable it on every PR you file provided you are comfortable with other maintainers pushing to your branch.
 
@@ -93,7 +93,7 @@ Creating a release involves adding a tag on the tip of the main branch. We follo
 
 Rarely, we may need to do an "emergency release" for extra support. As of February 2021, this has only happened once since the project moved to its current git-flow branching model. The reason for doing so was to support macOS 11 Big Sur between the release of 3.11.2 -- which did not support Big Sur at all yet -- and 3.12.0. In a conversation [here](https://github.com/supercollider/supercollider/issues/5168#issuecomment-778898320), this was the particular process arrived at:
 
-1. Assume the release to be patched is `x.y.z`, which, according to our branching model, has been developed on the release branch called `x.y`. Also assume that `x.y` has been merged into `master` at commit `A`, tagged `Version-x.y.z`, and that the parent commit of `A` on the `x.y` branch is `B`. In other words, `B` is the last commit on the `x.y` branch before merging into `master`.
+1. Assume the release to be patched is `x.y.z`, which, according to our branching model, has been developed on the release branch called `x.y`. Also assume that `x.y` has been merged into `main` at commit `A`, tagged `Version-x.y.z`, and that the parent commit of `A` on the `x.y` branch is `B`. In other words, `B` is the last commit on the `x.y` branch before merging into `main`.
 2. From `B`, create a new branch called `x.y.z-Comment`, where `Comment` is a brief camel-case descriptor for the motivation for the emergency support release. In the case of the `3.11.2` emergency release for Big Sur, this branch was called `3.11.2-BigSur`. Push the new branch to the repository, still pointing to commit `B`.
 3. Merge any necessary patches into `x.y.z-Comment` using the typical GitHub PR merge process. Let's refer to the merge commit created from this merge as commit `C`.
 4. Create any necessary release artifacts from commit `C`. *Do not* make a permanent tag for this release, as such a tag could interfere with downstream packaging processes.

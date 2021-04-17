@@ -6,7 +6,7 @@ Please see the [Planet CCRMA](http://ccrma.stanford.edu/planetccrma/software/pla
 
 ### Building from source
 
-SuperCollider's [Linux Readme](https://github.com/supercollider/supercollider/blob/master/README_LINUX.md) has all the information you need to build SuperCollider from source. The following should help you install the required dependencies and build SuperCollider on a recent Fedora system.
+SuperCollider's [Linux Readme](https://github.com/supercollider/supercollider/blob/main/README_LINUX.md) has all the information you need to build SuperCollider from source. The following should help you install the required dependencies and build SuperCollider on a recent Fedora system.
 
 #### Installing dependencies
 
