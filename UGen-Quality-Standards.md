@@ -13,7 +13,7 @@ UGens proposed for inclusion in the main SuperCollider project should meet more 
   - Check input rates in the sclang class.
   - UGens should be real-time safe. Ross Bencina's ["Real-time audio programming 101"]
     (http://www.rossbencina.com/code/real-time-audio-programming-101-time-waits-for-nothing) is required reading.
-    Here is a quick and incomplete blacklist of dangerous features:
+    Here is a quick and incomplete blocklist of dangerous features:
     - `malloc`/`free`/`new`: use `RTAlloc` instead.
     - `throw`/`catch`: use return codes instead.
     - `dynamic_cast`
