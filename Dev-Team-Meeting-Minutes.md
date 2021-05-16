@@ -1,3 +1,25 @@
+2021-05-16
+==========
+Dev meeting notes
+JamesS
+NathanH
+MarcinP
+JoshP
+PatrickD
+James talks about possibly moving to a single branch linear workflow
+Less bugix releases, more minor releases
+Semi-linear workflow vs 2 branches
+With linear workflow and getting rid of main branch we’d just tag releases; but we need to check with community particularly linux packagers
+Josh: proposing more frequent minor releases, regardless of whether/which option we go for
+We should ask for opinions on the changes
+scsynth/email list/ slack - ask for feedback: James and Josh will look into it
+Discussion on milestone PRs
+Patrick will look into UnitTest
+Josh will look into midi out PR
+Marcin and Josh will meet to work on supernova clipping values
+James will look into ableist language issue (see https://alexjs.com/)
+Proposed short release meeting next Sunday (May 23) (edited) 
+
 2021-05-02
 ==========
 
