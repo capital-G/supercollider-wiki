@@ -1,3 +1,28 @@
+2021-06-13
+==========
+JamesS, Olga, Daniel, Marcin, Josh, Iannis
+
+Introductions
+We discuss 3.12 release - RC week of June 14
+
+**Remaining PRs: **
+Inclusive language #5470
+Discussion on #5470
+Choosing alternative “new” method name to re-route non-deprecated but classes that we suggest you avoid.
+
+Possibly: supernova bind interface #5474
+Discussion on #5474
+Looks good, Josh will check
+
+Iannis starts discussion on modularizing sc code
+
+James mentions his work on CMake
+
+Iannis inquires on possibility of interfacing SC / running SC on GPU in the context of AI
+https://www.rncm.ac.uk/research/research-centres-rncm/prism/prism-events/future-music-3-16-17-june-2021/unsupervised/
+
+Olga shares ideas about shared memory interface improvements
+
 2021-05-16
 ==========
 Dev meeting notes
