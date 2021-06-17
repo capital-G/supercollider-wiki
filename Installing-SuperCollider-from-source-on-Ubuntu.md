@@ -10,6 +10,7 @@ sudo apt-get install build-essential libsndfile1-dev libasound2-dev libavahi-cli
  qt5-default qt5-qmake qttools5-dev qttools5-dev-tools qtdeclarative5-dev qtpositioning5-dev \
  libqt5sensors5-dev libqt5opengl5-dev qtwebengine5-dev libqt5svg5-dev libqt5websockets5-dev
 ```
+**Note**: if qt5-default is not found one can replace it with qtbase5-dev
 
 **Note**: The minimum required version of gcc is `4.8`. Most Linux systems meet this requirement. You can check your gcc version in a terminal with the command `gcc --version`.
 
