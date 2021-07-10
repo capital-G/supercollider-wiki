@@ -48,5 +48,8 @@
 **Tutorials**
 * [Tutorials](https://github.com/supercollider/supercollider/wiki/Tutorials)
 
+**Community**
+- [Blogs and Sites](https://github.com/supercollider/supercollider/wiki/Blogs-and-Sites)
+
 **Deprecated/old pages**
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
