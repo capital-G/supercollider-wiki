@@ -51,6 +51,7 @@
 **Community**
 - [Blogs and Sites](https://github.com/supercollider/supercollider/wiki/Blogs-and-Sites)
 - [Systems interfacing with SC](https://github.com/supercollider/supercollider/wiki/Systems-interfacing-with-SC)
+- [sc140](https://github.com/supercollider/supercollider/wiki/sc140)
 
 **Deprecated/old pages**
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
