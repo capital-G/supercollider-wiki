@@ -45,5 +45,8 @@
 * [Ubuntu, configuration](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Ubuntu-systems)
 * [Recording in SC](https://github.com/supercollider/supercollider/wiki/Recording-in-SuperCollider-(WIP))
 
+**Tutorials**
+* [Tutorials](https://github.com/supercollider/supercollider/wiki/Tutorials)
+
 **Deprecated/old pages**
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
