@@ -1,6 +1,23 @@
 **[Main Page](https://github.com/supercollider/supercollider/wiki)**
 
-**Developer Reference**
+### User Reference
+
+**User Guides**
+
+* [Fedora](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Fedora)
+* [Ubuntu, from source](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-from-source-on-Ubuntu)
+* [Ubuntu, configuration](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Ubuntu-systems)
+* [Recording in SC](https://github.com/supercollider/supercollider/wiki/Recording-in-SuperCollider-(WIP))
+
+**Tutorials**
+* [Tutorials](https://github.com/supercollider/supercollider/wiki/Tutorials)
+
+**Community**
+- [Blogs and Sites](https://github.com/supercollider/supercollider/wiki/Blogs-and-Sites)
+- [Systems interfacing with SC](https://github.com/supercollider/supercollider/wiki/Systems-interfacing-with-SC)
+- [sc140](https://github.com/supercollider/supercollider/wiki/sc140)
+
+### Developer Reference
 
 **General Workflow**
 * [Setting up your development environment](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment)
@@ -37,21 +54,6 @@
 * [sc-dev Meeting Procedure & Templates](https://github.com/supercollider/supercollider/wiki/sc-dev-Meeting-Procedure-&-Templates)
 * [Project tasks organization](https://github.com/supercollider/supercollider/wiki/Project-tasks-organization)
 * [GitHub Actions migration notes](https://github.com/supercollider/supercollider/wiki/GitHub-Actions-migration-notes)
-
-**User Guides**
-
-* [Fedora](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Fedora)
-* [Ubuntu, from source](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-from-source-on-Ubuntu)
-* [Ubuntu, configuration](https://github.com/supercollider/supercollider/wiki/Installing-SuperCollider-on-Ubuntu-systems)
-* [Recording in SC](https://github.com/supercollider/supercollider/wiki/Recording-in-SuperCollider-(WIP))
-
-**Tutorials**
-* [Tutorials](https://github.com/supercollider/supercollider/wiki/Tutorials)
-
-**Community**
-- [Blogs and Sites](https://github.com/supercollider/supercollider/wiki/Blogs-and-Sites)
-- [Systems interfacing with SC](https://github.com/supercollider/supercollider/wiki/Systems-interfacing-with-SC)
-- [sc140](https://github.com/supercollider/supercollider/wiki/sc140)
 
 **Deprecated/old pages**
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
