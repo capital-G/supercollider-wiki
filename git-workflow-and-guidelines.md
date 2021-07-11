@@ -76,7 +76,7 @@ Try to exercise common sense in keeping the log readable and useful to users. Us
 
 ## Releasing ##
 
-The current release manager is Brian Heim (@brianlheim).
+The current release managers are Marcin Pączkowski (@dyfer) and Josh Parmenter (@joshpar).
 
 When it is time to prepare a release, run the script in `tools/release/make_release.py`.
 
