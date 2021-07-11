@@ -1,1 +1,1 @@
-![https://www.flickr.com/photos/cu_atlas/8805171047/](https://live.staticflickr.com/5323/8805171047_8094ae622c_b.jpg | =250x250)
+![https://www.flickr.com/photos/cu_atlas/8805171047/](https://live.staticflickr.com/5323/8805171047_8094ae622c_b.jpg)
