@@ -343,3 +343,60 @@ SynthDef(\array, { |a = #[1, 2, 3, 4, 5]|
 `a is: [ an OutputProxy, an OutputProxy, an OutputProxy, an OutputProxy, an OutputProxy ]`
 
 (Note, if 'a' printed as [ 1, 2, 3, 4, 5 ], then you wouldn't be able to change the values in a Synth using .set!)
+
+
+# Server issues
+
+## How to trigger a function from the server
+
+The first and most important point: **Functions are client-side only.**  
+The server doesn't know what functions are, doesn't understand them and has no way to execute them.  
+**Only the client can execute a function.**
+
+Therefore, if you want a function to execute when something happens in the server, the only way is for the server to tell the client to take the action.
+
+The server can communicate messages back to the client using one of two unit generators: `SendTrig` and `SendReply`.  
+`SendTrig` is simpler and less flexible (it can send only a `/tr` message, and only one data value).  
+`SendReply` allows you to name the message anything you like, and can send arrays with the message.  
+We'll use SendReply here because of its greater flexibility.
+
+Within the language, you also need an object to receive the message and act on it. Usually this is `OSCresponderNode` or `OSCpathResponder`.  In this example, `OSCpathResponder` filters messages not just on the name `/bleep` but also on the synth's ID. This way, you could have multiple triggering synths, with a different responder and a different action per synth.
+
+```js
+(
+a = {
+    var trig = Dust.kr(8),
+    decay = Decay2.kr(trig, 0.01, 0.1),
+    sig = SinOsc.ar(TExpRand.kr(200, 600, trig), 0, 0.1) * decay;
+    SendReply.kr(trig, '/bleep', trig);
+    sig ! 2
+}.play;
+
+o = OSCpathResponder(s.addr, ['/bleep', a.nodeID], { |time, thisResponder, msg|
+    msg.postln;
+}).add;
+)
+
+a.free; o.remove;
+```
+
+#### Helpfile references:
+
+- [`SendTrig`](https://doc.sccode.org/Classes/SendTrig.html), [`SendReply`](https://doc.sccode.org/Classes/SendReply.html)
+- [`OSCresponderNode`](https://doc.sccode.org/Classes/OSCresponderNode.html), [`OSCpathResponder`](https://doc.sccode.org/Classes/OSCpathResponder.html), [`OSCresponder`](https://doc.sccode.org/Classes/OSCresponder.html), [OSC communication](https://doc.sccode.org/Guides/OSC_communication.html)
+
+
+## Exception in World\_OpenUDP: unable to bind udp socket
+
+Sometime when booting the server one gets a message: ` Exception in World_OpenUDP: unable to bind udp socket `.
+
+This is usually caused by an instance of scsynth that as hanged but has not released the osc port, perhaps because it SuperCollider crashed.  To fix this, just hit the *"k"* button in the server window to kill all scsynth processes, and then boot again.
+
+# Other issues
+
+## Error while loading shared libraries: libsclang.so: cannot open shared object file
+
+This usually happens after building on Linux and it means that your system is unaware of newly installed shared libraries. Running ldconfig
+(as root) solves the problem:
+
+`# /sbin/ldconfig`
