@@ -286,3 +286,59 @@ This goes away quickly when using lots of synths with multiple channels of delay
 **Alternate solution:** For delay units, you may use preallocated delay buffers -- `Buffer.alloc()` -- and the "Buf" delay units:  
 `BufDelayN`, `BufDelayL`, `BufDelayC`, `BufCombL` etc.  
 `Buffer.alloc()` does not use the real-time pool and is not subject to the memSize limitation. This approach will not help with FFT units.
+
+## Array arguments
+
+Sometimes, you need to send an array to a series of Control inputs in a SynthDef (often called "_array arguments_").
+
+```js
+Synth(\xyz, [freqs: [300, 400, 500]]);
+```
+
+There are two primary ways to do this:
+
+- Supply a literal array -- `\#[1, 2, 3]` -- as the default for the argument name in the function.  
+This is discussed in [SynthDef's help file](https://doc.sccode.org/Classes/SynthDef.html).
+
+```js
+SynthDef(\xyz, { |freqs = #[1, 2, 3]|
+    // ...
+})
+```
+
+- Or, use `NamedControl`.  
+This is the only way to do it if you want to construct the array's size dynamically, or based on a variable. See [NamedControl help](https://doc.sccode.org/Classes/NamedControl.html).
+
+```js
+SynthDef(\xyz, {
+    var freqs = NamedControl.kr(\freqs, #[1, 2, 3]);
+    // ...
+});
+```
+
+### Why does it have to be a literal array?
+
+The reason comes from the process of building a SynthDef:
+
+1. First, look at the function arguments to figure out what the Control inputs should be.
+2. Then create Control units (usually just one, if they're all normal arguments without prefixes or special rates). Each channel is represented by an `OutputProxy`.
+3. Then run the SynthDef function, passing the output proxies to the arguments.
+4. Then sort the UGens into the right order, etc. etc.
+
+To do steps \#1 and \#2, the SynthDef builder has to know the size of an array argument *before* running the function. That's possible only if it's a literal array: `\#[1, 2, 3, 4, 5]`. Any other array notation creates the array *while running the function* (step \#3). But then it's too late -- the SynthDef builder already created a non-array control channel for it!
+
+```js
+SynthDef(\notArray, { |a = (1..5)|
+    a.debug("a is");
+});
+```
+`a is: an OutputProxy`
+
+```js
+SynthDef(\array, { |a = #[1, 2, 3, 4, 5]|
+   a.debug("a is");
+});
+```
+`a is: [ an OutputProxy, an OutputProxy, an OutputProxy, an OutputProxy, an OutputProxy ]`
+
+(Note, if 'a' printed as [ 1, 2, 3, 4, 5 ], then you wouldn't be able to change the values in a Synth using .set!)
