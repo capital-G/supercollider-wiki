@@ -16,6 +16,7 @@
 - [Blogs and Sites](https://github.com/supercollider/supercollider/wiki/Blogs-and-Sites)
 - [Systems interfacing with SC](https://github.com/supercollider/supercollider/wiki/Systems-interfacing-with-SC)
 - [sc140](https://github.com/supercollider/supercollider/wiki/sc140)
+- [SuperCollider Symposium](https://github.com/supercollider/supercollider/wiki/SuperCollider-Symposium#berlin-germany-2010)
 
 ### Developer Reference
 
