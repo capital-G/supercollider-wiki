@@ -17,6 +17,7 @@
 - [Systems interfacing with SC](https://github.com/supercollider/supercollider/wiki/Systems-interfacing-with-SC)
 - [sc140](https://github.com/supercollider/supercollider/wiki/sc140)
 - [SuperCollider Symposium](https://github.com/supercollider/supercollider/wiki/SuperCollider-Symposium)
+- [Academic Papers](https://github.com/supercollider/supercollider/wiki/Academic-Papers)
 
 ### Developer Reference
 
