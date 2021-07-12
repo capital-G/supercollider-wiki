@@ -100,3 +100,64 @@ Therefore, in algebraic expressions parenthesis must be used when left to right 
 ```js
 5 + (3 * 2)
 ```
+
+
+# SynthDef Issues
+
+### Using “If” Statements inside a SynthDef
+
+This is covered on the page [If statements in a SynthDef](If-statements-in-a-SynthDef.html)
+
+### `ERROR: SynthDef not found`
+
+Sending a SynthDef to the server requires a little bit of time, which means that running a block of code with both SynthDef definitions and instances of those SynthDefs won't be guaranteed to work unless this slight delay is accounted for. There are two main ways to do this: 
+
+First way: put the SynthDefs and the main code in a Task and put some kind of `.wait` time between them.
+
+```js
+Task({
+    // put your SynthDefs here
+    0.2.wait;
+    // put the rest of your code here
+}).play;
+```
+
+Second way: use `.sync`:
+
+```js
+Routine({
+    // put your SynthDefs here
+    s.sync; // assuming that 's' is the server
+    // put the rest of your code here
+}).play
+```
+
+### `FAILURE /s\_new alloc failed, increase server's memory allocation (e.g. via ServerOptions)`
+
+**What it means:** While initializing the unit generators in a new Synth node, the server ran out of real-time memory.
+
+**Solution:** Increase the amount of real-time memory available to the server. This size is set, as the error message says, in the
+`ServerOptions` object associated with the server. It is a server startup option; you must quit the server and reboot it, or the new
+setting will not take effect.
+
+```js
+myServer.quit;
+myServer.options.memSize = 65536;  // e.g., could be different for you
+myServer.boot;
+```
+
+`myServer.options.memSize` is given in KB. The default is 8192KB, or 8MB.
+
+**What it *really* means:** Many unit generators require internal memory buffers, such as delay lines, comb filters, allpass delays, some FFT manipulators, reverb units etc.  
+These internal buffers are not allocated directly from the operating system, but rather from a "real-time memory
+pool."  
+This is because direct allocation from the OS, by functions such as `malloc()`, is not real-time safe.  
+The OS may take too long to return the new block, causing glitches in the audio.  
+To solve this problem, the server allocates a chunk of memory when it starts up and parcels it out to unit generators as needed.
+
+If you use a large number of delays, the server may run out of real-time memory. The default `8192KB` setting can support 47.55 seconds of delay at a sampling rate of 44.1 kHz.  
+This goes away quickly when using lots of synths with multiple channels of delay.
+
+**Alternate solution:** For delay units, you may use preallocated delay buffers -- `Buffer.alloc()` -- and the "Buf" delay units:  
+`BufDelayN`, `BufDelayL`, `BufDelayC`, `BufCombL` etc.  
+`Buffer.alloc()` does not use the real-time pool and is not subject to the memSize limitation. This approach will not help with FFT units.
