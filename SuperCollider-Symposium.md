@@ -1,14 +1,14 @@
 The **SuperCollider Symposium** is an international gathering of SuperCollider users and developers. The symposium happens on an irregular basis in different cities around the world. The following is a complete list of the symposia that have taken place.
 
-* [Boulder (CO, USA) 2013](#boulder_co_usa_2013)
-* [London (UK) 2012](#london_uk_2012)
-* [Berlin (Germany) 2010](#berlin_germany_2010)
-* [Middletown (CT, USA) 2009](#middletown_ct_usa_2009)
-* [The Hague (Netherlands) 2007](#the_hague_netherlands_2007)
-* [Birmingham (UK) 2006](#birmingham_uk_2006)
+* [Boulder (CO, USA) 2013](#boulder-co-usa-2013)
+* [London (UK) 2012](#london-uk-2012)
+* [Berlin (Germany) 2010](#berlin-germany-2010)
+* [Middletown (CT, USA) 2009](#middletown-ct-usa-2009)
+* [The Hague (Netherlands) 2007](#the-hague-netherlands-2007)
+* [Birmingham (UK) 2006](#birmingham-uk-2006)
 
 
-### Boulder (CO, USA) 2013
+## Boulder (CO, USA) 2013
 
 http://supercollider2013.com
 
@@ -17,7 +17,7 @@ http://supercollider2013.com
 <a href="http://www.flickr.com/photos/cu_atlas/8806000891/" title="Performer/Presenters of the SuperCollider Symposium 2013 by CU ATLAS, on Flickr"><img src="https://live.staticflickr.com/7356/8806000891_bb57f54d93_c.jpg" width="200" alt="Performer/Presenters of the SuperCollider Symposium 2013"></a>
 <a href="http://www.flickr.com/photos/cu_atlas/8815004812/" title="Chris Brown performs piece for solo piano and polyrhythmic software in ATLAS Black Box theater by CU ATLAS, on Flickr"><img src="https://live.staticflickr.com/7308/8815004812_185a98fc24_c.jpg" width="300" alt="Chris Brown performs piece for solo piano and polyrhythmic software in ATLAS Black Box theater"></a>
 
-### London (UK) 2012
+## London (UK) 2012
 
 http://www.sc2012.org.uk/
 
@@ -37,7 +37,7 @@ http://www.sc2012.org.uk/
 <a title="SuperCollider Symposium 2012 conference group photo by supercollider2012, on Flickr" href="http://www.flickr.com/photos/77410704@N05/6949587694/"><img src="https://live.staticflickr.com/5323/6949587694_1825cc1599_b.jpg" alt="SuperCollider Symposium 2012 conference group photo" height="180" /></a>
 
 
-### Berlin (Germany) 2010
+## Berlin (Germany) 2010
 
 http://supercollider2010.de
 
@@ -56,7 +56,7 @@ http://supercollider2010.de
 <a href="http://tim.klingt.org/px/berlin2010/IMG_1673.JPG.html">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/IMG_1673.JPG]]</a>
 
 
-### Middletown (CT, USA) 2009
+## Middletown (CT, USA) 2009
 
 http://supercollider.wesleyan.edu/conf/index.php/sc3conf/SC09
 
@@ -70,7 +70,7 @@ http://supercollider.wesleyan.edu/conf/index.php/sc3conf/SC09
 <a title="Scott Wilson on BEAST by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3433015262/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3433015262_9dbed6ff9c_m.jpg|Scott Wilson on BEAST]]</a>
 
 
-### The Hague (Netherlands) 2007
+## The Hague (Netherlands) 2007
 
 http://supercollidersymposium.sampleandhold.org
 
@@ -91,7 +91,7 @@ http://supercollidersymposium.sampleandhold.org
 <a title="redFrik by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/1437037142/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1437037142_3b40b51ba9_m.jpg|redFrik]]</a>
 
 
-### Birmingham (UK) 2006
+## Birmingham (UK) 2006
 
 http://www.music.bham.ac.uk/events/SuperCollider.shtml
 
