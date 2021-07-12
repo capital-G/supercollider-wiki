@@ -60,3 +60,4 @@
 
 **Deprecated/old pages**
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
+* [Older WIKIs](https://github.com/supercollider/supercollider/wiki/Older-WIKIs)
