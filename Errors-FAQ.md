@@ -76,3 +76,27 @@ or the defer method:
 ```js
 SystemClock.sched(0,{ { Window.new.front }.defer })
 ```
+
+
+### Binary operations order
+
+Because of the way SuperCollider evaluates expressions, the usual order of execution of mathematical expressions is not respected.  
+In SuperCollider everything is an object, and evaluation happens from left to right, so:
+
+```js
+5 + 3 * 2
+```
+
+will evaluate as (5 + 3 ) \* 2.  
+
+This happens because the expression becomes:
+
+```js
+5.performBinaryOpOnSimpleNumber('+',3).performBinaryOpOnSimpleNumber('*',2) 
+```
+
+Therefore, in algebraic expressions parenthesis must be used when left to right orders is not what is desired:
+
+```js
+5 + (3 * 2)
+```
