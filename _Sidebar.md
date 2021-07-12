@@ -11,6 +11,7 @@
 
 **Tutorials**
 * [Tutorials](https://github.com/supercollider/supercollider/wiki/Tutorials)
+* [Errors FAQ](https://github.com/supercollider/supercollider/wiki/Errors-FAQ)
 
 **Community**
 - [Blogs and Sites](https://github.com/supercollider/supercollider/wiki/Blogs-and-Sites)
