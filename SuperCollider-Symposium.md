@@ -58,9 +58,17 @@ http://supercollider2010.de
 
 ### Middletown (CT, USA) 2009
 
-<div><a href="http://supercollider.wesleyan.edu/conf/index.php/sc3conf/SC09">http://supercollider.wesleyan.edu/conf/index.php/sc3conf/SC09</a></div>
+http://supercollider.wesleyan.edu/conf/index.php/sc3conf/SC09
 
-<div><a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440565525/"><img src="/images/sc2009/3440565525_1e0123b4d6_m.jpg" alt="" width="225" height="180" /></a><a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3441378492/"><img src="/images/sc2009/3441378492_93b906d32a_m.jpg" alt="" width="225" height="180" /></a><a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440566935/"><img src="/images/sc2009/3440566935_ed06447582_m.jpg" alt="" width="225" height="180" /></a><a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3441377814/"><img src="/images/sc2009/3441377814_b0387e3c23_m.jpg" alt="" width="225" height="180" /></a><a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440564833/"><img src="/images/sc2009/3440564833_67a6e0b90c_m.jpg" alt="" width="225" height="180" /></a><a title="Ben Klein and the tuba dopperganger! by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3430086163/"><img src="/images/sc2009/3430086163_95676c24db_m.jpg" alt="Ben Klein and the tuba dopperganger!" width="240" height="180" /></a><a title="supercollider and set theory by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3429297547/"><img src="/images/sc2009/3429297547_f6d0e96ed4_m.jpg" alt="supercollider and set theory" width="240" height="180" /></a><a title="Scott Wilson on BEAST by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3433015262/"><img src="/images/sc2009/3433015262_9dbed6ff9c_m.jpg" alt="Scott Wilson on BEAST" width="240" height="180" /></a></div>
+<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440565525/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440565525_1e0123b4d6_m.jpg]]</a>
+<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3441378492/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3441378492_93b906d32a_m.jpg]]</a>
+<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440566935/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440566935_ed06447582_m.jpg]]</a>
+<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3441377814/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3441377814_b0387e3c23_m.jpg]]</a>
+<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440564833/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440564833_67a6e0b90c_m.jpg]]</a>
+<a title="Ben Klein and the tuba dopperganger! by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3430086163/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3430086163_95676c24db_m.jpg|Ben Klein and the tuba dopperganger!]]</a>
+<a title="supercollider and set theory by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3429297547/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3429297547_f6d0e96ed4_m.jpg|supercollider and set theory]]</a>
+<a title="Scott Wilson on BEAST by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3433015262/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3433015262_9dbed6ff9c_m.jpg|Scott Wilson on BEAST</a>
+
 
 ### The Hague (Netherlands) 2007
 
