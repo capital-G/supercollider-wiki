@@ -1,0 +1,2 @@
+- [(old) sourceforge mediawiki](http://supercollider.sourceforge.net/wiki/)
+- [(really old) hamburg swiki](http://swiki.hfbk-hamburg.de/MusicTechnology/6)
