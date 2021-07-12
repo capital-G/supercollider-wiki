@@ -7,6 +7,10 @@
   - [ERROR: SynthDef not found](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#error-synthdef-not-found)
   - [FAILURE /s\_new alloc failed, increase server's memory allocation](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#failure-s_new-alloc-failed-increase-servers-memory-allocation)
   - [Array arguments](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#array-arguments)
+- [Server issues](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#server-issues)
+  - [How to trigger a function from the server](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#how-to-trigger-a-function-from-the-server)
+  - [Exception in World_OpenUDP: unable to bind udp socket](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#exception-in-world_openudp-unable-to-bind-udp-socket)
+- [Other issues](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#other-issues)
 
 
 # ERROR: Primitive 'BasicNew' failed. Index not an Integer
