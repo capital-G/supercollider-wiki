@@ -6,6 +6,7 @@
   - ["If" statements inside a SynthDef](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#if-statements-inside-a-synthdef)
   - [ERROR: SynthDef not found](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#error-synthdef-not-found)
   - [FAILURE /s\_new alloc failed, increase server's memory allocation](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#failure-s_new-alloc-failed-increase-servers-memory-allocation)
+  - [Array arguments](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#array-arguments)
 
 
 # ERROR: Primitive 'BasicNew' failed. Index not an Integer
