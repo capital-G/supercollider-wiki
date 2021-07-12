@@ -24,16 +24,16 @@ http://www.sc2012.org.uk/
 - Video: <a href="http://www.youtube.com/supercollider2012">Click for lots of video footage from SuperCollider 2012</a>
 
 <a href="https://www.flickr.com/photos/77410704@N05/6949579164/"><img src="https://live.staticflickr.com/5342/6949579164_1cf9488056_b.jpg" alt="CraftWife-SC2012-TobyzDotNet-5-DSC_9886" width="300" /></a>
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/6957447628_03e46a9028_m.jpg" alt="SC2012: Club Night - Mico Rex" height="180" />
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/6933665270_1dc87865dd_m.jpg" alt="SC2012: ixi lang workshop" height="180" />
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/7085722245_0331617230_m.jpg" alt="SC2012: Art Exhibition - Setup" height="180" />
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/6933852454_4949465b97_m.jpg" alt="SC2012: Bellatrix" height="180" />
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/6957447628_03e46a9028_m.jpg|SC2012: Club Night - Mico Rex]]
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/6933665270_1dc87865dd_m.jpg|SC2012: ixi lang workshop]]
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/7085722245_0331617230_m.jpg|SC2012: Art Exhibition - Setup]]
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/6933852454_4949465b97_m.jpg|SC2012: Bellatrix]]
 <a title="CraftWife-SC2012-TobyzDotNet-8-DSC_9913 by Toby Harris, on Flickr" href="http://www.flickr.com/photos/77410704@N05/6949579356/"><img src="https://live.staticflickr.com/7280/6949579356_7ed3351e3d_b.jpg" alt="CraftWife-SC2012-TobyzDotNet-8-DSC_9913" width="300" /></a>
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/7079902637_c5629f01ba_m.jpg" alt="SC2012: Finn Peters" width="180" height="180" />
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/6943903470_79f6e0ae19_m.jpg" alt="SC2012: Art Exhibition" height="180" />
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/7079847131_9bec5acfab_m.jpg" alt="SC2012: Live Algorithms Concert" height="180" />
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/6941051370_042713cb65_m.jpg" alt="SC2012: Keynote - SuperCollider Speed Code challenge" height="180" />
-<img src="https://supercollider.github.io/images/sc2012/images/sc2012/6937462298_1a3db6f9b5_m.jpg" alt="SC2012: Alo Allik and Yota Morimoto" height="180" />
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/7079902637_c5629f01ba_m.jpg|SC2012: Finn Peters]]
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/6943903470_79f6e0ae19_m.jpg|SC2012: Art Exhibition]]
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/7079847131_9bec5acfab_m.jpg|SC2012: Live Algorithms Concert]]
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/6941051370_042713cb65_m.jpg|SC2012: Keynote - SuperCollider Speed Code challenge]]
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2012/6937462298_1a3db6f9b5_m.jpg|SC2012: Alo Allik and Yota Morimoto]]
 <a title="SuperCollider Symposium 2012 conference group photo by supercollider2012, on Flickr" href="http://www.flickr.com/photos/77410704@N05/6949587694/"><img src="https://live.staticflickr.com/5323/6949587694_1825cc1599_b.jpg" alt="SuperCollider Symposium 2012 conference group photo" height="180" /></a>
 
 
