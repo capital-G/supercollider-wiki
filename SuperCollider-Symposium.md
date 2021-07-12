@@ -39,16 +39,22 @@ http://www.sc2012.org.uk/
 
 ### Berlin (Germany) 2010
 
-<div><a href="http://supercollider2010.de/">http://supercollider2010.de/</a></div>
-<ul>
-	<li class="c3"><span class="c1">Deutschlandradio Kultur (German national cultural radio) made this </span><a href="http://www.dradio.de/dkultur/programmtipp/klangkunst/1289001/"><span class="c1">one-hour radio programme devoted to the symposium</span></a><span class="c1">.</span></li>
-	<li class="c3"><span class="c1">Video: <a href="http://unitedberlin.de/movies/SuperCollider.mp4">Kleine Wasserspeicher concert</a>
-</span></li>
-	<li class="c3"><span class="c5">Video: <a href="http://www.youtube.com/watch?v=SJGEl9nJHns">Varia Zoosystematica Profundorum</a> installation</span></li>
-	<li class="c3"><span class="c5">Video: <a href="http://robinmeier.net/?p=532">This Body is a Vessel</a> performance
-</span></li>
-</ul>
-<div><a href="http://tim.klingt.org/px/berlin2010/IMG_1657.JPG.html"><img src="/images/sc2010/IMG_1657.JPG" alt="" height="180" /></a><a href="http://tim.klingt.org/px/berlin2010/IMG_1678.JPG.html"><img src="/images/sc2010/IMG_1678.JPG" alt="" height="180" /></a><a title="Radio Concert 4 by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/5151695412/"><img src="/images/sc2010/5151695412_ae463c8dfb_m.jpg" alt="Radio Concert 4" width="240" height="180" /></a><a title="DJ by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/5039197799/"><img src="/images/sc2010/5039197799_86f7696065_m.jpg" alt="DJ" width="240" height="180" /></a><a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/5033699838/"><img src="/images/sc2010/5033699838_afc1f17bf7_m.jpg" alt="" width="120" height="180" /></a><a title="World Domination by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/5025731441/"><img src="/images/sc2010/5025731441_0d1f06378e_m.jpg" alt="World Domination" width="240" height="180" /></a><a href="http://tim.klingt.org/px/berlin2010/IMG_1665.JPG.html"><img src="/images/sc2010/IMG_1665.JPG" alt="" height="180" /></a><a href="http://tim.klingt.org/px/berlin2010/IMG_1673.JPG.html"><img src="/images/sc2010/IMG_1673.JPG" alt="" height="180" /></a></div>
+http://supercollider2010.de
+
+- Deutschlandradio Kultur (German national cultural radio) made this [one-hour radio programme devoted to the symposium](http://www.dradio.de/dkultur/programmtipp/klangkunst/1289001/)
+- Video: [Kleine Wasserspeicher concert](http://unitedberlin.de/movies/SuperCollider.mp4)
+- Video: [Varia Zoosystematica Profundorum](http://www.youtube.com/watch?v=SJGEl9nJHns installation
+- Video: [This Body is a Vessel](http://robinmeier.net/?p=532) performance
+
+<a href="http://tim.klingt.org/px/berlin2010/IMG_1657.JPG.html">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/IMG_1657.JPG]]
+<a href="http://tim.klingt.org/px/berlin2010/IMG_1678.JPG.html">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/IMG_1678.JPG]]</a>
+<a title="Radio Concert 4 by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/5151695412/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/5151695412_ae463c8dfb_m.jpg|Radio Concert 4]]</a>
+<a title="DJ by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/5039197799/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/5039197799_86f7696065_m.jpg|DJ]]</a>
+<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/5033699838/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/5033699838_afc1f17bf7_m.jpg]]</a>
+<a title="World Domination by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/5025731441/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/5025731441_0d1f06378e_m.jpg|World Domination]]</a>
+<a href="http://tim.klingt.org/px/berlin2010/IMG_1665.JPG.html">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/IMG_1665.JPG]]</a>
+<a href="http://tim.klingt.org/px/berlin2010/IMG_1673.JPG.html">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2010/IMG_1673.JPG]]</a>
+
 
 ### Middletown (CT, USA) 2009
 
