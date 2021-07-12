@@ -93,8 +93,9 @@ http://supercollidersymposium.sampleandhold.org
 
 ### Birmingham (UK) 2006
 
-<div><a href="http://www.music.bham.ac.uk/events/SuperCollider.shtml">http://www.music.bham.ac.uk/events/SuperCollider.shtml</a></div>
-<ul>
-	<li>Video: <a href="http://www.youtube.com/watch?v=WAmsw7bpn7g">Lusco-Fusco Dirac Party</a> (a mass SuperCollider improvisation)</li>
-</ul>
-<div><img src="/images/sc2006/20.jpg" alt="sc2006 photo by thor magnusson" width="240" height="180" /><a href="http://www.ixi-software.net/thor/imgs/scsymp/scsymp.html"><img src="/images/sc2006/1.jpg" alt="sc2006 photo by thor magnusson" width="240" height="180" /><img src="/images/sc2006/11.jpg" alt="sc2006 photo by thor magnusson" width="240" height="180" /><img src="/images/sc2006/13.jpg" alt="sc2006 photo by thor magnusson" width="240" height="180" /><img src="/images/sc2006/27.jpg" alt="sc2006 photo by thor magnusson" width="240" height="180" /></a></div>
+http://www.music.bham.ac.uk/events/SuperCollider.shtml
+
+- Video: [Lusco-Fusco Dirac Party](http://www.youtube.com/watch?v=WAmsw7bpn7g) (a mass SuperCollider improvisation)
+
+[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2006/20.jpg|sc2006 photo by thor magnusson]]
+<a href="http://www.ixi-software.net/thor/imgs/scsymp/scsymp.html">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2006/1.jpg|sc2006 photo by thor magnusson]][[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2006/11.jpg|sc2006 photo by thor magnusson]][[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2006/13.jpg|sc2006 photo by thor magnusson]][[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2006/27.jpg|sc2006 photo by thor magnusson]]</a>
