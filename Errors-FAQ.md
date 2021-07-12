@@ -110,7 +110,7 @@ Therefore, in algebraic expressions parenthesis must be used when left to right 
 
 # SynthDef Issues
 
-### "If" statements inside a SynthDef
+## "If" statements inside a SynthDef
 
 It's only a matter of time before a user tries to write something like this in a `SynthDef`:
 
@@ -233,7 +233,7 @@ BinaryOpUGen('==', (x > 0) + (y > 0), 1)
 ```
 
 
-### `ERROR: SynthDef not found`
+## `ERROR: SynthDef not found`
 
 Sending a SynthDef to the server requires a little bit of time, which means that running a block of code with both SynthDef definitions and instances of those SynthDefs won't be guaranteed to work unless this slight delay is accounted for. There are two main ways to do this: 
 
@@ -257,7 +257,7 @@ Routine({
 }).play
 ```
 
-### `FAILURE /s\_new alloc failed, increase server's memory allocation`
+## `FAILURE /s\_new alloc failed, increase server's memory allocation`
 
 **What it means:** While initializing the unit generators in a new Synth node, the server ran out of real-time memory.
 
