@@ -60,23 +60,36 @@ http://supercollider2010.de
 
 http://supercollider.wesleyan.edu/conf/index.php/sc3conf/SC09
 
-<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440565525/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440565525_1e0123b4d6_m.jpg]]</a>
-<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3441378492/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3441378492_93b906d32a_m.jpg]]</a>
-<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440566935/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440566935_ed06447582_m.jpg]]</a>
-<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3441377814/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3441377814_b0387e3c23_m.jpg]]</a>
-<a title="Untitled by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/3440564833/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440564833_67a6e0b90c_m.jpg]]</a>
+<a href="http://www.flickr.com/photos/danstowell/3440565525/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440565525_1e0123b4d6_m.jpg]]</a>
+<a href="http://www.flickr.com/photos/danstowell/3441378492/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3441378492_93b906d32a_m.jpg]]</a>
+<a href="http://www.flickr.com/photos/danstowell/3440566935/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440566935_ed06447582_m.jpg]]</a>
+<a href="http://www.flickr.com/photos/danstowell/3441377814/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3441377814_b0387e3c23_m.jpg]]</a>
+<a href="http://www.flickr.com/photos/danstowell/3440564833/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3440564833_67a6e0b90c_m.jpg]]</a>
 <a title="Ben Klein and the tuba dopperganger! by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3430086163/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3430086163_95676c24db_m.jpg|Ben Klein and the tuba dopperganger!]]</a>
 <a title="supercollider and set theory by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3429297547/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3429297547_f6d0e96ed4_m.jpg|supercollider and set theory]]</a>
-<a title="Scott Wilson on BEAST by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3433015262/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3433015262_9dbed6ff9c_m.jpg|Scott Wilson on BEAST</a>
+<a title="Scott Wilson on BEAST by Erik Schoster, on Flickr" href="http://www.flickr.com/photos/hecanjog/3433015262/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2009/3433015262_9dbed6ff9c_m.jpg|Scott Wilson on BEAST]]</a>
 
 
 ### The Hague (Netherlands) 2007
 
-<div><a href="http://supercollidersymposium.sampleandhold.org">http://supercollidersymposium.sampleandhold.org/</a></div>
-<ul>
-	<li>Video: <a href="http://www.youtube.com/watch?v=zOKAm4myNOQ">TodaysArt club night</a></li>
-</ul>
-<div><a title="Supercollider evening 6 by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/1934356783/"><img src="/images/sc2007/1934356783_5585561cc7_m.jpg" alt="Supercollider evening 6" width="240" height="180" /></a><a title="SC07-img_1348 by ggkarman, on Flickr" href="http://www.flickr.com/photos/14085329@N03/1435000502/"><img src="/images/sc2007/1435000502_058c28a631_m.jpg" alt="SC07-img_1348" width="270" height="180" /></a><a title="SC07-img_1481 by ggkarman, on Flickr" href="http://www.flickr.com/photos/14085329@N03/1434216989/"><img src="/images/sc2007/1434216989_aede44e5e8_m.jpg" alt="SC07-img_1481" width="270" height="180" /></a><a title="SC07-img_1422 by ggkarman, on Flickr" href="http://www.flickr.com/photos/14085329@N03/1435051360/"><img src="/images/sc2007/1435051360_e1786b6bf9_m.jpg" alt="SC07-img_1422" width="270" height="180" /></a><a title="SC07-img_1483 by ggkarman, on Flickr" href="http://www.flickr.com/photos/14085329@N03/1434220133/"><img src="/images/sc2007/1434220133_9fc1040a74_m.jpg" alt="SC07-img_1483" width="270" height="180" /></a><a title="Supercollider evening 5 by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/1928978986/"><img src="/images/sc2007/1928978986_51c3324908_m.jpg" alt="Supercollider evening 5" width="240" height="180" /></a><a title="IMG_3691 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449739058/"><img src="/images/sc2007/1449739058_bc11c0367a_m.jpg" alt="IMG_3691" width="120" height="180" /></a><a title="IMG_3654 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449737374/"><img src="/images/sc2007/1449737374_b6336c8020_m.jpg" alt="IMG_3654" width="240" height="180" /></a><a title="IMG_3662 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449738072/"><img src="/images/sc2007/1449738072_7fa574b449_m.jpg" alt="IMG_3662" width="240" height="180" /></a><a title="IMG_3615 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449734818/"><img src="/images/sc2007/1449734818_09438f845f_m.jpg" alt="IMG_3615" width="240" height="180" /></a><a title="IMG_3644 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449737050/"><img src="/images/sc2007/1449737050_e9bc8d1b9e_m.jpg" alt="IMG_3644" width="240" height="180" /></a><a title="Generative synthpop karaoke! by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/1437036802/"><img src="/images/sc2007/1437036802_b997968541_m.jpg" alt="Generative synthpop karaoke!" width="240" height="180" /></a><a title="redFrik by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/1437037142/"><img src="/images/sc2007/1437037142_3b40b51ba9_m.jpg" alt="redFrik" width="240" height="180" /></a></div>
+http://supercollidersymposium.sampleandhold.org
+
+- Video: [TodaysArt club night](http://www.youtube.com/watch?v=zOKAm4myNOQ)
+
+<a title="Supercollider evening 6 by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/1934356783/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1934356783_5585561cc7_m.jpg|Supercollider evening 6]]</a>
+<a title="SC07-img_1348 by ggkarman, on Flickr" href="http://www.flickr.com/photos/14085329@N03/1435000502/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1435000502_058c28a631_m.jpg|SC07-img_1348]]</a>
+<a title="SC07-img_1481 by ggkarman, on Flickr" href="http://www.flickr.com/photos/14085329@N03/1434216989/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1434216989_aede44e5e8_m.jpg|SC07-img_1481]]</a>
+<a title="SC07-img_1422 by ggkarman, on Flickr" href="http://www.flickr.com/photos/14085329@N03/1435051360/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1435051360_e1786b6bf9_m.jpg|SC07-img_1422]]</a>
+<a title="SC07-img_1483 by ggkarman, on Flickr" href="http://www.flickr.com/photos/14085329@N03/1434220133/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1434220133_9fc1040a74_m.jpg|SC07-img_1483]]</a>
+<a title="Supercollider evening 5 by celesteh, on Flickr" href="http://www.flickr.com/photos/celesteh/1928978986/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1928978986_51c3324908_m.jpg|Supercollider evening 5]]</a>
+<a title="IMG_3691 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449739058/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1449739058_bc11c0367a_m.jpg|IMG_3691]]</a>
+<a title="IMG_3654 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449737374/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1449737374_b6336c8020_m.jpg|IMG_3654]]</a>
+<a title="IMG_3662 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449738072/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1449738072_7fa574b449_m.jpg|IMG_3662]]</a>
+<a title="IMG_3615 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449734818/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1449734818_09438f845f_m.jpg|IMG_3615]]</a>
+<a title="IMG_3644 by sampleandhold, on Flickr" href="http://www.flickr.com/photos/sampleandhold/1449737050/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1449737050_e9bc8d1b9e_m.jpg|IMG_3644]]</a>
+<a title="Generative synthpop karaoke! by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/1437036802/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1437036802_b997968541_m.jpg|Generative synthpop karaoke!]]</a>
+<a title="redFrik by danstowell, on Flickr" href="http://www.flickr.com/photos/danstowell/1437037142/">[[https://github.com/supercollider/supercollider.github.io/raw/main/images/sc2007/1437037142_3b40b51ba9_m.jpg|redFrik]]</a>
+
 
 ### Birmingham (UK) 2006
 
