@@ -1,5 +1,11 @@
 - [ERROR: Primitive 'BasicNew' failed. Index not an Integer](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#error-primitive-basicnew-failed-index-not-an-integer)
 - [Language (client) issues](https://github.com/supercollider/supercollider/wiki/Errors-FAQ/_edit#language-client-issues)
+  - [Calling gui primitives from a SystemClock routine](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#calling-gui-primitives-from-a-systemclock-routine)
+  - [Binary operations order](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#binary-operations-order)
+- [SynthDef issues](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#synthdef-issues)
+  - ["If" statements inside a SynthDef](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#if-statements-inside-a-synthdef)
+  - [ERROR: SynthDef not found](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#error-synthdef-not-found)
+  - [FAILURE /s\_new alloc failed, increase server's memory allocation](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#failure-s_new-alloc-failed-increase-servers-memory-allocation)
 
 
 # ERROR: Primitive 'BasicNew' failed. Index not an Integer
@@ -251,7 +257,7 @@ Routine({
 }).play
 ```
 
-### `FAILURE /s\_new alloc failed, increase server's memory allocation (e.g. via ServerOptions)`
+### `FAILURE /s\_new alloc failed, increase server's memory allocation`
 
 **What it means:** While initializing the unit generators in a new Synth node, the server ran out of real-time memory.
 
