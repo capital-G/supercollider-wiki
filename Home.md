@@ -26,6 +26,7 @@ SuperCollider users and developers communicate on a number of different channels
 - [Join the forums](https://scsynth.org/) for a more modern alternative to the listservs.
 - [Join our Slack channel](https://join.slack.com/t/scsynth/shared_invite/zt-ezoyz15j-SVM7JVul94pxtDiUDRnd0w). It's not mandatory, but it's very convenient for talking to other devs!
 - Watch the above channels for announcements of our weekly-ish developer calls on Skype. Everyone is welcome to join them!
+- Read our [Code of conduct](https://github.com/supercollider/supercollider/blob/develop/CODE_OF_CONDUCT.md).
 
 ## What does "contributing" mean?
 
