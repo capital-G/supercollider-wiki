@@ -49,6 +49,7 @@
 * [Adding to QtCollider widgets](https://github.com/supercollider/supercollider/wiki/Adding-to-QtCollider-widgets)
 * [Signing and Notarizing for macOS](https://github.com/supercollider/supercollider/wiki/macOS-Signing-and-Notarization)
 * [Plugins development](https://github.com/supercollider/supercollider/wiki/Plugins-development)
+* [scsynth development](https://github.com/supercollider/supercollider/wiki/scsynth-development)
 
 **Developer working documents**
 * [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
