@@ -22,7 +22,7 @@ This is the kind of documentation that could get out of date very quickly. None 
 
 ## File descriptions
 
-### `[headers,source]/common/`
+### [headers,source]/common/
 
 `dfftlib.h`
 
@@ -78,7 +78,7 @@ Semaphore{
 - calls external functions `sendallto()` and mentions (but doesn't use) `sendall()`
 
 
-#### headers/plugin_interface/
+### headers/plugin_interface/
 
 `clz.h`
 
