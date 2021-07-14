@@ -14,11 +14,12 @@
 * [Errors FAQ](https://github.com/supercollider/supercollider/wiki/Errors-FAQ)
 
 **Community**
-- [Blogs and Sites](https://github.com/supercollider/supercollider/wiki/Blogs-and-Sites)
-- [Systems interfacing with SC](https://github.com/supercollider/supercollider/wiki/Systems-interfacing-with-SC)
-- [sc140](https://github.com/supercollider/supercollider/wiki/sc140)
-- [SuperCollider Symposium](https://github.com/supercollider/supercollider/wiki/SuperCollider-Symposium)
-- [Academic Papers](https://github.com/supercollider/supercollider/wiki/Academic-Papers)
+* [Blogs and Sites](https://github.com/supercollider/supercollider/wiki/Blogs-and-Sites)
+* [Systems interfacing with SC](https://github.com/supercollider/supercollider/wiki/Systems-interfacing-with-SC)
+* [sc140](https://github.com/supercollider/supercollider/wiki/sc140)
+* [SuperCollider Symposium](https://github.com/supercollider/supercollider/wiki/SuperCollider-Symposium)
+* [Academic Papers](https://github.com/supercollider/supercollider/wiki/Academic-Papers)
+* [Pieces with live instruments or voice](https://github.com/supercollider/supercollider/wiki/Pieces-with-live-instruments-or-voice)
 
 ### Developer Reference
 
