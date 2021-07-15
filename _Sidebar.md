@@ -44,6 +44,7 @@
 * [git cheat sheet](https://github.com/supercollider/supercollider/wiki/git-cheat-sheet)
 * [git workflow and guidelines](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines)
 * [Platform Support](https://github.com/supercollider/supercollider/wiki/Platform-Support)
+* [Setting up the IDE for easy contribution](https://github.com/supercollider/supercollider/wiki/Setting-up-the-IDE-for-easy-contribution)
 * [Miscellaneous project information](https://github.com/supercollider/supercollider/wiki/Miscellaneous-project-information-(CI,-maintenance-scripts,-etc.))
 * [Debugging Tips](https://github.com/supercollider/supercollider/wiki/Debugging-Tips)
 * [Translating the IDE](https://github.com/supercollider/supercollider/wiki/Translating-the-IDE)
