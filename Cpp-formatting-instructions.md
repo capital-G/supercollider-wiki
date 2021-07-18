@@ -53,7 +53,7 @@ you can also install it with homebrew with `brew install llvm@8`. Other platform
 On **Arch Linux**, there is no good package for clang8; https://aur.archlinux.org/packages/clang8 conflicts with
 clang, and the clang-8 source code release does not compile with the latest clang or gcc version. This script will
 install it for you in a way that it peacefully coexists with other installations of clang:
-https://gist.github.com/brianlheim/2f80768eb2429b285902f8898182ae2d.
+https://gist.github.com/mossheim/2f80768eb2429b285902f8898182ae2d.
 
 If you can't find a suitable release artifact for your system on LLVM's website, check your package manager of choice.
 If that doesn't work either, [let us
