@@ -26,6 +26,7 @@
 **General Workflow**
 * [Setting up your development environment](https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment)
 * [Creating pull requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests)
+* [Issue Labels](https://github.com/supercollider/supercollider/wiki/Issue-Labels)
 * [Unit Testing Guide](https://github.com/supercollider/supercollider/wiki/Unit-Testing-Guide)
 * [Continuous Integration - GitHub Actions](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---GitHub-Actions)
 * [Reviewer Instructions](https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-Reviewer-instructions)
