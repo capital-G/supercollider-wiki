@@ -1,3 +1,21 @@
+2021-07-25
+==========
+Josh, John Andrews (new) Marcin, Nathan
+
+- libsndfile will build for older builds, (legacy) 
+- make a new RC
+- need to fix CI
+- automate signing? This sucks …
+
+- John’s sc-el PR - 
+	- Mac OS - no pre-package sc-el library (unlike Linux)
+	- doesn’t work for any other platform unless you modify the source code - not ideal
+	- cmake translates install path as a constant defined in one of the files
+	- cmake generated variables - make files expect SC as a dependency 
+	- PR tries to make this more configurable
+	- update the PR to make these changes optional with a flag - the old install path will have a kind of ‘manual deprecation’ 
+
+
 2021-06-13
 ==========
 JamesS, Olga, Daniel, Marcin, Josh, Iannis
