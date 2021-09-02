@@ -53,6 +53,7 @@
 * [Signing and Notarizing for macOS](https://github.com/supercollider/supercollider/wiki/macOS-Signing-and-Notarization)
 * [Plugins development](https://github.com/supercollider/supercollider/wiki/Plugins-development)
 * [scsynth development](https://github.com/supercollider/supercollider/wiki/scsynth-development)
+* [SuperCollider website wiki](https://github.com/supercollider/supercollider.github.io/wiki)
 
 **Developer working documents**
 * [Dev Team Meeting Minutes](https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes)
