@@ -64,7 +64,7 @@
 * [Project tasks organization](https://github.com/supercollider/supercollider/wiki/Project-tasks-organization)
 * [GitHub Actions migration notes](https://github.com/supercollider/supercollider/wiki/GitHub-Actions-migration-notes)
 
-**Deprecated/old pages**
+### Deprecated/old pages
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
 * [SourceForge wiki (old)](http://supercollider.sourceforge.net/wiki/)
 * [Hamburg wiki (really old)](http://swiki.hfbk-hamburg.de/MusicTechnology/6) 
