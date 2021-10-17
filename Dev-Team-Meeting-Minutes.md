@@ -16,9 +16,9 @@ Updating to qt 6 guide: https://doc.qt.io/qt-6/portingguide.html
 Adjacent topic: migration to m1 on macOS  
 Qt migration progress:
 https://github.com/supercollider/supercollider/issues/5169  
-(Marcin will update the issue to reflect current status)  
+~~(Marcin will update the issue to reflect current status)~~ EDIT: done  
 Apple M1 migration   
-Make an issue for this (Marcin) 
+~~Make an issue for this (Marcin)~~ EDIT: [done](https://github.com/supercollider/supercollider/issues/5598)  
 
 James S will look into tackling Qt 6 update  
 Marcin will help with CI
