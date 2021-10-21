@@ -205,6 +205,8 @@ each commit, and don't want to go back and redo each commit separately.
 Working without clang-format
 ----------------------------
 
+**Please note: the following instructions refer to the now-obsolete Travis CI and have not been updated for the currently used GitHub Actions**
+
 Sometimes you just want to update your PR (pull request) so it passes linting, without installing clang-format. It
 will be painful but you can follow these steps as a last resort:
 
