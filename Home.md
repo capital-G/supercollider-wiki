@@ -1,4 +1,13 @@
-Welcome to the Wiki for the SuperCollider project!
+### SuperCollider 3.12.1 (Stable Version)
+
+<a href="https://linkify.me/NQ2jmiK"><img src="https://github.com/aidenlab/JuiceboxLegacy/wiki/images/winlogo.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://linkify.me/NQ2jmiK">SuperCollider for Windows</a>
+
+<a href="https://github.com/supercollider/supercollider/releases/tag/Version-3.12.1"><img src="https://github.com/aidenlab/JuiceboxLegacy/wiki/images/maclogo.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/supercollider/supercollider/releases/tag/Version-3.12.1">SuperCollider for Mac</a>
+
+<a href="https://github.com/supercollider/supercollider/releases/tag/Version-3.12.1"><img src="https://www.rvmis.com/vendor/Tux.svg.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/supercollider/supercollider/releases/tag/Version-3.12.1">SuperCollider for Linux</a>
+
+
+
 
 If you are looking for information on using SuperCollider, including documentation, you may want the following
 resources:
