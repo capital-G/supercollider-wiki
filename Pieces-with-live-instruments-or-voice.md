@@ -256,6 +256,19 @@ A 20 min. video of their performance on the Sonic Arts Festival 2014 (Bilbao) is
 
 More info on these and other pieces here: [http://www.realizedsound.net/josh/Music.html](http://www.realizedsound.net/josh/Music.html)
 
+## Sam Pluta
+
+Lines on Black [https://wetinkensemble.bandcamp.com/album/glossolalia-lines-on-black](https://wetinkensemble.bandcamp.com/album/glossolalia-lines-on-black)
+
+Two Live Sets (with Peter Evans) [https://carrierrecords.com/album/two-live-sets](https://carrierrecords.com/album/two-live-sets)
+
+Matrix for George Lewis [http://sampluta.com/compositionMatrixForGeorgeLewis.html](http://sampluta.com/compositionMatrixForGeorgeLewis.html)
+
+Seven Systems [http://sampluta.com/compositionSevenSystems.html](http://sampluta.com/compositionSevenSystems.html)
+
+delay/line [http://sampluta.com/compositionDelayLine.html](http://sampluta.com/compositionDelayLine.html)
+
+Chain Reactions/Five Events [http://sampluta.com/compositionChainReactions.html](http://sampluta.com/compositionChainReactions.html)
 
 ## Federico Reuben
 
