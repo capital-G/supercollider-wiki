@@ -1,3 +1,17 @@
+2021-10-31
+==========
+James S, Marcin P
+
+Discussion on PR approval process
+
+Merged https://github.com/supercollider/supercollider/pull/5595
+
+Legacy macOS build fails; Marcin plans to look whether the problem with installing Qt 5.9.9 occurs in plain aqtinstall
+
+Discussion on open PRs
+
+Discussion on Qt6 progress
+
 2021-10-17
 ==========
 Luke N, Nathan H, James S, Josh P, Marcin P
