@@ -1,6 +1,6 @@
 ### SuperCollider 3.12.1 (Stable Version)
 
-<a href="https://linkify.me/NQ2jmiK"><img src="https://github.com/aidenlab/JuiceboxLegacy/wiki/images/winlogo.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://linkify.me/NQ2jmiK">SuperCollider for Windows</a>
+<a href="https://linkify.me/nIgC5ZI"><img src="https://github.com/aidenlab/JuiceboxLegacy/wiki/images/winlogo.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://linkify.me/nIgC5ZI">SuperCollider for Windows</a>
 
 <a href="https://github.com/supercollider/supercollider/releases/tag/Version-3.12.1"><img src="https://github.com/aidenlab/JuiceboxLegacy/wiki/images/maclogo.png" width=100 align="middle"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/supercollider/supercollider/releases/tag/Version-3.12.1">SuperCollider for Mac</a>
 
