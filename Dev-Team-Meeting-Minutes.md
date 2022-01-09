@@ -1,3 +1,43 @@
+2022-01-09
+==========
+Marcin, Josh, Christof, James S, Nathan, Keithton
+3.12.2 - released!
+
+initial topics to discuss:
+ - 3.13
+ - Qt 6
+ - Rework cmake
+
+Marcin - supports trying to support Qt 5 and 6 for some time
+
+James S - Qt 6 project board: https://github.com/jrsurge/supercollider/projects/2
+
+ - move to 5.15.2 first
+ - turn 5.15 errors (from deprecations)
+ - then moving to 6
+
+How best to support the older systems (back to 5.13, maybe back to 5.9?)
+
+Maybe make a request for others to help? Scott C?
+
+Alternative to Qt:
+NGui?  https://www.tasharen.com/?page_id=140
+Nanogui https://github.com/mitsuba-renderer/nanogui
+imgui https://github.com/ocornut/imgui
+sciter https://sciter.com/
+QML and QtQuick ?
+
+Other languages as front ends?
+ - timing and garbage collection
+ 
+Synthdef optimization on the server! (Nathan)
+
+C API for whatever is made later - lack of ability to extend the language with plugins is a pain point
+
+Reviews for supernova
+
+Review of modular class library proposal - https://hadron-sclang.org/articles/2021-12-21-Modular-Class-Library-Proposal/
+
 2021-12-04
 ==========
 James S, Nathan H, Josh P, Marcin P
