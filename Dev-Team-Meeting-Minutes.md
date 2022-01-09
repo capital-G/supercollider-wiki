@@ -1,6 +1,7 @@
 2022-01-09
 ==========
 Marcin, Josh, Christof, James S, Nathan, Keithton
+
 3.12.2 - released!
 
 initial topics to discuss:
