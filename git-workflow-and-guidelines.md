@@ -89,6 +89,16 @@ We generally follow this sequence of pre-releases prior to the official release.
 
 Creating a release involves adding a tag on the tip of the main branch. We follow the convention of using `Version-` prefix for the tags intended for official releases, e.g. `Version-3.11.0`. Our CI uses the tag in the filenames of the release artifacts, but removes the `Version-` prefix. Please note that creating a tag without the prefix will also trigger deployment of release artifacts, which is useful for testing. In the regular workflow, tags are used almost solely for creating releases. One notable exception from this was adding tags before reformatting the codebase with `clang-format`.
 
+### Versioning
+
+The current version of SuperCollider is defined in the `SCVersion.txt` file. This is the only place where version number should be updated before the release etc.
+
+Starting with [PR #5566](https://github.com/supercollider/supercollider/pull/5566), we are using a different version number on the current release branch and the `develop` branch. The minor version number on the `develop` branch should be one above the current release version and should include the `-dev` suffix. For example: if the current version on the `3.12` branch is `3.12.2`, the version on the develop branch should be `3.13.0-dev`. 
+
+The version on the `develop` branch should be updated right after a new release branch is created. For example: after the `3.13` branch is created, the version on the develop branch should be changed to `3.14.0-dev`. The version on the `3.13` branch can stay as `3.13.0-dev` until the time of release, when it will be changed to e.g. `3.13.0-rc1`. 
+
+Please note: this will cause a merge conflict _on the first merge_ from the given release branch (e.g. `3.13`) to `develop`. This conflict needs to be resolved before that first merge. Subsequent merges from the given release branch to `develop` should not trigger the merge conflict anymore.
+
 ### Emergency support releases
 
 Rarely, we may need to do an "emergency release" for extra support. As of February 2021, this has only happened once since the project moved to its current git-flow branching model. The reason for doing so was to support macOS 11 Big Sur between the release of 3.11.2 -- which did not support Big Sur at all yet -- and 3.12.0. In a conversation [here](https://github.com/supercollider/supercollider/issues/5168#issuecomment-778898320), this was the particular process arrived at:
