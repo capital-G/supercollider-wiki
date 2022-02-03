@@ -63,7 +63,7 @@ Be sure to create your issue in the appropriate repository. Note that [sc3-plugi
 
 We have provided an issue template for you to fill out so that the basic gist of the issue is easily determined at a glance. Please don't erase the template. It's there for a reason.
 
-When an issue involves a crashing or unresponsive executable and you don't know why, providing a crash report can give developers a very helpful first step toward resolving the problem. See "Generating a crash report" below for instructions for your platform.
+When an issue involves a crashing or unresponsive executable and you don't know why, providing a crash report can give developers a very helpful first step toward resolving the problem. See [Generating a crash report](https://github.com/supercollider/supercollider/wiki/Generating-crash-reports) for instructions for your platform.
 
 ### Above and beyond
 
