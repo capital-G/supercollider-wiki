@@ -66,5 +66,5 @@
 
 ### Deprecated/old pages
 * [Continuous Integration - Travis & Appveyor](https://github.com/supercollider/supercollider/wiki/Continuous-Integration---Travis-&-Appveyor)
-* [SourceForge wiki (old)](http://supercollider.sourceforge.net/wiki/)
+* [SourceForge wiki (old)](http://supercollider.sourceforge.net/wiki/) ([all pages](http://supercollider.sourceforge.net/wiki/index.php/Special:AllPages))
 * [Hamburg wiki (really old)](http://swiki.hfbk-hamburg.de/MusicTechnology/6) 
