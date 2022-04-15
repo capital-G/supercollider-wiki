@@ -48,7 +48,7 @@ out-of-date version of clang-format. To find out if it's already installed, run 
 is installed, you may still need to do some setup (see below). 
 
 The LLVM official releases support at least: FreeBSD, Windows, Ubuntu, RHEL/Fedora, and macOS (8.0.0 only). On macOS
-you can also install it with homebrew with `brew install llvm@8`. Other platforms may also be supported.
+you can also install it with homebrew with `brew install llvm@8` or install only clang-format with `brew install clang-format@8`. Other platforms may also be supported.
 
 On **Arch Linux**, there is no good package for clang8; https://aur.archlinux.org/packages/clang8 conflicts with
 clang, and the clang-8 source code release does not compile with the latest clang or gcc version. This script will
