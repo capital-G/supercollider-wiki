@@ -1,3 +1,16 @@
+2022-04-17
+==========
+Cameron, Marcin, Josh
+
+Discussion and merging some not-so-recent PRs
+
+Discussion on https://github.com/supercollider/supercollider/issues/5756
+
+Discussion on fixing submodule URLs
+https://github.com/supercollider/supercollider/issues/5695
+Agreed on cherry-picking the update
+
+
 2022-01-09
 ==========
 Marcin, Josh, Christof, James S, Nathan, Keithton
