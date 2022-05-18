@@ -29,7 +29,7 @@ Hey all,
 
 Here's a meeting time poll for the next developer meeting. Everyone with an interest in improving SuperCollider is welcome to attend!
 
-Dev meetings are held at https://meet.jit.si/SuperColliderDevMeeting. No registration is required to join.
+Dev meetings are held on [Jitsi](https://meet.jit.si/SuperColliderDevMeeting). No registration is required to join.
 
 RALLLY.CO_LINK
 
@@ -48,7 +48,7 @@ The next developer meeting will be on DAY_O_WEEK, MONTH DAY, at UTC_TIME UTC (= 
 
 Topics to discuss include TOPICS, and recent issues and pull requests. Everyone with an interest in improving SuperCollider is welcome to attend!
 
-Dev meetings are held at https://meet.jit.si/SuperColliderDevMeeting. No registration is required to join.
+Dev meetings are held on [Jitsi](https://meet.jit.si/SuperColliderDevMeeting). No registration is required to join.
 
 Regards,
 
