@@ -31,7 +31,7 @@ Here's a meeting time poll for the next developer meeting. Everyone with an inte
 
 Dev meetings are held at https://meet.jit.si/SuperColliderDevMeeting. No registration is required to join.
 
-DOODLE_LINK
+RALLLY.CO_LINK
 
 Regards,
 UR_NAME
