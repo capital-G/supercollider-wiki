@@ -4,18 +4,20 @@ Guide to SuperCollider Unit Testing
 ===================================
 
 Content overview:
-- Running the Test Suite
-  - Class Library Tests
-  - Other Tests
-- Purpose
-- What is testing?
-- Testing terminology
-- The UnitTest class
-- Unit testing guidelines
-- SCClassLibrary testing standards
-- Adding tests to the SCClassLibrary test suite
-- Examples
-- Resources
+* [Running the Test Suite](#running-the-test-suite)
+  * [Class Library Tests](#class-library-tests)
+  * [Other Tests](#other-tests)
+* [Purpose](#purpose)
+* [What is testing?](#what-is-testing)
+* [Testing terminology](#testing-terminology)
+* [The UnitTest class](#the-unittest-class)
+* [Unit testing guidelines](#unit-testing-guidelines)
+* [SCClassLibrary testing standards](#scclasslibrary-testing-standards)
+* [Adding tests to the SCClassLibrary test suite](#adding-tests-to-the-scclasslibrary-test-suite)
+* [Examples](#examples)
+* [Continuous automatic red/green testing via guard\-sclang](#continuous-automatic-redgreen-testing-via-guard-sclang)
+* [Resources](#resources)
+
 
 Running the Test Suite
 ----------------------
