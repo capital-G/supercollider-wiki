@@ -49,7 +49,9 @@ For SC and sc3-plugins:
 
 ## [skip ci]
 
-If you have `[skip ci]` in the first line of your commit message then GHA won't build it. Please **only** use this functionality when a commit only changes comments, documentation files, or other text files. Do not use it when adding, deleting, or renaming files.
+In GHA, we automatiacally skip building if the changes are made only to help files, `*.md` files, examples, and sounds. See [paths-ignore section in the workflow file](https://github.com/supercollider/supercollider/blob/develop/.github/workflows/actions.yml#L10).
+
+Additionally, if you have `[skip ci]` in the first line of your commit message then GHA won't build it. Please **only** use this functionality when a commit only changes comments, documentation files, or other text files. Do not use it when adding, deleting, or renaming files.
 
 ## Restarting builds
 
