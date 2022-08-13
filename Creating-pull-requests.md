@@ -111,6 +111,73 @@ When done, your local branch will be out of sync with your remote branch. You wi
 
 This is not recommended for those newer to git. `git help rebase`'s section "Interactive mode" has extensive documentation on how to reorder and recombine commits. Also refer to the section on `--autosquash` for ideas on how to combine these features into a streamlined rebase-oriented workflow.
 
+### Rebasing to remove commits
+
+Note: **this is an advanced procedure and might result in a messy git state. Be sure to make a copy of the branch before proceeding**. As this procedure involves rewriting commit history (by _force pushing_), never do this for branches that are used for collaboration between two or more users. 
+
+The general idea is to enter "interactive rebase" mode in git, remove commits that are not desired, resolve conflicts that occur in the process (not covered in this writeup), then _force push_ the local branch to the origin.
+
+Please be advised that this might result in a messy git state - you might loose your changes in the current branch. New users might consider additionally making a temporary copy of the whole repo to be able to recover previous state if something goes terribly wrong.
+
+Make sure you don't have any uncommitted changes. Then, let's make a copy of the current branch (we assume that the current branch is `topic/foo`):
+```sh
+git checkout topic/foo
+git checkout -b topic/foo-copy # or some other meaningful name
+```
+Now, go back to the original branch
+```
+git checkout topic/foo
+```
+We're going to do an "interactive rebase", starting from some commit _before_ the commits we want to edit/remove. To do that, we're going to look at a list of recent comits. For example, let's list the last 12 commits:
+```
+git log --oneline -n 12 --reverse
+```
+The idea here is to see all the commits that we want to make changes to, _plus at least one before that_. Adjust the number of logged commits to see all of the ones to be edited and some that are not, and make note which one is the first one (in order) that's _before_ commits to be edited.
+
+Then, let's rebase interactively starting from that last commit before the ones to be edited. Note, you can also rebase onto an older commit, just be careful not to change any of the ones that are not yours in the subsequent steps. Here we rebase onto the _eleventh_ commit from the `HEAD` (this assumes we want to make changes to some of the last 10 commits):
+```
+git rebase -i HEAD~11
+```
+This should open a text editor (`vi` by default), where you can edit the commit history. **Be careful not to edit any lines with commits that don't belong to you**. Here's a [cheat sheet for vi](https://www.atmos.albany.edu/daes/atmclasses/atm350/vi_cheat_sheet.pdf). Note that you will be either in "command mode" (default when started) or in "input mode" (after pressing `i`). Press `Esc` to go back into command mode.
+
+Per instructions, the lines starting with "pick" or "p" will "keep" the commits. This should be the case for all the commits before the ones you are editing (note that you need to have at least one on top that's unchanged, before you start removing desired commits). 
+
+Now, to remove the commits, either delete the line with the commit information altogether: in command mode, navigate to that line using arrows and press `D` (capital), or enter insert mode (`i`) change `pick` to `drop` or `d`. Do this for all of the commits you want to remove. It's okay to leave empty lines, they will be ignored.
+
+The example result will look like this (with different commit SHAs/names naturally):
+```vi
+pick ecbd988dab supernova: use the `/error` messages to turn on / off the console printing (#5820)
+# <possibly empty lines>
+pick 62c95d7bd6 docs: fix SimpleNumber typo
+pick a9d9979056 add additional info about recSampleFormat method options
+```
+If this looks correct, i.e. if we have at least one unchanged commit on top and then we have properly edited commit history, we need to save the changes in `vi` and exit it, which will trigger the rebase. In order to do that, press `Esc` to make sure you're in the command mode, then enter `:wq` (write quit) and press enter.
+
+Git should perform rebase. If some of the removed commits operated on the same file as the subsequent commits, there might be conflicts that need to be resolved (this is beyond the scope of this writeup). Let's check the history again: 
+```sh
+git log --oneline -n 3 --reverse
+```
+In the branch used for this example, the new history should look like this:
+```sh
+0b51f02ce9 supernova: use the `/error` messages to turn on / off the console printing (#5820)
+e6e9a6e5d2 docs: fix SimpleNumber typo
+920a3d50df (HEAD -> topic/foo) add additional info about recSampleFormat method options
+```
+If that's the case, now's the time to _force push_ the changes to your branch on github. 
+
+First, let's double check we are on the right branch:
+```sh
+git status
+```
+Which should print, among other things, `On branch topic/foo`.
+If that's the case, let's "force push". However: **Never force push to branches shared between users, nor to the main/develop branch**.
+```sh
+git push -f
+```
+
+If all went well, the contents of your branch on github should now be updated with the new commit history.
+
+
 ## Additional resources
 
 More information can be found on the [git workflow wiki page](https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines).
