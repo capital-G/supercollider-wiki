@@ -13,6 +13,7 @@
   - [Rebasing to change the base branch of a PR branch](#rebasing-to-change-the-base-branch-of-a-pr-branch)
   - [Completing a rebase](#completing-a-rebase)
   - [Rebasing to rearrange and edit commits](#rebasing-to-rearrange-and-edit-commits)
+  - [Rebasing to remove commits](#rebasing-to-remove-commits)
 - [Additional resources](#additional-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
