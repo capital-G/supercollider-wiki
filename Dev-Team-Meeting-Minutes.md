@@ -1,3 +1,30 @@
+2022-09-11
+==========
+NathanH, MarcinP, JamesS
+
+Discussed PRs:
+
+- Tilde expansion on windows 5431
+- WebAssembly 5571 - close with comment - issue of maintainability
+- Themes for docs 5487 - lots of tech debt; e.g. generating css in sclang would be better
+- UDP socket #5747
+- Clang-format in docker: Discussion on upgrading clang-format-8 to a newer version
+- create duplicated window only on forceCreate 5549
+
+Discussion on automated updates to the changelog
+- Look at other projects
+- reference: https://keepachangelog.com/en/1.0.0/
+- Important information needs to go on top
+- Consideration against changing PR titles for use in the changelog - will be inconsistent with commit messages
+- Maybe the person merging the PR is to be responsible of updating the changelog on the wiki
+
+
+
+2022-08-14
+==========
+(missing minutes)
+
+
 2022-05-22
 ==========
 
