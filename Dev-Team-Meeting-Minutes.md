@@ -1,3 +1,12 @@
+2022-10-16
+==========
+LukeN, MarcinP, NathanH
+
+Discussion on Hadron SuperCollider and method return issue: https://luke.nihlen.us/posts/2022-10-05-sclang-method-return/
+
+Discussion on language server protocol and possible plugins for other editors
+
+
 2022-09-11
 ==========
 NathanH, MarcinP, JamesS
