@@ -1,3 +1,9 @@
+2022-11-13
+==========
+JoshP, MarcinP, JamesS, NathanH
+
+We’ve worked on the `3.13.0-rc1` release.
+
 2022-10-16
 ==========
 LukeN, MarcinP, NathanH
