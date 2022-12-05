@@ -48,7 +48,7 @@ In order to keep your fork up-to-date, you need to point it to the main SuperCol
 	- Fetch changes made to the `upstream` repository: `git fetch upstream`
 	- Checkout the `develop` branch: `git checkout develop`
 	- Pull changes into the `develop` branch: `git pull upstream develop`. Your `develop` branch is now up-to-date.
-	- If you've already created your topic branch, you can update it with the changes in `develop` by either rebasing or pulling - see [Notes on rebasing and merge conflicts](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests#Notes-on-rebasing-and-merge-conflicts).
+	- If you've already created your topic branch, you can update it with the changes in `develop` by either rebasing or pulling - see [rebasing and merge conflicts](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests#rebasing-and-merge-conflicts).
 	- If you haven't yet created your topic branch, proceed to creating it as described in [Creating Pull Requests](https://github.com/supercollider/supercollider/wiki/Creating-pull-requests#Create-a-topic-branch).
 
 ### 3. Tooling and contribution-type based setup
