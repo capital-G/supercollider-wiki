@@ -1,3 +1,13 @@
+2023-03-12
+==========
+JoshP, JamesS, MarcinP
+
+Discussion on recent PRs and issues:
+https://github.com/supercollider/supercollider/pull/5990, https://github.com/supercollider/supercollider/pull/5991, https://github.com/supercollider/supercollider/issues/5948, https://github.com/supercollider/supercollider/issues/5978, https://github.com/supercollider/supercollider/issues/5939, https://github.com/supercollider/supercollider/issues/5973
+
+Discussion on migration to Qt6: trying to decide between maintaining a mixed Qt5/Qt6 support and moving straight to Qt6. Raised points about platform support for Qt6, which would delay the move to Qt6-only approach. Considered maintaining Qt5 compatibility in a separate branch/fork, or gradually migrating to Qt6-only support in a separate branch. The decision on the approach to be discussed with the wider dev community.
+
+
 2022-11-13
 ==========
 JoshP, MarcinP, JamesS, NathanH
