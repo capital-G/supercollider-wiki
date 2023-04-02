@@ -9,7 +9,7 @@ For future reference: [here is the branch that supports both Qt5 and Qt6](https:
 
 PRs discussed: 6001, 5750
 
-Comments about Windows support -  IPC issues etc; in general could work better on Windows...
+Comments about Windows support -  IPC issues etc; in general SC could work better on Windows...
 
 2023-03-12
 ==========
