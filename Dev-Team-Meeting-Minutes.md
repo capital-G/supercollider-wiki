@@ -1,3 +1,13 @@
+2023-04-30
+==========
+James S, Marcin P, Josh P
+
+https://github.com/supercollider/supercollider/pull/6003 pulled in, but need to check behavior in Windows terminal
+
+Discussion on testing procedures
+Improvements suggested by James S - to be continued in a formalized proposal at a later date
+
+
 2023-04-02
 ==========
 Nathan H, Luka P, Marcin P, Josh P, James S, Thales R
