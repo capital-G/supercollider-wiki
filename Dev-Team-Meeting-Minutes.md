@@ -1,4 +1,4 @@
-2023-08-06
+2023-08-06 (sclang sub-group)
 ==========
 - Attendees: Josh, Michael, Mike, Mike, Stefaan, Jordan
 
