@@ -5,6 +5,7 @@
 - [Nick Collins’ SuperCollider tutorial](http://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html) has a 12 week course of tutorial files as browseable HTML, and is also available in a downloadable zip
 - [Computer Music with examples in SuperCollider 3](http://rhoadley.net/courses/tech_resources/supercollider/tutorials/cottle/CMSC7105.pdf) by David Cottle
 - [SuperCollider Tutorials](https://www.youtube.com/playlist?list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC) on YouTube by Eli Fieldsteel
+- Remember that SC's built-in Documentation system has a [Tutorial section](https://doc.sccode.org/Browse.html#Tutorials).
 
 
 ### Other tutorials
