@@ -1,3 +1,15 @@
+### Table of Contents
+
+* [git\-flow](#git-flow)
+* [Deprecation](#deprecation)
+* [Milestones](#milestones)
+* [Guidelines for pull request authors](#guidelines-for-pull-request-authors)
+* [Writing changelogs](#writing-changelogs)
+* [Releasing](#releasing)
+* [Conflicts between release branches and develop](#conflicts-between-release-branches-and-develop)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
+
 ## git-flow
 
 SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). The most important thing to know:
@@ -48,6 +60,8 @@ or most requested features.
 When, in the example milestones above, 3.10 is released, we would move all 3.9.x-milestoned issues to 3.10.x,
 and then collectively decide which issues ought to move from 3.x to 3.11 and from 3.10.x to 3.10.1.
 
+[^top](#table-of-contents)
+
 ## Guidelines for pull request authors ##
 
 **A good title and description in GitHub.** Code review is a drag. If you want your work reviewed and discussed in a timely manner, it's really important that you make things as painless and clear as possible for anyone who reviews your work. Even if your PR builds on prior discussions, you should recap for people who haven't been following along.
@@ -58,11 +72,14 @@ and then collectively decide which issues ought to move from 3.x to 3.11 and fro
 
 **Unit tests (as necessary).**
 
+
 ### Other tips ###
 
 **Open PRs when they are truly ready for review.** The list of open PRs is intended to be the SC "workspace," the list of patches that are currently being worked on and discussed. Cluttering it with incomplete work makes the pull requests page overwhelming to look at.
 
 **Break a large project into bite-sized chunks.** Several small PRs will get merged much faster than one big one.
+
+[^top](#table-of-contents)
 
 ## Writing changelogs ##
 
@@ -73,6 +90,7 @@ The website [Keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/) is a major i
 Please provide the link to the PR with every entry in the changelog for easy navigation.
 
 Try to exercise common sense in keeping the log readable and useful to users. Use complete sentences and, to a reasonable extent, err on the side of clarity. In case of doubt, prefer inclusion over exclusion.
+
 
 ## Releasing ##
 
@@ -85,9 +103,12 @@ We generally follow this sequence of pre-releases prior to the official release.
 - `X.Y.Z-betaN`, for minor releases, to find any new bugs we missed and catch any regressions
 - `X.Y.Z-rcN` (release candidate), for minor and patch releases, to catch any regressions and ensure that the official release itself will go smoothly
 
+[^top](#table-of-contents)
+
 ### Tagging
 
 Creating a release involves adding a tag on the tip of the main branch. We follow the convention of using `Version-` prefix for the tags intended for official releases, e.g. `Version-3.11.0`. Our CI uses the tag in the filenames of the release artifacts, but removes the `Version-` prefix. Please note that creating a tag without the prefix will also trigger deployment of release artifacts, which is useful for testing. In the regular workflow, tags are used almost solely for creating releases. One notable exception from this was adding tags before reformatting the codebase with `clang-format`.
+
 
 ### Versioning
 
@@ -98,6 +119,7 @@ Starting with [PR #5566](https://github.com/supercollider/supercollider/pull/556
 The version on the `develop` branch should be updated right after a new release branch is created. For example: after the `3.13` branch is created, the version on the develop branch should be changed to `3.14.0-dev`. The version on the `3.13` branch can stay as `3.13.0-dev` until the time of release, when it will be changed to e.g. `3.13.0-rc1`. 
 
 Please note: this will cause a merge conflict _on the first merge_ from the given release branch (e.g. `3.13`) to `develop`. This conflict needs to be resolved before that first merge. Subsequent merges from the given release branch to `develop` should not trigger the merge conflict anymore.
+
 
 ### Emergency support releases
 
@@ -110,7 +132,9 @@ Rarely, we may need to do an "emergency release" for extra support. As of Februa
 5. Name the artifact with this scheme: `x.y.z+Comment.SHA` (note the `+`!). `SHA` should be the first 7 digits of the hex SHA for commit `C`. We use a `+` here instead of `-` to conform to [SemVer's](https://semver.org/) requirements for labelling releases with build metadata. A secondary goal of adding these extra labels is to transparently show that the release artifact corresponds to a commit different than commit `A`, which was given the actual release tag.
 5. Publish these artifacts on GitHub releases and the website download page, and announce the newly available artifact across all venues where the original release announcement was made. All announcements should clearly state that the artifact is a modified version of the official release patched for additional support, and should also transparently indicate the testing done prior to release.
 
-## Conflicts between release branches and develop ##
+[^top](#table-of-contents)
+
+## Conflicts between release branches and develop
 
 Occasionally it may happen that a release branch cannot be cleanly merged into `develop`. In that case, the correct procedure is:
 
