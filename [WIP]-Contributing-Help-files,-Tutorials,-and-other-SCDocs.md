@@ -1,4 +1,14 @@
 _Note: This document is still a draft_
+
+### Table of Contents
+
+  * [Contributing documentation changes](#contributing-documentation-changes)
+  * [Setting up your development environment](#setting-up-your-development-environment)
+  * [Making a documentation change](#making-a-documentation-change)
+  * [Publishing your changes](#publishing-your-changes)
+  * [Your Pull Request, after you've published it](#your-pull-request-after-youve-published-it)
+  * [Previewing your changes](#previewing-your-changes)
+
 ## Contributing documentation changes
 This document is aimed at helping new contributors, whose first contribution is perhaps a small change in SuperCollider's Help files. For a more involved workflow, aimed at more experienced contributors, see [below](#Previewing-your-changes).
 
