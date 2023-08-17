@@ -1,3 +1,18 @@
+### Table of Contents
+
+* [Get the latest sources](#get-the-latest-sources)
+* [Working with submodules](#working-with-submodules)
+* [Update local repository](#update-local-repository)
+* [Commit \+ Push](#commit--push)
+* [Branches](#branches)
+* [A common git workflow for development work on SuperCollider](#a-common-git-workflow-for-development-work-on-supercollider)
+* [Common git commands](#common-git-commands)
+* [Problems with submodule state update](#problems-with-submodule-state-update)
+* [Testing mailing list patches](#testing-mailing-list-patches)
+* [Resources](#resources)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
+
 ## Get the latest sources ##
 
 To work with SuperCollider's source code, you first need to create your own local clone of the online *repository*. There are two options:
@@ -44,6 +59,9 @@ git config --global alias.chrs 'checkout --recurse-submodules' # chrs = 'checkou
 git chrs develop
 ```
 
+
+[^top](#table-of-contents)
+
 ## Update local repository ##
 
 You can update the branches on your local repository to those of a remote repository with:
@@ -54,6 +72,7 @@ You can update the branches on your local repository to those of a remote reposi
 Many reported build problems are due to out-of-date submodules, so make sure to not skip the last step.
 
 If you are going to do any development work, keep reading for more details...
+
 
 ### Updating and rebasing
 
@@ -68,6 +87,7 @@ You could define a git command *alias* to help you with this - a short custom co
     git config alias.up pull --rebase
 
 This will make `git up` equivalent to `git pull --rebase`.
+
 
 ### Updating submodules
 
@@ -90,6 +110,7 @@ In case you get a submodule stuck in a state you don't understand, it's handy to
 
     rm -rf external_libraries/nova-tt
     git submodule update --init --recursive
+
 
 ### Pulling from different sources
 
@@ -120,6 +141,9 @@ check that everything is okay, then push changes back to github.
 
 taken from [here](http://people.gnome.org/~federico/misc/git-cheat-sheet.txt)
 
+
+[^top](#table-of-contents)
+
 ## Commit + Push ##
 
 Unlike in SVN, publishing changes is a two-step process in git:
@@ -136,6 +160,9 @@ Highly recommended: Set your global git configuration so that `git push` with no
 If you're using an older version of git, substitute "tracking" for "upstream."
 
     git config --global push.default tracking
+
+
+[^top](#table-of-contents)
 
 ## Branches ##
 Another really helpful way to save you from yourself is to work in a local branch that doesn't exist in the public repository. If you are new to git, you `will` make mistakes. If you make mistakes in a published branch, such as "main," and you accidentally push those mistakes, it may take some effort to clean up. But if you work in a branch that exists only on your local machine, you can do anything you want with it, and then selectively move specific commits into a public branch.
@@ -159,9 +186,13 @@ The "-b" option to `git checkout` creates a new branch from an existing one.
 
 `git cherry-pick` is a bit inconvenient for large numbers of commits. In that case, it would be better to use a "topic branch." See below, "Using a separate branch for work on a feature."
 
+
+[^top](#table-of-contents)
+
 ## A common git workflow for development work on SuperCollider ##
 
 Make sure you've done the "git clone" stuff above, then...
+
 
 ### Simple work on your main branch ###
 
@@ -198,6 +229,7 @@ Push it:
 
     git push
 
+
 ### Using a separate branch for work on a feature ###
 
 Sometimes you want to work on several unrelated features during the same period of time and you want to be able to switch between your work on one or another. You can do this by using several branches within your local repository. Each branch allows you to store your work on a feature in form of commits on top of the commit history at the time the branch was created. By default, each repository contains one branch named main, but you can create new ones (and even rename any of them later, including main).
@@ -223,6 +255,9 @@ When you are ready to push the work on the feature to the public repository, fir
     git push
 
 This will merge the additional commits of your feature branch into the main and push them public. For additional details about rebase, see (4).
+
+
+[^top](#table-of-contents)
 
 ## Common git commands ##
 
@@ -298,6 +333,9 @@ see status of changes:
 
     git status
     
+
+[^top](#table-of-contents)
+
 ## Problems with submodule state update ##
 
 When switching branches and doing a submodule update (in SC: nova-simd and nova-tt"), git sometimes messes up the submodule status without you having touched it. 
@@ -318,6 +356,8 @@ This can be remedied by deleting the file and updatind the submodules again (giv
     git submodule update --init --recursive
     
 
+[^top](#table-of-contents)
+
 ## Testing mailing list patches ##
 
 To try out emailed patches (created with git send-mail) copy all the content of the original mail message in a file, e.g. patch.mbox, and remove all the empty/white-spaces lines from the beginning of that file. If the patch is a series of mails copy all in order in the same file (the subject has an order tag `[PATCH 0/N]`, `[PATCH 1/N]`, ..., `[PATCH N/N]`).
@@ -337,6 +377,9 @@ After testing it the branch can be erased (be careful any change will be lost)
     git branch -D solve_problem_patch
 
 Note: this workflow is useful just to try a patch and discard changes for other solutions check the Resources.
+
+
+[^top](#table-of-contents)
 
 ## Resources ##
 
