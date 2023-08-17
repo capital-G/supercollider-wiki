@@ -1,5 +1,17 @@
 This is a collection of FAQs I've seen around the issue tracker. Hopefully this can be put someplace more public once it gains steam. This is meant as an addition to the longer guides about doing specific basic things like installing and configuring. - Brian
 
+
+### Table of Contents
+
+* [Env seems to work differently than I expect](#env-seems-to-work-differently-than-i-expect)
+* [Can we change parameter names of methods? The current naming confuses me/I don't like it](#can-we-change-parameter-names-of-methods-the-current-naming-confuses-mei-dont-like-it)
+* [Can I make X addition to the language syntax?](#can-i-make-x-addition-to-the-language-syntax)
+* [Why does sclang make me put var statements at the top of functions? Why can't I define classes at runtime?](#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-cant-i-define-classes-at-runtime)
+* [Is ? or ?? faster?](#is--or--faster)
+* [Can we get code folding in the IDE?](#can-we-get-code-folding-in-the-ide)
+* [Can I use SC in a game audio engine?](#can-i-use-sc-in-a-game-audio-engine)
+
+
 ## Env seems to work differently than I expect
 
 Source: https://github.com/supercollider/supercollider/issues/3629#issue-311070157
@@ -13,6 +25,7 @@ jamshark70:
 > An envelope segment has no fixed, unchanging start level. If it did, it would be impossible to jump early to the release segment, or to loop back.
 >
 > But, when the EnvGen starts, it has no current level at first. So the Env provides one extra level, at the beginning. levels[0] initializes the EnvGen, and then this level is never touched again. So, levels[0] doesn't correspond to any envelope node. It's only a start value. The first envelope segment goes to levels[1].
+
 
 ## Can we change parameter names of methods? The current naming confuses me/I don't like it
 
@@ -39,6 +52,7 @@ Please think _very hard_ about this before submitting a ticket. Conversations ab
 
 Also, remember to look and see if this idea has already been discussed.
 
+
 ## Why does sclang make me put `var` statements at the top of functions? Why can't I define classes at runtime?
 
 These quirks and limitations of sclang are well known:
@@ -48,11 +62,13 @@ These quirks and limitations of sclang are well known:
 - classes can't be imported dynamically
 - there is no namespacing
 
+
 ## Is `?` or `??` faster?
 
 James: https://www.listarc.bham.ac.uk/lists/sc-dev/msg58256.html
 
 `??` is faster.
+
 
 ## Can we get code folding in the IDE?
 
@@ -63,6 +79,7 @@ Answer: https://github.com/supercollider/supercollider/issues/2264#issuecomment-
 crucialfelix:
 
 > The IDE isn't intended to become a full professional level code editor. That would suck up precious developer time that needs to be spent on the core feature (music). It's pretty complicated to do code folding correctly.
+
 
 ## Can I use SC in a game audio engine?
 
