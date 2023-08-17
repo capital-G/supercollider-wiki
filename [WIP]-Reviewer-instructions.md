@@ -1,3 +1,16 @@
+## Table of Contents
+
+* [Reviewer instructions](#reviewer-instructions)
+  * [The big picture](#the-big-picture)
+  * [Getting into reviewing easily](#getting-into-reviewing-easily)
+  * [Prerequisites for reviewers](#prerequisites-for-reviewers)
+  * [Overview](#overview)
+  * [Quick checklist](#quick-checklist)
+  * [How to get started as a reviewer](#how-to-get-started-as-a-reviewer)
+  * [Various instructions and guidelines](#various-instructions-and-guidelines)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
+
 # Reviewer instructions
 
 Here, you'll find information on how to review pull requests (PRs) for the SuperCollider project. Welcome!
