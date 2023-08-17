@@ -1,4 +1,5 @@
-## Table of Contents
+
+### Table of Contents
 
 * [Reviewer instructions](#reviewer-instructions)
   * [The big picture](#the-big-picture)
@@ -8,8 +9,6 @@
   * [Quick checklist](#quick-checklist)
   * [How to get started as a reviewer](#how-to-get-started-as-a-reviewer)
   * [Various instructions and guidelines](#various-instructions-and-guidelines)
-
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc.go)
 
 # Reviewer instructions
 
@@ -33,6 +32,7 @@ Some parts of SuperCollider are easier to review than others. If you're looking 
 - Have previously participated in PR review discussions, and/or have previous PR review experience
 - Bring lots of patience. Reviewing is a very communicative process!
 
+[^top](#table-of-contents)
 ## Overview
 
 The major tasks for reviewers are:
