@@ -1,3 +1,75 @@
+2023-09-24
+==========
+
+8 People showed up! :+1: 
+
+In the meeting: MarcinP, DennisS, MaximilianR, EduardF, MichaelW, ThalesR, MikeM, JamesS
+
+## Update by sclang dev group
+
+* Modularization
+* Quark/package manager System
+* Pitch class representation
+
+## Meta discussion about developer groups
+
+Discussion about the communication about the publication about events within the forum - maybe it needs some improvement in regards of people who want to be notified.
+
+There are 3 threads:
+
+* https://scsynth.org/t/scsynth-plugins-supernova-developer-group/7978?u=mike
+* https://scsynth.org/t/class-library-developer-group/7974?u=mike
+* https://scsynth.org/t/developer-meeting-polls/234
+
+Subscribe to the the [Developer meeting polls thread](https://scsynth.org/t/developer-meeting-polls/234) to keep track of future meetings and their planning.
+Use the bell icon to receive updates via Mail.
+
+JamesS: One proposal / original idea of the splitting of the dev groups: Should the *sub-groups* still meet within the *main*-dev meeting and go into break-out rooms, so an communication between the teams can established, but also a focussed discussion would be possible.
+Yet, additional meetings within the team is still encouraged.
+One idea of sub-groups is/was to give the authority about decissions to a group of people which can be adressed.
+
+=> General meeting with breakout rooms
+
+Related discussion on code of conduct and safety for participants.
+
+Maybe founding a SC-Mod/Awarness team to have the possibility to adress Code of Conduct violations and try to resolve the issue.
+The resolution could/should be handled first privately via a PM.
+
+One way to resolve this could be a sticky post which covers a small introduction and the "who-is-who" within the community like release-manager, moderators.
+
+---
+
+How should a *bespoke* person for groups emerge? Naturally or "enforce" it?
+
+## Questions
+
+Should focus group happen within the "core"-meetings or should they have meetings on their own?
+
+Core meetings focus on meta-discussion (but still PR discussion possible).
+
+## Actions
+
+* Create stickies on scsynth.org
+    * Introduction to the forum
+        * link to the dev-threads
+        * explain procedure about meetings
+        * state moderators and release-managers
+        * state actions for violation of Code of Conduct)
+        * Add links to other ways of communication like Telegram group, Matrix room
+    * All meetings are anounced unified in a single thread (sticky)
+    * Polls are announcemed in the poll thread (make sticky also)
+* Communicate on the class library and synth focus group that the meetings will be announcement on the main poll/announcement threads
+    * Marcin will make a poll for the class lib meeting next week
+* James will look into moderating interactions in the SC community
+
+
+## Discussed PRs
+ * https://github.com/supercollider/supercollider/pull/6068 - needs more eyes
+ * https://github.com/supercollider/supercollider/pull/6073
+ * https://github.com/supercollider/supercollider/pull/5974 / https://github.com/supercollider/supercollider/issues/5973
+ * https://github.com/supercollider/qpm/pull/14 => Will be archived by Marcin with a small note on why at the top of the `README`
+
+
 2023-08-06 (sclang sub-group)
 ==========
 - Attendees: Josh, Michael, Mike, Mike, Stefaan, Jordan
