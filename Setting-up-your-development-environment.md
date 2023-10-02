@@ -74,6 +74,9 @@ LanguageConfig.includePaths.do(LanguageConfig.removeIncludePath(_));
 // disable startup files
 LanguageConfig.addIncludePath(~scGitPath +/+ "platform/disable_startup_files");
 
+// exclude default paths (important! otherwise you'll get "duplicate Class found" errors and the interpreter won't start)
+LanguageConfig.excludeDefaultPaths = true;
+
 // add paths from your clone
 LanguageConfig.addIncludePath(~scGitPath +/+ "SCClassLibrary");
 LanguageConfig.addIncludePath(~scGitPath +/+ "testsuite");
