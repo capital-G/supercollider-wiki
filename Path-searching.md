@@ -18,9 +18,10 @@ Important directories
   - Windows: `C:\Program Files\SuperCollider\`.
 - `SC_DATA_DIR`, a compile-time definition set to `${CMAKE_INSTALL_PREFIX}/share/SuperCollider` only on Linux.
 - System App Support Directory
-  - This is the installation location of the core SuperCollider application, containing its executables and assets.
+  - On Linux this contains the SC class library, examples, sounds, HID_support, help source, Extensions and translations. On Mac the directory needs to be created and is a search path for systemwide Extensions.
   - Linux: `${CMAKE_INSTALL_PREFIX}/share/SuperCollider`.
   - macOS: `/Library/Application Support/SuperCollider/`.
+  - Windows: `%PROGRAMDATA%/SuperCollider/`
 - System Extension Directory: `<System App Support Directory>/Extensions/`
   - This is the location of quarks and plugins that are installed "system wide" for this SuperCollider install.
 - User App Support Directory
@@ -34,8 +35,10 @@ Important directories
   - Linux: `$XDG_CONFIG_HOME/SuperCollider`, defaulting to `~/.config/SuperCollider`, compliant with the XDG Base Directory Specification.
   - macOS: `$XDG_CONFIG_HOME/SuperCollider`, or if not present, this is the same as the User App Support Directory.
 - Resource Directory
-  - A search location for server plugins.
+  - On Linux and Windows this is a search location for server plugins. On Mac this is the location of the scsynth executable, SC class library, plugins and assets.
   - Linux: `SC_DATA_DIR`, or if not available, `${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}/SuperCollider/`.
+  - Mac: `SuperCollider.app/Contents/Resources`
+
 
 sclang finds scsynth/supernova
 -----------------------
