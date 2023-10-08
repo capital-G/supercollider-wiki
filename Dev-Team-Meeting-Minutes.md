@@ -1,3 +1,42 @@
+2023-10-08
+==========
+
+In the meeting: Simon, Marcin P, Michael W, James S, Mike M
+
+- macOS build issues - discussing `libsndfile` from homebrew; Marcin will investigate
+- Discussion on qt6 port and webengine hurdle; last work of was done [here](https://github.com/supercollider/supercollider/commit/80b1943da33b4b3603b9507de461319ca71c3d65#diff-3e2afc8e64bf52caa22a03d0706afba9e36191a4d9734d77ea60ff2c65b62385R51)
+- Discussion on pushing the project forward:
+  - desire to **create explicit policies for breaking changes** that can't be easily deprecated (like fixing long-standing DSP bugs)
+  - consideration on backwards compatibility when discussion changes
+  - can we guarantee to the users:
+    - your code should work X years down the line
+    - SC works on the newest machines
+  - need to balance between SC being a lively tool vs a museum for old pieces
+We might need to be more careful on how we deprecate things; but we shouldn't hesitate to deprecate
+Automated tooling
+
+### Discussed PRs
+- [changing the posting format PR](https://github.com/supercollider/supercollider/pull/6106)
+  - Probably this is a good change, in accordance  with our [code style guide](https://github.com/supercollider/supercollider/wiki/Code-style-guidelines#rule-add-spaces-within-curly-brackets--but-not-parentheses--square-brackets--or-argument-lists-)
+    - Marcin will review
+       - Make a point about storeOn being a breaking change, but probably okay
+       - Mention in the review that this should be considered for `Event` and other classes; reference code formatting
+- [Multiple config files](https://github.com/supercollider/supercollider/pull/6068)
+  - Boost testing - James would prefer to use a different test framework
+    - Adding test framework should become a separate PR
+  - Renaming the `sclang` folder - a separate PR
+  - Whith the above changes in place, create and review just the configuration file loading change
+
+TODOs and other matters:
+- Marcin: check macOS CI building
+- The need for a roadmap for bigger tasks like Qt5 -> Qt6
+- The need to keep discussions on few features etc. on track, so that we can move forward
+- Future on GUI framework and Qt6 licensing
+- Marcin: make a clean Qt6 branch
+- Consider the need to redo our CMake files
+
+
+
 2023-10-01
 ===========
 "Class library" group meeting
