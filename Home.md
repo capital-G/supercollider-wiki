@@ -20,10 +20,9 @@ documentation:
 SuperCollider users and developers communicate on a number of different channels. Here's how to access them:
 
 - [Sign up for a GitHub account](https://github.com/signup/free) and give us a star.
-- [Join the sc-users and sc-dev mailing lists](https://www.birmingham.ac.uk/facilities/ea-studios/research/supercollider/mailinglist.aspx).
 - [Join the forums](https://scsynth.org/) for a more modern alternative to the listservs.
 - [Join our Slack channel](https://join.slack.com/t/scsynth/shared_invite/zt-ezoyz15j-SVM7JVul94pxtDiUDRnd0w). It's not mandatory, but it's very convenient for talking to other devs!
-- Watch the above channels for announcements of our weekly-ish developer calls on Skype. Everyone is welcome to join them!
+- Watch the above channels for announcements of our weekly-ish developer meetings. Everyone is welcome to join them!
 - Read our [Code of conduct](https://github.com/supercollider/supercollider/blob/develop/CODE_OF_CONDUCT.md).
 
 ## What does "contributing" mean?
