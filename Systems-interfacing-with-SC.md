@@ -62,7 +62,6 @@ To send osc messages from the shell (terminal) see [sendOSC](http://cnmat.org/Op
 - [Supercollider Atom](https://atom.io/packages/supercollider) Super Collider IDE for Atom
 - [Sublime Text](https://github.com/geoffroymontel/supercollider-package-for-sublime-text) Supercollider package for Sublime Text 2
 - [supercollider-tmbundle](http://github.com/rfwatson/supercollider-tmbundle) TextMate
-- [sced](http://artfwo.googlepages.com/sced) a gedit plugin
 - [scate](http://github.com/jleben/Scate) a Kate plugin
 - [scfront](http://aug.ment.org/scfront) a Tcl/Tk frontend
 
