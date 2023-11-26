@@ -56,8 +56,8 @@ To send osc messages from the shell (terminal) see [sendOSC](http://cnmat.org/Op
 
 ## Editors
 
-- [scvim](https://github.com/supercollider/scvim) VIM plugin for SuperCollider
 - [scnvim](https://github.com/davidgranstrom/scnvim) NeoVim frontend for SuperCollider
+- [scvim](https://github.com/supercollider/scvim) VIM plugin for SuperCollider
 - [scel](https://github.com/supercollider/scel) Emacs interface for SuperCollider
 - [Supercollider Atom](https://atom.io/packages/supercollider) Super Collider IDE for Atom
 - [Sublime Text](https://github.com/geoffroymontel/supercollider-package-for-sublime-text) Supercollider package for Sublime Text 2
