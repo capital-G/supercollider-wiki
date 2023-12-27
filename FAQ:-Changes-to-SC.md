@@ -1,15 +1,18 @@
-This is a collection of FAQs I've seen around the issue tracker. Hopefully this can be put someplace more public once it gains steam. This is meant as an addition to the longer guides about doing specific basic things like installing and configuring. - Brian
+This is a collection of FAQs I've seen around the issue tracker. Hopefully this can be put someplace more public once it gains steam. This is meant as an addition to the longer guides about doing specific basic things like installing and configuring. - @mossheim
 
 
-### Table of Contents
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+#### Table of Contents
 
-* [Env seems to work differently than I expect](#env-seems-to-work-differently-than-i-expect)
-* [Can we change parameter names of methods? The current naming confuses me/I don't like it](#can-we-change-parameter-names-of-methods-the-current-naming-confuses-mei-dont-like-it)
-* [Can I make X addition to the language syntax?](#can-i-make-x-addition-to-the-language-syntax)
-* [Why does sclang make me put var statements at the top of functions? Why can't I define classes at runtime?](#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-cant-i-define-classes-at-runtime)
-* [Is ? or ?? faster?](#is--or--faster)
-* [Can we get code folding in the IDE?](#can-we-get-code-folding-in-the-ide)
-* [Can I use SC in a game audio engine?](#can-i-use-sc-in-a-game-audio-engine)
+- [Env seems to work differently than I expect](#env-seems-to-work-differently-than-i-expect)
+- [Can we change parameter names of methods? The current naming confuses me/I don't like it](#can-we-change-parameter-names-of-methods-the-current-naming-confuses-mei-dont-like-it)
+- [Can I make X addition to the language syntax?](#can-i-make-x-addition-to-the-language-syntax)
+- [Why does sclang make me put `var` statements at the top of functions? Why can't I define classes at runtime?](#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-cant-i-define-classes-at-runtime)
+- [Is `?` or `??` faster?](#is--or--faster)
+- [Can we get code folding in the IDE?](#can-we-get-code-folding-in-the-ide)
+- [Can I use SC in a game audio engine?](#can-i-use-sc-in-a-game-audio-engine)
+
+<!-- TOC end -->
 
 
 ## Env seems to work differently than I expect
@@ -40,6 +43,7 @@ foo.bar(param1: 7);
 ```
 
 So, any change to a public-facing parameter name is a potential breaking change. We might be able to do this in a minor version release, but only if the parameter is rarely used or unlikely to be used with a keyword argument.
+
 
 ## Can I make X addition to the language syntax?
 
