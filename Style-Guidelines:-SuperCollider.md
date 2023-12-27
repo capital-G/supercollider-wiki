@@ -1,3 +1,7 @@
+<!-- 
+Note on revision history: it appears changing the wiki's name obscures the wiki's revision history. Changing the name back to it's previous name then shows the full revision history. hmmm... GitHub bug? If that's needed, this wiki's previous name was "Code style guidelines".
+-->
+
 The following guidelines apply to all _SuperCollider_ code in the repository, including the SuperCollider class library and examples in documentation. This is a living document reflecting the conventional style used in this project. Each guideline here is presented with a brief discussion including examples, rationale, and importance.
 
 Guidelines are also available for other parts of the project:
