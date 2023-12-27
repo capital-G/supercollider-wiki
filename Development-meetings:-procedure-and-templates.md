@@ -1,12 +1,25 @@
 Some message templates and reminders for how we do dev meetings. Edit at will.
 
-- send out a poll early in the week (Tuesday or Wednesday): sc-dev, Slack, scsynth.org.
-- announce the time (Thursday or Friday): sc-dev, Slack, scsynth.org.
-- post minutes ASAP after the meeting: GitHub, sc-dev, scsynth.org. **Always post minutes, even if uneventful.**
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+#### Table of contents
 
-The announcements should be posted on sc-dev, Slack, and scsynth.org.
+- [Scheduling checklist](#scheduling-checklist)
+- [Conducting meetings](#conducting-meetings)
+- [Templates](#templates)
+   * [Poll](#poll)
+   * [Announce](#announce)
+   * [Minutes](#minutes)
 
-scsynth [time poll thread](https://scsynth.org/t/developer-meeting-polls/234), [time announce thread](https://scsynth.org/t/dev-meetings-schedule/250), [minutes announce thread](https://scsynth.org/t/dev-meeting-minutes/2033).
+<!-- TOC end -->
+
+
+# Scheduling checklist
+
+The announcements should be posted on Slack, and scsynth forum.
+- [ ] send out a poll early in the week (Tuesday or Wednesday): [time polls on scsynth forum](https://scsynth.org/t/developer-meeting-polls/234)
+- [ ] announce the time (Thursday or Friday): [schedule announcements on scsynth forum](https://scsynth.org/t/dev-meetings-schedule/250)
+- [ ] post minutes ASAP after the meeting: **Always post minutes, even if uneventful.**: [minutes on scsynth forum](https://scsynth.org/t/dev-meeting-minutes/2033), [[Development meetings: minutes]]
+
 
 # Conducting meetings
 
@@ -18,7 +31,9 @@ Typically (unless there is something more pressing) we kick off by having everyo
 
 Meetings are **90 minutes long**. Be respectful of people's time and try not to go over that!
 
+
 # Templates
+
 
 ## Poll
 
@@ -37,6 +52,7 @@ Regards,
 UR_NAME
 ```
 
+
 ## Announce
 
 ```
@@ -54,6 +70,7 @@ Regards,
 
 UR_NAME
 ```
+
 
 ## Minutes
 
