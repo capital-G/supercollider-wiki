@@ -1,15 +1,17 @@
-_Note: This document is still a draft_
+<!-- TOC start (generated with https://derlin.github.io/bitdowntoc/) -->
+#### Table of contents
 
-### Table of Contents
+- [Contributing documentation changes](#contributing-documentation-changes)
+- [Setting up your development environment](#setting-up-your-development-environment)
+- [Making a documentation change](#making-a-documentation-change)
+- [Publishing your changes](#publishing-your-changes)
+- [Your Pull Request, after you've published it](#your-pull-request-after-youve-published-it)
+- [Previewing your changes](#previewing-your-changes)
 
-  * [Contributing documentation changes](#contributing-documentation-changes)
-  * [Setting up your development environment](#setting-up-your-development-environment)
-  * [Making a documentation change](#making-a-documentation-change)
-  * [Publishing your changes](#publishing-your-changes)
-  * [Your Pull Request, after you've published it](#your-pull-request-after-youve-published-it)
-  * [Previewing your changes](#previewing-your-changes)
+<!-- TOC end -->
 
 ## Contributing documentation changes
+
 This document is aimed at helping new contributors, whose first contribution is perhaps a small change in SuperCollider's Help files. For a more involved workflow, aimed at more experienced contributors, see [below](#Previewing-your-changes).
 
 Eli Fieldsteel made an excellent [video tutorial](https://www.youtube.com/watch?v=CbIwWsGl-zc), especially directed to beginners, that walks through the whole process of fixing a typo in a Help file, from installing git to submitting the changes.
@@ -19,10 +21,14 @@ Contributing documentation needs the same setup as any other change to the sourc
 
 You'll need to setup your fork of SuperCollider, make your changes and open a Pull Request
 
-### Setting up your development environment
+
+## Setting up your development environment
+
 First step is to get your own updated working copy of the source code, called a fork. If you don't have one already, please see [Setting Up Your Development Environment]() for instructions to create your fork and to keep it updated.
 
-### Making a documentation change
+
+## Making a documentation change
+
 Once you have your fork cloned on your local machine, it's a recommended practice to create a new branch for every contribution you make. It makes it easier to organize your changes, and later publish them as Pull Requests, ensuring every contribution is isolated and thus easier to review, discuss and merge.
 For this example, we are going to pretend to fix a typo in SinOsc's help file, so we create a new branch and we decide to name it `topic/help-sinosc-typo`:
 
@@ -37,7 +43,9 @@ And then you know that the source for SinOsc is in Classes/SinOsc.schelp, inside
 
 Once you've found it, open the .schelp file in a text editor and make the changes you want. When you are satisfied, you can proceed to publish your changes. Previewing them requires a few more steps, including building SuperCollider, see [below](#Previewing-your-changes) if you're interested, but feel free to skip it if your changes are small and you don't want to go through additional setup.
 
-### Publishing your changes
+
+## Publishing your changes
+
 Now that you have modified one or more files, the command `git status` will show a red entry for every modified files, calling them "Changes not staged for commit". To publish your changes you first need to stage them, which means to add them to your next commit:
 
     git add .
@@ -54,12 +62,14 @@ _For more about Pull Requests, branch naming conventions and [skip ci], see [Cre
 
 Now your branch contains a commit, which is constituted by your changes! The next part is to create a Pull Request, so that other developers will be able to see, discuss and approve your changes. GitHub offers a quick way to do this, if you go to (supercollider/supercollider)[https://github.com/supercollider/supercollider] shortly after making a change, it will prompt you to "Compare & Pull Request" your newly modified branch. Follow the instructions to add a description to your Pull Request, mark it as a documentation change, check all the checkboxes (since doc changes requires no testing, you can mark that "Code is tested" and "All tests are passing"), and finally "Create Pull Request".
 
-### Your Pull Request, after you've published it
+
+## Your Pull Request, after you've published it
+
 Congratulations on your Pull Requests, and thanks for taking the time to contribute to SuperCollider! After a Pull Request is published, it will be reviewed by at least one other developer and, if necessary, changes will be requested before it can be approved. You will receive notifications from GitHub whenever the discussion about your Pull Requests is updated (comments, requests for changes, approval).
 Finally, the Pull Request will be accepted and your changes included in SuperCollider. Thanks!
 
 
-### Previewing your changes
+## Previewing your changes
 
 To see your changes in ScIDE's Help Browser, or any web browser, .schelp files need to be converted to HTML. Sclang, which does this conversion, needs to check with the class library, and all other help files, for broken links and undocumented methods.
 
