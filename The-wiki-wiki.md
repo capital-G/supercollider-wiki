@@ -115,7 +115,7 @@ Note two newlines are still kept after the previous section.
 
 Directory pages allow a multiplicity of wikis to be organized into a few broad categories. This also helps keep the sidebar slim and useable.
 
-There are currently four categories: [[Contributing]], [[Development resources]], [[User resources]], and [[Community]]. This may change in the future but the goal is to keep the number of directory pages low.
+There are currently four categories: [Contributing](Contributing-directory), [Development resources](Development-resources-directory), [User resources](User-resources-directory), and [Community](Community-directory). This may change in the future but the goal is to keep the number of directory pages low.
 
 It’s OK to link to the same wiki from multiple Directory pages. For example “Reviewer Instructions” may be useful under both the “Development Resources” Directory (devs are typically the Reviewers) and the “Contributing” Directory (Contributors may want to know how the review process for their PR).
 
