@@ -1,10 +1,28 @@
-The Server implementation (Server.sc) has become bloated over time [2], but has now been refactored. There are still some possible improvements, which we keep track of here.
+The Server implementation (`Server.sc`) has become bloated over time [2], but has now been refactored. There are still some possible improvements, which we keep track of here.
 
 _(please feel free to edit!)_
 
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+#### Table of contents
+
+   * [General Remarks/Observations:](#general-remarksobservations)
+   * [Ideas/Details:](#ideasdetails)
+      + [NetAddr and Server:](#netaddr-and-server)
+      + [GUI](#gui)
+      + [Server State](#server-state)
+      + [State Update](#state-update)
+      + [Additional Functionality](#additional-functionality)
+      + [What a new implementation should allow for](#what-a-new-implementation-should-allow-for)
+- [Structure:](#structure)
+- [Notes:](#notes)
+
+<!-- TOC end -->
+
 ### General Remarks/Observations:
+
 - One of the main problems seems to be the handling of ids, in particular those which have some kind of special status (e.g. "persistant ones").
 - in terms of efficiency and design, we have a trade off between has-a and is-a
+
 
 ### Ideas/Details:
 
@@ -30,9 +48,12 @@ And where does it belong?
 
 
 #### GUI
+
 - platform dependent GUI instance variables need to be abstracted away (emacsbuf)
 
+
 #### Server State
+
 - allocators may need to go into one class, but the disadvantage is that this then needs delegation. Better keep them in the server.
 - perhaps all state that is queried could go in a dictionary
 - server options should be cached at boot time in order to have some information about the currently running server.
@@ -41,8 +62,11 @@ And where does it belong?
 - the already refactored Volume is good, but quite complicated. If it is really that hard, it should be made a general technique not restricted to this class.
 - bug: server calls volume.free, but Volume doesn't implement free (#https://github.com/supercollider/supercollider/issues/2551).
 
+
 #### State Update
+
 - different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.
+
 
 #### Additional Functionality
 
@@ -50,7 +74,9 @@ And where does it belong?
 - make explicit where things like record and volume nodes should be placed, and check if they can also be kept running on cmd-period.
 - Possibly, it would make sense to introduce a second default group (e.g. "postprocessing group") that can contain everything that can be kept alive with no harm.
 
+
 #### What a new implementation should allow for
+
 - cleanly configure cmd-period behaviour, so that nodes may be kept alive (e.g. recording) while still being able to reset the node id allocator.
 - allocators should be able to manage node recovery
 
@@ -71,9 +97,10 @@ ServerState could be a subclass of a general observer class that collects the st
 
 
 ## Notes:
+
 [1] Comparing the efficiency between delegation and an if statement with a simple test, it turns out that the if statement is still 50% more efficient than a delegation to a second method (as it is now), and without he if statement it is only 55 % more efficient. (this is just a basic timing benchmark). The tests are about the same for instance methods instead of class methods.
 
-````
+```` supercollider
 Test {
 
 	*redirect3 { |x, y, z|
@@ -89,7 +116,6 @@ Test {
 		^x + y + z
 	}
 
-
 	*redirect1 { |x|
 		this.prRedirect1(x)
 	}
@@ -102,11 +128,9 @@ Test {
 		if(x.isNil) { ^x + 1 };
 		^x + 1
 	}
-
 }
 
 /*
-
 bench { 100.do { Test.redirect3(1, 1, 1) } };
 bench { 100.do { Test.condition3(1, 1, 1) } }; // about 50 % more efficient.
 bench { 100.do { Test.prRedirect3(1, 1, 1) } };
@@ -114,12 +138,12 @@ bench { 100.do { Test.prRedirect3(1, 1, 1) } };
 bench { 100.do { Test.redirect1(1) } };
 bench { 100.do { Test.condition1(1) } }; // about 50 % more efficient.
 bench { 100.do { Test.prRedirect1(1, 1, 1) } }; // about 50 % more efficient.
-
 */
 ````
 
 [2] Here is just the code that has the instance variables, to add comments about what may be handled where:
-````
+
+```` supercollider
 Server {
 	classvar <>local, <>internal, <default, <>named, <>set, <>program, <>sync_s = true;
 
@@ -156,17 +180,17 @@ Server {
 
 [3] We can't make a branch in a call with a primitive:
 
-````
+```` supercollider
 // this won't compile
 sendMsg { arg ... args;
-		bundle !? { bundle = bundle.add(args) };
-		_NetAddr_SendMsg
-		^this.primitiveFailed;
-	}
+	bundle !? { bundle = bundle.add(args) };
+	_NetAddr_SendMsg
+	^this.primitiveFailed;
+}
 ````
 So it has to be done in this method (not sure how is best):
 
-````
+```` c++
 static int prNetAddr_SendMsg(VMGlobals *g, int numArgsPushed)
 {
 	PyrSlot* netAddrSlot = g->sp - numArgsPushed + 1;
