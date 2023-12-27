@@ -1,6 +1,21 @@
-*This is a draft of a new comprehensive guide to recording in SC. Unfortunately the most important part, non-real-time recording, is currently incomplete.*
+*This is a draft of a new comprehensive guide to recording in SC. Unfortunately the most important part, non-real-time recording, is currently incomplete. - @mossheim*
 
-## Recording with `Server:record` ##
+
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+#### Table of contents
+
+- [Recording with `Server:record` ##](#recording-with-serverrecord-)
+   * [More options ###](#more-options-)
+   * [Exporting MP3 files ###](#exporting-mp3-files-)
+   * [`Server:record` and compositions ###](#serverrecord-and-compositions-)
+   * [Exporting stems ###](#exporting-stems-)
+   * [Problems with Recorder ###](#problems-with-recorder-)
+- [Non-real time recording ##](#non-real-time-recording-)
+
+<!-- TOC end -->
+
+
+## Recording with `Server:record`
 
 After making sure the server is booted, this is how you record in SuperCollider:
 
@@ -12,7 +27,8 @@ If you're using SCIDE, it's even easier — if you open the "Server" menu on the
 
 **Warning:** The output file will be corrupted if the server quits or crashes before you call stopRecording!
 
-### More options ###
+
+### More options
 
 Familiarize yourself with some of the arguments that `Server.default.record` lets you specify:
 
@@ -26,19 +42,22 @@ Familiarize yourself with some of the arguments that `Server.default.record` let
 
 The timer for the "duration" argument waits for paused recordings. "duration" the length of the output file, not the real time spent between the beginning and end of recording.
 
-### Exporting MP3 files ###
+
+### Exporting MP3 files
 
 SuperCollider doesn't export MP3 files.
 
 This is very easy to work around. Just export to WAV (say) and convert that WAV to MP3 using an external tool such as LAME. If that tool is accessible from the command line, you can use ```.unixCmd``` to perform conversion automatically after recording.
 
-### `Server:record` and compositions ###
+
+### `Server:record` and compositions
 
 `Server:record` is very basic. It takes the real-time output of SuperCollider (or a specific Bus) and writes it to disk. It doesn't make any assumptions or interactions with your composition, other than that it produces audio output. The exact way to incorporate recording functionality into your work is up to you.
 
 If you're designing a real-time performance interface, it's straightforward: add buttons or MIDI/OSC responders that call `Server.default.record` and `Server.default.stopRecording`. For a nicer interface, you can figure out whether the server is currently recording by calling `Server.default.isRecording` (returns a Boolean), and you can use `Server.default.recorder.duration` to determine the number of seconds elapsed in the recording.
 
 Other users might have works that are relatively fixed-media (nondeterministic SynthDefs and generative sequencing notwithstanding). Recording your piece is simply a matter of calling `Server.default.record` and `Server.default.stopRecording` at the right times, which fits nicely into the common paradigm of using a `Routine` to sequence a composition. A nontrivial example is appropriate here, so here's short drone piece that plays a Synth for 10 seconds:
+
 ```supercollider
     (
     Routine.run {
@@ -72,7 +91,9 @@ Other users might have works that are relatively fixed-media (nondeterministic S
     };
     )
 ```
+
 In the above example, we knew exactly the amount of time before it was safe to stop recording without cutting off the audio. But with effects like reverb and echo, it may not be easy to compute when the tails end. You can just take a guess and trim trailing silence later, or you can do something fancier. This example ends recording the next time all inputs are silent:
+
 ```supercollider
     (
     // This SynthDef has no output, only stereo input.
@@ -97,9 +118,11 @@ In the above example, we knew exactly the amount of time before it was safe to s
     });
     )
 ```
+
 You can get even fancier than this and add a fade out, but we'll leave that up to you. The takeaway here is that since recording can be controlled programmatically, the possibilities are endless.
 
-### Exporting stems ###
+
+### Exporting stems
 
 SuperCollider isn't specifically designed for audio post-production. There are tools for this written by third parties, but many prefer to use familiar software like a traditional DAW. To accomplish this, you will want to record in multitrack.
 
@@ -107,7 +130,8 @@ The first step to stem export is to set up your composition so that it actually 
 
 [...]
 
-### Problems with Recorder ###
+
+### Problems with Recorder
 
 Real-time recording with Recorder should be satisfactory for a lot of SuperCollider users, but it's not a perfect solution for all.
 
@@ -119,7 +143,8 @@ It's not only xruns that you need to worry about — sometimes sclang experience
 
 "Don't write music that experiences timing problems" is an ostensible workaround. But if you're not writing music intended to be performed in real time, then this becomes a stupid and arbitrary restriction.
 
-## Non-real time recording ##
+
+## Non-real time recording
 
 The solution to both of these problems is non-real time (NRT) mode. When scsynth/supernova runs in NRT mode, it no longer connects to audio drivers. Like an ordinary command-line program, it simply produces an output audio file. It renders audio as fast as possible, and it doesn't suffer from xruns.
 
