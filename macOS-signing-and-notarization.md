@@ -1,6 +1,16 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+#### Table of contents
+
+- [Signing and notarizing a single plugin file](#signing-and-notarizing-a-single-plugin-file)
+- [Signing and notarizing SuperCollider](#signing-and-notarizing-supercollider)
+- [Entitlement files](#entitlement-files)
+
+<!-- TOC end -->
+
 First, you’ll need a signing cert. With Apple binaries, this means using a Developer account to create a Developer ID, and creating a signing cert with Keychain.
 
-## SIGNING AND NOTARIZING A SINGLE PLUGIN FILE
+
+## Signing and notarizing a single plugin file
 
 To sign a single binary for a Plugin.scx file, you just need to sign the scx file itself, using the entitlements that come in the SuperCollider.app bundle. From Terminal, move into the SuperCollider directory (that contains SuperCollider.app), and use the command line below against your .scx binary. The last argument in the command is the path to your .scx file, and you’ll need to replace the signing identity with what you have stored in your keychain:
 
@@ -11,7 +21,7 @@ As an example, this would sign a plugin called MyUgen.scx on my Desktop
 `codesign --deep --force --verify --verbose --timestamp --entitlements SuperCollider.app/Contents/entitlements.plist --sign "Developer ID Application: Joshua Parmenter" --options runtime ~/Desktop/MyUgen.scx`
 
 
-## SIGNING AND NOTARIZING SUPERCOLLIDER
+## Signing and notarizing SuperCollider
 
 The process for signing and notarizing SuperCollider is complicated by our usage of Qt binaries, interprocess communications and binary plugins. On a given SuperCollider binary .app bundle, the following commands are used to import entitlements, sign everything (ORDER MATTERS!), zip up the .app bundle, upload to Apple for notarization, stapling the notarization upon success, then finally rezipping the package and singing the .zip file at the end so the download won’t freak out your computer.
 
