@@ -1701,24 +1701,7 @@ Josh to post notes about Mac OS notarization.
 2019-10-27
 ==========
 
-SUBJECT: sc-dev Meeting Minutes
-Hey all,
-
-Thanks to everyone who attended the sc-dev meeting! Minutes of the meeting are below. You can find archived minutes from all our meetings on our GitHub wiki page: https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes
-
-The next meeting is planned for the weekend of WEEKEND_DATES. A meeting time poll will be sent out early in the week. If you'd like to attend but our usual meeting times aren't good for you, respond to this thread or email me privately and we'll try to work something out! We are always interested in getting new people involved in the development community.
-
-Regards,
-
-Josh
-
 3.10.4 Release board: https://github.com/supercollider/supercollider/projects/17
-
-
-
-sc-dev Meeting 10-27-2019 Minutes:
-
-⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
 
 Attending - Patrick, Josh, Marcin, James S, Iannis
 
