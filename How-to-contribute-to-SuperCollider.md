@@ -14,7 +14,7 @@ SC grows through contributions large and small. Many, or even most, contribution
 - 🏷️ Triaging and [labeling Issues](Labels-and-milestones-for-PRs-and-Issues)
 - 🏗️ Creating (or responding to) a [Request for Comment](https://github.com/supercollider/rfcs) (RFC) to propose something BIG that needs research, feedback, and consensus to move forward
 - 🌐 [Translating the IDE](Translating-the-ide) into a language you know
-- 💬 Helping and sharing with other users on the various [community forums](wiki#join-the-community) 
+- 💬 Helping and sharing with other users on the various [community forums](https://github.com/supercollider/supercollider/wiki#join-the-community) 
 
 You'll find information on all of these topics and more in the [Contributing](contributing-directory) directory. Once you're familiar with these processes, you may have more want more in-depth information about the project structure, conventions, specifications, etc., which you'll find in the [Development resources](Development-resources-directory) directory.
 
