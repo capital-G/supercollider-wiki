@@ -16,7 +16,6 @@ A directory of development resources.
 
 ### Project structure, maintenance, planning
 
-- [[Development info: DEVELOPING.md]]
 - [[Project Structure]]
 - [[Continuous integration: GitHub Actions]]
 - [[Continuous integration: Travis and Appveyor]]
