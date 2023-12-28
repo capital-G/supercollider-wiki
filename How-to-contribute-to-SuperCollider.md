@@ -7,10 +7,10 @@ If you’re new to this project, you might be wondering ...
 
 SC grows through contributions large and small. Many, or even most, contributions don’t involve writing code. Here are some of the many ways to contribute:
 
-- 🚩 Creating an [Issue](Reporting-bugs,-issues,-feature-requests#issues) (reporting a Bug, requesting a Feature)
+- 🚩 [Creating an Issue](Reporting-bugs,-issues,-feature-requests#issues) (reporting a Bug, requesting a Feature)
 - ✏️ [Updating or correcting documentation](Contributing-Help-files,-Tutorials-and-other-SCDocs#contributing-documentation-changes)
-- ✅ Fixing an open Issue and submitting a [Pull Request](Creating-pull-requests)
-- 🔍 [Reviewing](Development-resources-directory#reviewing) Issues and Pull Requests
+- ✅ Fixing an open Issue and [submitting a Pull Request](Creating-pull-requests)
+- 🔍 [Reviewing Issues](Development-resources-directory#reviewing) and Pull Requests
 - 🏷️ Triaging and [labeling Issues](Labels-and-milestones-for-PRs-and-Issues)
 - 🏗️ Creating (or responding to) a [Request for Comment](https://github.com/supercollider/rfcs) (RFC) to propose something BIG that needs research, feedback, and consensus to move forward
 - 🌐 [Translating the IDE](Translating-the-ide) into a language you know
