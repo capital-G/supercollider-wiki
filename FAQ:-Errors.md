@@ -1,16 +1,28 @@
-- [ERROR: Primitive 'BasicNew' failed. Index not an Integer](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#error-primitive-basicnew-failed-index-not-an-integer)
-- [Language (client) issues](https://github.com/supercollider/supercollider/wiki/Errors-FAQ/_edit#language-client-issues)
-  - [Calling gui primitives from a SystemClock routine](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#calling-gui-primitives-from-a-systemclock-routine)
-  - [Binary operations order](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#binary-operations-order)
-- [SynthDef issues](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#synthdef-issues)
-  - ["If" statements inside a SynthDef](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#if-statements-inside-a-synthdef)
-  - [ERROR: SynthDef not found](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#error-synthdef-not-found)
-  - [FAILURE /s\_new alloc failed, increase server's memory allocation](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#failure-s_new-alloc-failed-increase-servers-memory-allocation)
-  - [Array arguments](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#array-arguments)
-- [Server issues](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#server-issues)
-  - [How to trigger a function from the server](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#how-to-trigger-a-function-from-the-server)
-  - [Exception in World_OpenUDP: unable to bind udp socket](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#exception-in-world_openudp-unable-to-bind-udp-socket)
-- [Other issues](https://github.com/supercollider/supercollider/wiki/Errors-FAQ#other-issues)
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+#### Table of contents
+
+- [ERROR: Primitive 'BasicNew' failed. Index not an Integer](#error-primitive-basicnew-failed-index-not-an-integer)
+- [Language (client) issues](#language-client-issues)
+   * [Calling gui primitives from a SystemClock routine](#calling-gui-primitives-from-a-systemclock-routine)
+   * [Binary operations order](#binary-operations-order)
+- [SynthDef Issues](#synthdef-issues)
+   * ["If" statements inside a SynthDef](#if-statements-inside-a-synthdef)
+      + [What is a Boolean in the server?](#what-is-a-boolean-in-the-server)
+      + [Why is x \> 0 "non-Boolean" in the "test"?](#why-is-x--0-non-boolean-in-the-test)
+      + [If you can't branch, what good is a comparison in the server?](#if-you-cant-branch-what-good-is-a-comparison-in-the-server)
+      + [Logical operators: And, Or, Not, Xor](#logical-operators-and-or-not-xor)
+   * [`ERROR: SynthDef not found`](#error-synthdef-not-found)
+   * [`FAILURE /s_new alloc failed, increase server's memory allocation`](#failure-s_new-alloc-failed-increase-servers-memory-allocation)
+   * [Array arguments](#array-arguments)
+      + [Why does it have to be a literal array?](#why-does-it-have-to-be-a-literal-array)
+- [Server issues](#server-issues)
+   * [How to trigger a function from the server](#how-to-trigger-a-function-from-the-server)
+         - [Helpfile references:](#helpfile-references)
+   * [Exception in World_OpenUDP: unable to bind udp socket](#exception-in-world_openudp-unable-to-bind-udp-socket)
+- [Other issues](#other-issues)
+   * [Error while loading shared libraries: libsclang.so: cannot open shared object file](#error-while-loading-shared-libraries-libsclangso-cannot-open-shared-object-file)
+
+<!-- TOC end -->
 
 
 # ERROR: Primitive 'BasicNew' failed. Index not an Integer
@@ -20,7 +32,7 @@
 It's quite likely that the error means you're trying to dynamically change the number of channels inside a SynthDef, which is something you can't do - SynthDefs need to have a fixed layout.  
 For example, this is a simple attempt to make pink noise over a variable number of channels:
 
-```js
+```supercollider
 (
 SynthDef(\thiswillfail, { |out=0, numChannels=2|
     Out.ar(out, {PinkNoise.ar}.dup(numChannels))
@@ -31,13 +43,14 @@ SynthDef(\thiswillfail, { |out=0, numChannels=2|
 It fails because we're trying to make the number of pink noise generators involved, actually changeable.  
 You can't do that - when the SynthDef is compiled, the language needs to know **exactly** how many UGens will be involved and how they are connected. This is because a SynthDef represents an efficient fixed-layout synth that the server can instantiate.
 
+
 ### So what to do instead?
 
 Think of SynthDefs as tiny fixed reusable components, and design your logic to reuse them in whatever combinations are needed.
 
 To go back to the simple example above (the pink noise generator), you could simply do:
 
-```js
+```supercollider
 (
 SynthDef(\simplepink, { |out=0|
     Out.ar(out, PinkNoise.ar)
@@ -48,7 +61,7 @@ SynthDef(\simplepink, { |out=0|
 and create one `\simplepink` synth for each channel. Or you could create one SynthDef for each number of channels you expect to use.  
 For example if you might use between 1 and 5 channels:
 
-```js
+```supercollider
 (
 (1..5).do{ |n|
 SynthDef("simplepink_%".format(n).asSymbol, { |out=0|
@@ -63,11 +76,11 @@ Then you'd need to invoke `\simplepink_4` or whatever, as appropriate.
 
 # Language (client) issues
 
-### Calling gui primitives from a SystemClock routine
+## Calling gui primitives from a SystemClock routine
 
 When calling gui primitives from a SystemClock routine will cause an error:
 
-```js
+```supercollider
 SystemClock.sched(0,{ Window.new.front })
 ```
 
@@ -78,23 +91,23 @@ ERROR: Primitive '_QWindow_AvailableGeometry' failed.
 
 To avoid this issue use the AppClock:
 
-```js
+```supercollider
 AppClock.sched(0,{ Window.new.front })
 ```
 
 or the defer method:
 
-```js
+```supercollider
 SystemClock.sched(0,{ { Window.new.front }.defer })
 ```
 
 
-### Binary operations order
+## Binary operations order
 
 Because of the way SuperCollider evaluates expressions, the usual order of execution of mathematical expressions is not respected.  
 In SuperCollider everything is an object, and evaluation happens from left to right, so:
 
-```js
+```supercollider
 5 + 3 * 2
 ```
 
@@ -102,24 +115,25 @@ will evaluate as (5 + 3 ) \* 2.
 
 This happens because the expression becomes:
 
-```js
+```supercollider
 5.performBinaryOpOnSimpleNumber('+',3).performBinaryOpOnSimpleNumber('*',2) 
 ```
 
 Therefore, in algebraic expressions parenthesis must be used when left to right orders is not what is desired:
 
-```js
+```supercollider
 5 + (3 * 2)
 ```
 
 
 # SynthDef Issues
 
+
 ## "If" statements inside a SynthDef
 
 It's only a matter of time before a user tries to write something like this in a `SynthDef`:
 
-```js
+```supercollider
 SynthDef(\kablooie, { |x = 0|
     var signal;
     if(x > 0) {
@@ -136,6 +150,7 @@ SynthDef(\kablooie, { |x = 0|
 
 This should be the first clue that Boolean logic in the server is a very different animal from the so-called "normal" use of conditionals on the client side (in the language).
 
+
 ### What is a Boolean in the server?
 
 In fact, there is no such thing. The server handles floating-point numbers. It doesn't have *true* or *false* entities.
@@ -145,19 +160,20 @@ Since everything in the server is a number, the result of the comparison must al
 - `True` is represented by 1.0
 - `False` is represented by 0.0
 
+
 ### Why is x \> 0 "non-Boolean" in the "test"?
 
 This goes back to the general issue of handling operators in the server.  
 Math operators in a SynthDef are not calculations to do *right now*.  
 They *describe* calculations that will be done *in the future*, many thousands of times.
 
-```js
+```supercollider
 var x = 1;
 x > 0;
 // -> true
 ```
 
-```js
+```supercollider
 SynthDef(\kablooie, { |x = 0|
     "x: ".post; x.postln;
     "(x > 0): ".post; (x > 0).postln;
@@ -175,12 +191,13 @@ determine, once and for all, whether *x \> 0* or not. *x* may be *\> 0* now and 
 
 Going back to this:
 
-```js
+```supercollider
 if (aBinaryOpUGen) { ... } { ... };
 ```
 
 To do this, the language must know which function (true or false) to execute. But there is no way to know which one the BinaryOpUGen will be.  
 So, SuperCollider throws an error.
+
 
 ### If you can't branch, what good is a comparison in the server?
 
@@ -189,14 +206,14 @@ Comparisons have a lot of uses, actually.
 - **Choosing one of two signals:** This is the closest we can get to *if-then-else* in the server. Both *then* and *else* must be running continuously. That's a requirement of how the server works: the number and arrangement of unit generators within a single Synth cannot change. Instead, you can choose *which of those signals makes it downstream*. One will be used and the other ignored.  
 Since true is 1 and false is 0, you can use a conditional to index into an array using Select.
 
-```js
+```supercollider
 Select.kr(aKrSignal > anotherKrSignal, [false_signal, true_signal]);
 ```
 
 - **Generating triggers:** A trigger occurs whenever a signal is \<= 0, and then becomes \> 0. Extending this to comparisons, it means that *a trigger occurs when a comparison is false for a while, and then becomes true*. Comparing a signal to a threshold may then be used anywhere that a trigger is valid.  
 For a simple example, take the case of sending a message to the language when the microphone input's amplitude crosses a threshold.
 
-```js
+```supercollider
 var mic = In.ar(8, 1), amplitude = Amplitude.kr(mic);
 SendTrig.kr(amplitude > 0.2, 0, amplitude);
 ```
@@ -206,7 +223,7 @@ SendTrig.kr(amplitude > 0.2, 0, amplitude);
 
 For a simple case, let's refine the mic amplitude example by suppressing triggers that occur within 1/4 second after the previous.
 
-```js
+```supercollider
 var mic = In.ar(8, 1),
     amplitude = Amplitude.kr(mic),
     trig = amplitude > 0.2,
@@ -215,6 +232,7 @@ var mic = In.ar(8, 1),
 
 SendTrig.kr(filteredTrig, 0, amplitude);
 ```
+
 
 ### Logical operators: And, Or, Not, Xor
 
@@ -233,7 +251,7 @@ If you're certain the logical expression will only ever be 0 or 1 exactly, you c
 - **Xor:** Exclusive-or is true if one or the other condition is true, but not both. We can add the two conditions and compare it to 1. The syntax is a little bit tricky because `==` doesn't turn into a BinaryOpUGen automatically.  
 We have to create the BinaryOpUGen by hand.
 
-```js
+```supercollider
 BinaryOpUGen('==', (x > 0) + (y > 0), 1)
 ```
 
@@ -244,7 +262,7 @@ Sending a SynthDef to the server requires a little bit of time, which means that
 
 First way: put the SynthDefs and the main code in a Task and put some kind of `.wait` time between them.
 
-```js
+```supercollider
 Task({
     // put your SynthDefs here
     0.2.wait;
@@ -254,7 +272,7 @@ Task({
 
 Second way: use `.sync`:
 
-```js
+```supercollider
 Routine({
     // put your SynthDefs here
     s.sync; // assuming that 's' is the server
@@ -262,7 +280,7 @@ Routine({
 }).play
 ```
 
-## `FAILURE /s\_new alloc failed, increase server's memory allocation`
+## `FAILURE /s_new alloc failed, increase server's memory allocation`
 
 **What it means:** While initializing the unit generators in a new Synth node, the server ran out of real-time memory.
 
@@ -270,7 +288,7 @@ Routine({
 `ServerOptions` object associated with the server. It is a server startup option; you must quit the server and reboot it, or the new
 setting will not take effect.
 
-```js
+```supercollider
 myServer.quit;
 myServer.options.memSize = 65536;  // e.g., could be different for you
 myServer.boot;
@@ -292,11 +310,12 @@ This goes away quickly when using lots of synths with multiple channels of delay
 `BufDelayN`, `BufDelayL`, `BufDelayC`, `BufCombL` etc.  
 `Buffer.alloc()` does not use the real-time pool and is not subject to the memSize limitation. This approach will not help with FFT units.
 
+
 ## Array arguments
 
 Sometimes, you need to send an array to a series of Control inputs in a SynthDef (often called "_array arguments_").
 
-```js
+```supercollider
 Synth(\xyz, [freqs: [300, 400, 500]]);
 ```
 
@@ -305,7 +324,7 @@ There are two primary ways to do this:
 - Supply a literal array -- `\#[1, 2, 3]` -- as the default for the argument name in the function.  
 This is discussed in [SynthDef's help file](https://doc.sccode.org/Classes/SynthDef.html).
 
-```js
+```supercollider
 SynthDef(\xyz, { |freqs = #[1, 2, 3]|
     // ...
 })
@@ -314,12 +333,13 @@ SynthDef(\xyz, { |freqs = #[1, 2, 3]|
 - Or, use `NamedControl`.  
 This is the only way to do it if you want to construct the array's size dynamically, or based on a variable. See [NamedControl help](https://doc.sccode.org/Classes/NamedControl.html).
 
-```js
+```supercollider
 SynthDef(\xyz, {
     var freqs = NamedControl.kr(\freqs, #[1, 2, 3]);
     // ...
 });
 ```
+
 
 ### Why does it have to be a literal array?
 
@@ -332,14 +352,14 @@ The reason comes from the process of building a SynthDef:
 
 To do steps \#1 and \#2, the SynthDef builder has to know the size of an array argument *before* running the function. That's possible only if it's a literal array: `\#[1, 2, 3, 4, 5]`. Any other array notation creates the array *while running the function* (step \#3). But then it's too late -- the SynthDef builder already created a non-array control channel for it!
 
-```js
+```supercollider
 SynthDef(\notArray, { |a = (1..5)|
     a.debug("a is");
 });
 ```
 `a is: an OutputProxy`
 
-```js
+```supercollider
 SynthDef(\array, { |a = #[1, 2, 3, 4, 5]|
    a.debug("a is");
 });
@@ -366,7 +386,7 @@ We'll use SendReply here because of its greater flexibility.
 
 Within the language, you also need an object to receive the message and act on it. Usually this is `OSCresponderNode` or `OSCpathResponder`.  In this example, `OSCpathResponder` filters messages not just on the name `/bleep` but also on the synth's ID. This way, you could have multiple triggering synths, with a different responder and a different action per synth.
 
-```js
+```supercollider
 (
 a = {
     var trig = Dust.kr(8),
@@ -384,17 +404,19 @@ o = OSCpathResponder(s.addr, ['/bleep', a.nodeID], { |time, thisResponder, msg|
 a.free; o.remove;
 ```
 
+
 #### Helpfile references:
 
 - [`SendTrig`](https://doc.sccode.org/Classes/SendTrig.html), [`SendReply`](https://doc.sccode.org/Classes/SendReply.html)
 - [`OSCresponderNode`](https://doc.sccode.org/Classes/OSCresponderNode.html), [`OSCpathResponder`](https://doc.sccode.org/Classes/OSCpathResponder.html), [`OSCresponder`](https://doc.sccode.org/Classes/OSCresponder.html), [OSC communication](https://doc.sccode.org/Guides/OSC_communication.html)
 
 
-## Exception in World\_OpenUDP: unable to bind udp socket
+## Exception in World_OpenUDP: unable to bind udp socket
 
 Sometime when booting the server one gets a message: ` Exception in World_OpenUDP: unable to bind udp socket `.
 
 This is usually caused by an instance of scsynth that as hanged but has not released the osc port, perhaps because it SuperCollider crashed.  To fix this, just hit the *"k"* button in the server window to kill all scsynth processes, and then boot again.
+
 
 # Other issues
 
