@@ -40,7 +40,7 @@ Guidelines are also available for other parts of the project:
       + [Multi-line arrays](#multi-line-arrays)
       + [*Rule:* Place each element of a multi-line array on its own line.](#rule-place-each-element-of-a-multi-line-array-on-its-own-line)
    * [Miscellaneous](#miscellaneous)
-      + [Trailing closure syntax](#trailing-closure-syntax)
+      + [Control structures, trailing closure syntax](#control-structures-trailing-closure-syntax)
       + [*Recommendation:* Use trailing closure syntax whenever possible.](#recommendation-use-trailing-closure-syntax-whenever-possible)
       + [Indentation](#indentation-1)
 - [Other files](#other-files)
@@ -60,17 +60,20 @@ When a bug or feature is critical or hard to solve, it's OK to sometimes fix the
 
 ## Whitespace
 
+
 ### End-of-file newline
 
 #### *Rule:* Use exactly one newline at the end of a file.
 
 Git considers a file without a terminating newline to be malformed, and will complain when you commit a change without one! You can set your editor to fix this behavior.
 
+
 ### Trailing whitespace
 
 #### *Rule:* Don't end lines with whitespace characters.
 
 This keeps diffs clean as it prevents accidental whitespace from being committed. Other users whose editors automatically strip trailing whitespace will be forced to either redo your mistake or commit unnecessary changes. If your editor supports automatically removing trailing whitespace, consider turning that behavior on.
+
 
 ### Spaces in expressions and statements
 
@@ -267,7 +270,8 @@ x = [
 
 ## Miscellaneous
 
-### Trailing closure syntax
+
+### Control structures, trailing closure syntax
 
 #### *Recommendation:* Use trailing closure syntax whenever possible.
 
@@ -282,9 +286,11 @@ if(c) { "true".postln } { "false".postln };
 
 ```
 
+
 # Other files
 
 These rules apply to source files in all other formats (CMake, Python, Bash, Batch, etc.), unless otherwise specified.
+
 
 ### Indentation
 
