@@ -18,7 +18,7 @@ SC grows through contributions large and small. Many, or even most, contribution
 
 [*Draft Note: put in-line links in the above list or is it sufficient to link the Contributing directory following*]
 
-You'll find information on all of these topics and more in the [Contributing](contributing-directory) directory. Once you're familiar with these processes, you may have more want more in-depth information about the project structure, conventions, specifications, etc., which you'll find in the [Development resources](Development-resources-directory directory.
+You'll find information on all of these topics and more in the [Contributing](contributing-directory) directory. Once you're familiar with these processes, you may have more want more in-depth information about the project structure, conventions, specifications, etc., which you'll find in the [Development resources](Development-resources-directory) directory.
 
 If you’re new to contributing to open source projects, the [Guide to idiomatic contributing](https://github.com/jonschlinkert/idiomatic-contributing) has a lot of useful information.
 
