@@ -1,4 +1,4 @@
-<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+<!-- TOC start (generated with https://derlin.github.io/bitdowntoc/) -->
 #### Table of contents
 
 - [ERROR: Primitive 'BasicNew' failed. Index not an Integer](#error-primitive-basicnew-failed-index-not-an-integer)
