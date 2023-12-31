@@ -25,7 +25,7 @@ The purpose of the Issue tracker is not just to report that there's a problem wi
     - Search the [Open Issues](https://github.com/supercollider/supercollider/issues). 
     - If an issue for your problem already exists, read through the discussion thread to understand the current status, and consider joining the discussion, saying you can reproduce it on your system, plus any additional info that isn't already known in the issue thread.
 3. **Ask the community** 
-    - If you feel that you need some help investigating the issue, reach out to the community. There may be discussion around the issue or requested new feature on the [scsyngh.org](http://scsynth.org/) forum or discord. That can help you add useful context for making your submission comprehensive.
+    - If you feel that you need some help investigating the issue, reach out to the community. There may be discussion around the issue or requested new feature on the [scsynth.org](http://scsynth.org/) forum or discord. That can help you add useful context for making your submission comprehensive.
 
 
 ## Creating an Issue
