@@ -24,7 +24,7 @@ jobs:
           cache-dependency-path: |
             ./requirements.txt
       - run: pip3 install -r requirements.txt
-      - run: make -C docs html
+      - run: make html
         name: "Build sphinx documentation"
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
