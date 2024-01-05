@@ -1,0 +1,41 @@
+# 2017-01-07
+
+
+
+Development progress:
+
+- Tom Murphy: started PlayBuf 2017 proposal, currently reading through
+scsynth and supernova code.
+- Brian Heim: generally exploring the code base, especially sclang;
+submitted miscellaneous help file fixes; found a mysterious bug possibly
+related to GC.
+- Nathan Ho: lots of class lib and help miscellany.
+- Scott Carver: connection quark, finishing up Qt menus, discussions
+with the ATK devs about splitting from sc3-plugins.
+
+Everything else we discussed, in roughly chronological order:
+
+- Probably release beta for 3.9 in April.
+- Scott discussed progress on the QtWebKit -> QtWebEngine port, which
+faces difficulties due to the asynchronous nature of QtWebEngine.
+- Code review and better docs for core features that need to work, like
+GC and SynthDef optimization.
+- Mounting complaints that SC is getting slower.
+- Nathan should break the ice on unit tests by writing "pinning" tests
+for UGens to guard against accidental behavior changes.
+- Getting more people involved in Windows development, esp. fixing that
+blasted help file bug.
+- Ron Kuivila had some general comments:
+     - Confusing abstractions in the Patterns system, such as the
+opaqueness of EventStreamPlayers.
+     - Making SCIDE more user-friendly. A larger pool of built-in
+SynthDefs and/or integration with sccode.org.
+     - Embedding sclang in Max, better connectivity to openFrameworks.
+- TCP vs. UDP: create a new quark for automated benchmarking to allow
+easy testing across different systems.
+- Website improvements. Redesign can probably wait until later, but we
+definitely need better resources for users interested in development.
+- Brian volunteered to lead a "documentation drive" to help drum up more
+user participation. Establish guidelines on how to write good help
+files. Don't request minor changes like typo fixes on help PRs, just
+merge and

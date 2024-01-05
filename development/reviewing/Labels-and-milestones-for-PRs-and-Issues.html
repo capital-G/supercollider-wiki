@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Labels and milestones for PRs and Issues &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7d9986eb" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Reviewer instructions" href="Reviewer-instructions.html" />
+    <link rel="prev" title="Reviewing" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="labels-and-milestones-for-prs-and-issues">
+<span id="labels-and-milestones"></span><h1>Labels and milestones for PRs and Issues<a class="headerlink" href="#labels-and-milestones-for-prs-and-issues" title="Link to this heading">¶</a></h1>
+<p>Issues and Pull Requests are categorized using a system of <a class="reference external" href="https://github.com/supercollider/supercollider/labels?page=1&amp;amp;sort=name-asc">labels</a>, and the release version that they are targeted for resolution or merging is set by their <a class="reference external" href="https://github.com/supercollider/supercollider/milestones">milestones</a>.</p>
+<nav class="contents local" id="content">
+<p class="topic-title">Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#labels" id="id1">Labels</a></p></li>
+<li><p><a class="reference internal" href="#milestones" id="id2">Milestones</a></p></li>
+</ul>
+</nav>
+<section id="labels">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Labels</a><a class="headerlink" href="#labels" title="Link to this heading">¶</a></h2>
+<p>Required labels for both Issues <em>and</em> PRs are <em>either</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">comp:</span> <span class="pre">x</span></code> indicates the affected <strong>comp</strong>onent of SuperCollider, <em>or</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env:</span> <span class="pre">y</span></code> if the issue or PR affects one <strong>env</strong>ironment (SCIDE, Emacs, etc.) in particular</p></li>
+</ul>
+<p>Further required labels for Issues are <em>either</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bug</span></code> indicates … a bug, <em>or</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enhancement</span></code> indicates a feature request</p></li>
+</ul>
+<p>We do not yet have specific rules or practices around other labels, but other common tags are</p>
+<p>bug-related labels</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">crash</span></code> – for any bug related to a crash or hang</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">severe</span></code> – for non-crashing bugs that otherwise have a severe impact</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">performance</span></code> – for any bug related to performance / audio drop-outs / launch time / etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">known</span> <span class="pre">issue</span></code> / <code class="docutils literal notranslate"><span class="pre">wont</span> <span class="pre">fix</span></code> – use this when closing a bug that is not fixed. This is often appropriate for platform issues, Qt issues, or bugs that reflect limitations of SuperCollider itself</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">needs</span> <span class="pre">unit</span> <span class="pre">test</span></code> – use for bugs that are good candidates for a unit test</p></li>
+</ul>
+<p>general labels</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">good</span> <span class="pre">first</span> <span class="pre">issue</span></code> indicates issues that are clear in scope and would be a good place for an interested contributor to start</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os:...</span></code> – for bugs/enhancements that affect only this OS - in general, issues are assumed to affect all OS’s unless this label is present</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">api</span> <span class="pre">change</span></code> – for enhancements that add new API’s, or change existing API behavior (this especially includes <code class="docutils literal notranslate"><span class="pre">sclang</span></code> and ClassLib changes). Anything with this label should end up in the next minor-version or major-version release, and never a patch release. When closing an issue with this label, verify that the change has been documented</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">duplicate</span></code> – use this when closing an issue that is duplicated elsewhere</p></li>
+</ul>
+<p>Feel free to offer suggestions on how we can use existing or new labels more effectively.</p>
+<p>If you see an unlabeled issue or PR, please take the time to add a label!</p>
+</section>
+<section id="milestones">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Milestones</a><a class="headerlink" href="#milestones" title="Link to this heading">¶</a></h2>
+<p>We use four tags to keep track of issues:</p>
+<ul class="simple">
+<li><p>Next patch (example: <code class="docutils literal notranslate"><span class="pre">3.12.1</span></code>)</p></li>
+<li><p>Some patch (example: <code class="docutils literal notranslate"><span class="pre">3.12.x</span></code>)</p></li>
+<li><p>Next minor (example: <code class="docutils literal notranslate"><span class="pre">3.13</span></code>)</p></li>
+<li><p>Some minor (example: <code class="docutils literal notranslate"><span class="pre">3.x</span></code>)</p></li>
+</ul>
+<p>Patch-milestoned Issues will require bug fixes.</p>
+<p>“Next” patch/minor milestones mark those issues that we’ve decided <em>must</em> be addressed before the next respective release. They’re either the most painful bugs or most requested features.</p>
+<p>Minor-milestoned Issues are things like new features and major changes that are better left for a minor release.</p>
+<p>An example:</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">3.13</span></code> is released, we would move all <code class="docutils literal notranslate"><span class="pre">3.12.x</span></code>-milestoned Issues to <code class="docutils literal notranslate"><span class="pre">3.13.x</span></code>, then collectively decide which issues ought to move from <code class="docutils literal notranslate"><span class="pre">3.x</span></code> to <code class="docutils literal notranslate"><span class="pre">3.14</span></code> and from <code class="docutils literal notranslate"><span class="pre">3.13.x</span></code> to <code class="docutils literal notranslate"><span class="pre">3.13.1</span></code>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meetings/index.html">Meetings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">Miscellaneous dev notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project-structure/index.html">Project structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style/index.html">Code style guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../platforms/index.html">Plattforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releasing/index.html">Releasing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Reviewing</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Labels and milestones for PRs and Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reviewer-instructions.html">Reviewer instructions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/index.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Development</a><ul>
+  <li><a href="index.html">Reviewing</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Reviewing</a></li>
+      <li>Next: <a href="Reviewer-instructions.html" title="next chapter">Reviewer instructions</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/development/reviewing/Labels-and-milestones-for-PRs-and-Issues.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

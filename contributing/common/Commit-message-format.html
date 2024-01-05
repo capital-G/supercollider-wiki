@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Commit message format &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7d9986eb" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contributing help files, Tutorials and other SCDocs" href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" />
+    <link rel="prev" title="Common references" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="commit-message-format">
+<h1>Commit message format<a class="headerlink" href="#commit-message-format" title="Link to this heading">¶</a></h1>
+<p>Git commit messages should consists of a one-line title, followed by an empty line, followed by the message body:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>title
+
+first line of body
+second line of body
+third line of body
+</pre></div>
+</div>
+<p>This makes the message most expressive and comprehensible, while also supporting many git functions and graphical clients that treat the first line differently than the rest of the message. A more complete example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docs: Make the example in CONTRIBUTING imperative and concrete
+
+Without this patch applied the example commit message in the CONTRIBUTING
+document is not a concrete example. This is a problem because the
+contributor is left to imagine what the commit message should look like
+based on a description rather than an example. This patch fixes the
+problem by making the example concrete and imperative.
+
+The first line is a real life imperative statement which optionally identifies
+the component being changed. The body describes the behavior without the patch,
+why this is a problem, and how the patch fixes the problem when applied.
+</pre></div>
+</div>
+<section id="title">
+<h2>Title<a class="headerlink" href="#title" title="Link to this heading">¶</a></h2>
+<p>Message titles should have the following form:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>component: sub-component: short description of changes
+</pre></div>
+</div>
+<p>Great titles are short (70 characters or less), so as to fit in one line in most constrained circumstances.</p>
+<p>The short description of changes should clearly and concisely state what the commit does, rather than describing the previous state or new functionality, e.g. fix bug in X instead of there is a bug in X, and add X to settings dialog instead of settings dialog can do X.</p>
+<p>A good example of a title is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sc class library: ClassBrowser: fix search with empty query string
+</pre></div>
+</div>
+<p>Look at previous commits in the repository for inspiration.</p>
+</section>
+<section id="body">
+<h2>Body<a class="headerlink" href="#body" title="Link to this heading">¶</a></h2>
+<p>The message body should describe the changes in details, and explain motivations behind them. The body is not always needed if the changes are few, and the title explains them enough.</p>
+<p>The body should have manual line breaks at around 70 character.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Contributing</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Common references</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Commit message format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html">Contributing help files, Tutorials and other SCDocs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Creating-pull-requests.html">Creating Pull Requests (PRs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="How-to-contribute-to-SuperCollider.html">How to contribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rebasing-a-PR.html">Rebasing a PR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reporting-bugs%2C-issues%2C-feature-requests.html">Reporting bugs, issues and feature requests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workflow/index.html">Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../The-wiki-wiki.html">The wiki-wiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UGen-Quality-Standards.html">UGen-Quality standards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/index.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Contributing</a><ul>
+  <li><a href="index.html">Common references</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Common references</a></li>
+      <li>Next: <a href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" title="next chapter">Contributing help files, Tutorials and other SCDocs</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/contributing/common/Commit-message-format.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

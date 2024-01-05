@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Path searching &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7d9986eb" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PlayBuf 2017" href="PlayBuf-2017.html" />
+    <link rel="prev" title="Adding QtCollider widgets" href="Adding-to-QtCollider-widgets.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="path-searching">
+<h1>Path searching<a class="headerlink" href="#path-searching" title="Link to this heading">¶</a></h1>
+<p>Work in progress document. Please add or correct info as you see fit.</p>
+<p>The following are parts of SuperCollider where path configuration coems into play:</p>
+<ul class="simple">
+<li><p>scide finds the sclang executable.</p></li>
+<li><p>scide finds its own configuration file.</p></li>
+<li><p>scide finds sclang’s configuration file.</p></li>
+<li><p>sclang finds the scsynth/supernova executable.</p></li>
+<li><p>sclang finds its own class library and startup file.</p></li>
+<li><p>SCDoc (part of sclang) finds all help files and a location to render help files.</p></li>
+<li><p>scsynth/supernova finds its own plugins.</p></li>
+</ul>
+<section id="important-directories">
+<h2>Important directories<a class="headerlink" href="#important-directories" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">${CMAKE_INSTALL_PREFIX}</span></code>, set while configuring CMake.</p>
+<ul>
+<li><p>Linux: defaults to <code class="docutils literal notranslate"><span class="pre">/usr/local/</span></code>.</p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\SuperCollider\</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SC_DATA_DIR</span></code>, a compile-time definition set to <code class="docutils literal notranslate"><span class="pre">${CMAKE_INSTALL_PREFIX}/share/SuperCollider</span></code> only on Linux.</p></li>
+<li><p>System App Support Directory</p>
+<ul>
+<li><p>On Linux this contains the SC class library, examples, sounds, HID_support, help source, Extensions and translations. On Mac the directory needs to be created and is a search path for systemwide Extensions.</p></li>
+<li><p>Linux: <code class="docutils literal notranslate"><span class="pre">${CMAKE_INSTALL_PREFIX}/share/SuperCollider</span></code>.</p></li>
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">/Library/Application</span> <span class="pre">Support/SuperCollider/</span></code>.</p></li>
+<li><p>Windows: <code class="docutils literal notranslate"><span class="pre">%PROGRAMDATA%/SuperCollider/</span></code></p></li>
+</ul>
+</li>
+<li><p>System Extension Directory: <code class="docutils literal notranslate"><span class="pre">&lt;System</span> <span class="pre">App</span> <span class="pre">Support</span> <span class="pre">Directory&gt;/Extensions/</span></code></p>
+<ul>
+<li><p>This is the location of quarks and plugins that are installed “system wide” for this SuperCollider install.</p></li>
+</ul>
+</li>
+<li><p>User App Support Directory</p>
+<ul>
+<li><p>Contains: recordings, SynthDef files, downloaded Quarks.</p></li>
+<li><p>Linux: <code class="docutils literal notranslate"><span class="pre">$XDG_DATA_HOME/SuperCollider</span></code>, defaulting to <code class="docutils literal notranslate"><span class="pre">~/.local/share/SuperCollider</span></code>. Compliant with the <a class="reference external" href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a>.</p></li>
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">$XDG_DATA_HOME/SuperCollider</span></code>, or if not present, <code class="docutils literal notranslate"><span class="pre">~/Library/Application</span> <span class="pre">Support/SuperCollider</span></code>.</p></li>
+</ul>
+</li>
+<li><p>User Extension Directory: <code class="docutils literal notranslate"><span class="pre">&lt;User</span> <span class="pre">App</span> <span class="pre">Support</span> <span class="pre">Directory&gt;/Extensions/</span></code>.</p>
+<ul>
+<li><p>A search location for server plugins.</p></li>
+</ul>
+</li>
+<li><p>User Config Directory</p>
+<ul>
+<li><p>Default location for scide and sclang configuration files.</p></li>
+<li><p>Linux: <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME/SuperCollider</span></code>, defaulting to <code class="docutils literal notranslate"><span class="pre">~/.config/SuperCollider</span></code>, compliant with the XDG Base Directory Specification.</p></li>
+<li><p>macOS: <code class="docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME/SuperCollider</span></code>, or if not present, this is the same as the User App Support Directory.</p></li>
+</ul>
+</li>
+<li><p>Resource Directory</p>
+<ul>
+<li><p>On Linux and Windows this is a search location for server plugins. On Mac this is the location of the scsynth executable, SC class library, plugins and assets.</p></li>
+<li><p>Linux: <code class="docutils literal notranslate"><span class="pre">SC_DATA_DIR</span></code>, or if not available, <code class="docutils literal notranslate"><span class="pre">${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}/SuperCollider/</span></code>.</p></li>
+<li><p>Mac: <code class="docutils literal notranslate"><span class="pre">SuperCollider.app/Contents/Resources</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sclang-finds-scsynth-supernova">
+<h2>sclang finds scsynth/supernova<a class="headerlink" href="#sclang-finds-scsynth-supernova" title="Link to this heading">¶</a></h2>
+<p>The shell command to run the server is configurable in sclang, and stored as <code class="docutils literal notranslate"><span class="pre">Server.program</span></code>. The rules are:</p>
+<ul class="simple">
+<li><p><strong>macOS:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;exec</span> <span class="pre">%/scsynth&quot;.format((Platform.resourceDir</span> <span class="pre">+/+</span> <span class="pre">&quot;../Resources&quot;).shellQuote)</span></code></p></li>
+<li><p><strong>Linux:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;exec</span> <span class="pre">scsynth&quot;</span></code></p></li>
+<li><p><strong>Windows:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;scsynth.exe&quot;</span></code></p></li>
+</ul>
+<p>Linux and Windows will only be able to find scsynth if it is in the system PATH.</p>
+</section>
+<section id="sclang-finds-class-library">
+<h2>sclang finds class library<a class="headerlink" href="#sclang-finds-class-library" title="Link to this heading">¶</a></h2>
+<p>When sclang starts up, it searches for files ending in the <code class="docutils literal notranslate"><span class="pre">.sc</span></code> extension. The logic that sclang uses to determine search paths is as follows:</p>
+<ul class="simple">
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">-a</span></code> command line option is NOT provided:</p>
+<ul>
+<li><p>The Resource Directory, the System Extension Directory, and the User Extension Directory are included.</p></li>
+</ul>
+</li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">-l</span></code> command line argument is passed, it is read as a YAML configuration file. This file can contain lists of paths to be included and excluded, in addition to (and potentially overriding) the default paths. Note that all relative paths are relative to the current working directory, not to the location of the YAML file.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">-l</span></code> command line argument is not passed, sclang looks for <code class="docutils literal notranslate"><span class="pre">&lt;User</span> <span class="pre">Config</span> <span class="pre">Directory&gt;/sc_lang_conf.yaml</span></code>. If that exists, then it contain additional paths to include and exclude.</p></li>
+</ul>
+</section>
+<section id="scsynth-finds-plugins">
+<h2>scsynth finds plugins<a class="headerlink" href="#scsynth-finds-plugins" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">initialize_library</span></code> in <code class="docutils literal notranslate"><span class="pre">SC_Lib_Cintf</span></code> determines the following rules:</p>
+<ul class="simple">
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">-U</span></code> command-line parameter is specified, it is searched.</p></li>
+<li><p>Otherwise:</p>
+<ul>
+<li><p>If the compile-time definition <code class="docutils literal notranslate"><span class="pre">SC_PLUGIN_DIR</span></code> is set, it is searched (can be set through CMake using <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">-DSC_PLUGIN_DIR=&lt;path&gt;</span> <span class="pre">..</span></code>).</p>
+<ul>
+<li><p>By default, this is not set except on Linux, where its default value is <code class="docutils literal notranslate"><span class="pre">${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}/SuperCollider/plugins</span></code>.</p></li>
+</ul>
+</li>
+<li><p>The directory <code class="docutils literal notranslate"><span class="pre">&lt;Resource&gt;/plugins/</span></code> is searched.</p></li>
+<li><p>The System Extension Directory is searched.</p></li>
+<li><p>The User Extension Directory is searched.</p></li>
+<li><p>If the environment variable <code class="docutils literal notranslate"><span class="pre">SC_PLUGIN_PATH</span></code> is set, it is searched.</p></li>
+</ul>
+</li>
+</ul>
+<p>The “search” operation looks for all files ending in <code class="docutils literal notranslate"><span class="pre">.scx</span></code> (on Windows or macOS) or <code class="docutils literal notranslate"><span class="pre">.so</span></code> (on Linux).</p>
+</section>
+<section id="scide-finds-sclang">
+<h2>scide finds sclang<a class="headerlink" href="#scide-finds-sclang" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>macOS uses <code class="docutils literal notranslate"><span class="pre">&lt;Resource</span> <span class="pre">Directory&gt;/../MacOS/sclang</span></code>.</p></li>
+<li><p>Linux and Windows simply run <code class="docutils literal notranslate"><span class="pre">sclang</span></code>.</p></li>
+</ul>
+<p>In all cases, the working directory is configured as the “Runtime Directory” in the IDE settings.</p>
+</section>
+<section id="scide-finds-its-own-configuration-file">
+<h2>scide finds its own configuration file<a class="headerlink" href="#scide-finds-its-own-configuration-file" title="Link to this heading">¶</a></h2>
+<p>Hardcoded as <code class="docutils literal notranslate"><span class="pre">&lt;User</span> <span class="pre">Config</span> <span class="pre">Directory&gt;/sc_ide_conf.yaml</span></code>.</p>
+</section>
+<section id="design-goals-for-improving-supercollider-s-search-paths">
+<h2>Design goals for improving SuperCollider’s search paths<a class="headerlink" href="#design-goals-for-improving-supercollider-s-search-paths" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Easier standalone packaging.</strong> It should be possible to distribute the entire SuperCollider bundle in a self-contained tarball.</p></li>
+<li><p><strong>AppImage distribution for Linux.</strong> A corollary of standalone packaging that will solve some packaging issues for Linux.</p></li>
+<li><p><strong>Allow concurrently installed major versions of SC.</strong> SC 3.x versions all conflict with each other.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meetings/index.html">Meetings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Miscellaneous dev notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-to-QtCollider-widgets.html">Adding QtCollider widgets</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Path searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PlayBuf-2017.html">PlayBuf 2017</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt-5.9-info.html">Qt 5.9 info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Translating-the-IDE.html">Translating the IDE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Undocumented-classes-and-methods-list.html">Undocumented classes and methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../project-structure/index.html">Project structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style/index.html">Code style guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../platforms/index.html">Plattforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releasing/index.html">Releasing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reviewing/index.html">Reviewing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/index.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Development</a><ul>
+  <li><a href="index.html">Miscellaneous dev notes</a><ul>
+      <li>Previous: <a href="Adding-to-QtCollider-widgets.html" title="previous chapter">Adding QtCollider widgets</a></li>
+      <li>Next: <a href="PlayBuf-2017.html" title="next chapter">PlayBuf 2017</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/development/misc/Path-searching.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

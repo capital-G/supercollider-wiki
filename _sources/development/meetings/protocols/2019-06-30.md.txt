@@ -1,0 +1,17 @@
+# 2019-06-30
+
+
+
+Members Present: Josh Parmenter, James Surgenor, Luke Nihlen, Nathan Ho, Patrick Dupuis, Marcin Paczkowski, Brian Heim, Tejaswi Prakash
+
+We discussed a potential new RfC (request for comments) process [https://github.com/snappizz/rfcs]: when to introduce, how to introduce, requirements for RfC submitters, and how RfCs should be announced. 
+
+We discussed some future organizational concerns: project permissions levels and fragmented discussion venues. There are many places we can discuss SC (sc-users, sc-dev, Discourse, Slack, Skype, GitHub, Facebook), and sometimes knowing where to discuss what is not easy.
+
+Some felt a problem with the forum is that very few developers are using it. In that way, it made the fragmentation worse. We had general agreement that lack of searchability for the mailing lists has reduced their usefulness. General agreement that GitHub, sc-dev, and Slack combined seem to make a good combination of tools for developer collaboration.
+
+Discussion then focused on how we use sc-dev vs. GitHub. General agreement that "goal-oriented" discussion should happen on GitHub. Some felt sc-dev should be seen as a forum for asking and answering development-related questions, reaching out to third-party clients, and announcing important activity. We discussed how to do that when the topics are more "meta" level. A few people remarked using the Core Team discussion area did not seem very inclusive; Luke suggested using GitHub issues, general agreement this was a good option.
+
+After that, we discussed good places for user support discussions. General agreement that if something rises to the level of a bug report or feature request, it should be on GitHub.
+
+Some expressed a desire to focus less on organizational discussions and more on development work for a while, until 3.10.3 is released.

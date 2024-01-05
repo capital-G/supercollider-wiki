@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Translating the IDE &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7d9986eb" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Undocumented classes and methods" href="Undocumented-classes-and-methods-list.html" />
+    <link rel="prev" title="Qt 5.9 info" href="Qt-5.9-info.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="translating-the-ide">
+<span id="translating-ide"></span><h1>Translating the IDE<a class="headerlink" href="#translating-the-ide" title="Link to this heading">¶</a></h1>
+<p>Adding translations for the IDE is very helpful and makes SC easier to use for people whose first language is not English. To contribute translations, you will need the following:</p>
+<ul class="simple">
+<li><p>A local clone of the repository. See <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment">“Setting up your development environment”</a> for more instructions. You don’t need to build SC to contribute translations, you only need to clone the repository.</p></li>
+<li><p>QtLinguist, part of the Qt project. You can download the installer from <a class="reference external" href="https://www.qt.io/">Qt’s website</a>.</p></li>
+</ul>
+<section id="updating-translation-files">
+<h2>Updating translation files<a class="headerlink" href="#updating-translation-files" title="Link to this heading">¶</a></h2>
+<p>Before starting to make translations, you can optionally make sure the translation file you’ll be working on is up to date with the source code. This is a good thing to do if you have the time.</p>
+<p>To update translation files for the IDE, you’ll first need to find Qt Linguist’s <code class="docutils literal notranslate"><span class="pre">lupdate</span></code> program where it was installed, and then execute the following command from the root of the repo:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/path/to/lupdate editors/sc-ide -ts editors/sc-ide/translations/&lt;file&gt;
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code> is the translation file you want to update. All the translation files are in <code class="docutils literal notranslate"><span class="pre">editors/sc-ide/translations</span></code>.</p>
+<p>You can also update all translation files at once by having <code class="docutils literal notranslate"><span class="pre">lupdate</span></code> in your PATH and building the <code class="docutils literal notranslate"><span class="pre">update_ide_translations</span></code> build target.</p>
+</section>
+<section id="adding-ide-translations">
+<h2>Adding IDE translations<a class="headerlink" href="#adding-ide-translations" title="Link to this heading">¶</a></h2>
+<p>Use <a class="reference external" href="http://doc.qt.io/qt-5/qtlinguist-index.html">Qt Linguist</a> to update the <code class="docutils literal notranslate"><span class="pre">.ts</span></code> files in <code class="docutils literal notranslate"><span class="pre">editors/sc-ide/translations</span></code>. Complete instructions for using Qt Linguist can be found <a class="reference external" href="https://doc.qt.io/qt-5/linguist-translators.html">on Qt’s website</a>.</p>
+<section id="adding-a-new-translation-language">
+<h3>Adding a new translation language<a class="headerlink" href="#adding-a-new-translation-language" title="Link to this heading">¶</a></h3>
+<p>If you can’t find the language you want to add translations for, first make sure you have <code class="docutils literal notranslate"><span class="pre">lupdate</span></code> and Qt Linguist, then:</p>
+<ol class="arabic simple">
+<li><p>Determine its two-letter <a class="reference external" href="https://www.loc.gov/standards/iso639-2/php/code_list.php">language code</a>.</p></li>
+<li><p>Add a new filename for it in <code class="docutils literal notranslate"><span class="pre">editors/sc-ide/CMakeLists.txt</span></code>, in the section marked <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Translation</span> <span class="pre">files</span></code>.</p></li>
+<li><p>Re-run the CMake generation phase (in your <code class="docutils literal notranslate"><span class="pre">build</span></code> directory, execute <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span></code>)</p></li>
+<li><p>Build the <code class="docutils literal notranslate"><span class="pre">update_ide_translations</span></code> CMake target to generate a <code class="docutils literal notranslate"><span class="pre">.ts</span></code> file</p></li>
+<li><p>Add translations using Qt Linguist.</p></li>
+</ol>
+</section>
+</section>
+<section id="testing-translations">
+<h2>Testing translations<a class="headerlink" href="#testing-translations" title="Link to this heading">¶</a></h2>
+<p>TODO</p>
+</section>
+<section id="submitting-translations">
+<h2>Submitting translations<a class="headerlink" href="#submitting-translations" title="Link to this heading">¶</a></h2>
+<p>When you’re ready to contribute your translations back to the project, follow the instructions for <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Creating-pull-requests">creating a pull request</a>. Thanks!!</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meetings/index.html">Meetings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Miscellaneous dev notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-to-QtCollider-widgets.html">Adding QtCollider widgets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Path-searching.html">Path searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PlayBuf-2017.html">PlayBuf 2017</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt-5.9-info.html">Qt 5.9 info</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Translating the IDE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Undocumented-classes-and-methods-list.html">Undocumented classes and methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../project-structure/index.html">Project structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style/index.html">Code style guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../platforms/index.html">Plattforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releasing/index.html">Releasing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reviewing/index.html">Reviewing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/index.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Development</a><ul>
+  <li><a href="index.html">Miscellaneous dev notes</a><ul>
+      <li>Previous: <a href="Qt-5.9-info.html" title="previous chapter">Qt 5.9 info</a></li>
+      <li>Next: <a href="Undocumented-classes-and-methods-list.html" title="next chapter">Undocumented classes and methods</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/development/misc/Translating-the-IDE.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

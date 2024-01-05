@@ -1,0 +1,30 @@
+# 2018-08-19
+
+
+
+Members present: Alex Goldsmith, Brian, Nathan, Patrick, Scott, Thomas
+
+3.10.0-beta1 is out!!!!!!!!!!!!!!! (not announcing yet until sc3-plugins beta is ready)
+
+Member updates:
+
+- Alex uses gen~ a lot and would like to see single-sample feedback for more fine-grained DSP goodies such as TPT filters & ladder filters with customizable nonlinearities, and discrete summation formulas. He had some trouble with HID, which was last touched 4-5 years ago
+- Brian hasn't done much
+- Scott hasn't done much
+- Patrick has a bandage for his HelpBrowser issues, developed a new quark called SATI
+- Nathan is working on improving the look of the IDE
+
+Topics:
+
+- We'll be (privately) putting together a survey after 3.10 release to get a good idea of the direction for 3.11, which we hope will be released very quickly
+- New forum is going well: questions are getting answered, lots of little mini-articles
+- We have tried to get sclang into some major syntax highlighting packages like Highlight.js but most of them have gone without response
+- A priority for 3.10 is packaging supernova in the official release for Mac
+- Brian's big projects moving forward are improving the test suite and standardizing C++ formatting across the codebase
+- Pinning test for ugens
+- Rendering SCDoc and uploading CI
+- Remaining "big annoying projects:" SCIDE startup sequence unreliability, debian packaging, supernova on windows, command line on windows
+- Brian suggested that Alex work on compiler warnings
+- Possible new official tutorial development with e.g. gitbook, outside SC help system
+- "Clear post window" menu item
+- Aaaaaaaaableton Liiiiiiiiiink: going slow, going steady

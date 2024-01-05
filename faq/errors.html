@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Errors &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7d9986eb" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Changes" href="changes-to-sc.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="errors">
+<h1>Errors<a class="headerlink" href="#errors" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="content">
+<p class="topic-title">Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#error-primitive-basicnew-failed-index-not-an-integer" id="id1">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer</a></p>
+<ul>
+<li><p><a class="reference internal" href="#if-you-re-writing-a-synthdef" id="id2">If you’re writing a SynthDef</a></p></li>
+<li><p><a class="reference internal" href="#so-what-to-do-instead" id="id3">So what to do instead?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#language-client-issues" id="id4">Language (client) issues</a></p>
+<ul>
+<li><p><a class="reference internal" href="#calling-gui-primitives-from-a-systemclock-routine" id="id5">Calling gui primitives from a SystemClock routine</a></p></li>
+<li><p><a class="reference internal" href="#binary-operations-order" id="id6">Binary operations order</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#synthdef-issues" id="id7">SynthDef Issues</a></p>
+<ul>
+<li><p><a class="reference internal" href="#if-statements-inside-a-synthdef" id="id8">“If” statements inside a SynthDef</a></p></li>
+<li><p><a class="reference internal" href="#what-is-a-boolean-in-the-server" id="id9">What is a Boolean in the server?</a></p></li>
+<li><p><a class="reference internal" href="#why-is-x-0-non-boolean-in-the-test" id="id10">Why is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\&gt;</span> <span class="pre">0</span></code> “non-Boolean” in the “test”?</a></p></li>
+<li><p><a class="reference internal" href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" id="id11">If you can’t branch, what good is a comparison in the server?</a></p></li>
+<li><p><a class="reference internal" href="#logical-operators-and-or-not-xor" id="id12">Logical operators: And, Or, Not, Xor</a></p></li>
+<li><p><a class="reference internal" href="#error-synthdef-not-found" id="id13"><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">SynthDef</span> <span class="pre">not</span> <span class="pre">found</span></code></a></p></li>
+<li><p><a class="reference internal" href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" id="id14"><code class="docutils literal notranslate"><span class="pre">FAILURE</span> <span class="pre">/s_new</span> <span class="pre">alloc</span> <span class="pre">failed,</span> <span class="pre">increase</span> <span class="pre">server's</span> <span class="pre">memory</span> <span class="pre">allocation</span></code></a></p></li>
+<li><p><a class="reference internal" href="#array-arguments" id="id15">Array arguments</a></p></li>
+<li><p><a class="reference internal" href="#why-does-it-have-to-be-a-literal-array" id="id16">Why does it have to be a literal array?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#server-issues" id="id17">Server issues</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-trigger-a-function-from-the-server" id="id18">How to trigger a function from the server</a></p></li>
+<li><p><a class="reference internal" href="#exception-in-world-openudp-unable-to-bind-udp-socket" id="id19">Exception in World_OpenUDP: unable to bind udp socket</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#other-issues" id="id20">Other issues</a></p>
+<ul>
+<li><p><a class="reference internal" href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" id="id21">Error while loading shared libraries: libsclang.so: cannot open shared object file</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="error-primitive-basicnew-failed-index-not-an-integer">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer</a><a class="headerlink" href="#error-primitive-basicnew-failed-index-not-an-integer" title="Link to this heading">¶</a></h2>
+<section id="if-you-re-writing-a-synthdef">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">If you’re writing a SynthDef</a><a class="headerlink" href="#if-you-re-writing-a-synthdef" title="Link to this heading">¶</a></h3>
+<p>It’s quite likely that the error means you’re trying to dynamically change the number of channels inside a SynthDef, which is something you can’t do - SynthDefs need to have a fixed layout.<br />
+For example, this is a simple attempt to make pink noise over a variable number of channels:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\thiswillfail</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">out</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">numChannels</span><span class="o">=</span><span class="mi">2</span><span class="o">|</span>
+    <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="p">{</span><span class="nx">PinkNoise</span><span class="p">.</span><span class="nx">ar</span><span class="p">}.</span><span class="nx">dup</span><span class="p">(</span><span class="nx">numChannels</span><span class="p">))</span>
+<span class="p">}).</span><span class="nx">add</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>It fails because we’re trying to make the number of pink noise generators involved, actually changeable.<br />
+You can’t do that - when the SynthDef is compiled, the language needs to know <strong>exactly</strong> how many UGens will be involved and how they are connected. This is because a SynthDef represents an efficient fixed-layout synth that the server can instantiate.</p>
+</section>
+<section id="so-what-to-do-instead">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">So what to do instead?</a><a class="headerlink" href="#so-what-to-do-instead" title="Link to this heading">¶</a></h3>
+<p>Think of SynthDefs as tiny fixed reusable components, and design your logic to reuse them in whatever combinations are needed.</p>
+<p>To go back to the simple example above (the pink noise generator), you could simply do:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\simplepink</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">out</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span>
+    <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="nx">PinkNoise</span><span class="p">.</span><span class="nx">ar</span><span class="p">)</span>
+<span class="p">}).</span><span class="nx">add</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>and create one <code class="docutils literal notranslate"><span class="pre">\simplepink</span></code> synth for each channel. Or you could create one SynthDef for each number of channels you expect to use.<br />
+For example if you might use between 1 and 5 channels:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="mi">5</span><span class="p">).</span><span class="k">do</span><span class="p">{</span> <span class="o">|</span><span class="nx">n</span><span class="o">|</span>
+<span class="nx">SynthDef</span><span class="p">(</span><span class="s2">&quot;simplepink_%&quot;</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">asSymbol</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">out</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span>
+    <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="p">{</span><span class="nx">PinkNoise</span><span class="p">.</span><span class="nx">ar</span><span class="p">}.</span><span class="nx">dup</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
+<span class="p">}).</span><span class="nx">add</span>
+<span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you’d need to invoke <code class="docutils literal notranslate"><span class="pre">\simplepink_4</span></code> or whatever, as appropriate.</p>
+</section>
+</section>
+<section id="language-client-issues">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Language (client) issues</a><a class="headerlink" href="#language-client-issues" title="Link to this heading">¶</a></h2>
+<section id="calling-gui-primitives-from-a-systemclock-routine">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Calling gui primitives from a SystemClock routine</a><a class="headerlink" href="#calling-gui-primitives-from-a-systemclock-routine" title="Link to this heading">¶</a></h3>
+<p>When calling gui primitives from a SystemClock routine will cause an error:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SystemClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">})</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">Qt</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="ow">not</span> <span class="n">use</span> <span class="n">this</span> <span class="n">Qt</span> <span class="n">functionality</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">thread</span><span class="o">.</span> <span class="n">Try</span> <span class="n">scheduling</span> <span class="n">on</span> <span class="n">AppClock</span> <span class="n">instead</span><span class="o">.</span>
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">Primitive</span> <span class="s1">&#39;_QWindow_AvailableGeometry&#39;</span> <span class="n">failed</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>To avoid this issue use the AppClock:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">AppClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">})</span>
+</pre></div>
+</div>
+<p>or the defer method:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SystemClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="p">{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">}.</span><span class="nx">defer</span> <span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="binary-operations-order">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Binary operations order</a><a class="headerlink" href="#binary-operations-order" title="Link to this heading">¶</a></h3>
+<p>Because of the way SuperCollider evaluates expressions, the usual order of execution of mathematical expressions is not respected.<br />
+In SuperCollider everything is an object, and evaluation happens from left to right, so:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>will evaluate as (5 + 3 ) * 2.</p>
+<p>This happens because the expression becomes:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">.</span><span class="nx">performBinaryOpOnSimpleNumber</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">).</span><span class="nx">performBinaryOpOnSimpleNumber</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Therefore, in algebraic expressions parenthesis must be used when left to right orders is not what is desired:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="synthdef-issues">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">SynthDef Issues</a><a class="headerlink" href="#synthdef-issues" title="Link to this heading">¶</a></h2>
+<section id="if-statements-inside-a-synthdef">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">“If” statements inside a SynthDef</a><a class="headerlink" href="#if-statements-inside-a-synthdef" title="Link to this heading">¶</a></h3>
+<p>It’s only a matter of time before a user tries to write something like this in a <code class="docutils literal notranslate"><span class="pre">SynthDef</span></code>:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\kablooie</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
+    <span class="kd">var</span> <span class="nx">signal</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">signal</span> <span class="o">=</span> <span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span>
+    <span class="p">}</span> <span class="p">{</span>
+        <span class="nx">signal</span> <span class="o">=</span> <span class="nx">Saw</span><span class="p">.</span><span class="nx">ar</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>… with the disturbing result: <code class="docutils literal notranslate"><span class="pre">ERROR: Non Boolean in test.</span></code></p>
+<p>“Non Boolean in test”? But <em>x &gt; 0</em> is a comparison, and surely should produce a Boolean, right?</p>
+<p>This should be the first clue that Boolean logic in the server is a very different animal from the so-called “normal” use of conditionals on the client side (in the language).</p>
+</section>
+<section id="what-is-a-boolean-in-the-server">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">What is a Boolean in the server?</a><a class="headerlink" href="#what-is-a-boolean-in-the-server" title="Link to this heading">¶</a></h3>
+<p>In fact, there is no such thing. The server handles floating-point numbers. It doesn’t have <em>true</em> or <em>false</em> entities.</p>
+<p>Since everything in the server is a number, the result of the comparison must also be a number. The server follows the same convention as other DSP environments (Max/MSP, pd etc.):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> is represented by 1.0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> is represented by 0.0</p></li>
+</ul>
+</section>
+<section id="why-is-x-0-non-boolean-in-the-test">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Why is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\&gt;</span> <span class="pre">0</span></code> “non-Boolean” in the “test”?</a><a class="headerlink" href="#why-is-x-0-non-boolean-in-the-test" title="Link to this heading">¶</a></h3>
+<p>This goes back to the general issue of handling operators in the server.<br />
+Math operators in a SynthDef are not calculations to do <em>right now</em>.<br />
+They <em>describe</em> calculations that will be done <em>in the future</em>, many thousands of times.</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="c1">// -&gt; true</span>
+</pre></div>
+</div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\kablooie</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
+    <span class="s2">&quot;x: &quot;</span><span class="p">.</span><span class="nx">post</span><span class="p">;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+    <span class="s2">&quot;(x &gt; 0): &quot;</span><span class="p">.</span><span class="nx">post</span><span class="p">;</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">).</span><span class="nx">postln</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">x</span><span class="o">:</span> <span class="nx">an</span> <span class="nx">OutputProxy</span>
+<span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span> <span class="nx">a</span> <span class="nx">BinaryOpUGen</span>
+</pre></div>
+</div>
+<p>The precise value of <em>x</em> is unknown at the time you execute the SynthDef code.<br />
+<em>x</em> actually represents an unlimited number of values, which will be provided to Synths using argument lists. So, it’s meaningless to
+determine, once and for all, whether <em>x &gt; 0</em> or not. <em>x</em> may be <em>&gt; 0</em> now and <em>&lt; 1</em> a split second later. So, instead of producing a Boolean, <em>x &gt; 0</em> produces a <strong>Binary Operator UGen</strong> that repeatedly executes the comparison.</p>
+<p>Going back to this:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">aBinaryOpUGen</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>To do this, the language must know which function (true or false) to execute. But there is no way to know which one the BinaryOpUGen will be.<br />
+So, SuperCollider throws an error.</p>
+</section>
+<section id="if-you-can-t-branch-what-good-is-a-comparison-in-the-server">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">If you can’t branch, what good is a comparison in the server?</a><a class="headerlink" href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" title="Link to this heading">¶</a></h3>
+<p>Comparisons have a lot of uses, actually.</p>
+<ul class="simple">
+<li><p><strong>Choosing one of two signals:</strong> This is the closest we can get to <em>if-then-else</em> in the server. Both <em>then</em> and <em>else</em> must be running continuously. That’s a requirement of how the server works: the number and arrangement of unit generators within a single Synth cannot change. Instead, you can choose <em>which of those signals makes it downstream</em>. One will be used and the other ignored.<br />
+Since true is 1 and false is 0, you can use a conditional to index into an array using Select.</p></li>
+</ul>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Select</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">aKrSignal</span> <span class="o">&gt;</span> <span class="nx">anotherKrSignal</span><span class="p">,</span> <span class="p">[</span><span class="nx">false_signal</span><span class="p">,</span> <span class="nx">true_signal</span><span class="p">]);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Generating triggers:</strong> A trigger occurs whenever a signal is &lt;= 0, and then becomes &gt; 0. Extending this to comparisons, it means that <em>a trigger occurs when a comparison is false for a while, and then becomes true</em>. Comparing a signal to a threshold may then be used anywhere that a trigger is valid.<br />
+For a simple example, take the case of sending a message to the language when the microphone input’s amplitude crosses a threshold.</p></li>
+</ul>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">mic</span> <span class="o">=</span> <span class="nx">In</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">amplitude</span> <span class="o">=</span> <span class="nx">Amplitude</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">mic</span><span class="p">);</span>
+<span class="nx">SendTrig</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">amplitude</span> <span class="o">&gt;</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">amplitude</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Passing or suppressing triggers:</strong> You might need to generate triggers continuously, but permit the triggers to take effect only when a condition is met. Multiplication handles this nicely:<br />
+<em>condition * trigger</em>. Since the condition evaluates as 0 when false, the trigger will be replaced by 0 and nothing happens, as desired.</p></li>
+</ul>
+<p>For a simple case, let’s refine the mic amplitude example by suppressing triggers that occur within 1/4 second after the previous.</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">mic</span> <span class="o">=</span> <span class="nx">In</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="nx">amplitude</span> <span class="o">=</span> <span class="nx">Amplitude</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">mic</span><span class="p">),</span>
+    <span class="nx">trig</span> <span class="o">=</span> <span class="nx">amplitude</span> <span class="o">&gt;</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="nx">timer</span> <span class="o">=</span> <span class="nx">Timer</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">),</span> <span class="c1">// how long since the last trigger?</span>
+    <span class="nx">filteredTrig</span> <span class="o">=</span> <span class="p">(</span><span class="nx">timer</span> <span class="o">&gt;</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">*</span> <span class="nx">trig</span><span class="p">;</span>
+
+<span class="nx">SendTrig</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">filteredTrig</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">amplitude</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="logical-operators-and-or-not-xor">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Logical operators: And, Or, Not, Xor</a><a class="headerlink" href="#logical-operators-and-or-not-xor" title="Link to this heading">¶</a></h3>
+<p>Logical operators have simple arithmetic equivalents.</p>
+<ul class="simple">
+<li><p><strong>And = multiplication:</strong> <em>(x &gt; 0) * (y &gt; 0)</em> means both conditions must be true (nonzero) for the result to be nonzero.</p></li>
+<li><p><strong>Or = addition:</strong> <em>(x &gt; 0) + (y &gt; 0)</em> means nonzero in either condition is enough to make the result nonzero.</p></li>
+</ul>
+<p>NOTE: If both are true, then the result will be 2, not 1. In some cases, the 2 may not be acceptable. That can be fixed by wrapping the Or in another comparison – <em>((x &gt; 0) + (y &gt; 0)) &gt; 0</em> – because 2 &gt; 0 evaluates to 1!</p>
+<ul class="simple">
+<li><p><strong>Not:</strong> I prefer to negate a condition by comparing it to zero:<br />
+<em>condition &lt;= 0</em>. 0 &lt;= 0 is 1 (i.e., not 0), and 1 &lt;= 0 is 0 (not 1).<br />
+If you’re certain the logical expression will only ever be 0 or 1 exactly, you can also negate by subtraction: <em>1 - condition</em>.</p></li>
+<li><p><strong>Xor:</strong> Exclusive-or is true if one or the other condition is true, but not both. We can add the two conditions and compare it to 1. The syntax is a little bit tricky because <code class="docutils literal notranslate"><span class="pre">==</span></code> doesn’t turn into a BinaryOpUGen automatically.<br />
+We have to create the BinaryOpUGen by hand.</p></li>
+</ul>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">BinaryOpUGen</span><span class="p">(</span><span class="s1">&#39;==&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="error-synthdef-not-found">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">SynthDef</span> <span class="pre">not</span> <span class="pre">found</span></code></a><a class="headerlink" href="#error-synthdef-not-found" title="Link to this heading">¶</a></h3>
+<p>Sending a SynthDef to the server requires a little bit of time, which means that running a block of code with both SynthDef definitions and instances of those SynthDefs won’t be guaranteed to work unless this slight delay is accounted for. There are two main ways to do this:</p>
+<p>First way: put the SynthDefs and the main code in a Task and put some kind of <code class="docutils literal notranslate"><span class="pre">.wait</span></code> time between them.</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Task</span><span class="p">({</span>
+    <span class="c1">// put your SynthDefs here</span>
+    <span class="mf">0.2</span><span class="p">.</span><span class="nx">wait</span><span class="p">;</span>
+    <span class="c1">// put the rest of your code here</span>
+<span class="p">}).</span><span class="nx">play</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Second way: use <code class="docutils literal notranslate"><span class="pre">.sync</span></code>:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Routine</span><span class="p">({</span>
+    <span class="c1">// put your SynthDefs here</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">sync</span><span class="p">;</span> <span class="c1">// assuming that &#39;s&#39; is the server</span>
+    <span class="c1">// put the rest of your code here</span>
+<span class="p">}).</span><span class="nx">play</span>
+</pre></div>
+</div>
+</section>
+<section id="failure-s-new-alloc-failed-increase-server-s-memory-allocation">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">FAILURE</span> <span class="pre">/s_new</span> <span class="pre">alloc</span> <span class="pre">failed,</span> <span class="pre">increase</span> <span class="pre">server's</span> <span class="pre">memory</span> <span class="pre">allocation</span></code></a><a class="headerlink" href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" title="Link to this heading">¶</a></h3>
+<p><strong>What it means:</strong> While initializing the unit generators in a new Synth node, the server ran out of real-time memory.</p>
+<p><strong>Solution:</strong> Increase the amount of real-time memory available to the server. This size is set, as the error message says, in the
+<code class="docutils literal notranslate"><span class="pre">ServerOptions</span></code> object associated with the server. It is a server startup option; you must quit the server and reboot it, or the new
+setting will not take effect.</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">myServer</span><span class="p">.</span><span class="nx">quit</span><span class="p">;</span>
+<span class="nx">myServer</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">memSize</span> <span class="o">=</span> <span class="mi">65536</span><span class="p">;</span>  <span class="c1">// e.g., could be different for you</span>
+<span class="nx">myServer</span><span class="p">.</span><span class="nx">boot</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">myServer.options.memSize</span></code> is given in KB. The default is 8192KB, or 8MB.</p>
+<p><strong>What it <em>really</em> means:</strong> Many unit generators require internal memory buffers, such as delay lines, comb filters, allpass delays, some FFT manipulators, reverb units etc.<br />
+These internal buffers are not allocated directly from the operating system, but rather from a “real-time memory
+pool.”<br />
+This is because direct allocation from the OS, by functions such as <code class="docutils literal notranslate"><span class="pre">malloc()</span></code>, is not real-time safe.<br />
+The OS may take too long to return the new block, causing glitches in the audio.<br />
+To solve this problem, the server allocates a chunk of memory when it starts up and parcels it out to unit generators as needed.</p>
+<p>If you use a large number of delays, the server may run out of real-time memory. The default <code class="docutils literal notranslate"><span class="pre">8192KB</span></code> setting can support 47.55 seconds of delay at a sampling rate of 44.1 kHz.<br />
+This goes away quickly when using lots of synths with multiple channels of delay.</p>
+<p><strong>Alternate solution:</strong> For delay units, you may use preallocated delay buffers – <code class="docutils literal notranslate"><span class="pre">Buffer.alloc()</span></code> – and the “Buf” delay units:<br />
+<code class="docutils literal notranslate"><span class="pre">BufDelayN</span></code>, <code class="docutils literal notranslate"><span class="pre">BufDelayL</span></code>, <code class="docutils literal notranslate"><span class="pre">BufDelayC</span></code>, <code class="docutils literal notranslate"><span class="pre">BufCombL</span></code> etc.<br />
+<code class="docutils literal notranslate"><span class="pre">Buffer.alloc()</span></code> does not use the real-time pool and is not subject to the memSize limitation. This approach will not help with FFT units.</p>
+</section>
+<section id="array-arguments">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Array arguments</a><a class="headerlink" href="#array-arguments" title="Link to this heading">¶</a></h3>
+<p>Sometimes, you need to send an array to a series of Control inputs in a SynthDef (often called “<em>array arguments</em>”).</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Synth</span><span class="p">(</span><span class="ss">\xyz</span><span class="p">,</span> <span class="p">[</span><span class="nx">freqs</span><span class="o">:</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">]]);</span>
+</pre></div>
+</div>
+<p>There are two primary ways to do this:</p>
+<ul class="simple">
+<li><p>Supply a literal array – <code class="docutils literal notranslate"><span class="pre">\#[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> – as the default for the argument name in the function.<br />
+This is discussed in <a class="reference external" href="https://doc.sccode.org/Classes/SynthDef.html">SynthDef’s help file</a>.</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SynthDef(\xyz, { |freqs = #[1, 2, 3]|
+    // ...
+})
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Or, use <code class="docutils literal notranslate"><span class="pre">NamedControl</span></code>.<br />
+This is the only way to do it if you want to construct the array’s size dynamically, or based on a variable. See <a class="reference external" href="https://doc.sccode.org/Classes/NamedControl.html">NamedControl help</a>.</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SynthDef(\xyz, {
+    var freqs = NamedControl.kr(\freqs, #[1, 2, 3]);
+    // ...
+});
+</pre></div>
+</div>
+</section>
+<section id="why-does-it-have-to-be-a-literal-array">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Why does it have to be a literal array?</a><a class="headerlink" href="#why-does-it-have-to-be-a-literal-array" title="Link to this heading">¶</a></h3>
+<p>The reason comes from the process of building a SynthDef:</p>
+<ol class="arabic simple">
+<li><p>First, look at the function arguments to figure out what the Control inputs should be.</p></li>
+<li><p>Then create Control units (usually just one, if they’re all normal arguments without prefixes or special rates). Each channel is represented by an <code class="docutils literal notranslate"><span class="pre">OutputProxy</span></code>.</p></li>
+<li><p>Then run the SynthDef function, passing the output proxies to the arguments.</p></li>
+<li><p>Then sort the UGens into the right order, etc. etc.</p></li>
+</ol>
+<p>To do steps #1 and #2, the SynthDef builder has to know the size of an array argument <em>before</em> running the function. That’s possible only if it’s a literal array: <code class="docutils literal notranslate"><span class="pre">\#[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>. Any other array notation creates the array <em>while running the function</em> (step #3). But then it’s too late – the SynthDef builder already created a non-array control channel for it!</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\notArray</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="mi">5</span><span class="p">)</span><span class="o">|</span>
+    <span class="nx">a</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&quot;a is&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is:</span> <span class="pre">an</span> <span class="pre">OutputProxy</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SynthDef(\array, { |a = #[1, 2, 3, 4, 5]|
+   a.debug(&quot;a is&quot;);
+});
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is:</span> <span class="pre">[</span> <span class="pre">an</span> <span class="pre">OutputProxy,</span> <span class="pre">an</span> <span class="pre">OutputProxy,</span> <span class="pre">an</span> <span class="pre">OutputProxy,</span> <span class="pre">an</span> <span class="pre">OutputProxy,</span> <span class="pre">an</span> <span class="pre">OutputProxy</span> <span class="pre">]</span></code></p>
+<p>(Note, if ‘a’ printed as [ 1, 2, 3, 4, 5 ], then you wouldn’t be able to change the values in a Synth using .set!)</p>
+</section>
+</section>
+<section id="server-issues">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Server issues</a><a class="headerlink" href="#server-issues" title="Link to this heading">¶</a></h2>
+<section id="how-to-trigger-a-function-from-the-server">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">How to trigger a function from the server</a><a class="headerlink" href="#how-to-trigger-a-function-from-the-server" title="Link to this heading">¶</a></h3>
+<p>The first and most important point: <strong>Functions are client-side only.</strong><br />
+The server doesn’t know what functions are, doesn’t understand them and has no way to execute them.<br />
+<strong>Only the client can execute a function.</strong></p>
+<p>Therefore, if you want a function to execute when something happens in the server, the only way is for the server to tell the client to take the action.</p>
+<p>The server can communicate messages back to the client using one of two unit generators: <code class="docutils literal notranslate"><span class="pre">SendTrig</span></code> and <code class="docutils literal notranslate"><span class="pre">SendReply</span></code>.<br />
+<code class="docutils literal notranslate"><span class="pre">SendTrig</span></code> is simpler and less flexible (it can send only a <code class="docutils literal notranslate"><span class="pre">/tr</span></code> message, and only one data value).<br />
+<code class="docutils literal notranslate"><span class="pre">SendReply</span></code> allows you to name the message anything you like, and can send arrays with the message.<br />
+We’ll use SendReply here because of its greater flexibility.</p>
+<p>Within the language, you also need an object to receive the message and act on it. Usually this is <code class="docutils literal notranslate"><span class="pre">OSCresponderNode</span></code> or <code class="docutils literal notranslate"><span class="pre">OSCpathResponder</span></code>.  In this example, <code class="docutils literal notranslate"><span class="pre">OSCpathResponder</span></code> filters messages not just on the name <code class="docutils literal notranslate"><span class="pre">/bleep</span></code> but also on the synth’s ID. This way, you could have multiple triggering synths, with a different responder and a different action per synth.</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">trig</span> <span class="o">=</span> <span class="nx">Dust</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+    <span class="nx">decay</span> <span class="o">=</span> <span class="nx">Decay2</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
+    <span class="nx">sig</span> <span class="o">=</span> <span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">TExpRand</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="nx">trig</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">decay</span><span class="p">;</span>
+    <span class="nx">SendReply</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">,</span> <span class="s1">&#39;/bleep&#39;</span><span class="p">,</span> <span class="nx">trig</span><span class="p">);</span>
+    <span class="nx">sig</span> <span class="o">!</span> <span class="mi">2</span>
+<span class="p">}.</span><span class="nx">play</span><span class="p">;</span>
+
+<span class="nx">o</span> <span class="o">=</span> <span class="nx">OSCpathResponder</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">addr</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;/bleep&#39;</span><span class="p">,</span> <span class="nx">a</span><span class="p">.</span><span class="nx">nodeID</span><span class="p">],</span> <span class="p">{</span> <span class="o">|</span><span class="nx">time</span><span class="p">,</span> <span class="nx">thisResponder</span><span class="p">,</span> <span class="nx">msg</span><span class="o">|</span>
+    <span class="nx">msg</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">add</span><span class="p">;</span>
+<span class="p">)</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">free</span><span class="p">;</span> <span class="nx">o</span><span class="p">.</span><span class="nx">remove</span><span class="p">;</span>
+</pre></div>
+</div>
+<section id="helpfile-references">
+<h4>Helpfile references<a class="headerlink" href="#helpfile-references" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doc.sccode.org/Classes/SendTrig.html"><code class="docutils literal notranslate"><span class="pre">SendTrig</span></code></a>, <a class="reference external" href="https://doc.sccode.org/Classes/SendReply.html"><code class="docutils literal notranslate"><span class="pre">SendReply</span></code></a></p></li>
+<li><p><a class="reference external" href="https://doc.sccode.org/Classes/OSCresponderNode.html"><code class="docutils literal notranslate"><span class="pre">OSCresponderNode</span></code></a>, <a class="reference external" href="https://doc.sccode.org/Classes/OSCpathResponder.html"><code class="docutils literal notranslate"><span class="pre">OSCpathResponder</span></code></a>, <a class="reference external" href="https://doc.sccode.org/Classes/OSCresponder.html"><code class="docutils literal notranslate"><span class="pre">OSCresponder</span></code></a>, <a class="reference external" href="https://doc.sccode.org/Guides/OSC_communication.html">OSC communication</a></p></li>
+</ul>
+</section>
+</section>
+<section id="exception-in-world-openudp-unable-to-bind-udp-socket">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Exception in World_OpenUDP: unable to bind udp socket</a><a class="headerlink" href="#exception-in-world-openudp-unable-to-bind-udp-socket" title="Link to this heading">¶</a></h3>
+<p>Sometime when booting the server one gets a message: <code class="docutils literal notranslate"><span class="pre">Exception</span> <span class="pre">in</span> <span class="pre">World_OpenUDP:</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">bind</span> <span class="pre">udp</span> <span class="pre">socket</span></code>.</p>
+<p>This is usually caused by an instance of scsynth that as hanged but has not released the osc port, perhaps because it SuperCollider crashed.  To fix this, just hit the <em>“k”</em> button in the server window to kill all scsynth processes, and then boot again.</p>
+</section>
+</section>
+<section id="other-issues">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Other issues</a><a class="headerlink" href="#other-issues" title="Link to this heading">¶</a></h2>
+<section id="error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Error while loading shared libraries: libsclang.so: cannot open shared object file</a><a class="headerlink" href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" title="Link to this heading">¶</a></h3>
+<p>This usually happens after building on Linux and it means that your system is unaware of newly installed shared libraries. Running ldconfig
+(as root) solves the problem:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">/sbin/ldconfig</span></code></p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../community/index.html">Community</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FAQ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="changes-to-sc.html">Changes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#error-primitive-basicnew-failed-index-not-an-integer">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#language-client-issues">Language (client) issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#synthdef-issues">SynthDef Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server-issues">Server issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-issues">Other issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">FAQ</a><ul>
+      <li>Previous: <a href="changes-to-sc.html" title="previous chapter">Changes</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/faq/errors.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

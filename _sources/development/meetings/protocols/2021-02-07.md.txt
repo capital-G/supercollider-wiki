@@ -1,0 +1,67 @@
+# 2021-02-07
+
+
+Members present: Brian, James S, Marcin
+
+Update from James: 
+- looked into Unity builds to decrease build times; we might be already doing it partially; CMake needs work
+  - Brian: if we are doing unity builds, we are doing that for yaml.cpp only (?)
+  - supposedly it used to work, but it stopped and was disabled
+
+Moved to discussion on the need to fix/largely rewrite CMake
+
+Back to Unity builds: 
+- Brian: probably not much improvement for Linux and macOS since we already use Ccache
+- James: could improve time for Qt components
+- discussion on one definition rule; Brian thinks it might not be a problem
+  
+Back to discussion on CMake improvements
+
+Marcin suggests to create a wiki page documenting current CMake architecture
+
+Problems:
+- "dependency inversion"
+- Install stuff
+
+Brian suggest the following order of fixing things:
+- solve Mac installation - "dependency inversion"
+- minor cleanup to make sure we don’t find libraries multiple times
+- redoing installation code
+- possibly add CPack packaging
+
+Discussion on rewrite CMake - probably wait until 3.12 release
+
+Marcin mentions issues with microphone permissions on Mac which might need to be addressed before 3.12, to be tested
+
+Brian’s update
+- wants to focus on particular aspects of the project, e.g. scripting for releases
+- if there’s interest, let’s restart group PR review meetings
+
+Discussion on old PRs and stalled PRs; Finding out who has open PRs and which PRs wait for who
+
+We need to stress that PRs need to be easier to review - e.g. have clear examples.
+
+Plans for the release, see https://github.com/supercollider/supercollider/milestone/23
+- Brian is working on [Bela support PR](https://github.com/supercollider/supercollider/pull/5295), should be merge-able soon/this week
+- (Adding boost program options to the milestones)
+- Then Brian plans to work on the release script
+Tentative date for the release: May 1st, 2021, with hope that it could happen earlier
+
+Marcin mentions issues with Big Sur and proposes to create an interim build for Big Sur once all the problems are solved
+
+Marcin's updates on GitHub Actions (GHA)
+- testsuite: open [PR](https://github.com/supercollider/supercollider/pull/5332), issues with qpm,
+- S3 upload: waiting for credentials - Brian said we can use theirs
+- Windows builds - for later
+- GHA for sc3-plugins - Brian tentatively wants to tackle that
+
+For next meeting: 
+- discuss “use priority labels”
+https://github.com/supercollider/supercollider/issues/5248
+- possibly improve versioning
+
+Possible features for 3.13:
+- web assembly
+- CMake rewrite
+- cleanup compiler warnings (James has a WIP branch)
+

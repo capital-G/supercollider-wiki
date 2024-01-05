@@ -1,0 +1,13 @@
+# 2017-02-25
+
+
+
+- Brian Heim has been working on regression tests for lexer/parser/compiler, which will ensure that changes such as #2673 and #52 can be safely fixed. Also started work on refactoring Document.
+- Nathan Ho didn't do much, aside from starting to replace OSCpathResponder, etc. with OSCFunc.
+- Luca Danieli has been working with Scott Wilson on making it easier to extend the IDE.
+
+Topics:
+
+- Migrating Contributing page from website to the repository itself
+- Introducing a new issue template
+- The changelog has gotten too long, time to clean out entries before 3.6.6 

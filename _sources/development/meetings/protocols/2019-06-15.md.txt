@@ -1,0 +1,48 @@
+# 2019-06-15
+
+
+
+Members present: Brian Heim, Calvin Yung, James Surgenor, Josh Parmenter, Luke Nihlen, Marcin Pączkowski, Tejaswi Prakash, Nathan Ho, Patrick Dupuis
+
+Most number of people we've ever had on a call! Wow!
+
+Top priority pull requests for 3.10.3:
+
+- Separating input and output devices on Windows https://github.com/supercollider/supercollider/pull/4009
+- Fixing WebChannel related errors https://github.com/supercollider/supercollider/pull/4267
+- Making QtWebEngine optional https://github.com/supercollider/supercollider/pull/4328
+
+On the topic of making QtWebEngine optional, we discussed how the ability to run code from the help browser is just a nicety, and has the development overhead of requiring two editors.
+
+We discussed a few fun hypothetical UI/UX improvements to scide. These include:
+
+- colors + text formatting in the post window
+- Programmatic access to all UI elements in scide from the language.
+- Toolbar buttons for running code and entire file.
+
+Josh brought up multicore support for scsynth. The first step is to the waters by evaluating the feasibility of such support and running performance benchmarks on each server. We need to be careful that the reverence for supernova is based on hard data, and not a halo effect where we assume that supernova is good because multicore = faster.
+
+
+Luke noted that a review of the academic literature on supernova demonstrates somewhat different goals from scsynth. scsynth is designed to minimize latency, supernova for thoroughput. In particular, memory locking is a nondeterministic process, which directly violates scsynth's design philosophy. The impact (to my understanding) is that supernova is really performant on a good laptop or desktop machine, but sacrifices reliability in environments such as RPi.
+
+Optimization isn't just making something faster -- it's the progressive refinement of requirements.
+
+Josh noted that multiple instances of scsynth running allows for a more stable approach to parallelism, which may be more in line with scsynth's design goals, so a possible area of focus would be providing good built-in support for that.
+
+Brian noted that the project would also give us a good chance to clean up the scsynth code base and address some bugs. Ultimately the two servers can absorb each other's strengths.
+
+The long term health of the project will benefit greatly by reducing the number of servers we're maintaining from two to one, and we'll start by assessing the best way to do that.
+
+We discussed better timeboxing of the dev calls. Several of us are more than happy to talk for 2 hours or more, but we're going to keep it to 90 minutes from now on.
+
+Brian has written up some documentation on PR review process so that newer contributors can participate. There are several procedures that Brian, Nathan, and Patrick have informally agreed on but were never written down, and this causes major problems when bringing new reviewers on board.
+
+He brought up some concerns about how our project does not have any formal procedure for the delegation of write permissions.
+
+Our idea is to stratify permissions as follows: 1. reviewers (can hit approve and request changes), 2. committers (can merge PRs). Historically we've been too eager to hand out committer privileges. This is problem not because we want to gatekeep, but because inexperienced Git users have a chance of making mistakes. Some on the call said that they would be more comfortable *not* having write access for fear of screwing up. Reviewer rights, however, should be handed out to many people.
+
+Action items:
+
+- Give write access to Marcin, who has been around for years.
+- Write documentation for reviewers.
+- Create two tiers of contributors: reviewers (handed out early and often), and committers (handed out after a period of months).

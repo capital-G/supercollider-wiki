@@ -1,0 +1,50 @@
+# 2020-05-24
+
+
+
+Members present: Brian H, Marcin P, Luke N, James S, Patrick D, Gianluca E, Tejaswi P, Josh P, Geoffrey M, Julian R
+
+Release status
+- Josh P has had some reports of unsigned sc3-plugins not working with 3.11 on macOS 10.15
+    - hasn't been able to reproduce. thinks that everything is in order, but not sure.
+    - Marcin offered to test
+
+Release process scripting
+- Brian brought up the idea of automating / scripting the release process
+    - James S, Josh P, Brian H, Marcin P decided to form a working group for this
+    
+vcpkg - https://github.com/supercollider/supercollider/issues/4928
+- James S has used it before and offered some advice
+    - one issue is that packages need to be built from source, not a good way to provide Qt
+    - generally positive impression
+- Marcin P tried it, ran into an issue with powershell
+    - for portaudio, issue with asio sdk
+- James S mentioned asio sdk is in vcpkg, and seems like it provides CMake integration
+- Brian noted ExternalProject in CMake is also an option for managing external dependencies
+- Luke N and Marcin P said vcpkg support for CI first might be a good way to test it out, and then recommend it if it works
+    - James S said he would look into that
+
+portaudio vendoring - https://github.com/supercollider/supercollider/issues/4928
+- Marcin P did work to shift over to fresh, non-sc-org portaudio
+- Brian suggested using ExternalProject in CMake to get around
+- Discussed tradeoffs of vcpkg vs ExternalProject
+- Decided to do more research and revisit
+
+issue management - https://github.com/supercollider/supercollider/issues/4940
+- Josh P wants to reset everything and start from scratch
+- Luke N also likes this idea, but said we need to have a policy to avoid it happening again
+- Josh P said most projects don't actually run as long as SC. issue trackers work good for shorter term projects, but maybe not for this duration
+    - fresh start could give some focus
+- James S explained his ideas regarding stale issues and automation
+- Julian R said a bot would add a kind of neutrality/fairness to it, but is concerned that closing issues will hide valuable information
+- James S suggested updating issue template or other obvious place to note that you may want to search closed issues
+- Everyone agreed messaging around closing issues is important
+- Discussed a gradual approach to transitioning between current process and more controlled approach
+- There was a proposition to have a two-step approach where a bot would comment every issue that’s been stalled for more than X months, which would explain the triage process. Then, after some other time to be determined, the issue would be closed
+- Someone proposed to start with proposition some texts for these messages.
+
+Other topics and PRs:
+- Patrick raised TGrains PR in sc3-plugins
+- Patrick asked about https://github.com/supercollider/supercollider/pull/4939 going into 3.11.1 -- definitely can but some issues with merge conflicts
+- Julian asked about https://github.com/supercollider/supercollider/pull/4659
+going into 3.11.1 -- definitely can

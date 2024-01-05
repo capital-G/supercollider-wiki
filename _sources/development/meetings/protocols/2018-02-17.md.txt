@@ -1,0 +1,23 @@
+# 2018-02-17
+
+
+
+Members Present:
+
+Patrick, Nathan
+
+Recent work:
+
+- Patrick has been removing some old crap on the website
+- Nathan has been refactoring the new reverb for efficiency
+
+Topics:
+
+- 3.9.1 announcement delay
+- Recent advances in Debian packaging
+- Timing of introduction of scel and Ableton Link submodules
+- 3.9.2 release date moved to March 3rd
+- Two Rest-related issues for 3.9.2
+- Some issues tagged as 3.9.2 have been moved back to 3.9.x since nobody is actively working on them
+- Refactoring scsynth to improve the API, advantages and disadvantages of moving to modern C++ practices
+- Timing of the creation of 3.10 branch (in my opinion, creation of the 3.10 branch indicates that it is closed for new features)

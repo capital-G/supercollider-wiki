@@ -1,0 +1,63 @@
+# 2019-11-24
+
+
+
+Thanks to everyone who attended the sc-dev meeting! Minutes of the meeting are below. You can find archived minutes from all our meetings on our GitHub wiki page: https://github.com/supercollider/supercollider/wiki/Dev-Team-Meeting-Minutes
+
+The next meeting is planned for the weekend of Nov 30 / Dec 1. A meeting time poll will be sent out early in the week. If you'd like to attend but our usual meeting times aren't good for you, respond to this thread or email me privately and we'll try to work something out! We are always interested in getting new people involved in the development community.
+
+Regards,
+
+UR_NAME
+
+3.10.3 Release board: https://github.com/supercollider/supercollider/projects/17
+
+Future Release Board: https://github.com/supercollider/supercollider/projects/15
+
+sc-dev Meeting DATE Minutes:
+
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+
+sc-dev meeting 11-24
+
+James S, Josh, Nathan, Patrick, Brian, Marcin, Tejaswi
+
+Brian built an IKEA shelf
+
+4214 - James S - after a lot of digging it looks like something with Boost ASIO dropping requests. IPC wasn’t getting established. PR 4646 - a modification made for a synchronous read step happen for setting the group policy for auditing removable devices it fixed the issue every time. BUT - if it is something else ??? - lots of concern about why the initial reads are lost - but, maybe it doesn’t matter. 
+
+Document it?
+
+4368 - James has some new info. Sound card / Port Audio?
+
+3.10.4 diversion - out before end of year / holidays
+
+3132 -  CI says latest PR passes, but Patrick says it does NOT. 
+Top level YAML file is ok - but we need to send an error back to the calling script.
+Probably an issue in qpm
+On linux - server boots and runs the tests. But some tests don’t get run - hangs on TestNoOps. And ditches the rest. Test on local machine first to see if it works, then see if it can be fixed on Travis.
+Maybe only run server tests on linux?
+Shouldn’t hold up release.
+
+
+4645 - ready to go, but solves the most serious issue. Josh and Brian will look tonight.
+
+3.11 - Link is the big feature.
+Nathan would like some manual QA
+Look at API design
+
+3.11 alpha at the same time as 3.10.4 and ask people to start testing it more?
+Linux jack timing
+
+https://github.com/supercollider/supercollider/pull/4599 for 3.10.4? Voted down - on to 3.11!
+
+
+Manage 3.11 board for 4484 and Link
+
+James S - Soundfile view issue - possible threading issue. The way it talks back to the Qt widget seems to lock the whole GUI.
+As loading the sound file, something can hang the GUI thread. Will try to create reproducer.
+
+Brian - all - try to tackle some SC only PRs if we have the time!
+
+⚠ If you have any comments on topics in these meeting minutes, please start a new thread rather than replying to this one. ⚠
+

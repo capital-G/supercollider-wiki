@@ -1,0 +1,27 @@
+# 2017-05-27
+
+
+
+5 people were present: Brian, Alberto, Nathan, Julian, and Patrick.
+
+- Brian Heim has been working on his big UTF-8 pull request which fixes
+the Windows help file issue.
+- Alberto de Campo has a topic branch for multiclients to improve node
+and buffer allocation, and has a PR for OSX standalones.
+- Nathan Ho has been working on UGen regression tests, and small help
+files and class library issues.
+- Julian Rohrhuber worked on File.read* methods, Rest/Operand reform,
+and a quark for a Neutral object that records every message sent to it.
+- Patrick Dupuis has been investigating the Ubuntu keyboard shortcut
+issue and has been working on help file, class library, and
+Linux-related issues.
+
+Topics:
+
+- Old standalone instructions are gone.
+- A PR can be merged when it presents an improvement and doesn't
+introduce new bugs.
+- 3.9.x releases and eventual adoption of git-flow
+- SCDoc, barriers for new helpfile contributors, features we can add to
+the help files to make it easier to contribute
+- Number of PRs open, speed of merge, filing PRs with incomplete work

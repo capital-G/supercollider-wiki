@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Changes &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7d9986eb" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Errors" href="errors.html" />
+    <link rel="prev" title="FAQ" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="changes">
+<h1>Changes<a class="headerlink" href="#changes" title="Link to this heading">¶</a></h1>
+<p>This is a collection of FAQs I’ve seen around the issue tracker. Hopefully this can be put someplace more public once it gains steam. This is meant as an addition to the longer guides about doing specific basic things like installing and configuring. - &#64;mossheim</p>
+<nav class="contents local" id="content">
+<p class="topic-title">Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#env-seems-to-work-differently-than-i-expect" id="id1">Env seems to work differently than I expect</a></p></li>
+<li><p><a class="reference internal" href="#can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it" id="id2">Can we change parameter names of methods? The current naming confuses me/I don’t like it</a></p></li>
+<li><p><a class="reference internal" href="#can-i-make-x-addition-to-the-language-syntax" id="id3">Can I make X addition to the language syntax?</a></p></li>
+<li><p><a class="reference internal" href="#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime" id="id4">Why does sclang make me put <code class="docutils literal notranslate"><span class="pre">var</span></code> statements at the top of functions? Why can’t I define classes at runtime?</a></p></li>
+<li><p><a class="reference internal" href="#is-or-faster" id="id5">Is <code class="docutils literal notranslate"><span class="pre">?</span></code> or <code class="docutils literal notranslate"><span class="pre">??</span></code> faster?</a></p></li>
+<li><p><a class="reference internal" href="#can-we-get-code-folding-in-the-ide" id="id6">Can we get code folding in the IDE?</a></p></li>
+<li><p><a class="reference internal" href="#can-i-use-sc-in-a-game-audio-engine" id="id7">Can I use SC in a game audio engine?</a></p></li>
+</ul>
+</nav>
+<section id="env-seems-to-work-differently-than-i-expect">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Env seems to work differently than I expect</a><a class="headerlink" href="#env-seems-to-work-differently-than-i-expect" title="Link to this heading">¶</a></h2>
+<p>Source: https://github.com/supercollider/supercollider/issues/3629#issue-311070157</p>
+<p>Answer: https://github.com/supercollider/supercollider/issues/3629#issuecomment-378478356</p>
+<p>jamshark70:</p>
+<blockquote>
+<div><p>This is a common misunderstanding. We often think an envelope segment goes from level A to level B, and the next segment from B to C. But that’s not correct. An envelope segment always goes from the envelope’s current output level to the segment’s target level.</p>
+<p>An envelope segment has no fixed, unchanging start level. If it did, it would be impossible to jump early to the release segment, or to loop back.</p>
+<p>But, when the EnvGen starts, it has no current level at first. So the Env provides one extra level, at the beginning. levels[0] initializes the EnvGen, and then this level is never touched again. So, levels[0] doesn’t correspond to any envelope node. It’s only a start value. The first envelope segment goes to levels[1].</p>
+</div></blockquote>
+</section>
+<section id="can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Can we change parameter names of methods? The current naming confuses me/I don’t like it</a><a class="headerlink" href="#can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it" title="Link to this heading">¶</a></h2>
+<p>Source: https://github.com/supercollider/supercollider/issues/3629#issue-311070157</p>
+<p>Answer: Sometimes.</p>
+<p>The important thing to note is that code can pass arguments this way:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">(</span><span class="nx">param1</span><span class="o">:</span> <span class="mi">7</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>So, any change to a public-facing parameter name is a potential breaking change. We might be able to do this in a minor version release, but only if the parameter is rarely used or unlikely to be used with a keyword argument.</p>
+</section>
+<section id="can-i-make-x-addition-to-the-language-syntax">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Can I make X addition to the language syntax?</a><a class="headerlink" href="#can-i-make-x-addition-to-the-language-syntax" title="Link to this heading">¶</a></h2>
+<p>Please think <em>very hard</em> about this before submitting a ticket. Conversations about this tend to fall apart very quickly unless the change is presented:</p>
+<ul class="simple">
+<li><p>clearly</p></li>
+<li><p>with examples</p></li>
+<li><p>with strong justification</p></li>
+<li><p>with discussion of tradeoffs</p></li>
+</ul>
+<p>Also, remember to look and see if this idea has already been discussed.</p>
+</section>
+<section id="why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Why does sclang make me put <code class="docutils literal notranslate"><span class="pre">var</span></code> statements at the top of functions? Why can’t I define classes at runtime?</a><a class="headerlink" href="#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime" title="Link to this heading">¶</a></h2>
+<p>These quirks and limitations of sclang are well known:</p>
+<ul class="simple">
+<li><p>all <code class="docutils literal notranslate"><span class="pre">var</span></code> statements have to go at the top of a function</p></li>
+<li><p>all class extensions have to come after classes in a class file</p></li>
+<li><p>classes can’t be imported dynamically</p></li>
+<li><p>there is no namespacing</p></li>
+</ul>
+</section>
+<section id="is-or-faster">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Is <code class="docutils literal notranslate"><span class="pre">?</span></code> or <code class="docutils literal notranslate"><span class="pre">??</span></code> faster?</a><a class="headerlink" href="#is-or-faster" title="Link to this heading">¶</a></h2>
+<p>James: https://www.listarc.bham.ac.uk/lists/sc-dev/msg58256.html</p>
+<p><code class="docutils literal notranslate"><span class="pre">??</span></code> is faster.</p>
+</section>
+<section id="can-we-get-code-folding-in-the-ide">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Can we get code folding in the IDE?</a><a class="headerlink" href="#can-we-get-code-folding-in-the-ide" title="Link to this heading">¶</a></h2>
+<p>Source: https://github.com/supercollider/supercollider/issues/2264</p>
+<p>Answer: https://github.com/supercollider/supercollider/issues/2264#issuecomment-238515818</p>
+<p>crucialfelix:</p>
+<blockquote>
+<div><p>The IDE isn’t intended to become a full professional level code editor. That would suck up precious developer time that needs to be spent on the core feature (music). It’s pretty complicated to do code folding correctly.</p>
+</div></blockquote>
+</section>
+<section id="can-i-use-sc-in-a-game-audio-engine">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Can I use SC in a game audio engine?</a><a class="headerlink" href="#can-i-use-sc-in-a-game-audio-engine" title="Link to this heading">¶</a></h2>
+<p>SuperCollider is licensed under the GNU GPL, a fairly restrictive open source license. This runs against the interests of most commercial game developers.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../community/index.html">Community</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FAQ</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#env-seems-to-work-differently-than-i-expect">Env seems to work differently than I expect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it">Can we change parameter names of methods? The current naming confuses me/I don’t like it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-i-make-x-addition-to-the-language-syntax">Can I make X addition to the language syntax?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime">Why does sclang make me put <code class="docutils literal notranslate"><span class="pre">var</span></code> statements at the top of functions? Why can’t I define classes at runtime?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-or-faster">Is <code class="docutils literal notranslate"><span class="pre">?</span></code> or <code class="docutils literal notranslate"><span class="pre">??</span></code> faster?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-we-get-code-folding-in-the-ide">Can we get code folding in the IDE?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#can-i-use-sc-in-a-game-audio-engine">Can I use SC in a game audio engine?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">Errors</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">FAQ</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">FAQ</a></li>
+      <li>Next: <a href="errors.html" title="next chapter">Errors</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/faq/changes-to-sc.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

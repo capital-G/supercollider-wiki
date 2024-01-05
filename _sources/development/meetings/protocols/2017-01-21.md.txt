@@ -1,0 +1,17 @@
+# 2017-01-21
+
+
+
+What we worked on:
+
+- Brian Heim managed to get SC built on Windows and has dug a bit into
+the Windows helpfile issue, and has been working on a huge refactor of
+PyrLexer.cpp (largely untouched since the initial commit!).
+- Nathan Ho slacked off with some miscellaneous changes such as a Ctor
+bug in FOS, and investigated OSC v1.1 "compliance."
+
+Brian proposed that 3.9 be delayed until every important issue regarding
+compatibility (in particular Qt 5.7, command line REPL, Windows help
+files) is fixed, making it arguably the first fully cross-platform
+release of SC. After that, 3.10 could concentrate on improving
+user-friendliness by improving SCIDE and Qt GUI. 

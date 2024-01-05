@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>git cheat sheet &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7d9986eb" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="git workflow and guidelines" href="git-workflow-and-guidelines.html" />
+    <link rel="prev" title="GitHub actions and migration notes" href="GitHub-Actions-migration-notes.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="git-cheat-sheet">
+<h1>git cheat sheet<a class="headerlink" href="#git-cheat-sheet" title="Link to this heading">¶</a></h1>
+<nav class="contents local" id="content">
+<p class="topic-title">Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#get-the-latest-sources" id="id2">Get the latest sources</a></p></li>
+<li><p><a class="reference internal" href="#working-with-submodules" id="id3">Working with submodules</a></p>
+<ul>
+<li><p><a class="reference internal" href="#auto-update-of-submodules-using-git-config" id="id4">Auto-update of submodules using git config</a></p></li>
+<li><p><a class="reference internal" href="#auto-update-of-submodules-using-command-line-flags" id="id5">Auto-update of submodules using command line flags</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#update-local-repository" id="id6">Update local repository</a></p>
+<ul>
+<li><p><a class="reference internal" href="#updating-and-rebasing" id="id7">Updating and rebasing</a></p></li>
+<li><p><a class="reference internal" href="#updating-submodules" id="id8">Updating submodules</a></p></li>
+<li><p><a class="reference internal" href="#pulling-from-different-sources" id="id9">Pulling from different sources</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#commit-push" id="id10">Commit + Push</a></p></li>
+<li><p><a class="reference internal" href="#branches" id="id11">Branches</a></p></li>
+<li><p><a class="reference internal" href="#a-common-git-workflow-for-development-work-on-supercollider" id="id12">A common git workflow for development work on SuperCollider</a></p>
+<ul>
+<li><p><a class="reference internal" href="#simple-work-on-your-main-branch" id="id13">Simple work on your main branch</a></p></li>
+<li><p><a class="reference internal" href="#using-a-separate-branch-for-work-on-a-feature" id="id14">Using a separate branch for work on a feature</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#common-git-commands" id="id15">Common git commands</a></p></li>
+<li><p><a class="reference internal" href="#problems-with-submodule-state-update" id="id16">Problems with submodule state update</a></p></li>
+<li><p><a class="reference internal" href="#testing-mailing-list-patches" id="id17">Testing mailing list patches</a></p></li>
+<li><p><a class="reference internal" href="#resources" id="id18">Resources</a></p></li>
+</ul>
+</nav>
+<section id="get-the-latest-sources">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Get the latest sources</a><a class="headerlink" href="#get-the-latest-sources" title="Link to this heading">¶</a></h2>
+<p>To work with SuperCollider’s source code, you first need to create your own local clone of the online <em>repository</em>. There are two options:</p>
+<ul>
+<li><p>If you are going to push changes back to the GitHub repository do:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">git&#64;github.com:supercollider/supercollider.git</span></code></p>
+</li>
+<li><p>If you don’t have a GitHub account or you don’t intend to push changes (so will instead be contributing via patches or pull-requests), then use read-only access:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">git://github.com/supercollider/supercollider.git</span></code></p>
+</li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">--recursive</span></code> flag is required to also download all the <em>submodules</em> used by the repository.</p>
+</section>
+<section id="working-with-submodules">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Working with submodules</a><a class="headerlink" href="#working-with-submodules" title="Link to this heading">¶</a></h2>
+<p>This project uses <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">git submodules</a> to manage third-party dependencies (Ableton Link, yaml-cpp, etc.) and subprojects. By default, when you switch branches or commits, git does not update the state of submodules, which may cause build failures and nuisances such as directories containing submodules showing up as untracked or modified in <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>. You can resolve this by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span> <span class="pre">--init</span> <span class="pre">--recursive</span></code>. However, there are ways of making things simpler.</p>
+<section id="auto-update-of-submodules-using-git-config">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Auto-update of submodules using git config</a><a class="headerlink" href="#auto-update-of-submodules-using-git-config" title="Link to this heading">¶</a></h3>
+<p>The following command will turn on automatically updating submodules when performing <code class="docutils literal notranslate"><span class="pre">checkout</span></code>, <code class="docutils literal notranslate"><span class="pre">fetch</span></code> and <code class="docutils literal notranslate"><span class="pre">pull</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--local<span class="w"> </span>submodule.recurse<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">--global</span></code> instead of <code class="docutils literal notranslate"><span class="pre">--local</span></code> to make this the default behavior across all git repositories on your computer.</p>
+<p>You can also turn automatic submodule updates on or off for <code class="docutils literal notranslate"><span class="pre">fetch</span></code> by setting:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--local<span class="w"> </span>fetch.recurseSubmodules<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="c1"># or false</span>
+</pre></div>
+</div>
+<p>Note that this can make these commands take much longer to complete.</p>
+</section>
+<section id="auto-update-of-submodules-using-command-line-flags">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Auto-update of submodules using command line flags</a><a class="headerlink" href="#auto-update-of-submodules-using-command-line-flags" title="Link to this heading">¶</a></h3>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">--recurse-submodules</span></code> option with <code class="docutils literal notranslate"><span class="pre">fetch</span></code>, <code class="docutils literal notranslate"><span class="pre">pull</span></code>, and <code class="docutils literal notranslate"><span class="pre">checkout</span></code> to update submodules: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--recurse-submodules</span> <span class="pre">develop</span></code>. If you find yourself using this flag (or any command) regularly, you can alias it using a <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">git alias</a>. An example would be:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.chrs<span class="w"> </span><span class="s1">&#39;checkout --recurse-submodules&#39;</span><span class="w"> </span><span class="c1"># chrs = &#39;checkout, recursing submodules&#39;</span>
+<span class="c1"># now you can use it like:</span>
+git<span class="w"> </span>chrs<span class="w"> </span>develop
+</pre></div>
+</div>
+</section>
+</section>
+<section id="update-local-repository">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Update local repository</a><a class="headerlink" href="#update-local-repository" title="Link to this heading">¶</a></h2>
+<p>You can update the branches on your local repository to those of a remote repository with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
+<p>Many reported build problems are due to out-of-date submodules, so make sure to not skip the last step.</p>
+<p>If you are going to do any development work, keep reading for more details…</p>
+<section id="updating-and-rebasing">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Updating and rebasing</a><a class="headerlink" href="#updating-and-rebasing" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> command downloads <em>commits</em> from the online to the local repository. If you are doing any development work, it is best to always use it with the <code class="docutils literal notranslate"><span class="pre">--rebase</span></code> flag:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>--rebase
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--rebase</span></code> flag tells git to first put your new commits off the commit stack, and then stack them up on top of the just-downloaded commits. If the downloaded commits were stacked on top of yours, the history of your repository would not be a linear continuation of the history of the online repository anymore, which would prevent you from being able to push your commits online.</p>
+<p>You could define a git command <em>alias</em> to help you with this - a short custom command that will substitute the longer command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>alias.up<span class="w"> </span>pull<span class="w"> </span>--rebase
+</pre></div>
+</div>
+<p>This will make <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">up</span></code> equivalent to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">--rebase</span></code>.</p>
+</section>
+<section id="updating-submodules">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Updating submodules</a><a class="headerlink" href="#updating-submodules" title="Link to this heading">¶</a></h3>
+<p>Submodules are git repositories within other git repositories; the main SuperCollider repository uses several submodules. Submodules are not automatically updated within your local copy when you <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, so now and then you need to update them manually using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
+<p>How to know precisely when submodules need to be updated? Your local copy of submodules is out of sync when:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command shows directories that correspond to submodules as modified</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> command will show changes related to these directories, in the form:
+<code class="docutils literal notranslate"><span class="pre">Subproject</span> <span class="pre">commit</span> <span class="pre">&lt;commit</span> <span class="pre">ID&gt;</span></code></p></li>
+</ul>
+<p>When you see any of these signs, it’s time to update submodules. This may happen even whenever changing <a class="reference internal" href="#branches">branches</a>, as different branches may use different versions of submodules.</p>
+<p>Submodules are referenced in their hosting module by their URL. At some point the URL itself may be changed, and you will have to update it with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>sync<span class="w"> </span>--recursive
+</pre></div>
+</div>
+<p>In case you get a submodule stuck in a state you don’t understand, it’s handy to know that you can always delete the submodules and re-fetch them, for example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>external_libraries/nova-tt
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
+</section>
+<section id="pulling-from-different-sources">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Pulling from different sources</a><a class="headerlink" href="#pulling-from-different-sources" title="Link to this heading">¶</a></h3>
+<p>With git, it’s also possible to pull changes from different clones of the same repository. For instance, you might have two or three computers that you use at different times. You can synchronize those clones over a local network without touching github!</p>
+<p>The easy way:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>https://example.com/repo.git<span class="w"> </span>their-branchname<span class="w"> </span><span class="c1"># get their changes</span>
+</pre></div>
+</div>
+<p>check that everything is okay</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span><span class="c1"># update main from github</span>
+<span class="w">    </span>git<span class="w"> </span>push
+</pre></div>
+</div>
+<p>The hard way:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>merge-their-changes
+<span class="w">    </span>git<span class="w"> </span>pull<span class="w"> </span>https://example.com/repo.git<span class="w"> </span>their-branchname<span class="w"> </span><span class="c1"># get their changes</span>
+</pre></div>
+</div>
+<p>check that everything is okay, then push changes back to github.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>main
+<span class="w">    </span>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span><span class="c1"># update main from github</span>
+<span class="w">    </span>git<span class="w"> </span>rebase<span class="w"> </span>main<span class="w"> </span>merge-their-changes<span class="w"> </span><span class="c1"># put their’s changes on top of latest changes from github</span>
+<span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>main
+<span class="w">    </span>git<span class="w"> </span>merge<span class="w"> </span>merge-their-changes
+<span class="w">    </span>git<span class="w"> </span>push
+</pre></div>
+</div>
+<p>taken from <a class="reference external" href="http://people.gnome.org/~federico/misc/git-cheat-sheet.txt">here</a></p>
+</section>
+</section>
+<section id="commit-push">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Commit + Push</a><a class="headerlink" href="#commit-push" title="Link to this heading">¶</a></h2>
+<p>Unlike in SVN, publishing changes is a two-step process in git:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Commit</span></code> the changes. The changes are now “permanent” in your local clone of the repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Push</span></code> the new commits into the public repository.</p></li>
+</ul>
+<p>This has the advantage over SVN that you can manipulate the changes after committing but before pushing. If you made a mistake with some commits, you can <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> them, erasing them from your local repository. Then you can recommit before pushing.</p>
+<p>Highly recommended: Set your global git configuration so that <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> with no arguments will push only the current branch. Otherwise, if you forget to say <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">[branch]</span></code>, git will helpfully push all commits from all branches, including ones that you forgot about and didn’t intend to make public. Once changes are pushed to the public repository, they can’t be erased – only reverted. Doing this will help to avoid headache-inducing mistakes.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>push.default<span class="w"> </span>upstream
+</pre></div>
+</div>
+<p>If you’re using an older version of git, substitute “tracking” for “upstream.”</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>push.default<span class="w"> </span>tracking
+</pre></div>
+</div>
+</section>
+<section id="branches">
+<span id="id1"></span><h2><a class="toc-backref" href="#id11" role="doc-backlink">Branches</a><a class="headerlink" href="#branches" title="Link to this heading">¶</a></h2>
+<p>Another really helpful way to save you from yourself is to work in a local branch that doesn’t exist in the public repository. If you are new to git, you <code class="docutils literal notranslate"><span class="pre">will</span></code> make mistakes. If you make mistakes in a published branch, such as “main,” and you accidentally push those mistakes, it may take some effort to clean up. But if you work in a branch that exists only on your local machine, you can do anything you want with it, and then selectively move specific commits into a public branch.</p>
+<p>With a local-only branch, the worst case (completely messing up the branch) is that you delete the local branch and re-create it, with no impact on the origin.</p>
+<p>The “-b” option to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> creates a new branch from an existing one.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>main<span class="w"> </span>-b<span class="w"> </span>my_main<span class="w"> </span><span class="c1"># now you have your own disconnected branch of main</span>
+</pre></div>
+</div>
+<p>… work work work, commit stuff, blah blah…</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>log<span class="w"> </span><span class="c1"># take note of the commit IDs, which are 32 digit hexadecimal strings</span>
+
+<span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>main<span class="w"> </span><span class="c1"># switch back to the real main branch</span>
+<span class="w">    </span>git<span class="w"> </span>cherry-pick<span class="w"> </span><span class="o">[</span>ID<span class="o">]</span><span class="w"> </span><span class="c1"># repeat for each ID</span>
+<span class="w">    </span>git<span class="w"> </span>cherry<span class="w"> </span>-v<span class="w"> </span><span class="c1"># doublecheck what will actually be pushed</span>
+<span class="w">    </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>my_main<span class="w"> </span><span class="c1"># safe again</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry-pick</span></code> is a bit inconvenient for large numbers of commits. In that case, it would be better to use a “topic branch.” See below, “Using a separate branch for work on a feature.”</p>
+</section>
+<section id="a-common-git-workflow-for-development-work-on-supercollider">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">A common git workflow for development work on SuperCollider</a><a class="headerlink" href="#a-common-git-workflow-for-development-work-on-supercollider" title="Link to this heading">¶</a></h2>
+<p>Make sure you’ve done the “git clone” stuff above, then…</p>
+<section id="simple-work-on-your-main-branch">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Simple work on your main branch</a><a class="headerlink" href="#simple-work-on-your-main-branch" title="Link to this heading">¶</a></h3>
+<p>Hack on existing files, create new files…</p>
+<p>Display and check uncommitted changes:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>diff<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Stage changed and new files (mark them for inclusion in the next commit):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>add<span class="w"> </span>file1<span class="w"> </span>file2<span class="w"> </span>file3
+</pre></div>
+</div>
+<p>Check which changed files are staged and which not:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<p>Commit the staged changes and additions:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;This commit does this and that...&quot;</span>
+</pre></div>
+</div>
+<p>Repeat the above procedure for as many separate commits as you want.</p>
+<p>Update your local repository with latest commits in the public repository:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>pull<span class="w"> </span>--rebase
+<span class="w">    </span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
+<p>Check what you will be pushing:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>log<span class="w"> </span>origin/main..
+</pre></div>
+</div>
+<p>Push it:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>push
+</pre></div>
+</div>
+</section>
+<section id="using-a-separate-branch-for-work-on-a-feature">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Using a separate branch for work on a feature</a><a class="headerlink" href="#using-a-separate-branch-for-work-on-a-feature" title="Link to this heading">¶</a></h3>
+<p>Sometimes you want to work on several unrelated features during the same period of time and you want to be able to switch between your work on one or another. You can do this by using several branches within your local repository. Each branch allows you to store your work on a feature in form of commits on top of the commit history at the time the branch was created. By default, each repository contains one branch named main, but you can create new ones (and even rename any of them later, including main).</p>
+<p>Create a new branch named “my_new_feature” containing all the commits in the current branch:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>my_new_feature
+</pre></div>
+</div>
+<p>By the way <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">branch_name</span></code> switches between branches. ‘git status’ will tell you which branch you are currently on.</p>
+<p>Now start coding your changes, and commit them into your feature branch with ‘git add’ and ‘git commit’ as explained in the previous section.</p>
+<p>While you are coding your new feature you might need to update the branch with latest changes from the remote (public) repository, to keep up with other developments. The safest way to do this is to update your main branch and then rebase commits introduced by your feature branch on top of the main. Be sure to have all local changes committed before doing this:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>pull<span class="w"> </span>--rebase
+git<span class="w"> </span>rebase<span class="w"> </span>main<span class="w"> </span>my_new_feature
+</pre></div>
+</div>
+<p>When you are ready to push the work on the feature to the public repository, first do the above three steps to synchronize your local repository with the public one, then check what you are going to push with ‘git log origin/main..’ and do the following:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>merge<span class="w"> </span>my_new_feature
+git<span class="w"> </span>push
+</pre></div>
+</div>
+<p>This will merge the additional commits of your feature branch into the main and push them public. For additional details about rebase, see (4).</p>
+</section>
+</section>
+<section id="common-git-commands">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Common git commands</a><a class="headerlink" href="#common-git-commands" title="Link to this heading">¶</a></h2>
+<p>upstream - the GitHub repository.</p>
+<p>fetch and merge changes from upstream:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+</pre></div>
+</div>
+<p>commit all local changes:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span>“message”
+</pre></div>
+</div>
+<p>commit changes in specific files:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>add<span class="w"> </span>&lt;files…&gt;
+
+<span class="w">    </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span>“message”
+</pre></div>
+</div>
+<p>get patch files for last N commits</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>format-patch<span class="w"> </span>-N
+</pre></div>
+</div>
+<p>get patch files for all commits that are in your current branch but not in upstream:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>format-patch<span class="w"> </span>origin/main
+</pre></div>
+</div>
+<p>undo (delete) all current non-commited changes (Watch out !):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD
+</pre></div>
+</div>
+<p>undo last commit, but leave the changes in the working tree</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD^1
+</pre></div>
+</div>
+<p>undo (delete) all commits since last time one was pulled from upstream (Watch out !). This should be done while in the main branch:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/main
+</pre></div>
+</div>
+<p>undo all commits since the last time one was pulled from upstream but leave the changes in the working tree. This should be done while in the main branch:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>origin/main
+</pre></div>
+</div>
+<p>show uncommited local changes:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>diff<span class="w"> </span><span class="o">[</span>file<span class="o">]</span>
+</pre></div>
+</div>
+<p>discard local changes instead of commiting them:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>—<span class="w"> </span>&lt;file&gt;
+</pre></div>
+</div>
+<p>add interactively</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>add<span class="w"> </span>-i
+</pre></div>
+</div>
+<p>To revert local commits, revert will create another commit that undoes the commit provided. Unlike reset the history is not erased.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>revert<span class="w"> </span>&lt;commit<span class="w"> </span>ID&gt;
+</pre></div>
+</div>
+<p>show changes compared to upstream:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>diff<span class="w"> </span>origin/main<span class="w">    </span><span class="c1"># only diff</span>
+
+<span class="w">    </span>git<span class="w"> </span>show<span class="w"> </span>origin/main..<span class="w">  </span><span class="c1"># log and diff</span>
+
+<span class="w">    </span>git<span class="w"> </span>log<span class="w"> </span>origin/main..<span class="w">   </span><span class="c1"># only log</span>
+</pre></div>
+</div>
+<p>show latest log in upstream:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>log<span class="w"> </span>origin/main
+</pre></div>
+</div>
+<p>see status of changes:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</section>
+<section id="problems-with-submodule-state-update">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Problems with submodule state update</a><a class="headerlink" href="#problems-with-submodule-state-update" title="Link to this heading">¶</a></h2>
+<p>When switching branches and doing a submodule update (in SC: nova-simd and nova-tt”), git sometimes messes up the submodule status without you having touched it.</p>
+<p>It will post something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>    On branch main
+    Changes not staged for commit:
+      (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+      (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+      (commit or discard the untracked or modified content in submodules)
+    modified:   external_libraries/nova-tt (untracked content)
+</pre></div>
+</div>
+<p>This can be remedied by deleting the file and updatind the submodules again (given you haven’t consciously made any changes, of course, which you’d lose!):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>rm<span class="w"> </span>-r<span class="w"> </span>external_libraries/nova-tt
+<span class="w">    </span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</pre></div>
+</div>
+</section>
+<section id="testing-mailing-list-patches">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Testing mailing list patches</a><a class="headerlink" href="#testing-mailing-list-patches" title="Link to this heading">¶</a></h2>
+<p>To try out emailed patches (created with git send-mail) copy all the content of the original mail message in a file, e.g. patch.mbox, and remove all the empty/white-spaces lines from the beginning of that file. If the patch is a series of mails copy all in order in the same file (the subject has an order tag <code class="docutils literal notranslate"><span class="pre">[PATCH</span> <span class="pre">0/N]</span></code>, <code class="docutils literal notranslate"><span class="pre">[PATCH</span> <span class="pre">1/N]</span></code>, …, <code class="docutils literal notranslate"><span class="pre">[PATCH</span> <span class="pre">N/N]</span></code>).</p>
+<p>Note: in gmail go to the option “show original” and copy the plain text message.</p>
+<p>Create a branch to try the patch</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>solve_problem_patch
+</pre></div>
+</div>
+<p>Apply and merge the patch with am (apply mailbox)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>am<span class="w"> </span>-3<span class="w"> </span>patch.mbox
+</pre></div>
+</div>
+<p>After testing it the branch can be erased (be careful any change will be lost)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>solve_problem_patch
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this workflow is useful just to try a patch and discard changes for other solutions check the Resources.</p>
+</div>
+</section>
+<section id="resources">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Resources</a><a class="headerlink" href="#resources" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://book.git-scm.com/">Git Book</a></p></li>
+<li><p><a class="reference external" href="http://progit.org/book/">Pro Git Book</a></p></li>
+<li><p><a class="reference external" href="http://www.ralfebert.de/blog/tools/visual_git_tutorial_1/">Visual Git Tutorial</a></p></li>
+<li><p><a class="reference external" href="http://jbowes.wordpress.com/2007/01/26/git-rebase-keeping-your-branches-current/">Rebasing</a></p></li>
+<li><p><a class="reference external" href="http://osteele.com/archives/2008/05/my-git-workflow">My Git Workflow</a></p></li>
+</ul>
+<p>contributed by:  Miguel Negrão, Jakob Leben, Jonatan Liljedahl, James Harkins, Till Bovermann</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Development</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Git</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="GitHub-Actions-migration-notes.html">GitHub actions and migration notes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">git cheat sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git-workflow-and-guidelines.html">git workflow and guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../meetings/index.html">Meetings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">Miscellaneous dev notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project-structure/index.html">Project structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style/index.html">Code style guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../platforms/index.html">Plattforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releasing/index.html">Releasing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reviewing/index.html">Reviewing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/index.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Development</a><ul>
+  <li><a href="index.html">Git</a><ul>
+      <li>Previous: <a href="GitHub-Actions-migration-notes.html" title="previous chapter">GitHub actions and migration notes</a></li>
+      <li>Next: <a href="git-workflow-and-guidelines.html" title="next chapter">git workflow and guidelines</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/development/git/git-cheat-sheet.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

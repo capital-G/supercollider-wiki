@@ -1,0 +1,13 @@
+# 2017-06-03
+
+
+
+- Brian finished the breadcrumbs link issues and filesystem UTF-8 support.
+- Nathan didn't do much aside from participating in discussions
+
+topics:
+
+- we merged 10 pull requests and closed 16 issues this week! holy hell!
+- Rest refactor is pretty much ready. Nathan should review it, merge within the next week, and we can then do a post-mortem
+- current open discussions regarding style guides, and issues with design by committee in free software communities
+- should we really dedicate time to sc3-plugins?

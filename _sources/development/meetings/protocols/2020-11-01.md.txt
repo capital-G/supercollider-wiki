@@ -1,0 +1,28 @@
+# 2020-11-01
+
+
+
+Present: Gianluca E, Brian H, Marcin P, Hanns H
+
+3.11.2 release
+- on schedule for release
+- one small build system issue and one crash reported on macOS 10.12 (#5229), found fixes for both
+- will do a release if that one issue is fixed
+
+3.12 release
+- decided we want to include #5110 (clip hardware output on macOS)
+- may move to C++17 for this release to prepare for porting to Qt 6
+
+Webassembly
+- Hanns discussed recent talk about porting SC, at least scsynth, to the webassembly toolchain
+- Discussed possible porting issues -- threading, exceptions, etc.
+- At this point, doesn't look like anyone else can help out, but we also aren't in a rush to implement this
+
+Discussed using labels and milestones to help organize issues
+- Brian proposed using a couple labels for priority level to organize open issues
+- Discussed how to agree on priority levels and how to go about adopting labeling as a team
+  - Would want multiple people to label, and discuss to agree on how to assign priority beforehand
+
+Discussed informal group code review sessions
+- Brian H, James S, Gianluca E, Marcin P have met twice to review PRs as a group, to get experience reviewing and learn from each other
+- Want to ask more people to join - will announce more widely for the next time 

@@ -1,0 +1,27 @@
+# 2019-06-02
+
+
+
+Members present: Brian, James S, Luke, Nathan, Patrick
+
+The reformat is done! We're back in action!
+
+Current task is to review our PR backlog and help people with the clang-format process. Rebasing is a bit tricky especially for git beginners, plus it has some minor bugs that we will need to help people work around. However, the number of PRs affected is finite.
+
+This puts us on the road to 3.10.3. The most important PRs for this release are:
+
+- Making qtwebengine optional: https://github.com/supercollider/supercollider/pull/4328
+- WebChannel - fix crash opening a second IDE, fix JavaScript errors running without IDE: https://github.com/supercollider/supercollider/pull/4267
+- HelpBrowser executes code twice: https://github.com/supercollider/supercollider/pull/4390
+
+Patrick brought up the problem of inaccurate documentation in supercollider-quarks master repository, specifically the use of @ tags.
+
+Luke investigated poor design of .asFloat and .asInteger: https://github.com/supercollider/supercollider/issues/4418 Their behavior is surprising and arbitrary: they return `0` when given incorrect syntax, they ignore characters at the end of the string (`"0fdsa".asFloat == 0.0`), and they don't support sclang literal features (`"0xfa".asInteger == 0`). However, unintended consequences of breaking backward compatibility is a real concern in the wake of Float:asString. Changing the failure behavior is particularly dangerous. Discussion on how to move forward remains inconclusive.
+
+We did some early stage brainstorming of how the SC community can adopt an informal RFC process to finalize proposals in major project direction. In particular, we looked at the Rust RFC process: https://github.com/rust-lang/rfcs.
+
+SC development is going to be a bit frenzied in the next two weeks while we catch up with the PR backlog and get in gear for 3.10.3. Once things are relatively stable, the timing is good to open a discussion about RFCs on sc-dev.
+
+The process of proposing and adopting an RFC protocol is a bit chicken-and-egg, but it won't be an issue if the discussion is done in a way inclusive of all SC contributors whether or not they're on Slack or the dev meetings. We make a point of not finalizing any important/controversial decisions on these two platforms, since not everyone is comfortable using those and people are in different time zones. However, contributors who want a say in project decisions are expected to follow at least sc-dev and GitHub.
+
+We had some discussion about upholding civility and ensuring psychological/emotional safety in the SC community.

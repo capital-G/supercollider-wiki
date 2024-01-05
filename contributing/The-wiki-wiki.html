@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The wiki-wiki &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7d9986eb" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="UGen-Quality standards" href="UGen-Quality-Standards.html" />
+    <link rel="prev" title="Guide to SuperCollider Unit Testing" href="workflow/Unit-Testing-Guide.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="the-wiki-wiki">
+<h1>The wiki-wiki<a class="headerlink" href="#the-wiki-wiki" title="Link to this heading">¶</a></h1>
+<p>This page contains information for the SuperCollider project Wiki: structure, organization, formatting and style guidelines, etc.</p>
+<p>All guidance here is considered a <em>recommendation</em> unless stated otherwise.</p>
+<nav class="contents local" id="content">
+<p class="topic-title">Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#making-changes" id="id1">Making changes</a></p></li>
+<li><p><a class="reference internal" href="#duplicate-content" id="id2">Duplicate content</a></p></li>
+<li><p><a class="reference internal" href="#tone-and-brevity" id="id3">Tone and brevity</a></p></li>
+<li><p><a class="reference internal" href="#titles-and-section-headings" id="id4">Titles and section headings</a></p></li>
+<li><p><a class="reference internal" href="#section-breaks" id="id5">Section breaks</a></p></li>
+<li><p><a class="reference internal" href="#next-section" id="id6">Next section</a></p>
+<ul>
+<li><p><a class="reference internal" href="#anchoring-back-to-the-top" id="id7">Anchoring back to the top</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#directory-pages" id="id8">Directory pages</a></p></li>
+<li><p><a class="reference internal" href="#the-sidebar" id="id9">The sidebar</a></p></li>
+<li><p><a class="reference internal" href="#works-in-progress-wip" id="id10">Works in progress (WIP)</a></p></li>
+</ul>
+</nav>
+<section id="making-changes">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Making changes</a><a class="headerlink" href="#making-changes" title="Link to this heading">¶</a></h2>
+<p>Become familiar with wiki conventions described in this document before making changes.</p>
+<p>We try to avoid wiki sprawl by avoiding duplicate content, putting information in a logical place within the wiki structure, and linking to that information if it is relevant in other parts of the project wiki.</p>
+<p>It’s helpful to consult others in the community ahead of making substantial changes. If the modification resulted from conversion in the Disussion or scsynth forums, etc., linking to the thread can be useful. In particular, consider communicating with a previous author (visible in the revision history) if you’re substantially revising their changes.</p>
+<p>Just as you would for git commits, try to make your changes in logical batches and make a note of the change in the “Edit message” field before saving.</p>
+<p><em>Use the Preview function</em> before saving to avoid multiple minor follow-on changes that would clutter the history.</p>
+</section>
+<section id="duplicate-content">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Duplicate content</a><a class="headerlink" href="#duplicate-content" title="Link to this heading">¶</a></h2>
+<p>Avoid duplicate content! Link to other pages/sections whenever possible to reduce maintenance effort avoid information going stale.
+For example, instead of listing all the places where you might get in touch with developers, link to a Community page, #Developers section.</p>
+</section>
+<section id="tone-and-brevity">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Tone and brevity</a><a class="headerlink" href="#tone-and-brevity" title="Link to this heading">¶</a></h2>
+<p>Try to be <em>complete</em> and <em>concise</em> with the information you present. Provide full context, without assuming your readers’ prior knowledge of the context.</p>
+<p>There’s a <em>lot</em> of information in the wiki. Your readers are likely here for a specific reason and are in the middle of a mind-consuming task. The occasional joke is nice, but how will it land on the fifth read-through when you really just want to remind yourself of how to interactively rebase your commits? This section has already gone on too long.</p>
+</section>
+<section id="titles-and-section-headings">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Titles and section headings</a><a class="headerlink" href="#titles-and-section-headings" title="Link to this heading">¶</a></h2>
+<p>In wiki titles and section headings, use sentence case — capitalize only the first word in the title, but don’t punctuate the end of a title or heading.</p>
+<p>Avoid the use of special characters or symbols (+, /, -, &amp;, etc.). They’re sometimes stripped and can cause problems when cross-linking.</p>
+</section>
+<section id="section-breaks">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Section breaks</a><a class="headerlink" href="#section-breaks" title="Link to this heading">¶</a></h2>
+<p>Put two newlines between sections (and subsections) for readability:</p>
+<p>So ends this section.</p>
+</section>
+<section id="next-section">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Next section</a><a class="headerlink" href="#next-section" title="Link to this heading">¶</a></h2>
+<p>So begins the next section.
+…</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>
+<span class="k">-</span><span class="w"> </span><span class="ge">_Recommend:_</span> If there is a one- or two-sentence overview at the start of the wiki, this goes <span class="ge">_before_</span> the table of contents.
+
+<span class="gh"># Tables of contents</span>
+
+<span class="ge">*Please update the ToC when making changes to a wiki!*</span>
+
+Tables of content (ToCs) are encouraged on wiki pages with any more than 3 sections and extend beyond 3 screen lengths.
+
+Use your judgement about the <span class="sb">`depth`</span> of the ToC, but a depth of <span class="sb">`2`</span> generally strikes a balance between useful and concise.
+
+Tables of contents can be automatically generated with onlin tools like [<span class="nt">bitdowntoc</span>](<span class="na">https://derlin.github.io/bitdowntoc/</span>) or command line tools like [<span class="nt">gh-md-toc</span>](<span class="na">https://github.com/ekalinin/github-markdown-toc.go</span>) (broken as of 11-2023). The specific tool doesn’t matter, and editing manual is of course ok (but error prone).
+
+Make sure the “Table of contents” line is a level-4 header:
+
+```md
+<span class="gu">#### Table of contents</span>
+</pre></div>
+</div>
+<p>This saves space while still making it easy to anchor to with the <code class="docutils literal notranslate"><span class="pre">^Top</span></code> backlink.</p>
+<p>Now that you’ve made a ToC, does the wiki hierarchy make sense? If not, revise the wiki!</p>
+<section id="anchoring-back-to-the-top">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Anchoring back to the top</a><a class="headerlink" href="#anchoring-back-to-the-top" title="Link to this heading">¶</a></h3>
+<p>Once the wiki grows longer than two or three screen heights, it is useful to link back to the top, by anchoring to the ToC, with the text alias <code class="docutils literal notranslate"><span class="pre">^Top</span></code>:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>...
+So ends this section.
+
+[<span class="nt">^Top</span>](<span class="na">#this-page-contains</span>)
+
+
+<span class="gu">## Next section</span>
+...
+</pre></div>
+</div>
+<p>Note two newlines are still kept after the previous section.</p>
+</section>
+</section>
+<section id="directory-pages">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Directory pages</a><a class="headerlink" href="#directory-pages" title="Link to this heading">¶</a></h2>
+<p>Directory pages allow a multiplicity of wikis to be organized into a few broad categories. This also helps keep the sidebar slim and useable.</p>
+<p>There are currently four categories: <a class="reference internal" href="index.html#contributing"><span class="std std-ref">Contributing</span></a>, <a class="reference internal" href="../development/index.html#development"><span class="std std-ref">Development resources</span></a>, <a class="reference internal" href="../user/index.html#user-resources"><span class="std std-ref">User Resources</span></a>, and <a class="reference internal" href="../community/index.html#community"><span class="std std-ref">Community</span></a>. This may change in the future but the goal is to keep the number of directory pages low.</p>
+<p>It’s OK to link to the same wiki from multiple Directory pages. For example “Reviewer Instructions” may be useful under both the “Development Resources” Directory (devs are typically the Reviewers) and the “Contributing” Directory (Contributors may want to know how the review process for their PR).</p>
+</section>
+<section id="the-sidebar">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">The sidebar</a><a class="headerlink" href="#the-sidebar" title="Link to this heading">¶</a></h2>
+<p>The side bar links to the categorical Directory pages. <em>All</em> wiki pages should be linked to from at least one of these wiki [Directory pages](#Directory pages).</p>
+<p>Each Directory page linik is followed by a brief description of the kinds of wikis found therein.</p>
+<p><em>Historical note:</em> Previously, the sidebar contained a long but incomplete list of pages that became unwieldy over time and the categorization didn’t clearly communicate content or priority. This categorical directory is a more sparse approach which (hopefully) improves clarity and maintainability, at the expense of place your favorite wiki two clicks away instead of one.</p>
+<p>Note that <em>all</em> pages in the SuperCollider wiki system are still viewable at once in the “Pages” toggle menu above the sidebar.</p>
+</section>
+<section id="works-in-progress-wip">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Works in progress (WIP)</a><a class="headerlink" href="#works-in-progress-wip" title="Link to this heading">¶</a></h2>
+<p>When publishing a wiki, it should be minimally viable. Avoid the [WIP] tag in the title, or a one-liner at the top saying “this is a work in progress”.</p>
+<p>Wikis are living documents—works-in-progress by nature. “WIP wikis” have a tendency to stay a WIP for <em>years.</em> This discourages people from trusting and consulting them or even contributing  to them under the assumption that they may be interfering with someone else’s effort to bring it to a “released” state.</p>
+<p>If you’re drafting a wiki and want to make it public for feedback, you can host it on your fork of the SC repo and link to it on the forums for feedback.</p>
+<p>If you’d like to collaboratively bring it to a minimally viable state on the main SC wiki (so others have write access), describe at the top what active process is underway to bring it out of the WIP state ASAP. The sooner its out of the WIP, the sooner it can be trusted, encourage discussion, and grow with help from others.</p>
+<p>Don’t let the perfect be the enemy of the useful—it’s better to mark specific <strong><strong><strong><strong>sections</strong></strong></strong></strong> as works in progress, rather than an entire wiki. Even if the wiki is incomplete (within reason), there’s probably still some useful information there!</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="common/index.html">Common references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow/index.html">Workflows</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The wiki-wiki</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#making-changes">Making changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duplicate-content">Duplicate content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tone-and-brevity">Tone and brevity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#titles-and-section-headings">Titles and section headings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#section-breaks">Section breaks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#next-section">Next section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directory-pages">Directory pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-sidebar">The sidebar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#works-in-progress-wip">Works in progress (WIP)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="UGen-Quality-Standards.html">UGen-Quality standards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../community/index.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Contributing</a><ul>
+      <li>Previous: <a href="workflow/Unit-Testing-Guide.html" title="previous chapter">Guide to SuperCollider Unit Testing</a></li>
+      <li>Next: <a href="UGen-Quality-Standards.html" title="next chapter">UGen-Quality standards</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/contributing/The-wiki-wiki.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

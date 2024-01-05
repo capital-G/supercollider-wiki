@@ -1,0 +1,13 @@
+# 2023-04-02
+
+
+Nathan H, Luka P, Marcin P, Josh P, James S, Thales R
+
+Discussion on Qt5 vs Qt6:
+In the discussion it seemed that we were leaning towards revisiting Qt6 support in 2024 and move to Qt6 dropping support for Qt5. 
+Dropping Qt5 will mean dropping support for some platforms (Ubuntu 20.04, macOS <10.14 (the legacy build), Windows 32-bit).  
+For future reference: [here is the branch that supports both Qt5 and Qt6](https://github.com/supercollider/supercollider/tree/topic/qt6-02-webengine) but the work is incomplete. This should provide a good reference for necessary C++ changes for when we actually move to Qt6.
+
+PRs discussed: 6001, 5750
+
+Comments about Windows support -  IPC issues etc; in general SC could work better on Windows...

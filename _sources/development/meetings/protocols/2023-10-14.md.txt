@@ -1,0 +1,21 @@
+# 2023-10-14
+
+
+Planned as the "Server group" meeting
+
+In the meeting: James S, Marcin P
+
+Discussing the “Keeping SC evolving with minimal impact (…)” thread on the forum
+JS points out:
+- lack of a roadmap
+- there needs to be leadership within groups
+- Need to modernize code >> needs tests
+- Development is too scattered 
+
+Ideas on how to come up with a roadmap:
+- Everybody gathers every X months
+- Prioritize all tasks
+- Choose something from the top
+- Work on that task
+- Check in about the progress at the next meeting
+

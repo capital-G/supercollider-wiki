@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Refactoring the server implementatin &#8212; SuperCollider Wiki  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7d9986eb" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project directions" href="Project-Structure.html" />
+    <link rel="prev" title="Miscellaneous project information" href="Miscellaneous-project-information-%28CI%2C-maintenance-scripts%2C-etc.%29.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="refactoring-the-server-implementatin">
+<h1>Refactoring the server implementatin<a class="headerlink" href="#refactoring-the-server-implementatin" title="Link to this heading">¶</a></h1>
+<p>The Server implementation (<code class="docutils literal notranslate"><span class="pre">Server.sc</span></code>) has become bloated over time [2], but has now been refactored. There are still some possible improvements, which we keep track of here.</p>
+<p><em>please feel free to edit!</em></p>
+<nav class="contents local" id="content">
+<p class="topic-title">Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#general-remarks-observations" id="id1">General Remarks/Observations</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ideas-details" id="id2">Ideas/Details</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#structure" id="id3">Structure</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id4">Notes</a></p></li>
+</ul>
+</nav>
+<section id="general-remarks-observations">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">General Remarks/Observations</a><a class="headerlink" href="#general-remarks-observations" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>One of the main problems seems to be the handling of ids, in particular those which have some kind of special status (e.g. “persistant ones”).</p></li>
+<li><p>in terms of efficiency and design, we have a trade off between has-a and is-a</p></li>
+</ul>
+<section id="ideas-details">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Ideas/Details</a><a class="headerlink" href="#ideas-details" title="Link to this heading">¶</a></h3>
+<section id="netaddr-and-server">
+<h4>NetAddr and Server<a class="headerlink" href="#netaddr-and-server" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Iannis Zannos idea: It may be much more efficient to make server as subclass of NetAddr - in a sense it <i>is</i> just that. (But: then we cannot swap in a BundleNetAddr: s.bind / openBundle would have to be done with an if statement for every message send. This is still more efficient though. See [1]).</p></li>
+<li><p>Depending on protocol, behavior may be different.
+Tim suggested: for TCP one should explicitly connect/disconnect. as it is based on connections, sending/receiving without a connection just doesn’t make any sense.</p></li>
+<li><p>This would be something to be done for NetAddr, too, probably best by passing the protocol type as a symbol.</p></li>
+</ul>
+<p><em>here is a general design decision:</em>
+Should the different behaviours be in one class or in several? We have:</p>
+<ul class="simple">
+<li><p>local/internal/remote (any reason not to drop internal support?)</p></li>
+<li><p>delayed(bundling)/instantaneous</p></li>
+<li><p>connected/connectionless</p></li>
+</ul>
+<p>And where does it belong?</p>
+<ul class="simple">
+<li><p>If the server <em>is a</em> NetAddr, which should it be?</p></li>
+<li><p>Should a NetAddr know how to collect a bundle or is it the server’s job? (I think the Addr should know it, one could simply give it a bundle instvar and add to it if it isn’t nil)</p></li>
+<li><p>To really gain the efficiency, it would be necessary to modify the primitive <code class="docutils literal notranslate"><span class="pre">prNetAddr_SendMsg</span></code> (etc.) to add to the bundle if there is one.[3]</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="gui">
+<h4>GUI<a class="headerlink" href="#gui" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>platform dependent GUI instance variables need to be abstracted away (emacsbuf)</p></li>
+</ul>
+</section>
+<section id="server-state">
+<h4>Server State<a class="headerlink" href="#server-state" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>allocators may need to go into one class, but the disadvantage is that this then needs delegation. Better keep them in the server.</p></li>
+<li><p>perhaps all state that is queried could go in a dictionary</p></li>
+<li><p>server options should be cached at boot time in order to have some information about the currently running server.</p></li>
+<li><p>or: server options should be queriable via OSC from the server (s.query).</p></li>
+<li><p>queryAllNodes shouldn’t just post the info, but make it available as a string / unify with plotNodeTree ?</p></li>
+<li><p>the already refactored Volume is good, but quite complicated. If it is really that hard, it should be made a general technique not restricted to this class.</p></li>
+<li><p>bug: server calls volume.free, but Volume doesn’t implement free <a class="reference external" href="https://github.com/supercollider/supercollider/issues/2551">https://github.com/supercollider/supercollider/issues/2551</a>.</p></li>
+</ul>
+</section>
+<section id="state-update">
+<h4>State Update<a class="headerlink" href="#state-update" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>different server control (internal, local, remote). for local servers a subprocess should be used to manage the server life.</p></li>
+</ul>
+</section>
+<section id="additional-functionality">
+<h4>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>scoping should not be in server, but in a dedicated class.</p></li>
+<li><p>make explicit where things like record and volume nodes should be placed, and check if they can also be kept running on cmd-period.</p></li>
+<li><p>Possibly, it would make sense to introduce a second default group (e.g. “postprocessing group”) that can contain everything that can be kept alive with no harm.</p></li>
+</ul>
+</section>
+<section id="what-a-new-implementation-should-allow-for">
+<h4>What a new implementation should allow for<a class="headerlink" href="#what-a-new-implementation-should-allow-for" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>cleanly configure cmd-period behaviour, so that nodes may be kept alive (e.g. recording) while still being able to reset the node id allocator.</p></li>
+<li><p>allocators should be able to manage node recovery</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="structure">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Structure</a><a class="headerlink" href="#structure" title="Link to this heading">¶</a></h2>
+<p>NetAddr
+has a:</p>
+<ul class="simple">
+<li><p>NetConnection (or none)</p></li>
+<li><p>bundle (or none)</p></li>
+</ul>
+<p>Server (is a NetAddr)
+has a:</p>
+<ul class="simple">
+<li><p>ServerOptions (initial conditions)</p></li>
+<li><p>ServerState (updating) different classes for: local and remote (and maybe internal)</p></li>
+<li><p>Volume</p></li>
+<li><p>Recorder</p></li>
+</ul>
+<p>ServerState could be a subclass of a general observer class that collects the status of an object by active lookup (using SkipJack). It could hold a dictionary.</p>
+</section>
+<section id="notes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Link to this heading">¶</a></h2>
+<p>[1] Comparing the efficiency between delegation and an if statement with a simple test, it turns out that the if statement is still 50% more efficient than a delegation to a second method (as it is now), and without he if statement it is only 55 % more efficient. (this is just a basic timing benchmark). The tests are about the same for instance methods instead of class methods.</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Test</span> <span class="p">{</span>
+
+	<span class="o">*</span><span class="nx">redirect3</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="o">|</span>
+		<span class="nb">this</span><span class="p">.</span><span class="nx">prRedirect3</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="p">)</span>
+	<span class="p">}</span>
+
+	<span class="o">*</span><span class="nx">prRedirect3</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="o">|</span>
+		<span class="o">^</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span>
+	<span class="p">}</span>
+
+	<span class="o">*</span><span class="nx">condition3</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">z</span><span class="o">|</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">isNil</span><span class="p">)</span> <span class="p">{</span> <span class="o">^</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span> <span class="p">};</span>
+		<span class="o">^</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span>
+	<span class="p">}</span>
+
+	<span class="o">*</span><span class="nx">redirect1</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span><span class="o">|</span>
+		<span class="nb">this</span><span class="p">.</span><span class="nx">prRedirect1</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+	<span class="p">}</span>
+
+	<span class="o">*</span><span class="nx">prRedirect1</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span><span class="o">|</span>
+		<span class="o">^</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="p">}</span>
+
+	<span class="o">*</span><span class="nx">condition1</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span><span class="o">|</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">isNil</span><span class="p">)</span> <span class="p">{</span> <span class="o">^</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">};</span>
+		<span class="o">^</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm">bench { 100.do { Test.redirect3(1, 1, 1) } };</span>
+<span class="cm">bench { 100.do { Test.condition3(1, 1, 1) } }; // about 50 % more efficient.</span>
+<span class="cm">bench { 100.do { Test.prRedirect3(1, 1, 1) } };</span>
+
+<span class="cm">bench { 100.do { Test.redirect1(1) } };</span>
+<span class="cm">bench { 100.do { Test.condition1(1) } }; // about 50 % more efficient.</span>
+<span class="cm">bench { 100.do { Test.prRedirect1(1, 1, 1) } }; // about 50 % more efficient.</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<p>[2] Here is just the code that has the instance variables, to add comments about what may be handled where:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Server</span> <span class="p">{</span>
+	<span class="nx">classvar</span> <span class="o">&lt;&gt;</span><span class="nx">local</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">internal</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">default</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">named</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">set</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">program</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">sync_s</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">name</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">addr</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">clientID</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">isLocal</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">inProcess</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">sendQuit</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">remoteControlled</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">serverRunning</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">serverBooting</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">bootNotifyFirst</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;&gt;</span><span class="nx">options</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">latency</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">dumpMode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">notify</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">notified</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">nodeAllocator</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">controlBusAllocator</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">audioBusAllocator</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">bufferAllocator</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">scopeBufferAllocator</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">syncThread</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">syncTasks</span><span class="p">;</span>
+
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">numUGens</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">numSynths</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">numGroups</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">numSynthDefs</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">avgCPU</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">peakCPU</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">sampleRate</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">actualSampleRate</span><span class="p">;</span>
+
+	<span class="kd">var</span> <span class="nx">alive</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">booting</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">aliveThread</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">aliveThreadPeriod</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">,</span> <span class="nx">statusWatcher</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;&gt;</span><span class="nx">tree</span><span class="p">;</span>
+
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">window</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">scopeWindow</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">emacsbuf</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">recordBuf</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">recordNode</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">recHeaderFormat</span><span class="o">=</span><span class="s2">&quot;aiff&quot;</span><span class="p">,</span> <span class="o">&lt;&gt;</span><span class="nx">recSampleFormat</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="o">&lt;&gt;</span><span class="nx">recChannels</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">volume</span><span class="p">;</span>
+
+	<span class="kd">var</span> <span class="o">&lt;</span><span class="nx">pid</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">serverInterface</span><span class="p">;</span>
+
+	<span class="kd">var</span> <span class="nx">reallyDeadCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>[3] We can’t make a branch in a call with a primitive:</p>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="c1">// this won&#39;t compile</span>
+<span class="nx">sendMsg</span> <span class="p">{</span> <span class="kd">arg</span> <span class="p">...</span> <span class="nx">args</span><span class="p">;</span>
+	<span class="nx">bundle</span> <span class="o">!?</span> <span class="p">{</span> <span class="nx">bundle</span> <span class="o">=</span> <span class="nx">bundle</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">};</span>
+	<span class="nx">_NetAddr_SendMsg</span>
+	<span class="o">^</span><span class="nb">this</span><span class="p">.</span><span class="nx">primitiveFailed</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>So it has to be done in this method (not sure how is best):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">prNetAddr_SendMsg</span><span class="p">(</span><span class="n">VMGlobals</span><span class="w"> </span><span class="o">*</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numArgsPushed</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="n">PyrSlot</span><span class="o">*</span><span class="w"> </span><span class="n">netAddrSlot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="o">-&gt;</span><span class="n">sp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">numArgsPushed</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">	</span><span class="n">PyrSlot</span><span class="o">*</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">netAddrSlot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">	</span><span class="n">big_scpacket</span><span class="w"> </span><span class="n">packet</span><span class="p">;</span>
+
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">numargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numArgsPushed</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">makeSynthMsgWithTags</span><span class="p">(</span><span class="o">&amp;</span><span class="n">packet</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">numargs</span><span class="p">);</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">errNone</span><span class="p">)</span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">netAddrSend</span><span class="p">(</span><span class="n">slotRawObject</span><span class="p">(</span><span class="n">netAddrSlot</span><span class="p">),</span><span class="w"> </span><span class="n">packet</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">packet</span><span class="p">.</span><span class="n">buf</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo.svg" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">SuperCollider Wiki</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/index.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meetings/index.html">Meetings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">Miscellaneous dev notes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Project structure</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Continuous-integration%3A-GitHub-Actions.html">CI: GitHub Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Continuous-integration%3A-Travis-and-Appveyor.html">CI: Travis and AppVeyor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Miscellaneous-project-information-%28CI%2C-maintenance-scripts%2C-etc.%29.html">Miscellaneous project information</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Refactoring the server implementatin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-Structure.html">Project directions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-directions.html">Project directions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project-tasks-organization.html">Project tasks organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scsynth-development.html">scsynth development</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../style/index.html">Code style guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../platforms/index.html">Plattforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releasing/index.html">Releasing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reviewing/index.html">Reviewing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/index.html">User resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/index.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Development</a><ul>
+  <li><a href="index.html">Project structure</a><ul>
+      <li>Previous: <a href="Miscellaneous-project-information-%28CI%2C-maintenance-scripts%2C-etc.%29.html" title="previous chapter">Miscellaneous project information</a></li>
+      <li>Next: <a href="Project-Structure.html" title="next chapter">Project directions</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, SuperCollider.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/development/project-structure/Notes-for-refactoring-the-server-implementation.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

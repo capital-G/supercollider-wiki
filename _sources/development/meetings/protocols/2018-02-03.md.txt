@@ -1,0 +1,17 @@
+# 2018-02-03
+
+
+
+Members Present:
+
+Nathan, Brian, Patrick
+
+Discussion Topics:
+
+- 3.9.1 is ready to release
+- VBAP panning bug in sc3-plugins was fixed by Nathan
+- Brian is working on a unit testing guide
+- Nathan is working on unit tests for scsynth and for unit generators
+- HOAUgens are nearly ready to be merged to sc3-plugins
+- people have learned a bit more about CMake recently
+- considering moving to CMake 3(.1?) - seems well-supported at this point

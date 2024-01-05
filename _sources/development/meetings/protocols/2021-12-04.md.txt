@@ -1,0 +1,25 @@
+# 2021-12-04
+
+
+James S, Nathan H, Josh P, Marcin P
+
+Josh has a bash script for signing macOS builds, will test more more and make a PR (fix https://github.com/supercollider/supercollider/issues/5603)
+
+Other M1 issues: https://github.com/supercollider/supercollider/issues/5598
+
+Qt6 discussion: many things to consider  
+James's progress board: https://github.com/jrsurge/supercollider/projects/2
+
+For next dev meeting: discuss moving to Qt6
+
+Discussion on Windows builds for newer hardware (SSE4-capable), also on 32-bit shift
+
+Discussion on name suffix on dev branch (https://github.com/supercollider/supercollider/pull/5566) - we decided to do it and use `-dev` suffix  
+Nathan made an experiment and the merge conflict this PR would introduce would only be needed to resolve once on the first merge from a new release branch.
+
+Discussion on MainMenu memory leak discussed on the forum - this was solved some time ago (3.10.2 ?)
+
+sc3-plugins PRs:  
+https://github.com/supercollider/sc3-plugins/pull/326  
+https://github.com/supercollider/sc3-plugins/pull/325  
+https://github.com/supercollider/sc3-plugins/pull/327 (decided to keep using Xcode generator and not use ccache on macOS)

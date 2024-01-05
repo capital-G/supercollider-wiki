@@ -1,0 +1,14 @@
+# 2017-04-01
+
+
+
+- Nathan did nothing
+- Brian updated yaml-cpp, filed a PR to fix the .putPascalString crash,
+and has done some work on the Windows help file bug
+
+Topics:
+
+- Release mode for 3.9 in about two weeks?
+- sclang header refactoring
+- WebView:onLinkActivated
+- LPC regression tests 

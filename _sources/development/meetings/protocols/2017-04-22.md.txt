@@ -1,0 +1,12 @@
+# 2017-04-22
+
+
+
+- Nathan did nothing
+- Brian worked on the Windows help file issue and include/exclude paths
+for scsynth
+
+Topics:
+
+- Merged/closed some small PRs
+- CONTRIBUTING.md, and issue and PR templates 

@@ -1,0 +1,24 @@
+# 2019-07-28
+
+
+
+Members Present: Geoffroy Montel, Iannis Zannos, Josh Parmenter, James Surgenor, Marcin Paczkowski, Nathan Ho, Patrick Dupuis, Tejaswi Prakash
+
+Updates:
+- Iannis submitted a pull request on NotificationCenter. Iannis is also interested in investigating an issue he's having with remote server.
+- Patrick responded to James' code review on HelpBrowser.instance.
+- James did some code review work and started looking at Marcin's Windows I/O device pull requests and added a denormal. He noticed a bunch of deprecation warnings with new Qt.
+- Marcin responded to Brian's feedback for Windows I/O devices, dependency/dependancy documentation question.
+- Geoffroy fixed cmd+Q issue on macOS.
+- Josh dug into the macOS signing issue and has been sketching out ideas for multicore scsynth.
+- Nathan reorganized the project docs and investigated a dangerous security configuration in scsynth.
+
+We discussed the network security issue in scsynth and supernova (https://github.com/supercollider/supercollider/issues/4496). Despite the fact that fixing it properly involves the addition of a new feature and a minor breaking change, it is important enough that it should go in 3.10.3.
+
+Josh discussed multicore scsynth.
+
+We discussed the newly proposed backlog and release boards and how to keep the process of maintaining these boards efficient (using dev meetings) and inclusive (allowing people who aren't on dev meetings or slack).
+
+Nathan demoed a fun delay UGen.
+
+We discussed the QtWebEngine PR. James brought up QTextBrowser https://doc.qt.io/qt-5/qtextbrowser.html as an interesting alternative to QtWebEngine. 

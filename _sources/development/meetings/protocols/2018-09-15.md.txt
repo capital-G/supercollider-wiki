@@ -1,0 +1,25 @@
+# 2018-09-15
+
+
+
+Members present: Brian, Nathan, Patrick
+
+- Critical issues in the wake of 3.10 beta 2:
+    - Ndef fadeTime bug: Julian has fixed, test needs a touch up
+    - Syntax theme changing the UI colors (better IDE customization)
+    - Daniel reported that HelpBrowser doesn't load
+    - Float printing side effects via adclib: if you override `Float:asCompileString` it's kinda your problem buddy
+    - Issues running on older Macs
+    - QtWebEngine only runs on macOS 10.9 or later and macOS 10.10 SDK
+- Next beta: Brian will write up a quick blurb on how to properly report issues.
+- On release, point people to a guide on how to report issues
+- Brian reformatted the repository's whitespace in a branch
+- Nathan has been working on making QtWebEngine optional
+- Patrick:
+    - https://github.com/supercollider/supercollider/pull/3968 - closed
+    - https://github.com/supercollider/supercollider/pull/3728 - critical (pressure from Norns devs)
+    - https://github.com/supercollider/supercollider/pull/3870 - not critical, change milestone to 3.10.x
+    - https://github.com/supercollider/supercollider/pull/3221 - not critical, but should be reviewed
+- Cookiecutter ugens
+- UnitTesting quarks duplicate class error: we need to open an issue for this...
+- Bela denormal test

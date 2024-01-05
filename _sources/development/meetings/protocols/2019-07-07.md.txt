@@ -1,0 +1,18 @@
+# 2019-07-07
+
+
+
+Members Present: Patrick Dupuis, Brian Heim, Nathan Ho, Marcin Pączkowski, Iannis Zannos
+
+- Brian hasn't done much
+- Nathan fixed bugs in the QtWebEngine PR and did some standard custodial work
+- Marcin has been working on the Windows audio driver PR and has been dealing with a long string of issues.
+- Patrick did some cherrypicks, redid a stalled PR, and tried out the WebSockets one
+
+Marcin has been working with fixing Windows audio drivers on scsynth and supernova (https://github.com/supercollider/supercollider/pull/4009). Some concern was expressed about the overwhelmingly long comment thread, and scope creep happening in the pull request itself, and we agreed to break it down to separate pull requests to make things easier for reviewers and deferring some of the trickier changes to 3.11 rather than 3.10.3.
+
+Iannis is interested in getting started with SuperCollider development and will be looking at the "good first issues" tag to file his first pull request. Iannis also noted some frustrations with remote servers and poor design of Synth class and Event.
+
+Nathan expects to get a working version of the redesigned website in the next week.
+
+Brian is interested in nailing down the project docs (at Mike McCrea's suggestion). We discussed moving them all to the SuperCollider wiki for better unification.

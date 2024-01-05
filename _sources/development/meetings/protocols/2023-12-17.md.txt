@@ -1,0 +1,42 @@
+# 2023-12-17
+
+
+
+People in meeting: Dennis, Michael W, Eduard F, Mike M, Marcin P, Christof R.
+
+## PRs to discuss
+
+
+* [Qt5 -> Qt6 transition](https://github.com/supercollider/supercollider/issues/5169)
+    * 2 Steps 
+* [wiki migration](https://github.com/mtmccrea/supercollider/wiki)
+    * The current wiki will be replaced/updated by Mike during the holidays
+* clang-format update
+    * tag this commit
+    * contact Moss?
+    * pre-commit additional PR
+* SC domain
+    * Contact Josh/James about 
+* [Updating plugin interface](https://github.com/supercollider/supercollider/issues/6102) / [Moving Plugin Interface C++ -> C](https://github.com/supercollider/supercollider/issues/6145), making it extendable etc
+* WebAssembly - discussion on maintainability etc
+
+## Meta topics
+
+Where to focus our limited resources; how to prioritize what to work on?
+
+## Larger issues to tackle
+for the longevity of the project
+
+- lang
+    - garbage collerctor bugs...
+- server
+    - plugin interface updates
+    - [wasm](https://github.com/supercollider/supercollider/pull/5571)?
+- IDE
+- other aspects
+    - [Qt6 update](https://github.com/supercollider/supercollider/tree/topic/qt6-07)
+    - package manager with binaries (`Quarks2` etc)
+- dev
+    - provide a list of "who-to-contact" for what regarding develoment on the forum/github (e.g. having a PR for scsynth, who can I contact to obtain a final(?) word on a problem)
+
+

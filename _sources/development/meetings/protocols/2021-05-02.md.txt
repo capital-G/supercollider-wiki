@@ -1,0 +1,39 @@
+# 2021-05-02
+
+
+
+Present - Patrick, Marcin, James S, Josh P, Stewart
+
+Introductions - welcome Stewart!
+
+## 3.12 milestone review
+### CondVar
+Needs reviewing and merging.
+Patrick - investigating using CondVar in the UnitTest framework.
+Discussion on usage of CondVar in tests - Patrick trying to find a way to use it in `UnitTest::wait`
+Patrick - will investigate refactoring currently failing tests, possibly not using CondVar or any other condition mechanism if it's not required.
+### Automation of cherry picking
+Still investigating, decided out of scope for this milestone, moving to 3.13
+### Simpler release process
+Scope is quite large, going to move this task to 3.13. Aim to break it down into smaller actionable items in one of the next dev meetings.
+### Use priority labels
+Moving to 3.13.
+### Modernise CLI option parsing
+Some of this work might be required for Bela support in 3.12.
+Marcin going to ask Bela developers for input.
+### MIDI Out logical time
+Waiting for input
+### Clip output values on macOS
+Waiting for input
+### Removing ableist language
+This is ongoing JS to take on initial work. 
+## Open floor
+### Class highlighting issue
+JS to investigate issue #5434
+Potentially introduced on develop, about to go into 3.12, if so should be fixed for the release.
+Can be listed as a known issue in RC to avoid blocking release schedule while it's addressed.
+### Expanding tilde on Windows
+JS to investigate PR #5431
+### CMake
+JS raised the question of supported CMake versions
+
