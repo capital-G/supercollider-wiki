@@ -7,7 +7,7 @@ Project documentation, structure, reviewing, releasing, and other processes.
 
 .. toctree::
     :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     git/index.rst
     meetings/index.rst

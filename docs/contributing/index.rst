@@ -7,7 +7,7 @@ Contributing to the project, filing bugs, creating pull requests, style guidelin
 
 .. toctree::
     :glob:
-    :maxdepth: 3
+    :maxdepth: 2
 
     common/index.rst
     workflow/index.rst
