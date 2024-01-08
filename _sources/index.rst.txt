@@ -41,7 +41,7 @@ Whether you're new here and want to learn how you can update a Help file, or if 
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :hidden:
 
    contributing/index.rst

@@ -5,9 +5,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
     <title>Pieces with live instruments or voice &#8212; SuperCollider Wiki  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7d9986eb" />
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
@@ -16,34 +57,661 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SC140" href="sc140.html" />
     <link rel="prev" title="Community channels" href="Community-channels.html" />
+  
    
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body dir=ltr
+        data-md-color-primary=grey data-md-color-accent=light-grey>
   
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#community/Pieces-with-live-instruments-or-voice" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="SuperCollider Wiki  documentation"
+           class="md-header-nav__button md-logo">
           
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic"> Pieces with live instruments or voice </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="body" role="main">
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SuperCollider Wiki
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Community</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="SuperCollider Wiki documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SuperCollider Wiki
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../contributing/index.html" class="md-nav__link">Contributing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../development/index.html" class="md-nav__link">Development</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../user/index.html" class="md-nav__link">User resources</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">Community</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="Academic-papers.html" class="md-nav__link">Academic papers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Blogs-and-sites.html" class="md-nav__link">Blogs and sites</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Community-channels.html" class="md-nav__link">Community channels</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Pieces with live instruments or voice </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Pieces with live instruments or voice</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#community-pieces-with-live-instruments-or-voice--page-root" class="md-nav__link">Pieces with live instruments or voice</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#mark-ballora" class="md-nav__link">Mark Ballora</a>
+        </li>
+        <li class="md-nav__item"><a href="#bo-is-burning-electronic-music-theatre-duo" class="md-nav__link">Bo is burning - Electronic Music-Theatre Duo</a>
+        </li>
+        <li class="md-nav__item"><a href="#chris-brown" class="md-nav__link">Chris Brown</a>
+        </li>
+        <li class="md-nav__item"><a href="#jeremy-van-buskirk" class="md-nav__link">Jeremy Van Buskirk</a>
+        </li>
+        <li class="md-nav__item"><a href="#marko-ciciliani" class="md-nav__link">Marko Ciciliani</a>
+        </li>
+        <li class="md-nav__item"><a href="#nick-collins" class="md-nav__link">Nick Collins</a>
+        </li>
+        <li class="md-nav__item"><a href="#john-drumheller" class="md-nav__link">John Drumheller</a>
+        </li>
+        <li class="md-nav__item"><a href="#eli-fieldsteel" class="md-nav__link">Eli Fieldsteel</a>
+        </li>
+        <li class="md-nav__item"><a href="#krzysztof-gawlas" class="md-nav__link">Krzysztof Gawlas</a>
+        </li>
+        <li class="md-nav__item"><a href="#kosmas-giannoutakis" class="md-nav__link">Kosmas Giannoutakis</a>
+        </li>
+        <li class="md-nav__item"><a href="#rael-gimenes" class="md-nav__link">Rael Gimenes</a>
+        </li>
+        <li class="md-nav__item"><a href="#david-stephen-grant" class="md-nav__link">David Stephen Grant</a>
+        </li>
+        <li class="md-nav__item"><a href="#h-james-harkins" class="md-nav__link">H. James Harkins</a>
+        </li>
+        <li class="md-nav__item"><a href="#elliot-kermit-canfield" class="md-nav__link">Elliot Kermit-Canfield</a>
+        </li>
+        <li class="md-nav__item"><a href="#derek-kwan" class="md-nav__link">Derek Kwan</a>
+        </li>
+        <li class="md-nav__item"><a href="#stelios-manousakis" class="md-nav__link">Stelios Manousakis</a>
+        </li>
+        <li class="md-nav__item"><a href="#daniel-mayer" class="md-nav__link">Daniel Mayer</a>
+        </li>
+        <li class="md-nav__item"><a href="#fabrice-mogini" class="md-nav__link">Fabrice Mogini</a>
+        </li>
+        <li class="md-nav__item"><a href="#ted-moore" class="md-nav__link">Ted Moore</a>
+        </li>
+        <li class="md-nav__item"><a href="#michael-musick" class="md-nav__link">Michael Musick</a>
+        </li>
+        <li class="md-nav__item"><a href="#off-zz" class="md-nav__link">Off<>zz</a>
+        </li>
+        <li class="md-nav__item"><a href="#fredrik-olofsson" class="md-nav__link">Fredrik Olofsson</a>
+        </li>
+        <li class="md-nav__item"><a href="#joo-won-park" class="md-nav__link">Joo Won Park</a>
+        </li>
+        <li class="md-nav__item"><a href="#joshua-parmenter" class="md-nav__link">Joshua Parmenter</a>
+        </li>
+        <li class="md-nav__item"><a href="#sam-pluta" class="md-nav__link">Sam Pluta</a>
+        </li>
+        <li class="md-nav__item"><a href="#federico-reuben" class="md-nav__link">Federico Reuben</a>
+        </li>
+        <li class="md-nav__item"><a href="#egor-sanin" class="md-nav__link">Egor Sanin</a>
+        </li>
+        <li class="md-nav__item"><a href="#wouter-snoei" class="md-nav__link">Wouter Snoei</a>
+        </li>
+        <li class="md-nav__item"><a href="#carl-testa" class="md-nav__link">Carl Testa</a>
+        </li>
+        <li class="md-nav__item"><a href="#rachel-devorah-trapp" class="md-nav__link">Rachel Devorah Trapp</a>
+        </li>
+        <li class="md-nav__item"><a href="#scott-worthington" class="md-nav__link">Scott Worthington</a>
+        </li>
+        <li class="md-nav__item"><a href="#jonathan-zorn" class="md-nav__link">Jonathan Zorn</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#violin-sc" class="md-nav__link">violin + sc</a>
+        </li>
+        <li class="md-nav__item"><a href="#doublebass-sc" class="md-nav__link">doublebass + sc</a>
+        </li>
+        <li class="md-nav__item"><a href="#speech-sc" class="md-nav__link">speech + sc</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/community/Pieces-with-live-instruments-or-voice.md.txt">Show Source</a> </li>
+
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#mark-ballora" class="md-nav__link">Mark Ballora</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#bo-is-burning-electronic-music-theatre-duo" class="md-nav__link">Bo is burning - Electronic Music-Theatre Duo</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#chris-brown" class="md-nav__link">Chris Brown</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#jeremy-van-buskirk" class="md-nav__link">Jeremy Van Buskirk</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#marko-ciciliani" class="md-nav__link">Marko Ciciliani</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#nick-collins" class="md-nav__link">Nick Collins</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#john-drumheller" class="md-nav__link">John Drumheller</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#eli-fieldsteel" class="md-nav__link">Eli Fieldsteel</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#krzysztof-gawlas" class="md-nav__link">Krzysztof Gawlas</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#kosmas-giannoutakis" class="md-nav__link">Kosmas Giannoutakis</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#rael-gimenes" class="md-nav__link">Rael Gimenes</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#david-stephen-grant" class="md-nav__link">David Stephen Grant</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#h-james-harkins" class="md-nav__link">H. James Harkins</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#elliot-kermit-canfield" class="md-nav__link">Elliot Kermit-Canfield</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#derek-kwan" class="md-nav__link">Derek Kwan</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#stelios-manousakis" class="md-nav__link">Stelios Manousakis</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#daniel-mayer" class="md-nav__link">Daniel Mayer</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#fabrice-mogini" class="md-nav__link">Fabrice Mogini</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#ted-moore" class="md-nav__link">Ted Moore</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#michael-musick" class="md-nav__link">Michael Musick</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#off-zz" class="md-nav__link">Off<>zz</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#fredrik-olofsson" class="md-nav__link">Fredrik Olofsson</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#joo-won-park" class="md-nav__link">Joo Won Park</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#joshua-parmenter" class="md-nav__link">Joshua Parmenter</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#sam-pluta" class="md-nav__link">Sam Pluta</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#federico-reuben" class="md-nav__link">Federico Reuben</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#egor-sanin" class="md-nav__link">Egor Sanin</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#wouter-snoei" class="md-nav__link">Wouter Snoei</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#carl-testa" class="md-nav__link">Carl Testa</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#rachel-devorah-trapp" class="md-nav__link">Rachel Devorah Trapp</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#scott-worthington" class="md-nav__link">Scott Worthington</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#jonathan-zorn" class="md-nav__link">Jonathan Zorn</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="sc140.html" class="md-nav__link">SC140</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="symposium/index.html" class="md-nav__link">SuperCollider Symposium</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../faq/index.html" class="md-nav__link">FAQ</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#community-pieces-with-live-instruments-or-voice--page-root" class="md-nav__link">Pieces with live instruments or voice</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#mark-ballora" class="md-nav__link">Mark Ballora</a>
+        </li>
+        <li class="md-nav__item"><a href="#bo-is-burning-electronic-music-theatre-duo" class="md-nav__link">Bo is burning - Electronic Music-Theatre Duo</a>
+        </li>
+        <li class="md-nav__item"><a href="#chris-brown" class="md-nav__link">Chris Brown</a>
+        </li>
+        <li class="md-nav__item"><a href="#jeremy-van-buskirk" class="md-nav__link">Jeremy Van Buskirk</a>
+        </li>
+        <li class="md-nav__item"><a href="#marko-ciciliani" class="md-nav__link">Marko Ciciliani</a>
+        </li>
+        <li class="md-nav__item"><a href="#nick-collins" class="md-nav__link">Nick Collins</a>
+        </li>
+        <li class="md-nav__item"><a href="#john-drumheller" class="md-nav__link">John Drumheller</a>
+        </li>
+        <li class="md-nav__item"><a href="#eli-fieldsteel" class="md-nav__link">Eli Fieldsteel</a>
+        </li>
+        <li class="md-nav__item"><a href="#krzysztof-gawlas" class="md-nav__link">Krzysztof Gawlas</a>
+        </li>
+        <li class="md-nav__item"><a href="#kosmas-giannoutakis" class="md-nav__link">Kosmas Giannoutakis</a>
+        </li>
+        <li class="md-nav__item"><a href="#rael-gimenes" class="md-nav__link">Rael Gimenes</a>
+        </li>
+        <li class="md-nav__item"><a href="#david-stephen-grant" class="md-nav__link">David Stephen Grant</a>
+        </li>
+        <li class="md-nav__item"><a href="#h-james-harkins" class="md-nav__link">H. James Harkins</a>
+        </li>
+        <li class="md-nav__item"><a href="#elliot-kermit-canfield" class="md-nav__link">Elliot Kermit-Canfield</a>
+        </li>
+        <li class="md-nav__item"><a href="#derek-kwan" class="md-nav__link">Derek Kwan</a>
+        </li>
+        <li class="md-nav__item"><a href="#stelios-manousakis" class="md-nav__link">Stelios Manousakis</a>
+        </li>
+        <li class="md-nav__item"><a href="#daniel-mayer" class="md-nav__link">Daniel Mayer</a>
+        </li>
+        <li class="md-nav__item"><a href="#fabrice-mogini" class="md-nav__link">Fabrice Mogini</a>
+        </li>
+        <li class="md-nav__item"><a href="#ted-moore" class="md-nav__link">Ted Moore</a>
+        </li>
+        <li class="md-nav__item"><a href="#michael-musick" class="md-nav__link">Michael Musick</a>
+        </li>
+        <li class="md-nav__item"><a href="#off-zz" class="md-nav__link">Off<>zz</a>
+        </li>
+        <li class="md-nav__item"><a href="#fredrik-olofsson" class="md-nav__link">Fredrik Olofsson</a>
+        </li>
+        <li class="md-nav__item"><a href="#joo-won-park" class="md-nav__link">Joo Won Park</a>
+        </li>
+        <li class="md-nav__item"><a href="#joshua-parmenter" class="md-nav__link">Joshua Parmenter</a>
+        </li>
+        <li class="md-nav__item"><a href="#sam-pluta" class="md-nav__link">Sam Pluta</a>
+        </li>
+        <li class="md-nav__item"><a href="#federico-reuben" class="md-nav__link">Federico Reuben</a>
+        </li>
+        <li class="md-nav__item"><a href="#egor-sanin" class="md-nav__link">Egor Sanin</a>
+        </li>
+        <li class="md-nav__item"><a href="#wouter-snoei" class="md-nav__link">Wouter Snoei</a>
+        </li>
+        <li class="md-nav__item"><a href="#carl-testa" class="md-nav__link">Carl Testa</a>
+        </li>
+        <li class="md-nav__item"><a href="#rachel-devorah-trapp" class="md-nav__link">Rachel Devorah Trapp</a>
+        </li>
+        <li class="md-nav__item"><a href="#scott-worthington" class="md-nav__link">Scott Worthington</a>
+        </li>
+        <li class="md-nav__item"><a href="#jonathan-zorn" class="md-nav__link">Jonathan Zorn</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#violin-sc" class="md-nav__link">violin + sc</a>
+        </li>
+        <li class="md-nav__item"><a href="#doublebass-sc" class="md-nav__link">doublebass + sc</a>
+        </li>
+        <li class="md-nav__item"><a href="#speech-sc" class="md-nav__link">speech + sc</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/community/Pieces-with-live-instruments-or-voice.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
             
   <section id="pieces-with-live-instruments-or-voice">
-<h1>Pieces with live instruments or voice<a class="headerlink" href="#pieces-with-live-instruments-or-voice" title="Link to this heading">¶</a></h1>
+<h1 id="community-pieces-with-live-instruments-or-voice--page-root">Pieces with live instruments or voice<a class="headerlink" href="#community-pieces-with-live-instruments-or-voice--page-root" title="Link to this heading">¶</a></h1>
 <p>This page lists compositions for solo acoustic instrument (or voice) with electronics made with SuperCollider (real-time or fixed-media). The list was initially compiled in March of 2014 after an open call made through the SuperCollider Users mailing list (you can see the original thread <a class="reference external" href="http://new-supercollider-mailing-lists-forums-use-these.2681727.n2.nabble.com/Pieces-for-solo-instrument-SuperCollider-td7609151.html">here</a>). Most pieces were submitted by the composers themselves. A few were included based on references found on the web.</p>
 <p>Composers are listed alphabetically by last name.</p>
 <section id="mark-ballora">
-<h2>Mark Ballora<a class="headerlink" href="#mark-ballora" title="Link to this heading">¶</a></h2>
+<h2 id="mark-ballora">Mark Ballora<a class="headerlink" href="#mark-ballora" title="Link to this heading">¶</a></h2>
 <p><strong>Singularity</strong> (2004), flute and electronics</p>
 <p><a class="reference external" href="https://soundcloud.com/mark-ballora/singularity-for-flute-and-live">https://soundcloud.com/mark-ballora/singularity-for-flute-and-live</a>
 <a class="reference external" href="http://www.personal.psu.edu/meb26/singularity/">http://www.personal.psu.edu/meb26/singularity/</a></p>
 </section>
 <section id="bo-is-burning-electronic-music-theatre-duo">
-<h2>Bo is burning - Electronic Music-Theatre Duo<a class="headerlink" href="#bo-is-burning-electronic-music-theatre-duo" title="Link to this heading">¶</a></h2>
+<h2 id="bo-is-burning-electronic-music-theatre-duo">Bo is burning - Electronic Music-Theatre Duo<a class="headerlink" href="#bo-is-burning-electronic-music-theatre-duo" title="Link to this heading">¶</a></h2>
 <p>A duo by <a class="reference external" href="http://www.sarahjeffery.com">Sarah Jeffery</a> and <a class="reference external" href="http://felipeignacio.info">Felipe Ignacio Noriega</a>.</p>
 <p><strong>The Mill Song</strong> (2012): percussive clogs and wireless electronics with SC (Choreography by Cinthya Oyervides).</p>
 <p><strong>Bo is Burning</strong> (2013): Lifting folk songs and contemporary technology (Choreography by Cinthya Oyervides).</p>
@@ -51,24 +719,24 @@
 <p>A short video with teasers from The Mill Song and Bo is Burning is available on <a class="reference external" href="https://youtu.be/sMTc49iqgUM">youtube</a>.</p>
 </section>
 <section id="chris-brown">
-<h2>Chris Brown<a class="headerlink" href="#chris-brown" title="Link to this heading">¶</a></h2>
+<h2 id="chris-brown">Chris Brown<a class="headerlink" href="#chris-brown" title="Link to this heading">¶</a></h2>
 <p><strong>Branches</strong> (2001-5), piano and interactive computer</p>
 <p><a class="reference external" href="http://www.cbmuse.com/listen/index.html">http://www.cbmuse.com/listen/index.html </a></p>
 </section>
 <section id="jeremy-van-buskirk">
-<h2>Jeremy Van Buskirk<a class="headerlink" href="#jeremy-van-buskirk" title="Link to this heading">¶</a></h2>
+<h2 id="jeremy-van-buskirk">Jeremy Van Buskirk<a class="headerlink" href="#jeremy-van-buskirk" title="Link to this heading">¶</a></h2>
 <p><strong>A Sigh Felt Across The Earth</strong> (2014), alto saxophone and electronics</p>
 <p><a class="reference external" href="https://soundcloud.com/jeremyvanb/a-sigh-felt-across-the-earth">https://soundcloud.com/jeremyvanb/a-sigh-felt-across-the-earth</a></p>
 </section>
 <section id="marko-ciciliani">
-<h2>Marko Ciciliani<a class="headerlink" href="#marko-ciciliani" title="Link to this heading">¶</a></h2>
+<h2 id="marko-ciciliani">Marko Ciciliani<a class="headerlink" href="#marko-ciciliani" title="Link to this heading">¶</a></h2>
 <p><strong>Time Machine</strong> (2013), for sensor-equipped bass-clarinet (SABRe), live-electronics and live-video</p>
 <p><strong>Refract-Reflux</strong> (2005), for flute and live-electronics.</p>
 <p><strong>Lid of face, metallic soot, to oscillate me, daffodil I</strong> (2002), for harpsichord and live electronics.</p>
 <p><a class="reference external" href="http://www.ciciliani.com/">http://www.ciciliani.com/</a></p>
 </section>
 <section id="nick-collins">
-<h2>Nick Collins<a class="headerlink" href="#nick-collins" title="Link to this heading">¶</a></h2>
+<h2 id="nick-collins">Nick Collins<a class="headerlink" href="#nick-collins" title="Link to this heading">¶</a></h2>
 <p><strong>Onto Panic</strong> Core (2009-2013), piano and computer concerto</p>
 <p><strong>Chip Chip</strong> (2010), piano and computer</p>
 <p><strong>Snap</strong> (2010), chamber ensemble and computer</p>
@@ -81,32 +749,32 @@
 <p>Info on the above and more here: <a class="reference external" href="http://composerprogrammer.com/music.html">http://composerprogrammer.com/music.html</a></p>
 </section>
 <section id="john-drumheller">
-<h2>John Drumheller<a class="headerlink" href="#john-drumheller" title="Link to this heading">¶</a></h2>
+<h2 id="john-drumheller">John Drumheller<a class="headerlink" href="#john-drumheller" title="Link to this heading">¶</a></h2>
 <p><strong>The View From Dead Horse Point</strong>, solo viola and electronics</p>
 <p><a class="reference external" href="https://sites.google.com/site/johndrumhellermusic/compositions">https://sites.google.com/site/johndrumhellermusic/compositions</a></p>
 <p><strong>From the far away, nearby</strong> (2012), clarinet and electronics</p>
 <p><a class="reference external" href="https://sites.google.com/site/johndrumhellermusic/compositions">https://soundcloud.com/clarinetworking/from-the-far-away-nearby-2012</a></p>
 </section>
 <section id="eli-fieldsteel">
-<h2>Eli Fieldsteel<a class="headerlink" href="#eli-fieldsteel" title="Link to this heading">¶</a></h2>
+<h2 id="eli-fieldsteel">Eli Fieldsteel<a class="headerlink" href="#eli-fieldsteel" title="Link to this heading">¶</a></h2>
 <p><strong>“Fractus” series</strong>, for solo instrument and SuperCollider (I: trumpet; III: flute; IV: trombone)</p>
 <p>Score videos: <a class="reference external" href="http://www.youtube.com/playlist?list=PLPYzvS8A_rTbW5J9t-gj6NqAE0XGgUD2V">http://www.youtube.com/playlist?list=PLPYzvS8A_rTbW5J9t-gj6NqAE0XGgUD2V</a></p>
 <p>Performance of Fractus III (flute): <a class="reference external" href="https://www.youtube.com/watch?v=eD8Nawa-7_o">https://www.youtube.com/watch?v=eD8Nawa-7_o</a></p>
 <p><a class="reference external" href="http://www.elifieldsteel.com/">http://www.elifieldsteel.com/</a></p>
 </section>
 <section id="krzysztof-gawlas">
-<h2>Krzysztof Gawlas<a class="headerlink" href="#krzysztof-gawlas" title="Link to this heading">¶</a></h2>
+<h2 id="krzysztof-gawlas">Krzysztof Gawlas<a class="headerlink" href="#krzysztof-gawlas" title="Link to this heading">¶</a></h2>
 <p><strong>Strings in the Clouds</strong>, piano and electronics</p>
 <p><a class="reference external" href="https://soundcloud.com/studio-m1/struny-w-chmurach-cd-master">https://soundcloud.com/studio-m1/struny-w-chmurach-cd-master</a></p>
 <p><strong>Nocturne</strong>, piano and electronics</p>
 <p><a class="reference external" href="https://soundcloud.com/studio-m1/nokturn-cd-master">https://soundcloud.com/studio-m1/nokturn-cd-master</a></p>
 </section>
 <section id="kosmas-giannoutakis">
-<h2>Kosmas Giannoutakis<a class="headerlink" href="#kosmas-giannoutakis" title="Link to this heading">¶</a></h2>
+<h2 id="kosmas-giannoutakis">Kosmas Giannoutakis<a class="headerlink" href="#kosmas-giannoutakis" title="Link to this heading">¶</a></h2>
 <p><strong>Metabionta</strong> (2012), acoustic guitar and tape</p>
 </section>
 <section id="rael-gimenes">
-<h2>Rael Gimenes<a class="headerlink" href="#rael-gimenes" title="Link to this heading">¶</a></h2>
+<h2 id="rael-gimenes">Rael Gimenes<a class="headerlink" href="#rael-gimenes" title="Link to this heading">¶</a></h2>
 <p><strong>Mutazione</strong> (2008) for Acoustic Guitar and Live-Electronics</p>
 <p>score: <a class="reference external" href="http://www.dmu.uem.br/lappso/index.php?title=Toffolo%28composicoes%29#Mutazione_.282008.29">http://www.dmu.uem.br/lappso/index.php?title=Toffolo%28composicoes%29#Mutazione_.282008.29</a></p>
 <p>live recording: <a class="reference external" href="https://soundcloud.com/rael-gimenes-toffolo/mutazione-2008">https://soundcloud.com/rael-gimenes-toffolo/mutazione-2008</a></p>
@@ -116,30 +784,30 @@ CD store: <a class="reference external" href="http://www.lojaclassicos.com.br/de
 recording: <a class="reference external" href="https://soundcloud.com/rael-gimenes-toffolo/traverser-la-r-seau">https://soundcloud.com/rael-gimenes-toffolo/traverser-la-r-seau</a></p>
 </section>
 <section id="david-stephen-grant">
-<h2>David Stephen Grant<a class="headerlink" href="#david-stephen-grant" title="Link to this heading">¶</a></h2>
+<h2 id="david-stephen-grant">David Stephen Grant<a class="headerlink" href="#david-stephen-grant" title="Link to this heading">¶</a></h2>
 <p><strong>Bånsull (lullaby)</strong> (2014), viola and electronics</p>
 <p><a class="reference external" href="http://www.davidgrant.no">http://www.davidgrant.no</a></p>
 </section>
 <section id="h-james-harkins">
-<h2>H. James Harkins<a class="headerlink" href="#h-james-harkins" title="Link to this heading">¶</a></h2>
+<h2 id="h-james-harkins">H. James Harkins<a class="headerlink" href="#h-james-harkins" title="Link to this heading">¶</a></h2>
 <p><strong>You are already on the far shore</strong> (2009), solo violin and real-time SuperCollider</p>
 <p><strong>Shangha Flower</strong>, xiao flute and computer</p>
 <p><a class="reference external" href="http://www.dewdrop-world.net/audio/index.php">http://www.dewdrop-world.net/audio/index.php</a></p>
 </section>
 <section id="elliot-kermit-canfield">
-<h2>Elliot Kermit-Canfield<a class="headerlink" href="#elliot-kermit-canfield" title="Link to this heading">¶</a></h2>
+<h2 id="elliot-kermit-canfield">Elliot Kermit-Canfield<a class="headerlink" href="#elliot-kermit-canfield" title="Link to this heading">¶</a></h2>
 <p><strong>Koan for Cello and Live Electronics</strong> (2013), solo cello and live SuperCollider processing</p>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=Ye-zLa1vmJo#t=25m45s">https://www.youtube.com/watch?v=Ye-zLa1vmJo#t=25m45s</a></p>
 <p><strong>Post-Praeludium per Donau, by Luigi Nono</strong>, (1987), SuperCollider implementation by Elliot Kermit-Canfield (2013), solo tuba and live SuperCollider processing</p>
 <p><a class="reference external" href="https://soundcloud.com/elforr/nono">https://soundcloud.com/elforr/nono</a></p>
 </section>
 <section id="derek-kwan">
-<h2>Derek Kwan<a class="headerlink" href="#derek-kwan" title="Link to this heading">¶</a></h2>
+<h2 id="derek-kwan">Derek Kwan<a class="headerlink" href="#derek-kwan" title="Link to this heading">¶</a></h2>
 <p><strong>shoebox memories</strong> (2014), kalimba and SuperCollider
 <a class="reference external" href="http://youtu.be/vKdRV97tpkc">http://youtu.be/vKdRV97tpkc</a></p>
 </section>
 <section id="stelios-manousakis">
-<h2>Stelios Manousakis<a class="headerlink" href="#stelios-manousakis" title="Link to this heading">¶</a></h2>
+<h2 id="stelios-manousakis">Stelios Manousakis<a class="headerlink" href="#stelios-manousakis" title="Link to this heading">¶</a></h2>
 <p><strong>What is the current that makes machinery</strong> (2013), female voice and ambisonic live electronics (text by Gertrude Stein)</p>
 <p><a class="reference external" href="http://www.modularbrains.net/whatisthecurrent.html">http://www.modularbrains.net/whatisthecurrent.html</a></p>
 <p><strong>Palpebla Resonoj #1</strong> (2013), feedback-augmented alto clarinet and real-time computer processing</p>
@@ -148,16 +816,16 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 <p><a class="reference external" href="http://modularbrains.net/centernodistractor.html">http://modularbrains.net/centernodistractor.html</a></p>
 </section>
 <section id="daniel-mayer">
-<h2>Daniel Mayer<a class="headerlink" href="#daniel-mayer" title="Link to this heading">¶</a></h2>
+<h2 id="daniel-mayer">Daniel Mayer<a class="headerlink" href="#daniel-mayer" title="Link to this heading">¶</a></h2>
 <p>Several pieces for solo instrument and tape made with SuperCollider: <a class="reference external" href="http://daniel-mayer.at/werkliste_en.htm">http://daniel-mayer.at/werkliste_en.htm</a></p>
 </section>
 <section id="fabrice-mogini">
-<h2>Fabrice Mogini<a class="headerlink" href="#fabrice-mogini" title="Link to this heading">¶</a></h2>
+<h2 id="fabrice-mogini">Fabrice Mogini<a class="headerlink" href="#fabrice-mogini" title="Link to this heading">¶</a></h2>
 <p><strong>Choices</strong> (1999), flute and live-electronics (with SuperCollider 2)</p>
 <p><a class="reference external" href="http://fabricemogini.com/Choices.html">http://fabricemogini.com/Choices.html</a></p>
 </section>
 <section id="ted-moore">
-<h2>Ted Moore<a class="headerlink" href="#ted-moore" title="Link to this heading">¶</a></h2>
+<h2 id="ted-moore">Ted Moore<a class="headerlink" href="#ted-moore" title="Link to this heading">¶</a></h2>
 <p><strong>Eclipse</strong> (2014), improvising instrumentalist and electronics (audiovisual)</p>
 <p><a class="reference external" href="http://www.tedmooremusic.com/eclipse/">http://www.tedmooremusic.com/eclipse/</a></p>
 <p><strong>is himself no more</strong> (2013), tenor sax and electronics</p>
@@ -166,26 +834,26 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 <p><a class="reference external" href="http://www.tedmooremusic.com/fiery-walls/">http://www.tedmooremusic.com/fiery-walls/</a></p>
 </section>
 <section id="michael-musick">
-<h2>Michael Musick<a class="headerlink" href="#michael-musick" title="Link to this heading">¶</a></h2>
+<h2 id="michael-musick">Michael Musick<a class="headerlink" href="#michael-musick" title="Link to this heading">¶</a></h2>
 <p><strong>Late Night Nap</strong> (2007), tuba and electronics</p>
 <p><a class="reference external" href="http://michaelmusick.bandcamp.com/track/a-late-night-nap">http://michaelmusick.bandcamp.com/track/a-late-night-nap</a></p>
 <p><a class="reference external" href="http://michaelmusick.files.wordpress.com/2011/11/mmusick_a-late-night-nap.pdf">http://michaelmusick.files.wordpress.com/2011/11/mmusick_a-late-night-nap.pdf</a></p>
 </section>
 <section id="off-zz">
-<h2>Off&lt;&gt;zz<a class="headerlink" href="#off-zz" title="Link to this heading">¶</a></h2>
+<h2 id="off-zz">Off&lt;&gt;zz<a class="headerlink" href="#off-zz" title="Link to this heading">¶</a></h2>
 <p>Off&lt;&gt;zz is a laptop and piano/toypiano duo (<a class="reference external" href="http://www.anneveinberg.com">Anne Veinberg</a> and <a class="reference external" href="http://felipeignacio.info">Felipe Ignacio Noriega</a>) exploring electro-acoustic music via improvisation, live coding, and transformation of their classical-music influences into a more collective experience. They regularly present new work via their SoundCloud: <a class="reference external" href="https://soundcloud.com/offzz">https://soundcloud.com/offzz</a></p>
 <p>A 20 min. video of their performance on the Sonic Arts Festival 2014 (Bilbao) is available on <a class="reference external" href="https://youtu.be/XK19gan3IoA">youtube</a>.</p>
 <p><a class="reference external" href="http://felipeignacio.info/offzz/">Off&lt;&gt;zz website</a></p>
 </section>
 <section id="fredrik-olofsson">
-<h2>Fredrik Olofsson<a class="headerlink" href="#fredrik-olofsson" title="Link to this heading">¶</a></h2>
+<h2 id="fredrik-olofsson">Fredrik Olofsson<a class="headerlink" href="#fredrik-olofsson" title="Link to this heading">¶</a></h2>
 <p><strong>redeem</strong>, french horn and live SuperCollider (plus graphics in Processing), commissioned by Sören Hermansson.</p>
 <p><a class="reference external" href="http://www.fredrikolofsson.com/pages/music.html#redeem">http://www.fredrikolofsson.com/pages/music.html#redeem</a></p>
 <p><strong>redO</strong>, violin, flute, cello, piano and SuperCollider (plus graphics in Processing), commissioned by The peärls before swïne experience.</p>
 <p><a class="reference external" href="http://www.fredrikolofsson.com/pages/music.html#redO">http://www.fredrikolofsson.com/pages/music.html#redO</a></p>
 </section>
 <section id="joo-won-park">
-<h2>Joo Won Park<a class="headerlink" href="#joo-won-park" title="Link to this heading">¶</a></h2>
+<h2 id="joo-won-park">Joo Won Park<a class="headerlink" href="#joo-won-park" title="Link to this heading">¶</a></h2>
 <p><strong>Toccata</strong> (2009), for found objects and computer</p>
 <p><a class="reference external" href="http://www.joowonpark.net/Toccata.pdf">http://www.joowonpark.net/Toccata.pdf</a></p>
 <p><a class="reference external" href="http://vimeo.com/13886896">http://vimeo.com/13886896</a></p>
@@ -193,7 +861,7 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 <p><a class="reference external" href="http://www.100strangesounds.com/">http://www.100strangesounds.com/</a></p>
 </section>
 <section id="joshua-parmenter">
-<h2>Joshua Parmenter<a class="headerlink" href="#joshua-parmenter" title="Link to this heading">¶</a></h2>
+<h2 id="joshua-parmenter">Joshua Parmenter<a class="headerlink" href="#joshua-parmenter" title="Link to this heading">¶</a></h2>
 <p><strong>d’Amore</strong> (2011), violin and live electronics</p>
 <p><strong>Contracantus I</strong> (2007-9), flute and / or recorder and live electronics</p>
 <p><strong>Theta (IV. Ritardando)</strong> (2006-9), viola and live electronics</p>
@@ -202,7 +870,7 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 <p>More info on these and other pieces here: <a class="reference external" href="http://www.realizedsound.net/josh/Music.html">http://www.realizedsound.net/josh/Music.html</a></p>
 </section>
 <section id="sam-pluta">
-<h2>Sam Pluta<a class="headerlink" href="#sam-pluta" title="Link to this heading">¶</a></h2>
+<h2 id="sam-pluta">Sam Pluta<a class="headerlink" href="#sam-pluta" title="Link to this heading">¶</a></h2>
 <p>Lines on Black <a class="reference external" href="https://wetinkensemble.bandcamp.com/album/glossolalia-lines-on-black">https://wetinkensemble.bandcamp.com/album/glossolalia-lines-on-black</a></p>
 <p>Two Live Sets (with Peter Evans) <a class="reference external" href="https://carrierrecords.com/album/two-live-sets">https://carrierrecords.com/album/two-live-sets</a></p>
 <p>Matrix for George Lewis <a class="reference external" href="http://sampluta.com/compositionMatrixForGeorgeLewis.html">http://sampluta.com/compositionMatrixForGeorgeLewis.html</a></p>
@@ -211,18 +879,18 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 <p>Chain Reactions/Five Events <a class="reference external" href="http://sampluta.com/compositionChainReactions.html">http://sampluta.com/compositionChainReactions.html</a></p>
 </section>
 <section id="federico-reuben">
-<h2>Federico Reuben<a class="headerlink" href="#federico-reuben" title="Link to this heading">¶</a></h2>
+<h2 id="federico-reuben">Federico Reuben<a class="headerlink" href="#federico-reuben" title="Link to this heading">¶</a></h2>
 <p><strong>On Violence</strong> (2009-2012), for piano, live elec­tron­ics, com­puter dis­play and sensors</p>
 <p><a class="reference external" href="http://www.federicoreuben.com/research/onviolence/">http://www.federicoreuben.com/research/onviolence/</a></p>
 <p><a class="reference external" href="http://youtu.be/G05FqpbgB0Q">http://youtu.be/G05FqpbgB0Q</a></p>
 </section>
 <section id="egor-sanin">
-<h2>Egor Sanin<a class="headerlink" href="#egor-sanin" title="Link to this heading">¶</a></h2>
+<h2 id="egor-sanin">Egor Sanin<a class="headerlink" href="#egor-sanin" title="Link to this heading">¶</a></h2>
 <p><strong>Processed Poetry</strong>, voice and SuperCollider</p>
 <p><a class="reference external" href="http://integer0.users.sourceforge.net/pages/processed-poetry.html">http://integer0.users.sourceforge.net/pages/processed-poetry.html</a></p>
 </section>
 <section id="wouter-snoei">
-<h2>Wouter Snoei<a class="headerlink" href="#wouter-snoei" title="Link to this heading">¶</a></h2>
+<h2 id="wouter-snoei">Wouter Snoei<a class="headerlink" href="#wouter-snoei" title="Link to this heading">¶</a></h2>
 <p><strong>The Game</strong> (2011), for Yamaha Disklavier and computer (interactive piece, midi only)</p>
 <p><strong>IJsvogel</strong> (2011), for contrabass clarinet and live electronics (title translation: Kingfisher, or alternatively Ice bird)</p>
 <p><a class="reference external" href="http://www.youtube.com/watch?v=7Vf6r9EzYRg">http://www.youtube.com/watch?v=7Vf6r9EzYRg</a></p>
@@ -233,7 +901,7 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 <p><a class="reference external" href="https://www.facebook.com/cantoostinatoav">https://www.facebook.com/cantoostinatoav</a></p>
 </section>
 <section id="carl-testa">
-<h2>Carl Testa<a class="headerlink" href="#carl-testa" title="Link to this heading">¶</a></h2>
+<h2 id="carl-testa">Carl Testa<a class="headerlink" href="#carl-testa" title="Link to this heading">¶</a></h2>
 <p><strong>Sⁿ</strong>, album for prepared electric guitar and SuperCollider</p>
 <p><a class="reference external" href="http://sn.carltesta.net/">http://sn.carltesta.net/</a></p>
 <p><strong>Iris</strong>, album for solo bass and SuperCollider</p>
@@ -242,14 +910,14 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 <p><a class="reference external" href="http://music.carltesta.net/album/4-miniatures-for-automated-organ">http://music.carltesta.net/album/4-miniatures-for-automated-organ</a></p>
 </section>
 <section id="rachel-devorah-trapp">
-<h2>Rachel Devorah Trapp<a class="headerlink" href="#rachel-devorah-trapp" title="Link to this heading">¶</a></h2>
+<h2 id="rachel-devorah-trapp">Rachel Devorah Trapp<a class="headerlink" href="#rachel-devorah-trapp" title="Link to this heading">¶</a></h2>
 <p><strong>Alloy</strong> (2013), horn and electronics</p>
 <p><a class="reference external" href="http://racheldevorahtrapp.com/works/">http://racheldevorahtrapp.com/works/</a></p>
 <p><a class="reference external" href="https://soundcloud.com/racheldevorahtrapp/alloy-2013-for-improvising">https://soundcloud.com/racheldevorahtrapp/alloy-2013-for-improvising</a></p>
 <p><a class="reference external" href="https://www.dropbox.com/s/medpwaac7xwen3v/alloy%20%282013%29.pdf">https://www.dropbox.com/s/medpwaac7xwen3v/alloy%20%282013%29.pdf</a></p>
 </section>
 <section id="scott-worthington">
-<h2>Scott Worthington<a class="headerlink" href="#scott-worthington" title="Link to this heading">¶</a></h2>
+<h2 id="scott-worthington">Scott Worthington<a class="headerlink" href="#scott-worthington" title="Link to this heading">¶</a></h2>
 <p><strong>Reflections</strong> (2012), double bass and electronics</p>
 <p><strong>Still Life</strong> (2012), trumpet and electronics</p>
 <p><strong>At Dusk</strong> (2010), double bass and electronics</p>
@@ -259,17 +927,17 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 <p><a class="reference external" href="http://scottworthington.com/">http://scottworthington.com/</a></p>
 </section>
 <section id="jonathan-zorn">
-<h2>Jonathan Zorn<a class="headerlink" href="#jonathan-zorn" title="Link to this heading">¶</a></h2>
+<h2 id="jonathan-zorn">Jonathan Zorn<a class="headerlink" href="#jonathan-zorn" title="Link to this heading">¶</a></h2>
 <section id="violin-sc">
-<h3>violin + sc<a class="headerlink" href="#violin-sc" title="Link to this heading">¶</a></h3>
+<h3 id="violin-sc">violin + sc<a class="headerlink" href="#violin-sc" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="http://jonathanzorn-net.weirdweatherproductions.com/index.php?/interactive/violin-and-computer-3/">http://jonathanzorn-net.weirdweatherproductions.com/index.php?/interactive/violin-and-computer-3/</a></p>
 </section>
 <section id="doublebass-sc">
-<h3>doublebass + sc<a class="headerlink" href="#doublebass-sc" title="Link to this heading">¶</a></h3>
+<h3 id="doublebass-sc">doublebass + sc<a class="headerlink" href="#doublebass-sc" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="http://jonathanzorn-net.weirdweatherproductions.com/index.php?/interactive/double-bass-and-computer/">http://jonathanzorn-net.weirdweatherproductions.com/index.php?/interactive/double-bass-and-computer/</a></p>
 </section>
 <section id="speech-sc">
-<h3>speech + sc<a class="headerlink" href="#speech-sc" title="Link to this heading">¶</a></h3>
+<h3 id="speech-sc">speech + sc<a class="headerlink" href="#speech-sc" title="Link to this heading">¶</a></h3>
 <p>(the piece is Talking Typing at the bottom of the page)</p>
 <p><a class="reference external" href="http://www.ubu.com/sound/zorn.html">http://www.ubu.com/sound/zorn.html</a></p>
 </section>
@@ -277,122 +945,61 @@ recording: <a class="reference external" href="https://soundcloud.com/rael-gimen
 </section>
 
 
-          </div>
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
           
+            <a href="Community-channels.html" title="Community channels"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> "Previous" </span> Community channels </span>
+              </div>
+            </a>
+          
+          
+            <a href="sc140.html" title="SC140"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> "Next" </span> SC140 </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2024, SuperCollider.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/logo.svg" alt="Logo"/>
-            </a></p>
-<h1 class="logo"><a href="../index.html">SuperCollider Wiki</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user/index.html">User resources</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Community</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Academic-papers.html">Academic papers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Blogs-and-sites.html">Blogs and sites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Community-channels.html">Community channels</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pieces with live instruments or voice</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mark-ballora">Mark Ballora</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bo-is-burning-electronic-music-theatre-duo">Bo is burning - Electronic Music-Theatre Duo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#chris-brown">Chris Brown</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jeremy-van-buskirk">Jeremy Van Buskirk</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#marko-ciciliani">Marko Ciciliani</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nick-collins">Nick Collins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#john-drumheller">John Drumheller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#eli-fieldsteel">Eli Fieldsteel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#krzysztof-gawlas">Krzysztof Gawlas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#kosmas-giannoutakis">Kosmas Giannoutakis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rael-gimenes">Rael Gimenes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#david-stephen-grant">David Stephen Grant</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#h-james-harkins">H. James Harkins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#elliot-kermit-canfield">Elliot Kermit-Canfield</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#derek-kwan">Derek Kwan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stelios-manousakis">Stelios Manousakis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#daniel-mayer">Daniel Mayer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fabrice-mogini">Fabrice Mogini</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ted-moore">Ted Moore</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#michael-musick">Michael Musick</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#off-zz">Off&lt;&gt;zz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fredrik-olofsson">Fredrik Olofsson</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#joo-won-park">Joo Won Park</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#joshua-parmenter">Joshua Parmenter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sam-pluta">Sam Pluta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#federico-reuben">Federico Reuben</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#egor-sanin">Egor Sanin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wouter-snoei">Wouter Snoei</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#carl-testa">Carl Testa</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rachel-devorah-trapp">Rachel Devorah Trapp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scott-worthington">Scott Worthington</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jonathan-zorn">Jonathan Zorn</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="sc140.html">SC140</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symposium/index.html">SuperCollider Symposium</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">Community</a><ul>
-      <li>Previous: <a href="Community-channels.html" title="previous chapter">Community channels</a></li>
-      <li>Next: <a href="sc140.html" title="next chapter">SC140</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
     </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2024, SuperCollider.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-      |
-      <a href="../_sources/community/Pieces-with-live-instruments-or-voice.md.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
   </body>
 </html>

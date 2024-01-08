@@ -5,9 +5,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
     <title>Guide to SuperCollider Unit Testing &#8212; SuperCollider Wiki  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7d9986eb" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
@@ -16,25 +57,531 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="The wiki-wiki" href="../The-wiki-wiki.html" />
     <link rel="prev" title="Setting up your development environment" href="Setting-up-your-development-environment.html" />
+  
    
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body dir=ltr
+        data-md-color-primary=grey data-md-color-accent=light-grey>
   
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#contributing/workflow/Unit-Testing-Guide" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="SuperCollider Wiki  documentation"
+           class="md-header-nav__button md-logo">
           
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic"> Guide to SuperCollider Unit Testing </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="body" role="main">
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SuperCollider Wiki
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../"versions.json"",
+        target_loc = "../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Contributing</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Workflows</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="SuperCollider Wiki documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    SuperCollider Wiki
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../index.html" class="md-nav__link">Contributing</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../common/index.html" class="md-nav__link">Common references</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">Workflows</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="Generating-crash-reports.html" class="md-nav__link">Generating crash reports</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Setting-up-the-IDE-for-easy-contribution.html" class="md-nav__link">Setting up the IDE for easy contribution</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Setting-up-your-development-environment.html" class="md-nav__link">Setting up your development environment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Guide to SuperCollider Unit Testing </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Guide to SuperCollider Unit Testing</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#contributing-workflow-unit-testing-guide--page-root" class="md-nav__link">Guide to SuperCollider Unit Testing</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#running-the-test-suite" class="md-nav__link">Running the Test Suite</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#class-library-tests" class="md-nav__link">Class Library Tests</a>
+        </li>
+        <li class="md-nav__item"><a href="#other-tests" class="md-nav__link">Other Tests</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#purpose" class="md-nav__link">Purpose</a>
+        </li>
+        <li class="md-nav__item"><a href="#what-is-testing" class="md-nav__link">What is testing?</a>
+        </li>
+        <li class="md-nav__item"><a href="#testing-terminology" class="md-nav__link">Testing terminology</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#types-of-tests" class="md-nav__link">Types of tests</a>
+        </li>
+        <li class="md-nav__item"><a href="#black-box-and-white-box-testing" class="md-nav__link">Black-box and white-box testing</a>
+        </li>
+        <li class="md-nav__item"><a href="#test-suites" class="md-nav__link">Test suites</a>
+        </li>
+        <li class="md-nav__item"><a href="#mock-objects" class="md-nav__link">Mock objects</a>
+        </li>
+        <li class="md-nav__item"><a href="#test-driven-development-red-green-testing" class="md-nav__link">Test-driven development (red/green testing)</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#the-unittest-class" class="md-nav__link">The UnitTest class</a>
+        </li>
+        <li class="md-nav__item"><a href="#unit-testing-guidelines" class="md-nav__link">Unit testing guidelines</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#tests-should-be-independent" class="md-nav__link">Tests should be independent</a>
+        </li>
+        <li class="md-nav__item"><a href="#tests-should-have-exactly-one-assertion" class="md-nav__link">Tests should have exactly one assertion</a>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-grouping-conditions-in-asserts" class="md-nav__link">Avoid grouping conditions in asserts</a>
+        </li>
+        <li class="md-nav__item"><a href="#prefer-assertequals-to-assert" class="md-nav__link">Prefer assertEquals to assert</a>
+        </li>
+        <li class="md-nav__item"><a href="#test-only-what-you-need" class="md-nav__link">Test only what you need</a>
+        </li>
+        <li class="md-nav__item"><a href="#test-for-common-mistakes" class="md-nav__link">Test for common mistakes</a>
+        </li>
+        <li class="md-nav__item"><a href="#use-test-cases-that-are-easy-to-check-manually" class="md-nav__link">Use test cases that are easy to check manually</a>
+        </li>
+        <li class="md-nav__item"><a href="#automate-everything" class="md-nav__link">Automate everything</a>
+        </li>
+        <li class="md-nav__item"><a href="#tests-should-be-repeatable" class="md-nav__link">Tests should be repeatable</a>
+        </li>
+        <li class="md-nav__item"><a href="#tests-should-be-thorough" class="md-nav__link">Tests should be thorough</a>
+        </li>
+        <li class="md-nav__item"><a href="#naming-test-methods" class="md-nav__link">Naming test methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#write-the-test-first" class="md-nav__link">Write the test first</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-arrange-act-assert-approach" class="md-nav__link">The arrange-act-assert approach</a>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-excessive-boilerplate" class="md-nav__link">Avoid excessive boilerplate</a>
+        </li>
+        <li class="md-nav__item"><a href="#but-some-boilerplate-is-okay" class="md-nav__link">But, some boilerplate is okay</a>
+        </li>
+        <li class="md-nav__item"><a href="#write-testable-code" class="md-nav__link">Write testable code</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#scclasslibrary-testing-standards" class="md-nav__link">SCClassLibrary testing standards</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#one-class-per-file" class="md-nav__link">One class per file</a>
+        </li>
+        <li class="md-nav__item"><a href="#testing-one-class-in-multiple-files" class="md-nav__link">Testing one class in multiple files</a>
+        </li>
+        <li class="md-nav__item"><a href="#using-external-datasets" class="md-nav__link">Using external datasets</a>
+        </li>
+        <li class="md-nav__item"><a href="#naming" class="md-nav__link">Naming</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#classes" class="md-nav__link">Classes</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#datasets" class="md-nav__link">Datasets</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-using-the-default-server" class="md-nav__link">Avoid using the default server</a>
+        </li>
+        <li class="md-nav__item"><a href="#use-server-bootsync-to-boot-a-server" class="md-nav__link">Use <code class="docutils literal notranslate"><span class="pre">Server:-bootSync</span></code> to boot a <code class="docutils literal notranslate"><span class="pre">Server</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-use-of-wait" class="md-nav__link">Avoid use of <code class="docutils literal notranslate"><span class="pre">wait</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-using-class-variables" class="md-nav__link">Avoid using class variables</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#adding-tests-to-the-scclasslibrary-test-suite" class="md-nav__link">Adding tests to the SCClassLibrary test suite</a>
+        </li>
+        <li class="md-nav__item"><a href="#examples" class="md-nav__link">Examples</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#a-simple-test" class="md-nav__link">A simple test</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-more-complex-test" class="md-nav__link">A more complex test</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-randomness" class="md-nav__link">A test using randomness</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-a-server" class="md-nav__link">A test using a server</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-condition-variables" class="md-nav__link">A test using condition variables</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-an-external-dataset" class="md-nav__link">A test using an external dataset</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-setup-and-teardown" class="md-nav__link">A test using <code class="docutils literal notranslate"><span class="pre">setUp</span></code> and <code class="docutils literal notranslate"><span class="pre">tearDown</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#continuous-automatic-red-green-testing-via-guard-sclang" class="md-nav__link">Continuous automatic red/green testing via guard-sclang</a>
+        </li>
+        <li class="md-nav__item"><a href="#resources" class="md-nav__link">Resources</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/contributing/workflow/Unit-Testing-Guide.md.txt">Show Source</a> </li>
+
+  </ul>
+</nav>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../UGen-Quality-Standards.html" class="md-nav__link">UGen-Quality standards</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../development/index.html" class="md-nav__link">Development</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../user/index.html" class="md-nav__link">User resources</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../community/index.html" class="md-nav__link">Community</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../faq/index.html" class="md-nav__link">FAQ</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#contributing-workflow-unit-testing-guide--page-root" class="md-nav__link">Guide to SuperCollider Unit Testing</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#running-the-test-suite" class="md-nav__link">Running the Test Suite</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#class-library-tests" class="md-nav__link">Class Library Tests</a>
+        </li>
+        <li class="md-nav__item"><a href="#other-tests" class="md-nav__link">Other Tests</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#purpose" class="md-nav__link">Purpose</a>
+        </li>
+        <li class="md-nav__item"><a href="#what-is-testing" class="md-nav__link">What is testing?</a>
+        </li>
+        <li class="md-nav__item"><a href="#testing-terminology" class="md-nav__link">Testing terminology</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#types-of-tests" class="md-nav__link">Types of tests</a>
+        </li>
+        <li class="md-nav__item"><a href="#black-box-and-white-box-testing" class="md-nav__link">Black-box and white-box testing</a>
+        </li>
+        <li class="md-nav__item"><a href="#test-suites" class="md-nav__link">Test suites</a>
+        </li>
+        <li class="md-nav__item"><a href="#mock-objects" class="md-nav__link">Mock objects</a>
+        </li>
+        <li class="md-nav__item"><a href="#test-driven-development-red-green-testing" class="md-nav__link">Test-driven development (red/green testing)</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#the-unittest-class" class="md-nav__link">The UnitTest class</a>
+        </li>
+        <li class="md-nav__item"><a href="#unit-testing-guidelines" class="md-nav__link">Unit testing guidelines</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#tests-should-be-independent" class="md-nav__link">Tests should be independent</a>
+        </li>
+        <li class="md-nav__item"><a href="#tests-should-have-exactly-one-assertion" class="md-nav__link">Tests should have exactly one assertion</a>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-grouping-conditions-in-asserts" class="md-nav__link">Avoid grouping conditions in asserts</a>
+        </li>
+        <li class="md-nav__item"><a href="#prefer-assertequals-to-assert" class="md-nav__link">Prefer assertEquals to assert</a>
+        </li>
+        <li class="md-nav__item"><a href="#test-only-what-you-need" class="md-nav__link">Test only what you need</a>
+        </li>
+        <li class="md-nav__item"><a href="#test-for-common-mistakes" class="md-nav__link">Test for common mistakes</a>
+        </li>
+        <li class="md-nav__item"><a href="#use-test-cases-that-are-easy-to-check-manually" class="md-nav__link">Use test cases that are easy to check manually</a>
+        </li>
+        <li class="md-nav__item"><a href="#automate-everything" class="md-nav__link">Automate everything</a>
+        </li>
+        <li class="md-nav__item"><a href="#tests-should-be-repeatable" class="md-nav__link">Tests should be repeatable</a>
+        </li>
+        <li class="md-nav__item"><a href="#tests-should-be-thorough" class="md-nav__link">Tests should be thorough</a>
+        </li>
+        <li class="md-nav__item"><a href="#naming-test-methods" class="md-nav__link">Naming test methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#write-the-test-first" class="md-nav__link">Write the test first</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-arrange-act-assert-approach" class="md-nav__link">The arrange-act-assert approach</a>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-excessive-boilerplate" class="md-nav__link">Avoid excessive boilerplate</a>
+        </li>
+        <li class="md-nav__item"><a href="#but-some-boilerplate-is-okay" class="md-nav__link">But, some boilerplate is okay</a>
+        </li>
+        <li class="md-nav__item"><a href="#write-testable-code" class="md-nav__link">Write testable code</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#scclasslibrary-testing-standards" class="md-nav__link">SCClassLibrary testing standards</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#one-class-per-file" class="md-nav__link">One class per file</a>
+        </li>
+        <li class="md-nav__item"><a href="#testing-one-class-in-multiple-files" class="md-nav__link">Testing one class in multiple files</a>
+        </li>
+        <li class="md-nav__item"><a href="#using-external-datasets" class="md-nav__link">Using external datasets</a>
+        </li>
+        <li class="md-nav__item"><a href="#naming" class="md-nav__link">Naming</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#classes" class="md-nav__link">Classes</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#datasets" class="md-nav__link">Datasets</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-using-the-default-server" class="md-nav__link">Avoid using the default server</a>
+        </li>
+        <li class="md-nav__item"><a href="#use-server-bootsync-to-boot-a-server" class="md-nav__link">Use <code class="docutils literal notranslate"><span class="pre">Server:-bootSync</span></code> to boot a <code class="docutils literal notranslate"><span class="pre">Server</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-use-of-wait" class="md-nav__link">Avoid use of <code class="docutils literal notranslate"><span class="pre">wait</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#avoid-using-class-variables" class="md-nav__link">Avoid using class variables</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#adding-tests-to-the-scclasslibrary-test-suite" class="md-nav__link">Adding tests to the SCClassLibrary test suite</a>
+        </li>
+        <li class="md-nav__item"><a href="#examples" class="md-nav__link">Examples</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#a-simple-test" class="md-nav__link">A simple test</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-more-complex-test" class="md-nav__link">A more complex test</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-randomness" class="md-nav__link">A test using randomness</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-a-server" class="md-nav__link">A test using a server</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-condition-variables" class="md-nav__link">A test using condition variables</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-an-external-dataset" class="md-nav__link">A test using an external dataset</a>
+        </li>
+        <li class="md-nav__item"><a href="#a-test-using-setup-and-teardown" class="md-nav__link">A test using <code class="docutils literal notranslate"><span class="pre">setUp</span></code> and <code class="docutils literal notranslate"><span class="pre">tearDown</span></code></a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#continuous-automatic-red-green-testing-via-guard-sclang" class="md-nav__link">Continuous automatic red/green testing via guard-sclang</a>
+        </li>
+        <li class="md-nav__item"><a href="#resources" class="md-nav__link">Resources</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/contributing/workflow/Unit-Testing-Guide.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
             
   <section id="guide-to-supercollider-unit-testing">
-<h1>Guide to SuperCollider Unit Testing<a class="headerlink" href="#guide-to-supercollider-unit-testing" title="Link to this heading">¶</a></h1>
-<p><em>This document is a work in progress!</em> Feel free to question it and suggest improvements. The document’s main author is Brian Heim (&#64;brianlheim).</p>
+<h1 id="contributing-workflow-unit-testing-guide--page-root">Guide to SuperCollider Unit Testing<a class="headerlink" href="#contributing-workflow-unit-testing-guide--page-root" title="Link to this heading">¶</a></h1>
+<p><em>This document is a work in progress!</em> Feel free to question it and suggest improvements. The document’s main author is Brian Heim (@brianlheim).</p>
 <nav class="contents local" id="content">
 <p class="topic-title">Content</p>
 <ul class="simple">
@@ -105,9 +652,9 @@
 </ul>
 </nav>
 <section id="running-the-test-suite">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Running the Test Suite</a><a class="headerlink" href="#running-the-test-suite" title="Link to this heading">¶</a></h2>
+<h2 id="running-the-test-suite"><a class="toc-backref" href="#id1" role="doc-backlink">Running the Test Suite</a><a class="headerlink" href="#running-the-test-suite" title="Link to this heading">¶</a></h2>
 <section id="class-library-tests">
-<h3><a class="toc-backref" href="#id2" role="doc-backlink">Class Library Tests</a><a class="headerlink" href="#class-library-tests" title="Link to this heading">¶</a></h3>
+<h3 id="class-library-tests"><a class="toc-backref" href="#id2" role="doc-backlink">Class Library Tests</a><a class="headerlink" href="#class-library-tests" title="Link to this heading">¶</a></h3>
 <p>If developing on a version older than 3.9.0, download <code class="docutils literal notranslate"><span class="pre">UnitTesting</span></code> quark separately. Since 3.9, UnitTesting is bundled with SC.</p>
 <p>The bundled test suite is not added to your SuperCollider compile path by default.</p>
 <p>To run the tests you must first add the <code class="docutils literal notranslate"><span class="pre">testsuite</span></code> folder, from the main SuperCollider source tree, to your SuperCollider compile paths. Recompile. Run <code class="docutils literal notranslate"><span class="pre">UnitTest.runAll</span></code>, or run specific tests from the GUI via <code class="docutils literal notranslate"><span class="pre">UnitTest.gui</span></code>.</p>
@@ -119,12 +666,12 @@ For example:</p>
 </ul>
 </section>
 <section id="other-tests">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">Other Tests</a><a class="headerlink" href="#other-tests" title="Link to this heading">¶</a></h3>
+<h3 id="other-tests"><a class="toc-backref" href="#id3" role="doc-backlink">Other Tests</a><a class="headerlink" href="#other-tests" title="Link to this heading">¶</a></h3>
 <p>This project also has small test suites for scsynth and supernova written in C++ using Boost.Test, and a few older tests for sclang written in sclang. To run them, build the project and then run <code class="docutils literal notranslate"><span class="pre">ctest</span></code> in the build directory. If you are using a multi-configuration generator with CMake such as Xcode or Visual Studio, you should also pass the configuration with <code class="docutils literal notranslate"><span class="pre">-C</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">ctest</span> <span class="pre">-C</span> <span class="pre">Debug</span></code>.</p>
 </section>
 </section>
 <section id="purpose">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Purpose</a><a class="headerlink" href="#purpose" title="Link to this heading">¶</a></h2>
+<h2 id="purpose"><a class="toc-backref" href="#id4" role="doc-backlink">Purpose</a><a class="headerlink" href="#purpose" title="Link to this heading">¶</a></h2>
 <p>This guide is meant for SuperCollider users as well as developers working on the SuperCollider
 project.</p>
 <p>The first two sections – “What is testing?” and “Testing terminology” – are meant for those new
@@ -136,7 +683,7 @@ excerpts that illustrate common situations encountered while writing tests. Fina
 contains links and references for further reading.</p>
 </section>
 <section id="what-is-testing">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">What is testing?</a><a class="headerlink" href="#what-is-testing" title="Link to this heading">¶</a></h2>
+<h2 id="what-is-testing"><a class="toc-backref" href="#id5" role="doc-backlink">What is testing?</a><a class="headerlink" href="#what-is-testing" title="Link to this heading">¶</a></h2>
 <p>In <em>Clean Code</em>, Steve McConnell writes:</p>
 <blockquote>
 <div><p>Testing can never completely prove the absence of errors. If you have tested extensively and found
@@ -146,13 +693,13 @@ could mean perfect software.</p>
 </div></blockquote>
 </section>
 <section id="testing-terminology">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Testing terminology</a><a class="headerlink" href="#testing-terminology" title="Link to this heading">¶</a></h2>
+<h2 id="testing-terminology"><a class="toc-backref" href="#id6" role="doc-backlink">Testing terminology</a><a class="headerlink" href="#testing-terminology" title="Link to this heading">¶</a></h2>
 <section id="types-of-tests">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Types of tests</a><a class="headerlink" href="#types-of-tests" title="Link to this heading">¶</a></h3>
+<h3 id="types-of-tests"><a class="toc-backref" href="#id7" role="doc-backlink">Types of tests</a><a class="headerlink" href="#types-of-tests" title="Link to this heading">¶</a></h3>
 <p>These are names for frequently encountered types of tests and testing approaches:</p>
 <p><strong>Unit tests</strong> are small, modular tests that verify a “unit” of code. Examples include verifying
 that a multiplication function correctly multiplies 5 and 8, verifying that constructing an object
-with some flag set to <code class="docutils literal notranslate"><span class="pre">true</span></code> has the intended effect, and checking that the result of <code class="docutils literal notranslate"><span class="pre">&quot;hello,</span> <span class="pre">&quot;</span> <span class="pre">++</span> <span class="pre">&quot;soundworld&quot;</span></code> is what you expect. These are typically at the heart of a test suite, because they
+with some flag set to <code class="docutils literal notranslate"><span class="pre">true</span></code> has the intended effect, and checking that the result of <code class="docutils literal notranslate"><span class="pre">"hello,</span> <span class="pre">"</span> <span class="pre">++</span> <span class="pre">"soundworld"</span></code> is what you expect. These are typically at the heart of a test suite, because they
 allow a developer to quickly pinpoint where (and hopefully why) a failure is happening.</p>
 <p><strong>Regression tests</strong> are tests that ensure behavior is maintained when a system changes. This type
 of test is very similar to unit tests; the main difference is that it typically is written after
@@ -182,7 +729,7 @@ some specific property of the test itself. Understanding the different ways of a
 and using them effectively is a great skill to develop.</p>
 </section>
 <section id="black-box-and-white-box-testing">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Black-box and white-box testing</a><a class="headerlink" href="#black-box-and-white-box-testing" title="Link to this heading">¶</a></h3>
+<h3 id="black-box-and-white-box-testing"><a class="toc-backref" href="#id8" role="doc-backlink">Black-box and white-box testing</a><a class="headerlink" href="#black-box-and-white-box-testing" title="Link to this heading">¶</a></h3>
 <p>The term <strong>black-box testing</strong> refers to tests written without any knowledge about what might be
 going on inside the method or class being tested; the developer writing the tests only has access to
 external information such as the method signature and specifications. <strong>White-box testing</strong>, on the
@@ -192,13 +739,13 @@ tester might overlook test conditions that would seem obvious if they knew imple
 and vice versa for white-box testing.</p>
 </section>
 <section id="test-suites">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">Test suites</a><a class="headerlink" href="#test-suites" title="Link to this heading">¶</a></h3>
+<h3 id="test-suites"><a class="toc-backref" href="#id9" role="doc-backlink">Test suites</a><a class="headerlink" href="#test-suites" title="Link to this heading">¶</a></h3>
 <p>A test suite is a set of tests or test suites. At minimum, it is a subclass of <code class="docutils literal notranslate"><span class="pre">UnitTest</span></code> that has
 at least one <code class="docutils literal notranslate"><span class="pre">test_</span></code> method. We typically refer to the whole set of tests in the SuperCollider
 repository, which contains many test suites itself, as “the test suite.”</p>
 </section>
 <section id="mock-objects">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">Mock objects</a><a class="headerlink" href="#mock-objects" title="Link to this heading">¶</a></h3>
+<h3 id="mock-objects"><a class="toc-backref" href="#id10" role="doc-backlink">Mock objects</a><a class="headerlink" href="#mock-objects" title="Link to this heading">¶</a></h3>
 <p>A <strong>mock object</strong> is an object created for the purpose of a test that simulates the behavior of real
 objects in enough ways for the test to run. Think of the way engineers use a wind tunnel to test the
 aerodynamics of a plane. Typical use cases are testing for an error that is difficult to produce
@@ -209,7 +756,7 @@ the test environment.</p>
 article</a>.</p>
 </section>
 <section id="test-driven-development-red-green-testing">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">Test-driven development (red/green testing)</a><a class="headerlink" href="#test-driven-development-red-green-testing" title="Link to this heading">¶</a></h3>
+<h3 id="test-driven-development-red-green-testing"><a class="toc-backref" href="#id11" role="doc-backlink">Test-driven development (red/green testing)</a><a class="headerlink" href="#test-driven-development-red-green-testing" title="Link to this heading">¶</a></h3>
 <p><strong>Test-driven development (TDD)</strong> and <strong>red/green testing</strong> refers to a software development
 process that emphasizes test-writing as the first and primary action in a development cycle. That
 is, tests are written first that do not pass (“red” tests), then code is written until they do pass
@@ -220,13 +767,13 @@ this approach is to only write as much as is needed for all tests to pass.</p>
 </section>
 </section>
 <section id="the-unittest-class">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">The UnitTest class</a><a class="headerlink" href="#the-unittest-class" title="Link to this heading">¶</a></h2>
+<h2 id="the-unittest-class"><a class="toc-backref" href="#id12" role="doc-backlink">The UnitTest class</a><a class="headerlink" href="#the-unittest-class" title="Link to this heading">¶</a></h2>
 <p>See the <code class="docutils literal notranslate"><span class="pre">UnitTest</span></code> help file.</p>
 </section>
 <section id="unit-testing-guidelines">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Unit testing guidelines</a><a class="headerlink" href="#unit-testing-guidelines" title="Link to this heading">¶</a></h2>
+<h2 id="unit-testing-guidelines"><a class="toc-backref" href="#id13" role="doc-backlink">Unit testing guidelines</a><a class="headerlink" href="#unit-testing-guidelines" title="Link to this heading">¶</a></h2>
 <section id="tests-should-be-independent">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Tests should be independent</a><a class="headerlink" href="#tests-should-be-independent" title="Link to this heading">¶</a></h3>
+<h3 id="tests-should-be-independent"><a class="toc-backref" href="#id14" role="doc-backlink">Tests should be independent</a><a class="headerlink" href="#tests-should-be-independent" title="Link to this heading">¶</a></h3>
 <p>Sometimes, you want to run a single test by itself; sometimes, only a few tests out of a test suite;
 and sometimes, you want to reorder the tests in a suite. Unit tests should be resilient to all of
 these possibilities: they should be independent. It should not matter how many tests out of a suite
@@ -234,7 +781,7 @@ are run, nor should it matter what order they’re run in. If you need something
 after a test is run, consider whether it should go in the <strong>setUp</strong> or <strong>tearDown</strong> for that suite.</p>
 </section>
 <section id="tests-should-have-exactly-one-assertion">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Tests should have exactly one assertion</a><a class="headerlink" href="#tests-should-have-exactly-one-assertion" title="Link to this heading">¶</a></h3>
+<h3 id="tests-should-have-exactly-one-assertion"><a class="toc-backref" href="#id15" role="doc-backlink">Tests should have exactly one assertion</a><a class="headerlink" href="#tests-should-have-exactly-one-assertion" title="Link to this heading">¶</a></h3>
 <p>This might seem a little draconian, and there are certainly times when having multiple assertions in
 a test is justified. But, in the vast majority of unit tests, making multiple assertions is a strong
 indicator that you are testing more than one “unit” at once, which will make it harder to understand
@@ -294,7 +841,7 @@ lines will have to be read and updated later.</p></li>
 side effects like this, or are even more complicated.</p>
 </section>
 <section id="avoid-grouping-conditions-in-asserts">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Avoid grouping conditions in asserts</a><a class="headerlink" href="#avoid-grouping-conditions-in-asserts" title="Link to this heading">¶</a></h3>
+<h3 id="avoid-grouping-conditions-in-asserts"><a class="toc-backref" href="#id16" role="doc-backlink">Avoid grouping conditions in asserts</a><a class="headerlink" href="#avoid-grouping-conditions-in-asserts" title="Link to this heading">¶</a></h3>
 <p>It may be tempting to group several conditions together:</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nb">this</span><span class="p">.</span><span class="nx">assert</span><span class="p">(</span><span class="nx">bip</span><span class="p">.</span><span class="nx">foo</span> <span class="o">==</span> <span class="mi">3</span> <span class="nx">and</span><span class="o">:</span> <span class="nx">oldFoo</span> <span class="o">==</span> <span class="mi">0</span> <span class="nx">and</span><span class="o">:</span> <span class="nx">bip</span><span class="p">.</span><span class="nx">fooUpdateCount</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
@@ -307,7 +854,7 @@ side effects like this, or are even more complicated.</p>
 </ul>
 </section>
 <section id="prefer-assertequals-to-assert">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">Prefer assertEquals to assert</a><a class="headerlink" href="#prefer-assertequals-to-assert" title="Link to this heading">¶</a></h3>
+<h3 id="prefer-assertequals-to-assert"><a class="toc-backref" href="#id17" role="doc-backlink">Prefer assertEquals to assert</a><a class="headerlink" href="#prefer-assertequals-to-assert" title="Link to this heading">¶</a></h3>
 <p>Wherever possible, prefer using <code class="docutils literal notranslate"><span class="pre">assertEquals</span></code> to <code class="docutils literal notranslate"><span class="pre">assert</span></code>. When you use <code class="docutils literal notranslate"><span class="pre">assertEquals</span></code>, the
 automatically generated failure message will give you information about the experimental value and
 the expected value. When you use <code class="docutils literal notranslate"><span class="pre">assert</span></code>, you only know that the values were unequal. Therefore,
@@ -318,7 +865,7 @@ same condition. Therefore, this rule could be generalized to: “use the most sp
 possible”; use of <code class="docutils literal notranslate"><span class="pre">assertEquals</span></code> just happens to be the most frequent situation where it applies.</p>
 </section>
 <section id="test-only-what-you-need">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Test only what you need</a><a class="headerlink" href="#test-only-what-you-need" title="Link to this heading">¶</a></h3>
+<h3 id="test-only-what-you-need"><a class="toc-backref" href="#id18" role="doc-backlink">Test only what you need</a><a class="headerlink" href="#test-only-what-you-need" title="Link to this heading">¶</a></h3>
 <p>If a test wouldn’t tell you anything new about how well a component functions, don’t write it! Not
 only do redundant tests require more time to write, they also take more time to run and give a false
 sense of security. If you have a test that checks the result of <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code>, there’s no need to write a
@@ -328,7 +875,7 @@ test differs from another, they probably aren’t both necessary. Remember, the 
 is to find errors, not to show that code is correct.</p>
 </section>
 <section id="test-for-common-mistakes">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">Test for common mistakes</a><a class="headerlink" href="#test-for-common-mistakes" title="Link to this heading">¶</a></h3>
+<h3 id="test-for-common-mistakes"><a class="toc-backref" href="#id19" role="doc-backlink">Test for common mistakes</a><a class="headerlink" href="#test-for-common-mistakes" title="Link to this heading">¶</a></h3>
 <p>From <em>Code Complete</em>:</p>
 <blockquote>
 <div><p>good programmers use a variety of less formal, heuristic techniques to expose errors in this code.
@@ -366,20 +913,20 @@ valid design choice depending on the situation; the important point is that it o
 <em>choice</em>, not an afterthought.</p>
 </section>
 <section id="use-test-cases-that-are-easy-to-check-manually">
-<h3><a class="toc-backref" href="#id20" role="doc-backlink">Use test cases that are easy to check manually</a><a class="headerlink" href="#use-test-cases-that-are-easy-to-check-manually" title="Link to this heading">¶</a></h3>
-<p>Prefer using simple values like <code class="docutils literal notranslate"><span class="pre">&quot;book&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">2000</span></code> as test inputs. Complicated-looking values like
-<code class="docutils literal notranslate"><span class="pre">&quot;yzzoinnnpon&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">19645583</span></code> are usually no more likely to discover errors than their visually
+<h3 id="use-test-cases-that-are-easy-to-check-manually"><a class="toc-backref" href="#id20" role="doc-backlink">Use test cases that are easy to check manually</a><a class="headerlink" href="#use-test-cases-that-are-easy-to-check-manually" title="Link to this heading">¶</a></h3>
+<p>Prefer using simple values like <code class="docutils literal notranslate"><span class="pre">"book"</span></code> and <code class="docutils literal notranslate"><span class="pre">2000</span></code> as test inputs. Complicated-looking values like
+<code class="docutils literal notranslate"><span class="pre">"yzzoinnnpon"</span></code> and <code class="docutils literal notranslate"><span class="pre">19645583</span></code> are usually no more likely to discover errors than their visually
 simpler counterparts. This makes checking the correctness of a test by hand or by eye easier.</p>
 </section>
 <section id="automate-everything">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink">Automate everything</a><a class="headerlink" href="#automate-everything" title="Link to this heading">¶</a></h3>
+<h3 id="automate-everything"><a class="toc-backref" href="#id21" role="doc-backlink">Automate everything</a><a class="headerlink" href="#automate-everything" title="Link to this heading">¶</a></h3>
 <p>If a test has to be run manually, it is likely to be run less often than automated tests, perhaps
 not even at all. It’s worth it in the long run to make tests automated. If you find it difficult to
 automate a particular test, don’t forget that the best solution could be to add code to the
 component being tested!</p>
 </section>
 <section id="tests-should-be-repeatable">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink">Tests should be repeatable</a><a class="headerlink" href="#tests-should-be-repeatable" title="Link to this heading">¶</a></h3>
+<h3 id="tests-should-be-repeatable"><a class="toc-backref" href="#id22" role="doc-backlink">Tests should be repeatable</a><a class="headerlink" href="#tests-should-be-repeatable" title="Link to this heading">¶</a></h3>
 <p>Running a test multiple times should only produce a different result when the code being tested is
 modified. A test that randomly fails or passes the first time it is run is a hindrance rather than
 an aid to testing. So is a test that fails the second or third time it is run. If a test relies on
@@ -387,14 +934,14 @@ certain preconditions, it should establish that when it runs, or you should esta
 class’s <code class="docutils literal notranslate"><span class="pre">setUp</span></code>.</p>
 </section>
 <section id="tests-should-be-thorough">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink">Tests should be thorough</a><a class="headerlink" href="#tests-should-be-thorough" title="Link to this heading">¶</a></h3>
+<h3 id="tests-should-be-thorough"><a class="toc-backref" href="#id23" role="doc-backlink">Tests should be thorough</a><a class="headerlink" href="#tests-should-be-thorough" title="Link to this heading">¶</a></h3>
 <p>This may seem obvious, but it’s worth saying: tests should cover as much code as is possible and
 reasonable. Reaching 100% test coverage is simply not possible or practical for many codebases, but
 around 70-80% is healthy. As Kent Beck says in “What Should We Unit Test?”: “Write tests until fear
 is transformed into boredom.”</p>
 </section>
 <section id="naming-test-methods">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink">Naming test methods</a><a class="headerlink" href="#naming-test-methods" title="Link to this heading">¶</a></h3>
+<h3 id="naming-test-methods"><a class="toc-backref" href="#id24" role="doc-backlink">Naming test methods</a><a class="headerlink" href="#naming-test-methods" title="Link to this heading">¶</a></h3>
 <p>Normally when naming variables and functions, the developer tries to strike a balance of clarity
 between specificity and brevity. However, naming test methods clearly often means using more
 characters than usual. Some authors recommend the “SSR” (subject-scenario-result) approach. For
@@ -420,14 +967,14 @@ information.</p>
 <p>Whatever approach you use to name your test methods, ensure that they are descriptive and explicit.</p>
 </section>
 <section id="write-the-test-first">
-<h3><a class="toc-backref" href="#id25" role="doc-backlink">Write the test first</a><a class="headerlink" href="#write-the-test-first" title="Link to this heading">¶</a></h3>
+<h3 id="write-the-test-first"><a class="toc-backref" href="#id25" role="doc-backlink">Write the test first</a><a class="headerlink" href="#write-the-test-first" title="Link to this heading">¶</a></h3>
 <p>The reason for this is simple: the test is bound to be written at some point in time, and working on
 a fix with a test already written gives you the opportunity to quickly run the test to check a fix.
 If you wait until later, you may spend extra time making the solution more complex than it needs to
 be.</p>
 </section>
 <section id="the-arrange-act-assert-approach">
-<h3><a class="toc-backref" href="#id26" role="doc-backlink">The arrange-act-assert approach</a><a class="headerlink" href="#the-arrange-act-assert-approach" title="Link to this heading">¶</a></h3>
+<h3 id="the-arrange-act-assert-approach"><a class="toc-backref" href="#id26" role="doc-backlink">The arrange-act-assert approach</a><a class="headerlink" href="#the-arrange-act-assert-approach" title="Link to this heading">¶</a></h3>
 <p>An elegant and straightforward way to organize your tests is with the arrange-act-assert approach:</p>
 <ol class="arabic simple">
 <li><p><strong>Arrange</strong> the conditions necessary for the test.</p></li>
@@ -457,7 +1004,7 @@ segments in the “arrange” and “cleanup” parts of a test are excellent ca
 might be better off in the <code class="docutils literal notranslate"><span class="pre">setUp</span></code> or <code class="docutils literal notranslate"><span class="pre">tearDown</span></code> of the test suite.</p>
 </section>
 <section id="avoid-excessive-boilerplate">
-<h3><a class="toc-backref" href="#id27" role="doc-backlink">Avoid excessive boilerplate</a><a class="headerlink" href="#avoid-excessive-boilerplate" title="Link to this heading">¶</a></h3>
+<h3 id="avoid-excessive-boilerplate"><a class="toc-backref" href="#id27" role="doc-backlink">Avoid excessive boilerplate</a><a class="headerlink" href="#avoid-excessive-boilerplate" title="Link to this heading">¶</a></h3>
 <p>There are a number of ways to cut down on repeating yourself in test code:</p>
 <ul class="simple">
 <li><p>Consider moving code into <code class="docutils literal notranslate"><span class="pre">setUp</span></code> and <code class="docutils literal notranslate"><span class="pre">tearDown</span></code> for the test suite. If a majority, but not all,
@@ -472,14 +1019,14 @@ of good interface design.</p></li>
 </ul>
 </section>
 <section id="but-some-boilerplate-is-okay">
-<h3><a class="toc-backref" href="#id28" role="doc-backlink">But, some boilerplate is okay</a><a class="headerlink" href="#but-some-boilerplate-is-okay" title="Link to this heading">¶</a></h3>
+<h3 id="but-some-boilerplate-is-okay"><a class="toc-backref" href="#id28" role="doc-backlink">But, some boilerplate is okay</a><a class="headerlink" href="#but-some-boilerplate-is-okay" title="Link to this heading">¶</a></h3>
 <p>Avoid the temptation of writing “helper” functions and abstract classes to aid tests. This increases
 complexity, which makes your tests harder to understand and more likely to contain errors of their
 own. Ideally, another developer should be able to understand what your test is doing without looking
 outside the test method itself.</p>
 </section>
 <section id="write-testable-code">
-<h3><a class="toc-backref" href="#id29" role="doc-backlink">Write testable code</a><a class="headerlink" href="#write-testable-code" title="Link to this heading">¶</a></h3>
+<h3 id="write-testable-code"><a class="toc-backref" href="#id29" role="doc-backlink">Write testable code</a><a class="headerlink" href="#write-testable-code" title="Link to this heading">¶</a></h3>
 <p>Writing code that can be tested efficiently is a skill worth developing. Writing testable code is
 often closely aligned with writing well-designed code in general: methods should be kept small and
 focused, complex state should be avoided, and results should be logical and predictable. Writing
@@ -488,12 +1035,12 @@ if it’s difficult for you to test, chances are it will be difficult for a user
 </section>
 </section>
 <section id="scclasslibrary-testing-standards">
-<h2><a class="toc-backref" href="#id30" role="doc-backlink">SCClassLibrary testing standards</a><a class="headerlink" href="#scclasslibrary-testing-standards" title="Link to this heading">¶</a></h2>
+<h2 id="scclasslibrary-testing-standards"><a class="toc-backref" href="#id30" role="doc-backlink">SCClassLibrary testing standards</a><a class="headerlink" href="#scclasslibrary-testing-standards" title="Link to this heading">¶</a></h2>
 <p><em>Note:</em> these guidelines are aspirational. They are not all used in current practice. This guide
 takes precedence over anything you might see in the test suite. Changes that bring them into sync
 with these guidelines are very welcome!</p>
 <section id="one-class-per-file">
-<h3><a class="toc-backref" href="#id31" role="doc-backlink">One class per file</a><a class="headerlink" href="#one-class-per-file" title="Link to this heading">¶</a></h3>
+<h3 id="one-class-per-file"><a class="toc-backref" href="#id31" role="doc-backlink">One class per file</a><a class="headerlink" href="#one-class-per-file" title="Link to this heading">¶</a></h3>
 <p>Every test class should test methods on exactly one library class. This may make some tests slightly
 less intuitive to write - for example, when testing interfaces shared across multiple classes - but
 makes organization and maintenance straightforward. Tests on methods for <code class="docutils literal notranslate"><span class="pre">String</span></code> should go in
@@ -501,34 +1048,34 @@ makes organization and maintenance straightforward. Tests on methods for <code c
 there are large number of tests to be written, they may be divided across several classes.</p>
 </section>
 <section id="testing-one-class-in-multiple-files">
-<h3><a class="toc-backref" href="#id32" role="doc-backlink">Testing one class in multiple files</a><a class="headerlink" href="#testing-one-class-in-multiple-files" title="Link to this heading">¶</a></h3>
+<h3 id="testing-one-class-in-multiple-files"><a class="toc-backref" href="#id32" role="doc-backlink">Testing one class in multiple files</a><a class="headerlink" href="#testing-one-class-in-multiple-files" title="Link to this heading">¶</a></h3>
 <p>If your test file is becoming very large (over 300 lines) or you find yourself writing a lot of
 tests for the same method or set of methods, the tests may be broken into several classes according
 to the format: <code class="docutils literal notranslate"><span class="pre">TestClass_Method</span></code> or <code class="docutils literal notranslate"><span class="pre">TestClass_Component</span></code>.</p>
 </section>
 <section id="using-external-datasets">
-<h3><a class="toc-backref" href="#id33" role="doc-backlink">Using external datasets</a><a class="headerlink" href="#using-external-datasets" title="Link to this heading">¶</a></h3>
+<h3 id="using-external-datasets"><a class="toc-backref" href="#id33" role="doc-backlink">Using external datasets</a><a class="headerlink" href="#using-external-datasets" title="Link to this heading">¶</a></h3>
 <p>If a test requires a large dataset, place it in a separate file in <code class="docutils literal notranslate"><span class="pre">testsuite/classlibrary/data</span></code> and
 read it in during the test. This keeps test class source files neat and readable. See “Examples” for
 a basic test demonstrating this.</p>
 </section>
 <section id="naming">
-<h3><a class="toc-backref" href="#id34" role="doc-backlink">Naming</a><a class="headerlink" href="#naming" title="Link to this heading">¶</a></h3>
+<h3 id="naming"><a class="toc-backref" href="#id34" role="doc-backlink">Naming</a><a class="headerlink" href="#naming" title="Link to this heading">¶</a></h3>
 <section id="classes">
-<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
+<h4 id="classes">Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
 <p>When a class only needs one test class: <code class="docutils literal notranslate"><span class="pre">TestSomeClass</span></code>.</p>
 <p>When testing a method or component of a class: <code class="docutils literal notranslate"><span class="pre">TestClass_Method</span></code> and <code class="docutils literal notranslate"><span class="pre">TestClass_Component</span></code>.</p>
 <p>Class names should always consist of capitalized words (never <code class="docutils literal notranslate"><span class="pre">TestClass_method</span></code>).</p>
 <p>The file should be named to match the name of the class it contains.</p>
 </section>
 <section id="methods">
-<h4>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h4>
+<h4 id="methods">Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h4>
 <p>Methods: in general, use SSR <code class="docutils literal notranslate"><span class="pre">test_subject_inSituation_respondsCorrectly()</span></code>. Use names that are
 concise but descriptive, and can be reasonably well-understood without looking at the source code.</p>
 <p>Spell out numbers.</p>
 </section>
 <section id="datasets">
-<h4>Datasets<a class="headerlink" href="#datasets" title="Link to this heading">¶</a></h4>
+<h4 id="datasets">Datasets<a class="headerlink" href="#datasets" title="Link to this heading">¶</a></h4>
 <p>The filename should begin with the name of the test class in which it is used, and include a word or
 two describing its contents or purpose. If a dataset is used by multiple test classes, the first
 part of the name can be ommitted. Examples of dataset names are:</p>
@@ -542,7 +1089,7 @@ Otherwise, omit the extension.</p>
 </section>
 </section>
 <section id="avoid-using-the-default-server">
-<h3><a class="toc-backref" href="#id35" role="doc-backlink">Avoid using the default server</a><a class="headerlink" href="#avoid-using-the-default-server" title="Link to this heading">¶</a></h3>
+<h3 id="avoid-using-the-default-server"><a class="toc-backref" href="#id35" role="doc-backlink">Avoid using the default server</a><a class="headerlink" href="#avoid-using-the-default-server" title="Link to this heading">¶</a></h3>
 <p>Don’t use the default server unless your test absolutely depends on the “default” default server
 (note that you can make a new server the default server). Tests using a pre-existing server violate
 the independence of tests. Instead, prefer creating a new server using either the name of the method
@@ -550,11 +1097,11 @@ or the name of the class as its name, to avoid name collisions. Make sure to cal
 when done.</p>
 </section>
 <section id="use-server-bootsync-to-boot-a-server">
-<h3><a class="toc-backref" href="#id36" role="doc-backlink">Use <code class="docutils literal notranslate"><span class="pre">Server:-bootSync</span></code> to boot a <code class="docutils literal notranslate"><span class="pre">Server</span></code></a><a class="headerlink" href="#use-server-bootsync-to-boot-a-server" title="Link to this heading">¶</a></h3>
+<h3 id="use-server-bootsync-to-boot-a-server"><a class="toc-backref" href="#id36" role="doc-backlink">Use <code class="docutils literal notranslate"><span class="pre">Server:-bootSync</span></code> to boot a <code class="docutils literal notranslate"><span class="pre">Server</span></code></a><a class="headerlink" href="#use-server-bootsync-to-boot-a-server" title="Link to this heading">¶</a></h3>
 <p>Prefer using this method instead of <code class="docutils literal notranslate"><span class="pre">UnitTest:-bootServer</span></code>.</p>
 </section>
 <section id="avoid-use-of-wait">
-<h3><a class="toc-backref" href="#id37" role="doc-backlink">Avoid use of <code class="docutils literal notranslate"><span class="pre">wait</span></code></a><a class="headerlink" href="#avoid-use-of-wait" title="Link to this heading">¶</a></h3>
+<h3 id="avoid-use-of-wait"><a class="toc-backref" href="#id37" role="doc-backlink">Avoid use of <code class="docutils literal notranslate"><span class="pre">wait</span></code></a><a class="headerlink" href="#avoid-use-of-wait" title="Link to this heading">¶</a></h3>
 <p>Generally, hard-coded delays are bad practice, and should be replaced with waiting or hanging on a
 condition. Extra waiting slows down the test suite and introduces the possibility for unexpected
 behavior if the sleeping thread wakes up early. If you write <code class="docutils literal notranslate"><span class="pre">1.wait</span></code> in a test, think about why you
@@ -562,7 +1109,7 @@ need to do so. If there is no way to wait on a true condition, either add code t
 tested such that it is possible, or leave an explanatory comment.</p>
 </section>
 <section id="avoid-using-class-variables">
-<h3><a class="toc-backref" href="#id38" role="doc-backlink">Avoid using class variables</a><a class="headerlink" href="#avoid-using-class-variables" title="Link to this heading">¶</a></h3>
+<h3 id="avoid-using-class-variables"><a class="toc-backref" href="#id38" role="doc-backlink">Avoid using class variables</a><a class="headerlink" href="#avoid-using-class-variables" title="Link to this heading">¶</a></h3>
 <p>Use of class variables increases the likelihood of tests becoming unintentionally interdependent.
 They also make tests harder to understand, because values are initialized far from where they are
 used.</p>
@@ -571,7 +1118,7 @@ used.</p>
 </section>
 </section>
 <section id="adding-tests-to-the-scclasslibrary-test-suite">
-<h2><a class="toc-backref" href="#id39" role="doc-backlink">Adding tests to the SCClassLibrary test suite</a><a class="headerlink" href="#adding-tests-to-the-scclasslibrary-test-suite" title="Link to this heading">¶</a></h2>
+<h2 id="adding-tests-to-the-scclasslibrary-test-suite"><a class="toc-backref" href="#id39" role="doc-backlink">Adding tests to the SCClassLibrary test suite</a><a class="headerlink" href="#adding-tests-to-the-scclasslibrary-test-suite" title="Link to this heading">¶</a></h2>
 <p>It’s easy to get started adding new tests to the SCClassLibrary test suite! The suite is in
 <code class="docutils literal notranslate"><span class="pre">testsuite/classlibrary</span></code> in the main repository.</p>
 <p>Before starting, you should review the SCClassLibrary test suite guidelines in the previous section
@@ -587,12 +1134,12 @@ so that your code can be integrated with as few changes as possible.</p>
 GitHub or email the sc-dev mailing list.</p>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id40" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
+<h2 id="examples"><a class="toc-backref" href="#id40" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <p>These examples are intended as best-practice templates that can adapted easily to a variety of test
 situations. Many of them are based on a fictitious <code class="docutils literal notranslate"><span class="pre">Calculator</span></code> class which has all the common
 functions of a handheld calculator.</p>
 <section id="a-simple-test">
-<h3><a class="toc-backref" href="#id41" role="doc-backlink">A simple test</a><a class="headerlink" href="#a-simple-test" title="Link to this heading">¶</a></h3>
+<h3 id="a-simple-test"><a class="toc-backref" href="#id41" role="doc-backlink">A simple test</a><a class="headerlink" href="#a-simple-test" title="Link to this heading">¶</a></h3>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="c1">// in TestCalculator.sc</span>
 
 <span class="nx">test_addition_twoPlusThree_isFive</span><span class="p">()</span> <span class="p">{</span>
@@ -604,16 +1151,16 @@ functions of a handheld calculator.</p>
 	<span class="nx">calc</span><span class="p">.</span><span class="nx">enterNumber</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 	<span class="nx">calc</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">();</span>
 
-	<span class="nb">this</span><span class="p">.</span><span class="nx">assertEquals</span><span class="p">(</span><span class="nx">calc</span><span class="p">.</span><span class="nx">currentResult</span><span class="p">(),</span> <span class="nx">expected</span><span class="p">,</span> <span class="s2">&quot;Addition works&quot;</span><span class="p">);</span>
+	<span class="nb">this</span><span class="p">.</span><span class="nx">assertEquals</span><span class="p">(</span><span class="nx">calc</span><span class="p">.</span><span class="nx">currentResult</span><span class="p">(),</span> <span class="nx">expected</span><span class="p">,</span> <span class="s2">"Addition works"</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="a-more-complex-test">
-<h3><a class="toc-backref" href="#id42" role="doc-backlink">A more complex test</a><a class="headerlink" href="#a-more-complex-test" title="Link to this heading">¶</a></h3>
+<h3 id="a-more-complex-test"><a class="toc-backref" href="#id42" role="doc-backlink">A more complex test</a><a class="headerlink" href="#a-more-complex-test" title="Link to this heading">¶</a></h3>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">test_globalLibrary_checkingOutABook_removesBookFromLibrary</span><span class="p">()</span> <span class="p">{</span>
 	<span class="kd">var</span> <span class="nx">library</span> <span class="o">=</span> <span class="nx">Library</span><span class="p">.</span><span class="nx">global</span><span class="p">();</span>
-	<span class="kd">var</span> <span class="nx">bookName</span> <span class="o">=</span> <span class="s2">&quot;War and Peace&quot;</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">bookName</span> <span class="o">=</span> <span class="s2">"War and Peace"</span><span class="p">;</span>
 	<span class="kd">var</span> <span class="nx">book</span> <span class="o">=</span> <span class="nx">library</span><span class="p">.</span><span class="nx">checkOut</span><span class="p">(</span><span class="nx">bookName</span><span class="p">);</span>
 
 	<span class="nb">this</span><span class="p">.</span><span class="nx">assert</span><span class="p">(</span><span class="nx">library</span><span class="p">.</span><span class="nx">hasBook</span><span class="p">(</span><span class="nx">bookName</span><span class="p">).</span><span class="nx">not</span><span class="p">);</span>
@@ -624,7 +1171,7 @@ functions of a handheld calculator.</p>
 </div>
 </section>
 <section id="a-test-using-randomness">
-<h3><a class="toc-backref" href="#id43" role="doc-backlink">A test using randomness</a><a class="headerlink" href="#a-test-using-randomness" title="Link to this heading">¶</a></h3>
+<h3 id="a-test-using-randomness"><a class="toc-backref" href="#id43" role="doc-backlink">A test using randomness</a><a class="headerlink" href="#a-test-using-randomness" title="Link to this heading">¶</a></h3>
 <p>In this test, some string-related method is fed a large number of random strings (a “monkey test” -
 see “Testing terminology”) and is expected to return false for all of them.</p>
 <p>The main purpose of this example is to demonstrate the correct way to handle randomness in a test:
@@ -644,14 +1191,14 @@ catching corner cases.</p>
 		<span class="p">};</span>
 		<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">string</span><span class="p">.</span><span class="nx">someMethod</span><span class="p">();</span>
 
-		<span class="nb">this</span><span class="p">.</span><span class="nx">assert</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">not</span><span class="p">,</span> <span class="s2">&quot;Input:&quot;</span> <span class="o">+</span> <span class="nx">string</span><span class="p">);</span>
+		<span class="nb">this</span><span class="p">.</span><span class="nx">assert</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">not</span><span class="p">,</span> <span class="s2">"Input:"</span> <span class="o">+</span> <span class="nx">string</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="a-test-using-a-server">
-<h3><a class="toc-backref" href="#id44" role="doc-backlink">A test using a server</a><a class="headerlink" href="#a-test-using-a-server" title="Link to this heading">¶</a></h3>
+<h3 id="a-test-using-a-server"><a class="toc-backref" href="#id44" role="doc-backlink">A test using a server</a><a class="headerlink" href="#a-test-using-a-server" title="Link to this heading">¶</a></h3>
 <p>This test checks that setting <code class="docutils literal notranslate"><span class="pre">clientID</span></code> on a <code class="docutils literal notranslate"><span class="pre">Server</span></code> object during construction works. It
 demonstrates several important points about server-related tests:</p>
 <ul class="simple">
@@ -666,7 +1213,7 @@ reasonably unique)</p></li>
 	<span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">Server</span><span class="p">(</span><span class="nb">this</span><span class="p">.</span><span class="kr">class</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 
 	<span class="nx">server</span><span class="p">.</span><span class="nx">bootSync</span><span class="p">;</span>
-	<span class="nb">this</span><span class="p">.</span><span class="nx">assertEquals</span><span class="p">(</span><span class="nx">server</span><span class="p">.</span><span class="nx">clientID</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;clientID should be settable by Server constructor.&quot;</span><span class="p">);</span>
+	<span class="nb">this</span><span class="p">.</span><span class="nx">assertEquals</span><span class="p">(</span><span class="nx">server</span><span class="p">.</span><span class="nx">clientID</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"clientID should be settable by Server constructor."</span><span class="p">);</span>
 	<span class="nx">server</span><span class="p">.</span><span class="nx">quit</span><span class="p">;</span>
 	<span class="nx">server</span><span class="p">.</span><span class="nx">remove</span><span class="p">;</span>
 <span class="p">}</span>
@@ -674,7 +1221,7 @@ reasonably unique)</p></li>
 </div>
 </section>
 <section id="a-test-using-condition-variables">
-<h3><a class="toc-backref" href="#id45" role="doc-backlink">A test using condition variables</a><a class="headerlink" href="#a-test-using-condition-variables" title="Link to this heading">¶</a></h3>
+<h3 id="a-test-using-condition-variables"><a class="toc-backref" href="#id45" role="doc-backlink">A test using condition variables</a><a class="headerlink" href="#a-test-using-condition-variables" title="Link to this heading">¶</a></h3>
 <p>In this test, <code class="docutils literal notranslate"><span class="pre">someAsyncMethod</span></code>, a method on <code class="docutils literal notranslate"><span class="pre">SomeAsyncClass</span></code>, is an asynchronous method that
 provides a callback parameter. Many asynchronous functions in SuperCollider provide such a
 callback mechanism, such as <code class="docutils literal notranslate"><span class="pre">loadToFloatArray</span></code>. The parameter is typically named <code class="docutils literal notranslate"><span class="pre">action</span></code> or
@@ -685,7 +1232,7 @@ fire.</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">test_someAsyncMethod_runsCallback</span><span class="p">()</span> <span class="p">{</span>
 	<span class="kd">var</span> <span class="nx">async</span> <span class="o">=</span> <span class="nx">SomeAsyncClass</span><span class="p">();</span>
 	<span class="kd">var</span> <span class="nx">cond</span> <span class="o">=</span> <span class="nx">Condition</span><span class="p">();</span>
-	<span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;async input&quot;</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="s2">"async input"</span><span class="p">;</span>
 	<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 	<span class="nx">async</span><span class="p">.</span><span class="nx">someAsyncMethod</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">i</span><span class="o">|</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">cond</span><span class="p">.</span><span class="nx">unhang</span> <span class="p">});</span>
@@ -699,12 +1246,12 @@ fire.</p>
 </div>
 </section>
 <section id="a-test-using-an-external-dataset">
-<h3><a class="toc-backref" href="#id46" role="doc-backlink">A test using an external dataset</a><a class="headerlink" href="#a-test-using-an-external-dataset" title="Link to this heading">¶</a></h3>
+<h3 id="a-test-using-an-external-dataset"><a class="toc-backref" href="#id46" role="doc-backlink">A test using an external dataset</a><a class="headerlink" href="#a-test-using-an-external-dataset" title="Link to this heading">¶</a></h3>
 <p>This shows how to run a test that depends on some external dataset stored as a CSV file in a <code class="docutils literal notranslate"><span class="pre">data</span></code>
 directory relative to the test.</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">test_processData_givenSomeData_returnsThree</span> <span class="p">{</span>
 	<span class="kd">var</span> <span class="nx">someObj</span> <span class="o">=</span> <span class="nx">SomeClass</span><span class="p">();</span>
-	<span class="kd">var</span> <span class="nx">dataPath</span> <span class="o">=</span> <span class="s2">&quot;data/SomeClass_someData.csv&quot;</span><span class="p">.</span><span class="nx">resolveRelative</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">dataPath</span> <span class="o">=</span> <span class="s2">"data/SomeClass_someData.csv"</span><span class="p">.</span><span class="nx">resolveRelative</span><span class="p">;</span>
 	<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">CSVFileReader</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">dataPath</span><span class="p">);</span>
 	<span class="kd">var</span> <span class="nx">expected</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 
@@ -719,7 +1266,7 @@ directory relative to the test.</p>
 <code class="docutils literal notranslate"><span class="pre">Object:*readArchive</span></code>.</p>
 </section>
 <section id="a-test-using-setup-and-teardown">
-<h3><a class="toc-backref" href="#id47" role="doc-backlink">A test using <code class="docutils literal notranslate"><span class="pre">setUp</span></code> and <code class="docutils literal notranslate"><span class="pre">tearDown</span></code></a><a class="headerlink" href="#a-test-using-setup-and-teardown" title="Link to this heading">¶</a></h3>
+<h3 id="a-test-using-setup-and-teardown"><a class="toc-backref" href="#id47" role="doc-backlink">A test using <code class="docutils literal notranslate"><span class="pre">setUp</span></code> and <code class="docutils literal notranslate"><span class="pre">tearDown</span></code></a><a class="headerlink" href="#a-test-using-setup-and-teardown" title="Link to this heading">¶</a></h3>
 <p>In this test suite for a fictitious <code class="docutils literal notranslate"><span class="pre">Discotheque</span></code> class, each test method acts on a <code class="docutils literal notranslate"><span class="pre">Discotheque</span></code>
 that’s open and playing music. Since repeating this test code in every method would be highly
 repetetive and prone to copy-pasting errors, it’s best to use <code class="docutils literal notranslate"><span class="pre">setUp</span></code> and <code class="docutils literal notranslate"><span class="pre">tearDown</span></code>.</p>
@@ -764,7 +1311,7 @@ repetetive and prone to copy-pasting errors, it’s best to use <code class="doc
 </section>
 </section>
 <section id="continuous-automatic-red-green-testing-via-guard-sclang">
-<h2><a class="toc-backref" href="#id48" role="doc-backlink">Continuous automatic red/green testing via guard-sclang</a><a class="headerlink" href="#continuous-automatic-red-green-testing-via-guard-sclang" title="Link to this heading">¶</a></h2>
+<h2 id="continuous-automatic-red-green-testing-via-guard-sclang"><a class="toc-backref" href="#id48" role="doc-backlink">Continuous automatic red/green testing via guard-sclang</a><a class="headerlink" href="#continuous-automatic-red-green-testing-via-guard-sclang" title="Link to this heading">¶</a></h2>
 <p>Rather than manually running appropriate tests after editing a library class or a <code class="docutils literal notranslate"><span class="pre">UnitTest</span></code> class, you can use
 <a class="reference external" href="https://github.com/aspiers/guard-sclang">aspiers/guard-sclang</a> which will watch for file changes and automatically run
 tests in reaction to them. Developers are encouraged to use this tool. The steps to set this up are as follows:</p>
@@ -785,7 +1332,7 @@ far from perfect, because it naively assumes a 1:1 mapping between class <code c
 should be easy to make it more intelligent, even if you don’t know Ruby; please feel free to contribute improvements!</p>
 </section>
 <section id="resources">
-<h2><a class="toc-backref" href="#id49" role="doc-backlink">Resources</a><a class="headerlink" href="#resources" title="Link to this heading">¶</a></h2>
+<h2 id="resources"><a class="toc-backref" href="#id49" role="doc-backlink">Resources</a><a class="headerlink" href="#resources" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://www.codesimplicity.com/post/the-philosophy-of-testing/">The Philosophy of Testing</a></p>
 <p><a class="reference external" href="http://blog.stevensanderson.com/2009/08/24/writing-great-unit-tests-best-and-worst-practises/">Writing Great Unit Tests: Best and Worst Practices</a></p>
 <p><a class="reference external" href="https://www.philosophicalhacker.com/post/what-should-we-unit-test/">What Should We Unit Test?</a></p>
@@ -800,94 +1347,61 @@ should be easy to make it more intelligent, even if you don’t know Ruby; pleas
 </section>
 
 
-          </div>
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
           
+            <a href="Setting-up-your-development-environment.html" title="Setting up your development environment"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> "Previous" </span> Setting up your development environment </span>
+              </div>
+            </a>
+          
+          
+            <a href="../The-wiki-wiki.html" title="The wiki-wiki"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> "Next" </span> The wiki-wiki </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2024, SuperCollider.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../../index.html">
-              <img class="logo" src="../../_static/logo.svg" alt="Logo"/>
-            </a></p>
-<h1 class="logo"><a href="../../index.html">SuperCollider Wiki</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Contributing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../common/index.html">Common references</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Workflows</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Generating-crash-reports.html">Generating crash reports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Setting-up-the-IDE-for-easy-contribution.html">Setting up the IDE for easy contribution</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Setting-up-your-development-environment.html">Setting up your development environment</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Guide to SuperCollider Unit Testing</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../The-wiki-wiki.html">The wiki-wiki</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../UGen-Quality-Standards.html">UGen-Quality standards</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user/index.html">User resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../community/index.html">Community</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">Contributing</a><ul>
-  <li><a href="index.html">Workflows</a><ul>
-      <li>Previous: <a href="Setting-up-your-development-environment.html" title="previous chapter">Setting up your development environment</a></li>
-      <li>Next: <a href="../The-wiki-wiki.html" title="next chapter">The wiki-wiki</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
     </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2024, SuperCollider.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-      |
-      <a href="../../_sources/contributing/workflow/Unit-Testing-Guide.md.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
+  </footer>
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
   </body>
 </html>
