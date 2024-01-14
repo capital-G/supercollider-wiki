@@ -1,9 +1,9 @@
 (creating-pull-requests)=
 # Creating Pull Requests (PRs)
 
-```{contents} Content
-:local:
-:depth: 2
+```{toctree}
+Rebasing-a-PR.md
+Commit-message-format.md
 ```
 
 ## At-a-glance PR checklist

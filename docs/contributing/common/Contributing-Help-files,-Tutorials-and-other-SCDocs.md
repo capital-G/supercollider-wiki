@@ -1,10 +1,5 @@
 # Contributing help files, Tutorials and other SCDocs
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 (contributing-documentation-changes)=
 ## Contributing documentation changes
 

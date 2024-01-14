@@ -6,5 +6,5 @@ Meetings
     :glob:
     :reversed:
 
-    *
-    protocols/*
+    procedure_and_templates.md
+    protocols/index.rst

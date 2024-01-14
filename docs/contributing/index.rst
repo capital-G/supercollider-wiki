@@ -11,4 +11,5 @@ Contributing to the project, filing bugs, creating pull requests, style guidelin
 
     common/index.rst
     workflow/index.rst
-    *
+    style/index.rst
+    more.rst

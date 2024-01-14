@@ -1,10 +1,5 @@
 # Releasing cycle and process
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Version branches
 
 A month or so before the beta release, the release manager branches off `develop` to create a new branch named after the release, say `3.13`. Uncontroversial bug fixes are merged into the `3.13` branch for further testing as a release candidate. This ensures that those changes already slated for the `3.13` release are sandboxed and given a grace period to ensure stability of those features. As issues are discovered in this period, patches need to be made.

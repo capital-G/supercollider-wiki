@@ -36,11 +36,11 @@ html_css_files = [
     'custom.css',
 ]
 html_theme_options = {
-    "nav_title": "SuperCollider wiki",
+    "nav_title": "SuperCollider Wiki",
     'color_primary': 'grey',
-    'color_accent': 'light-grey',
-    'repo_url': 'https://github.com/capital-G/supercollider-wiki',
-    'repo_name': 'SuperCollider Wiki',
+    'color_accent': 'pink',
+    'repo_url': 'https://github.com/supercollider/supercollider',
+    'repo_name': 'SuperCollider',
     'master_doc': True,
     'globaltoc_includehidden': True,
     'globaltoc_depth': 3,
