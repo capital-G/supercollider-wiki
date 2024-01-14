@@ -454,51 +454,10 @@
             
   <section id="errors">
 <h1 id="faq-errors--page-root">Errors<a class="headerlink" href="#faq-errors--page-root" title="Link to this heading">¶</a></h1>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#error-primitive-basicnew-failed-index-not-an-integer" id="id1">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer</a></p>
-<ul>
-<li><p><a class="reference internal" href="#if-you-re-writing-a-synthdef" id="id2">If you’re writing a SynthDef</a></p></li>
-<li><p><a class="reference internal" href="#so-what-to-do-instead" id="id3">So what to do instead?</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#language-client-issues" id="id4">Language (client) issues</a></p>
-<ul>
-<li><p><a class="reference internal" href="#calling-gui-primitives-from-a-systemclock-routine" id="id5">Calling gui primitives from a SystemClock routine</a></p></li>
-<li><p><a class="reference internal" href="#binary-operations-order" id="id6">Binary operations order</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#synthdef-issues" id="id7">SynthDef Issues</a></p>
-<ul>
-<li><p><a class="reference internal" href="#if-statements-inside-a-synthdef" id="id8">“If” statements inside a SynthDef</a></p></li>
-<li><p><a class="reference internal" href="#what-is-a-boolean-in-the-server" id="id9">What is a Boolean in the server?</a></p></li>
-<li><p><a class="reference internal" href="#why-is-x-0-non-boolean-in-the-test" id="id10">Why is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\&gt;</span> <span class="pre">0</span></code> “non-Boolean” in the “test”?</a></p></li>
-<li><p><a class="reference internal" href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" id="id11">If you can’t branch, what good is a comparison in the server?</a></p></li>
-<li><p><a class="reference internal" href="#logical-operators-and-or-not-xor" id="id12">Logical operators: And, Or, Not, Xor</a></p></li>
-<li><p><a class="reference internal" href="#error-synthdef-not-found" id="id13"><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">SynthDef</span> <span class="pre">not</span> <span class="pre">found</span></code></a></p></li>
-<li><p><a class="reference internal" href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" id="id14"><code class="docutils literal notranslate"><span class="pre">FAILURE</span> <span class="pre">/s_new</span> <span class="pre">alloc</span> <span class="pre">failed,</span> <span class="pre">increase</span> <span class="pre">server's</span> <span class="pre">memory</span> <span class="pre">allocation</span></code></a></p></li>
-<li><p><a class="reference internal" href="#array-arguments" id="id15">Array arguments</a></p></li>
-<li><p><a class="reference internal" href="#why-does-it-have-to-be-a-literal-array" id="id16">Why does it have to be a literal array?</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#server-issues" id="id17">Server issues</a></p>
-<ul>
-<li><p><a class="reference internal" href="#how-to-trigger-a-function-from-the-server" id="id18">How to trigger a function from the server</a></p></li>
-<li><p><a class="reference internal" href="#exception-in-world-openudp-unable-to-bind-udp-socket" id="id19">Exception in World_OpenUDP: unable to bind udp socket</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#other-issues" id="id20">Other issues</a></p>
-<ul>
-<li><p><a class="reference internal" href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" id="id21">Error while loading shared libraries: libsclang.so: cannot open shared object file</a></p></li>
-</ul>
-</li>
-</ul>
-</nav>
 <section id="error-primitive-basicnew-failed-index-not-an-integer">
-<h2 id="error-primitive-basicnew-failed-index-not-an-integer"><a class="toc-backref" href="#id1" role="doc-backlink">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer</a><a class="headerlink" href="#error-primitive-basicnew-failed-index-not-an-integer" title="Link to this heading">¶</a></h2>
+<h2 id="error-primitive-basicnew-failed-index-not-an-integer">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer<a class="headerlink" href="#error-primitive-basicnew-failed-index-not-an-integer" title="Link to this heading">¶</a></h2>
 <section id="if-you-re-writing-a-synthdef">
-<h3 id="if-you-re-writing-a-synthdef"><a class="toc-backref" href="#id2" role="doc-backlink">If you’re writing a SynthDef</a><a class="headerlink" href="#if-you-re-writing-a-synthdef" title="Link to this heading">¶</a></h3>
+<h3 id="if-you-re-writing-a-synthdef">If you’re writing a SynthDef<a class="headerlink" href="#if-you-re-writing-a-synthdef" title="Link to this heading">¶</a></h3>
 <p>It’s quite likely that the error means you’re trying to dynamically change the number of channels inside a SynthDef, which is something you can’t do - SynthDefs need to have a fixed layout.<br/>
 For example, this is a simple attempt to make pink noise over a variable number of channels:</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -512,7 +471,7 @@ For example, this is a simple attempt to make pink noise over a variable number 
 You can’t do that - when the SynthDef is compiled, the language needs to know <strong>exactly</strong> how many UGens will be involved and how they are connected. This is because a SynthDef represents an efficient fixed-layout synth that the server can instantiate.</p>
 </section>
 <section id="so-what-to-do-instead">
-<h3 id="so-what-to-do-instead"><a class="toc-backref" href="#id3" role="doc-backlink">So what to do instead?</a><a class="headerlink" href="#so-what-to-do-instead" title="Link to this heading">¶</a></h3>
+<h3 id="so-what-to-do-instead">So what to do instead?<a class="headerlink" href="#so-what-to-do-instead" title="Link to this heading">¶</a></h3>
 <p>Think of SynthDefs as tiny fixed reusable components, and design your logic to reuse them in whatever combinations are needed.</p>
 <p>To go back to the simple example above (the pink noise generator), you could simply do:</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -537,9 +496,9 @@ For example if you might use between 1 and 5 channels:</p>
 </section>
 </section>
 <section id="language-client-issues">
-<h2 id="language-client-issues"><a class="toc-backref" href="#id4" role="doc-backlink">Language (client) issues</a><a class="headerlink" href="#language-client-issues" title="Link to this heading">¶</a></h2>
+<h2 id="language-client-issues">Language (client) issues<a class="headerlink" href="#language-client-issues" title="Link to this heading">¶</a></h2>
 <section id="calling-gui-primitives-from-a-systemclock-routine">
-<h3 id="calling-gui-primitives-from-a-systemclock-routine"><a class="toc-backref" href="#id5" role="doc-backlink">Calling gui primitives from a SystemClock routine</a><a class="headerlink" href="#calling-gui-primitives-from-a-systemclock-routine" title="Link to this heading">¶</a></h3>
+<h3 id="calling-gui-primitives-from-a-systemclock-routine">Calling gui primitives from a SystemClock routine<a class="headerlink" href="#calling-gui-primitives-from-a-systemclock-routine" title="Link to this heading">¶</a></h3>
 <p>When calling gui primitives from a SystemClock routine will cause an error:</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SystemClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">})</span>
 </pre></div>
@@ -558,7 +517,7 @@ For example if you might use between 1 and 5 channels:</p>
 </div>
 </section>
 <section id="binary-operations-order">
-<h3 id="binary-operations-order"><a class="toc-backref" href="#id6" role="doc-backlink">Binary operations order</a><a class="headerlink" href="#binary-operations-order" title="Link to this heading">¶</a></h3>
+<h3 id="binary-operations-order">Binary operations order<a class="headerlink" href="#binary-operations-order" title="Link to this heading">¶</a></h3>
 <p>Because of the way SuperCollider evaluates expressions, the usual order of execution of mathematical expressions is not respected.<br/>
 In SuperCollider everything is an object, and evaluation happens from left to right, so:</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span>
@@ -576,9 +535,9 @@ In SuperCollider everything is an object, and evaluation happens from left to ri
 </section>
 </section>
 <section id="synthdef-issues">
-<h2 id="synthdef-issues"><a class="toc-backref" href="#id7" role="doc-backlink">SynthDef Issues</a><a class="headerlink" href="#synthdef-issues" title="Link to this heading">¶</a></h2>
+<h2 id="synthdef-issues">SynthDef Issues<a class="headerlink" href="#synthdef-issues" title="Link to this heading">¶</a></h2>
 <section id="if-statements-inside-a-synthdef">
-<h3 id="if-statements-inside-a-synthdef"><a class="toc-backref" href="#id8" role="doc-backlink">“If” statements inside a SynthDef</a><a class="headerlink" href="#if-statements-inside-a-synthdef" title="Link to this heading">¶</a></h3>
+<h3 id="if-statements-inside-a-synthdef">“If” statements inside a SynthDef<a class="headerlink" href="#if-statements-inside-a-synthdef" title="Link to this heading">¶</a></h3>
 <p>It’s only a matter of time before a user tries to write something like this in a <code class="docutils literal notranslate"><span class="pre">SynthDef</span></code>:</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\kablooie</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
     <span class="kd">var</span> <span class="nx">signal</span><span class="p">;</span>
@@ -595,7 +554,7 @@ In SuperCollider everything is an object, and evaluation happens from left to ri
 <p>This should be the first clue that Boolean logic in the server is a very different animal from the so-called “normal” use of conditionals on the client side (in the language).</p>
 </section>
 <section id="what-is-a-boolean-in-the-server">
-<h3 id="what-is-a-boolean-in-the-server"><a class="toc-backref" href="#id9" role="doc-backlink">What is a Boolean in the server?</a><a class="headerlink" href="#what-is-a-boolean-in-the-server" title="Link to this heading">¶</a></h3>
+<h3 id="what-is-a-boolean-in-the-server">What is a Boolean in the server?<a class="headerlink" href="#what-is-a-boolean-in-the-server" title="Link to this heading">¶</a></h3>
 <p>In fact, there is no such thing. The server handles floating-point numbers. It doesn’t have <em>true</em> or <em>false</em> entities.</p>
 <p>Since everything in the server is a number, the result of the comparison must also be a number. The server follows the same convention as other DSP environments (Max/MSP, pd etc.):</p>
 <ul class="simple">
@@ -604,7 +563,7 @@ In SuperCollider everything is an object, and evaluation happens from left to ri
 </ul>
 </section>
 <section id="why-is-x-0-non-boolean-in-the-test">
-<h3 id="why-is-x-0-non-boolean-in-the-test"><a class="toc-backref" href="#id10" role="doc-backlink">Why is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\&gt;</span> <span class="pre">0</span></code> “non-Boolean” in the “test”?</a><a class="headerlink" href="#why-is-x-0-non-boolean-in-the-test" title="Link to this heading">¶</a></h3>
+<h3 id="why-is-x-0-non-boolean-in-the-test">Why is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\&gt;</span> <span class="pre">0</span></code> “non-Boolean” in the “test”?<a class="headerlink" href="#why-is-x-0-non-boolean-in-the-test" title="Link to this heading">¶</a></h3>
 <p>This goes back to the general issue of handling operators in the server.<br/>
 Math operators in a SynthDef are not calculations to do <em>right now</em>.<br/>
 They <em>describe</em> calculations that will be done <em>in the future</em>, many thousands of times.</p>
@@ -634,7 +593,7 @@ determine, once and for all, whether <em>x &gt; 0</em> or not. <em>x</em> may be
 So, SuperCollider throws an error.</p>
 </section>
 <section id="if-you-can-t-branch-what-good-is-a-comparison-in-the-server">
-<h3 id="if-you-can-t-branch-what-good-is-a-comparison-in-the-server"><a class="toc-backref" href="#id11" role="doc-backlink">If you can’t branch, what good is a comparison in the server?</a><a class="headerlink" href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" title="Link to this heading">¶</a></h3>
+<h3 id="if-you-can-t-branch-what-good-is-a-comparison-in-the-server">If you can’t branch, what good is a comparison in the server?<a class="headerlink" href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" title="Link to this heading">¶</a></h3>
 <p>Comparisons have a lot of uses, actually.</p>
 <ul class="simple">
 <li><p><strong>Choosing one of two signals:</strong> This is the closest we can get to <em>if-then-else</em> in the server. Both <em>then</em> and <em>else</em> must be running continuously. That’s a requirement of how the server works: the number and arrangement of unit generators within a single Synth cannot change. Instead, you can choose <em>which of those signals makes it downstream</em>. One will be used and the other ignored.<br/>
@@ -667,7 +626,7 @@ For a simple example, take the case of sending a message to the language when th
 </div>
 </section>
 <section id="logical-operators-and-or-not-xor">
-<h3 id="logical-operators-and-or-not-xor"><a class="toc-backref" href="#id12" role="doc-backlink">Logical operators: And, Or, Not, Xor</a><a class="headerlink" href="#logical-operators-and-or-not-xor" title="Link to this heading">¶</a></h3>
+<h3 id="logical-operators-and-or-not-xor">Logical operators: And, Or, Not, Xor<a class="headerlink" href="#logical-operators-and-or-not-xor" title="Link to this heading">¶</a></h3>
 <p>Logical operators have simple arithmetic equivalents.</p>
 <ul class="simple">
 <li><p><strong>And = multiplication:</strong> <em>(x &gt; 0) * (y &gt; 0)</em> means both conditions must be true (nonzero) for the result to be nonzero.</p></li>
@@ -686,7 +645,7 @@ We have to create the BinaryOpUGen by hand.</p></li>
 </div>
 </section>
 <section id="error-synthdef-not-found">
-<h3 id="error-synthdef-not-found"><a class="toc-backref" href="#id13" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">SynthDef</span> <span class="pre">not</span> <span class="pre">found</span></code></a><a class="headerlink" href="#error-synthdef-not-found" title="Link to this heading">¶</a></h3>
+<h3 id="error-synthdef-not-found"><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">SynthDef</span> <span class="pre">not</span> <span class="pre">found</span></code><a class="headerlink" href="#error-synthdef-not-found" title="Link to this heading">¶</a></h3>
 <p>Sending a SynthDef to the server requires a little bit of time, which means that running a block of code with both SynthDef definitions and instances of those SynthDefs won’t be guaranteed to work unless this slight delay is accounted for. There are two main ways to do this:</p>
 <p>First way: put the SynthDefs and the main code in a Task and put some kind of <code class="docutils literal notranslate"><span class="pre">.wait</span></code> time between them.</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Task</span><span class="p">({</span>
@@ -706,7 +665,7 @@ We have to create the BinaryOpUGen by hand.</p></li>
 </div>
 </section>
 <section id="failure-s-new-alloc-failed-increase-server-s-memory-allocation">
-<h3 id="failure-s-new-alloc-failed-increase-server-s-memory-allocation"><a class="toc-backref" href="#id14" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">FAILURE</span> <span class="pre">/s_new</span> <span class="pre">alloc</span> <span class="pre">failed,</span> <span class="pre">increase</span> <span class="pre">server's</span> <span class="pre">memory</span> <span class="pre">allocation</span></code></a><a class="headerlink" href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" title="Link to this heading">¶</a></h3>
+<h3 id="failure-s-new-alloc-failed-increase-server-s-memory-allocation"><code class="docutils literal notranslate"><span class="pre">FAILURE</span> <span class="pre">/s_new</span> <span class="pre">alloc</span> <span class="pre">failed,</span> <span class="pre">increase</span> <span class="pre">server's</span> <span class="pre">memory</span> <span class="pre">allocation</span></code><a class="headerlink" href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" title="Link to this heading">¶</a></h3>
 <p><strong>What it means:</strong> While initializing the unit generators in a new Synth node, the server ran out of real-time memory.</p>
 <p><strong>Solution:</strong> Increase the amount of real-time memory available to the server. This size is set, as the error message says, in the
 <code class="docutils literal notranslate"><span class="pre">ServerOptions</span></code> object associated with the server. It is a server startup option; you must quit the server and reboot it, or the new
@@ -730,7 +689,7 @@ This goes away quickly when using lots of synths with multiple channels of delay
 <code class="docutils literal notranslate"><span class="pre">Buffer.alloc()</span></code> does not use the real-time pool and is not subject to the memSize limitation. This approach will not help with FFT units.</p>
 </section>
 <section id="array-arguments">
-<h3 id="array-arguments"><a class="toc-backref" href="#id15" role="doc-backlink">Array arguments</a><a class="headerlink" href="#array-arguments" title="Link to this heading">¶</a></h3>
+<h3 id="array-arguments">Array arguments<a class="headerlink" href="#array-arguments" title="Link to this heading">¶</a></h3>
 <p>Sometimes, you need to send an array to a series of Control inputs in a SynthDef (often called “<em>array arguments</em>”).</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Synth</span><span class="p">(</span><span class="ss">\xyz</span><span class="p">,</span> <span class="p">[</span><span class="nx">freqs</span><span class="o">:</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">]]);</span>
 </pre></div>
@@ -757,7 +716,7 @@ This is the only way to do it if you want to construct the array’s size dynami
 </div>
 </section>
 <section id="why-does-it-have-to-be-a-literal-array">
-<h3 id="why-does-it-have-to-be-a-literal-array"><a class="toc-backref" href="#id16" role="doc-backlink">Why does it have to be a literal array?</a><a class="headerlink" href="#why-does-it-have-to-be-a-literal-array" title="Link to this heading">¶</a></h3>
+<h3 id="why-does-it-have-to-be-a-literal-array">Why does it have to be a literal array?<a class="headerlink" href="#why-does-it-have-to-be-a-literal-array" title="Link to this heading">¶</a></h3>
 <p>The reason comes from the process of building a SynthDef:</p>
 <ol class="arabic simple">
 <li><p>First, look at the function arguments to figure out what the Control inputs should be.</p></li>
@@ -782,9 +741,9 @@ This is the only way to do it if you want to construct the array’s size dynami
 </section>
 </section>
 <section id="server-issues">
-<h2 id="server-issues"><a class="toc-backref" href="#id17" role="doc-backlink">Server issues</a><a class="headerlink" href="#server-issues" title="Link to this heading">¶</a></h2>
+<h2 id="server-issues">Server issues<a class="headerlink" href="#server-issues" title="Link to this heading">¶</a></h2>
 <section id="how-to-trigger-a-function-from-the-server">
-<h3 id="how-to-trigger-a-function-from-the-server"><a class="toc-backref" href="#id18" role="doc-backlink">How to trigger a function from the server</a><a class="headerlink" href="#how-to-trigger-a-function-from-the-server" title="Link to this heading">¶</a></h3>
+<h3 id="how-to-trigger-a-function-from-the-server">How to trigger a function from the server<a class="headerlink" href="#how-to-trigger-a-function-from-the-server" title="Link to this heading">¶</a></h3>
 <p>The first and most important point: <strong>Functions are client-side only.</strong><br/>
 The server doesn’t know what functions are, doesn’t understand them and has no way to execute them.<br/>
 <strong>Only the client can execute a function.</strong></p>
@@ -820,15 +779,15 @@ We’ll use SendReply here because of its greater flexibility.</p>
 </section>
 </section>
 <section id="exception-in-world-openudp-unable-to-bind-udp-socket">
-<h3 id="exception-in-world-openudp-unable-to-bind-udp-socket"><a class="toc-backref" href="#id19" role="doc-backlink">Exception in World_OpenUDP: unable to bind udp socket</a><a class="headerlink" href="#exception-in-world-openudp-unable-to-bind-udp-socket" title="Link to this heading">¶</a></h3>
+<h3 id="exception-in-world-openudp-unable-to-bind-udp-socket">Exception in World_OpenUDP: unable to bind udp socket<a class="headerlink" href="#exception-in-world-openudp-unable-to-bind-udp-socket" title="Link to this heading">¶</a></h3>
 <p>Sometime when booting the server one gets a message: <code class="docutils literal notranslate"><span class="pre">Exception</span> <span class="pre">in</span> <span class="pre">World_OpenUDP:</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">bind</span> <span class="pre">udp</span> <span class="pre">socket</span></code>.</p>
 <p>This is usually caused by an instance of scsynth that as hanged but has not released the osc port, perhaps because it SuperCollider crashed.  To fix this, just hit the <em>“k”</em> button in the server window to kill all scsynth processes, and then boot again.</p>
 </section>
 </section>
 <section id="other-issues">
-<h2 id="other-issues"><a class="toc-backref" href="#id20" role="doc-backlink">Other issues</a><a class="headerlink" href="#other-issues" title="Link to this heading">¶</a></h2>
+<h2 id="other-issues">Other issues<a class="headerlink" href="#other-issues" title="Link to this heading">¶</a></h2>
 <section id="error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file">
-<h3 id="error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file"><a class="toc-backref" href="#id21" role="doc-backlink">Error while loading shared libraries: libsclang.so: cannot open shared object file</a><a class="headerlink" href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" title="Link to this heading">¶</a></h3>
+<h3 id="error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file">Error while loading shared libraries: libsclang.so: cannot open shared object file<a class="headerlink" href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" title="Link to this heading">¶</a></h3>
 <p>This usually happens after building on Linux and it means that your system is unaware of newly installed shared libraries. Running ldconfig
 (as root) solves the problem:</p>
 <p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">/sbin/ldconfig</span></code></p>

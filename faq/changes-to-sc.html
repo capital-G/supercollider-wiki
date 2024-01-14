@@ -385,20 +385,8 @@
   <section id="changes">
 <h1 id="faq-changes-to-sc--page-root">Changes<a class="headerlink" href="#faq-changes-to-sc--page-root" title="Link to this heading">¶</a></h1>
 <p>This is a collection of FAQs I’ve seen around the issue tracker. Hopefully this can be put someplace more public once it gains steam. This is meant as an addition to the longer guides about doing specific basic things like installing and configuring. - @mossheim</p>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#env-seems-to-work-differently-than-i-expect" id="id1">Env seems to work differently than I expect</a></p></li>
-<li><p><a class="reference internal" href="#can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it" id="id2">Can we change parameter names of methods? The current naming confuses me/I don’t like it</a></p></li>
-<li><p><a class="reference internal" href="#can-i-make-x-addition-to-the-language-syntax" id="id3">Can I make X addition to the language syntax?</a></p></li>
-<li><p><a class="reference internal" href="#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime" id="id4">Why does sclang make me put <code class="docutils literal notranslate"><span class="pre">var</span></code> statements at the top of functions? Why can’t I define classes at runtime?</a></p></li>
-<li><p><a class="reference internal" href="#is-or-faster" id="id5">Is <code class="docutils literal notranslate"><span class="pre">?</span></code> or <code class="docutils literal notranslate"><span class="pre">??</span></code> faster?</a></p></li>
-<li><p><a class="reference internal" href="#can-we-get-code-folding-in-the-ide" id="id6">Can we get code folding in the IDE?</a></p></li>
-<li><p><a class="reference internal" href="#can-i-use-sc-in-a-game-audio-engine" id="id7">Can I use SC in a game audio engine?</a></p></li>
-</ul>
-</nav>
 <section id="env-seems-to-work-differently-than-i-expect">
-<h2 id="env-seems-to-work-differently-than-i-expect"><a class="toc-backref" href="#id1" role="doc-backlink">Env seems to work differently than I expect</a><a class="headerlink" href="#env-seems-to-work-differently-than-i-expect" title="Link to this heading">¶</a></h2>
+<h2 id="env-seems-to-work-differently-than-i-expect">Env seems to work differently than I expect<a class="headerlink" href="#env-seems-to-work-differently-than-i-expect" title="Link to this heading">¶</a></h2>
 <p>Source: https://github.com/supercollider/supercollider/issues/3629#issue-311070157</p>
 <p>Answer: https://github.com/supercollider/supercollider/issues/3629#issuecomment-378478356</p>
 <p>jamshark70:</p>
@@ -409,7 +397,7 @@
 </div></blockquote>
 </section>
 <section id="can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it">
-<h2 id="can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it"><a class="toc-backref" href="#id2" role="doc-backlink">Can we change parameter names of methods? The current naming confuses me/I don’t like it</a><a class="headerlink" href="#can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it" title="Link to this heading">¶</a></h2>
+<h2 id="can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it">Can we change parameter names of methods? The current naming confuses me/I don’t like it<a class="headerlink" href="#can-we-change-parameter-names-of-methods-the-current-naming-confuses-me-i-don-t-like-it" title="Link to this heading">¶</a></h2>
 <p>Source: https://github.com/supercollider/supercollider/issues/3629#issue-311070157</p>
 <p>Answer: Sometimes.</p>
 <p>The important thing to note is that code can pass arguments this way:</p>
@@ -419,7 +407,7 @@
 <p>So, any change to a public-facing parameter name is a potential breaking change. We might be able to do this in a minor version release, but only if the parameter is rarely used or unlikely to be used with a keyword argument.</p>
 </section>
 <section id="can-i-make-x-addition-to-the-language-syntax">
-<h2 id="can-i-make-x-addition-to-the-language-syntax"><a class="toc-backref" href="#id3" role="doc-backlink">Can I make X addition to the language syntax?</a><a class="headerlink" href="#can-i-make-x-addition-to-the-language-syntax" title="Link to this heading">¶</a></h2>
+<h2 id="can-i-make-x-addition-to-the-language-syntax">Can I make X addition to the language syntax?<a class="headerlink" href="#can-i-make-x-addition-to-the-language-syntax" title="Link to this heading">¶</a></h2>
 <p>Please think <em>very hard</em> about this before submitting a ticket. Conversations about this tend to fall apart very quickly unless the change is presented:</p>
 <ul class="simple">
 <li><p>clearly</p></li>
@@ -430,7 +418,7 @@
 <p>Also, remember to look and see if this idea has already been discussed.</p>
 </section>
 <section id="why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime">
-<h2 id="why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime"><a class="toc-backref" href="#id4" role="doc-backlink">Why does sclang make me put <code class="docutils literal notranslate"><span class="pre">var</span></code> statements at the top of functions? Why can’t I define classes at runtime?</a><a class="headerlink" href="#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime" title="Link to this heading">¶</a></h2>
+<h2 id="why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime">Why does sclang make me put <code class="docutils literal notranslate"><span class="pre">var</span></code> statements at the top of functions? Why can’t I define classes at runtime?<a class="headerlink" href="#why-does-sclang-make-me-put-var-statements-at-the-top-of-functions-why-can-t-i-define-classes-at-runtime" title="Link to this heading">¶</a></h2>
 <p>These quirks and limitations of sclang are well known:</p>
 <ul class="simple">
 <li><p>all <code class="docutils literal notranslate"><span class="pre">var</span></code> statements have to go at the top of a function</p></li>
@@ -440,12 +428,12 @@
 </ul>
 </section>
 <section id="is-or-faster">
-<h2 id="is-or-faster"><a class="toc-backref" href="#id5" role="doc-backlink">Is <code class="docutils literal notranslate"><span class="pre">?</span></code> or <code class="docutils literal notranslate"><span class="pre">??</span></code> faster?</a><a class="headerlink" href="#is-or-faster" title="Link to this heading">¶</a></h2>
+<h2 id="is-or-faster">Is <code class="docutils literal notranslate"><span class="pre">?</span></code> or <code class="docutils literal notranslate"><span class="pre">??</span></code> faster?<a class="headerlink" href="#is-or-faster" title="Link to this heading">¶</a></h2>
 <p>James: https://www.listarc.bham.ac.uk/lists/sc-dev/msg58256.html</p>
 <p><code class="docutils literal notranslate"><span class="pre">??</span></code> is faster.</p>
 </section>
 <section id="can-we-get-code-folding-in-the-ide">
-<h2 id="can-we-get-code-folding-in-the-ide"><a class="toc-backref" href="#id6" role="doc-backlink">Can we get code folding in the IDE?</a><a class="headerlink" href="#can-we-get-code-folding-in-the-ide" title="Link to this heading">¶</a></h2>
+<h2 id="can-we-get-code-folding-in-the-ide">Can we get code folding in the IDE?<a class="headerlink" href="#can-we-get-code-folding-in-the-ide" title="Link to this heading">¶</a></h2>
 <p>Source: https://github.com/supercollider/supercollider/issues/2264</p>
 <p>Answer: https://github.com/supercollider/supercollider/issues/2264#issuecomment-238515818</p>
 <p>crucialfelix:</p>
@@ -454,7 +442,7 @@
 </div></blockquote>
 </section>
 <section id="can-i-use-sc-in-a-game-audio-engine">
-<h2 id="can-i-use-sc-in-a-game-audio-engine"><a class="toc-backref" href="#id7" role="doc-backlink">Can I use SC in a game audio engine?</a><a class="headerlink" href="#can-i-use-sc-in-a-game-audio-engine" title="Link to this heading">¶</a></h2>
+<h2 id="can-i-use-sc-in-a-game-audio-engine">Can I use SC in a game audio engine?<a class="headerlink" href="#can-i-use-sc-in-a-game-audio-engine" title="Link to this heading">¶</a></h2>
 <p>SuperCollider is licensed under the GNU GPL, a fairly restrictive open source license. This runs against the interests of most commercial game developers.</p>
 </section>
 </section>

@@ -4,11 +4,6 @@ This page contains information for the SuperCollider project Wiki: structure, or
 
 All guidance here is considered a _recommendation_ unless stated otherwise.
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Making changes
 
 Become familiar with wiki conventions described in this document before making changes.

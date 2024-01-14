@@ -415,30 +415,8 @@
             
   <section id="git-workflow-and-guidelines">
 <h1 id="contributing-workflow-git-workflow-and-guidelines--page-root">git workflow and guidelines<a class="headerlink" href="#contributing-workflow-git-workflow-and-guidelines--page-root" title="Link to this heading">¶</a></h1>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#git-flow" id="id1">git-flow</a></p></li>
-<li><p><a class="reference internal" href="#deprecation" id="id2">Deprecation</a></p></li>
-<li><p><a class="reference internal" href="#milestones" id="id3">Milestones</a></p></li>
-<li><p><a class="reference internal" href="#guidelines-for-pull-request-authors" id="id4">Guidelines for pull request authors</a></p>
-<ul>
-<li><p><a class="reference internal" href="#other-tips" id="id5">Other tips</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#writing-changelogs" id="id6">Writing changelogs</a></p></li>
-<li><p><a class="reference internal" href="#releasing" id="id7">Releasing</a></p>
-<ul>
-<li><p><a class="reference internal" href="#tagging" id="id8">Tagging</a></p></li>
-<li><p><a class="reference internal" href="#versioning" id="id9">Versioning</a></p></li>
-<li><p><a class="reference internal" href="#emergency-support-releases" id="id10">Emergency support releases</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#conflicts-between-release-branches-and-develop" id="id11">Conflicts between release branches and develop</a></p></li>
-</ul>
-</nav>
 <section id="git-flow">
-<h2 id="git-flow"><a class="toc-backref" href="#id1" role="doc-backlink">git-flow</a><a class="headerlink" href="#git-flow" title="Link to this heading">¶</a></h2>
+<h2 id="git-flow">git-flow<a class="headerlink" href="#git-flow" title="Link to this heading">¶</a></h2>
 <p>SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology <a class="reference external" href="http://nvie.com/posts/a-successful-git-branching-model/">here</a>. The most important thing to know:</p>
 <ul class="simple">
 <li><p>Bug fixes and minor changes are merged into the current release branch (like <code class="docutils literal notranslate"><span class="pre">3.9</span></code>), and are incorporated into the next patch (3.x.y) release.</p></li>
@@ -461,12 +439,12 @@
 </ul>
 </section>
 <section id="deprecation">
-<h2 id="deprecation"><a class="toc-backref" href="#id2" role="doc-backlink">Deprecation</a><a class="headerlink" href="#deprecation" title="Link to this heading">¶</a></h2>
+<h2 id="deprecation">Deprecation<a class="headerlink" href="#deprecation" title="Link to this heading">¶</a></h2>
 <p>SuperCollider class library deprecations are currently made on a case-by-case basis using the <code class="docutils literal notranslate"><span class="pre">Object:-deprecated</span></code>
 method. When a method or class is deprecated, it is moved to <code class="docutils literal notranslate"><span class="pre">SCClassLibrary/deprecated</span></code>. Deprecations are removed on a case-by-case basis with each minor (3.x) release.</p>
 </section>
 <section id="milestones">
-<h2 id="milestones"><a class="toc-backref" href="#id3" role="doc-backlink">Milestones</a><a class="headerlink" href="#milestones" title="Link to this heading">¶</a></h2>
+<h2 id="milestones">Milestones<a class="headerlink" href="#milestones" title="Link to this heading">¶</a></h2>
 <p>We use four tags to keep track of issues:</p>
 <ul class="simple">
 <li><p>Next patch (example: “3.9.1”)</p></li>
@@ -482,26 +460,26 @@ or most requested features.</p>
 and then collectively decide which issues ought to move from 3.x to 3.11 and from 3.10.x to 3.10.1.</p>
 </section>
 <section id="guidelines-for-pull-request-authors">
-<h2 id="guidelines-for-pull-request-authors"><a class="toc-backref" href="#id4" role="doc-backlink">Guidelines for pull request authors</a><a class="headerlink" href="#guidelines-for-pull-request-authors" title="Link to this heading">¶</a></h2>
+<h2 id="guidelines-for-pull-request-authors">Guidelines for pull request authors<a class="headerlink" href="#guidelines-for-pull-request-authors" title="Link to this heading">¶</a></h2>
 <p><strong>A good title and description in GitHub.</strong> Code review is a drag. If you want your work reviewed and discussed in a timely manner, it’s really important that you make things as painless and clear as possible for anyone who reviews your work. Even if your PR builds on prior discussions, you should recap for people who haven’t been following along.</p>
 <p><strong>Clean commit history.</strong></p>
 <p><strong>Documentation (as necessary).</strong> New features and behavior changes should be accompanied with documentation.</p>
 <p><strong>Unit tests (as necessary).</strong></p>
 <section id="other-tips">
-<h3 id="other-tips"><a class="toc-backref" href="#id5" role="doc-backlink">Other tips</a><a class="headerlink" href="#other-tips" title="Link to this heading">¶</a></h3>
+<h3 id="other-tips">Other tips<a class="headerlink" href="#other-tips" title="Link to this heading">¶</a></h3>
 <p><strong>Open PRs when they are truly ready for review.</strong> The list of open PRs is intended to be the SC “workspace,” the list of patches that are currently being worked on and discussed. Cluttering it with incomplete work makes the pull requests page overwhelming to look at.</p>
 <p><strong>Break a large project into bite-sized chunks.</strong> Several small PRs will get merged much faster than one big one.</p>
 </section>
 </section>
 <section id="writing-changelogs">
-<h2 id="writing-changelogs"><a class="toc-backref" href="#id6" role="doc-backlink">Writing changelogs</a><a class="headerlink" href="#writing-changelogs" title="Link to this heading">¶</a></h2>
+<h2 id="writing-changelogs">Writing changelogs<a class="headerlink" href="#writing-changelogs" title="Link to this heading">¶</a></h2>
 <p>The <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Changelog">changelog</a> documents the publicly visible changes since the most recent SuperCollider release. A change is worth putting in the log if it affects users, such as breaking changes (of course), new features, and bug fixes. Significant refactors should also be logged to identify areas that should be tested, and to help locate the culprit in case of breakage. Documentation edits generally shouldn’t be on this list, but major overhauls and expansions may be appropriate.</p>
 <p>The website <a class="reference external" href="http://keepachangelog.com/en/0.3.0/">Keep a CHANGELOG</a> is a major inspiration for the organization of the changelog. Changes to each component of SuperCollider are subdivided into Added, Changed, Deprecated, Removed, Fixed, and Security, in that order.</p>
 <p>Please provide the link to the PR with every entry in the changelog for easy navigation.</p>
 <p>Try to exercise common sense in keeping the log readable and useful to users. Use complete sentences and, to a reasonable extent, err on the side of clarity. In case of doubt, prefer inclusion over exclusion.</p>
 </section>
 <section id="releasing">
-<h2 id="releasing"><a class="toc-backref" href="#id7" role="doc-backlink">Releasing</a><a class="headerlink" href="#releasing" title="Link to this heading">¶</a></h2>
+<h2 id="releasing">Releasing<a class="headerlink" href="#releasing" title="Link to this heading">¶</a></h2>
 <p>The current release managers are Marcin Pączkowski (@dyfer) and Josh Parmenter (@joshpar).</p>
 <p>When it is time to prepare a release, run the script in <code class="docutils literal notranslate"><span class="pre">tools/release/make_release.py</span></code>.</p>
 <p>We generally follow this sequence of pre-releases prior to the official release. <code class="docutils literal notranslate"><span class="pre">N</span></code> is a sequentially increasing natural number (1, 2, 3…) which starts over at 1 for each step:</p>
@@ -511,18 +489,18 @@ and then collectively decide which issues ought to move from 3.x to 3.11 and fro
 <li><p><code class="docutils literal notranslate"><span class="pre">X.Y.Z-rcN</span></code> (release candidate), for minor and patch releases, to catch any regressions and ensure that the official release itself will go smoothly</p></li>
 </ul>
 <section id="tagging">
-<h3 id="tagging"><a class="toc-backref" href="#id8" role="doc-backlink">Tagging</a><a class="headerlink" href="#tagging" title="Link to this heading">¶</a></h3>
+<h3 id="tagging">Tagging<a class="headerlink" href="#tagging" title="Link to this heading">¶</a></h3>
 <p>Creating a release involves adding a tag on the tip of the main branch. We follow the convention of using <code class="docutils literal notranslate"><span class="pre">Version-</span></code> prefix for the tags intended for official releases, e.g. <code class="docutils literal notranslate"><span class="pre">Version-3.11.0</span></code>. Our CI uses the tag in the filenames of the release artifacts, but removes the <code class="docutils literal notranslate"><span class="pre">Version-</span></code> prefix. Please note that creating a tag without the prefix will also trigger deployment of release artifacts, which is useful for testing. In the regular workflow, tags are used almost solely for creating releases. One notable exception from this was adding tags before reformatting the codebase with <code class="docutils literal notranslate"><span class="pre">clang-format</span></code>.</p>
 </section>
 <section id="versioning">
-<h3 id="versioning"><a class="toc-backref" href="#id9" role="doc-backlink">Versioning</a><a class="headerlink" href="#versioning" title="Link to this heading">¶</a></h3>
+<h3 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Link to this heading">¶</a></h3>
 <p>The current version of SuperCollider is defined in the <code class="docutils literal notranslate"><span class="pre">SCVersion.txt</span></code> file. This is the only place where version number should be updated before the release etc.</p>
 <p>Starting with <a class="reference external" href="https://github.com/supercollider/supercollider/pull/5566">PR #5566</a>, we are using a different version number on the current release branch and the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch. The minor version number on the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch should be one above the current release version and should include the <code class="docutils literal notranslate"><span class="pre">-dev</span></code> suffix. For example: if the current version on the <code class="docutils literal notranslate"><span class="pre">3.12</span></code> branch is <code class="docutils literal notranslate"><span class="pre">3.12.2</span></code>, the version on the develop branch should be <code class="docutils literal notranslate"><span class="pre">3.13.0-dev</span></code>.</p>
 <p>The version on the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch should be updated right after a new release branch is created. For example: after the <code class="docutils literal notranslate"><span class="pre">3.13</span></code> branch is created, the version on the develop branch should be changed to <code class="docutils literal notranslate"><span class="pre">3.14.0-dev</span></code>. The version on the <code class="docutils literal notranslate"><span class="pre">3.13</span></code> branch can stay as <code class="docutils literal notranslate"><span class="pre">3.13.0-dev</span></code> until the time of release, when it will be changed to e.g. <code class="docutils literal notranslate"><span class="pre">3.13.0-rc1</span></code>.</p>
 <p>Please note: this will cause a merge conflict <em>on the first merge</em> from the given release branch (e.g. <code class="docutils literal notranslate"><span class="pre">3.13</span></code>) to <code class="docutils literal notranslate"><span class="pre">develop</span></code>. This conflict needs to be resolved before that first merge. Subsequent merges from the given release branch to <code class="docutils literal notranslate"><span class="pre">develop</span></code> should not trigger the merge conflict anymore.</p>
 </section>
 <section id="emergency-support-releases">
-<h3 id="emergency-support-releases"><a class="toc-backref" href="#id10" role="doc-backlink">Emergency support releases</a><a class="headerlink" href="#emergency-support-releases" title="Link to this heading">¶</a></h3>
+<h3 id="emergency-support-releases">Emergency support releases<a class="headerlink" href="#emergency-support-releases" title="Link to this heading">¶</a></h3>
 <p>Rarely, we may need to do an “emergency release” for extra support. As of February 2021, this has only happened once since the project moved to its current git-flow branching model. The reason for doing so was to support macOS 11 Big Sur between the release of 3.11.2 – which did not support Big Sur at all yet – and 3.12.0. In a conversation <a class="reference external" href="https://github.com/supercollider/supercollider/issues/5168#issuecomment-778898320">here</a>, this was the particular process arrived at:</p>
 <ol class="arabic simple">
 <li><p>Assume the release to be patched is <code class="docutils literal notranslate"><span class="pre">x.y.z</span></code>, which, according to our branching model, has been developed on the release branch called <code class="docutils literal notranslate"><span class="pre">x.y</span></code>. Also assume that <code class="docutils literal notranslate"><span class="pre">x.y</span></code> has been merged into <code class="docutils literal notranslate"><span class="pre">main</span></code> at commit <code class="docutils literal notranslate"><span class="pre">A</span></code>, tagged <code class="docutils literal notranslate"><span class="pre">Version-x.y.z</span></code>, and that the parent commit of <code class="docutils literal notranslate"><span class="pre">A</span></code> on the <code class="docutils literal notranslate"><span class="pre">x.y</span></code> branch is <code class="docutils literal notranslate"><span class="pre">B</span></code>. In other words, <code class="docutils literal notranslate"><span class="pre">B</span></code> is the last commit on the <code class="docutils literal notranslate"><span class="pre">x.y</span></code> branch before merging into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
@@ -535,7 +513,7 @@ and then collectively decide which issues ought to move from 3.x to 3.11 and fro
 </section>
 </section>
 <section id="conflicts-between-release-branches-and-develop">
-<h2 id="conflicts-between-release-branches-and-develop"><a class="toc-backref" href="#id11" role="doc-backlink">Conflicts between release branches and develop</a><a class="headerlink" href="#conflicts-between-release-branches-and-develop" title="Link to this heading">¶</a></h2>
+<h2 id="conflicts-between-release-branches-and-develop">Conflicts between release branches and develop<a class="headerlink" href="#conflicts-between-release-branches-and-develop" title="Link to this heading">¶</a></h2>
 <p>Occasionally it may happen that a release branch cannot be cleanly merged into <code class="docutils literal notranslate"><span class="pre">develop</span></code>. In that case, the correct procedure is:</p>
 <ol class="arabic simple">
 <li><p>Create a new branch off <code class="docutils literal notranslate"><span class="pre">develop</span></code> with a name like <code class="docutils literal notranslate"><span class="pre">topic/merge-forward-3.x</span></code></p></li>

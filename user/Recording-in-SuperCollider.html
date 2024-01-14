@@ -375,23 +375,8 @@
   <section id="recording-in-supercollider">
 <h1 id="user-recording-in-supercollider--page-root">Recording in SuperCollider<a class="headerlink" href="#user-recording-in-supercollider--page-root" title="Link to this heading">¶</a></h1>
 <p><em>This is a draft of a new comprehensive guide to recording in SC. Unfortunately the most important part, non-real-time recording, is currently incomplete. - @mossheim</em></p>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#recording-with-server-record" id="id1">Recording with <code class="docutils literal notranslate"><span class="pre">Server:record</span></code></a></p>
-<ul>
-<li><p><a class="reference internal" href="#more-options" id="id2">More options</a></p></li>
-<li><p><a class="reference internal" href="#exporting-mp3-files" id="id3">Exporting MP3 files</a></p></li>
-<li><p><a class="reference internal" href="#server-record-and-compositions" id="id4"><code class="docutils literal notranslate"><span class="pre">Server:record</span></code> and compositions</a></p></li>
-<li><p><a class="reference internal" href="#exporting-stems" id="id5">Exporting stems</a></p></li>
-<li><p><a class="reference internal" href="#problems-with-recorder" id="id6">Problems with Recorder</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#non-real-time-recording" id="id7">Non-real time recording</a></p></li>
-</ul>
-</nav>
 <section id="recording-with-server-record">
-<h2 id="recording-with-server-record"><a class="toc-backref" href="#id1" role="doc-backlink">Recording with <code class="docutils literal notranslate"><span class="pre">Server:record</span></code></a><a class="headerlink" href="#recording-with-server-record" title="Link to this heading">¶</a></h2>
+<h2 id="recording-with-server-record">Recording with <code class="docutils literal notranslate"><span class="pre">Server:record</span></code><a class="headerlink" href="#recording-with-server-record" title="Link to this heading">¶</a></h2>
 <p>After making sure the server is booted, this is how you record in SuperCollider:</p>
 <div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span>    <span class="nx">Server</span><span class="p">.</span><span class="k">default</span><span class="p">.</span><span class="nx">record</span><span class="p">;</span>
 </pre></div>
@@ -400,7 +385,7 @@
 <p>If you’re using SCIDE, it’s even easier — if you open the “Server” menu on the toolbar (“Language” in SC &lt; 3.9) or click on the server status bar, “Start recording” and “Stop recording” are available as menu items. The server status bar also has an “R” symbol that turns red if the server is recording.</p>
 <p><strong>Warning:</strong> The output file will be corrupted if the server quits or crashes before you call stopRecording!</p>
 <section id="more-options">
-<h3 id="more-options"><a class="toc-backref" href="#id2" role="doc-backlink">More options</a><a class="headerlink" href="#more-options" title="Link to this heading">¶</a></h3>
+<h3 id="more-options">More options<a class="headerlink" href="#more-options" title="Link to this heading">¶</a></h3>
 <p>Familiarize yourself with some of the arguments that <code class="docutils literal notranslate"><span class="pre">Server.default.record</span></code> lets you specify:</p>
 <ul class="simple">
 <li><p><strong>path</strong> - Manually specify the output path. SuperCollider will figure out what format to write based on the extension. (As we’ll cover in a later section, don’t try an .mp3 path here. It won’t work.)</p></li>
@@ -413,12 +398,12 @@
 <p>The timer for the “duration” argument waits for paused recordings. “duration” the length of the output file, not the real time spent between the beginning and end of recording.</p>
 </section>
 <section id="exporting-mp3-files">
-<h3 id="exporting-mp3-files"><a class="toc-backref" href="#id3" role="doc-backlink">Exporting MP3 files</a><a class="headerlink" href="#exporting-mp3-files" title="Link to this heading">¶</a></h3>
+<h3 id="exporting-mp3-files">Exporting MP3 files<a class="headerlink" href="#exporting-mp3-files" title="Link to this heading">¶</a></h3>
 <p>SuperCollider doesn’t export MP3 files.</p>
 <p>This is very easy to work around. Just export to WAV (say) and convert that WAV to MP3 using an external tool such as LAME. If that tool is accessible from the command line, you can use <code class="docutils literal notranslate"><span class="pre">.unixCmd</span></code> to perform conversion automatically after recording.</p>
 </section>
 <section id="server-record-and-compositions">
-<h3 id="server-record-and-compositions"><a class="toc-backref" href="#id4" role="doc-backlink"><code class="docutils literal notranslate"><span class="pre">Server:record</span></code> and compositions</a><a class="headerlink" href="#server-record-and-compositions" title="Link to this heading">¶</a></h3>
+<h3 id="server-record-and-compositions"><code class="docutils literal notranslate"><span class="pre">Server:record</span></code> and compositions<a class="headerlink" href="#server-record-and-compositions" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Server:record</span></code> is very basic. It takes the real-time output of SuperCollider (or a specific Bus) and writes it to disk. It doesn’t make any assumptions or interactions with your composition, other than that it produces audio output. The exact way to incorporate recording functionality into your work is up to you.</p>
 <p>If you’re designing a real-time performance interface, it’s straightforward: add buttons or MIDI/OSC responders that call <code class="docutils literal notranslate"><span class="pre">Server.default.record</span></code> and <code class="docutils literal notranslate"><span class="pre">Server.default.stopRecording</span></code>. For a nicer interface, you can figure out whether the server is currently recording by calling <code class="docutils literal notranslate"><span class="pre">Server.default.isRecording</span></code> (returns a Boolean), and you can use <code class="docutils literal notranslate"><span class="pre">Server.default.recorder.duration</span></code> to determine the number of seconds elapsed in the recording.</p>
 <p>Other users might have works that are relatively fixed-media (nondeterministic SynthDefs and generative sequencing notwithstanding). Recording your piece is simply a matter of calling <code class="docutils literal notranslate"><span class="pre">Server.default.record</span></code> and <code class="docutils literal notranslate"><span class="pre">Server.default.stopRecording</span></code> at the right times, which fits nicely into the common paradigm of using a <code class="docutils literal notranslate"><span class="pre">Routine</span></code> to sequence a composition. A nontrivial example is appropriate here, so here’s short drone piece that plays a Synth for 10 seconds:</p>
@@ -483,13 +468,13 @@
 <p>You can get even fancier than this and add a fade out, but we’ll leave that up to you. The takeaway here is that since recording can be controlled programmatically, the possibilities are endless.</p>
 </section>
 <section id="exporting-stems">
-<h3 id="exporting-stems"><a class="toc-backref" href="#id5" role="doc-backlink">Exporting stems</a><a class="headerlink" href="#exporting-stems" title="Link to this heading">¶</a></h3>
+<h3 id="exporting-stems">Exporting stems<a class="headerlink" href="#exporting-stems" title="Link to this heading">¶</a></h3>
 <p>SuperCollider isn’t specifically designed for audio post-production. There are tools for this written by third parties, but many prefer to use familiar software like a traditional DAW. To accomplish this, you will want to record in multitrack.</p>
 <p>The first step to stem export is to set up your composition so that it actually has multiple tracks in the first place. Instead of routing all your Synths to a main output, organize things into Buses, and route Buses into each other and to output. The ddwMixerChannel quark is highly recommended for this purpose, since it takes care of a lot of abstraction, providing an easy-to-use multitrack infrastructure with fading, panning, and effects groups.</p>
 <p>[…]</p>
 </section>
 <section id="problems-with-recorder">
-<h3 id="problems-with-recorder"><a class="toc-backref" href="#id6" role="doc-backlink">Problems with Recorder</a><a class="headerlink" href="#problems-with-recorder" title="Link to this heading">¶</a></h3>
+<h3 id="problems-with-recorder">Problems with Recorder<a class="headerlink" href="#problems-with-recorder" title="Link to this heading">¶</a></h3>
 <p>Real-time recording with Recorder should be satisfactory for a lot of SuperCollider users, but it’s not a perfect solution for all.</p>
 <p>The first problem is that you can’t render and record audio faster than real time. What if we wanted to stretch our drone piece out for an hour? Then we’d have to wait an hour for it to render.</p>
 <p>The second problem is that you can’t render and record audio slower than real time. If you put too much strain on the CPU, you will get buffer overruns and underruns. These can cause severe timing jitter between the server and client, which is unacceptable in many musical contexts (and also causes audible glitches and dropouts, but these happen at a lower level than SC and won’t show up in the recording).</p>
@@ -498,7 +483,7 @@
 </section>
 </section>
 <section id="non-real-time-recording">
-<h2 id="non-real-time-recording"><a class="toc-backref" href="#id7" role="doc-backlink">Non-real time recording</a><a class="headerlink" href="#non-real-time-recording" title="Link to this heading">¶</a></h2>
+<h2 id="non-real-time-recording">Non-real time recording<a class="headerlink" href="#non-real-time-recording" title="Link to this heading">¶</a></h2>
 <p>The solution to both of these problems is non-real time (NRT) mode. When scsynth/supernova runs in NRT mode, it no longer connects to audio drivers. Like an ordinary command-line program, it simply produces an output audio file. It renders audio as fast as possible, and it doesn’t suffer from xruns.</p>
 <p>Unfortunately, using NRT mode is completely different from using RT mode. It requires you to assemble an OSC score file, which is a collection of OSC messages tagged with timestamps. (Quick review for beginners: sclang communicates to scsynth over OSC. The OSC score file is equivalent to a record of all OSC messages that are sent to scsynth.)</p>
 <p>[Go into Ctk, OSC recording]</p>

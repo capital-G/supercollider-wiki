@@ -1,10 +1,5 @@
 # git cheat sheet
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Get the latest sources
 
 To work with SuperCollider's source code, you first need to create your own local clone of the online *repository*. There are two options:

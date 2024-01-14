@@ -2,11 +2,6 @@
 
 *This is a draft of a new comprehensive guide to recording in SC. Unfortunately the most important part, non-real-time recording, is currently incomplete. - @mossheim*
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Recording with `Server:record`
 
 After making sure the server is booted, this is how you record in SuperCollider:

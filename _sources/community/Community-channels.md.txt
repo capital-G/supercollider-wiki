@@ -2,11 +2,6 @@
 
 Here you'll find various ways of getting in touch with the rest of the community.
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## GitHub
 
 Sign up for a [GitHub account](https://github.com/signup/free) and give us a ⭐️, and fork if you’re feeling adventurous.

@@ -392,33 +392,8 @@
             
   <section id="c-formatting-instructions">
 <h1 id="contributing-style-cpp-formatting-cpp-formatting-instructions--page-root">C++ formatting instructions<a class="headerlink" href="#contributing-style-cpp-formatting-cpp-formatting-instructions--page-root" title="Link to this heading">¶</a></h1>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#getting-started" id="id3">Getting started</a></p></li>
-<li><p><a class="reference internal" href="#working-with-clang-format" id="id4">Working with clang-format</a></p>
-<ul>
-<li><p><a class="reference internal" href="#reformatting-as-you-work-normal-usage" id="id5">Reformatting as you work (normal usage)</a></p></li>
-<li><p><a class="reference internal" href="#reformatting-your-last-commit" id="id6">Reformatting your last commit</a></p></li>
-<li><p><a class="reference internal" href="#reformatting-an-entire-pr" id="id7">Reformatting an entire PR</a></p></li>
-<li><p><a class="reference internal" href="#cmake-targets" id="id8">CMake targets</a></p></li>
-<li><p><a class="reference internal" href="#build-directory-scripts" id="id9">Build directory scripts</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#working-without-clang-format" id="id10">Working without clang-format</a></p></li>
-<li><p><a class="reference internal" href="#what-files-are-actually-linted-formatted" id="id11">What files are actually linted/formatted?</a></p></li>
-<li><p><a class="reference internal" href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it" id="id12">I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?</a></p>
-<ul>
-<li><p><a class="reference internal" href="#troubleshooting" id="id13">Troubleshooting</a></p></li>
-<li><p><a class="reference internal" href="#specific-issues" id="id14">Specific issues</a></p></li>
-</ul>
-</li>
-</ul>
-</nav>
 <section id="overview">
-<h2 id="overview"><a class="toc-backref" href="#id1" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
 <p>In this context of this document, “linting” means checking that code is formatted correctly, without modifying code;
 “formatting” means actually changing the code.</p>
 <p>For information about our code style guidelines, which includes things like naming conventions, see <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/%5BWIP%5D-C---Code-Style-Guidelines">this
@@ -431,7 +406,7 @@ merge any change which violates our formatting standards.</p>
 integrate ClangFormat into your development workflow.</p>
 </section>
 <section id="requirements">
-<h2 id="requirements"><a class="toc-backref" href="#id2" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
 <p><strong>Python &gt;= 3.6</strong>: any version past 3.6 should work. To find out what version you have run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code>.</p>
 <p><strong>ClangFormat v8.x.y</strong>: from the LLVM website you can download either version <a class="reference external" href="https://releases.llvm.org/download.html#8.0.1">8.0.1</a> or
 <a class="reference external" href="https://releases.llvm.org/download.html#8.0.0">8.0.0</a>. In the long term, we would like to not require an
@@ -448,7 +423,7 @@ If that doesn’t work either, <a class="reference external" href="https://githu
 know</a> and we’ll be happy to help you!</p>
 </section>
 <section id="getting-started">
-<h2 id="getting-started"><a class="toc-backref" href="#id3" role="doc-backlink">Getting started</a><a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Download and install Python and LLVM 8;  See
 <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions#requirements">requirements</a> above for
@@ -505,7 +480,7 @@ clang installed on your system. You can open a new terminal window and run <code
 </ol>
 </section>
 <section id="working-with-clang-format">
-<h2 id="working-with-clang-format"><a class="toc-backref" href="#id4" role="doc-backlink">Working with clang-format</a><a class="headerlink" href="#working-with-clang-format" title="Link to this heading">¶</a></h2>
+<h2 id="working-with-clang-format">Working with clang-format<a class="headerlink" href="#working-with-clang-format" title="Link to this heading">¶</a></h2>
 <p>There are four basic commands that we use for formatting: <code class="docutils literal notranslate"><span class="pre">lint</span></code>, <code class="docutils literal notranslate"><span class="pre">format</span></code>, <code class="docutils literal notranslate"><span class="pre">lintall</span></code>, <code class="docutils literal notranslate"><span class="pre">formatall</span></code>. The first two <strong>only
 apply to the code that changed between commits</strong>, while the last two will run on the entire codebase.</p>
 <p>It’s very important to remember that by default, linting and formatting only apply to changes that
@@ -527,7 +502,7 @@ accept a commit “reference point” as an optional first argument.</p></li>
 <li><p>You can “build” some commands as build targets, see below.</p></li>
 </ol>
 <section id="reformatting-as-you-work-normal-usage">
-<h3 id="reformatting-as-you-work-normal-usage"><a class="toc-backref" href="#id5" role="doc-backlink">Reformatting as you work (normal usage)</a><a class="headerlink" href="#reformatting-as-you-work-normal-usage" title="Link to this heading">¶</a></h3>
+<h3 id="reformatting-as-you-work-normal-usage">Reformatting as you work (normal usage)<a class="headerlink" href="#reformatting-as-you-work-normal-usage" title="Link to this heading">¶</a></h3>
 <p>If you are developing a C++ feature or bug fix, a typical workflow might look like this:</p>
 <ol class="arabic simple">
 <li><p>Write some code, build, test</p></li>
@@ -536,7 +511,7 @@ accept a commit “reference point” as an optional first argument.</p></li>
 </ol>
 </section>
 <section id="reformatting-your-last-commit">
-<h3 id="reformatting-your-last-commit"><a class="toc-backref" href="#id6" role="doc-backlink">Reformatting your last commit</a><a class="headerlink" href="#reformatting-your-last-commit" title="Link to this heading">¶</a></h3>
+<h3 id="reformatting-your-last-commit">Reformatting your last commit<a class="headerlink" href="#reformatting-your-last-commit" title="Link to this heading">¶</a></h3>
 <p>If you just made a commit without formatting and want to reformat it:</p>
 <ol class="arabic simple">
 <li><p>Make sure your working directory is completely clean. The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shouldn’t show any files waiting
@@ -549,7 +524,7 @@ include the <code class="docutils literal notranslate"><span class="pre">^</span
 </ol>
 </section>
 <section id="reformatting-an-entire-pr">
-<h3 id="reformatting-an-entire-pr"><a class="toc-backref" href="#id7" role="doc-backlink">Reformatting an entire PR</a><a class="headerlink" href="#reformatting-an-entire-pr" title="Link to this heading">¶</a></h3>
+<h3 id="reformatting-an-entire-pr">Reformatting an entire PR<a class="headerlink" href="#reformatting-an-entire-pr" title="Link to this heading">¶</a></h3>
 <p>If you’ve made a PR and now need to reformat the whole thing:</p>
 <ol class="arabic simple">
 <li><p>Make sure your working directory is completely clean. The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shouldn’t show any files waiting
@@ -560,7 +535,7 @@ correct commits.</p></li>
 </ol>
 </section>
 <section id="cmake-targets">
-<h3 id="cmake-targets"><a class="toc-backref" href="#id8" role="doc-backlink">CMake targets</a><a class="headerlink" href="#cmake-targets" title="Link to this heading">¶</a></h3>
+<h3 id="cmake-targets">CMake targets<a class="headerlink" href="#cmake-targets" title="Link to this heading">¶</a></h3>
 <p>The following targets are provided in the build system:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lint</span></code>: lints all uncommitted changes to the working tree. The output will be in the form of a
@@ -576,7 +551,7 @@ this: <code class="docutils literal notranslate"><span class="pre">cmake</span> 
 against.</p>
 </section>
 <section id="build-directory-scripts">
-<h3 id="build-directory-scripts"><a class="toc-backref" href="#id9" role="doc-backlink">Build directory scripts</a><a class="headerlink" href="#build-directory-scripts" title="Link to this heading">¶</a></h3>
+<h3 id="build-directory-scripts">Build directory scripts<a class="headerlink" href="#build-directory-scripts" title="Link to this heading">¶</a></h3>
 <p>In your build directory (usually, <code class="docutils literal notranslate"><span class="pre">/path/to/supercollider/build</span></code>), after running CMake, you will
 have two Python scripts named <code class="docutils literal notranslate"><span class="pre">lint.py</span></code> and <code class="docutils literal notranslate"><span class="pre">format.py</span></code>. These behave like the <code class="docutils literal notranslate"><span class="pre">lint</span></code> and <code class="docutils literal notranslate"><span class="pre">format</span></code>
 targets, but they also take an optional single argument, the name of a commit to diff against. For
@@ -587,7 +562,7 @@ each commit, and don’t want to go back and redo each commit separately.</p>
 </section>
 </section>
 <section id="working-without-clang-format">
-<h2 id="working-without-clang-format"><a class="toc-backref" href="#id10" role="doc-backlink">Working without clang-format</a><a class="headerlink" href="#working-without-clang-format" title="Link to this heading">¶</a></h2>
+<h2 id="working-without-clang-format">Working without clang-format<a class="headerlink" href="#working-without-clang-format" title="Link to this heading">¶</a></h2>
 <p><strong>Please note: the following instructions refer to the now-obsolete Travis CI and have not been updated for the currently used GitHub Actions</strong></p>
 <p>Sometimes you just want to update your PR (pull request) so it passes linting, without installing clang-format. It
 will be painful but you can follow these steps as a last resort:</p>
@@ -613,7 +588,7 @@ whitespace, mixed spaces and tabs, and tabs instead of spaces.</p></li>
 <img alt="Screen Shot 2020-11-22 at 11 19 47 AM" src="https://user-images.githubusercontent.com/15369640/99910682-fb7de780-2cb4-11eb-90b8-e6ef1aff4462.png" width="800"/>
 </section>
 <section id="what-files-are-actually-linted-formatted">
-<h2 id="what-files-are-actually-linted-formatted"><a class="toc-backref" href="#id11" role="doc-backlink">What files are actually linted/formatted?</a><a class="headerlink" href="#what-files-are-actually-linted-formatted" title="Link to this heading">¶</a></h2>
+<h2 id="what-files-are-actually-linted-formatted">What files are actually linted/formatted?<a class="headerlink" href="#what-files-are-actually-linted-formatted" title="Link to this heading">¶</a></h2>
 <p>Any file with an extension of <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">cpp</span></code>, <code class="docutils literal notranslate"><span class="pre">hpp</span></code>, <code class="docutils literal notranslate"><span class="pre">m</span></code>, or <code class="docutils literal notranslate"><span class="pre">mm</span></code> is linted or formatted, with the
 exception of files that we don’t have direct control over. That set of files consists of code from
 third parties or other projects (files under <code class="docutils literal notranslate"><span class="pre">external_libraries</span></code>), and files generated by code
@@ -627,7 +602,7 @@ generation tools. These auto-generated files are:</p>
 </ul>
 </section>
 <section id="i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it">
-<h2 id="i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it"><a class="toc-backref" href="#id12" role="doc-backlink">I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?</a><a class="headerlink" href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it" title="Link to this heading">¶</a></h2>
+<h2 id="i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it">I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?<a class="headerlink" href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it" title="Link to this heading">¶</a></h2>
 <p>If you have a branch that contains work prior to the major C++ reformatting commit (tag <code class="docutils literal notranslate"><span class="pre">tag-clang-format-develop</span></code>, which happened around June 2019), just follow these steps.</p>
 <ol class="arabic simple">
 <li><p>Follow the “Getting Started” steps above if you haven’t already.</p></li>
@@ -681,12 +656,12 @@ git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span
 </div>
 <p>Any PR you have open will automatically update. <strong>There is no need to close and re-open your PR.</strong></p>
 <section id="troubleshooting">
-<h3 id="troubleshooting"><a class="toc-backref" href="#id13" role="doc-backlink">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h3>
+<h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h3>
 <p>We are using fairly tricky git features here. <strong>If something gets screwed up, don’t panic</strong> and <strong>don’t do reckless things like deleting your entire repository</strong>. It will probably not fix your issue.</p>
 <p>Instead, just ask for help in <a class="reference external" href="https://github.com/supercollider/supercollider/wiki#joining-the-community">one of our communities</a>.</p>
 </section>
 <section id="specific-issues">
-<h3 id="specific-issues"><a class="toc-backref" href="#id14" role="doc-backlink">Specific issues</a><a class="headerlink" href="#specific-issues" title="Link to this heading">¶</a></h3>
+<h3 id="specific-issues">Specific issues<a class="headerlink" href="#specific-issues" title="Link to this heading">¶</a></h3>
 <section id="ascii-codec-can-t-encode-character">
 <h4 id="ascii-codec-can-t-encode-character">“‘ascii’ codec can’t encode character”<a class="headerlink" href="#ascii-codec-can-t-encode-character" title="Link to this heading">¶</a></h4>
 <p>If the script fails with something like this error message:</p>

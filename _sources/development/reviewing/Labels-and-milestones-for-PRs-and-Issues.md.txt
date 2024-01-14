@@ -3,11 +3,6 @@
 
 Issues and Pull Requests are categorized using a system of [labels](https://github.com/supercollider/supercollider/labels?page=1&sort=name-asc), and the release version that they are targeted for resolution or merging is set by their [milestones](https://github.com/supercollider/supercollider/milestones).
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Labels
 
 Required labels for both Issues _and_ PRs are _either_

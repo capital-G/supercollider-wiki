@@ -418,19 +418,6 @@
 </ul>
 </div>
 <hr class="docutils"/>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#style-guidelines-and-clang-format" id="id1">Style guidelines and <code class="docutils literal notranslate"><span class="pre">clang-format</span></code></a></p></li>
-<li><p><a class="reference internal" href="#naming" id="id2">Naming</a></p></li>
-<li><p><a class="reference internal" href="#notes-for-ugen-writers" id="id3">Notes for UGen writers</a></p></li>
-<li><p><a class="reference internal" href="#lambdas" id="id4">Lambdas</a></p></li>
-<li><p><a class="reference internal" href="#indentation" id="id5">Indentation</a></p></li>
-<li><p><a class="reference internal" href="#line-breaking" id="id6">Line breaking</a></p></li>
-<li><p><a class="reference internal" href="#whitespace" id="id7">Whitespace</a></p></li>
-<li><p><a class="reference internal" href="#disabling-automatic-formatting" id="id8">Disabling automatic formatting</a></p></li>
-</ul>
-</nav>
 <!--
 Note on revision history: it appears changing the wiki's name obscures the wiki's revision history. Changing the name back to it's previous name then shows the full revision history. hmmm... GitHub bug? If that's needed, this wiki's previous name was "Cpp code style guidelines".
 -->
@@ -439,17 +426,17 @@ Note on revision history: it appears changing the wiki's name obscures the wiki'
 <p>Guidelines are also available for other parts of the project:</p>
 <p>[[Style guidelines: SuperCollider]], [[Style guidelines: SCDocs]], [[The wiki wiki]].</p>
 <section id="style-guidelines-and-clang-format">
-<h2 id="style-guidelines-and-clang-format"><a class="toc-backref" href="#id1" role="doc-backlink">Style guidelines and <code class="docutils literal notranslate"><span class="pre">clang-format</span></code></a><a class="headerlink" href="#style-guidelines-and-clang-format" title="Link to this heading">¶</a></h2>
+<h2 id="style-guidelines-and-clang-format">Style guidelines and <code class="docutils literal notranslate"><span class="pre">clang-format</span></code><a class="headerlink" href="#style-guidelines-and-clang-format" title="Link to this heading">¶</a></h2>
 <p>SuperCollider uses <a class="reference external" href="https://clang.llvm.org/docs/ClangFormat.html">clang-format</a>, an open source C and C++ source code formatting tool, to ensure consistent code style across our code base. So while the following discussion describes the style used in the code, along with some things that can’t be easily automated such as variable naming, for issues of code formatting the output of the <code class="docutils literal notranslate"><span class="pre">clang-format</span></code> tool should be considered canonical style. For more information about using <code class="docutils literal notranslate"><span class="pre">clang-format</span></code> on SuperCollider C++ code see <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Cpp-formatting-instructions">these instructions</a>.</p>
 <p>In general SuperCollider follows the <a class="reference external" href="https://webkit.org/code-style-guidelines/">WebKit Code Style Guidelines</a>, with a few notable exceptions and additions.</p>
 </section>
 <section id="naming">
-<h2 id="naming"><a class="toc-backref" href="#id2" role="doc-backlink">Naming</a><a class="headerlink" href="#naming" title="Link to this heading">¶</a></h2>
+<h2 id="naming">Naming<a class="headerlink" href="#naming" title="Link to this heading">¶</a></h2>
 <p>New code, either in new files or substantial additions to existing files, should follow <a class="reference external" href="https://webkit.org/code-style-guidelines/#names">WebKit</a> guidelines around naming, which has some similarity to SuperCollider language style guidelines. Generally, name things using full words and CamelCase, classes have capitalized first letters, variables and functions do not. Prefix member variables with <code class="docutils literal notranslate"><span class="pre">m_</span></code>, static data members with <code class="docutils literal notranslate"><span class="pre">s_</span></code>, and global variables with <code class="docutils literal notranslate"><span class="pre">g_</span></code>.</p>
 <p>Older code used the prefixes <code class="docutils literal notranslate"><span class="pre">k</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, and <code class="docutils literal notranslate"><span class="pre">m</span></code> to identify constants, global variables, and members respectively. You may see some code that uses the prefix <code class="docutils literal notranslate"><span class="pre">Pyr</span></code>; this refers to the origin of SuperCollider as a Max/MSP object called “Pyrite”.</p>
 </section>
 <section id="notes-for-ugen-writers">
-<h2 id="notes-for-ugen-writers"><a class="toc-backref" href="#id3" role="doc-backlink">Notes for UGen writers</a><a class="headerlink" href="#notes-for-ugen-writers" title="Link to this heading">¶</a></h2>
+<h2 id="notes-for-ugen-writers">Notes for UGen writers<a class="headerlink" href="#notes-for-ugen-writers" title="Link to this heading">¶</a></h2>
 <p>The naming for UGens has fairly strict conventions, because SC’s macros connect the function/struct names with the names used by a user. A UGen usually has a struct associated with it, which should take the same name as the corresponding sclang class (which implies it begins with a capital letter).</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">SinOsc</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Unit</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span>
 </pre></div>
@@ -465,19 +452,19 @@ Note on revision history: it appears changing the wiki's name obscures the wiki'
 <p>Private methods within the plugin files don’t have to follow strict naming but it is recommended to prefix them in a similar fashion, to identify the UGen(s) with which they belong.</p>
 </section>
 <section id="lambdas">
-<h2 id="lambdas"><a class="toc-backref" href="#id4" role="doc-backlink">Lambdas</a><a class="headerlink" href="#lambdas" title="Link to this heading">¶</a></h2>
+<h2 id="lambdas">Lambdas<a class="headerlink" href="#lambdas" title="Link to this heading">¶</a></h2>
 <p>When writing lambdas, use explicit captures as much as possible. Avoid using <code class="docutils literal notranslate"><span class="pre">[=]</span></code> or <code class="docutils literal notranslate"><span class="pre">[?]</span></code> for the capture list.</p>
 </section>
 <section id="indentation">
-<h2 id="indentation"><a class="toc-backref" href="#id5" role="doc-backlink">Indentation</a><a class="headerlink" href="#indentation" title="Link to this heading">¶</a></h2>
+<h2 id="indentation">Indentation<a class="headerlink" href="#indentation" title="Link to this heading">¶</a></h2>
 <p>We use 4-space indentation, same as <a class="reference external" href="https://webkit.org/code-style-guidelines/#indentation-no-tabs">WebKit</a>.</p>
 </section>
 <section id="line-breaking">
-<h2 id="line-breaking"><a class="toc-backref" href="#id6" role="doc-backlink">Line breaking</a><a class="headerlink" href="#line-breaking" title="Link to this heading">¶</a></h2>
+<h2 id="line-breaking">Line breaking<a class="headerlink" href="#line-breaking" title="Link to this heading">¶</a></h2>
 <p>The formatting tool will automatically wrap lines at 120 characters.</p>
 </section>
 <section id="whitespace">
-<h2 id="whitespace"><a class="toc-backref" href="#id7" role="doc-backlink">Whitespace</a><a class="headerlink" href="#whitespace" title="Link to this heading">¶</a></h2>
+<h2 id="whitespace">Whitespace<a class="headerlink" href="#whitespace" title="Link to this heading">¶</a></h2>
 <p>Mostly follows <a class="reference external" href="https://webkit.org/code-style-guidelines/#spacing">WebKit</a> guidelines but with a few differences. We always attach the opening brace to the same line as the control statement.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// correct</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -558,7 +545,7 @@ Note on revision history: it appears changing the wiki's name obscures the wiki'
 </div>
 </section>
 <section id="disabling-automatic-formatting">
-<h2 id="disabling-automatic-formatting"><a class="toc-backref" href="#id8" role="doc-backlink">Disabling automatic formatting</a><a class="headerlink" href="#disabling-automatic-formatting" title="Link to this heading">¶</a></h2>
+<h2 id="disabling-automatic-formatting">Disabling automatic formatting<a class="headerlink" href="#disabling-automatic-formatting" title="Link to this heading">¶</a></h2>
 <p>There may be some situations when the automatic formatting applied to all C++ code will substantially break readability or utility of a certain piece of code. Subject to approval by the code reviewer, it is possible to <a class="reference external" href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html#disabling-formatting-on-a-piece-of-code">disable automatic formatting on code</a> by using special comments.</p>
 </section>
 </section>
