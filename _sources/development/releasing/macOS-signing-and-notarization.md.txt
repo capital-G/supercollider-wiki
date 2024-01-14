@@ -1,10 +1,5 @@
 # macOS signing and notarization
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 First, you’ll need a signing cert. With Apple binaries, this means using a Developer account to create a Developer ID, and creating a signing cert with Keychain.
 
 ## Signing and notarizing a single plugin file

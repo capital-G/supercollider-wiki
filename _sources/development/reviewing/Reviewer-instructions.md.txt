@@ -1,11 +1,6 @@
 (reviewing)=
 # Reviewer instructions
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## The big picture
 
 Code reviews are essential to the development of quality software, but they can also be frustrating and time-consuming. There are a lot of great resources online on the philosophy, techniques, and best practices for code reviews. To get you started, here are some links worth checking out:

@@ -55,14 +55,14 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="How to contribute" href="How-to-contribute-to-SuperCollider.html" />
-    <link rel="prev" title="Contributing help files, Tutorials and other SCDocs" href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" />
+    <link rel="next" title="Rebasing a PR" href="Rebasing-a-PR.html" />
+    <link rel="prev" title="Reporting bugs, issues and feature requests" href="Reporting-bugs%2C-issues%2C-feature-requests.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> Creating Pull Requests (PRs) </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -186,10 +186,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -198,7 +198,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -220,14 +220,14 @@
     <li class="md-nav__item">
     
     
-      <a href="Commit-message-format.html" class="md-nav__link">Commit message format</a>
+      <a href="How-to-contribute-to-SuperCollider.html" class="md-nav__link">How to contribute</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" class="md-nav__link">Contributing help files, Tutorials and other SCDocs</a>
+      <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" class="md-nav__link">Reporting bugs, issues and feature requests</a>
       
     
     </li>
@@ -296,21 +296,14 @@
     <li class="md-nav__item">
     
     
-      <a href="How-to-contribute-to-SuperCollider.html" class="md-nav__link">How to contribute</a>
+      <a href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" class="md-nav__link">Contributing help files, Tutorials and other SCDocs</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="Rebasing-a-PR.html" class="md-nav__link">Rebasing a PR</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" class="md-nav__link">Reporting bugs, issues and feature requests</a>
+      <a href="../../faq/changes-to-sc.html" class="md-nav__link">Changes</a>
       
     
     </li></ul>
@@ -326,14 +319,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
+      <a href="../style/index.html" class="md-nav__link">Code style guidelines</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../UGen-Quality-Standards.html" class="md-nav__link">UGen-Quality standards</a>
+      <a href="../more.html" class="md-nav__link">More</a>
       
     
     </li></ul>
@@ -439,36 +432,27 @@
             
   <section id="creating-pull-requests-prs">
 <span id="creating-pull-requests"></span><h1 id="contributing-common-creating-pull-requests--page-root">Creating Pull Requests (PRs)<a class="headerlink" href="#contributing-common-creating-pull-requests--page-root" title="Link to this heading">¶</a></h1>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#at-a-glance-pr-checklist" id="id2">At-a-glance PR checklist</a></p></li>
-<li><p><a class="reference internal" href="#before-making-changes" id="id3">Before making changes</a></p></li>
-<li><p><a class="reference internal" href="#branching-model" id="id4">Branching model</a></p></li>
-<li><p><a class="reference internal" href="#creating-a-topic-branch" id="id5">Creating a topic branch</a></p></li>
-<li><p><a class="reference internal" href="#making-changes-managing-commits" id="id6">Making changes, managing commits</a></p></li>
-<li><p><a class="reference internal" href="#git-commit-message-format" id="id7">Git commit message format</a></p>
+<div class="toctree-wrapper compound">
 <ul>
-<li><p><a class="reference internal" href="#title" id="id8">Title</a></p></li>
-<li><p><a class="reference internal" href="#body" id="id9">Body</a></p></li>
+<li class="toctree-l1"><a class="reference internal" href="Rebasing-a-PR.html">Rebasing a PR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Rebasing-a-PR.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rebasing-a-PR.html#rebasing-making-a-clean-merge">Rebasing: making a clean merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rebasing-a-PR.html#rebasing-with-a-branch-other-than-develop">Rebasing with a branch other than <code class="docutils literal notranslate"><span class="pre">develop</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rebasing-a-PR.html#merge-conflicts">Merge conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rebasing-a-PR.html#completing-a-rebase">Completing a rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rebasing-a-PR.html#rearranging-combining-commits-or-editing-commit-messages-with-rebase">Rearranging, combining commits or editing commit messages with <code class="docutils literal notranslate"><span class="pre">rebase</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Rebasing-a-PR.html#removing-commits-with-rebase">Removing commits with <code class="docutils literal notranslate"><span class="pre">rebase</span></code></a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#skipping-ci" id="id10">Skipping CI</a></p></li>
-<li><p><a class="reference internal" href="#submitting-your-pull-request" id="id11">Submitting your Pull Request</a></p></li>
-<li><p><a class="reference internal" href="#merge-conflicts-and-rebasing" id="id12">Merge conflicts and rebasing</a></p></li>
-<li><p><a class="reference internal" href="#how-a-pr-moves-from-develop-to-release-3-x-x" id="id13">How a PR moves from <code class="docutils literal notranslate"><span class="pre">develop</span></code> to release <code class="docutils literal notranslate"><span class="pre">3.x.x</span></code></a></p></li>
-<li><p><a class="reference internal" href="#how-your-pr-fits-into-the-release-cycle" id="id14">How your PR fits into the release cycle</a></p>
-<ul>
-<li><p><a class="reference internal" href="#milestone-tags" id="id15">Milestone tags</a></p></li>
-<li><p><a class="reference internal" href="#turnaround-time" id="id16">Turnaround time</a></p></li>
+<li class="toctree-l1"><a class="reference internal" href="Commit-message-format.html">Commit message format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Commit-message-format.html#title">Title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Commit-message-format.html#body">Body</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#additional-resources" id="id17">Additional resources</a></p></li>
-<li><p><a class="reference internal" href="#a-note-about-sc3-plugins" id="id18">A note about <code class="docutils literal notranslate"><span class="pre">sc3-plugins</span></code></a></p></li>
 </ul>
-</nav>
+</div>
 <section id="at-a-glance-pr-checklist">
-<h2 id="at-a-glance-pr-checklist"><a class="toc-backref" href="#id2" role="doc-backlink">At-a-glance PR checklist</a><a class="headerlink" href="#at-a-glance-pr-checklist" title="Link to this heading">¶</a></h2>
+<h2 id="at-a-glance-pr-checklist">At-a-glance PR checklist<a class="headerlink" href="#at-a-glance-pr-checklist" title="Link to this heading">¶</a></h2>
 <p>The review of PRs is sped up tremendously by concise and well-structured PRs.</p>
 <ul class="simple">
 <li><p>[ ]  <strong>Make a clean commit history.</strong> The scope of your changes should be legible in your commit history.</p></li>
@@ -484,7 +468,7 @@
 </div>
 </section>
 <section id="before-making-changes">
-<h2 id="before-making-changes"><a class="toc-backref" href="#id3" role="doc-backlink">Before making changes</a><a class="headerlink" href="#before-making-changes" title="Link to this heading">¶</a></h2>
+<h2 id="before-making-changes">Before making changes<a class="headerlink" href="#before-making-changes" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>If the changes are multifaceted or potentially contentious, consider whether it’s appropriate to first submit a <a class="reference external" href="https://github.com/supercollider/rfcs">Request for Comments (RFC)</a> to discuss different approaches, side effects, or the implementation details.</p></li>
 <li><p>See <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment">Setting Up Your Development Environment</a>, to make sure you have a working and updated fork of SuperCollider’s source code. Then you can create a fresh new branch for your contribution.</p></li>
@@ -492,12 +476,12 @@
 </ul>
 </section>
 <section id="branching-model">
-<h2 id="branching-model"><a class="toc-backref" href="#id4" role="doc-backlink">Branching model</a><a class="headerlink" href="#branching-model" title="Link to this heading">¶</a></h2>
+<h2 id="branching-model">Branching model<a class="headerlink" href="#branching-model" title="Link to this heading">¶</a></h2>
 <p>SuperCollider uses the <a class="reference external" href="https://nvie.com/posts/a-successful-git-branching-model/">git-flow</a> branching model. We use the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch for new features, deprecations, and breaking changes, and we use the current version’s <em>&lt;major&gt;.&lt;minor&gt;</em> branch (e.g. <code class="docutils literal notranslate"><span class="pre">3.12</span></code>) for bug fixes for the next patch release (e.g. <code class="docutils literal notranslate"><span class="pre">3.12.x</span></code>) that have no chance of breaking anything.</p>
 <p>Documentation changes might go into either branch, depending on the timing in the release cycle and which documents are being changed. If in doubt, use the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.</p>
 </section>
 <section id="creating-a-topic-branch">
-<h2 id="creating-a-topic-branch"><a class="toc-backref" href="#id5" role="doc-backlink">Creating a topic branch</a><a class="headerlink" href="#creating-a-topic-branch" title="Link to this heading">¶</a></h2>
+<h2 id="creating-a-topic-branch">Creating a topic branch<a class="headerlink" href="#creating-a-topic-branch" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Choose the branch</strong> you will use as the starting point for your changes. The simple answer is to <strong>use <code class="docutils literal notranslate"><span class="pre">develop</span></code></strong>.</p></li>
 </ol>
@@ -512,7 +496,7 @@
 <p>As time passes, make sure to keep your fork updated - see <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Setting-up-your-development-environment#2-Keep-your-fork-updated">updating your fork</a>.</p>
 </section>
 <section id="making-changes-managing-commits">
-<h2 id="making-changes-managing-commits"><a class="toc-backref" href="#id6" role="doc-backlink">Making changes, managing commits</a><a class="headerlink" href="#making-changes-managing-commits" title="Link to this heading">¶</a></h2>
+<h2 id="making-changes-managing-commits">Making changes, managing commits<a class="headerlink" href="#making-changes-managing-commits" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Make commits of logical units.</p></li>
 <li><p>Please refer to the code Style Guides. Note that code style, such as whitespace conventions, depend on the language.</p></li>
@@ -524,7 +508,7 @@ See the following <a class="reference internal" href="#git-commit-message-format
 </ul>
 </section>
 <section id="git-commit-message-format">
-<span id="id1"></span><h2 id="git-commit-message-format"><a class="toc-backref" href="#id7" role="doc-backlink">Git commit message format</a><a class="headerlink" href="#git-commit-message-format" title="Link to this heading">¶</a></h2>
+<span id="id1"></span><h2 id="git-commit-message-format">Git commit message format<a class="headerlink" href="#git-commit-message-format" title="Link to this heading">¶</a></h2>
 <p>Git commit messages should consists of a one-line title, followed by an empty line, followed by the message body:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>title
 
@@ -535,7 +519,7 @@ third line of body
 </div>
 <p>This makes the message most expressive and comprehensible, and supports many git functions and graphical clients that treat the first line differently than the rest of the message.</p>
 <section id="title">
-<h3 id="title"><a class="toc-backref" href="#id8" role="doc-backlink">Title</a><a class="headerlink" href="#title" title="Link to this heading">¶</a></h3>
+<h3 id="title">Title<a class="headerlink" href="#title" title="Link to this heading">¶</a></h3>
 <p>Message titles should have the following form:</p>
 <p><code class="docutils literal notranslate"><span class="pre">component:</span> <span class="pre">sub-component:</span> <span class="pre">short</span> <span class="pre">description</span> <span class="pre">of</span> <span class="pre">changes</span></code></p>
 <p>Great titles are short (70 characters or less), so as to fit in one line in most constrained circumstances.</p>
@@ -550,7 +534,7 @@ third line of body
 <p>[<em><strong>TODO:</strong></em> add a list of component tags]</p>
 </section>
 <section id="body">
-<h3 id="body"><a class="toc-backref" href="#id9" role="doc-backlink">Body</a><a class="headerlink" href="#body" title="Link to this heading">¶</a></h3>
+<h3 id="body">Body<a class="headerlink" href="#body" title="Link to this heading">¶</a></h3>
 <p>The message body should describe the changes in detail and explain motivations behind them. The body is not always needed if the changes are few, and the title explains them enough.</p>
 <p>The body should have <em>manual</em> line breaks at around 70 character.</p>
 <p>A full example:</p>
@@ -569,11 +553,11 @@ the component being changed. The body describes the behavior without the patch, 
 </section>
 </section>
 <section id="skipping-ci">
-<h2 id="skipping-ci"><a class="toc-backref" href="#id10" role="doc-backlink">Skipping CI</a><a class="headerlink" href="#skipping-ci" title="Link to this heading">¶</a></h2>
+<h2 id="skipping-ci">Skipping CI<a class="headerlink" href="#skipping-ci" title="Link to this heading">¶</a></h2>
 <p>We have continuous integration (CI) provided by AppVeyor (Windows) and Travis (Linux, macOS). If a commit changes <em>only</em> non-schelp documentation, <em>without</em> renaming, adding, or removing files, you may want to consider adding <code class="docutils literal notranslate"><span class="pre">[skip</span> <span class="pre">ci]</span></code> to the commit message so it does not waste CI resources. See https://github.com/supercollider/supercollider/wiki/Continuous-Integration—Travis-&amp;-Appveyor#skip-ci.</p>
 </section>
 <section id="submitting-your-pull-request">
-<h2 id="submitting-your-pull-request"><a class="toc-backref" href="#id11" role="doc-backlink">Submitting your Pull Request</a><a class="headerlink" href="#submitting-your-pull-request" title="Link to this heading">¶</a></h2>
+<h2 id="submitting-your-pull-request">Submitting your Pull Request<a class="headerlink" href="#submitting-your-pull-request" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Push your changes to a topic branch in your fork of the SuperCollider repository. If you are working locally, do this with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">topic/branch-description</span></code>. <code class="docutils literal notranslate"><span class="pre">origin</span></code> should be the remote of your fork; check with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code>.</p></li>
 <li><p>Submit a pull request to the SuperCollider repository.</p></li>
@@ -582,39 +566,39 @@ the component being changed. The body describes the behavior without the patch, 
 </ul>
 </section>
 <section id="merge-conflicts-and-rebasing">
-<h2 id="merge-conflicts-and-rebasing"><a class="toc-backref" href="#id12" role="doc-backlink">Merge conflicts and rebasing</a><a class="headerlink" href="#merge-conflicts-and-rebasing" title="Link to this heading">¶</a></h2>
+<h2 id="merge-conflicts-and-rebasing">Merge conflicts and rebasing<a class="headerlink" href="#merge-conflicts-and-rebasing" title="Link to this heading">¶</a></h2>
 <!-- Note: This introduction is mirrored from the introductory statement of Rebasing a PR page, update both if changing* -->
 <p>In the SuperCollider project, the accepted way to resolve merge conflicts in a pull request is by first <em>rebasing</em> onto the target branch, resolving any merge conflicts that arise during that rebase process, before merging of your PR into the target branch.</p>
 <p>To avoid merge conflicts between your work branch and any new changes added to the upstream <code class="docutils literal notranslate"><span class="pre">develop</span></code> since you began work on your branch, you should update your local <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch to reflect the new upstream changes, then <strong><strong><strong>rebase</strong></strong></strong> your work branch <strong><strong>onto</strong></strong> <code class="docutils literal notranslate"><span class="pre">develop</span></code> so that your changes are added (”replayed”) <em><strong><strong>after</strong></strong></em> the latest upstream changes to <code class="docutils literal notranslate"><span class="pre">develop</span></code>.</p>
 <p>Details on rebasing, including reordering, combining, or removing commits, are found in the <a class="reference internal" href="Rebasing-a-PR.html#rebasing-a-pr"><span class="std std-ref">Rebasing a PR</span></a> wiki.</p>
 </section>
 <section id="how-a-pr-moves-from-develop-to-release-3-x-x">
-<h2 id="how-a-pr-moves-from-develop-to-release-3-x-x"><a class="toc-backref" href="#id13" role="doc-backlink">How a PR moves from <code class="docutils literal notranslate"><span class="pre">develop</span></code> to release <code class="docutils literal notranslate"><span class="pre">3.x.x</span></code></a><a class="headerlink" href="#how-a-pr-moves-from-develop-to-release-3-x-x" title="Link to this heading">¶</a></h2>
+<h2 id="how-a-pr-moves-from-develop-to-release-3-x-x">How a PR moves from <code class="docutils literal notranslate"><span class="pre">develop</span></code> to release <code class="docutils literal notranslate"><span class="pre">3.x.x</span></code><a class="headerlink" href="#how-a-pr-moves-from-develop-to-release-3-x-x" title="Link to this heading">¶</a></h2>
 <p>Your PR will be cherry-picked (or, more commonly, rebased) from <code class="docutils literal notranslate"><span class="pre">develop</span></code> onto a release branch, <code class="docutils literal notranslate"><span class="pre">3.x.x</span></code>, according to the nature of the changes introduced and where we are in the release cycle.</p>
 <p>As someone who contributes pull requests, you don’t necessarily need to do the cherrypicking. The release manager or other Trusted Reviewer will often step up to do this. If you think something should be cherrypicked but hasn’t, you’re free to ping them. If you have familiarized yourself with the process, it’s also OK for you to do it yourself.</p>
 </section>
 <section id="how-your-pr-fits-into-the-release-cycle">
-<h2 id="how-your-pr-fits-into-the-release-cycle"><a class="toc-backref" href="#id14" role="doc-backlink">How your PR fits into the release cycle</a><a class="headerlink" href="#how-your-pr-fits-into-the-release-cycle" title="Link to this heading">¶</a></h2>
+<h2 id="how-your-pr-fits-into-the-release-cycle">How your PR fits into the release cycle<a class="headerlink" href="#how-your-pr-fits-into-the-release-cycle" title="Link to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../../development/releasing/index.html#releasing"><span class="std std-ref">Releasing</span></a> for detailed information on how SC milestones and versions branches are managed.</p>
 <section id="milestone-tags">
-<h3 id="milestone-tags"><a class="toc-backref" href="#id15" role="doc-backlink">Milestone tags</a><a class="headerlink" href="#milestone-tags" title="Link to this heading">¶</a></h3>
+<h3 id="milestone-tags">Milestone tags<a class="headerlink" href="#milestone-tags" title="Link to this heading">¶</a></h3>
 <p>The Reviewer will assign a release milestone to your PR, which determines where in the release cycle your changes will be merged into the main distribution.</p>
 <p>Milestones help to prioritize your PR as well as identify where it fits most appropriately in the release cycle, given the scope of the change and how it relates other changes already positioned in the release cycle.</p>
 </section>
 <section id="turnaround-time">
-<h3 id="turnaround-time"><a class="toc-backref" href="#id16" role="doc-backlink">Turnaround time</a><a class="headerlink" href="#turnaround-time" title="Link to this heading">¶</a></h3>
+<h3 id="turnaround-time">Turnaround time<a class="headerlink" href="#turnaround-time" title="Link to this heading">¶</a></h3>
 <p>The PR process varies depending on a number of issues: the size and complexity of the proposed change, Reviewer availability, responsiveness of the Author, to name a few. Everyone’s time is valuable and we make best efforts to move the project forward.</p>
 <p><strong>You’re an active part of the process!</strong> If you find that your PR has been sitting in waiting for a long time, your PR hasn’t been intentionally ignored. Feel free to ping the PR Conversation to draw attention back to your PR.   Reviewers’ availability fluctuates. There are also guidelines for Reviewers to assist in keeping review moving forward. For example, if a Reviewer becomes unavailable to follow through with your PR, another may be assigned to it to see it through.</p>
 </section>
 </section>
 <section id="additional-resources">
-<h2 id="additional-resources"><a class="toc-backref" href="#id17" role="doc-backlink">Additional resources</a><a class="headerlink" href="#additional-resources" title="Link to this heading">¶</a></h2>
+<h2 id="additional-resources">Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading">¶</a></h2>
 <p>More information can be found on the <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/git-workflow-and-guidelines">git workflow wiki page</a>.</p>
 <p>You can also refer to Github’s guide to <a class="reference external" href="https://help.github.com/articles/fork-a-repo/">forking a repository</a> and to <a class="reference external" href="https://help.github.com/articles/syncing-a-fork/">syncing a fork</a>.</p>
 <p>Instructions on adding translation files for the IDE can be found in the <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Developer-reference">Developer Reference</a> (soon to be moved, please update that link when it does move…).</p>
 </section>
 <section id="a-note-about-sc3-plugins">
-<h2 id="a-note-about-sc3-plugins"><a class="toc-backref" href="#id18" role="doc-backlink">A note about <code class="docutils literal notranslate"><span class="pre">sc3-plugins</span></code></a><a class="headerlink" href="#a-note-about-sc3-plugins" title="Link to this heading">¶</a></h2>
+<h2 id="a-note-about-sc3-plugins">A note about <code class="docutils literal notranslate"><span class="pre">sc3-plugins</span></code><a class="headerlink" href="#a-note-about-sc3-plugins" title="Link to this heading">¶</a></h2>
 <p><em>New additions to the <code class="docutils literal notranslate"><span class="pre">sc3-plugins</span></code> project are currently suspended, pending a revision of third-party plugin distribution.</em></p>
 <p>The <strong>merge process</strong> described above is slightly different for the <a class="reference external" href="https://github.com/supercollider/sc3-plugins">sc3-plugins project</a>.</p>
 <p>See <a class="reference external" href="https://github.com/supercollider/supercollider/wiki/Releasing-Cycle-and-Process#a-note-about-sc3-plugins">Releasing: A note about <code class="docutils literal notranslate"><span class="pre">sc3-plugins</span></code></a> for details.</p>
@@ -631,7 +615,7 @@ the component being changed. The body describes the behavior without the patch, 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" title="Contributing help files, Tutorials and other SCDocs"
+            <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" title="Reporting bugs, issues and feature requests"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -640,17 +624,17 @@ the component being changed. The body describes the behavior without the patch, 
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Contributing help files, Tutorials and other SCDocs </span>
+                      class="md-footer-nav__direction"> "Previous" </span> Reporting bugs, issues and feature requests </span>
               </div>
             </a>
           
           
-            <a href="How-to-contribute-to-SuperCollider.html" title="How to contribute"
+            <a href="Rebasing-a-PR.html" title="Rebasing a PR"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> How to contribute </span>
+                class="md-footer-nav__direction"> "Next" </span> Rebasing a PR </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

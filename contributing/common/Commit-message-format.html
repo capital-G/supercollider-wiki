@@ -56,13 +56,13 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Contributing help files, Tutorials and other SCDocs" href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" />
-    <link rel="prev" title="Common references" href="index.html" />
+    <link rel="prev" title="Rebasing a PR" href="Rebasing-a-PR.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> Commit message format </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -169,6 +169,7 @@
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Contributing</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Common references</a></li>
+          <li class="md-tabs__item"><a href="Creating-pull-requests.html" class="md-tabs__link">Creating Pull Requests (PRs)</a></li>
       </ul>
     </div>
   </nav>
@@ -186,10 +187,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -198,7 +199,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -220,35 +221,14 @@
     <li class="md-nav__item">
     
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Commit message format </label>
-    
-      <a href="#" class="md-nav__link md-nav__link--active">Commit message format</a>
-      
-        
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">"Contents"</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#contributing-common-commit-message-format--page-root" class="md-nav__link">Commit message format</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#title" class="md-nav__link">Title</a>
-        </li>
-        <li class="md-nav__item"><a href="#body" class="md-nav__link">Body</a>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/contributing/common/Commit-message-format.md.txt">Show Source</a> </li>
-
-  </ul>
-</nav>
+      <a href="How-to-contribute-to-SuperCollider.html" class="md-nav__link">How to contribute</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" class="md-nav__link">Contributing help files, Tutorials and other SCDocs</a>
+      <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" class="md-nav__link">Reporting bugs, issues and feature requests</a>
       
     
     </li>
@@ -262,21 +242,14 @@
     <li class="md-nav__item">
     
     
-      <a href="How-to-contribute-to-SuperCollider.html" class="md-nav__link">How to contribute</a>
+      <a href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" class="md-nav__link">Contributing help files, Tutorials and other SCDocs</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="Rebasing-a-PR.html" class="md-nav__link">Rebasing a PR</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" class="md-nav__link">Reporting bugs, issues and feature requests</a>
+      <a href="../../faq/changes-to-sc.html" class="md-nav__link">Changes</a>
       
     
     </li></ul>
@@ -292,14 +265,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
+      <a href="../style/index.html" class="md-nav__link">Code style guidelines</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../UGen-Quality-Standards.html" class="md-nav__link">UGen-Quality standards</a>
+      <a href="../more.html" class="md-nav__link">More</a>
       
     
     </li></ul>
@@ -424,7 +397,7 @@ why this is a problem, and how the patch fixes the problem when applied.
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="index.html" title="Common references"
+            <a href="Rebasing-a-PR.html" title="Rebasing a PR"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -433,7 +406,7 @@ why this is a problem, and how the patch fixes the problem when applied.
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Common references </span>
+                      class="md-footer-nav__direction"> "Previous" </span> Rebasing a PR </span>
               </div>
             </a>
           

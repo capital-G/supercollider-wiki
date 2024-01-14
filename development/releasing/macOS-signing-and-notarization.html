@@ -55,14 +55,14 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Reviewing" href="../reviewing/index.html" />
-    <link rel="prev" title="Releasing cycle and process" href="Releasing-cycle-and-process.html" />
+    <link rel="next" title="Project structure" href="../project-structure/index.html" />
+    <link rel="prev" title="notes for the 3.13 release, to be included in Changelog.md" href="3.13-Changelog-notes.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> macOS signing and notarization </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -186,10 +186,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -198,7 +198,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -222,42 +222,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../git/index.html" class="md-nav__link">Git</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../meetings/index.html" class="md-nav__link">Meetings</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../misc/index.html" class="md-nav__link">Miscellaneous dev notes</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../project-structure/index.html" class="md-nav__link">Project structure</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../style/index.html" class="md-nav__link">Code style guidelines</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../platforms/index.html" class="md-nav__link">Plattforms</a>
+      <a href="../reviewing/index.html" class="md-nav__link">Reviewing</a>
       
     
     </li>
@@ -269,14 +234,14 @@
     <li class="md-nav__item">
     
     
-      <a href="3.13-Changelog-notes.html" class="md-nav__link">notes for the 3.13 release, to be included in Changelog.md</a>
+      <a href="Releasing-cycle-and-process.html" class="md-nav__link">Releasing cycle and process</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="Releasing-cycle-and-process.html" class="md-nav__link">Releasing cycle and process</a>
+      <a href="3.13-Changelog-notes.html" class="md-nav__link">notes for the 3.13 release, to be included in Changelog.md</a>
       
     
     </li>
@@ -315,7 +280,35 @@
     <li class="md-nav__item">
     
     
-      <a href="../reviewing/index.html" class="md-nav__link">Reviewing</a>
+      <a href="../project-structure/index.html" class="md-nav__link">Project structure</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../contributing/style/index.html" class="md-nav__link">Code style guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../meetings/index.html" class="md-nav__link">Meetings</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../misc/index.html" class="md-nav__link">Miscellaneous dev notes</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../platforms/index.html" class="md-nav__link">Plattforms</a>
       
     
     </li></ul>
@@ -382,24 +375,16 @@
             
   <section id="macos-signing-and-notarization">
 <h1 id="development-releasing-macos-signing-and-notarization--page-root">macOS signing and notarization<a class="headerlink" href="#development-releasing-macos-signing-and-notarization--page-root" title="Link to this heading">¶</a></h1>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#signing-and-notarizing-a-single-plugin-file" id="id1">Signing and notarizing a single plugin file</a></p></li>
-<li><p><a class="reference internal" href="#signing-and-notarizing-supercollider" id="id2">Signing and notarizing SuperCollider</a></p></li>
-<li><p><a class="reference internal" href="#entitlement-files" id="id3">Entitlement files</a></p></li>
-</ul>
-</nav>
 <p>First, you’ll need a signing cert. With Apple binaries, this means using a Developer account to create a Developer ID, and creating a signing cert with Keychain.</p>
 <section id="signing-and-notarizing-a-single-plugin-file">
-<h2 id="signing-and-notarizing-a-single-plugin-file"><a class="toc-backref" href="#id1" role="doc-backlink">Signing and notarizing a single plugin file</a><a class="headerlink" href="#signing-and-notarizing-a-single-plugin-file" title="Link to this heading">¶</a></h2>
+<h2 id="signing-and-notarizing-a-single-plugin-file">Signing and notarizing a single plugin file<a class="headerlink" href="#signing-and-notarizing-a-single-plugin-file" title="Link to this heading">¶</a></h2>
 <p>To sign a single binary for a Plugin.scx file, you just need to sign the scx file itself, using the entitlements that come in the SuperCollider.app bundle. From Terminal, move into the SuperCollider directory (that contains SuperCollider.app), and use the command line below against your .scx binary. The last argument in the command is the path to your .scx file, and you’ll need to replace the signing identity with what you have stored in your keychain:</p>
 <p><code class="docutils literal notranslate"><span class="pre">codesign</span> <span class="pre">--deep</span> <span class="pre">--force</span> <span class="pre">--verify</span> <span class="pre">--verbose</span> <span class="pre">--timestamp</span> <span class="pre">--entitlements</span> <span class="pre">SuperCollider.app/Contents/entitlements.plist</span> <span class="pre">--sign</span> <span class="pre">“***</span> <span class="pre">your</span> <span class="pre">signing</span> <span class="pre">ID</span> <span class="pre">***”</span> <span class="pre">--options</span> <span class="pre">runtime</span> <span class="pre">***path</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">plugin***</span></code></p>
 <p>As an example, this would sign a plugin called MyUgen.scx on my Desktop</p>
 <p><code class="docutils literal notranslate"><span class="pre">codesign</span> <span class="pre">--deep</span> <span class="pre">--force</span> <span class="pre">--verify</span> <span class="pre">--verbose</span> <span class="pre">--timestamp</span> <span class="pre">--entitlements</span> <span class="pre">SuperCollider.app/Contents/entitlements.plist</span> <span class="pre">--sign</span> <span class="pre">"Developer</span> <span class="pre">ID</span> <span class="pre">Application:</span> <span class="pre">Joshua</span> <span class="pre">Parmenter"</span> <span class="pre">--options</span> <span class="pre">runtime</span> <span class="pre">~/Desktop/MyUgen.scx</span></code></p>
 </section>
 <section id="signing-and-notarizing-supercollider">
-<h2 id="signing-and-notarizing-supercollider"><a class="toc-backref" href="#id2" role="doc-backlink">Signing and notarizing SuperCollider</a><a class="headerlink" href="#signing-and-notarizing-supercollider" title="Link to this heading">¶</a></h2>
+<h2 id="signing-and-notarizing-supercollider">Signing and notarizing SuperCollider<a class="headerlink" href="#signing-and-notarizing-supercollider" title="Link to this heading">¶</a></h2>
 <p>The process for signing and notarizing SuperCollider is complicated by our usage of Qt binaries, interprocess communications and binary plugins. On a given SuperCollider binary .app bundle, the following commands are used to import entitlements, sign everything (ORDER MATTERS!), zip up the .app bundle, upload to Apple for notarization, stapling the notarization upon success, then finally rezipping the package and singing the .zip file at the end so the download won’t freak out your computer.</p>
 <p>I’ll use my signing identity as the example below, but when I get to the notarization step I will remove my personal signing info (a user name and app specific password) for security. The notarization is asynchronous, and can take anywhere from a couple minutes (after upload) to a couple hours to complete.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>path/to/SuperCollider
@@ -459,7 +444,7 @@ codesign<span class="w"> </span>--deep<span class="w"> </span>--force<span class
 </div>
 </section>
 <section id="entitlement-files">
-<h2 id="entitlement-files"><a class="toc-backref" href="#id3" role="doc-backlink">Entitlement files</a><a class="headerlink" href="#entitlement-files" title="Link to this heading">¶</a></h2>
+<h2 id="entitlement-files">Entitlement files<a class="headerlink" href="#entitlement-files" title="Link to this heading">¶</a></h2>
 <p>Save this as QtWebEngineProcess.entitlements</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
@@ -501,7 +486,7 @@ codesign<span class="w"> </span>--deep<span class="w"> </span>--force<span class
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="Releasing-cycle-and-process.html" title="Releasing cycle and process"
+            <a href="3.13-Changelog-notes.html" title="notes for the 3.13 release, to be included in Changelog.md"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -510,17 +495,17 @@ codesign<span class="w"> </span>--deep<span class="w"> </span>--force<span class
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Releasing cycle and process </span>
+                      class="md-footer-nav__direction"> "Previous" </span> notes for the 3.13 release, to be included in Changelog.md </span>
               </div>
             </a>
           
           
-            <a href="../reviewing/index.html" title="Reviewing"
+            <a href="../project-structure/index.html" title="Project structure"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Reviewing </span>
+                class="md-footer-nav__direction"> "Next" </span> Project structure </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

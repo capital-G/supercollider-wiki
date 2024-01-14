@@ -55,14 +55,14 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Creating Pull Requests (PRs)" href="Creating-pull-requests.html" />
+    <link rel="next" title="Changes" href="../../faq/changes-to-sc.html" />
     <link rel="prev" title="Commit message format" href="Commit-message-format.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> Contributing help files, Tutorials and other SCDocs </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -186,10 +186,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -198,7 +198,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -220,7 +220,21 @@
     <li class="md-nav__item">
     
     
-      <a href="Commit-message-format.html" class="md-nav__link">Commit message format</a>
+      <a href="How-to-contribute-to-SuperCollider.html" class="md-nav__link">How to contribute</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" class="md-nav__link">Reporting bugs, issues and feature requests</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Creating-pull-requests.html" class="md-nav__link">Creating Pull Requests (PRs)</a>
       
     
     </li>
@@ -263,28 +277,7 @@
     <li class="md-nav__item">
     
     
-      <a href="Creating-pull-requests.html" class="md-nav__link">Creating Pull Requests (PRs)</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="How-to-contribute-to-SuperCollider.html" class="md-nav__link">How to contribute</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="Rebasing-a-PR.html" class="md-nav__link">Rebasing a PR</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" class="md-nav__link">Reporting bugs, issues and feature requests</a>
+      <a href="../../faq/changes-to-sc.html" class="md-nav__link">Changes</a>
       
     
     </li></ul>
@@ -300,14 +293,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
+      <a href="../style/index.html" class="md-nav__link">Code style guidelines</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../UGen-Quality-Standards.html" class="md-nav__link">UGen-Quality standards</a>
+      <a href="../more.html" class="md-nav__link">More</a>
       
     
     </li></ul>
@@ -387,30 +380,19 @@
             
   <section id="contributing-help-files-tutorials-and-other-scdocs">
 <h1 id="contributing-common-contributing-help-files-tutorials-and-other-scdocs--page-root">Contributing help files, Tutorials and other SCDocs<a class="headerlink" href="#contributing-common-contributing-help-files-tutorials-and-other-scdocs--page-root" title="Link to this heading">¶</a></h1>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#contributing-documentation-changes" id="id3">Contributing documentation changes</a></p></li>
-<li><p><a class="reference internal" href="#setting-up-your-development-environment" id="id4">Setting up your development environment</a></p></li>
-<li><p><a class="reference internal" href="#making-a-documentation-change" id="id5">Making a documentation change</a></p></li>
-<li><p><a class="reference internal" href="#publishing-your-changes" id="id6">Publishing your changes</a></p></li>
-<li><p><a class="reference internal" href="#your-pull-request-after-you-ve-published-it" id="id7">Your Pull Request, after you’ve published it</a></p></li>
-<li><p><a class="reference internal" href="#id2" id="id8">Previewing your changes</a></p></li>
-</ul>
-</nav>
 <section id="contributing-documentation-changes">
-<span id="id1"></span><h2 id="contributing-documentation-changes"><a class="toc-backref" href="#id3" role="doc-backlink">Contributing documentation changes</a><a class="headerlink" href="#contributing-documentation-changes" title="Link to this heading">¶</a></h2>
+<span id="id1"></span><h2 id="contributing-documentation-changes">Contributing documentation changes<a class="headerlink" href="#contributing-documentation-changes" title="Link to this heading">¶</a></h2>
 <p>This document is aimed at helping new contributors, whose first contribution is perhaps a small change in SuperCollider’s Help files. For a more involved workflow, aimed at more experienced contributors, see <a class="reference internal" href="#previewing-your-changes"><span class="std std-ref">below</span></a>.</p>
 <p>Eli Fieldsteel made an excellent <a class="reference external" href="https://www.youtube.com/watch?v=CbIwWsGl-zc">video tutorial</a>, especially directed to beginners, that walks through the whole process of fixing a typo in a Help file, from installing git to submitting the changes.</p>
 <p>Contributing documentation needs the same setup as any other change to the source code. However, for small documentation changes, i.e. everything that doesn’t require you to see a preview (e.g. typos, punctuation, extra repetitions), building SuperCollider is not needed, and you don’t need any extra developer tool apart from a text editor and git.</p>
 <p>You’ll need to setup your fork of SuperCollider, make your changes and open a Pull Request</p>
 </section>
 <section id="setting-up-your-development-environment">
-<h2 id="setting-up-your-development-environment"><a class="toc-backref" href="#id4" role="doc-backlink">Setting up your development environment</a><a class="headerlink" href="#setting-up-your-development-environment" title="Link to this heading">¶</a></h2>
+<h2 id="setting-up-your-development-environment">Setting up your development environment<a class="headerlink" href="#setting-up-your-development-environment" title="Link to this heading">¶</a></h2>
 <p>First step is to get your own updated working copy of the source code, called a fork. If you don’t have one already, please see <a class="reference internal" href="../workflow/Setting-up-your-development-environment.html#development-environment-setup"><span class="std std-ref">Setting Up Your Development Environment</span></a> for instructions to create your fork and to keep it updated.</p>
 </section>
 <section id="making-a-documentation-change">
-<h2 id="making-a-documentation-change"><a class="toc-backref" href="#id5" role="doc-backlink">Making a documentation change</a><a class="headerlink" href="#making-a-documentation-change" title="Link to this heading">¶</a></h2>
+<h2 id="making-a-documentation-change">Making a documentation change<a class="headerlink" href="#making-a-documentation-change" title="Link to this heading">¶</a></h2>
 <p>Once you have your fork cloned on your local machine, it’s a recommended practice to create a new branch for every contribution you make. It makes it easier to organize your changes, and later publish them as Pull Requests, ensuring every contribution is isolated and thus easier to review, discuss and merge.
 For this example, we are going to pretend to fix a typo in SinOsc’s help file, so we create a new branch and we decide to name it <code class="docutils literal notranslate"><span class="pre">topic/help-sinosc-typo</span></code>:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>topic/help-sinosc-typo
@@ -425,7 +407,7 @@ Alternatively, when you look at an Help file in the Help Browser (or online), yo
 <p>Once you’ve found it, open the .schelp file in a text editor and make the changes you want. When you are satisfied, you can proceed to publish your changes. Previewing them requires a few more steps, including building SuperCollider, see [below](#Previewing your changes) if you’re interested, but feel free to skip it if your changes are small and you don’t want to go through additional setup.</p>
 </section>
 <section id="publishing-your-changes">
-<span id="previewing-your-changes"></span><h2 id="publishing-your-changes"><a class="toc-backref" href="#id6" role="doc-backlink">Publishing your changes</a><a class="headerlink" href="#publishing-your-changes" title="Link to this heading">¶</a></h2>
+<span id="previewing-your-changes"></span><h2 id="publishing-your-changes">Publishing your changes<a class="headerlink" href="#publishing-your-changes" title="Link to this heading">¶</a></h2>
 <p>Now that you have modified one or more files, the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> will show a red entry for every modified files, calling them “Changes not staged for commit”. To publish your changes you first need to stage them, which means to add them to your next commit:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>add<span class="w"> </span>.
 </pre></div>
@@ -442,12 +424,12 @@ Alternatively, when you look at an Help file in the Help Browser (or online), yo
 <p>Now your branch contains a commit, which is constituted by your changes! The next part is to create a Pull Request, so that other developers will be able to see, discuss and approve your changes. GitHub offers a quick way to do this, if you go to (supercollider/supercollider)[https://github.com/supercollider/supercollider] shortly after making a change, it will prompt you to “Compare &amp; Pull Request” your newly modified branch. Follow the instructions to add a description to your Pull Request, mark it as a documentation change, check all the checkboxes (since doc changes requires no testing, you can mark that “Code is tested” and “All tests are passing”), and finally “Create Pull Request”.</p>
 </section>
 <section id="your-pull-request-after-you-ve-published-it">
-<h2 id="your-pull-request-after-you-ve-published-it"><a class="toc-backref" href="#id7" role="doc-backlink">Your Pull Request, after you’ve published it</a><a class="headerlink" href="#your-pull-request-after-you-ve-published-it" title="Link to this heading">¶</a></h2>
+<h2 id="your-pull-request-after-you-ve-published-it">Your Pull Request, after you’ve published it<a class="headerlink" href="#your-pull-request-after-you-ve-published-it" title="Link to this heading">¶</a></h2>
 <p>Congratulations on your Pull Requests, and thanks for taking the time to contribute to SuperCollider! After a Pull Request is published, it will be reviewed by at least one other developer and, if necessary, changes will be requested before it can be approved. You will receive notifications from GitHub whenever the discussion about your Pull Requests is updated (comments, requests for changes, approval).
 Finally, the Pull Request will be accepted and your changes included in SuperCollider. Thanks!</p>
 </section>
 <section id="id2">
-<h2 id="id2"><a class="toc-backref" href="#id8" role="doc-backlink">Previewing your changes</a><a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<h2 id="id2">Previewing your changes<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <p>To see your changes in ScIDE’s Help Browser, or any web browser, .schelp files need to be converted to HTML. Sclang, which does this conversion, needs to check with the class library, and all other help files, for broken links and undocumented methods.</p>
 <p>It is recommended to build sclang from source, to ensure it can compile the class library that comes with that source. Skipping this step is possible, but it could lead to sclang being unable to start, in case your sclang version is incompatible with the class library from your source.
 For instructions to build SuperCollider from source, please refer the specific README for your platform.</p>
@@ -487,12 +469,12 @@ cmake –build . –target doc</other></p>
             </a>
           
           
-            <a href="Creating-pull-requests.html" title="Creating Pull Requests (PRs)"
+            <a href="../../faq/changes-to-sc.html" title="Changes"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Creating Pull Requests (PRs) </span>
+                class="md-footer-nav__direction"> "Next" </span> Changes </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

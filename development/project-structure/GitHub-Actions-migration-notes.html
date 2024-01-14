@@ -55,14 +55,14 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="git cheat sheet" href="git-cheat-sheet.html" />
-    <link rel="prev" title="Git" href="index.html" />
+    <link rel="next" title="Project tasks organization" href="Project-tasks-organization.html" />
+    <link rel="prev" title="CI: Travis and AppVeyor" href="Continuous-integration%3A-Travis-and-Appveyor.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -75,7 +75,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#development/git/GitHub-Actions-migration-notes" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#development/project-structure/GitHub-Actions-migration-notes" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> GitHub actions and migration notes </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -168,7 +168,7 @@
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Development</a></li>
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Git</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Project structure</a></li>
       </ul>
     </div>
   </nav>
@@ -186,10 +186,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -198,7 +198,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -222,8 +222,43 @@
     <li class="md-nav__item">
     
     
-      <a href="index.html" class="md-nav__link">Git</a>
+      <a href="../reviewing/index.html" class="md-nav__link">Reviewing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../releasing/index.html" class="md-nav__link">Releasing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">Project structure</a>
       <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="Project-Structure.html" class="md-nav__link">Project directions</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Continuous-integration%3A-GitHub-Actions.html" class="md-nav__link">CI: GitHub Actions</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Continuous-integration%3A-Travis-and-Appveyor.html" class="md-nav__link">CI: Travis and AppVeyor</a>
+      
+    
+    </li>
     <li class="md-nav__item">
     
     
@@ -236,7 +271,7 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#development-git-github-actions-migration-notes--page-root" class="md-nav__link">GitHub actions and migration notes</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#development-project-structure-github-actions-migration-notes--page-root" class="md-nav__link">GitHub actions and migration notes</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#general-information" class="md-nav__link">General Information</a><nav class="md-nav">
               <ul class="md-nav__list">
@@ -255,7 +290,7 @@
             </nav>
         </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/development/git/GitHub-Actions-migration-notes.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/development/project-structure/GitHub-Actions-migration-notes.md.txt">Show Source</a> </li>
 
   </ul>
 </nav>
@@ -265,17 +300,45 @@
     <li class="md-nav__item">
     
     
-      <a href="git-cheat-sheet.html" class="md-nav__link">git cheat sheet</a>
+      <a href="Project-tasks-organization.html" class="md-nav__link">Project tasks organization</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="git-workflow-and-guidelines.html" class="md-nav__link">git workflow and guidelines</a>
+      <a href="scsynth-development.html" class="md-nav__link">scsynth development</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Notes-for-refactoring-the-server-implementation.html" class="md-nav__link">Refactoring the server implementatin</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Miscellaneous-project-information-%28CI%2C-maintenance-scripts%2C-etc.%29.html" class="md-nav__link">Miscellaneous project information</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Project-directions.html" class="md-nav__link">Project directions</a>
       
     
     </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../contributing/style/index.html" class="md-nav__link">Code style guidelines</a>
+      
     
     </li>
     <li class="md-nav__item">
@@ -295,35 +358,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../project-structure/index.html" class="md-nav__link">Project structure</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../style/index.html" class="md-nav__link">Code style guidelines</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
       <a href="../platforms/index.html" class="md-nav__link">Plattforms</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../releasing/index.html" class="md-nav__link">Releasing</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../reviewing/index.html" class="md-nav__link">Reviewing</a>
       
     
     </li></ul>
@@ -364,7 +399,7 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#development-git-github-actions-migration-notes--page-root" class="md-nav__link">GitHub actions and migration notes</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#development-project-structure-github-actions-migration-notes--page-root" class="md-nav__link">GitHub actions and migration notes</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#general-information" class="md-nav__link">General Information</a><nav class="md-nav">
               <ul class="md-nav__list">
@@ -383,7 +418,7 @@
             </nav>
         </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/development/git/GitHub-Actions-migration-notes.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/development/project-structure/GitHub-Actions-migration-notes.md.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -397,7 +432,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="github-actions-and-migration-notes">
-<span id="github-actions-migration-notes"></span><h1 id="development-git-github-actions-migration-notes--page-root">GitHub actions and migration notes<a class="headerlink" href="#development-git-github-actions-migration-notes--page-root" title="Link to this heading">¶</a></h1>
+<span id="github-actions-migration-notes"></span><h1 id="development-project-structure-github-actions-migration-notes--page-root">GitHub actions and migration notes<a class="headerlink" href="#development-project-structure-github-actions-migration-notes--page-root" title="Link to this heading">¶</a></h1>
 <p>This is a work-in-progress document started by Marcin with some notes about implementing our automated build system (CI/CD) using GitHub Actions (GHA). For reasons and background information on migrating to GHA see <a class="reference external" href="https://github.com/supercollider/supercollider/issues/5252">#5252</a> and <a class="reference external" href="https://github.com/supercollider/supercollider/issues/5261">#5261</a>.</p>
 <section id="general-information">
 <h2 id="general-information">General Information<a class="headerlink" href="#general-information" title="Link to this heading">¶</a></h2>
@@ -482,7 +517,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="index.html" title="Git"
+            <a href="Continuous-integration%3A-Travis-and-Appveyor.html" title="CI: Travis and AppVeyor"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -491,17 +526,17 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Git </span>
+                      class="md-footer-nav__direction"> "Previous" </span> CI: Travis and AppVeyor </span>
               </div>
             </a>
           
           
-            <a href="git-cheat-sheet.html" title="git cheat sheet"
+            <a href="Project-tasks-organization.html" title="Project tasks organization"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> git cheat sheet </span>
+                class="md-footer-nav__direction"> "Next" </span> Project tasks organization </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

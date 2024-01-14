@@ -6,8 +6,9 @@ User resources
 FAQ, resources for learning, tutorial lists.
 
 .. toctree::
-    :glob:
     :maxdepth: 2
 
+    ../development/platforms/index.rst
     learning/index.rst
-    *
+    misc.rst
+

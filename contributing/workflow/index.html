@@ -55,14 +55,14 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Generating crash reports" href="Generating-crash-reports.html" />
-    <link rel="prev" title="Reporting bugs, issues and feature requests" href="../common/Reporting-bugs%2C-issues%2C-feature-requests.html" />
+    <link rel="next" title="git workflow and guidelines" href="git-workflow-and-guidelines.html" />
+    <link rel="prev" title="Changes" href="../../faq/changes-to-sc.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> Workflows </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -185,10 +185,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -197,7 +197,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -238,6 +238,20 @@
     <li class="md-nav__item">
     
     
+      <a href="git-workflow-and-guidelines.html" class="md-nav__link">git workflow and guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="git-cheat-sheet.html" class="md-nav__link">git cheat sheet</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="Generating-crash-reports.html" class="md-nav__link">Generating crash reports</a>
       
     
@@ -245,14 +259,14 @@
     <li class="md-nav__item">
     
     
-      <a href="Setting-up-the-IDE-for-easy-contribution.html" class="md-nav__link">Setting up the IDE for easy contribution</a>
+      <a href="Setting-up-your-development-environment.html" class="md-nav__link">Setting up your development environment</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="Setting-up-your-development-environment.html" class="md-nav__link">Setting up your development environment</a>
+      <a href="Setting-up-the-IDE-for-easy-contribution.html" class="md-nav__link">Setting up the IDE for easy contribution</a>
       
     
     </li>
@@ -268,14 +282,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
+      <a href="../style/index.html" class="md-nav__link">Code style guidelines</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../UGen-Quality-Standards.html" class="md-nav__link">UGen-Quality standards</a>
+      <a href="../more.html" class="md-nav__link">More</a>
       
     
     </li></ul>
@@ -340,21 +354,44 @@
 <h1 id="contributing-workflow-index--page-root">Workflows<a class="headerlink" href="#contributing-workflow-index--page-root" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="git-workflow-and-guidelines.html">git workflow and guidelines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#git-flow">git-flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#deprecation">Deprecation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#milestones">Milestones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#guidelines-for-pull-request-authors">Guidelines for pull request authors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#writing-changelogs">Writing changelogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#releasing">Releasing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#conflicts-between-release-branches-and-develop">Conflicts between release branches and develop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git-cheat-sheet.html">git cheat sheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#get-the-latest-sources">Get the latest sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#working-with-submodules">Working with submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#update-local-repository">Update local repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#commit-push">Commit + Push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#branches">Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#a-common-git-workflow-for-development-work-on-supercollider">A common git workflow for development work on SuperCollider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#common-git-commands">Common git commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#problems-with-submodule-state-update">Problems with submodule state update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#testing-mailing-list-patches">Testing mailing list patches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#resources">Resources</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Generating-crash-reports.html">Generating crash reports</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Generating-crash-reports.html#macos">macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generating-crash-reports.html#linux">Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generating-crash-reports.html#windows">Windows</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Setting-up-the-IDE-for-easy-contribution.html">Setting up the IDE for easy contribution</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Setting-up-the-IDE-for-easy-contribution.html#osx">OSX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Setting-up-the-IDE-for-easy-contribution.html#linux">Linux</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="Setting-up-your-development-environment.html">Setting up your development environment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Setting-up-your-development-environment.html#setup-your-fork">1. Setup your fork</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Setting-up-your-development-environment.html#keep-your-fork-updated">2. Keep your fork updated</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Setting-up-your-development-environment.html#tooling-and-contribution-type-based-setup">3. Tooling and contribution-type based setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-the-IDE-for-easy-contribution.html">Setting up the IDE for easy contribution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-the-IDE-for-easy-contribution.html#osx">OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-the-IDE-for-easy-contribution.html#linux">Linux</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Unit-Testing-Guide.html">Guide to SuperCollider Unit Testing</a><ul>
@@ -385,7 +422,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../common/Reporting-bugs%2C-issues%2C-feature-requests.html" title="Reporting bugs, issues and feature requests"
+            <a href="../../faq/changes-to-sc.html" title="Changes"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -394,17 +431,17 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Reporting bugs, issues and feature requests </span>
+                      class="md-footer-nav__direction"> "Previous" </span> Changes </span>
               </div>
             </a>
           
           
-            <a href="Generating-crash-reports.html" title="Generating crash reports"
+            <a href="git-workflow-and-guidelines.html" title="git workflow and guidelines"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Generating crash reports </span>
+                class="md-footer-nav__direction"> "Next" </span> git workflow and guidelines </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

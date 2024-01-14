@@ -55,14 +55,14 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="UGen-Quality standards" href="UGen-Quality-Standards.html" />
-    <link rel="prev" title="Guide to SuperCollider Unit Testing" href="workflow/Unit-Testing-Guide.html" />
+    <link rel="next" title="More" href="more.html" />
+    <link rel="prev" title="scdoc style guidelines" href="style/Style-Guidelines%3A-SCDocs.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> The wiki-wiki </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -168,6 +168,7 @@
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Contributing</a></li>
+          <li class="md-tabs__item"><a href="style/index.html" class="md-tabs__link">Code style guidelines</a></li>
       </ul>
     </div>
   </nav>
@@ -185,10 +186,10 @@
       
     </a>
     <a href="../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -197,7 +198,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -210,18 +211,58 @@
     
     
       <a href="index.html" class="md-nav__link">Contributing</a>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-      <a href="common/index.html" class="md-nav__link">Common references</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="workflow/index.html" class="md-nav__link">Workflows</a>
+      <a href="../development/index.html" class="md-nav__link">Development</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../development/reviewing/index.html" class="md-nav__link">Reviewing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../development/releasing/index.html" class="md-nav__link">Releasing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../development/project-structure/index.html" class="md-nav__link">Project structure</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="style/index.html" class="md-nav__link">Code style guidelines</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="style/Style-Guidelines%3A-SuperCollider.html" class="md-nav__link">sclang style guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="style/Style-Guidelines%3A-Cpp.html" class="md-nav__link">C++ style guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="style/Style-Guidelines%3A-SCDocs.html" class="md-nav__link">scdoc style guidelines</a>
       
     
     </li>
@@ -268,67 +309,6 @@
 
   </ul>
 </nav>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-      <a href="#making-changes" class="md-nav__link">Making changes</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="#duplicate-content" class="md-nav__link">Duplicate content</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="#tone-and-brevity" class="md-nav__link">Tone and brevity</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="#titles-and-section-headings" class="md-nav__link">Titles and section headings</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="#section-breaks" class="md-nav__link">Section breaks</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="#next-section" class="md-nav__link">Next section</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="#directory-pages" class="md-nav__link">Directory pages</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="#the-sidebar" class="md-nav__link">The sidebar</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="#works-in-progress-wip" class="md-nav__link">Works in progress (WIP)</a>
       
     
     </li></ul>
@@ -337,17 +317,24 @@
     <li class="md-nav__item">
     
     
-      <a href="UGen-Quality-Standards.html" class="md-nav__link">UGen-Quality standards</a>
+      <a href="../development/meetings/index.html" class="md-nav__link">Meetings</a>
       
-    
-    </li></ul>
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../development/index.html" class="md-nav__link">Development</a>
+      <a href="../development/misc/index.html" class="md-nav__link">Miscellaneous dev notes</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../development/platforms/index.html" class="md-nav__link">Plattforms</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -549,7 +536,7 @@ So ends this section.
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="workflow/Unit-Testing-Guide.html" title="Guide to SuperCollider Unit Testing"
+            <a href="style/Style-Guidelines%3A-SCDocs.html" title="scdoc style guidelines"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -558,17 +545,17 @@ So ends this section.
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Guide to SuperCollider Unit Testing </span>
+                      class="md-footer-nav__direction"> "Previous" </span> scdoc style guidelines </span>
               </div>
             </a>
           
           
-            <a href="UGen-Quality-Standards.html" title="UGen-Quality standards"
+            <a href="more.html" title="More"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> UGen-Quality standards </span>
+                class="md-footer-nav__direction"> "Next" </span> More </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

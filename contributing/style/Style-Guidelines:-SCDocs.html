@@ -46,7 +46,7 @@
   
   
   
-    <title>Git &#8212; SuperCollider Wiki  documentation</title>
+    <title>scdoc style guidelines &#8212; SuperCollider Wiki  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=83e35b93" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7d9986eb" />
@@ -55,14 +55,14 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="GitHub actions and migration notes" href="GitHub-Actions-migration-notes.html" />
-    <link rel="prev" title="Development" href="../index.html" />
+    <link rel="next" title="The wiki-wiki" href="../The-wiki-wiki.html" />
+    <link rel="prev" title="C++ formatting instructions" href="cpp-formatting/Cpp-formatting-instructions.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -75,7 +75,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#development/git/index" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#contributing/style/Style-Guidelines:-SCDocs" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -92,8 +92,8 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
-          <span class="md-header-nav__topic"> Git </span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
+          <span class="md-header-nav__topic"> scdoc style guidelines </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -167,7 +167,8 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Development</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Contributing</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Code style guidelines</a></li>
       </ul>
     </div>
   </nav>
@@ -185,10 +186,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -197,7 +198,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -209,50 +210,91 @@
     <li class="md-nav__item">
     
     
-      <a href="../../contributing/index.html" class="md-nav__link">Contributing</a>
+      <a href="../index.html" class="md-nav__link">Contributing</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../index.html" class="md-nav__link">Development</a>
+      <a href="../../development/index.html" class="md-nav__link">Development</a>
       <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../../development/reviewing/index.html" class="md-nav__link">Reviewing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../development/releasing/index.html" class="md-nav__link">Releasing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../development/project-structure/index.html" class="md-nav__link">Project structure</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">Code style guidelines</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="Style-Guidelines%3A-SuperCollider.html" class="md-nav__link">sclang style guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="Style-Guidelines%3A-Cpp.html" class="md-nav__link">C++ style guidelines</a>
+      
+    
+    </li>
     <li class="md-nav__item">
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Git </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> scdoc style guidelines </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">Git</a>
+      <a href="#" class="md-nav__link md-nav__link--active">scdoc style guidelines</a>
       
         
 <nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#contributing-style-style-guidelines-scdocs--page-root" class="md-nav__link">scdoc style guidelines</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#tag-capitalization" class="md-nav__link">Tag capitalization</a>
+        </li>
+        <li class="md-nav__item"><a href="#indentation" class="md-nav__link">Indentation</a>
+        </li>
+        <li class="md-nav__item"><a href="#private-methods" class="md-nav__link">Private methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#method-documentation" class="md-nav__link">Method documentation</a>
+        </li></ul>
+            </nav>
+        </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/development/git/index.rst.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/contributing/style/Style-Guidelines:-SCDocs.md.txt">Show Source</a> </li>
 
   </ul>
 </nav>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-      <a href="GitHub-Actions-migration-notes.html" class="md-nav__link">GitHub actions and migration notes</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="git-cheat-sheet.html" class="md-nav__link">git cheat sheet</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="git-workflow-and-guidelines.html" class="md-nav__link">git workflow and guidelines</a>
+      <a href="../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
       
     
     </li></ul>
@@ -261,49 +303,21 @@
     <li class="md-nav__item">
     
     
-      <a href="../meetings/index.html" class="md-nav__link">Meetings</a>
+      <a href="../../development/meetings/index.html" class="md-nav__link">Meetings</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../misc/index.html" class="md-nav__link">Miscellaneous dev notes</a>
+      <a href="../../development/misc/index.html" class="md-nav__link">Miscellaneous dev notes</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../project-structure/index.html" class="md-nav__link">Project structure</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../style/index.html" class="md-nav__link">Code style guidelines</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../platforms/index.html" class="md-nav__link">Plattforms</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../releasing/index.html" class="md-nav__link">Releasing</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../reviewing/index.html" class="md-nav__link">Reviewing</a>
+      <a href="../../development/platforms/index.html" class="md-nav__link">Plattforms</a>
       
     
     </li></ul>
@@ -342,9 +356,22 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#contributing-style-style-guidelines-scdocs--page-root" class="md-nav__link">scdoc style guidelines</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#tag-capitalization" class="md-nav__link">Tag capitalization</a>
+        </li>
+        <li class="md-nav__item"><a href="#indentation" class="md-nav__link">Indentation</a>
+        </li>
+        <li class="md-nav__item"><a href="#private-methods" class="md-nav__link">Private methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#method-documentation" class="md-nav__link">Method documentation</a>
+        </li></ul>
+            </nav>
+        </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/development/git/index.rst.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/contributing/style/Style-Guidelines:-SCDocs.md.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -357,42 +384,38 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <section id="git">
-<h1 id="development-git-index--page-root">Git<a class="headerlink" href="#development-git-index--page-root" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="GitHub-Actions-migration-notes.html">GitHub actions and migration notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GitHub-Actions-migration-notes.html#general-information">General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GitHub-Actions-migration-notes.html#qt">Qt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GitHub-Actions-migration-notes.html#debugging">Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GitHub-Actions-migration-notes.html#test-suite">Test suite</a></li>
+  <section id="scdoc-style-guidelines">
+<h1 id="contributing-style-style-guidelines-scdocs--page-root">scdoc style guidelines<a class="headerlink" href="#contributing-style-style-guidelines-scdocs--page-root" title="Link to this heading">¶</a></h1>
+<p>The following guidelines apply to <code class="docutils literal notranslate"><span class="pre">.schelp</span></code> files in <em>/HelpSource</em>.</p>
+<p>Guidelines are also available for other parts of the project:</p>
+<p>[[Style Guidelines: SuperCollider]], [[Style Guidelines: Cpp]], [[The Wiki Wiki]].</p>
+<nav class="contents local" id="content">
+<p class="topic-title">Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#tag-capitalization" id="id1">Tag capitalization</a></p></li>
+<li><p><a class="reference internal" href="#indentation" id="id2">Indentation</a></p></li>
+<li><p><a class="reference internal" href="#private-methods" id="id3">Private methods</a></p></li>
+<li><p><a class="reference internal" href="#method-documentation" id="id4">Method documentation</a></p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="git-cheat-sheet.html">git cheat sheet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#get-the-latest-sources">Get the latest sources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#working-with-submodules">Working with submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#update-local-repository">Update local repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#commit-push">Commit + Push</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#branches">Branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#a-common-git-workflow-for-development-work-on-supercollider">A common git workflow for development work on SuperCollider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#common-git-commands">Common git commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#problems-with-submodule-state-update">Problems with submodule state update</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#testing-mailing-list-patches">Testing mailing list patches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-cheat-sheet.html#resources">Resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="git-workflow-and-guidelines.html">git workflow and guidelines</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#git-flow">git-flow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#deprecation">Deprecation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#milestones">Milestones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#guidelines-for-pull-request-authors">Guidelines for pull request authors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#writing-changelogs">Writing changelogs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#releasing">Releasing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-workflow-and-guidelines.html#conflicts-between-release-branches-and-develop">Conflicts between release branches and develop</a></li>
-</ul>
-</li>
-</ul>
-</div>
+</nav>
+<section id="tag-capitalization">
+<h2 id="tag-capitalization"><a class="toc-backref" href="#id1" role="doc-backlink">Tag capitalization</a><a class="headerlink" href="#tag-capitalization" title="Link to this heading">¶</a></h2>
+<p>Prefer using the lowercase forms of tags (<code class="docutils literal notranslate"><span class="pre">code::</span> <span class="pre">::</span></code>, <code class="docutils literal notranslate"><span class="pre">method::</span></code>), unless this would break with convention in the context being edited.</p>
+</section>
+<section id="indentation">
+<h2 id="indentation"><a class="toc-backref" href="#id2" role="doc-backlink">Indentation</a><a class="headerlink" href="#indentation" title="Link to this heading">¶</a></h2>
+<p>Use tabs for indentation, both for schelp-formatted text and code examples.</p>
+</section>
+<section id="private-methods">
+<h2 id="private-methods"><a class="toc-backref" href="#id3" role="doc-backlink">Private methods</a><a class="headerlink" href="#private-methods" title="Link to this heading">¶</a></h2>
+<p>Hide all of a class’s private methods using <code class="docutils literal notranslate"><span class="pre">private::</span></code>.</p>
+</section>
+<section id="method-documentation">
+<h2 id="method-documentation"><a class="toc-backref" href="#id4" role="doc-backlink">Method documentation</a><a class="headerlink" href="#method-documentation" title="Link to this heading">¶</a></h2>
+<p>Prefer using <code class="docutils literal notranslate"><span class="pre">argument::</span></code> and <code class="docutils literal notranslate"><span class="pre">returns::</span></code> instead of the method description body to document parameters and return values.</p>
+<p>Either all of the parameters and/or return value should be documented, or none should be.</p>
+<p>When documenting a parameter or return value, make sure to include the expected type.</p>
+</section>
 </section>
 
 
@@ -405,7 +428,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../index.html" title="Development"
+            <a href="cpp-formatting/Cpp-formatting-instructions.html" title="C++ formatting instructions"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -414,17 +437,17 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Development </span>
+                      class="md-footer-nav__direction"> "Previous" </span> C++ formatting instructions </span>
               </div>
             </a>
           
           
-            <a href="GitHub-Actions-migration-notes.html" title="GitHub actions and migration notes"
+            <a href="../The-wiki-wiki.html" title="The wiki-wiki"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> GitHub actions and migration notes </span>
+                class="md-footer-nav__direction"> "Next" </span> The wiki-wiki </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

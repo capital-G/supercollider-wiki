@@ -6,14 +6,12 @@ Development
 Project documentation, structure, reviewing, releasing, and other processes.
 
 .. toctree::
-    :glob:
     :maxdepth: 2
 
-    git/index.rst
+    reviewing/index.rst
+    releasing/index.rst
+    project-structure/index.rst
+    ../contributing/style/index.rst
     meetings/index.rst
     misc/index.rst
-    project-structure/index.rst
-    style/index.rst
     platforms/index.rst
-    releasing/index.rst
-    reviewing/index.rst

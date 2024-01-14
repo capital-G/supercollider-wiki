@@ -56,13 +56,13 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="C++ formatting instructions" href="cpp-formatting/Cpp-formatting-instructions.html" />
-    <link rel="prev" title="Code style guidelines" href="index.html" />
+    <link rel="prev" title="sclang style guidelines" href="Style-Guidelines%3A-SuperCollider.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -75,7 +75,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#development/style/Style-Guidelines:-Cpp" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#contributing/style/Style-Guidelines:-Cpp" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> C++ style guidelines </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -167,7 +167,7 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Development</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Contributing</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Code style guidelines</a></li>
       </ul>
     </div>
@@ -186,10 +186,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -198,7 +198,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -210,40 +210,33 @@
     <li class="md-nav__item">
     
     
-      <a href="../../contributing/index.html" class="md-nav__link">Contributing</a>
+      <a href="../index.html" class="md-nav__link">Contributing</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../index.html" class="md-nav__link">Development</a>
+      <a href="../../development/index.html" class="md-nav__link">Development</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="../git/index.html" class="md-nav__link">Git</a>
+      <a href="../../development/reviewing/index.html" class="md-nav__link">Reviewing</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../meetings/index.html" class="md-nav__link">Meetings</a>
+      <a href="../../development/releasing/index.html" class="md-nav__link">Releasing</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../misc/index.html" class="md-nav__link">Miscellaneous dev notes</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../project-structure/index.html" class="md-nav__link">Project structure</a>
+      <a href="../../development/project-structure/index.html" class="md-nav__link">Project structure</a>
       
     
     </li>
@@ -252,6 +245,13 @@
     
       <a href="index.html" class="md-nav__link">Code style guidelines</a>
       <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="Style-Guidelines%3A-SuperCollider.html" class="md-nav__link">sclang style guidelines</a>
+      
+    
+    </li>
     <li class="md-nav__item">
     
     
@@ -264,7 +264,7 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#development-style-style-guidelines-cpp--page-root" class="md-nav__link">C++ style guidelines</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#contributing-style-style-guidelines-cpp--page-root" class="md-nav__link">C++ style guidelines</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#style-guidelines-and-clang-format" class="md-nav__link">Style guidelines and <code class="docutils literal notranslate"><span class="pre">clang-format</span></code></a>
         </li>
@@ -285,7 +285,7 @@
             </nav>
         </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/development/style/Style-Guidelines:-Cpp.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/contributing/style/Style-Guidelines:-Cpp.md.txt">Show Source</a> </li>
 
   </ul>
 </nav>
@@ -302,7 +302,7 @@
     <li class="md-nav__item">
     
     
-      <a href="Style-Guidelines%3A-SuperCollider.html" class="md-nav__link">sclang style guidelines</a>
+      <a href="../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
       
     
     </li></ul>
@@ -311,21 +311,21 @@
     <li class="md-nav__item">
     
     
-      <a href="../platforms/index.html" class="md-nav__link">Plattforms</a>
+      <a href="../../development/meetings/index.html" class="md-nav__link">Meetings</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../releasing/index.html" class="md-nav__link">Releasing</a>
+      <a href="../../development/misc/index.html" class="md-nav__link">Miscellaneous dev notes</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../reviewing/index.html" class="md-nav__link">Reviewing</a>
+      <a href="../../development/platforms/index.html" class="md-nav__link">Plattforms</a>
       
     
     </li></ul>
@@ -366,7 +366,7 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#development-style-style-guidelines-cpp--page-root" class="md-nav__link">C++ style guidelines</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#contributing-style-style-guidelines-cpp--page-root" class="md-nav__link">C++ style guidelines</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#style-guidelines-and-clang-format" class="md-nav__link">Style guidelines and <code class="docutils literal notranslate"><span class="pre">clang-format</span></code></a>
         </li>
@@ -387,7 +387,7 @@
             </nav>
         </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/development/style/Style-Guidelines:-Cpp.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/contributing/style/Style-Guidelines:-Cpp.md.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -401,7 +401,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="c-style-guidelines">
-<h1 id="development-style-style-guidelines-cpp--page-root">C++ style guidelines<a class="headerlink" href="#development-style-style-guidelines-cpp--page-root" title="Link to this heading">¶</a></h1>
+<h1 id="contributing-style-style-guidelines-cpp--page-root">C++ style guidelines<a class="headerlink" href="#contributing-style-style-guidelines-cpp--page-root" title="Link to this heading">¶</a></h1>
 <p>For setup of the C++ formatting also consider the following document.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -573,7 +573,7 @@ Note on revision history: it appears changing the wiki's name obscures the wiki'
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="index.html" title="Code style guidelines"
+            <a href="Style-Guidelines%3A-SuperCollider.html" title="sclang style guidelines"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -582,7 +582,7 @@ Note on revision history: it appears changing the wiki's name obscures the wiki'
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Code style guidelines </span>
+                      class="md-footer-nav__direction"> "Previous" </span> sclang style guidelines </span>
               </div>
             </a>
           

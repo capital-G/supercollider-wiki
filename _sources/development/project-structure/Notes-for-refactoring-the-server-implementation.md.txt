@@ -4,11 +4,6 @@ The Server implementation (`Server.sc`) has become bloated over time [2], but ha
 
 _please feel free to edit!_
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## General Remarks/Observations
 
 - One of the main problems seems to be the handling of ids, in particular those which have some kind of special status (e.g. "persistant ones").

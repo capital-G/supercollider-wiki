@@ -1,11 +1,6 @@
 (rebasing-a-pr)=
 # Rebasing a PR
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Introduction
 
 In the SuperCollider project, the accepted way to resolve merge conflicts in a pull request is by first *rebasing* onto the target branch, resolving any merge conflicts that arise during that rebase process, before merging of your PR into the target branch. Do not resolve merge conflicts via the GitHub interface or by merging the `main` branch into your local branch. This creates noise in commit history and makes it more difficult to perform other operations on branches later.

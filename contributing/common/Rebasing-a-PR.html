@@ -55,14 +55,14 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Reporting bugs, issues and feature requests" href="Reporting-bugs%2C-issues%2C-feature-requests.html" />
-    <link rel="prev" title="How to contribute" href="How-to-contribute-to-SuperCollider.html" />
+    <link rel="next" title="Commit message format" href="Commit-message-format.html" />
+    <link rel="prev" title="Creating Pull Requests (PRs)" href="Creating-pull-requests.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=light-grey>
+        data-md-color-primary=grey data-md-color-accent=pink>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -92,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider wiki</span>
+          <span class="md-header-nav__topic">SuperCollider Wiki</span>
           <span class="md-header-nav__topic"> Rebasing a PR </span>
         </div>
       </div>
@@ -128,7 +128,7 @@
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
-            <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -137,7 +137,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
           </div>
@@ -169,6 +169,7 @@
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Contributing</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Common references</a></li>
+          <li class="md-tabs__item"><a href="Creating-pull-requests.html" class="md-tabs__link">Creating Pull Requests (PRs)</a></li>
       </ul>
     </div>
   </nav>
@@ -186,10 +187,10 @@
       
     </a>
     <a href="../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider wiki</a>
+       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
   </label>
     <div class="md-nav__source">
-      <a href="https://github.com/capital-G/supercollider-wiki" title="Go to repository" class="md-source" data-md-source="github">
+      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
 
     <div class="md-source__icon">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
@@ -198,7 +199,7 @@
     </div>
   
   <div class="md-source__repository">
-    SuperCollider Wiki
+    SuperCollider
   </div>
 </a>
     </div>
@@ -220,14 +221,14 @@
     <li class="md-nav__item">
     
     
-      <a href="Commit-message-format.html" class="md-nav__link">Commit message format</a>
+      <a href="How-to-contribute-to-SuperCollider.html" class="md-nav__link">How to contribute</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" class="md-nav__link">Contributing help files, Tutorials and other SCDocs</a>
+      <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" class="md-nav__link">Reporting bugs, issues and feature requests</a>
       
     
     </li>
@@ -241,52 +242,14 @@
     <li class="md-nav__item">
     
     
-      <a href="How-to-contribute-to-SuperCollider.html" class="md-nav__link">How to contribute</a>
+      <a href="Contributing-Help-files%2C-Tutorials-and-other-SCDocs.html" class="md-nav__link">Contributing help files, Tutorials and other SCDocs</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Rebasing a PR </label>
-    
-      <a href="#" class="md-nav__link md-nav__link--active">Rebasing a PR</a>
-      
-        
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">"Contents"</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#contributing-common-rebasing-a-pr--page-root" class="md-nav__link">Rebasing a PR</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#introduction" class="md-nav__link">Introduction</a>
-        </li>
-        <li class="md-nav__item"><a href="#rebasing-making-a-clean-merge" class="md-nav__link">Rebasing: making a clean merge</a>
-        </li>
-        <li class="md-nav__item"><a href="#rebasing-with-a-branch-other-than-develop" class="md-nav__link">Rebasing with a branch other than <code class="docutils literal notranslate"><span class="pre">develop</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#merge-conflicts" class="md-nav__link">Merge conflicts</a>
-        </li>
-        <li class="md-nav__item"><a href="#completing-a-rebase" class="md-nav__link">Completing a rebase</a>
-        </li>
-        <li class="md-nav__item"><a href="#rearranging-combining-commits-or-editing-commit-messages-with-rebase" class="md-nav__link">Rearranging, combining commits or editing commit messages with <code class="docutils literal notranslate"><span class="pre">rebase</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#removing-commits-with-rebase" class="md-nav__link">Removing commits with <code class="docutils literal notranslate"><span class="pre">rebase</span></code></a>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/contributing/common/Rebasing-a-PR.md.txt">Show Source</a> </li>
-
-  </ul>
-</nav>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" class="md-nav__link">Reporting bugs, issues and feature requests</a>
+      <a href="../../faq/changes-to-sc.html" class="md-nav__link">Changes</a>
       
     
     </li></ul>
@@ -302,14 +265,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
+      <a href="../style/index.html" class="md-nav__link">Code style guidelines</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="../UGen-Quality-Standards.html" class="md-nav__link">UGen-Quality standards</a>
+      <a href="../more.html" class="md-nav__link">More</a>
       
     
     </li></ul>
@@ -391,20 +354,8 @@
             
   <section id="rebasing-a-pr">
 <span id="id1"></span><h1 id="contributing-common-rebasing-a-pr--page-root">Rebasing a PR<a class="headerlink" href="#contributing-common-rebasing-a-pr--page-root" title="Link to this heading">¶</a></h1>
-<nav class="contents local" id="content">
-<p class="topic-title">Content</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id3">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#rebasing-making-a-clean-merge" id="id4">Rebasing: making a clean merge</a></p></li>
-<li><p><a class="reference internal" href="#rebasing-with-a-branch-other-than-develop" id="id5">Rebasing with a branch other than <code class="docutils literal notranslate"><span class="pre">develop</span></code></a></p></li>
-<li><p><a class="reference internal" href="#merge-conflicts" id="id6">Merge conflicts</a></p></li>
-<li><p><a class="reference internal" href="#completing-a-rebase" id="id7">Completing a rebase</a></p></li>
-<li><p><a class="reference internal" href="#rearranging-combining-commits-or-editing-commit-messages-with-rebase" id="id8">Rearranging, combining commits or editing commit messages with <code class="docutils literal notranslate"><span class="pre">rebase</span></code></a></p></li>
-<li><p><a class="reference internal" href="#removing-commits-with-rebase" id="id9">Removing commits with <code class="docutils literal notranslate"><span class="pre">rebase</span></code></a></p></li>
-</ul>
-</nav>
 <section id="introduction">
-<h2 id="introduction"><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>In the SuperCollider project, the accepted way to resolve merge conflicts in a pull request is by first <em>rebasing</em> onto the target branch, resolving any merge conflicts that arise during that rebase process, before merging of your PR into the target branch. Do not resolve merge conflicts via the GitHub interface or by merging the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch into your local branch. This creates noise in commit history and makes it more difficult to perform other operations on branches later.</p>
 <ul class="simple">
 <li><p>Tip: See <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">help</span> <span class="pre">rebase</span></code> for usage examples that include helpful graphical representations.</p></li>
@@ -412,7 +363,7 @@
 </ul>
 </section>
 <section id="rebasing-making-a-clean-merge">
-<h2 id="rebasing-making-a-clean-merge"><a class="toc-backref" href="#id4" role="doc-backlink">Rebasing: making a clean merge</a><a class="headerlink" href="#rebasing-making-a-clean-merge" title="Link to this heading">¶</a></h2>
+<h2 id="rebasing-making-a-clean-merge">Rebasing: making a clean merge<a class="headerlink" href="#rebasing-making-a-clean-merge" title="Link to this heading">¶</a></h2>
 <p>Suppose your work branch <code class="docutils literal notranslate"><span class="pre">topic/foo</span></code> was based on the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch (as is standard practice), and you’re ready to submit a PR. But suppose that since you started your work, the remote upstream<code class="docutils literal notranslate"><span class="pre">develop</span></code> branch has had new commits added to it, leaving your local <code class="docutils literal notranslate"><span class="pre">develop</span></code> (on which <code class="docutils literal notranslate"><span class="pre">topic/foo</span></code> is based) out of date.</p>
 <p>To avoid merge conflicts between your changes and the new changes added to the upstream <code class="docutils literal notranslate"><span class="pre">develop</span></code>, you should update your local <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch to reflect the new changes, then <em>rebase</em> your work branch <em>onto</em> <code class="docutils literal notranslate"><span class="pre">develop</span></code> so that your changes are added (”replayed”) <em>after</em> the latest changes to <code class="docutils literal notranslate"><span class="pre">develop</span></code>.</p>
 <ol class="arabic simple">
@@ -433,7 +384,7 @@ git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> 
 <p>Now skip to <a class="reference internal" href="#completing-a-rebase">Completing a rebase</a> below.</p>
 </section>
 <section id="rebasing-with-a-branch-other-than-develop">
-<h2 id="rebasing-with-a-branch-other-than-develop"><a class="toc-backref" href="#id5" role="doc-backlink">Rebasing with a branch other than <code class="docutils literal notranslate"><span class="pre">develop</span></code></a><a class="headerlink" href="#rebasing-with-a-branch-other-than-develop" title="Link to this heading">¶</a></h2>
+<h2 id="rebasing-with-a-branch-other-than-develop">Rebasing with a branch other than <code class="docutils literal notranslate"><span class="pre">develop</span></code><a class="headerlink" href="#rebasing-with-a-branch-other-than-develop" title="Link to this heading">¶</a></h2>
 <p>A may reviewer may ask you to rebase your PR onto a main version branch to, for example, expedite your PR getting into a release branch.</p>
 <p>If your PR branch <code class="docutils literal notranslate"><span class="pre">topic/foo</span></code> is based on <code class="docutils literal notranslate"><span class="pre">develop</span></code>, you can take the commits unique to your branch and replay them <em>onto</em> the version (e.g. <code class="docutils literal notranslate"><span class="pre">3.13</span></code>) branch instead.</p>
 <ol class="arabic simple">
@@ -454,11 +405,11 @@ git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> 
 <p>Now see <a class="reference internal" href="#completing-a-rebase"><span class="std std-ref">Completing a rebase</span></a> below.</p>
 </section>
 <section id="merge-conflicts">
-<h2 id="merge-conflicts"><a class="toc-backref" href="#id6" role="doc-backlink">Merge conflicts</a><a class="headerlink" href="#merge-conflicts" title="Link to this heading">¶</a></h2>
+<h2 id="merge-conflicts">Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Link to this heading">¶</a></h2>
 <p>Before rebasing, git will show you a change list which you can examine to make sure it’s correct before continuing. Git will stop if it encounters a merge conflict, and give instructions on how to resolve it and continue the rebase. You can read more about how to handle this situation <a class="reference external" href="https://docs.github.com/en/github/using-git/resolving-merge-conflicts-after-a-git-rebase">here</a>.</p>
 </section>
 <section id="completing-a-rebase">
-<span id="id2"></span><h2 id="completing-a-rebase"><a class="toc-backref" href="#id7" role="doc-backlink">Completing a rebase</a><a class="headerlink" href="#completing-a-rebase" title="Link to this heading">¶</a></h2>
+<span id="id2"></span><h2 id="completing-a-rebase">Completing a rebase<a class="headerlink" href="#completing-a-rebase" title="Link to this heading">¶</a></h2>
 <p>After rebasing, you may find it helpful to display the pretty-printed commit log with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--oneline</span> <span class="pre">--graph</span> <span class="pre">--decorate</span></code> to make sure all is well.</p>
 <p>When done, your local branch will be out of sync with your remote branch. You will have to resolve this by force pushing:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>--force<span class="w"> </span>origin<span class="w"> </span>topic/foo
@@ -470,13 +421,13 @@ git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> 
 </ul>
 </section>
 <section id="rearranging-combining-commits-or-editing-commit-messages-with-rebase">
-<h2 id="rearranging-combining-commits-or-editing-commit-messages-with-rebase"><a class="toc-backref" href="#id8" role="doc-backlink">Rearranging, combining commits or editing commit messages with <code class="docutils literal notranslate"><span class="pre">rebase</span></code></a><a class="headerlink" href="#rearranging-combining-commits-or-editing-commit-messages-with-rebase" title="Link to this heading">¶</a></h2>
+<h2 id="rearranging-combining-commits-or-editing-commit-messages-with-rebase">Rearranging, combining commits or editing commit messages with <code class="docutils literal notranslate"><span class="pre">rebase</span></code><a class="headerlink" href="#rearranging-combining-commits-or-editing-commit-messages-with-rebase" title="Link to this heading">¶</a></h2>
 <p>This is not recommended for new git users.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">help</span> <span class="pre">rebase</span></code> you’ll find a section, “Interactive mode”, with extensive documentation on how to reorder and recombine commits.</p>
 <p>Also refer to the section on <code class="docutils literal notranslate"><span class="pre">--autosquash</span></code> for ideas on how to combine these features into a streamlined rebase-oriented workflow.</p>
 </section>
 <section id="removing-commits-with-rebase">
-<h2 id="removing-commits-with-rebase"><a class="toc-backref" href="#id9" role="doc-backlink">Removing commits with <code class="docutils literal notranslate"><span class="pre">rebase</span></code></a><a class="headerlink" href="#removing-commits-with-rebase" title="Link to this heading">¶</a></h2>
+<h2 id="removing-commits-with-rebase">Removing commits with <code class="docutils literal notranslate"><span class="pre">rebase</span></code><a class="headerlink" href="#removing-commits-with-rebase" title="Link to this heading">¶</a></h2>
 <p><strong>Note: this is an advanced procedure and might result in a messy git state, including lost changes. Consider making a backup copy of the branch before proceeding</strong>.</p>
 <p>The general idea is to enter “interactive rebase” mode in git, remove commits that are not desired, resolve conflicts that occur in the process, then <em>force push</em> the local branch to the origin.</p>
 <p><strong>Note:  <code class="docutils literal notranslate"><span class="pre">--force</span></code> pushing rewrites the commit history, so this should not be done with branches on which multiple people are collaborating.</strong> (I.e. It’s ok if you’re the only one working on your branch).</p>
@@ -570,7 +521,7 @@ e6e9a6e5d2 docs: fix SimpleNumber typo
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="How-to-contribute-to-SuperCollider.html" title="How to contribute"
+            <a href="Creating-pull-requests.html" title="Creating Pull Requests (PRs)"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -579,17 +530,17 @@ e6e9a6e5d2 docs: fix SimpleNumber typo
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> How to contribute </span>
+                      class="md-footer-nav__direction"> "Previous" </span> Creating Pull Requests (PRs) </span>
               </div>
             </a>
           
           
-            <a href="Reporting-bugs%2C-issues%2C-feature-requests.html" title="Reporting bugs, issues and feature requests"
+            <a href="Commit-message-format.html" title="Commit message format"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Reporting bugs, issues and feature requests </span>
+                class="md-footer-nav__direction"> "Next" </span> Commit message format </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
