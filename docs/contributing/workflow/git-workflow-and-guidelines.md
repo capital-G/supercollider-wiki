@@ -1,10 +1,5 @@
 # git workflow and guidelines
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## git-flow
 
 SuperCollider takes inspiration from git-flow for its branching mode. You can read about this frequently used git methodology [here](http://nvie.com/posts/a-successful-git-branching-model/). The most important thing to know:

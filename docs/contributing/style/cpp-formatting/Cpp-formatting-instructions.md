@@ -1,10 +1,5 @@
 # C++ formatting instructions
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Overview
 
 In this context of this document, "linting" means checking that code is formatted correctly, without modifying code;

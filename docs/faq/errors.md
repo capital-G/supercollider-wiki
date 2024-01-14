@@ -1,10 +1,5 @@
 # Errors
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## ERROR: Primitive 'BasicNew' failed. Index not an Integer
 
 ### If you're writing a SynthDef

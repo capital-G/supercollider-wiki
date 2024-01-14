@@ -2,11 +2,6 @@
 
 _This document is a work in progress!_ Feel free to question it and suggest improvements. The document's main author is Brian Heim (@brianlheim).
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Running the Test Suite
 
 ### Class Library Tests

@@ -11,11 +11,6 @@ cpp-formatting/*
 
 ---
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 <!--
 Note on revision history: it appears changing the wiki's name obscures the wiki's revision history. Changing the name back to it's previous name then shows the full revision history. hmmm... GitHub bug? If that's needed, this wiki's previous name was "Cpp code style guidelines".
 -->

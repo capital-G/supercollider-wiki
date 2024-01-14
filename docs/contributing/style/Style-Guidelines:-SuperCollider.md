@@ -10,11 +10,6 @@ Guidelines are also available for other parts of the project:
 
 [[Style guidelines: Cpp]], [[Style guidelines: SCDocs]], [[The wiki wiki]].
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## How to read this document
 
 There are two categories of guidelines: *Rules* should be followed strictly; *Recommendations* are looser preferences. Existing code should conform to all *Rules*, but *Recommendations* are suggestions for new and existing contributors who may be interested in the discussion surrounding the topic.

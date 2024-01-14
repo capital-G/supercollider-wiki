@@ -6,11 +6,6 @@ Guidelines are also available for other parts of the project:
 
 [[Style Guidelines: SuperCollider]], [[Style Guidelines: Cpp]], [[The Wiki Wiki]].
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Tag capitalization
 
 Prefer using the lowercase forms of tags (`code:: ::`, `method::`), unless this would break with convention in the context being edited.

@@ -2,11 +2,6 @@
 
 This is a collection of FAQs I've seen around the issue tracker. Hopefully this can be put someplace more public once it gains steam. This is meant as an addition to the longer guides about doing specific basic things like installing and configuring. - @mossheim
 
-```{contents} Content
-:local:
-:depth: 2
-```
-
 ## Env seems to work differently than I expect
 
 Source: https://github.com/supercollider/supercollider/issues/3629#issue-311070157
