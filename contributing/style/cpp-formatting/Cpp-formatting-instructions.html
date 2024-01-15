@@ -1,121 +1,158 @@
-<!DOCTYPE html>
 
-<html lang="en" data-content_root="../../../">
+
+<!doctype html>
+<html lang="en" class="no-js">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>C++ formatting instructions - SuperCollider wiki</title>
+      
+    
+    
+      
+        
+        
+      
+      
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="lang:clipboard.copy" content="Copy to clipboard">
-  <meta name="lang:clipboard.copied" content="Copied to clipboard">
-  <meta name="lang:search.language" content="en">
-  <meta name="lang:search.pipeline.stopwords" content="True">
-  <meta name="lang:search.pipeline.trimmer" content="True">
-  <meta name="lang:search.result.none" content="No matching documents">
-  <meta name="lang:search.result.one" content="1 matching document">
-  <meta name="lang:search.result.other" content="# matching documents">
-  <meta name="lang:search.tokenizer" content="[\s\-]+">
+    
+    
+    
+      
+        
+        
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="../../../_static/sphinx_immaterial_theme.af531f03affe68837.min.css?v=2410bb73" />
+        <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=7d9986eb" />
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-  
-    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
-
-    <style>
-      body,
-      input {
-        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
-      }
-
-      code,
-      kbd,
-      pre {
-        font-family: "Roboto Mono", "Courier New", Courier, monospace
-      }
-    </style>
-  
-
-  <link rel="stylesheet" href="../../../_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="../../../_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="../../../_static/stylesheets/application-fixes.css"/>
-  
-  <link rel="stylesheet" href="../../../_static/fonts/material-icons.css"/>
-  
-  <meta name="theme-color" content="#3f51b5">
-  <script src="../../../_static/javascripts/modernizr.js"></script>
-  
-  
-  
-    <title>C++ formatting instructions &#8212; SuperCollider Wiki  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=83e35b93" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/material.css?v=79c92029" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=7d9986eb" />
-    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="scdoc style guidelines" href="../Style-Guidelines%3A-SCDocs.html" />
-    <link rel="prev" title="C++ style guidelines" href="../Style-Guidelines%3A-Cpp.html" />
-  
-   
-
+    
+    
+    
   </head>
-  <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=pink>
   
-  <svg class="md-svg">
-    <defs data-children-count="0">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-      
-    </defs>
-  </svg>
   
-  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
-  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
-  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#contributing/style/cpp-formatting/Cpp-formatting-instructions" tabindex="1" class="md-skip"> Skip to content </a>
-  <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex navheader">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../index.html" title="SuperCollider Wiki  documentation"
-           class="md-header-nav__button md-logo">
-          
-            &nbsp;
-          
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
         </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider Wiki</span>
-          <span class="md-header-nav__topic"> C++ formatting instructions </span>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="SuperCollider wiki" class="md-header__button md-logo" aria-label="SuperCollider wiki" data-md-component="logo">
+      <img src="../../../_static/logo.svg" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SuperCollider wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C++ formatting instructions
+            
+          </span>
         </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
         
-<div class="md-search" data-md-component="search" role="dialog">
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../../search.html" method="get" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder=""Search""
-             autocapitalize="off" autocomplete="off" spellcheck="false"
-             data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -123,276 +160,1455 @@
     </div>
   </div>
 </div>
-
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
-
-    <div class="md-source__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/capital-g/supercollider-wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
-    SuperCollider
+    SuperCollider wiki
   </div>
 </a>
-          </div>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="SuperCollider wiki" class="md-nav__button md-logo" aria-label="SuperCollider wiki" data-md-component="logo">
+      <img src="../../../_static/logo.svg" alt="logo">
+    </a>
+    SuperCollider wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/capital-g/supercollider-wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SuperCollider wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../index.html"><span class="md-ellipsis">Contributing</span></a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
-      
-  
-  <script src="../../../_static/javascripts/version_dropdown.js"></script>
-  <script>
-    var json_loc = "../../../"versions.json"",
-        target_loc = "../../../../",
-        text = "Versions";
-    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
-  </script>
-  
-
-    </div>
-  </nav>
-</header>
-
-  
-  <div class="md-container">
-    
-    
-    
-  <nav class="md-tabs" data-md-component="tabs">
-    <div class="md-tabs__inner md-grid">
-      <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">Contributing</a></li>
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Code style guidelines</a></li>
-          <li class="md-tabs__item"><a href="../Style-Guidelines%3A-Cpp.html" class="md-tabs__link">C++ style guidelines</a></li>
-      </ul>
-    </div>
-  </nav>
-    <main class="md-main">
-      <div class="md-main__inner md-grid" data-md-component="container">
-        
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../../index.html" title="SuperCollider Wiki documentation" class="md-nav__button md-logo">
-      
-        <img src="../../../_static/" alt=" logo" width="48" height="48">
-      
-    </a>
-    <a href="../../../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
-  </label>
-    <div class="md-nav__source">
-      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
-
-    <div class="md-source__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
-  <div class="md-source__repository">
-    SuperCollider
-  </div>
-</a>
-    </div>
-  
-  
-
-  
-  <ul class="md-nav__list">
-    <li class="md-nav__item">
-    
-    
-      <a href="../../index.html" class="md-nav__link">Contributing</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../development/index.html" class="md-nav__link">Development</a>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../development/reviewing/index.html" class="md-nav__link">Reviewing</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../development/releasing/index.html" class="md-nav__link">Releasing</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../development/project-structure/index.html" class="md-nav__link">Project structure</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../index.html" class="md-nav__link">Code style guidelines</a>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-      <a href="../Style-Guidelines%3A-SuperCollider.html" class="md-nav__link">sclang style guidelines</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../Style-Guidelines%3A-Cpp.html" class="md-nav__link">C++ style guidelines</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../Style-Guidelines%3A-SCDocs.html" class="md-nav__link">scdoc style guidelines</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../The-wiki-wiki.html" class="md-nav__link">The wiki-wiki</a>
-      
-    
-    </li></ul>
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../development/meetings/index.html" class="md-nav__link">Meetings</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../development/misc/index.html" class="md-nav__link">Miscellaneous dev notes</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../development/platforms/index.html" class="md-nav__link">Plattforms</a>
-      
-    
-    </li></ul>
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../user/index.html" class="md-nav__link">User resources</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../community/index.html" class="md-nav__link">Community</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../../../faq/index.html" class="md-nav__link">FAQ</a>
-      
-    
-    </li>
-  </ul>
-  
-
-</nav>
-              </div>
-            </div>
-          </div>
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">"Contents"</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#contributing-style-cpp-formatting-cpp-formatting-instructions--page-root" class="md-nav__link">C++ formatting instructions</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#overview" class="md-nav__link">Overview</a>
-        </li>
-        <li class="md-nav__item"><a href="#requirements" class="md-nav__link">Requirements</a>
-        </li>
-        <li class="md-nav__item"><a href="#getting-started" class="md-nav__link">Getting started</a>
-        </li>
-        <li class="md-nav__item"><a href="#working-with-clang-format" class="md-nav__link">Working with clang-format</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#reformatting-as-you-work-normal-usage" class="md-nav__link">Reformatting as you work (normal usage)</a>
-        </li>
-        <li class="md-nav__item"><a href="#reformatting-your-last-commit" class="md-nav__link">Reformatting your last commit</a>
-        </li>
-        <li class="md-nav__item"><a href="#reformatting-an-entire-pr" class="md-nav__link">Reformatting an entire PR</a>
-        </li>
-        <li class="md-nav__item"><a href="#cmake-targets" class="md-nav__link">CMake targets</a>
-        </li>
-        <li class="md-nav__item"><a href="#build-directory-scripts" class="md-nav__link">Build directory scripts</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#working-without-clang-format" class="md-nav__link">Working without clang-format</a>
-        </li>
-        <li class="md-nav__item"><a href="#what-files-are-actually-linted-formatted" class="md-nav__link">What files are actually linted/formatted?</a>
-        </li>
-        <li class="md-nav__item"><a href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it" class="md-nav__link">I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#troubleshooting" class="md-nav__link">Troubleshooting</a>
-        </li>
-        <li class="md-nav__item"><a href="#specific-issues" class="md-nav__link">Specific issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#ascii-codec-can-t-encode-character" class="md-nav__link">“‘ascii’ codec can’t encode character”</a>
-        </li>
-        <li class="md-nav__item"><a href="#your-working-tree-has-pending-changes" class="md-nav__link">“Your working tree has pending changes.”</a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../../_sources/contributing/style/cpp-formatting/Cpp-formatting-instructions.md.txt">Show Source</a> </li>
-
-<li id="searchbox" class="md-nav__item"></li>
-
-  </ul>
-</nav>
-              </div>
-            </div>
-          </div>
-        
-        <div class="md-content">
-          <article class="md-content__inner md-typeset" role="main">
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Contributing</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
-  <section id="c-formatting-instructions">
-<h1 id="contributing-style-cpp-formatting-cpp-formatting-instructions--page-root">C++ formatting instructions<a class="headerlink" href="#contributing-style-cpp-formatting-cpp-formatting-instructions--page-root" title="Link to this heading">¶</a></h1>
-<section id="overview">
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../common/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Common references</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Workflows</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../index.html"><span class="md-ellipsis">Code style guidelines</span></a>
+          
+            <label for="__nav_1_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Code style guidelines" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Code style guidelines</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Style-Guidelines%3A-SuperCollider.html" class="md-nav__link">
+        <span class="md-ellipsis">sclang style guidelines</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3_2" type="checkbox" id="__nav_1_3_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../Style-Guidelines%3A-Cpp.html"><span class="md-ellipsis">C++ style guidelines</span></a>
+          
+            <label for="__nav_1_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="C++ style guidelines" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">C++ style guidelines</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-ellipsis">C++ formatting instructions</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span class="md-ellipsis">C++ formatting instructions</span>
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <span class="md-ellipsis">C++ formatting instructions</span>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">Overview</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">Requirements</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">Getting started</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-clang-format" class="md-nav__link">
+    <span class="md-ellipsis">Working with clang-<wbr>format</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with clang-format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-as-you-work-normal-usage" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting as you work <wbr>(normal usage)</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-your-last-commit" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting your last commit</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-an-entire-pr" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting an entire PR</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake-targets" class="md-nav__link">
+    <span class="md-ellipsis">CMake targets</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-directory-scripts" class="md-nav__link">
+    <span class="md-ellipsis">Build directory scripts</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-without-clang-format" class="md-nav__link">
+    <span class="md-ellipsis">Working without clang-<wbr>format</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-files-are-actually-linted-formatted" class="md-nav__link">
+    <span class="md-ellipsis">What files are actually linted/formatted?</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it" class="md-nav__link">
+    <span class="md-ellipsis">I made a PR before the reformat <wbr>(June 2019) and it has merge conflicts now! How do I fix it?</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">Troubleshooting</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-issues" class="md-nav__link">
+    <span class="md-ellipsis">Specific issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ascii-codec-can-t-encode-character" class="md-nav__link">
+    <span class="md-ellipsis">“‘ascii’ codec can’t encode character”</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-working-tree-has-pending-changes" class="md-nav__link">
+    <span class="md-ellipsis">“Your working tree has pending changes.<wbr>”</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Style-Guidelines%3A-SCDocs.html" class="md-nav__link">
+        <span class="md-ellipsis">scdoc style guidelines</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The-wiki-wiki.html" class="md-nav__link">
+        <span class="md-ellipsis">The wiki-<wbr>wiki</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../more.html" class="md-nav__link">
+        <span class="md-ellipsis">More</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../development/index.html"><span class="md-ellipsis">Development</span></a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Development</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/reviewing/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Reviewing</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/releasing/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Releasing</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/project-structure/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Project structure</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../index.html"><span class="md-ellipsis">Code style guidelines</span></a>
+          
+            <label for="__nav_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Code style guidelines" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Code style guidelines</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Style-Guidelines%3A-SuperCollider.html" class="md-nav__link">
+        <span class="md-ellipsis">sclang style guidelines</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_2" type="checkbox" id="__nav_2_4_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../Style-Guidelines%3A-Cpp.html"><span class="md-ellipsis">C++ style guidelines</span></a>
+          
+            <label for="__nav_2_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="C++ style guidelines" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">C++ style guidelines</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+    
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__current-nested md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4_2_1" type="checkbox" id="__nav_2_4_2_1" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="#"><span class="md-ellipsis">C++ formatting instructions</span></a>
+          
+            <label for="__nav_2_4_2_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="C++ formatting instructions" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_4_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">C++ formatting instructions</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#overview" class="md-nav__link">
+        <span class="md-ellipsis">Overview</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#requirements" class="md-nav__link">
+        <span class="md-ellipsis">Requirements</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#getting-started" class="md-nav__link">
+        <span class="md-ellipsis">Getting started</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4_2_1_4" type="checkbox" id="__nav_2_4_2_1_4" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#working-with-clang-format"><span class="md-ellipsis">Working with clang-<wbr>format</span></a>
+          
+            <label for="__nav_2_4_2_1_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Working with clang-format" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_4_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Working with clang-<wbr>format</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#reformatting-as-you-work-normal-usage" class="md-nav__link">
+        <span class="md-ellipsis">Reformatting as you work <wbr>(normal usage)</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#reformatting-your-last-commit" class="md-nav__link">
+        <span class="md-ellipsis">Reformatting your last commit</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#reformatting-an-entire-pr" class="md-nav__link">
+        <span class="md-ellipsis">Reformatting an entire PR</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#cmake-targets" class="md-nav__link">
+        <span class="md-ellipsis">CMake targets</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#build-directory-scripts" class="md-nav__link">
+        <span class="md-ellipsis">Build directory scripts</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#working-without-clang-format" class="md-nav__link">
+        <span class="md-ellipsis">Working without clang-<wbr>format</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#what-files-are-actually-linted-formatted" class="md-nav__link">
+        <span class="md-ellipsis">What files are actually linted/formatted?</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4_2_1_7" type="checkbox" id="__nav_2_4_2_1_7" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it"><span class="md-ellipsis">I made a PR before the reformat <wbr>(June 2019) and it has merge conflicts now! How do I fix it?</span></a>
+          
+            <label for="__nav_2_4_2_1_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?" data-md-level="5">
+        <label class="md-nav__title" for="__nav_2_4_2_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">I made a PR before the reformat <wbr>(June 2019) and it has merge conflicts now! How do I fix it?</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#troubleshooting" class="md-nav__link">
+        <span class="md-ellipsis">Troubleshooting</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4_2_1_7_2" type="checkbox" id="__nav_2_4_2_1_7_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#specific-issues"><span class="md-ellipsis">Specific issues</span></a>
+          
+            <label for="__nav_2_4_2_1_7_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Specific issues" data-md-level="6">
+        <label class="md-nav__title" for="__nav_2_4_2_1_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Specific issues</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#ascii-codec-can-t-encode-character" class="md-nav__link">
+        <span class="md-ellipsis">“‘ascii’ codec can’t encode character”</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#your-working-tree-has-pending-changes" class="md-nav__link">
+        <span class="md-ellipsis">“Your working tree has pending changes.<wbr>”</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+      
+    <li class="md-nav__item md-nav__item--active md-nav__current-toc">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-ellipsis">C++ formatting instructions</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span class="md-ellipsis">C++ formatting instructions</span>
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <span class="md-ellipsis">C++ formatting instructions</span>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">Overview</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">Requirements</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">Getting started</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-clang-format" class="md-nav__link">
+    <span class="md-ellipsis">Working with clang-<wbr>format</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with clang-format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-as-you-work-normal-usage" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting as you work <wbr>(normal usage)</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-your-last-commit" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting your last commit</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-an-entire-pr" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting an entire PR</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake-targets" class="md-nav__link">
+    <span class="md-ellipsis">CMake targets</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-directory-scripts" class="md-nav__link">
+    <span class="md-ellipsis">Build directory scripts</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-without-clang-format" class="md-nav__link">
+    <span class="md-ellipsis">Working without clang-<wbr>format</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-files-are-actually-linted-formatted" class="md-nav__link">
+    <span class="md-ellipsis">What files are actually linted/formatted?</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it" class="md-nav__link">
+    <span class="md-ellipsis">I made a PR before the reformat <wbr>(June 2019) and it has merge conflicts now! How do I fix it?</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">Troubleshooting</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-issues" class="md-nav__link">
+    <span class="md-ellipsis">Specific issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ascii-codec-can-t-encode-character" class="md-nav__link">
+    <span class="md-ellipsis">“‘ascii’ codec can’t encode character”</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-working-tree-has-pending-changes" class="md-nav__link">
+    <span class="md-ellipsis">“Your working tree has pending changes.<wbr>”</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Style-Guidelines%3A-SCDocs.html" class="md-nav__link">
+        <span class="md-ellipsis">scdoc style guidelines</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../The-wiki-wiki.html" class="md-nav__link">
+        <span class="md-ellipsis">The wiki-<wbr>wiki</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/meetings/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Meetings</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/misc/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Miscellaneous dev notes</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/platforms/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Plattforms</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user/index.html" class="md-nav__link">
+        <span class="md-ellipsis">User resources</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Community</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/index.html" class="md-nav__link">
+        <span class="md-ellipsis">FAQ</span>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <span class="md-ellipsis">C++ formatting instructions</span>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">Overview</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">Requirements</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">Getting started</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-clang-format" class="md-nav__link">
+    <span class="md-ellipsis">Working with clang-<wbr>format</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with clang-format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-as-you-work-normal-usage" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting as you work <wbr>(normal usage)</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-your-last-commit" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting your last commit</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reformatting-an-entire-pr" class="md-nav__link">
+    <span class="md-ellipsis">Reformatting an entire PR</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake-targets" class="md-nav__link">
+    <span class="md-ellipsis">CMake targets</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-directory-scripts" class="md-nav__link">
+    <span class="md-ellipsis">Build directory scripts</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-without-clang-format" class="md-nav__link">
+    <span class="md-ellipsis">Working without clang-<wbr>format</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-files-are-actually-linted-formatted" class="md-nav__link">
+    <span class="md-ellipsis">What files are actually linted/formatted?</span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it" class="md-nav__link">
+    <span class="md-ellipsis">I made a PR before the reformat <wbr>(June 2019) and it has merge conflicts now! How do I fix it?</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">Troubleshooting</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-issues" class="md-nav__link">
+    <span class="md-ellipsis">Specific issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ascii-codec-can-t-encode-character" class="md-nav__link">
+    <span class="md-ellipsis">“‘ascii’ codec can’t encode character”</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-working-tree-has-pending-changes" class="md-nav__link">
+    <span class="md-ellipsis">“Your working tree has pending changes.<wbr>”</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                  
+
+
+  <a href="https://github.com/capital-g/supercollider-wiki/blob/main/docs/contributing/style/cpp-formatting/Cpp-formatting-instructions.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+<h1 id="c-formatting-instructions">C++ formatting instructions<a class="headerlink" href="#c-formatting-instructions" title="Link to this heading">¶</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
 <p>In this context of this document, “linting” means checking that code is formatted correctly, without modifying code;
 “formatting” means actually changing the code.</p>
@@ -404,8 +1620,6 @@ of the codebase is consistent across time and authors, and makes contributing an
 merge any change which violates our formatting standards.</p>
 <p>If you are contributing to SuperCollider and plan on working on C++ code, it is strongly recommended that you
 integrate ClangFormat into your development workflow.</p>
-</section>
-<section id="requirements">
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
 <p><strong>Python &gt;= 3.6</strong>: any version past 3.6 should work. To find out what version you have run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code>.</p>
 <p><strong>ClangFormat v8.x.y</strong>: from the LLVM website you can download either version <a class="reference external" href="https://releases.llvm.org/download.html#8.0.1">8.0.1</a> or
@@ -413,7 +1627,7 @@ integrate ClangFormat into your development workflow.</p>
 out-of-date version of clang-format. To find out if it’s already installed, run <code class="docutils literal notranslate"><span class="pre">clang-format</span> <span class="pre">--version</span></code>.  Even if it
 is installed, you may still need to do some setup (see below).</p>
 <p>The LLVM official releases support at least: FreeBSD, Windows, Ubuntu, RHEL/Fedora, and macOS (8.0.0 only). On macOS
-you can also install it with homebrew with <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">llvm@8</span></code> or install only clang-format with <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">clang-format@8</span></code>. Other platforms may also be supported.</p>
+you can also install it with homebrew with <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">llvm&#64;8</span></code> or install only clang-format with <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">clang-format&#64;8</span></code>. Other platforms may also be supported.</p>
 <p>On <strong>Arch Linux</strong>, there is no good package for clang8; https://aur.archlinux.org/packages/clang8 conflicts with
 clang, and the clang-8 source code release does not compile with the latest clang or gcc version. This script will
 install it for you in a way that it peacefully coexists with other installations of clang:
@@ -421,8 +1635,6 @@ https://gist.github.com/mossheim/2f80768eb2429b285902f8898182ae2d.</p>
 <p>If you can’t find a suitable release artifact for your system on LLVM’s website, check your package manager of choice.
 If that doesn’t work either, <a class="reference external" href="https://github.com/supercollider/supercollider/blob/develop/README.md#discuss">let us
 know</a> and we’ll be happy to help you!</p>
-</section>
-<section id="getting-started">
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Download and install Python and LLVM 8;  See
@@ -431,7 +1643,7 @@ more info.</p></li>
 <li><p>Open a terminal and execute <code class="docutils literal notranslate"><span class="pre">clang-format</span> <span class="pre">--version</span></code> and <code class="docutils literal notranslate"><span class="pre">clang-format-diff.py</span> <span class="pre">-h</span></code>. You should see something like
 this:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>clang-format<span class="w"> </span>version<span class="w"> </span><span class="m">8</span>.0.0<span class="w"> </span><span class="o">(</span>tags/RELEASE_800/final<span class="o">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>clang-format<span class="w"> </span>version<span class="w"> </span><span class="m">8</span>.0.0<span class="w"> </span><span class="o">(</span>tags/RELEASE_800/final<span class="o">)</span>
 
 usage:<span class="w"> </span>clang-format-diff.py<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-i<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="w"> </span>NUM<span class="o">]</span><span class="w"> </span><span class="o">[</span>-regex<span class="w"> </span>PATTERN<span class="o">]</span>
 <span class="w">                            </span><span class="o">[</span>-iregex<span class="w"> </span>PATTERN<span class="o">]</span><span class="w"> </span><span class="o">[</span>-sort-includes<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="o">]</span>
@@ -453,22 +1665,22 @@ optional<span class="w"> </span>arguments:
 <span class="w">  </span>-style<span class="w"> </span>STYLE<span class="w">     </span>formatting<span class="w"> </span>style<span class="w"> </span>to<span class="w"> </span>apply<span class="w"> </span><span class="o">(</span>LLVM,<span class="w"> </span>Google,<span class="w"> </span>Chromium,<span class="w"> </span>Mozilla,
 <span class="w">                   </span>WebKit<span class="o">)</span>
 <span class="w">  </span>-binary<span class="w"> </span>BINARY<span class="w">   </span>location<span class="w"> </span>of<span class="w"> </span>binary<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="k">for</span><span class="w"> </span>clang-format
-</pre></div>
+</code></pre></div>
 </div>
 <p>If you see this, and the clang-format verison matches the version you installed, and <em>you can skip the remaining steps.</em></p>
 <ol class="arabic simple" start="3">
 <li><p>Otherwise, find where you installed LLVM, and within that directory you should see <code class="docutils literal notranslate"><span class="pre">your-llvm-root/bin/clang-format</span></code> and <code class="docutils literal notranslate"><span class="pre">your-llvm-root/share/clang/clang-format-diff.py</span></code>.
 Find their full paths, and then add the following variables to your environment:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">SC_CLANG_FORMAT</span><span class="o">=</span>/full/path/to/clang-format
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code><span class="nv">SC_CLANG_FORMAT</span><span class="o">=</span>/full/path/to/clang-format
 <span class="nv">SC_CLANG_FORMAT_DIFF</span><span class="o">=</span>/full/path/to/clang-format-diff.py
-</pre></div>
+</code></pre></div>
 </div>
 <p>On macOS and Linux, you can add the following lines to <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> (or the profile script for whatever shell you
 prefer):</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SC_CLANG_FORMAT</span><span class="o">=</span>/full/path/to/clang-format
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SC_CLANG_FORMAT</span><span class="o">=</span>/full/path/to/clang-format
 <span class="nb">export</span><span class="w"> </span><span class="nv">SC_CLANG_FORMAT_DIFF</span><span class="o">=</span>/full/path/to/clang-format-diff.py
-</pre></div>
+</code></pre></div>
 </div>
 <p>On Windows, this is done by setting environment variables through user settings; there are many articles online that
 explain how.</p>
@@ -478,8 +1690,6 @@ Instructions to do this can be found online. This may lead to issues if you have
 clang installed on your system. You can open a new terminal window and run <code class="docutils literal notranslate"><span class="pre">clang-format</span> <span class="pre">--version</span></code> and
 <code class="docutils literal notranslate"><span class="pre">clang-format-diff.py</span> <span class="pre">-h</span></code> like before to confirmed that you did it correctly.</p></li>
 </ol>
-</section>
-<section id="working-with-clang-format">
 <h2 id="working-with-clang-format">Working with clang-format<a class="headerlink" href="#working-with-clang-format" title="Link to this heading">¶</a></h2>
 <p>There are four basic commands that we use for formatting: <code class="docutils literal notranslate"><span class="pre">lint</span></code>, <code class="docutils literal notranslate"><span class="pre">format</span></code>, <code class="docutils literal notranslate"><span class="pre">lintall</span></code>, <code class="docutils literal notranslate"><span class="pre">formatall</span></code>. The first two <strong>only
 apply to the code that changed between commits</strong>, while the last two will run on the entire codebase.</p>
@@ -501,7 +1711,6 @@ clang-format that you installed rather than the one it came with.</p></li>
 accept a commit “reference point” as an optional first argument.</p></li>
 <li><p>You can “build” some commands as build targets, see below.</p></li>
 </ol>
-<section id="reformatting-as-you-work-normal-usage">
 <h3 id="reformatting-as-you-work-normal-usage">Reformatting as you work (normal usage)<a class="headerlink" href="#reformatting-as-you-work-normal-usage" title="Link to this heading">¶</a></h3>
 <p>If you are developing a C++ feature or bug fix, a typical workflow might look like this:</p>
 <ol class="arabic simple">
@@ -509,8 +1718,6 @@ accept a commit “reference point” as an optional first argument.</p></li>
 <li><p>Use your editor’s integration or run <code class="docutils literal notranslate"><span class="pre">./format.py</span></code> in your build directory to format your code</p></li>
 <li><p>Commit your changes with git</p></li>
 </ol>
-</section>
-<section id="reformatting-your-last-commit">
 <h3 id="reformatting-your-last-commit">Reformatting your last commit<a class="headerlink" href="#reformatting-your-last-commit" title="Link to this heading">¶</a></h3>
 <p>If you just made a commit without formatting and want to reformat it:</p>
 <ol class="arabic simple">
@@ -520,10 +1727,8 @@ correct commits.</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">./format.py</span> <span class="pre">HEAD^</span></code> in your build directory or <code class="docutils literal notranslate"><span class="pre">tools/clang-format.py</span> <span class="pre">HEAD^</span></code> from anywhere. <strong>Remember to
 include the <code class="docutils literal notranslate"><span class="pre">^</span></code>!</strong></p></li>
 <li><p>If you haven’t pushed your work yet, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">--amend</span> <span class="pre">--no-edit</span></code> to update your last commit.</p></li>
-<li><p>If you have already pushed your work, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">"Format</span> <span class="pre">with</span> <span class="pre">clang-format"</span></code> to make a new commit.</p></li>
+<li><p>If you have already pushed your work, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;Format</span> <span class="pre">with</span> <span class="pre">clang-format&quot;</span></code> to make a new commit.</p></li>
 </ol>
-</section>
-<section id="reformatting-an-entire-pr">
 <h3 id="reformatting-an-entire-pr">Reformatting an entire PR<a class="headerlink" href="#reformatting-an-entire-pr" title="Link to this heading">¶</a></h3>
 <p>If you’ve made a PR and now need to reformat the whole thing:</p>
 <ol class="arabic simple">
@@ -531,10 +1736,8 @@ include the <code class="docutils literal notranslate"><span class="pre">^</span
 to be committed, or any submodule changes. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">update</span> <span class="pre">--recursive</span></code> will set your submodules to the
 correct commits.</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">./format.py</span> <span class="pre">develop</span></code> in your build directory or <code class="docutils literal notranslate"><span class="pre">tools/clang-format.py</span> <span class="pre">develop</span></code> from anywhere.</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">"Format</span> <span class="pre">with</span> <span class="pre">clang-format"</span></code> to make a new commit.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-am</span> <span class="pre">&quot;Format</span> <span class="pre">with</span> <span class="pre">clang-format&quot;</span></code> to make a new commit.</p></li>
 </ol>
-</section>
-<section id="cmake-targets">
 <h3 id="cmake-targets">CMake targets<a class="headerlink" href="#cmake-targets" title="Link to this heading">¶</a></h3>
 <p>The following targets are provided in the build system:</p>
 <ul class="simple">
@@ -549,8 +1752,6 @@ exit without printing anything.</p></li>
 this: <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span> <span class="pre">--target</span> <span class="pre">lint</span></code>.</p>
 <p>This method should not be your main method of formatting, because there’s no way to specify a reference commit to format
 against.</p>
-</section>
-<section id="build-directory-scripts">
 <h3 id="build-directory-scripts">Build directory scripts<a class="headerlink" href="#build-directory-scripts" title="Link to this heading">¶</a></h3>
 <p>In your build directory (usually, <code class="docutils literal notranslate"><span class="pre">/path/to/supercollider/build</span></code>), after running CMake, you will
 have two Python scripts named <code class="docutils literal notranslate"><span class="pre">lint.py</span></code> and <code class="docutils literal notranslate"><span class="pre">format.py</span></code>. These behave like the <code class="docutils literal notranslate"><span class="pre">lint</span></code> and <code class="docutils literal notranslate"><span class="pre">format</span></code>
@@ -559,9 +1760,6 @@ instance, if you have a branch <code class="docutils literal notranslate"><span 
 <code class="docutils literal notranslate"><span class="pre">./lint.py</span> <span class="pre">develop</span></code> to lint the C++ changes introduced on your feature branch (and nothing else).</p>
 <p>This is useful for quickly reformatting an entire branch of changes if you’ve neglected to format
 each commit, and don’t want to go back and redo each commit separately.</p>
-</section>
-</section>
-<section id="working-without-clang-format">
 <h2 id="working-without-clang-format">Working without clang-format<a class="headerlink" href="#working-without-clang-format" title="Link to this heading">¶</a></h2>
 <p><strong>Please note: the following instructions refer to the now-obsolete Travis CI and have not been updated for the currently used GitHub Actions</strong></p>
 <p>Sometimes you just want to update your PR (pull request) so it passes linting, without installing clang-format. It
@@ -570,14 +1768,14 @@ will be painful but you can follow these steps as a last resort:</p>
 <li><p>Look toward the bottom of the PR for the section that has “Some checks were not successful”, then next to the
 check called “continuous-integration/travis-ci/pr” click “Details”.</p></li>
 </ol>
-<img alt="Screen Shot 2020-11-22 at 11 18 34 AM" src="https://user-images.githubusercontent.com/15369640/99910685-fcaf1480-2cb4-11eb-8c4d-0723f89fd306.png" width="800"/>
+<img width="800" alt="Screen Shot 2020-11-22 at 11 18 34 AM" src="https://user-images.githubusercontent.com/15369640/99910685-fcaf1480-2cb4-11eb-8c4d-0723f89fd306.png">
 <ol class="arabic simple" start="2">
 <li><p>This will take you to Travis’s build job view. You will see a listing of build jobs each labeled N.1, N.2, N.3,
 where N is some number. Select build job 11, which also has “with linting” in its JOB_NAME. It should be the one
 with a red exclamation point next to the name instead of a green check mark. (Depending on the PR there may be other
 jobs with red marks)</p></li>
 </ol>
-<img alt="Screen Shot 2020-11-22 at 11 19 00 AM" src="https://user-images.githubusercontent.com/15369640/99910684-fc167e00-2cb4-11eb-8fa7-e457bbb85fa8.png" width="800"/>
+<img width="800" alt="Screen Shot 2020-11-22 at 11 19 00 AM" src="https://user-images.githubusercontent.com/15369640/99910684-fc167e00-2cb4-11eb-8fa7-e457bbb85fa8.png">
 <ol class="arabic simple" start="3">
 <li><p>Scroll down through the log, or open the raw log, until you get to “Running tools/clang-format.py lintall”.
 Everything from here until “The command $TRAVIS_BUILD_DIR/.travis/before-install-$TRAVIS …” is what clang-format
@@ -585,9 +1783,7 @@ disagreed with. If you don’t want to use clang-format, you will have to manual
 repo. For some diffs, it may look like nothing has changed; make sure you check locally for things like trailing
 whitespace, mixed spaces and tabs, and tabs instead of spaces.</p></li>
 </ol>
-<img alt="Screen Shot 2020-11-22 at 11 19 47 AM" src="https://user-images.githubusercontent.com/15369640/99910682-fb7de780-2cb4-11eb-90b8-e6ef1aff4462.png" width="800"/>
-</section>
-<section id="what-files-are-actually-linted-formatted">
+<img width="800" alt="Screen Shot 2020-11-22 at 11 19 47 AM" src="https://user-images.githubusercontent.com/15369640/99910682-fb7de780-2cb4-11eb-90b8-e6ef1aff4462.png">
 <h2 id="what-files-are-actually-linted-formatted">What files are actually linted/formatted?<a class="headerlink" href="#what-files-are-actually-linted-formatted" title="Link to this heading">¶</a></h2>
 <p>Any file with an extension of <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">cpp</span></code>, <code class="docutils literal notranslate"><span class="pre">hpp</span></code>, <code class="docutils literal notranslate"><span class="pre">m</span></code>, or <code class="docutils literal notranslate"><span class="pre">mm</span></code> is linted or formatted, with the
 exception of files that we don’t have direct control over. That set of files consists of code from
@@ -600,8 +1796,6 @@ generation tools. These auto-generated files are:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">lang/LangSource/Bison/lang11d_tab.cpp</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lang/LangSource/Bison/lang11d_tab.h</span></code></p></li>
 </ul>
-</section>
-<section id="i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it">
 <h2 id="i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it">I made a PR before the reformat (June 2019) and it has merge conflicts now! How do I fix it?<a class="headerlink" href="#i-made-a-pr-before-the-reformat-june-2019-and-it-has-merge-conflicts-now-how-do-i-fix-it" title="Link to this heading">¶</a></h2>
 <p>If you have a branch that contains work prior to the major C++ reformatting commit (tag <code class="docutils literal notranslate"><span class="pre">tag-clang-format-develop</span></code>, which happened around June 2019), just follow these steps.</p>
 <ol class="arabic simple">
@@ -609,17 +1803,17 @@ generation tools. These auto-generated files are:</p>
 <li><p>Run the following commands to update your local repo. This assumes that <code class="docutils literal notranslate"><span class="pre">upstream</span></code> points to the main SuperCollider
 repository; you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> to check.</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>develop
 git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>develop
 git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>--tags
-</pre></div>
+</code></pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Rebase your branch to the commit before the reformat:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>my-branch
-git<span class="w"> </span>rebase<span class="w"> </span>tag-clang-format-develop^<span class="w">  </span><span class="c1"># DON'T FORGET THE ^ !!!!</span>
-</pre></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>my-branch
+git<span class="w"> </span>rebase<span class="w"> </span>tag-clang-format-develop^<span class="w">  </span><span class="c1"># DON&#39;T FORGET THE ^ !!!!</span>
+</code></pre></div>
 </div>
 <p>The ^, which you absolutely must not forget, indicates that you’re rebasing onto the commit immediately before the relevant reformat commit. This gives you access to the <code class="docutils literal notranslate"><span class="pre">tools/clang-format.py</span></code> script.</p>
 <p>Under normal conditions, this rebase won’t create any conflicts. If there are conflicts, you can try to resolve them
@@ -629,120 +1823,184 @@ yourself, or ask for help.</p>
 bugs fixed in the clang-format.py script. In order to get the best rebase experience, you should check the latest
 version out from the develop branch and commit that separately <strong>on the branch you want to rebase</strong>.</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>my-branch
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>my-branch
 git<span class="w"> </span>checkout<span class="w"> </span>develop<span class="w"> </span>--<span class="w"> </span>tools/clang-format.py<span class="w"> </span><span class="c1"># only modifies the one file</span>
 git<span class="w"> </span>add<span class="w"> </span>tools/clang-format.py
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Update clang-format.py to latest develop prior to rebase"</span>
-</pre></div>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update clang-format.py to latest develop prior to rebase&quot;</span>
+</code></pre></div>
 </div>
 <p>The script may later complain about an empty commit due to this, but don’t worry.</p>
 <ol class="arabic simple" start="5">
 <li><p>Rebase it!</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tools/clang-format.py<span class="w"> </span>rebase<span class="w"> </span>-b<span class="w"> </span>develop
-</pre></div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>tools/clang-format.py<span class="w"> </span>rebase<span class="w"> </span>-b<span class="w"> </span>develop
+</code></pre></div>
 </div>
 <p>This will switch you over to a new branch called <code class="docutils literal notranslate"><span class="pre">&lt;branch-name&gt;-reformatted</span></code>, and explain how to undo what you just did
 if you think you made a mistake.</p>
 <ol class="arabic simple" start="6">
 <li><p>Update your remote branch. Inspect the changes – do they all look good? If so:</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># rewrite the original branch to match the reformatted one</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code><span class="c1"># rewrite the original branch to match the reformatted one</span>
 git<span class="w"> </span>branch<span class="w"> </span>-f<span class="w"> </span>&lt;branch-name&gt;
 
 <span class="c1"># Force push your changes to the branch in your fork of SC</span>
 git<span class="w"> </span>push<span class="w"> </span>-f<span class="w"> </span>origin<span class="w"> </span>&lt;branch-name&gt;
-</pre></div>
+</code></pre></div>
 </div>
 <p>Any PR you have open will automatically update. <strong>There is no need to close and re-open your PR.</strong></p>
-<section id="troubleshooting">
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h3>
 <p>We are using fairly tricky git features here. <strong>If something gets screwed up, don’t panic</strong> and <strong>don’t do reckless things like deleting your entire repository</strong>. It will probably not fix your issue.</p>
 <p>Instead, just ask for help in <a class="reference external" href="https://github.com/supercollider/supercollider/wiki#joining-the-community">one of our communities</a>.</p>
-</section>
-<section id="specific-issues">
 <h3 id="specific-issues">Specific issues<a class="headerlink" href="#specific-issues" title="Link to this heading">¶</a></h3>
-<section id="ascii-codec-can-t-encode-character">
 <h4 id="ascii-codec-can-t-encode-character">“‘ascii’ codec can’t encode character”<a class="headerlink" href="#ascii-codec-can-t-encode-character" title="Link to this heading">¶</a></h4>
 <p>If the script fails with something like this error message:</p>
 <p><code class="docutils literal notranslate"><span class="pre">***</span> <span class="pre">ERROR:</span> <span class="pre">'ascii'</span> <span class="pre">codec</span> <span class="pre">can't</span> <span class="pre">encode</span> <span class="pre">character</span> <span class="pre">u'\u2026'</span> <span class="pre">in</span> <span class="pre">position</span> <span class="pre">629:</span> <span class="pre">ordinal</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">range(128)</span></code></p>
 <p>You may need to use Python 3 to run the script (see below in Requirements). First, reset your repository state, then try rerunning the script with Python 3:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>&lt;branch-to-rebase&gt;
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>&lt;branch-to-rebase&gt;
 python3<span class="w"> </span>tools/clang-format.py<span class="w"> </span>rebase<span class="w"> </span>-b<span class="w"> </span>develop<span class="w"> </span><span class="c1"># or current release version</span>
-</pre></div>
+</code></pre></div>
 </div>
-</section>
-<section id="your-working-tree-has-pending-changes">
 <h4 id="your-working-tree-has-pending-changes">“Your working tree has pending changes.”<a class="headerlink" href="#your-working-tree-has-pending-changes" title="Link to this heading">¶</a></h4>
 <p>If the script fails with this error message:</p>
 <p><code class="docutils literal notranslate"><span class="pre">***</span> <span class="pre">ERROR:</span> <span class="pre">Your</span> <span class="pre">working</span> <span class="pre">tree</span> <span class="pre">has</span> <span class="pre">pending</span> <span class="pre">changes.</span> <span class="pre">You</span> <span class="pre">must</span> <span class="pre">have</span> <span class="pre">a</span> <span class="pre">clean</span> <span class="pre">working</span> <span class="pre">tree</span> <span class="pre">before</span> <span class="pre">proceeding.</span></code></p>
 <p>You need to make sure that any changed files shown by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> are reset back to their clean state. You can do that with the following commands. <strong>Be certain you are not losing any unsaved work before you start running these!</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span><span class="c1"># resets all files in your working tree</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span><span class="c1"># resets all files in your working tree</span>
 git<span class="w"> </span>submodule<span class="w"> </span>git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span>--recursive<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span><span class="c1"># resets all files in the working trees of your submodules</span>
 git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--recursive<span class="w"> </span>--force<span class="w"> </span><span class="c1"># resets all submodules according to the currently checked out commit</span>
-</pre></div>
+</code></pre></div>
 </div>
-</section>
-</section>
-</section>
-</section>
 
 
-          </article>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
-      </div>
-    </main>
-  </div>
-  <footer class="md-footer">
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-          
-            <a href="../Style-Guidelines%3A-Cpp.html" title="C++ style guidelines"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> "Previous" </span> C++ style guidelines </span>
-              </div>
-            </a>
-          
-          
-            <a href="../Style-Guidelines%3A-SCDocs.html" title="scdoc style guidelines"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> scdoc style guidelines </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          
-        </a>
         
-      </nav>
-    </div>
-    <div class="md-footer-meta md-typeset">
-      <div class="md-footer-meta__inner md-grid">
-        <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2024, SuperCollider.
-              
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Style-Guidelines%3A-Cpp.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: C++ style guidelines" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
-            Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
-             and
-            <a href="https://github.com/bashtage/sphinx-material/">Material for
-              Sphinx</a>
-        </div>
-      </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              C++ style guidelines
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Style-Guidelines%3A-SCDocs.html" class="md-footer__link md-footer__link--next" aria-label="Next: scdoc style guidelines" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              scdoc style guidelines
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2024, SuperCollider.
+        
     </div>
-  </footer>
-  <script src="../../../_static/javascripts/application.js"></script>
-  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    7.2.6.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/capital-g/supercollider-wiki" target="_blank" rel="noopener" title="Source on github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://scsynth.org/" target="_blank" rel="noopener" title="scsynth.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9C448 134.3 348.6 32 225.9 32zM224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/PVUmDyx7p8" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://join.slack.com/t/scsynth/shared_invite/zt-ezoyz15j-SVM7JVul94pxtDiUDRnd0w" target="_blank" rel="noopener" title="join.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.sections", "navigation.instant", "navigation.top", "search.share", "toc.follow", "toc.sticky", "content.tabs.link", "announce.dismiss"], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+      
+        <script src="../../../_static/sphinx_immaterial_theme.f9d9eeeb247ace16c.min.js?v=8ec58cb5"></script>
+    
   </body>
 </html>

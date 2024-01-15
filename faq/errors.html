@@ -1,121 +1,158 @@
-<!DOCTYPE html>
 
-<html lang="en" data-content_root="../">
+
+<!doctype html>
+<html lang="en" class="no-js">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="">
+    
+    
+      
+        <title>Errors - SuperCollider wiki</title>
+      
+    
+    
+      
+        
+        
+      
+      
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="lang:clipboard.copy" content="Copy to clipboard">
-  <meta name="lang:clipboard.copied" content="Copied to clipboard">
-  <meta name="lang:search.language" content="en">
-  <meta name="lang:search.pipeline.stopwords" content="True">
-  <meta name="lang:search.pipeline.trimmer" content="True">
-  <meta name="lang:search.result.none" content="No matching documents">
-  <meta name="lang:search.result.one" content="1 matching document">
-  <meta name="lang:search.result.other" content="# matching documents">
-  <meta name="lang:search.tokenizer" content="[\s\-]+">
+    
+    
+    
+      
+        
+        
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="../_static/sphinx_immaterial_theme.af531f03affe68837.min.css?v=2410bb73" />
+        <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7d9986eb" />
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-  
-    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
-
-    <style>
-      body,
-      input {
-        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
-      }
-
-      code,
-      kbd,
-      pre {
-        font-family: "Roboto Mono", "Courier New", Courier, monospace
-      }
-    </style>
-  
-
-  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
-  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
-  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
-  
-  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
-  
-  <meta name="theme-color" content="#3f51b5">
-  <script src="../_static/javascripts/modernizr.js"></script>
-  
-  
-  
-    <title>Errors &#8212; SuperCollider Wiki  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=83e35b93" />
-    <link rel="stylesheet" type="text/css" href="../_static/material.css?v=79c92029" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7d9986eb" />
-    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Recording in SuperCollider" href="../user/Recording-in-SuperCollider.html" />
-    <link rel="prev" title="Miscellaneous" href="../user/misc.html" />
-  
-   
-
+    
+    
+    
   </head>
-  <body dir=ltr
-        data-md-color-primary=grey data-md-color-accent=pink>
   
-  <svg class="md-svg">
-    <defs data-children-count="0">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-      
-    </defs>
-  </svg>
   
-  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
-  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
-  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#faq/errors" tabindex="1" class="md-skip"> Skip to content </a>
-  <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex navheader">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="SuperCollider Wiki  documentation"
-           class="md-header-nav__button md-logo">
-          
-            &nbsp;
-          
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#error-primitive-basicnew-failed-index-not-an-integer" class="md-skip">
+          Skip to content
         </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">SuperCollider Wiki</span>
-          <span class="md-header-nav__topic"> Errors </span>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="SuperCollider wiki" class="md-header__button md-logo" aria-label="SuperCollider wiki" data-md-component="logo">
+      <img src="../_static/logo.svg" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SuperCollider wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Errors
+            
+          </span>
         </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
         
-<div class="md-search" data-md-component="search" role="dialog">
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../search.html" method="get" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder=""Search""
-             autocapitalize="off" autocomplete="off" spellcheck="false"
-             data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -123,423 +160,1611 @@
     </div>
   </div>
 </div>
-
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
-
-    <div class="md-source__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/capital-g/supercollider-wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
-    SuperCollider
+    SuperCollider wiki
   </div>
 </a>
-          </div>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="SuperCollider wiki" class="md-nav__button md-logo" aria-label="SuperCollider wiki" data-md-component="logo">
+      <img src="../_static/logo.svg" alt="logo">
+    </a>
+    SuperCollider wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/capital-g/supercollider-wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SuperCollider wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Contributing</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Development</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../user/index.html"><span class="md-ellipsis">User resources</span></a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
-      
-  
-  <script src="../_static/javascripts/version_dropdown.js"></script>
-  <script>
-    var json_loc = "../"versions.json"",
-        target_loc = "../../",
-        text = "Versions";
-    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
-  </script>
-  
-
-    </div>
-  </nav>
-</header>
-
-  
-  <div class="md-container">
-    
-    
-    
-  <nav class="md-tabs" data-md-component="tabs">
-    <div class="md-tabs__inner md-grid">
-      <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">SuperCollider Wiki  documentation</a></li>
-          <li class="md-tabs__item"><a href="../user/index.html" class="md-tabs__link">User resources</a></li>
-          <li class="md-tabs__item"><a href="../user/misc.html" class="md-tabs__link">Miscellaneous</a></li>
-      </ul>
-    </div>
-  </nav>
-    <main class="md-main">
-      <div class="md-main__inner md-grid" data-md-component="container">
-        
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="SuperCollider Wiki documentation" class="md-nav__button md-logo">
-      
-        <img src="../_static/" alt=" logo" width="48" height="48">
-      
-    </a>
-    <a href="../index.html"
-       title="SuperCollider Wiki documentation">SuperCollider Wiki</a>
-  </label>
-    <div class="md-nav__source">
-      <a href="https://github.com/supercollider/supercollider" title="Go to repository" class="md-source" data-md-source="github">
-
-    <div class="md-source__icon">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
-  <div class="md-source__repository">
-    SuperCollider
-  </div>
-</a>
-    </div>
-  
-  
-
-  
-  <ul class="md-nav__list">
-    <li class="md-nav__item">
-    
-    
-      <a href="../contributing/index.html" class="md-nav__link">Contributing</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../development/index.html" class="md-nav__link">Development</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../user/index.html" class="md-nav__link">User resources</a>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-      <a href="../development/platforms/index.html" class="md-nav__link">Plattforms</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../user/learning/index.html" class="md-nav__link">Learning</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../user/misc.html" class="md-nav__link">Miscellaneous</a>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Errors </label>
-    
-      <a href="#" class="md-nav__link md-nav__link--active">Errors</a>
-      
-        
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">"Contents"</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#faq-errors--page-root" class="md-nav__link">Errors</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#error-primitive-basicnew-failed-index-not-an-integer" class="md-nav__link">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#if-you-re-writing-a-synthdef" class="md-nav__link">If you’re writing a SynthDef</a>
-        </li>
-        <li class="md-nav__item"><a href="#so-what-to-do-instead" class="md-nav__link">So what to do instead?</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#language-client-issues" class="md-nav__link">Language (client) issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#calling-gui-primitives-from-a-systemclock-routine" class="md-nav__link">Calling gui primitives from a SystemClock routine</a>
-        </li>
-        <li class="md-nav__item"><a href="#binary-operations-order" class="md-nav__link">Binary operations order</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#synthdef-issues" class="md-nav__link">SynthDef Issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#if-statements-inside-a-synthdef" class="md-nav__link">“If” statements inside a SynthDef</a>
-        </li>
-        <li class="md-nav__item"><a href="#what-is-a-boolean-in-the-server" class="md-nav__link">What is a Boolean in the server?</a>
-        </li>
-        <li class="md-nav__item"><a href="#why-is-x-0-non-boolean-in-the-test" class="md-nav__link">Why is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\&gt;</span> <span class="pre">0</span></code> “non-Boolean” in the “test”?</a>
-        </li>
-        <li class="md-nav__item"><a href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" class="md-nav__link">If you can’t branch, what good is a comparison in the server?</a>
-        </li>
-        <li class="md-nav__item"><a href="#logical-operators-and-or-not-xor" class="md-nav__link">Logical operators: And, Or, Not, Xor</a>
-        </li>
-        <li class="md-nav__item"><a href="#error-synthdef-not-found" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">SynthDef</span> <span class="pre">not</span> <span class="pre">found</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FAILURE</span> <span class="pre">/s_new</span> <span class="pre">alloc</span> <span class="pre">failed,</span> <span class="pre">increase</span> <span class="pre">server's</span> <span class="pre">memory</span> <span class="pre">allocation</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#array-arguments" class="md-nav__link">Array arguments</a>
-        </li>
-        <li class="md-nav__item"><a href="#why-does-it-have-to-be-a-literal-array" class="md-nav__link">Why does it have to be a literal array?</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#server-issues" class="md-nav__link">Server issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#how-to-trigger-a-function-from-the-server" class="md-nav__link">How to trigger a function from the server</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#helpfile-references" class="md-nav__link">Helpfile references</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#exception-in-world-openudp-unable-to-bind-udp-socket" class="md-nav__link">Exception in World_OpenUDP: unable to bind udp socket</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#other-issues" class="md-nav__link">Other issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" class="md-nav__link">Error while loading shared libraries: libsclang.so: cannot open shared object file</a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/faq/errors.md.txt">Show Source</a> </li>
-
-  </ul>
-</nav>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../user/Recording-in-SuperCollider.html" class="md-nav__link">Recording in SuperCollider</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../user/Systems-interfacing-with-SC.html" class="md-nav__link">Systems interfacing</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../user/Plugins-development.html" class="md-nav__link">Plugins development</a>
-      
-    
-    </li></ul>
-    
-    </li></ul>
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../community/index.html" class="md-nav__link">Community</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="index.html" class="md-nav__link">FAQ</a>
-      
-    
-    </li>
-  </ul>
-  
-
-</nav>
-              </div>
-            </div>
-          </div>
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-            <div class="md-sidebar__scrollwrap">
-              <div class="md-sidebar__inner">
-                
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">"Contents"</label>
-  <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#faq-errors--page-root" class="md-nav__link">Errors</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#error-primitive-basicnew-failed-index-not-an-integer" class="md-nav__link">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#if-you-re-writing-a-synthdef" class="md-nav__link">If you’re writing a SynthDef</a>
-        </li>
-        <li class="md-nav__item"><a href="#so-what-to-do-instead" class="md-nav__link">So what to do instead?</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#language-client-issues" class="md-nav__link">Language (client) issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#calling-gui-primitives-from-a-systemclock-routine" class="md-nav__link">Calling gui primitives from a SystemClock routine</a>
-        </li>
-        <li class="md-nav__item"><a href="#binary-operations-order" class="md-nav__link">Binary operations order</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#synthdef-issues" class="md-nav__link">SynthDef Issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#if-statements-inside-a-synthdef" class="md-nav__link">“If” statements inside a SynthDef</a>
-        </li>
-        <li class="md-nav__item"><a href="#what-is-a-boolean-in-the-server" class="md-nav__link">What is a Boolean in the server?</a>
-        </li>
-        <li class="md-nav__item"><a href="#why-is-x-0-non-boolean-in-the-test" class="md-nav__link">Why is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\&gt;</span> <span class="pre">0</span></code> “non-Boolean” in the “test”?</a>
-        </li>
-        <li class="md-nav__item"><a href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" class="md-nav__link">If you can’t branch, what good is a comparison in the server?</a>
-        </li>
-        <li class="md-nav__item"><a href="#logical-operators-and-or-not-xor" class="md-nav__link">Logical operators: And, Or, Not, Xor</a>
-        </li>
-        <li class="md-nav__item"><a href="#error-synthdef-not-found" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">SynthDef</span> <span class="pre">not</span> <span class="pre">found</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FAILURE</span> <span class="pre">/s_new</span> <span class="pre">alloc</span> <span class="pre">failed,</span> <span class="pre">increase</span> <span class="pre">server's</span> <span class="pre">memory</span> <span class="pre">allocation</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#array-arguments" class="md-nav__link">Array arguments</a>
-        </li>
-        <li class="md-nav__item"><a href="#why-does-it-have-to-be-a-literal-array" class="md-nav__link">Why does it have to be a literal array?</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#server-issues" class="md-nav__link">Server issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#how-to-trigger-a-function-from-the-server" class="md-nav__link">How to trigger a function from the server</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#helpfile-references" class="md-nav__link">Helpfile references</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#exception-in-world-openudp-unable-to-bind-udp-socket" class="md-nav__link">Exception in World_OpenUDP: unable to bind udp socket</a>
-        </li></ul>
-            </nav>
-        </li>
-        <li class="md-nav__item"><a href="#other-issues" class="md-nav__link">Other issues</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" class="md-nav__link">Error while loading shared libraries: libsclang.so: cannot open shared object file</a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
-    
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/faq/errors.md.txt">Show Source</a> </li>
-
-<li id="searchbox" class="md-nav__item"></li>
-
-  </ul>
-</nav>
-              </div>
-            </div>
-          </div>
-        
-        <div class="md-content">
-          <article class="md-content__inner md-typeset" role="main">
+      <nav class="md-nav" aria-label="User resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">User resources</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
             
-  <section id="errors">
-<h1 id="faq-errors--page-root">Errors<a class="headerlink" href="#faq-errors--page-root" title="Link to this heading">¶</a></h1>
-<section id="error-primitive-basicnew-failed-index-not-an-integer">
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/platforms/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Plattforms</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user/learning/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Learning</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../user/misc.html"><span class="md-ellipsis">Miscellaneous</span></a>
+          
+            <label for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Miscellaneous" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Miscellaneous</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-ellipsis">Errors</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span class="md-ellipsis">Errors</span>
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <span class="md-ellipsis">Errors</span>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#error-primitive-basicnew-failed-index-not-an-integer" class="md-nav__link">
+    <span class="md-ellipsis">ERROR:<wbr> Primitive ‘Basic<wbr>New’ failed.<wbr> Index not an Integer</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ERROR: Primitive ‘BasicNew’ failed. Index not an Integer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-re-writing-a-synthdef" class="md-nav__link">
+    <span class="md-ellipsis">If you’re writing a Synth<wbr>Def</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-what-to-do-instead" class="md-nav__link">
+    <span class="md-ellipsis">So what to do instead?</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-client-issues" class="md-nav__link">
+    <span class="md-ellipsis">Language <wbr>(client) issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language (client) issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calling-gui-primitives-from-a-systemclock-routine" class="md-nav__link">
+    <span class="md-ellipsis">Calling gui primitives from a System<wbr>Clock routine</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-operations-order" class="md-nav__link">
+    <span class="md-ellipsis">Binary operations order</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthdef-issues" class="md-nav__link">
+    <span class="md-ellipsis">Synth<wbr>Def Issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SynthDef Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-statements-inside-a-synthdef" class="md-nav__link">
+    <span class="md-ellipsis">“If” statements inside a Synth<wbr>Def</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-boolean-in-the-server" class="md-nav__link">
+    <span class="md-ellipsis">What is a Boolean in the server?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-x-0-non-boolean-in-the-test" class="md-nav__link">
+    <span class="md-ellipsis">Why is x \&gt; 0 “non-<wbr>Boolean” in the “test”?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" class="md-nav__link">
+    <span class="md-ellipsis">If you can’t branch, what good is a comparison in the server?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators-and-or-not-xor" class="md-nav__link">
+    <span class="md-ellipsis">Logical operators:<wbr> And, Or, Not, Xor</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-synthdef-not-found" class="md-nav__link">
+    <span class="md-ellipsis">ERROR:<wbr> Synth<wbr>Def not found</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" class="md-nav__link">
+    <span class="md-ellipsis">FAILURE /s_<wbr>new alloc failed, increase server&#39;s memory allocation</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-arguments" class="md-nav__link">
+    <span class="md-ellipsis">Array arguments</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-it-have-to-be-a-literal-array" class="md-nav__link">
+    <span class="md-ellipsis">Why does it have to be a literal array?</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-issues" class="md-nav__link">
+    <span class="md-ellipsis">Server issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-trigger-a-function-from-the-server" class="md-nav__link">
+    <span class="md-ellipsis">How to trigger a function from the server</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to trigger a function from the server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helpfile-references" class="md-nav__link">
+    <span class="md-ellipsis">Helpfile references</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-in-world-openudp-unable-to-bind-udp-socket" class="md-nav__link">
+    <span class="md-ellipsis">Exception in World_<wbr>Open<wbr>UDP:<wbr> unable to bind udp socket</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-issues" class="md-nav__link">
+    <span class="md-ellipsis">Other issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" class="md-nav__link">
+    <span class="md-ellipsis">Error while loading shared libraries:<wbr> libsclang.<wbr>so:<wbr> cannot open shared object file</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user/Recording-in-SuperCollider.html" class="md-nav__link">
+        <span class="md-ellipsis">Recording in Super<wbr>Collider</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user/Systems-interfacing-with-SC.html" class="md-nav__link">
+        <span class="md-ellipsis">Systems interfacing</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user/Plugins-development.html" class="md-nav__link">
+        <span class="md-ellipsis">Plugins development</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/index.html" class="md-nav__link">
+        <span class="md-ellipsis">Community</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html"><span class="md-ellipsis">FAQ</span></a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">FAQ</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changes-to-sc.html" class="md-nav__link">
+        <span class="md-ellipsis">Changes</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+    
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__current-nested md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="#"><span class="md-ellipsis">Errors</span></a>
+          
+            <label for="__nav_5_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Errors" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Errors</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2_1" type="checkbox" id="__nav_5_2_1" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#error-primitive-basicnew-failed-index-not-an-integer"><span class="md-ellipsis">ERROR:<wbr> Primitive ‘Basic<wbr>New’ failed.<wbr> Index not an Integer</span></a>
+          
+            <label for="__nav_5_2_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="ERROR: Primitive ‘BasicNew’ failed. Index not an Integer" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">ERROR:<wbr> Primitive ‘Basic<wbr>New’ failed.<wbr> Index not an Integer</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#if-you-re-writing-a-synthdef" class="md-nav__link">
+        <span class="md-ellipsis">If you’re writing a Synth<wbr>Def</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#so-what-to-do-instead" class="md-nav__link">
+        <span class="md-ellipsis">So what to do instead?</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2_2" type="checkbox" id="__nav_5_2_2" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#language-client-issues"><span class="md-ellipsis">Language <wbr>(client) issues</span></a>
+          
+            <label for="__nav_5_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Language (client) issues" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Language <wbr>(client) issues</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#calling-gui-primitives-from-a-systemclock-routine" class="md-nav__link">
+        <span class="md-ellipsis">Calling gui primitives from a System<wbr>Clock routine</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#binary-operations-order" class="md-nav__link">
+        <span class="md-ellipsis">Binary operations order</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2_3" type="checkbox" id="__nav_5_2_3" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#synthdef-issues"><span class="md-ellipsis">Synth<wbr>Def Issues</span></a>
+          
+            <label for="__nav_5_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="SynthDef Issues" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Synth<wbr>Def Issues</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#if-statements-inside-a-synthdef" class="md-nav__link">
+        <span class="md-ellipsis">“If” statements inside a Synth<wbr>Def</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#what-is-a-boolean-in-the-server" class="md-nav__link">
+        <span class="md-ellipsis">What is a Boolean in the server?</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#why-is-x-0-non-boolean-in-the-test" class="md-nav__link">
+        <span class="md-ellipsis">Why is x \&gt; 0 “non-<wbr>Boolean” in the “test”?</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" class="md-nav__link">
+        <span class="md-ellipsis">If you can’t branch, what good is a comparison in the server?</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#logical-operators-and-or-not-xor" class="md-nav__link">
+        <span class="md-ellipsis">Logical operators:<wbr> And, Or, Not, Xor</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#error-synthdef-not-found" class="md-nav__link">
+        <span class="md-ellipsis">ERROR:<wbr> Synth<wbr>Def not found</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" class="md-nav__link">
+        <span class="md-ellipsis">FAILURE /s_<wbr>new alloc failed, increase server&#39;s memory allocation</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#array-arguments" class="md-nav__link">
+        <span class="md-ellipsis">Array arguments</span>
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#why-does-it-have-to-be-a-literal-array" class="md-nav__link">
+        <span class="md-ellipsis">Why does it have to be a literal array?</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2_4" type="checkbox" id="__nav_5_2_4" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#server-issues"><span class="md-ellipsis">Server issues</span></a>
+          
+            <label for="__nav_5_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Server issues" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Server issues</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2_4_1" type="checkbox" id="__nav_5_2_4_1" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#how-to-trigger-a-function-from-the-server"><span class="md-ellipsis">How to trigger a function from the server</span></a>
+          
+            <label for="__nav_5_2_4_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="How to trigger a function from the server" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_2_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">How to trigger a function from the server</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#helpfile-references" class="md-nav__link">
+        <span class="md-ellipsis">Helpfile references</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#exception-in-world-openudp-unable-to-bind-udp-socket" class="md-nav__link">
+        <span class="md-ellipsis">Exception in World_<wbr>Open<wbr>UDP:<wbr> unable to bind udp socket</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_5_2_5" type="checkbox" id="__nav_5_2_5" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="#other-issues"><span class="md-ellipsis">Other issues</span></a>
+          
+            <label for="__nav_5_2_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Other issues" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Other issues</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" class="md-nav__link">
+        <span class="md-ellipsis">Error while loading shared libraries:<wbr> libsclang.<wbr>so:<wbr> cannot open shared object file</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+      
+    <li class="md-nav__item md-nav__item--active md-nav__current-toc">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-ellipsis">Errors</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span class="md-ellipsis">Errors</span>
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <span class="md-ellipsis">Errors</span>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#error-primitive-basicnew-failed-index-not-an-integer" class="md-nav__link">
+    <span class="md-ellipsis">ERROR:<wbr> Primitive ‘Basic<wbr>New’ failed.<wbr> Index not an Integer</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ERROR: Primitive ‘BasicNew’ failed. Index not an Integer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-re-writing-a-synthdef" class="md-nav__link">
+    <span class="md-ellipsis">If you’re writing a Synth<wbr>Def</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-what-to-do-instead" class="md-nav__link">
+    <span class="md-ellipsis">So what to do instead?</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-client-issues" class="md-nav__link">
+    <span class="md-ellipsis">Language <wbr>(client) issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language (client) issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calling-gui-primitives-from-a-systemclock-routine" class="md-nav__link">
+    <span class="md-ellipsis">Calling gui primitives from a System<wbr>Clock routine</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-operations-order" class="md-nav__link">
+    <span class="md-ellipsis">Binary operations order</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthdef-issues" class="md-nav__link">
+    <span class="md-ellipsis">Synth<wbr>Def Issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SynthDef Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-statements-inside-a-synthdef" class="md-nav__link">
+    <span class="md-ellipsis">“If” statements inside a Synth<wbr>Def</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-boolean-in-the-server" class="md-nav__link">
+    <span class="md-ellipsis">What is a Boolean in the server?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-x-0-non-boolean-in-the-test" class="md-nav__link">
+    <span class="md-ellipsis">Why is x \&gt; 0 “non-<wbr>Boolean” in the “test”?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" class="md-nav__link">
+    <span class="md-ellipsis">If you can’t branch, what good is a comparison in the server?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators-and-or-not-xor" class="md-nav__link">
+    <span class="md-ellipsis">Logical operators:<wbr> And, Or, Not, Xor</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-synthdef-not-found" class="md-nav__link">
+    <span class="md-ellipsis">ERROR:<wbr> Synth<wbr>Def not found</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" class="md-nav__link">
+    <span class="md-ellipsis">FAILURE /s_<wbr>new alloc failed, increase server&#39;s memory allocation</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-arguments" class="md-nav__link">
+    <span class="md-ellipsis">Array arguments</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-it-have-to-be-a-literal-array" class="md-nav__link">
+    <span class="md-ellipsis">Why does it have to be a literal array?</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-issues" class="md-nav__link">
+    <span class="md-ellipsis">Server issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-trigger-a-function-from-the-server" class="md-nav__link">
+    <span class="md-ellipsis">How to trigger a function from the server</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to trigger a function from the server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helpfile-references" class="md-nav__link">
+    <span class="md-ellipsis">Helpfile references</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-in-world-openudp-unable-to-bind-udp-socket" class="md-nav__link">
+    <span class="md-ellipsis">Exception in World_<wbr>Open<wbr>UDP:<wbr> unable to bind udp socket</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-issues" class="md-nav__link">
+    <span class="md-ellipsis">Other issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" class="md-nav__link">
+    <span class="md-ellipsis">Error while loading shared libraries:<wbr> libsclang.<wbr>so:<wbr> cannot open shared object file</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <span class="md-ellipsis">Errors</span>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#error-primitive-basicnew-failed-index-not-an-integer" class="md-nav__link">
+    <span class="md-ellipsis">ERROR:<wbr> Primitive ‘Basic<wbr>New’ failed.<wbr> Index not an Integer</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ERROR: Primitive ‘BasicNew’ failed. Index not an Integer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-re-writing-a-synthdef" class="md-nav__link">
+    <span class="md-ellipsis">If you’re writing a Synth<wbr>Def</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-what-to-do-instead" class="md-nav__link">
+    <span class="md-ellipsis">So what to do instead?</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-client-issues" class="md-nav__link">
+    <span class="md-ellipsis">Language <wbr>(client) issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language (client) issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calling-gui-primitives-from-a-systemclock-routine" class="md-nav__link">
+    <span class="md-ellipsis">Calling gui primitives from a System<wbr>Clock routine</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-operations-order" class="md-nav__link">
+    <span class="md-ellipsis">Binary operations order</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthdef-issues" class="md-nav__link">
+    <span class="md-ellipsis">Synth<wbr>Def Issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SynthDef Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-statements-inside-a-synthdef" class="md-nav__link">
+    <span class="md-ellipsis">“If” statements inside a Synth<wbr>Def</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-boolean-in-the-server" class="md-nav__link">
+    <span class="md-ellipsis">What is a Boolean in the server?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-x-0-non-boolean-in-the-test" class="md-nav__link">
+    <span class="md-ellipsis">Why is x \&gt; 0 “non-<wbr>Boolean” in the “test”?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" class="md-nav__link">
+    <span class="md-ellipsis">If you can’t branch, what good is a comparison in the server?</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-operators-and-or-not-xor" class="md-nav__link">
+    <span class="md-ellipsis">Logical operators:<wbr> And, Or, Not, Xor</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-synthdef-not-found" class="md-nav__link">
+    <span class="md-ellipsis">ERROR:<wbr> Synth<wbr>Def not found</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" class="md-nav__link">
+    <span class="md-ellipsis">FAILURE /s_<wbr>new alloc failed, increase server&#39;s memory allocation</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-arguments" class="md-nav__link">
+    <span class="md-ellipsis">Array arguments</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-it-have-to-be-a-literal-array" class="md-nav__link">
+    <span class="md-ellipsis">Why does it have to be a literal array?</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-issues" class="md-nav__link">
+    <span class="md-ellipsis">Server issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-trigger-a-function-from-the-server" class="md-nav__link">
+    <span class="md-ellipsis">How to trigger a function from the server</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to trigger a function from the server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helpfile-references" class="md-nav__link">
+    <span class="md-ellipsis">Helpfile references</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-in-world-openudp-unable-to-bind-udp-socket" class="md-nav__link">
+    <span class="md-ellipsis">Exception in World_<wbr>Open<wbr>UDP:<wbr> unable to bind udp socket</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-issues" class="md-nav__link">
+    <span class="md-ellipsis">Other issues</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" class="md-nav__link">
+    <span class="md-ellipsis">Error while loading shared libraries:<wbr> libsclang.<wbr>so:<wbr> cannot open shared object file</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                  
+
+
+  <a href="https://github.com/capital-g/supercollider-wiki/blob/main/docs/faq/errors.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+<h1 id="errors">Errors<a class="headerlink" href="#errors" title="Link to this heading">¶</a></h1>
 <h2 id="error-primitive-basicnew-failed-index-not-an-integer">ERROR: Primitive ‘BasicNew’ failed. Index not an Integer<a class="headerlink" href="#error-primitive-basicnew-failed-index-not-an-integer" title="Link to this heading">¶</a></h2>
-<section id="if-you-re-writing-a-synthdef">
 <h3 id="if-you-re-writing-a-synthdef">If you’re writing a SynthDef<a class="headerlink" href="#if-you-re-writing-a-synthdef" title="Link to this heading">¶</a></h3>
-<p>It’s quite likely that the error means you’re trying to dynamically change the number of channels inside a SynthDef, which is something you can’t do - SynthDefs need to have a fixed layout.<br/>
+<p>It’s quite likely that the error means you’re trying to dynamically change the number of channels inside a SynthDef, which is something you can’t do - SynthDefs need to have a fixed layout.<br />
 For example, this is a simple attempt to make pink noise over a variable number of channels:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="p">(</span>
 <span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\thiswillfail</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">out</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">numChannels</span><span class="o">=</span><span class="mi">2</span><span class="o">|</span>
     <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="p">{</span><span class="nx">PinkNoise</span><span class="p">.</span><span class="nx">ar</span><span class="p">}.</span><span class="nx">dup</span><span class="p">(</span><span class="nx">numChannels</span><span class="p">))</span>
 <span class="p">}).</span><span class="nx">add</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </div>
-<p>It fails because we’re trying to make the number of pink noise generators involved, actually changeable.<br/>
+<p>It fails because we’re trying to make the number of pink noise generators involved, actually changeable.<br />
 You can’t do that - when the SynthDef is compiled, the language needs to know <strong>exactly</strong> how many UGens will be involved and how they are connected. This is because a SynthDef represents an efficient fixed-layout synth that the server can instantiate.</p>
-</section>
-<section id="so-what-to-do-instead">
 <h3 id="so-what-to-do-instead">So what to do instead?<a class="headerlink" href="#so-what-to-do-instead" title="Link to this heading">¶</a></h3>
 <p>Think of SynthDefs as tiny fixed reusable components, and design your logic to reuse them in whatever combinations are needed.</p>
 <p>To go back to the simple example above (the pink noise generator), you could simply do:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="p">(</span>
 <span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\simplepink</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">out</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span>
     <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="nx">PinkNoise</span><span class="p">.</span><span class="nx">ar</span><span class="p">)</span>
 <span class="p">}).</span><span class="nx">add</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </div>
-<p>and create one <code class="docutils literal notranslate"><span class="pre">\simplepink</span></code> synth for each channel. Or you could create one SynthDef for each number of channels you expect to use.<br/>
+<p>and create one <code class="docutils literal notranslate"><span class="pre">\simplepink</span></code> synth for each channel. Or you could create one SynthDef for each number of channels you expect to use.<br />
 For example if you might use between 1 and 5 channels:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="p">(</span>
 <span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="mi">5</span><span class="p">).</span><span class="k">do</span><span class="p">{</span> <span class="o">|</span><span class="nx">n</span><span class="o">|</span>
-<span class="nx">SynthDef</span><span class="p">(</span><span class="s2">"simplepink_%"</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">asSymbol</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">out</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span>
+<span class="nx">SynthDef</span><span class="p">(</span><span class="s2">&quot;simplepink_%&quot;</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">asSymbol</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">out</span><span class="o">=</span><span class="mi">0</span><span class="o">|</span>
     <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="p">{</span><span class="nx">PinkNoise</span><span class="p">.</span><span class="nx">ar</span><span class="p">}.</span><span class="nx">dup</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
 <span class="p">}).</span><span class="nx">add</span>
 <span class="p">}</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </div>
 <p>Then you’d need to invoke <code class="docutils literal notranslate"><span class="pre">\simplepink_4</span></code> or whatever, as appropriate.</p>
-</section>
-</section>
-<section id="language-client-issues">
 <h2 id="language-client-issues">Language (client) issues<a class="headerlink" href="#language-client-issues" title="Link to this heading">¶</a></h2>
-<section id="calling-gui-primitives-from-a-systemclock-routine">
 <h3 id="calling-gui-primitives-from-a-systemclock-routine">Calling gui primitives from a SystemClock routine<a class="headerlink" href="#calling-gui-primitives-from-a-systemclock-routine" title="Link to this heading">¶</a></h3>
 <p>When calling gui primitives from a SystemClock routine will cause an error:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SystemClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">})</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">SystemClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">})</span>
+</code></pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">Qt</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="ow">not</span> <span class="n">use</span> <span class="n">this</span> <span class="n">Qt</span> <span class="n">functionality</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">thread</span><span class="o">.</span> <span class="n">Try</span> <span class="n">scheduling</span> <span class="n">on</span> <span class="n">AppClock</span> <span class="n">instead</span><span class="o">.</span>
-<span class="n">ERROR</span><span class="p">:</span> <span class="n">Primitive</span> <span class="s1">'_QWindow_AvailableGeometry'</span> <span class="n">failed</span><span class="o">.</span>
-</pre></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span class="n">ERROR</span><span class="p">:</span> <span class="n">Qt</span><span class="p">:</span> <span class="n">You</span> <span class="n">can</span> <span class="ow">not</span> <span class="n">use</span> <span class="n">this</span> <span class="n">Qt</span> <span class="n">functionality</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">thread</span><span class="o">.</span> <span class="n">Try</span> <span class="n">scheduling</span> <span class="n">on</span> <span class="n">AppClock</span> <span class="n">instead</span><span class="o">.</span>
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">Primitive</span> <span class="s1">&#39;_QWindow_AvailableGeometry&#39;</span> <span class="n">failed</span><span class="o">.</span>
+</code></pre></div>
 </div>
 <p>To avoid this issue use the AppClock:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">AppClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">})</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">AppClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">})</span>
+</code></pre></div>
 </div>
 <p>or the defer method:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SystemClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="p">{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">}.</span><span class="nx">defer</span> <span class="p">})</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">SystemClock</span><span class="p">.</span><span class="nx">sched</span><span class="p">(</span><span class="mi">0</span><span class="p">,{</span> <span class="p">{</span> <span class="nx">Window</span><span class="p">.</span><span class="k">new</span><span class="p">.</span><span class="nx">front</span> <span class="p">}.</span><span class="nx">defer</span> <span class="p">})</span>
+</code></pre></div>
 </div>
-</section>
-<section id="binary-operations-order">
 <h3 id="binary-operations-order">Binary operations order<a class="headerlink" href="#binary-operations-order" title="Link to this heading">¶</a></h3>
-<p>Because of the way SuperCollider evaluates expressions, the usual order of execution of mathematical expressions is not respected.<br/>
+<p>Because of the way SuperCollider evaluates expressions, the usual order of execution of mathematical expressions is not respected.<br />
 In SuperCollider everything is an object, and evaluation happens from left to right, so:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div>
 </div>
 <p>will evaluate as (5 + 3 ) * 2.</p>
 <p>This happens because the expression becomes:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">.</span><span class="nx">performBinaryOpOnSimpleNumber</span><span class="p">(</span><span class="s1">'+'</span><span class="p">,</span><span class="mi">3</span><span class="p">).</span><span class="nx">performBinaryOpOnSimpleNumber</span><span class="p">(</span><span class="s1">'*'</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="mi">5</span><span class="p">.</span><span class="nx">performBinaryOpOnSimpleNumber</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">).</span><span class="nx">performBinaryOpOnSimpleNumber</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> 
+</code></pre></div>
 </div>
 <p>Therefore, in algebraic expressions parenthesis must be used when left to right orders is not what is desired:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="mi">5</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
 </div>
-</section>
-</section>
-<section id="synthdef-issues">
 <h2 id="synthdef-issues">SynthDef Issues<a class="headerlink" href="#synthdef-issues" title="Link to this heading">¶</a></h2>
-<section id="if-statements-inside-a-synthdef">
 <h3 id="if-statements-inside-a-synthdef">“If” statements inside a SynthDef<a class="headerlink" href="#if-statements-inside-a-synthdef" title="Link to this heading">¶</a></h3>
 <p>It’s only a matter of time before a user tries to write something like this in a <code class="docutils literal notranslate"><span class="pre">SynthDef</span></code>:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\kablooie</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\kablooie</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
     <span class="kd">var</span> <span class="nx">signal</span><span class="p">;</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">signal</span> <span class="o">=</span> <span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span>
@@ -547,13 +1772,11 @@ In SuperCollider everything is an object, and evaluation happens from left to ri
         <span class="nx">signal</span> <span class="o">=</span> <span class="nx">Saw</span><span class="p">.</span><span class="nx">ar</span>
     <span class="p">};</span>
 <span class="p">});</span>
-</pre></div>
+</code></pre></div>
 </div>
 <p>… with the disturbing result: <code class="docutils literal notranslate"><span class="pre">ERROR: Non Boolean in test.</span></code></p>
 <p>“Non Boolean in test”? But <em>x &gt; 0</em> is a comparison, and surely should produce a Boolean, right?</p>
 <p>This should be the first clue that Boolean logic in the server is a very different animal from the so-called “normal” use of conditionals on the client side (in the language).</p>
-</section>
-<section id="what-is-a-boolean-in-the-server">
 <h3 id="what-is-a-boolean-in-the-server">What is a Boolean in the server?<a class="headerlink" href="#what-is-a-boolean-in-the-server" title="Link to this heading">¶</a></h3>
 <p>In fact, there is no such thing. The server handles floating-point numbers. It doesn’t have <em>true</em> or <em>false</em> entities.</p>
 <p>Since everything in the server is a number, the result of the comparison must also be a number. The server follows the same convention as other DSP environments (Max/MSP, pd etc.):</p>
@@ -561,71 +1784,65 @@ In SuperCollider everything is an object, and evaluation happens from left to ri
 <li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> is represented by 1.0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> is represented by 0.0</p></li>
 </ul>
-</section>
-<section id="why-is-x-0-non-boolean-in-the-test">
 <h3 id="why-is-x-0-non-boolean-in-the-test">Why is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">\&gt;</span> <span class="pre">0</span></code> “non-Boolean” in the “test”?<a class="headerlink" href="#why-is-x-0-non-boolean-in-the-test" title="Link to this heading">¶</a></h3>
-<p>This goes back to the general issue of handling operators in the server.<br/>
-Math operators in a SynthDef are not calculations to do <em>right now</em>.<br/>
+<p>This goes back to the general issue of handling operators in the server.<br />
+Math operators in a SynthDef are not calculations to do <em>right now</em>.<br />
 They <em>describe</em> calculations that will be done <em>in the future</em>, many thousands of times.</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
 <span class="c1">// -&gt; true</span>
-</pre></div>
+</code></pre></div>
 </div>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\kablooie</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
-    <span class="s2">"x: "</span><span class="p">.</span><span class="nx">post</span><span class="p">;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
-    <span class="s2">"(x &gt; 0): "</span><span class="p">.</span><span class="nx">post</span><span class="p">;</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">).</span><span class="nx">postln</span><span class="p">;</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\kablooie</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
+    <span class="s2">&quot;x: &quot;</span><span class="p">.</span><span class="nx">post</span><span class="p">;</span> <span class="nx">x</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+    <span class="s2">&quot;(x &gt; 0): &quot;</span><span class="p">.</span><span class="nx">post</span><span class="p">;</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">).</span><span class="nx">postln</span><span class="p">;</span>
 <span class="p">});</span>
-</pre></div>
+</code></pre></div>
 </div>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">x</span><span class="o">:</span> <span class="nx">an</span> <span class="nx">OutputProxy</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">x</span><span class="o">:</span> <span class="nx">an</span> <span class="nx">OutputProxy</span>
 <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">:</span> <span class="nx">a</span> <span class="nx">BinaryOpUGen</span>
-</pre></div>
+</code></pre></div>
 </div>
-<p>The precise value of <em>x</em> is unknown at the time you execute the SynthDef code.<br/>
+<p>The precise value of <em>x</em> is unknown at the time you execute the SynthDef code.<br />
 <em>x</em> actually represents an unlimited number of values, which will be provided to Synths using argument lists. So, it’s meaningless to
 determine, once and for all, whether <em>x &gt; 0</em> or not. <em>x</em> may be <em>&gt; 0</em> now and <em>&lt; 1</em> a split second later. So, instead of producing a Boolean, <em>x &gt; 0</em> produces a <strong>Binary Operator UGen</strong> that repeatedly executes the comparison.</p>
 <p>Going back to this:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">aBinaryOpUGen</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">aBinaryOpUGen</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</code></pre></div>
 </div>
-<p>To do this, the language must know which function (true or false) to execute. But there is no way to know which one the BinaryOpUGen will be.<br/>
+<p>To do this, the language must know which function (true or false) to execute. But there is no way to know which one the BinaryOpUGen will be.<br />
 So, SuperCollider throws an error.</p>
-</section>
-<section id="if-you-can-t-branch-what-good-is-a-comparison-in-the-server">
 <h3 id="if-you-can-t-branch-what-good-is-a-comparison-in-the-server">If you can’t branch, what good is a comparison in the server?<a class="headerlink" href="#if-you-can-t-branch-what-good-is-a-comparison-in-the-server" title="Link to this heading">¶</a></h3>
 <p>Comparisons have a lot of uses, actually.</p>
 <ul class="simple">
-<li><p><strong>Choosing one of two signals:</strong> This is the closest we can get to <em>if-then-else</em> in the server. Both <em>then</em> and <em>else</em> must be running continuously. That’s a requirement of how the server works: the number and arrangement of unit generators within a single Synth cannot change. Instead, you can choose <em>which of those signals makes it downstream</em>. One will be used and the other ignored.<br/>
+<li><p><strong>Choosing one of two signals:</strong> This is the closest we can get to <em>if-then-else</em> in the server. Both <em>then</em> and <em>else</em> must be running continuously. That’s a requirement of how the server works: the number and arrangement of unit generators within a single Synth cannot change. Instead, you can choose <em>which of those signals makes it downstream</em>. One will be used and the other ignored.<br />
 Since true is 1 and false is 0, you can use a conditional to index into an array using Select.</p></li>
 </ul>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Select</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">aKrSignal</span> <span class="o">&gt;</span> <span class="nx">anotherKrSignal</span><span class="p">,</span> <span class="p">[</span><span class="nx">false_signal</span><span class="p">,</span> <span class="nx">true_signal</span><span class="p">]);</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">Select</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">aKrSignal</span> <span class="o">&gt;</span> <span class="nx">anotherKrSignal</span><span class="p">,</span> <span class="p">[</span><span class="nx">false_signal</span><span class="p">,</span> <span class="nx">true_signal</span><span class="p">]);</span>
+</code></pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Generating triggers:</strong> A trigger occurs whenever a signal is &lt;= 0, and then becomes &gt; 0. Extending this to comparisons, it means that <em>a trigger occurs when a comparison is false for a while, and then becomes true</em>. Comparing a signal to a threshold may then be used anywhere that a trigger is valid.<br/>
+<li><p><strong>Generating triggers:</strong> A trigger occurs whenever a signal is &lt;= 0, and then becomes &gt; 0. Extending this to comparisons, it means that <em>a trigger occurs when a comparison is false for a while, and then becomes true</em>. Comparing a signal to a threshold may then be used anywhere that a trigger is valid.<br />
 For a simple example, take the case of sending a message to the language when the microphone input’s amplitude crosses a threshold.</p></li>
 </ul>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">mic</span> <span class="o">=</span> <span class="nx">In</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">amplitude</span> <span class="o">=</span> <span class="nx">Amplitude</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">mic</span><span class="p">);</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">mic</span> <span class="o">=</span> <span class="nx">In</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">amplitude</span> <span class="o">=</span> <span class="nx">Amplitude</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">mic</span><span class="p">);</span>
 <span class="nx">SendTrig</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">amplitude</span> <span class="o">&gt;</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">amplitude</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Passing or suppressing triggers:</strong> You might need to generate triggers continuously, but permit the triggers to take effect only when a condition is met. Multiplication handles this nicely:<br/>
+<li><p><strong>Passing or suppressing triggers:</strong> You might need to generate triggers continuously, but permit the triggers to take effect only when a condition is met. Multiplication handles this nicely:<br />
 <em>condition * trigger</em>. Since the condition evaluates as 0 when false, the trigger will be replaced by 0 and nothing happens, as desired.</p></li>
 </ul>
 <p>For a simple case, let’s refine the mic amplitude example by suppressing triggers that occur within 1/4 second after the previous.</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">mic</span> <span class="o">=</span> <span class="nx">In</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">mic</span> <span class="o">=</span> <span class="nx">In</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
     <span class="nx">amplitude</span> <span class="o">=</span> <span class="nx">Amplitude</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">mic</span><span class="p">),</span>
     <span class="nx">trig</span> <span class="o">=</span> <span class="nx">amplitude</span> <span class="o">&gt;</span> <span class="mf">0.2</span><span class="p">,</span>
     <span class="nx">timer</span> <span class="o">=</span> <span class="nx">Timer</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">),</span> <span class="c1">// how long since the last trigger?</span>
     <span class="nx">filteredTrig</span> <span class="o">=</span> <span class="p">(</span><span class="nx">timer</span> <span class="o">&gt;</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">*</span> <span class="nx">trig</span><span class="p">;</span>
 
 <span class="nx">SendTrig</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">filteredTrig</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">amplitude</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 </div>
-</section>
-<section id="logical-operators-and-or-not-xor">
 <h3 id="logical-operators-and-or-not-xor">Logical operators: And, Or, Not, Xor<a class="headerlink" href="#logical-operators-and-or-not-xor" title="Link to this heading">¶</a></h3>
 <p>Logical operators have simple arithmetic equivalents.</p>
 <ul class="simple">
@@ -634,88 +1851,80 @@ For a simple example, take the case of sending a message to the language when th
 </ul>
 <p>NOTE: If both are true, then the result will be 2, not 1. In some cases, the 2 may not be acceptable. That can be fixed by wrapping the Or in another comparison – <em>((x &gt; 0) + (y &gt; 0)) &gt; 0</em> – because 2 &gt; 0 evaluates to 1!</p>
 <ul class="simple">
-<li><p><strong>Not:</strong> I prefer to negate a condition by comparing it to zero:<br/>
-<em>condition &lt;= 0</em>. 0 &lt;= 0 is 1 (i.e., not 0), and 1 &lt;= 0 is 0 (not 1).<br/>
+<li><p><strong>Not:</strong> I prefer to negate a condition by comparing it to zero:<br />
+<em>condition &lt;= 0</em>. 0 &lt;= 0 is 1 (i.e., not 0), and 1 &lt;= 0 is 0 (not 1).<br />
 If you’re certain the logical expression will only ever be 0 or 1 exactly, you can also negate by subtraction: <em>1 - condition</em>.</p></li>
-<li><p><strong>Xor:</strong> Exclusive-or is true if one or the other condition is true, but not both. We can add the two conditions and compare it to 1. The syntax is a little bit tricky because <code class="docutils literal notranslate"><span class="pre">==</span></code> doesn’t turn into a BinaryOpUGen automatically.<br/>
+<li><p><strong>Xor:</strong> Exclusive-or is true if one or the other condition is true, but not both. We can add the two conditions and compare it to 1. The syntax is a little bit tricky because <code class="docutils literal notranslate"><span class="pre">==</span></code> doesn’t turn into a BinaryOpUGen automatically.<br />
 We have to create the BinaryOpUGen by hand.</p></li>
 </ul>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">BinaryOpUGen</span><span class="p">(</span><span class="s1">'=='</span><span class="p">,</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">BinaryOpUGen</span><span class="p">(</span><span class="s1">&#39;==&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 </div>
-</section>
-<section id="error-synthdef-not-found">
 <h3 id="error-synthdef-not-found"><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">SynthDef</span> <span class="pre">not</span> <span class="pre">found</span></code><a class="headerlink" href="#error-synthdef-not-found" title="Link to this heading">¶</a></h3>
 <p>Sending a SynthDef to the server requires a little bit of time, which means that running a block of code with both SynthDef definitions and instances of those SynthDefs won’t be guaranteed to work unless this slight delay is accounted for. There are two main ways to do this:</p>
 <p>First way: put the SynthDefs and the main code in a Task and put some kind of <code class="docutils literal notranslate"><span class="pre">.wait</span></code> time between them.</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Task</span><span class="p">({</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">Task</span><span class="p">({</span>
     <span class="c1">// put your SynthDefs here</span>
     <span class="mf">0.2</span><span class="p">.</span><span class="nx">wait</span><span class="p">;</span>
     <span class="c1">// put the rest of your code here</span>
 <span class="p">}).</span><span class="nx">play</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </div>
 <p>Second way: use <code class="docutils literal notranslate"><span class="pre">.sync</span></code>:</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Routine</span><span class="p">({</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">Routine</span><span class="p">({</span>
     <span class="c1">// put your SynthDefs here</span>
-    <span class="nx">s</span><span class="p">.</span><span class="nx">sync</span><span class="p">;</span> <span class="c1">// assuming that 's' is the server</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">sync</span><span class="p">;</span> <span class="c1">// assuming that &#39;s&#39; is the server</span>
     <span class="c1">// put the rest of your code here</span>
 <span class="p">}).</span><span class="nx">play</span>
-</pre></div>
+</code></pre></div>
 </div>
-</section>
-<section id="failure-s-new-alloc-failed-increase-server-s-memory-allocation">
 <h3 id="failure-s-new-alloc-failed-increase-server-s-memory-allocation"><code class="docutils literal notranslate"><span class="pre">FAILURE</span> <span class="pre">/s_new</span> <span class="pre">alloc</span> <span class="pre">failed,</span> <span class="pre">increase</span> <span class="pre">server's</span> <span class="pre">memory</span> <span class="pre">allocation</span></code><a class="headerlink" href="#failure-s-new-alloc-failed-increase-server-s-memory-allocation" title="Link to this heading">¶</a></h3>
 <p><strong>What it means:</strong> While initializing the unit generators in a new Synth node, the server ran out of real-time memory.</p>
 <p><strong>Solution:</strong> Increase the amount of real-time memory available to the server. This size is set, as the error message says, in the
 <code class="docutils literal notranslate"><span class="pre">ServerOptions</span></code> object associated with the server. It is a server startup option; you must quit the server and reboot it, or the new
 setting will not take effect.</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">myServer</span><span class="p">.</span><span class="nx">quit</span><span class="p">;</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">myServer</span><span class="p">.</span><span class="nx">quit</span><span class="p">;</span>
 <span class="nx">myServer</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">memSize</span> <span class="o">=</span> <span class="mi">65536</span><span class="p">;</span>  <span class="c1">// e.g., could be different for you</span>
 <span class="nx">myServer</span><span class="p">.</span><span class="nx">boot</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">myServer.options.memSize</span></code> is given in KB. The default is 8192KB, or 8MB.</p>
-<p><strong>What it <em>really</em> means:</strong> Many unit generators require internal memory buffers, such as delay lines, comb filters, allpass delays, some FFT manipulators, reverb units etc.<br/>
+<p><strong>What it <em>really</em> means:</strong> Many unit generators require internal memory buffers, such as delay lines, comb filters, allpass delays, some FFT manipulators, reverb units etc.<br />
 These internal buffers are not allocated directly from the operating system, but rather from a “real-time memory
-pool.”<br/>
-This is because direct allocation from the OS, by functions such as <code class="docutils literal notranslate"><span class="pre">malloc()</span></code>, is not real-time safe.<br/>
-The OS may take too long to return the new block, causing glitches in the audio.<br/>
+pool.”<br />
+This is because direct allocation from the OS, by functions such as <code class="docutils literal notranslate"><span class="pre">malloc()</span></code>, is not real-time safe.<br />
+The OS may take too long to return the new block, causing glitches in the audio.<br />
 To solve this problem, the server allocates a chunk of memory when it starts up and parcels it out to unit generators as needed.</p>
-<p>If you use a large number of delays, the server may run out of real-time memory. The default <code class="docutils literal notranslate"><span class="pre">8192KB</span></code> setting can support 47.55 seconds of delay at a sampling rate of 44.1 kHz.<br/>
+<p>If you use a large number of delays, the server may run out of real-time memory. The default <code class="docutils literal notranslate"><span class="pre">8192KB</span></code> setting can support 47.55 seconds of delay at a sampling rate of 44.1 kHz.<br />
 This goes away quickly when using lots of synths with multiple channels of delay.</p>
-<p><strong>Alternate solution:</strong> For delay units, you may use preallocated delay buffers – <code class="docutils literal notranslate"><span class="pre">Buffer.alloc()</span></code> – and the “Buf” delay units:<br/>
-<code class="docutils literal notranslate"><span class="pre">BufDelayN</span></code>, <code class="docutils literal notranslate"><span class="pre">BufDelayL</span></code>, <code class="docutils literal notranslate"><span class="pre">BufDelayC</span></code>, <code class="docutils literal notranslate"><span class="pre">BufCombL</span></code> etc.<br/>
+<p><strong>Alternate solution:</strong> For delay units, you may use preallocated delay buffers – <code class="docutils literal notranslate"><span class="pre">Buffer.alloc()</span></code> – and the “Buf” delay units:<br />
+<code class="docutils literal notranslate"><span class="pre">BufDelayN</span></code>, <code class="docutils literal notranslate"><span class="pre">BufDelayL</span></code>, <code class="docutils literal notranslate"><span class="pre">BufDelayC</span></code>, <code class="docutils literal notranslate"><span class="pre">BufCombL</span></code> etc.<br />
 <code class="docutils literal notranslate"><span class="pre">Buffer.alloc()</span></code> does not use the real-time pool and is not subject to the memSize limitation. This approach will not help with FFT units.</p>
-</section>
-<section id="array-arguments">
 <h3 id="array-arguments">Array arguments<a class="headerlink" href="#array-arguments" title="Link to this heading">¶</a></h3>
 <p>Sometimes, you need to send an array to a series of Control inputs in a SynthDef (often called “<em>array arguments</em>”).</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">Synth</span><span class="p">(</span><span class="ss">\xyz</span><span class="p">,</span> <span class="p">[</span><span class="nx">freqs</span><span class="o">:</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">]]);</span>
-</pre></div>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">Synth</span><span class="p">(</span><span class="ss">\xyz</span><span class="p">,</span> <span class="p">[</span><span class="nx">freqs</span><span class="o">:</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">]]);</span>
+</code></pre></div>
 </div>
 <p>There are two primary ways to do this:</p>
 <ul class="simple">
-<li><p>Supply a literal array – <code class="docutils literal notranslate"><span class="pre">\#[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> – as the default for the argument name in the function.<br/>
+<li><p>Supply a literal array – <code class="docutils literal notranslate"><span class="pre">\#[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> – as the default for the argument name in the function.<br />
 This is discussed in <a class="reference external" href="https://doc.sccode.org/Classes/SynthDef.html">SynthDef’s help file</a>.</p></li>
 </ul>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SynthDef(\xyz, { |freqs = #[1, 2, 3]|
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>SynthDef(\xyz, { |freqs = #[1, 2, 3]|
     // ...
 })
-</pre></div>
+</code></pre></div>
 </div>
 <ul class="simple">
-<li><p>Or, use <code class="docutils literal notranslate"><span class="pre">NamedControl</span></code>.<br/>
+<li><p>Or, use <code class="docutils literal notranslate"><span class="pre">NamedControl</span></code>.<br />
 This is the only way to do it if you want to construct the array’s size dynamically, or based on a variable. See <a class="reference external" href="https://doc.sccode.org/Classes/NamedControl.html">NamedControl help</a>.</p></li>
 </ul>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SynthDef(\xyz, {
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>SynthDef(\xyz, {
     var freqs = NamedControl.kr(\freqs, #[1, 2, 3]);
     // ...
 });
-</pre></div>
+</code></pre></div>
 </div>
-</section>
-<section id="why-does-it-have-to-be-a-literal-array">
 <h3 id="why-does-it-have-to-be-a-literal-array">Why does it have to be a literal array?<a class="headerlink" href="#why-does-it-have-to-be-a-literal-array" title="Link to this heading">¶</a></h3>
 <p>The reason comes from the process of building a SynthDef:</p>
 <ol class="arabic simple">
@@ -725,132 +1934,191 @@ This is the only way to do it if you want to construct the array’s size dynami
 <li><p>Then sort the UGens into the right order, etc. etc.</p></li>
 </ol>
 <p>To do steps #1 and #2, the SynthDef builder has to know the size of an array argument <em>before</em> running the function. That’s possible only if it’s a literal array: <code class="docutils literal notranslate"><span class="pre">\#[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>. Any other array notation creates the array <em>while running the function</em> (step #3). But then it’s too late – the SynthDef builder already created a non-array control channel for it!</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\notArray</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="mi">5</span><span class="p">)</span><span class="o">|</span>
-    <span class="nx">a</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s2">"a is"</span><span class="p">);</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="nx">SynthDef</span><span class="p">(</span><span class="ss">\notArray</span><span class="p">,</span> <span class="p">{</span> <span class="o">|</span><span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="mi">5</span><span class="p">)</span><span class="o">|</span>
+    <span class="nx">a</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s2">&quot;a is&quot;</span><span class="p">);</span>
 <span class="p">});</span>
-</pre></div>
+</code></pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is:</span> <span class="pre">an</span> <span class="pre">OutputProxy</span></code></p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SynthDef(\array, { |a = #[1, 2, 3, 4, 5]|
-   a.debug("a is");
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span><code>SynthDef(\array, { |a = #[1, 2, 3, 4, 5]|
+   a.debug(&quot;a is&quot;);
 });
-</pre></div>
+</code></pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is:</span> <span class="pre">[</span> <span class="pre">an</span> <span class="pre">OutputProxy,</span> <span class="pre">an</span> <span class="pre">OutputProxy,</span> <span class="pre">an</span> <span class="pre">OutputProxy,</span> <span class="pre">an</span> <span class="pre">OutputProxy,</span> <span class="pre">an</span> <span class="pre">OutputProxy</span> <span class="pre">]</span></code></p>
 <p>(Note, if ‘a’ printed as [ 1, 2, 3, 4, 5 ], then you wouldn’t be able to change the values in a Synth using .set!)</p>
-</section>
-</section>
-<section id="server-issues">
 <h2 id="server-issues">Server issues<a class="headerlink" href="#server-issues" title="Link to this heading">¶</a></h2>
-<section id="how-to-trigger-a-function-from-the-server">
 <h3 id="how-to-trigger-a-function-from-the-server">How to trigger a function from the server<a class="headerlink" href="#how-to-trigger-a-function-from-the-server" title="Link to this heading">¶</a></h3>
-<p>The first and most important point: <strong>Functions are client-side only.</strong><br/>
-The server doesn’t know what functions are, doesn’t understand them and has no way to execute them.<br/>
+<p>The first and most important point: <strong>Functions are client-side only.</strong><br />
+The server doesn’t know what functions are, doesn’t understand them and has no way to execute them.<br />
 <strong>Only the client can execute a function.</strong></p>
 <p>Therefore, if you want a function to execute when something happens in the server, the only way is for the server to tell the client to take the action.</p>
-<p>The server can communicate messages back to the client using one of two unit generators: <code class="docutils literal notranslate"><span class="pre">SendTrig</span></code> and <code class="docutils literal notranslate"><span class="pre">SendReply</span></code>.<br/>
-<code class="docutils literal notranslate"><span class="pre">SendTrig</span></code> is simpler and less flexible (it can send only a <code class="docutils literal notranslate"><span class="pre">/tr</span></code> message, and only one data value).<br/>
-<code class="docutils literal notranslate"><span class="pre">SendReply</span></code> allows you to name the message anything you like, and can send arrays with the message.<br/>
+<p>The server can communicate messages back to the client using one of two unit generators: <code class="docutils literal notranslate"><span class="pre">SendTrig</span></code> and <code class="docutils literal notranslate"><span class="pre">SendReply</span></code>.<br />
+<code class="docutils literal notranslate"><span class="pre">SendTrig</span></code> is simpler and less flexible (it can send only a <code class="docutils literal notranslate"><span class="pre">/tr</span></code> message, and only one data value).<br />
+<code class="docutils literal notranslate"><span class="pre">SendReply</span></code> allows you to name the message anything you like, and can send arrays with the message.<br />
 We’ll use SendReply here because of its greater flexibility.</p>
 <p>Within the language, you also need an object to receive the message and act on it. Usually this is <code class="docutils literal notranslate"><span class="pre">OSCresponderNode</span></code> or <code class="docutils literal notranslate"><span class="pre">OSCpathResponder</span></code>.  In this example, <code class="docutils literal notranslate"><span class="pre">OSCpathResponder</span></code> filters messages not just on the name <code class="docutils literal notranslate"><span class="pre">/bleep</span></code> but also on the synth’s ID. This way, you could have multiple triggering synths, with a different responder and a different action per synth.</p>
-<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<div class="highlight-supercollider notranslate"><div class="highlight"><pre><span></span><code><span class="p">(</span>
 <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">trig</span> <span class="o">=</span> <span class="nx">Dust</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
     <span class="nx">decay</span> <span class="o">=</span> <span class="nx">Decay2</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
     <span class="nx">sig</span> <span class="o">=</span> <span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">TExpRand</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="nx">trig</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">decay</span><span class="p">;</span>
-    <span class="nx">SendReply</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">,</span> <span class="s1">'/bleep'</span><span class="p">,</span> <span class="nx">trig</span><span class="p">);</span>
+    <span class="nx">SendReply</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">,</span> <span class="s1">&#39;/bleep&#39;</span><span class="p">,</span> <span class="nx">trig</span><span class="p">);</span>
     <span class="nx">sig</span> <span class="o">!</span> <span class="mi">2</span>
 <span class="p">}.</span><span class="nx">play</span><span class="p">;</span>
 
-<span class="nx">o</span> <span class="o">=</span> <span class="nx">OSCpathResponder</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">addr</span><span class="p">,</span> <span class="p">[</span><span class="s1">'/bleep'</span><span class="p">,</span> <span class="nx">a</span><span class="p">.</span><span class="nx">nodeID</span><span class="p">],</span> <span class="p">{</span> <span class="o">|</span><span class="nx">time</span><span class="p">,</span> <span class="nx">thisResponder</span><span class="p">,</span> <span class="nx">msg</span><span class="o">|</span>
+<span class="nx">o</span> <span class="o">=</span> <span class="nx">OSCpathResponder</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">addr</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;/bleep&#39;</span><span class="p">,</span> <span class="nx">a</span><span class="p">.</span><span class="nx">nodeID</span><span class="p">],</span> <span class="p">{</span> <span class="o">|</span><span class="nx">time</span><span class="p">,</span> <span class="nx">thisResponder</span><span class="p">,</span> <span class="nx">msg</span><span class="o">|</span>
     <span class="nx">msg</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
 <span class="p">}).</span><span class="nx">add</span><span class="p">;</span>
 <span class="p">)</span>
 
 <span class="nx">a</span><span class="p">.</span><span class="nx">free</span><span class="p">;</span> <span class="nx">o</span><span class="p">.</span><span class="nx">remove</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 </div>
-<section id="helpfile-references">
 <h4 id="helpfile-references">Helpfile references<a class="headerlink" href="#helpfile-references" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://doc.sccode.org/Classes/SendTrig.html"><code class="docutils literal notranslate"><span class="pre">SendTrig</span></code></a>, <a class="reference external" href="https://doc.sccode.org/Classes/SendReply.html"><code class="docutils literal notranslate"><span class="pre">SendReply</span></code></a></p></li>
 <li><p><a class="reference external" href="https://doc.sccode.org/Classes/OSCresponderNode.html"><code class="docutils literal notranslate"><span class="pre">OSCresponderNode</span></code></a>, <a class="reference external" href="https://doc.sccode.org/Classes/OSCpathResponder.html"><code class="docutils literal notranslate"><span class="pre">OSCpathResponder</span></code></a>, <a class="reference external" href="https://doc.sccode.org/Classes/OSCresponder.html"><code class="docutils literal notranslate"><span class="pre">OSCresponder</span></code></a>, <a class="reference external" href="https://doc.sccode.org/Guides/OSC_communication.html">OSC communication</a></p></li>
 </ul>
-</section>
-</section>
-<section id="exception-in-world-openudp-unable-to-bind-udp-socket">
 <h3 id="exception-in-world-openudp-unable-to-bind-udp-socket">Exception in World_OpenUDP: unable to bind udp socket<a class="headerlink" href="#exception-in-world-openudp-unable-to-bind-udp-socket" title="Link to this heading">¶</a></h3>
 <p>Sometime when booting the server one gets a message: <code class="docutils literal notranslate"><span class="pre">Exception</span> <span class="pre">in</span> <span class="pre">World_OpenUDP:</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">bind</span> <span class="pre">udp</span> <span class="pre">socket</span></code>.</p>
 <p>This is usually caused by an instance of scsynth that as hanged but has not released the osc port, perhaps because it SuperCollider crashed.  To fix this, just hit the <em>“k”</em> button in the server window to kill all scsynth processes, and then boot again.</p>
-</section>
-</section>
-<section id="other-issues">
 <h2 id="other-issues">Other issues<a class="headerlink" href="#other-issues" title="Link to this heading">¶</a></h2>
-<section id="error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file">
 <h3 id="error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file">Error while loading shared libraries: libsclang.so: cannot open shared object file<a class="headerlink" href="#error-while-loading-shared-libraries-libsclang-so-cannot-open-shared-object-file" title="Link to this heading">¶</a></h3>
 <p>This usually happens after building on Linux and it means that your system is unaware of newly installed shared libraries. Running ldconfig
 (as root) solves the problem:</p>
 <p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">/sbin/ldconfig</span></code></p>
-</section>
-</section>
-</section>
 
 
-          </article>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
-      </div>
-    </main>
-  </div>
-  <footer class="md-footer">
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-          
-            <a href="../user/misc.html" title="Miscellaneous"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> "Previous" </span> Miscellaneous </span>
-              </div>
-            </a>
-          
-          
-            <a href="../user/Recording-in-SuperCollider.html" title="Recording in SuperCollider"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Recording in SuperCollider </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          
-        </a>
         
-      </nav>
-    </div>
-    <div class="md-footer-meta md-typeset">
-      <div class="md-footer-meta__inner md-grid">
-        <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2024, SuperCollider.
-              
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../user/misc.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Miscellaneous" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
-            Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
-             and
-            <a href="https://github.com/bashtage/sphinx-material/">Material for
-              Sphinx</a>
-        </div>
-      </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Miscellaneous
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../user/Recording-in-SuperCollider.html" class="md-footer__link md-footer__link--next" aria-label="Next: Recording in SuperCollider" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Recording in SuperCollider
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright 2024, SuperCollider.
+        
     </div>
-  </footer>
-  <script src="../_static/javascripts/application.js"></script>
-  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    7.2.6.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/capital-g/supercollider-wiki" target="_blank" rel="noopener" title="Source on github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://scsynth.org/" target="_blank" rel="noopener" title="scsynth.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9C448 134.3 348.6 32 225.9 32zM224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/PVUmDyx7p8" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://join.slack.com/t/scsynth/shared_invite/zt-ezoyz15j-SVM7JVul94pxtDiUDRnd0w" target="_blank" rel="noopener" title="join.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.instant", "navigation.top", "search.share", "toc.follow", "toc.sticky", "content.tabs.link", "announce.dismiss"], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+      
+        <script src="../_static/sphinx_immaterial_theme.f9d9eeeb247ace16c.min.js?v=8ec58cb5"></script>
+    
   </body>
 </html>
